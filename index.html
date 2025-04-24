@@ -58,12 +58,10 @@
         <span class="highlight-bransch">Byggbranschens</span> framtid 
       </h1>
       <p class="subtitle">
-      Byggbranschens framtid formas av två drivna grundare med stark vision.
-      Olivier Ehrenberg är en tech-entreprenör med fokus på digitala lösningar, affärsutveckling och tillväxt.
-      Han har erfarenhet av att bygga effektiva plattformar och leda tekniska projekt.
-      Anders Niclazon är civilingenjör med djup branschkunskap inom byggsektorn och projektledning.
-      Han brinner för att effektivisera byggindustrin genom digitalisering och hållbara lösningar.
-      Tillsammans skapar de en plattform som förenar teknik och byggbranschens verkliga behov.
+        Registrera dig nu och få chansen att testa plattformen redan innan vi
+        lanserar. Under en begränsad introduktionsperiod får du fri tillgång
+        till flera unika funktioner och rabatterade priser på utvalda tjänster
+        efter lanseringen.
       </p>
       <button class="cta-btn">Anmäl Dig Nu</button>
     </section>
@@ -323,6 +321,9 @@
       </div>
     </div>
 
+    <!-- GSAP Core and ScrollTrigger -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollTrigger.min.js"></script>
     <script src="main.js"></script>
     <script src="popup.js"></script>
     <script src="lang.js"></script>
@@ -331,30 +332,9 @@
         lucide.createIcons();
       });
     </script>
-   <script>
-    document.addEventListener("DOMContentLoaded", () => {
-      lucide.createIcons(); // keep your icon setup
-  
-      const observer = new IntersectionObserver(
-        (entries, observer) => {
-          entries.forEach(entry => {
-            if (entry.isIntersecting) {
-              entry.target.classList.add("section-visible");
-              entry.target.classList.remove("section-hidden");
-              observer.unobserve(entry.target);
-            }
-          });
-        },
-        {
-          threshold: 0.2, // trigger when 20% of the section is visible
-        }
-      );
-  
-      document.querySelectorAll(".section-hidden").forEach(section => {
-        observer.observe(section);
-      });
-    });
-  </script>
+    <script>
+      // IntersectionObserver disabled: using GSAP ScrollTrigger instead
+    </script>
   
 
   </body>

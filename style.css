@@ -191,10 +191,14 @@ button {
    FEATURES
 =============================== */
 .features-wrapper {
-  max-width: 1200px;
-  margin: 8rem auto;
-  padding: 0 1rem;
+  padding: 4rem 1rem;
+  background: #1c1a2e;
   text-align: center;
+}
+
+.features-wrapper > * {
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .features-wrapper h2 {
@@ -580,20 +584,6 @@ footer {
 /* ===============================
    ANIMATIONS
 =============================== */
-.section-hidden .feature-card {
-  opacity: 0;
-  transform: translateY(40px);
-}
-
-.section-visible .feature-card {
-  opacity: 1;
-  transform: translateY(0);
-  transition: all 0.6s ease-out;
-}
-
-.feature-card.section-visible {
-  transition: all 0.5s ease-out;
-}
 
 /* ===============================
    POPUP STYLES (Your Original)
@@ -865,34 +855,6 @@ footer {
   top: 0;
 }
 
-
-.section-hidden .feature-card,
-.section-hidden .pricing-card {
-  opacity: 0;
-  transform: translateY(40px);
-}
-
-.section-visible .feature-card,
-.section-visible .pricing-card {
-  opacity: 1;
-  transform: translateY(0);
-  transition: all 0.6s ease-out;
-}
-
-
-.feature-card:hover {
-  transform: translateY(-10px) scale(1.03);
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
-  z-index: 1;
-}
-
-.pricing-card:hover {
-  transform: translateY(-8px) scale(1.02);
-  box-shadow: 0 12px 40px rgba(249, 200, 81, 0.1),
-              0 12px 40px rgba(232, 83, 249, 0.1);
-  z-index: 1;
-}
-
 .hamburger {
   display: none;
   flex-direction: column;
@@ -943,4 +905,31 @@ footer {
   .hamburger {
     display: flex;
   }
+}
+
+/* STORYTELLING SCROLL EFFECT */
+.hero,
+.features-wrapper,
+.features-summary-wrapper,
+#pricing,
+#about,
+.cta-section {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* ===============================
+   SECTION REVEAL
+=============================== */
+.section-hidden {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.section-visible {
+  opacity: 1;
+  transform: translateY(0);
 }
