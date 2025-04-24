@@ -19,14 +19,6 @@ document.addEventListener("DOMContentLoaded", () => {
         pinSpacing: false,
         scrub: true,
       });
-      ScrollTrigger.create({
-        trigger: ".features-wrapper",
-        start: "top top",
-        end: "bottom top",
-        pin: true,
-        pinSpacing: false,
-        scrub: true,
-      });
 
       // Parallax for hero
       if (hero) {
@@ -107,25 +99,44 @@ document.addEventListener("DOMContentLoaded", () => {
     },
   });
 
-  // Fade in and reveal all sections using GSAP autoAlpha and y offset
+  // Fade in and reveal sections (except footer) using GSAP autoAlpha and y offset
   sections.forEach((section) => {
-    gsap.fromTo(
-      section,
-      { autoAlpha: 0, y: 40 },
-      {
-        autoAlpha: 1,
-        y: 0,
-        ease: "power1.out",
-        duration: 1,
-        scrollTrigger: {
-          trigger: section,
-          start: "top 80%",
-          end: "bottom 20%",
-          toggleActions: "play reverse play reverse",
-        },
-      }
-    );
+    if (!section.matches('footer')) {
+      gsap.fromTo(
+        section,
+        { autoAlpha: 0, y: 40 },
+        {
+          autoAlpha: 1,
+          y: 0,
+          ease: "power1.out",
+          duration: 1,
+          scrollTrigger: {
+            trigger: section,
+            start: "top 80%",
+            end: "bottom 20%",
+            toggleActions: "play reverse play reverse",
+          },
+        }
+      );
+    }
   });
+
+  // Footer animation - stays visible once triggered
+  gsap.fromTo(
+    "footer",
+    { autoAlpha: 0, y: 40 },
+    {
+      autoAlpha: 1,
+      y: 0,
+      ease: "power1.out",
+      duration: 1,
+      scrollTrigger: {
+        trigger: "footer",
+        start: "top 90%",
+        toggleActions: "play none none none",
+      },
+    }
+  );
 
   // Split headings into word spans and animate each word
   const splitAndAnimate = (selector) => {
