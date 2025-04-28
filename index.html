@@ -8,7 +8,6 @@
     <link rel="icon" type="image/svg+xml" href="assets/Favicon.svg" />
     <script src="https://unpkg.com/lucide@latest"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
   </head>
 
   <body>
@@ -18,10 +17,9 @@
           <img src="assets/logo.png" alt="Construction Sourcing Logo" />
         </a>
         <nav class="nav-links" style="display: flex; gap: 3rem;">
-          <a href="#funktioner" data-translate="features">Funktioner</a>
-
-          <a href="#pricing" data-translate="pricing">Prissättning</a>
-<a href="#about" data-translate="about">Om oss</a>
+          <a href="#funktioner" data-translate="features"></a>
+          <a href="#pricing" data-translate="pricing"></a>
+          <a href="#about" data-translate="about"></a>
         </nav>
       </div>
     
@@ -34,237 +32,206 @@
             <img src="assets/sweden-flag.svg" alt="Swedish" />
           </a>
         </div>
-        <a
-          href="https://app.constructionsourcing.se/meetings/oliver/1?uuid=2780a69b-c613-4548-b234-db59044a3ad4"
-          target="_blank"
-        >
-          <button class="contact-btn" data-translate="contact">
-            Kontakta oss
-          </button>
+        <a href="https://app.constructionsourcing.se/meetings/oliver/1?uuid=2780a69b-c613-4548-b234-db59044a3ad4" target="_blank">
+          <button class="contact-btn" data-translate="contact"></button>
         </a>
       </nav>
     </header>
    
-    
-
     <section class="hero">
       <div class="hero-text-container">
-        <div class="small-top-text">
-          Var först med att ta del av den!
-          <span class="highlight-text"
-            >Anmäl Dig Nu <span class="arrow">➔</span></span
-          >
+        <div class="small-top-text" data-translate="heroTopText">
+          <span class="highlight-text" data-translate="heroHighlightText">
+            <span class="arrow">➔</span>
+          </span>
         </div>
-        <h1>
-          <span class="highlight-bransch">Byggbranschens</span> framtid 
+        <h1 data-translate="heroTitle">
+          <span class="highlight-bransch"></span>
         </h1>
-        <p class="subtitle">
-          Registrera dig nu och få chansen att testa plattformen redan innan vi
-          lanserar. Under en begränsad introduktionsperiod får du fri tillgång
-          till flera unika funktioner och rabatterade priser på utvalda tjänster
-          efter lanseringen.
-        </p>
-        <button class="cta-btn">Anmäl Dig Nu</button>
+        <p class="subtitle" data-translate="heroSubtitle"></p>
+        <button class="cta-btn" data-translate="heroCTA" onclick="toggleModal(true)"></button>
       </div>
     </section>
 
     <section class="features-wrapper section-hidden">
-      <h2>Funktioner som driver din framgång</h2>
-      <p class="intro">
-        Upptäck kraftfulla verktyg som förenklar din byggprocess – från att
-        hitta rätt leverantörer till juridisk rådgivning och AI‑driven support.
-      </p>
+      <div class="features-intro">
+        <h2 data-translate="featureTitle"></h2>
+        <p class="intro" data-translate="featureIntro"></p>
+      </div>
 
       <div class="features-grid">
         <div class="feature-card">
-          <div class="feature-icon"><i data-lucide="building-2"></i></div>
-          <h3>Hitta nya Leverantörer & Entreprenörer</h3>
-          <p>
-            Anslut med pålitliga leverantörer och entreprenörer direkt på
-            plattformen.
-          </p>
-        </div>
-
-        <div class="feature-card">
-          <div class="feature-icon"><i data-lucide="shield-check"></i></div>
-          <h3>Effektiv Konfliktlösning</h3>
-          <p>
-            Lös tvister snabbt och smidigt med vår inbyggda
-            konfliktlösningsfunktion.
-          </p>
-        </div>
-
-        <div class="feature-card big-card">
           <div class="feature-content">
-            <div class="text-content">
-              <div class="feature-icon">
-                <i data-lucide="message-square-text"></i>
-              </div>
-              <h3>Kommunikation Direkt i Plattformen</h3>
-              <p>Chatta och samarbeta i realtid med ditt team och partners.</p>
-            </div>
-            <div class="image-side">
-              <img src="assets/chat.png" alt="Kommunikation" />
-            </div>
+            <div class="feature-icon"><i data-lucide="building-2"></i></div>
+            <h3 data-translate="feature1Title"></h3>
+            <p data-translate="feature1Desc"></p>
+          </div>
+          <div class="feature-visual">
+            <img src="assets/feature-suppliers.png" alt="Leverantörssökning" />
           </div>
         </div>
 
         <div class="feature-card">
-          <div class="feature-icon"><i data-lucide="file-signature"></i></div>
-          <h3>E-signatur och dokumenthantering</h3>
-          <p>Signera avtal och hantera dokument digitalt och säkert.</p>
-        </div>
-
-        <div class="feature-card">
-          <div class="feature-icon"><i data-lucide="truck"></i></div>
-          <h3>Följ Leveranser i Realtid</h3>
-          <p>Håll koll på materialleveranser och få uppdateringar i realtid.</p>
-        </div>
-
-        <div class="feature-card big-card">
           <div class="feature-content">
-            <div class="text-content">
-              <div class="feature-icon"><i data-lucide="bot"></i></div>
-              <h3>AI Chat</h3>
-              <p>Få snabba svar och insikter med vår AI-drivna assistent.</p>
-            </div>
-            <div class="image-side">
-              <img src="assets/aichatbot.png" alt="AI Chat" />
-            </div>
+            <div class="feature-icon"><i data-lucide="shield-check"></i></div>
+            <h3 data-translate="feature2Title"></h3>
+            <p data-translate="feature2Desc"></p>
+          </div>
+          <div class="feature-visual">
+            <img src="assets/feature-resolution.png" alt="Konfliktlösning" />
           </div>
         </div>
 
         <div class="feature-card">
-          <div class="feature-icon"><i data-lucide="layout-dashboard"></i></div>
-          <h3>Inbyggt Projektverktyg</h3>
-          <p>Planera, hantera och övervaka dina byggprojekt på ett ställe.</p>
+          <div class="feature-content">
+            <div class="feature-icon"><i data-lucide="message-square-text"></i></div>
+            <h3 data-translate="feature3Title"></h3>
+            <p data-translate="feature3Desc"></p>
+          </div>
+          <div class="feature-visual">
+            <img src="assets/feature-chat.png" alt="Kommunikation" />
+          </div>
         </div>
 
         <div class="feature-card">
-          <div class="feature-icon"><i data-lucide="scale"></i></div>
-          <h3>Juridisk Rådgivning</h3>
-          <p>
-            Få expertstöd om kontrakt, lagar och regler direkt i plattformen.
-          </p>
+          <div class="feature-content">
+            <div class="feature-icon"><i data-lucide="file-signature"></i></div>
+            <h3 data-translate="feature4Title"></h3>
+            <p data-translate="feature4Desc"></p>
+          </div>
+          <div class="feature-visual">
+            <img src="assets/feature-docs.png" alt="Dokumenthantering" />
+          </div>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-content">
+            <div class="feature-icon"><i data-lucide="bot"></i></div>
+            <h3 data-translate="feature5Title"></h3>
+            <p data-translate="feature5Desc"></p>
+          </div>
+          <div class="feature-visual">
+            <img src="assets/feature-ai.png" alt="AI Support" />
+          </div>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-content">
+            <div class="feature-icon"><i data-lucide="layout-dashboard"></i></div>
+            <h3 data-translate="feature6Title"></h3>
+            <p data-translate="feature6Desc"></p>
+          </div>
+          <div class="feature-visual">
+            <img src="assets/feature-project.png" alt="Projektverktyg" />
+          </div>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-content">
+            <div class="feature-icon"><i data-lucide="scale"></i></div>
+            <h3 data-translate="feature7Title"></h3>
+            <p data-translate="feature7Desc"></p>
+          </div>
+          <div class="feature-visual">
+            <img src="assets/feature-legal.png" alt="Juridisk Rådgivning" />
+          </div>
         </div>
       </div>
     </section>
+
     <section id="funktioner" class="features-summary-wrapper section-hidden">
-
-      <h2>Vad kan du göra på Construction Sourcing?</h2>
-      <p class="features-intro">
-        Plattformen är byggd för att underlätta varje steg i din byggprocess. Med smarta verktyg och tillgång till branschens bästa resurser får du en effektiv och trygg upplevelse – helt kostnadsfritt att komma igång med.
-      </p>
+      <h2 data-translate="featuresSummaryTitle"></h2>
+      <p class="features-intro2" data-translate="featuresSummaryIntro"></p>
     
       <div class="pricing-cards">
         <div class="pricing-card">
-          <h3>Skapa & Hantera Projekt</h3>
+          <h3 data-translate="featuresProjectTitle"></h3>
           <ul class="features-list">
-            <li>Följ upp byggprojekt från start till mål</li>
-            <li>Dela dokument och håll koll på deadlines</li>
-            <li>Samarbeta direkt i plattformen</li>
+            <li data-translate="featuresProject1"></li>
+            <li data-translate="featuresProject2"></li>
+            <li data-translate="featuresProject3"></li>
           </ul>
         </div>
     
         <div class="pricing-card">
-          <h3>Utforska & Anslut</h3>
+          <h3 data-translate="featuresConnectTitle"></h3>
           <ul class="features-list">
-            <li>Hitta leverantörer och entreprenörer enkelt</li>
-            <li>Kommunicera direkt och skapa starka relationer</li>
-            <li>Få stöd med avtal, leveranser och juridik</li>
+            <li data-translate="featuresConnect1"></li>
+            <li data-translate="featuresConnect2"></li>
+            <li data-translate="featuresConnect3"></li>
           </ul>
         </div>
       </div>
     </section>
-    
-    
 
-    <section id="pricing" class="pricing-wrapper section-hidden">
-      <h2>Prisplaner som växer med dig</h2>
-      <p class="pricing-intro">
-        Plattformen kommer att vara helt kostnadsfri att använda. Du får direkt tillgång till kärnfunktionerna – utan att behöva betala något.
-        I framtiden kommer det finnas möjlighet att betala för vissa tilläggstjänster och utökade funktioner för dig som vill spara ännu mer tid och pengar i bolaget.
-      </p>
-    
-      <div class="pricing-cards">
-        <div class="pricing-card">
-          <h3>Kostnadsfri Tillgång</h3>
-          <ul class="features-list">
-            <li>Hitta leverantörer och entreprenörer</li>
-            <li>Kommunikation direkt i plattformen</li>
-            <li>Projektverktyg och grundläggande funktioner</li>
-            <li>Testa plattformen i lugn och ro</li>
-          </ul>
-        </div>
-    
-        <div class="pricing-card">
-          <h3>Funktioner du kan låsa upp senare</h3>
-          <ul class="features-list">
-            <li>E-signering & dokumenthantering</li>
-            <li>Juridisk rådgivning och konfliktlösning</li>
-            <li>Utökade AI-insikter & support</li>
-            <li>Fler användare och teamhantering</li>
-          </ul>
-          <p class="coming-soon-note">Tillvalsfunktioner som kan aktiveras vid behov – inga köp är möjliga ännu.</p>
-        </div>
-      </div>
-    </section>
-    
     <section id="about" class="about-wrapper section-hidden">
       <div class="about-card">
         <div class="about-top">
-          <h2 class="about-title"><span class="highlight">Byggbranschens</span> framtid formas av oss</h2>
-          <p class="about-subtitle">
-            Vi är ett svenskt team som brinner för att revolutionera byggbranschen genom digitalisering.
-            Vår plattform förenklar kontakten mellan leverantörer och kunder, och hjälper till att skapa
-            mer transparens och effektivitet i byggindustrin.
-          </p>
+          <h2 class="about-title"><span class='highlight-bransch' data-translate="aboutTitleHighlight"></span> <span data-translate="aboutTitle"></span></h2>
+          <p class="about-subtitle" data-translate="aboutSubtitle"></p>
         </div>
     
         <div class="about-bottom">
           <div class="about-text">
-            <h3>Vår vision</h3>
-            <p>
-              Vi vill skapa en mer rättvis, transparent och effektiv byggmarknad för alla aktörer – från stora byggbolag till enskilda entreprenörer.
-              Genom att kombinera teknik, juridisk expertis och branschkunskap skapar vi framtidens plattform för upphandling och samarbete.
-            </p>
+            <h3 data-translate="aboutVisionTitle"></h3>
+            <p data-translate="aboutVisionText"></p>
           </div>
-          
         </div>
       </div>
     </section>
-    
-    
-    
-    
 
+    <section id="pricing" class="pricing-wrapper section-hidden">
+      <h2 data-translate="pricingTitle"></h2>
+      <p class="pricing-intro" data-translate="pricingIntro"></p>
+    
+      <div class="pricing-cards">
+        <div class="pricing-card">
+          <h3 data-translate="pricingFreeTitle"></h3>
+          <ul class="features-list">
+            <li data-translate="pricingFree1"></li>
+            <li data-translate="pricingFree2"></li>
+            <li data-translate="pricingFree3"></li>
+            <li data-translate="pricingFree4"></li>
+          </ul>
+        </div>
+    
+        <div class="pricing-card">
+          <h3 data-translate="pricingFutureTitle"></h3>
+          <ul class="features-list">
+            <li data-translate="pricingFuture1"></li>
+            <li data-translate="pricingFuture2"></li>
+            <li data-translate="pricingFuture3"></li>
+            <li data-translate="pricingFuture4"></li>
+          </ul>
+          <p class="coming-soon-note" data-translate="pricingFutureNote"></p>
+        </div>
+      </div>
+    </section>
+    <div class="section-divider"></div>
     <section class="cta-section section-hidden">
       <div class="cta-container">
-        <h2>Bli först med att testa framtidens byggplattform!</h2>
-        <p>
-          Registrera dig för vårt nyhetsbrev och få exklusiv tillgång till
-          uppdateringar, lanseringsdatum och tidig åtkomst till plattformen.
-        </p>
-        <button class="cta-btn">Anmäl Dig Nu</button>
+        <h2 data-translate="newsletterHeading"></h2>
+        <p data-translate="newsletterSub"></p>
+        <button class="cta-btn" data-translate="heroCTA" onclick="toggleModal(true)"></button>
       </div>
     </section>
 
     <footer class="section-hidden">
       <div class="footer-column">
-        <h4>Kontakt</h4>
-        <p>oe@constructionsourcing.se</p>
-        <p>+46 73 435 35 88</p>
-        <p class="copyright" >© 2024 Construction Sourcing Sweden AB all rights reserved</p>
+        <h4 data-translate="footerContact"></h4>
+        <p data-translate="footerEmail"></p>
+        <p data-translate="footerPhone"></p>
+        <p class="copyright" data-translate="footerCompany"></p>
       </div>
       <div class="footer-column">
-        <h4>Adress</h4>
-        <p>Vittangigatan 10, 162 61</p>
-        <p>Vällingby Sweden</p>
+        <h4 data-translate="footerAddress"></h4>
+        <p data-translate="footerStreet"></p>
+        <p data-translate="footerCity"></p>
       </div>
       <div class="footer-column">
-        <h4>Social</h4>
+        <h4 data-translate="footerSocial"></h4>
         <a href="https://www.linkedin.com/company/construction-sourcing/posts/?feedView=all" target="_blank" rel="noopener noreferrer">
-          <i class="fab fa-linkedin"></i> LinkedIn
+          <i class="fab fa-linkedin"></i>
         </a>
       </div>
       
@@ -277,48 +244,37 @@
     <div id="popup-root">
       <div class="popup-overlay" id="newsletterModal">
         <div class="popup-box">
-          <button class="close-btn" onclick="toggleModal(false)">✕</button>
-          <h3>Få regelbundna uppdateringar om vår plattform.</h3>
+          <button class="close-btn" onclick="toggleModal(false)" data-translate="closeButton"></button>
+          <h3 data-translate="popupTitle"></h3>
           <form class="popup-form">
-            <input type="email" placeholder="E‑post" required />
+            <input type="email" placeholder="" data-translate="popupEmailPlaceholder" required />
             <div class="phone-input">
               <select id="countrySelect" onchange="updateFlagAndCode()">
-                <option value="se" data-code="46">🇸🇪 SE</option>
-                <option value="dk" data-code="45">🇩🇰 DK</option>
-                <option value="no" data-code="47">🇳🇴 NO</option>
-                <option value="fi" data-code="358">🇫🇮 FI</option>
-                <option value="de" data-code="49">🇩🇪 DE</option>
-                <option value="fr" data-code="33">🇫🇷 FR</option>
-                <option value="es" data-code="34">🇪🇸 ES</option>
-                <option value="it" data-code="39">🇮🇹 IT</option>
-                <option value="nl" data-code="31">🇳🇱 NL</option>
-                <option value="be" data-code="32">🇧🇪 BE</option>
+                <option value="se" data-code="46" data-translate="countrySE"></option>
+                <option value="dk" data-code="45" data-translate="countryDK"></option>
+                <option value="no" data-code="47" data-translate="countryNO"></option>
+                <option value="fi" data-code="358" data-translate="countryFI"></option>
+                <option value="de" data-code="49" data-translate="countryDE"></option>
+                <option value="fr" data-code="33" data-translate="countryFR"></option>
+                <option value="es" data-code="34" data-translate="countryES"></option>
+                <option value="it" data-code="39" data-translate="countryIT"></option>
+                <option value="nl" data-code="31" data-translate="countryNL"></option>
+                <option value="be" data-code="32" data-translate="countryBE"></option>
               </select>
-              <input type="tel" id="phoneNumber" placeholder="+46" required />
+              <input type="tel" id="phoneNumber" placeholder="" data-translate="popupPhonePlaceholder" required />
             </div>
-            <button type="submit" class="submit-btn">Sign Up</button>
-            <button
-              type="button"
-              class="decline-btn"
-              onclick="toggleModal(false)"
-            >
-              Nej, Tack
-            </button>
+            <button type="submit" class="submit-btn" data-translate="popupSubmit"></button>
+            <button type="button" class="decline-btn" onclick="toggleModal(false)" data-translate="popupDecline"></button>
           </form>
-          <p class="disclaimer">
-            Du anmäler dig för att få regelbundna uppdateringar via e‑post och
-            kan när som helst avsluta prenumerationen.
-          </p>
+          <p class="disclaimer" data-translate="popupDisclaimer"></p>
         </div>
       </div>
 
       <div class="popup-overlay" id="confirmationPopup">
         <div class="popup-box">
-          <h3>Tack för din anmälan!</h3>
-          <p>Du kommer nu få regelbundna uppdateringar om plattformen.</p>
-          <button class="submit-btn" onclick="toggleConfirmation(false)">
-            Stäng
-          </button>
+          <h3 data-translate="confirmationTitle"></h3>
+          <p data-translate="confirmationText"></p>
+          <button class="submit-btn" onclick="toggleConfirmation(false)" data-translate="confirmationClose"></button>
         </div>
       </div>
     </div>
