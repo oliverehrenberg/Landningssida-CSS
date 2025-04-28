@@ -503,7 +503,6 @@ html {
   border: 1px solid rgba(255, 255, 255, 0.05);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   position: relative;
-  overflow: hidden;
 }
 
 .feature-card:hover {
@@ -644,7 +643,7 @@ html {
 =============================== */
 .pricing-wrapper {
   max-width: 1200px;
-  margin: 6rem auto;
+  margin: 2.5rem auto;
   padding: 0 1rem;
   text-align: center;
 }
@@ -657,38 +656,72 @@ html {
 
 .pricing-intro {
   color: #a7a9be;
-  max-width: 650px;
-  margin: 0.5rem auto 3rem;
+  max-width: 900px;
+  margin: 0.5rem auto;
   line-height: 1.5;
+  text-align: center;
 }
 
 .pricing-cards {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 2rem;
-  justify-content: center;
 }
 
 .pricing-card {
-  background: linear-gradient(
-    135deg,
-    rgba(28, 26, 46, 0.7),
-    rgba(25, 24, 37, 0.9)
-  );
-  border: 1px solid rgba(255, 255, 255, 0.05);
+  background: linear-gradient(to bottom, rgba(28, 26, 46, 0.6) 0%, rgba(28, 26, 46, 0.6) 35%, rgba(229, 180, 71, 0.4) 100%);
   border-radius: 16px;
-  padding: 2rem;
-  flex: 1 1 250px;
-  min-width: 250px;
-  max-width: 320px;
-  position: relative;
+  padding: 1.5rem;
+  text-align: left;
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
 }
 
 .pricing-card:hover {
-  transform: translateY(-8px) scale(1.02);
-  box-shadow: 0 12px 40px rgba(249, 200, 81, 0.1),
-    0 12px 40px rgba(232, 83, 249, 0.1);
+  transform: translateY(-10px) scale(1.03);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  z-index: 1;
+}
+
+.pricing-card .expanded-info {
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease, opacity 0.4s ease;
+}
+
+.pricing-card:hover .expanded-info {
+  max-height: 200px;
+  opacity: 1;
+}
+
+/* Remove click-based styles */
+.pricing-card.expanded {
+  transform: none;
+  box-shadow: none;
+}
+
+.pricing-card.expanded .expanded-info {
+  max-height: none;
+  opacity: 1;
+}
+
+/* Ensure mobile hover works with touch */
+@media (max-width: 767px) {
+  .pricing-card {
+    cursor: pointer;
+  }
+  
+  .pricing-card:active {
+    transform: scale(1.05);
+  }
+  
+  .pricing-card:active .expanded-info {
+    max-height: 200px;
+    opacity: 1;
+  }
 }
 
 .pricing-card h3 {
@@ -736,19 +769,10 @@ html {
   width: 100%;
 }
 
-.popular {
-  background: linear-gradient(
-    135deg,
-    rgba(249, 200, 81, 0.3),
-    rgba(232, 83, 249, 0.2)
-  );
-  border: 1px solid rgba(255, 255, 255, 0.15);
-}
-
 .popular-badge {
   position: absolute;
-  top: -10px;
-  right: -10px;
+  top: -0.75rem;
+  right: -0.75rem;
   background: linear-gradient(135deg, #ffdc7a, #fa73fd);
   color: #0f0e17;
   font-weight: 600;
@@ -1282,4 +1306,162 @@ footer {
   width: 100%;
   max-width: 1200px;
   margin: 2rem auto;
+}
+
+.coming-soon-badge {
+  position: absolute;
+  top: -0.75rem;
+  right: -0.75rem;
+  background: linear-gradient(135deg, #ffdc7a, #fa73fd);
+  color: #0f0e17;
+  font-weight: 600;
+  font-size: 0.75rem;
+  padding: 0.4rem 0.8rem;
+  border-radius: 8px;
+}
+
+.pricing-prelaunch-note {
+  text-align: center;
+  color: #f9c851;
+  font-weight: 600;
+  margin-top: 2.5rem;
+  margin-bottom: 1.5rem;
+  font-size: 1.05rem;
+}
+
+.pricing-comparison-table-wrapper {
+  overflow-x: auto;
+  margin: 2.5rem 0 0 0;
+}
+
+.pricing-comparison-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  background: linear-gradient(to bottom, rgba(28, 26, 46, 0.6) 0%, rgba(28, 26, 46, 0.6) 35%, rgba(229, 180, 71, 0.4) 100%);
+  color: #fff;
+  border-radius: 18px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.18);
+  font-size: 1rem;
+  min-width: 700px;
+  overflow: hidden;
+}
+
+.pricing-comparison-table th,
+.pricing-comparison-table td {
+  padding: 1.1rem 1rem;
+  text-align: center;
+  border-bottom: 1px solid rgba(255,255,255,0.07);
+}
+
+.pricing-comparison-table th {
+  background: rgba(249, 200, 81, 0.08);
+  font-size: 1.1rem;
+  font-weight: 700;
+  position: relative;
+}
+
+.pricing-comparison-table thead th {
+  border-bottom: 2px solid #f9c851;
+}
+
+.pricing-comparison-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.pricing-comparison-table td:first-child {
+  text-align: left;
+  font-weight: 600;
+  background: rgba(255,255,255,0.03);
+  min-width: 160px;
+}
+
+.pricing-comparison-table td {
+  vertical-align: middle;
+}
+
+.pricing-comparison-table button.pricing-btn {
+  margin: 0.5rem 0;
+  width: 90%;
+  max-width: 200px;
+}
+
+.coming-soon-badge {
+  position: absolute;
+  top: -0.75rem;
+  right: -0.75rem;
+  background: linear-gradient(135deg, #ffdc7a, #fa73fd);
+  color: #0f0e17;
+  font-weight: 600;
+  font-size: 0.75rem;
+  padding: 0.4rem 0.8rem;
+  border-radius: 8px;
+  z-index: 2;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+  letter-spacing: 0.02em;
+}
+
+.bas-details {
+  background: rgba(28, 26, 46, 0.85);
+  border-radius: 14px;
+  margin: 2.5rem auto 0 auto;
+  max-width: 700px;
+  padding: 2rem 1.5rem 1.5rem 1.5rem;
+  color: #fff;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.10);
+}
+.bas-details h3 {
+  font-size: 1.25rem;
+  margin-bottom: 1.2rem;
+  color: #f9c851;
+  text-align: center;
+}
+.bas-details ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.bas-details li {
+  margin-bottom: 0.7rem;
+  padding-left: 0.2rem;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+@media (max-width: 900px) {
+  .pricing-comparison-table {
+    font-size: 0.95rem;
+    min-width: 600px;
+  }
+  .bas-details {
+    max-width: 98vw;
+    padding: 1.2rem 0.5rem 1rem 0.5rem;
+  }
+}
+@media (max-width: 600px) {
+  .pricing-comparison-table {
+    font-size: 0.92rem;
+    min-width: 480px;
+  }
+  .pricing-comparison-table th,
+  .pricing-comparison-table td {
+    padding: 0.7rem 0.4rem;
+  }
+  .bas-details h3 {
+    font-size: 1.05rem;
+  }
+}
+
+.free-badge {
+  display: block;
+  margin-top: 0.35em;
+  background: linear-gradient(135deg, #ffdc7a, #fa73fd);
+  color: #0f0e17;
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 0.28em 0.9em;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+  letter-spacing: 0.02em;
+  line-height: 1.2;
 }
