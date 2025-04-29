@@ -102,41 +102,103 @@ document.addEventListener("DOMContentLoaded", () => {
   // Fade in and reveal sections (except footer) using GSAP autoAlpha and y offset
   sections.forEach((section) => {
     if (!section.matches('footer')) {
-      gsap.fromTo(
-        section,
-        { autoAlpha: 0, y: 40 },
-        {
-          autoAlpha: 1,
-          y: 0,
-          ease: "power1.out",
-          duration: 1,
-          scrollTrigger: {
-            trigger: section,
-            start: "top 80%",
-            end: "bottom 20%",
-            toggleActions: "play reverse play reverse",
-          },
+      // Set initial state
+      gsap.set(section, { autoAlpha: 0, y: 40 });
+      
+      // Create ScrollTrigger animation
+      ScrollTrigger.create({
+        trigger: section,
+        start: "top 80%",
+        end: "bottom 20%",
+        onEnter: () => {
+          section.classList.remove('section-hidden');
+          gsap.to(section, {
+            autoAlpha: 1,
+            y: 0,
+            duration: 0.8,
+            ease: "power1.out",
+            onComplete: () => {
+              // After section is visible, animate feature cards
+              if (section.classList.contains('features-wrapper')) {
+                const featureCards = section.querySelectorAll('.feature-card');
+                featureCards.forEach((card, i) => {
+                  const elements = card.querySelectorAll('.feature-content, .feature-visual, .feature-icon, h3, p');
+                  
+                  gsap.fromTo(elements, 
+                    { opacity: 0, y: 20 },
+                    {
+                      opacity: 1,
+                      y: 0,
+                      duration: 0.8,
+                      delay: i * 0.0001,
+                      ease: "expo.out",
+                      scrollTrigger: {
+                        trigger: card,
+                        start: "top center",
+                        end: "bottom center",
+                        toggleActions: "play reverse play reverse"
+                      }
+                    }
+                  );
+
+                  // Add active class when card is in view
+                  ScrollTrigger.create({
+                    trigger: card,
+                    start: "top center",
+                    end: "bottom center",
+                    onEnter: () => {
+                      card.classList.add('active');
+                      // Add background gradient when card is active
+                      gsap.to(card, {
+                        background: 'linear-gradient(to bottom, rgba(28, 26, 46, 0.6) 0%, rgba(28, 26, 46, 0.6) 35%, rgba(229, 180, 71, 0.4) 100%)',
+                        duration: 0.8,
+                        ease: "expo.out"
+                      });
+                    },
+                    onLeaveBack: () => {
+                      card.classList.remove('active');
+                      // Remove background gradient when card is not active
+                      gsap.to(card, {
+                        background: 'transparent',
+                        duration: 0.8,
+                        ease: "expo.out"
+                      });
+                    }
+                  });
+                });
+              }
+            }
+          });
+        },
+        onLeaveBack: () => {
+          section.classList.add('section-hidden');
+          gsap.to(section, {
+            autoAlpha: 0,
+            y: 40,
+            duration: 1,
+            ease: "power1.out"
+          });
         }
-      );
+      });
     }
   });
 
   // Footer animation - stays visible once triggered
-  gsap.fromTo(
-    "footer",
-    { autoAlpha: 0, y: 40 },
-    {
-      autoAlpha: 1,
-      y: 0,
-      ease: "power1.out",
-      duration: 1,
-      scrollTrigger: {
-        trigger: "footer",
-        start: "top 90%",
-        toggleActions: "play none none none",
-      },
+  gsap.set("footer", { autoAlpha: 0, y: 40 });
+  ScrollTrigger.create({
+    trigger: "footer",
+    start: "top 90%",
+    onEnter: () => {
+      const footer = document.querySelector('footer');
+      footer.classList.remove('section-hidden');
+      gsap.to(footer, {
+        autoAlpha: 1,
+        y: 0,
+        duration: 1,
+        ease: "power1.out"
+      });
     }
-  );
+  });
 
   // Split headings into word spans and animate each word
   const splitAndAnimate = (selector) => {
@@ -193,64 +255,45 @@ document.addEventListener("DOMContentLoaded", () => {
     );
   }
   
+  // Remove section-hidden class from feature cards
+  document.querySelectorAll('.feature-card').forEach(card => {
+    card.classList.remove('section-hidden');
+  });
+  
   featureCards.forEach((card, i) => {
     const content = card.querySelector('.feature-content');
     const visual = card.querySelector('.feature-visual');
     const icon = card.querySelector('.feature-icon');
+    const title = card.querySelector('h3');
+    const description = card.querySelector('p');
 
-    // Add active class when card is in view
+    // Set initial state
+    gsap.set([content, visual, icon, title, description], { 
+      opacity: 0,
+      y: 20
+    });
+
+    // Create ScrollTrigger for each card
     ScrollTrigger.create({
       trigger: card,
       start: "top center",
       end: "bottom center",
-      onEnter: () => card.classList.add('active'),
-      onLeaveBack: () => card.classList.remove('active')
-    });
-
-    // Content animation
-    gsap.from(content, {
-      x: 100,
-      opacity: 0,
-      duration: 0.8,
-      ease: "power2.out",
-      scrollTrigger: {
-        trigger: card,
-        start: "top center",
-        end: "center center",
-        scrub: 1,
-        toggleActions: "play none none reverse"
-      }
-    });
-
-    // Visual animation
-    gsap.from(visual, {
-      x: -100,
-      scale: 0.9,
-      opacity: 0,
-      duration: 0.8,
-      ease: "power2.out",
-      scrollTrigger: {
-        trigger: card,
-        start: "top center",
-        end: "center center",
-        scrub: 1,
-        toggleActions: "play none none reverse"
-      }
-    });
-
-    // Icon animation
-    gsap.from(icon, {
-      scale: 0,
-      rotation: -15,
-      opacity: 0,
-      duration: 0.6,
-      ease: "back.out(1.7)",
-      scrollTrigger: {
-        trigger: card,
-        start: "top center",
-        end: "center center",
-        scrub: 0.8,
-        toggleActions: "play none none reverse"
+      onEnter: () => {
+        gsap.to([content, visual, icon, title, description], {
+          opacity: 1,
+          y: 0,
+          duration: 0.8,
+          stagger: 0.1,
+          ease: "expo.out"
+        });
+      },
+      onLeaveBack: () => {
+        gsap.to([content, visual, icon, title, description], {
+          opacity: 0,
+          y: 20,
+          duration: 0.8,
+          ease: "expo.out"
+        });
       }
     });
 
