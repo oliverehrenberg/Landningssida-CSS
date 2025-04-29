@@ -1439,12 +1439,14 @@ footer {
 }
 
 .features-summary-wrapper {
-  background: linear-gradient(to bottom, #0c0c1f, #0c0c1f); /* samma som pricing section */
+  background: linear-gradient(to bottom, #0c0c1f, #0c0c1f);
   padding: 6rem 2rem;
   color: white;
   text-align: center;
   min-height: unset;
   display: block;
+  position: relative;
+  overflow: hidden;
 }
 
 .features-summary-wrapper h2 {
@@ -1474,39 +1476,61 @@ footer {
   flex: 1 1 300px;
   max-width: 400px;
   text-align: left;
-}
-
-.features-summary-wrapper .pricing-card h3 {
-  color: white;
-  font-size: 1.4rem;
-  margin-bottom: 1rem;
-}
-
-.features-summary-wrapper .features-list {
-  list-style: none;
-  padding-left: 0;
-}
-
-.features-summary-wrapper .features-list li {
+  transition: all 0.3s ease;
   position: relative;
-  padding-left: 1.5rem;
-  margin-bottom: 0.75rem;
-  color: #eee;
+  overflow: hidden;
 }
 
-.features-summary-wrapper .features-list li::before {
-  content: "•";
-  color: #ffc107;
-  position: absolute;
-  left: 0;
-  top: 0;
+.features-summary-wrapper .pricing-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.features-summary-wrapper .pricing-card .expanded-info {
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  margin-top: 1rem;
+  padding: 0 1rem;
+  color: #a7a9be;
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+.features-summary-wrapper .pricing-card:hover .expanded-info {
+  max-height: 200px;
+  opacity: 1;
+  padding: 1rem;
 }
 
 @media (max-width: 900px) {
+  .use-case-card {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .use-case-content {
+    text-align: center;
+  }
+  
+  .carousel-prev,
+  .carousel-next {
+    width: 30px;
+    height: 30px;
+  }
+}
+
+@media (max-width: 768px) {
+  .use-cases-carousel {
+    padding: 0 2rem;
+  }
+  
   .features-summary-wrapper .pricing-cards {
     flex-direction: column;
     align-items: center;
   }
+  
   .features-summary-wrapper .pricing-card {
     max-width: 100%;
     width: 100%;
@@ -1998,4 +2022,98 @@ button[type="button"]:hover {
 
 #confirmationPopup .popup-box {
   animation: successPulse 0.5s ease-in-out;
+}
+
+.use-cases-carousel {
+  position: relative;
+  max-width: 1200px;
+  margin: 3rem auto;
+  padding: 0 4rem;
+}
+
+.carousel-track {
+  display: flex;
+  gap: 2rem;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  padding: 1rem 0;
+}
+
+.use-case-card {
+  flex: 0 0 100%;
+  background: rgba(28, 26, 46, 0.6);
+  border-radius: 16px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  padding: 2rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.use-case-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.use-case-visual {
+  flex: 0 0 40%;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.use-case-visual img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+.use-case-content {
+  flex: 1;
+  text-align: left;
+}
+
+.use-case-content h4 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: #f9c851;
+}
+
+.use-case-content p {
+  color: #a7a9be;
+  line-height: 1.6;
+}
+
+.carousel-prev,
+.carousel-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(28, 26, 46, 0.8);
+  border: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: #f9c851;
+  transition: all 0.3s ease;
+  z-index: 2;
+}
+
+.carousel-prev:hover,
+.carousel-next:hover {
+  background: rgba(249, 200, 81, 0.2);
+  transform: translateY(-50%) scale(1.1);
+}
+
+.carousel-prev {
+  left: 0;
+}
+
+.carousel-next {
+  right: 0;
 }

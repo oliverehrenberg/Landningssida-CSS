@@ -7,6 +7,41 @@ document.addEventListener("DOMContentLoaded", () => {
   lucide.createIcons();
   gsap.registerPlugin(ScrollTrigger);
 
+  // Use Cases Carousel
+  const carouselTrack = document.querySelector('.carousel-track');
+  const carouselPrev = document.querySelector('.carousel-prev');
+  const carouselNext = document.querySelector('.carousel-next');
+  const useCaseCards = document.querySelectorAll('.use-case-card');
+  let currentIndex = 0;
+
+  function updateCarousel() {
+    const cardWidth = useCaseCards[0].offsetWidth;
+    carouselTrack.style.transform = `translateX(-${currentIndex * (cardWidth + 32)}px)`;
+    
+    // Update button states
+    carouselPrev.style.opacity = currentIndex === 0 ? '0.5' : '1';
+    carouselNext.style.opacity = currentIndex === useCaseCards.length - 1 ? '0.5' : '1';
+  }
+
+  if (carouselPrev && carouselNext) {
+    carouselPrev.addEventListener('click', () => {
+      if (currentIndex > 0) {
+        currentIndex--;
+        updateCarousel();
+      }
+    });
+
+    carouselNext.addEventListener('click', () => {
+      if (currentIndex < useCaseCards.length - 1) {
+        currentIndex++;
+        updateCarousel();
+      }
+    });
+
+    // Initialize carousel
+    updateCarousel();
+  }
+
   // Desktop-only scroll effects: sticky, parallax, and zoom
   ScrollTrigger.matchMedia({
     "(min-width: 768px)": function () {
