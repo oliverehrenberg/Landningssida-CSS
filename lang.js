@@ -206,7 +206,10 @@ const translations = {
       pricingFreeChat: "Team chat only",
       pricingFreeNotifications: "100 email notifications/month",
       pricingFreeSupport: "Self-service FAQ only",
-      pricingFreeExtras: "Platform branding only"
+      pricingFreeExtras: "Platform branding only",
+      emailError: "Please enter a valid email address",
+      phoneError: "Please enter a valid phone number",
+      submitError: "Something went wrong. Please try again."
     },
     sv: {
       features: "Funktioner",
@@ -415,7 +418,10 @@ const translations = {
       pricingFreeChat: "Endast team-chatt",
       pricingFreeNotifications: "100 e-postaviseringar/månad",
       pricingFreeSupport: "Endast självbetjäning/FAQ",
-      pricingFreeExtras: "Endast plattformens branding"
+      pricingFreeExtras: "Endast plattformens branding",
+      emailError: "Vänligen ange en giltig e-postadress",
+      phoneError: "Vänligen ange ett giltigt telefonnummer",
+      submitError: "Något gick fel. Vänligen försök igen."
     }
   };
   
