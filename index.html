@@ -25,10 +25,10 @@
     
       <nav class="nav-right">
         <div class="language-switcher" style="display: flex; gap: 1rem; margin-right: 4rem;">
-          <a href="#" onclick="switchLanguage('en'); return false;">
+          <a href="#" data-lang="en">
             <img src="assets/uk-flag.svg" alt="English" />
           </a>
-          <a href="#" onclick="switchLanguage('sv'); return false;">
+          <a href="#" data-lang="sv">
             <img src="assets/sweden-flag.svg" alt="Swedish" />
           </a>
         </div>
@@ -380,55 +380,111 @@
     </section>
 
     <footer class="section-hidden">
-      <div class="footer-grid">
-        <div class="footer-column">
-          <h4 data-translate="footerCompanyTitle"></h4>
-          <p data-translate="footerCompanyDesc"></p>
-          <div class="footer-social">
-            <h4 data-translate="footerSocial"></h4>
-            <div class="social-links">
-              <a href="https://www.linkedin.com/company/construction-sourcing/posts/?feedView=all" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-                <i class="fab fa-linkedin"></i>
-              </a>
-              <a href="https://twitter.com/ConstructionSrc" target="_blank" rel="noopener noreferrer" aria-label="Twitter">
-                <i class="fab fa-twitter"></i>
-              </a>
+      <div class="footer-newsletter">
+        <div class="newsletter-content">
+          <h3 data-translate="footerNewsletterTitle"></h3>
+          <p data-translate="footerNewsletterDesc"></p>
+          <form class="footer-form">
+            <div class="form-group">
+              <input type="email" placeholder="Email" data-translate="popupEmailPlaceholder" required />
+              <button type="submit" class="footer-submit-btn" data-translate="footerNewsletterButton"></button>
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <div class="footer-main">
+        <div class="footer-highlights">
+          <div class="highlight-item">
+            <i class="fas fa-rocket"></i>
+            <h4 data-translate="footerHighlightLaunch"></h4>
+            <p data-translate="footerHighlightLaunchDesc"></p>
+          </div>
+          <div class="highlight-item">
+            <i class="fas fa-handshake"></i>
+            <h4 data-translate="footerHighlightEarly"></h4>
+            <p data-translate="footerHighlightEarlyDesc"></p>
+          </div>
+          <div class="highlight-item">
+            <i class="fas fa-star"></i>
+            <h4 data-translate="footerHighlightBeta"></h4>
+            <p data-translate="footerHighlightBetaDesc"></p>
+          </div>
+        </div>
+
+        <div class="footer-grid">
+          <div class="footer-column">
+            <h4 data-translate="footerCompanyTitle"></h4>
+            <p data-translate="footerCompanyDesc"></p>
+          </div>
+
+          <div class="footer-column">
+            <h4 data-translate="footerResourcesTitle"></h4>
+            <nav class="footer-nav">
+              <a href="#" data-translate="footerBlog"></a>
+              <a href="#" data-translate="footerGuides"></a>
+              <a href="#" data-translate="footerWebinars"></a>
+              <a href="#" data-translate="footerSupport"></a>
+            </nav>
+          </div>
+
+          <div class="footer-column">
+            <h4 data-translate="footerContact"></h4>
+            <div class="contact-info">
+              <p>
+                <i class="fas fa-envelope"></i>
+                <span data-translate="footerEmail"></span>
+              </p>
+              <p>
+                <i class="fas fa-phone"></i>
+                <span data-translate="footerPhone"></span>
+              </p>
+              <div class="footer-address">
+                <p>
+                  <i class="fas fa-location-dot"></i>
+                  <span data-translate="footerStreet"></span>
+                </p>
+                <p data-translate="footerCity"></p>
+              </div>
+            </div>
+            <div class="office-hours">
+              <h5 data-translate="footerOfficeHoursTitle"></h5>
+              <p data-translate="footerOfficeHours"></p>
+              <p data-translate="footerEmergencySupport"></p>
             </div>
           </div>
-        </div>
 
-        <div class="footer-column">
-          <h4 data-translate="footerContact"></h4>
-          <p><i class="fas fa-envelope"></i> <span data-translate="footerEmail"></span></p>
-          <p><i class="fas fa-phone"></i> <span data-translate="footerPhone"></span></p>
-          <div class="footer-address">
-            <h4 data-translate="footerAddress"></h4>
-            <p><i class="fas fa-location-dot"></i> <span data-translate="footerStreet"></span></p>
-            <p data-translate="footerCity"></p>
+          <div class="footer-column footer-logo">
+            <img src="assets/logo.png" alt="Construction Sourcing Logo" />
+            <div class="language-switcher-footer">
+              <button class="lang-btn" data-lang="sv">
+                <img src="assets/sweden-flag.svg" alt="Swedish" />
+                <span>Svenska</span>
+              </button>
+              <button class="lang-btn" data-lang="en">
+                <img src="assets/uk-flag.svg" alt="English" />
+                <span>English</span>
+              </button>
+            </div>
+            <p class="beta-tag" data-translate="footerBetaTag"></p>
           </div>
         </div>
 
-        <div class="footer-column">
-          <h4 data-translate="footerLinks"></h4>
-          <nav class="footer-nav">
-            <a href="#funktioner" data-translate="features"></a>
-            <a href="#pricing" data-translate="pricing"></a>
-            <a href="#about" data-translate="about"></a>
+        <div class="footer-bottom">
+          <div class="footer-links">
             <a href="privacy-policy.html" data-translate="footerPrivacy"></a>
             <a href="terms.html" data-translate="footerTerms"></a>
-          </nav>
-        </div>
-
-        <div class="footer-column footer-logo">
-          <img src="assets/logo.png" alt="Construction Sourcing Logo" />
-          <p class="copyright" data-translate="footerCompany"></p>
-          <div class="language-switcher-footer">
-            <a href="#" onclick="switchLanguage('en'); return false;">
-              <img src="assets/uk-flag.svg" alt="English" /> <span>English</span>
+            <a href="cookies.html" data-translate="footerCookies"></a>
+            <a href="sitemap.html" data-translate="footerSitemap"></a>
+          </div>
+          <div class="footer-bottom-right">
+            <a href="https://www.linkedin.com/company/construction-sourcing/posts/?feedView=all" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" class="footer-linkedin">
+              <i class="fab fa-linkedin"></i>
             </a>
-            <a href="#" onclick="switchLanguage('sv'); return false;">
-              <img src="assets/sweden-flag.svg" alt="Swedish" /> <span>Svenska</span>
-            </a>
+            <p class="copyright">
+              <span data-translate="footerCompany"></span>
+              <span class="footer-version" data-translate="footerVersion"></span>
+            </p>
           </div>
         </div>
       </div>

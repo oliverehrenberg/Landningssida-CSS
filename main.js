@@ -350,4 +350,36 @@ document.addEventListener("DOMContentLoaded", () => {
     const newClone = card.cloneNode(true);
     card.parentNode.replaceChild(newClone, card);
   });
+
+  // Initialize language switchers
+  const langButtons = document.querySelectorAll('.language-switcher .lang-btn, .language-switcher-footer .lang-btn, .language-switcher a');
+  const currentLang = localStorage.getItem('language') || 'sv';
+
+  // Set initial active state
+  langButtons.forEach(btn => {
+    if (btn.dataset.lang === currentLang) {
+      btn.classList.add('active');
+    } else {
+      btn.classList.remove('active');
+    }
+
+    // Add click handler
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      const lang = btn.dataset.lang;
+      window.switchLanguage(lang);
+    });
+  });
+
+  // Update active state when language changes
+  window.addEventListener('languageChanged', (e) => {
+    const newLang = e.detail.lang;
+    langButtons.forEach(btn => {
+      if (btn.dataset.lang === newLang) {
+        btn.classList.add('active');
+      } else {
+        btn.classList.remove('active');
+      }
+    });
+  });
 });
