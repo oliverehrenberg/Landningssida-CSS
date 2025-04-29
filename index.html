@@ -147,7 +147,7 @@
         <div class="carousel-track">
           <div class="use-case-card">
             <div class="use-case-visual">
-              <img src="assets/use-case-procurement.png" alt="Upphandling" />
+              <img src="assets/use-case-procurement.png" alt="Smart Procurement" />
             </div>
             <div class="use-case-content">
               <h4 data-translate="useCase1Title"></h4>
@@ -156,7 +156,7 @@
           </div>
           <div class="use-case-card">
             <div class="use-case-visual">
-              <img src="assets/use-case-quote.png" alt="Offert" />
+              <img src="assets/use-case-project.png" alt="Project Management" />
             </div>
             <div class="use-case-content">
               <h4 data-translate="useCase2Title"></h4>
@@ -165,7 +165,7 @@
           </div>
           <div class="use-case-card">
             <div class="use-case-visual">
-              <img src="assets/use-case-team.png" alt="Teamkommunikation" />
+              <img src="assets/use-case-communication.png" alt="Communication Hub" />
             </div>
             <div class="use-case-content">
               <h4 data-translate="useCase3Title"></h4>
@@ -380,26 +380,57 @@
     </section>
 
     <footer class="section-hidden">
-      <div class="footer-column">
-        <h4 data-translate="footerContact"></h4>
-        <p data-translate="footerEmail"></p>
-        <p data-translate="footerPhone"></p>
-        <p class="copyright" data-translate="footerCompany"></p>
-      </div>
-      <div class="footer-column">
-        <h4 data-translate="footerAddress"></h4>
-        <p data-translate="footerStreet"></p>
-        <p data-translate="footerCity"></p>
-      </div>
-      <div class="footer-column">
-        <h4 data-translate="footerSocial"></h4>
-        <a href="https://www.linkedin.com/company/construction-sourcing/posts/?feedView=all" target="_blank" rel="noopener noreferrer">
-          <i class="fab fa-linkedin"></i>
-        </a>
-      </div>
-      
-      <div class="footer-column footer-logo">
-        <img src="assets/logo.png" alt="Construction Sourcing Logo" style="height: 50px;"/>
+      <div class="footer-grid">
+        <div class="footer-column">
+          <h4 data-translate="footerCompanyTitle"></h4>
+          <p data-translate="footerCompanyDesc"></p>
+          <div class="footer-social">
+            <h4 data-translate="footerSocial"></h4>
+            <div class="social-links">
+              <a href="https://www.linkedin.com/company/construction-sourcing/posts/?feedView=all" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                <i class="fab fa-linkedin"></i>
+              </a>
+              <a href="https://twitter.com/ConstructionSrc" target="_blank" rel="noopener noreferrer" aria-label="Twitter">
+                <i class="fab fa-twitter"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer-column">
+          <h4 data-translate="footerContact"></h4>
+          <p><i class="fas fa-envelope"></i> <span data-translate="footerEmail"></span></p>
+          <p><i class="fas fa-phone"></i> <span data-translate="footerPhone"></span></p>
+          <div class="footer-address">
+            <h4 data-translate="footerAddress"></h4>
+            <p><i class="fas fa-location-dot"></i> <span data-translate="footerStreet"></span></p>
+            <p data-translate="footerCity"></p>
+          </div>
+        </div>
+
+        <div class="footer-column">
+          <h4 data-translate="footerLinks"></h4>
+          <nav class="footer-nav">
+            <a href="#funktioner" data-translate="features"></a>
+            <a href="#pricing" data-translate="pricing"></a>
+            <a href="#about" data-translate="about"></a>
+            <a href="privacy-policy.html" data-translate="footerPrivacy"></a>
+            <a href="terms.html" data-translate="footerTerms"></a>
+          </nav>
+        </div>
+
+        <div class="footer-column footer-logo">
+          <img src="assets/logo.png" alt="Construction Sourcing Logo" />
+          <p class="copyright" data-translate="footerCompany"></p>
+          <div class="language-switcher-footer">
+            <a href="#" onclick="switchLanguage('en'); return false;">
+              <img src="assets/uk-flag.svg" alt="English" /> <span>English</span>
+            </a>
+            <a href="#" onclick="switchLanguage('sv'); return false;">
+              <img src="assets/sweden-flag.svg" alt="Swedish" /> <span>Svenska</span>
+            </a>
+          </div>
+        </div>
       </div>
     </footer>
 
