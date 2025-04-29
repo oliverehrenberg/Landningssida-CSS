@@ -86,9 +86,9 @@ const translations = {
       countryBE: "🇧🇪 BE",
       aboutTitleHighlight: "Construction industry's",
       aboutTitle: "future is shaped by us",
-      aboutSubtitle: "We are a Swedish team passionate about revolutionizing the construction industry through digitalization. Our platform simplifies the connection between suppliers and customers, helping to create more transparency and efficiency in the construction industry.",
-      aboutVisionTitle: "Our vision",
-      aboutVisionText: "We want to create a more fair, transparent and efficient construction market for all players – from large construction companies to individual contractors. By combining technology, legal expertise and industry knowledge, we create the future platform for procurement and collaboration.",
+      aboutSubtitle: "Construction Sourcing Sweden AB was founded from our own experiences of the industry's lack of transparency and recurring problems with disputes, late or missing invoice payments, and unreliable actors. During the years with Swedish Construction Sales, where Oliver Ehrenberg was CEO and Anders Niclazon chairman, we helped Nordic construction companies find reliable European suppliers and suppliers establish themselves in the Nordics. We saw how fragmented processes, insufficient communication, and incomplete contact records led to costly delays, increased suspicion, and in the worst case, money laundering. It was this insight – combined with our enthusiasm for technology and trust-based collaborations – that led us to launch Construction Sourcing Sweden AB in June 2024, a fully integrated platform designed to provide full transparency, prevent disputes, and build long-term trust.",
+      aboutVisionTitle: "Our Vision",
+      aboutVisionText: "Our vision is to create the obvious meeting place for all construction companies and suppliers in Europe, where all communication, all contacts, and the entire supply chain are gathered in one place. By centralizing project information, contracts, certificates, financial data, and contact lists in the same platform, we make it easy to send messages, share documents, and verify new partners without unnecessary delay. With automated notifications about invoice payments and built-in due diligence checks, users can in real-time discover unreliable actors and act proactively – all to minimize risk, avoid misunderstandings, and ensure smooth collaborations across borders.",
       featuresSummaryTitle: "What can you do on Construction Sourcing?",
       featuresSummaryIntro: "Our platform streamlines every aspect of construction procurement and project management. From finding suppliers to handling contracts, we've got you covered with powerful tools and features.",
       featuresProjectTitle: "Project & Organization",
@@ -257,7 +257,12 @@ const translations = {
       useCase2Expanded: "Streamline your construction projects with our comprehensive management tools. Create projects, set milestones, track progress, and collaborate with your team in real-time.",
       useCase3Title: "Communication Hub",
       useCase3Desc: "Chat, share documents, and stay updated with real-time notifications.",
-      useCase3Expanded: "Keep your team aligned with our integrated communication tools. Chat in real-time, share documents securely, and stay updated with smart notifications."
+      useCase3Expanded: "Keep your team aligned with our integrated communication tools. Chat in real-time, share documents securely, and stay updated with smart notifications.",
+      aboutFoundersTitle: "Meet the Visionaries Behind Construction Sourcing",
+      aboutOliverRole: "CEO & Co-founder",
+      aboutOliverBio: "Oliver Ehrenberg holds a Bachelor's degree in Innovation Management and is the founder of Neo Marketing, with extensive experience in CRM implementation and data-driven business models. As CEO of Swedish Construction Sales from 2021 to 2024, he led the work of connecting Nordic construction companies to European suppliers and witnessed firsthand how lack of transparency and incorrect communication caused unnecessary conflicts. This insight made him determined to develop a platform that not only handles data but also enables simple, transparent dialogue between all parties – regardless of where in Europe they operate.",
+      aboutAndersRole: "CTO & Co-founder",
+      aboutAndersBio: "Anders Niclazon has over two decades of experience as an entrepreneur and strategic advisor, specializing in HubSpot CRM and digital sales. As chairman of Swedish Construction Sales, he was responsible for partnerships, business development, and structured due diligence processes that significantly reduced disputes and increased trust between customers and suppliers. Together with Oliver, he founded Construction Sourcing Sweden AB to scale up this solution, centralize all contacts and communication flows, and create a secure, efficient platform where every construction company and supplier in Europe can establish themselves, grow, and collaborate successfully."
     },
     sv: {
       features: "Funktioner",
@@ -346,9 +351,9 @@ const translations = {
       countryBE: "🇧🇪 BE",
       aboutTitleHighlight: "Byggbranschens",
       aboutTitle: "framtid formas av oss",
-      aboutSubtitle: "Vi är ett svenskt team som brinner för att revolutionera byggbranschen genom digitalisering. Vår plattform förenklar kontakten mellan leverantörer och kunder, och hjälper till att skapa mer transparens och effektivitet i byggindustrin.",
-      aboutVisionTitle: "Vår vision",
-      aboutVisionText: "Vi vill skapa en mer rättvis, transparent och effektiv byggmarknad för alla aktörer – från stora byggbolag till enskilda entreprenörer. Genom att kombinera teknik, juridisk expertis och branschkunskap skapar vi framtidens plattform för upphandling och samarbete.",
+      aboutSubtitle: "Construction Sourcing Sweden AB grundades ur våra egna erfarenheter av branschens bristande insyn och de återkommande problemen med tvister, sena eller uteblivna fakturabetalningar och oseriösa aktörer. Under åren med Swedish Construction Sales, där Oliver Ehrenberg var verkställande direktör och Anders Niclazon ordförande, hjälpte vi nordiska byggföretag att hitta pålitliga europeiska leverantörer och leverantörer att etablera sig i Norden. Vi såg hur fragmenterade processer, otillräcklig kommunikation och ofullständig kontaktregisterföring ledde till kostsamma förseningar, ökad misstänksamhet och i värsta fall penningtvätt. Det var denna insikt – kombinerad med vår entusiasm för teknik och förtroendebaserade samarbeten – som fick oss att i juni 2024 lansera Construction Sourcing Sweden AB, en helintegrerad plattform framtagen för att ge full transparens, förebygga tvister och bygga långsiktigt förtroende.",
+      aboutVisionTitle: "Vår Vision",
+      aboutVisionText: "Vår vision är att skapa den självklara mötesplatsen för alla byggföretag och leverantörer i Europa, där all kommunikation, alla kontakter och hela leverantörskedjan samlas på ett och samma ställe. Genom att centralisera projektinformation, avtal, certifikat, ekonomiska data och kontaktlistor i samma plattform gör vi det enkelt att skicka meddelanden, dela dokument och verifiera nya samarbetspartner utan onödig fördröjning. Med automatiserade aviseringar om fakturabetalningar och inbyggda due-diligence-kontroller kan användare i realtid upptäcka oseriösa aktörer och agera proaktivt – allt för att minimera risk, undvika missförstånd och säkerställa smidiga samarbeten över landsgränser.",
       featuresSummaryTitle: "Vad kan du göra på Construction Sourcing?",
       featuresSummaryIntro: "Vår plattform effektiviserar varje aspekt av byggupphandling och projekthantering. Från att hitta leverantörer till att hantera avtal, vi har dig täckt med kraftfulla verktyg och funktioner.",
       featuresProjectTitle: "Projekt & Organisation",
@@ -519,7 +524,12 @@ const translations = {
       useCase2Expanded: "Effektivisera dina byggprojekt med våra omfattande hanteringsverktyg. Skapa projekt, sätt milstolpar, följ upp framsteg och samarbeta med ditt team i realtid.",
       useCase3Title: "Kommunikationsnav",
       useCase3Desc: "Chatta, dela dokument och håll dig uppdaterad med realtidsnotifieringar.",
-      useCase3Expanded: "Håll ditt team uppdaterat med våra integrerade kommunikationsverktyg. Chatta i realtid, dela dokument säkert och håll dig uppdaterad med smarta notifieringar."
+      useCase3Expanded: "Håll ditt team uppdaterat med våra integrerade kommunikationsverktyg. Chatta i realtid, dela dokument säkert och håll dig uppdaterad med smarta notifieringar.",
+      aboutFoundersTitle: "Möt Visionärerna Bakom Construction Sourcing",
+      aboutOliverRole: "VD & Medgrundare",
+      aboutOliverBio: "Oliver Ehrenberg är kandidatexamen i innovation management och grundare av Neo Marketing, med bred erfarenhet av CRM-implementation och datadrivna affärsmodeller. Som VD för Swedish Construction Sales 2021–2024 ledde han arbetet med att koppla nordiska byggföretag till europeiska leverantörer och bevittnade på nära håll hur bristande insyn och felaktig kommunikation orsakade onödiga konflikter. Denna insikt gjorde honom fast besluten att utveckla en plattform som inte bara hanterar data utan också möjliggör enkel, transparent dialog mellan alla parter – oavsett var i Europa de verkar.",
+      aboutAndersRole: "CTO & Medgrundare",
+      aboutAndersBio: "Anders Niclazon har över två decennier av erfarenhet som entreprenör och strategisk rådgivare, specialiserad på HubSpot CRM och digital försäljning. Som ordförande i Swedish Construction Sales ansvarade han för partnerskap, affärsutveckling och strukturerade due-diligence-processer som kraftigt minskade tvister och ökade förtroendet mellan kunder och leverantörer. Tillsammans med Oliver grundade han Construction Sourcing Sweden AB för att skala upp denna lösning, centralisera alla kontakter och kommunikationsflöden och skapa en trygg, effektiv plattform där varje byggföretag och leverantör i Europa kan etablera sig, växa och samarbeta framgångsrikt."
     }
   };
   
