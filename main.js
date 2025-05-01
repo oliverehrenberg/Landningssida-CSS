@@ -8,11 +8,25 @@ document.addEventListener("DOMContentLoaded", (() => {
     carouselTrack.style.transform = `translateX(-${currentIndex * (cardWidth + 32)}px)`, 
     carouselPrev.style.opacity = 0 === currentIndex ? "0.5" : "1", carouselNext.style.opacity = currentIndex === useCaseCards.length - 1 ? "0.5" : "1";
   }
-  carouselPrev && carouselNext && (carouselPrev.addEventListener("click", (() => {
-    currentIndex > 0 && (currentIndex--, updateCarousel());
-  })), carouselNext.addEventListener("click", (() => {
-    currentIndex < useCaseCards.length - 1 && (currentIndex++, updateCarousel());
-  })), updateCarousel()), ScrollTrigger.matchMedia({
+  carouselPrev && carouselNext && (
+    carouselPrev.addEventListener("click", () => {
+      if (currentIndex > 0) {
+        currentIndex--;
+        updateCarousel();
+      } else {
+        gsap.fromTo(carouselTrack, { x: 0 }, { x: 20, duration: 0.2, yoyo: true, repeat: 1, ease: "power1.inOut" });
+      }
+    }),
+    carouselNext.addEventListener("click", () => {
+      if (currentIndex < useCaseCards.length - 1) {
+        currentIndex++;
+        updateCarousel();
+      } else {
+        gsap.fromTo(carouselTrack, { x: 0 }, { x: -20, duration: 0.2, yoyo: true, repeat: 1, ease: "power1.inOut" });
+      }
+    }),
+    updateCarousel()
+  ), ScrollTrigger.matchMedia({
     "(min-width: 768px)": function() {
       ScrollTrigger.create({
         trigger: ".hero",
@@ -32,6 +46,17 @@ document.addEventListener("DOMContentLoaded", (() => {
           start: "top top",
           end: "bottom top",
           scrub: !0
+        }
+      }),
+      // Parallax för hero-text
+      gsap.to(".hero-text-container", {
+        yPercent: -15,
+        ease: "none",
+        scrollTrigger: {
+          trigger: ".hero",
+          start: "top top",
+          end: "bottom top",
+          scrub: true
         }
       })), gsap.to(".big-card .text-content", {
         yPercent: -20,
@@ -266,4 +291,54 @@ document.addEventListener("DOMContentLoaded", (() => {
       btn.dataset.lang === newLang ? btn.classList.add("active") : btn.classList.remove("active");
     }));
   }));
+
+  // Lägg till hero intro-animation timeline
+  const heroTimeline = gsap.timeline({ defaults: { duration: 0.8, ease: "power1.out" } });
+  heroTimeline
+    .from(".small-top-text", { autoAlpha: 0, y: -20 })
+    .from(".hero h1", { autoAlpha: 0, y: 50 }, "-=0.4")
+    .from(".subtitle", { autoAlpha: 0, y: 20 }, "-=0.4")
+    .fromTo(
+      ".hero .cta-btn",
+      { autoAlpha: 0, scale: 0.9 },
+      { autoAlpha: 1, scale: 1, ease: "back.out(1.7)", duration: 0.8 },
+      "-=0.4"
+    );
+
+  // Lägg till dragbar inertial scroll för use-case-karusellen
+  if (carouselTrack) {
+    const container = carouselTrack.parentElement;
+    let isDragging = false;
+    let startX = 0;
+    let currentTranslate = 0;
+    carouselTrack.addEventListener('pointerdown', e => {
+      isDragging = true;
+      carouselTrack.classList.add('grabbing');
+      startX = e.clientX - currentTranslate;
+      carouselTrack.setPointerCapture(e.pointerId);
+    });
+    carouselTrack.addEventListener('pointermove', e => {
+      if (!isDragging) return;
+      currentTranslate = e.clientX - startX;
+      const maxTranslate = 0;
+      const minTranslate = container.clientWidth - carouselTrack.scrollWidth;
+      currentTranslate = Math.max(Math.min(currentTranslate, maxTranslate), minTranslate);
+      carouselTrack.style.transform = `translateX(${currentTranslate}px)`;
+    });
+    ['pointerup', 'pointercancel'].forEach(evt => {
+      carouselTrack.addEventListener(evt, () => {
+        isDragging = false;
+        carouselTrack.classList.remove('grabbing');
+      });
+    });
+  }
+
+  // Lägg till scroll-progress-funktionalitet
+  window.addEventListener('scroll', () => {
+    const scrollPos = window.scrollY || window.pageYOffset;
+    const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+    const percent = (scrollPos / docHeight) * 100;
+    const bar = document.querySelector('.scroll-progress__bar');
+    if (bar) bar.style.width = percent + '%';
+  });
 }));
