@@ -1,232 +1,164 @@
-document.addEventListener("DOMContentLoaded", () => {
-  const hero = document.querySelector(".hero");
-  const sections = document.querySelectorAll(
-    ".features-wrapper, .features-summary-wrapper, #pricing, #about, .cta-section, footer"
-  );
-
-  lucide.createIcons();
-  gsap.registerPlugin(ScrollTrigger);
-
-  // Use Cases Carousel
-  const carouselTrack = document.querySelector('.carousel-track');
-  const carouselPrev = document.querySelector('.carousel-prev');
-  const carouselNext = document.querySelector('.carousel-next');
-  const useCaseCards = document.querySelectorAll('.use-case-card');
+document.addEventListener("DOMContentLoaded", (() => {
+  const hero = document.querySelector(".hero"), sections = document.querySelectorAll(".features-wrapper, .features-summary-wrapper, #pricing, #about, .cta-section, footer");
+  lucide.createIcons(), gsap.registerPlugin(ScrollTrigger);
+  const carouselTrack = document.querySelector(".carousel-track"), carouselPrev = document.querySelector(".carousel-prev"), carouselNext = document.querySelector(".carousel-next"), useCaseCards = document.querySelectorAll(".use-case-card");
   let currentIndex = 0;
-
   function updateCarousel() {
     const cardWidth = useCaseCards[0].offsetWidth;
-    carouselTrack.style.transform = `translateX(-${currentIndex * (cardWidth + 32)}px)`;
-    
-    // Update button states
-    carouselPrev.style.opacity = currentIndex === 0 ? '0.5' : '1';
-    carouselNext.style.opacity = currentIndex === useCaseCards.length - 1 ? '0.5' : '1';
+    carouselTrack.style.transform = `translateX(-${currentIndex * (cardWidth + 32)}px)`, 
+    carouselPrev.style.opacity = 0 === currentIndex ? "0.5" : "1", carouselNext.style.opacity = currentIndex === useCaseCards.length - 1 ? "0.5" : "1";
   }
-
-  if (carouselPrev && carouselNext) {
-    carouselPrev.addEventListener('click', () => {
-      if (currentIndex > 0) {
-        currentIndex--;
-        updateCarousel();
-      }
-    });
-
-    carouselNext.addEventListener('click', () => {
-      if (currentIndex < useCaseCards.length - 1) {
-        currentIndex++;
-        updateCarousel();
-      }
-    });
-
-    // Initialize carousel
-    updateCarousel();
-  }
-
-  // Desktop-only scroll effects: sticky, parallax, and zoom
-  ScrollTrigger.matchMedia({
-    "(min-width: 768px)": function () {
-      // Pin hero and features-wrapper with scrub
+  carouselPrev && carouselNext && (carouselPrev.addEventListener("click", (() => {
+    currentIndex > 0 && (currentIndex--, updateCarousel());
+  })), carouselNext.addEventListener("click", (() => {
+    currentIndex < useCaseCards.length - 1 && (currentIndex++, updateCarousel());
+  })), updateCarousel()), ScrollTrigger.matchMedia({
+    "(min-width: 768px)": function() {
       ScrollTrigger.create({
         trigger: ".hero",
         start: "top top",
         end: "bottom top",
-        pin: true,
-        pinSpacing: false,
-        scrub: true,
-      });
-
-      // Parallax for hero
-      if (hero) {
-        gsap.set(hero, { autoAlpha: 1, y: 0 });
-        gsap.to(hero, {
-          yPercent: -10,
-          ease: "none",
-          scrollTrigger: {
-            trigger: ".hero",
-            start: "top top",
-            end: "bottom top",
-            scrub: true,
-          },
-        });
-      }
-
-      // Big-card parallax and zoom effects
-      gsap.to(".big-card .text-content", {
+        pin: !0,
+        pinSpacing: !1,
+        scrub: !0
+      }), hero && (gsap.set(hero, {
+        autoAlpha: 1,
+        y: 0
+      }), gsap.to(hero, {
+        yPercent: -10,
+        ease: "none",
+        scrollTrigger: {
+          trigger: ".hero",
+          start: "top top",
+          end: "bottom top",
+          scrub: !0
+        }
+      })), gsap.to(".big-card .text-content", {
         yPercent: -20,
         ease: "none",
         scrollTrigger: {
           trigger: ".big-card",
           start: "top bottom",
           end: "bottom top",
-          scrub: true,
-        },
-      });
-      gsap.to(".big-card .image-side img", {
+          scrub: !0
+        }
+      }), gsap.to(".big-card .image-side img", {
         yPercent: 20,
         ease: "none",
         scrollTrigger: {
           trigger: ".big-card",
           start: "top bottom",
           end: "bottom top",
-          scrub: true,
-        },
-      });
-      gsap.fromTo(
-        ".big-card .image-side img",
-        { scale: 1 },
-        {
-          scale: 1.1,
-          ease: "none",
-          scrollTrigger: {
-            trigger: ".big-card .image-side img",
-            start: "top 80%",
-            end: "bottom top",
-            scrub: true,
-          },
+          scrub: !0
         }
-      );
-
-      // About-wrapper parallax and zoom effects
-      gsap.to(".about-wrapper", {
+      }), gsap.fromTo(".big-card .image-side img", {
+        scale: 1
+      }, {
+        scale: 1.1,
+        ease: "none",
+        scrollTrigger: {
+          trigger: ".big-card .image-side img",
+          start: "top 80%",
+          end: "bottom top",
+          scrub: !0
+        }
+      }), gsap.to(".about-wrapper", {
         yPercent: -10,
         ease: "none",
         scrollTrigger: {
           trigger: ".about-wrapper",
           start: "top bottom",
           end: "bottom top",
-          scrub: true,
-        },
-      });
-      gsap.fromTo(
-        ".about-image img",
-        { scale: 1 },
-        {
-          scale: 1.1,
-          ease: "none",
-          scrollTrigger: {
-            trigger: ".about-image img",
-            start: "top 80%",
-            end: "bottom top",
-            scrub: true,
-          },
+          scrub: !0
         }
-      );
-    },
-  });
-
-  // Fade in and reveal sections (except footer) using GSAP autoAlpha and y offset
-  sections.forEach((section) => {
-    if (!section.matches('footer')) {
-      // Set initial state
-      gsap.set(section, { autoAlpha: 0, y: 40 });
-      
-      // Create ScrollTrigger animation
-      ScrollTrigger.create({
-        trigger: section,
-        start: "top 80%",
-        end: "bottom 20%",
-        onEnter: () => {
-          section.classList.remove('section-hidden');
-          gsap.to(section, {
-            autoAlpha: 1,
-            y: 0,
-            duration: 0.8,
-            ease: "power1.out",
-            onComplete: () => {
-              // After section is visible, animate feature cards
-              if (section.classList.contains('features-wrapper')) {
-                const featureCards = section.querySelectorAll('.feature-card');
-                featureCards.forEach((card, i) => {
-                  const elements = card.querySelectorAll('.feature-content, .feature-visual, .feature-icon, h3, p');
-                  
-                  gsap.fromTo(elements, 
-                    { opacity: 0, y: 20 },
-                    {
-                      opacity: 1,
-                      y: 0,
-                      duration: 0.8,
-                      delay: i * 0.0001,
-                      ease: "expo.out",
-                      scrollTrigger: {
-                        trigger: card,
-                        start: "top center",
-                        end: "bottom center",
-                        toggleActions: "play reverse play reverse"
-                      }
-                    }
-                  );
-
-                  // Add active class when card is in view
-                  ScrollTrigger.create({
-                    trigger: card,
-                    start: "top center",
-                    end: "bottom center",
-                    onEnter: () => {
-                      card.classList.add('active');
-                      // Add background gradient when card is active
-                      gsap.to(card, {
-                        background: 'linear-gradient(to bottom, rgba(28, 26, 46, 0.6) 0%, rgba(28, 26, 46, 0.6) 35%, rgba(229, 180, 71, 0.4) 100%)',
-                        duration: 0.8,
-                        ease: "expo.out"
-                      });
-                    },
-                    onLeaveBack: () => {
-                      card.classList.remove('active');
-                      // Remove background gradient when card is not active
-                      gsap.to(card, {
-                        background: 'transparent',
-                        duration: 0.8,
-                        ease: "expo.out"
-                      });
-                    }
-                  });
-                });
-              }
-            }
-          });
-        },
-        onLeaveBack: () => {
-          section.classList.add('section-hidden');
-          gsap.to(section, {
-            autoAlpha: 0,
-            y: 40,
-            duration: 1,
-            ease: "power1.out"
-          });
+      }), gsap.fromTo(".about-image img", {
+        scale: 1
+      }, {
+        scale: 1.1,
+        ease: "none",
+        scrollTrigger: {
+          trigger: ".about-image img",
+          start: "top 80%",
+          end: "bottom top",
+          scrub: !0
         }
       });
     }
-  });
-
-  // Footer animation - stays visible once triggered
-  gsap.set("footer", { autoAlpha: 0, y: 40 });
-  ScrollTrigger.create({
+  }), sections.forEach((section => {
+    section.matches("footer") || (gsap.set(section, {
+      autoAlpha: 0,
+      y: 40
+    }), ScrollTrigger.create({
+      trigger: section,
+      start: "top 80%",
+      end: "bottom 20%",
+      onEnter: () => {
+        section.classList.remove("section-hidden"), gsap.to(section, {
+          autoAlpha: 1,
+          y: 0,
+          duration: .8,
+          ease: "power1.out",
+          onComplete: () => {
+            if (section.classList.contains("features-wrapper")) {
+              section.querySelectorAll(".feature-card").forEach(((card, i) => {
+                const elements = card.querySelectorAll(".feature-content, .feature-visual, .feature-icon, h3, p");
+                gsap.fromTo(elements, {
+                  opacity: 0,
+                  y: 20
+                }, {
+                  opacity: 1,
+                  y: 0,
+                  duration: .8,
+                  delay: 1e-4 * i,
+                  ease: "expo.out",
+                  scrollTrigger: {
+                    trigger: card,
+                    start: "top center",
+                    end: "bottom center",
+                    toggleActions: "play reverse play reverse"
+                  }
+                }), ScrollTrigger.create({
+                  trigger: card,
+                  start: "top center",
+                  end: "bottom center",
+                  onEnter: () => {
+                    card.classList.add("active"), gsap.to(card, {
+                      background: "linear-gradient(to bottom, rgba(28, 26, 46, 0.6) 0%, rgba(28, 26, 46, 0.6) 35%, rgba(229, 180, 71, 0.4) 100%)",
+                      duration: .8,
+                      ease: "expo.out"
+                    });
+                  },
+                  onLeaveBack: () => {
+                    card.classList.remove("active"), gsap.to(card, {
+                      background: "transparent",
+                      duration: .8,
+                      ease: "expo.out"
+                    });
+                  }
+                });
+              }));
+            }
+          }
+        });
+      },
+      onLeaveBack: () => {
+        section.classList.add("section-hidden"), gsap.to(section, {
+          autoAlpha: 0,
+          y: 40,
+          duration: 1,
+          ease: "power1.out"
+        });
+      }
+    }));
+  })), gsap.set("footer", {
+    autoAlpha: 0,
+    y: 40
+  }), ScrollTrigger.create({
     trigger: "footer",
     start: "top 90%",
     onEnter: () => {
-      const footer = document.querySelector('footer');
-      footer.classList.remove('section-hidden');
-      gsap.to(footer, {
+      const footer = document.querySelector("footer");
+      footer.classList.remove("section-hidden"), gsap.to(footer, {
         autoAlpha: 1,
         y: 0,
         duration: 1,
@@ -234,152 +166,104 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     }
   });
-
-  // Split headings into word spans and animate each word
-  const splitAndAnimate = (selector) => {
+  (selector => {
     const el = document.querySelector(selector);
     if (!el) return;
     const words = el.innerHTML.trim().split(" ");
-    el.innerHTML = words.map((w) => `<span class="word">${w}</span>`).join(" ");
+    el.innerHTML = words.map((w => `<span class="word">${w}</span>`)).join(" ");
     const wordEls = el.querySelectorAll(".word");
-    gsap.set(wordEls, { display: "inline-block", autoAlpha: 0, y: 20 });
-    gsap.to(wordEls, {
+    gsap.set(wordEls, {
+      display: "inline-block",
+      autoAlpha: 0,
+      y: 20
+    }), gsap.to(wordEls, {
       autoAlpha: 1,
       y: 0,
       ease: "power2.out",
       duration: 1,
-      stagger: 0.1,
+      stagger: .1,
       scrollTrigger: {
         trigger: el,
         start: "top 90%",
-        toggleActions: "play none none none",
-      },
-    });
-  };
-  splitAndAnimate(".hero h1");
-
-  window.switchLanguage = function (lang) {
-    localStorage.setItem("language", lang);
-    location.reload();
-  };
-
-  // Feature cards scroll animations - Refined
-  const featureCards = gsap.utils.toArray('.feature-card');
-  const featuresIntro = document.querySelector('.features-intro');
-  
-  // Intro animation
-  if (featuresIntro) {
-    const introTitle = featuresIntro.querySelector('h2');
-    const introText = featuresIntro.querySelector('.intro');
-    
-    gsap.fromTo(
-      [introTitle, introText],
-      { opacity: 0, y: 20 },
-      {
-        opacity: 1,
-        y: 0,
-        duration: 0.8,
-        stagger: 0.2,
-        ease: "power2.out",
-        scrollTrigger: {
-          trigger: featuresIntro,
-          start: "top center",
-          toggleActions: "play none none none"
-        }
+        toggleActions: "play none none none"
       }
-    );
-  }
-  
-  // Remove section-hidden class from feature cards
-  document.querySelectorAll('.feature-card').forEach(card => {
-    card.classList.remove('section-hidden');
-  });
-  
-  featureCards.forEach((card, i) => {
-    const content = card.querySelector('.feature-content');
-    const visual = card.querySelector('.feature-visual');
-    const icon = card.querySelector('.feature-icon');
-    const title = card.querySelector('h3');
-    const description = card.querySelector('p');
-
-    // Set initial state
-    gsap.set([content, visual, icon, title, description], { 
+    });
+  })(".hero h1"), window.switchLanguage = function(lang) {
+    localStorage.setItem("language", lang), location.reload();
+  };
+  const featureCards = gsap.utils.toArray(".feature-card"), featuresIntro = document.querySelector(".features-intro");
+  if (featuresIntro) {
+    const introTitle = featuresIntro.querySelector("h2"), introText = featuresIntro.querySelector(".intro");
+    gsap.fromTo([ introTitle, introText ], {
       opacity: 0,
       y: 20
+    }, {
+      opacity: 1,
+      y: 0,
+      duration: .8,
+      stagger: .2,
+      ease: "power2.out",
+      scrollTrigger: {
+        trigger: featuresIntro,
+        start: "top center",
+        toggleActions: "play none none none"
+      }
     });
-
-    // Create ScrollTrigger for each card
-    ScrollTrigger.create({
+  }
+  document.querySelectorAll(".feature-card").forEach((card => {
+    card.classList.remove("section-hidden");
+  })), featureCards.forEach(((card, i) => {
+    const content = card.querySelector(".feature-content"), visual = card.querySelector(".feature-visual"), icon = card.querySelector(".feature-icon"), title = card.querySelector("h3"), description = card.querySelector("p");
+    gsap.set([ content, visual, icon, title, description ], {
+      opacity: 0,
+      y: 20
+    }), ScrollTrigger.create({
       trigger: card,
       start: "top center",
       end: "bottom center",
       onEnter: () => {
-        gsap.to([content, visual, icon, title, description], {
+        gsap.to([ content, visual, icon, title, description ], {
           opacity: 1,
           y: 0,
-          duration: 0.8,
-          stagger: 0.1,
+          duration: .8,
+          stagger: .1,
           ease: "expo.out"
         });
       },
       onLeaveBack: () => {
-        gsap.to([content, visual, icon, title, description], {
+        gsap.to([ content, visual, icon, title, description ], {
           opacity: 0,
           y: 20,
-          duration: 0.8,
+          duration: .8,
           ease: "expo.out"
         });
       }
-    });
-
-    // Subtle parallax for the entire card
-    gsap.to(card, {
+    }), gsap.to(card, {
       yPercent: 15,
       ease: "none",
       scrollTrigger: {
         trigger: card,
         start: "top bottom",
         end: "bottom top",
-        scrub: 0.8
+        scrub: .8
       }
     });
-  });
-
-  // Remove previous feature card click handlers
-  document.querySelectorAll('.features-grid .feature-card').forEach((card) => {
-    const newClone = card.cloneNode(true);
+  })), document.querySelectorAll(".features-grid .feature-card").forEach((card => {
+    const newClone = card.cloneNode(!0);
     card.parentNode.replaceChild(newClone, card);
-  });
-
-  // Initialize language switchers
-  const langButtons = document.querySelectorAll('.language-switcher .lang-btn, .language-switcher-footer .lang-btn, .language-switcher a');
-  const currentLang = localStorage.getItem('language') || 'sv';
-
-  // Set initial active state
-  langButtons.forEach(btn => {
-    if (btn.dataset.lang === currentLang) {
-      btn.classList.add('active');
-    } else {
-      btn.classList.remove('active');
-    }
-
-    // Add click handler
-    btn.addEventListener('click', (e) => {
+  }));
+  const langButtons = document.querySelectorAll(".language-switcher .lang-btn, .language-switcher-footer .lang-btn, .language-switcher a"), currentLang = localStorage.getItem("language") || "sv";
+  langButtons.forEach((btn => {
+    btn.dataset.lang === currentLang ? btn.classList.add("active") : btn.classList.remove("active"), 
+    btn.addEventListener("click", (e => {
       e.preventDefault();
       const lang = btn.dataset.lang;
       window.switchLanguage(lang);
-    });
-  });
-
-  // Update active state when language changes
-  window.addEventListener('languageChanged', (e) => {
+    }));
+  })), window.addEventListener("languageChanged", (e => {
     const newLang = e.detail.lang;
-    langButtons.forEach(btn => {
-      if (btn.dataset.lang === newLang) {
-        btn.classList.add('active');
-      } else {
-        btn.classList.remove('active');
-      }
-    });
-  });
-});
+    langButtons.forEach((btn => {
+      btn.dataset.lang === newLang ? btn.classList.add("active") : btn.classList.remove("active");
+    }));
+  }));
+}));
