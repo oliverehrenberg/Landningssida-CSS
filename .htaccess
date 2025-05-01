@@ -7,10 +7,10 @@ RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 ErrorDocument 404 /404.html
 
 # Ange en anpassad 500-sida (serverfel)
-ErrorDocument 500 /error.html
-ErrorDocument 502 /error.html
-ErrorDocument 503 /error.html
-ErrorDocument 504 /error.html
+ErrorDocument 500 /404.html
+ErrorDocument 502 /404.html
+ErrorDocument 503 /404.html
+ErrorDocument 504 /404.html
 
 # Om någon går in på en undermapp som inte finns, skicka dem till huvudsidan
 RedirectMatch 404 ^/undermapp/?$
