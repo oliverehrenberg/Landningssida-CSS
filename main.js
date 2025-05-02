@@ -1,10 +1,12 @@
 document.addEventListener("DOMContentLoaded", (() => {
-  // Load header, footer and features summary
+  // Load header, footer, features summary, about, and pricing sections
   Promise.all([
     fetch('header.html').then(response => response.text()),
     fetch('footer.html').then(response => response.text()),
-    fetch('features-summary.html').then(response => response.text())
-  ]).then(([headerData, footerData, featuresSummaryData]) => {
+    fetch('features-summary.html').then(response => response.text()),
+    fetch('about.html').then(response => response.text()),
+    fetch('pricing.html').then(response => response.text())
+  ]).then(([headerData, footerData, featuresSummaryData, aboutData, pricingData]) => {
     // Insert header
     const headerContainer = document.getElementById('header-container');
     if (headerContainer) {
@@ -42,10 +44,35 @@ document.addEventListener("DOMContentLoaded", (() => {
       // Initialize carousel functionality
       initializeCarousel();
     }
-    
+
+    // Insert about section
+    const aboutContainer = document.getElementById('about-container');
+    if (aboutContainer) {
+      aboutContainer.innerHTML = aboutData;
+      // Make about section visible
+      const about = aboutContainer.querySelector('.about-wrapper');
+      if (about) {
+        about.classList.remove('section-hidden');
+      }
+    }
+
+    // Insert pricing section
+    const pricingContainer = document.getElementById('pricing-container');
+    if (pricingContainer) {
+      pricingContainer.innerHTML = pricingData;
+      // Make pricing section visible
+      const pricing = pricingContainer.querySelector('.pricing-wrapper');
+      if (pricing) {
+        pricing.classList.remove('section-hidden');
+      }
+    }
+
+    // Initialize Lucide icons
+    lucide.createIcons();
+
     // Apply language translations
-    const savedLang = localStorage.getItem('language') || 'sv';
-    applyLanguage(savedLang);
+    const savedLanguage = localStorage.getItem('language') || 'sv';
+    applyLanguage(savedLanguage);
   }).catch(error => {
     console.error('Error loading sections:', error);
   });
