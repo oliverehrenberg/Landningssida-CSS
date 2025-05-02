@@ -284,7 +284,25 @@ const translations = {
       aboutHeroSubtitle: "Construction Sourcing Sweden AB was founded from our own experiences of the industry's lack of transparency and recurring problems with disputes, late or missing invoice payments, and unreliable actors.",
       aboutHeroFeature1: "Transparent Communication",
       aboutHeroFeature2: "Secure Transactions",
-      aboutHeroFeature3: "Trusted Partnerships"
+      aboutHeroFeature3: "Trusted Partnerships",
+      featuresUSP1: "Transparent process",
+      featuresUSP2: "Secure contracts",
+      featuresUSP3: "Verified suppliers",
+      featuresNavProject: "Project & Organization",
+      featuresNavSupplier: "Supplier Network",
+      featuresNavLegal: "Legal & Support",
+      readMore: "Read more",
+      featuresFaqTitle: "Frequently Asked Questions",
+      featuresFaqQ1: "How do I find suppliers?",
+      featuresFaqA1: "Use our supplier network to search, compare, and contact verified suppliers directly on the platform.",
+      featuresFaqQ2: "Is my data secure?",
+      featuresFaqA2: "Yes, we use enterprise-grade security and encryption to protect your data.",
+      featuresFaqQ3: "Can I manage multiple projects?",
+      featuresFaqA3: "Absolutely! You can create, manage, and track multiple projects and teams in one place.",
+      featuresCtaTitle: "Ready to streamline your construction projects?",
+      featuresCtaText: "Sign up for early access and be the first to experience the future of construction sourcing.",
+      featuresCtaSecurity: "Your data is always protected with us.",
+      featuresCtaBtn: "Sign Up Now"
     },
     sv: {
       features: "Funktioner",
@@ -573,7 +591,25 @@ const translations = {
       aboutHeroSubtitle: "Construction Sourcing Sweden AB grundades ur våra egna erfarenheter av branschens bristande insyn och de återkommande problemen med tvister, sena eller uteblivna fakturabetalningar och oseriösa aktörer.",
       aboutHeroFeature1: "Transparent Kommunikation",
       aboutHeroFeature2: "Säkra Transaktioner",
-      aboutHeroFeature3: "Pålitliga Partnerskap"
+      aboutHeroFeature3: "Pålitliga Partnerskap",
+      featuresUSP1: "Transparent process",
+      featuresUSP2: "Säkra avtal",
+      featuresUSP3: "Verifierade leverantörer",
+      featuresNavProject: "Projekt & Organisation",
+      featuresNavSupplier: "Leverantörsnätverk",
+      featuresNavLegal: "Juridik & Stöd",
+      readMore: "Läs mer",
+      featuresFaqTitle: "Vanliga frågor",
+      featuresFaqQ1: "Hur hittar jag leverantörer?",
+      featuresFaqA1: "Använd vårt leverantörsnätverk för att söka, jämföra och kontakta verifierade leverantörer direkt på plattformen.",
+      featuresFaqQ2: "Är mina data säkra?",
+      featuresFaqA2: "Ja, vi använder säkerhet och kryptering på företagsnivå för att skydda dina data.",
+      featuresFaqQ3: "Kan jag hantera flera projekt?",
+      featuresFaqA3: "Absolut! Du kan skapa, hantera och följa upp flera projekt och team på ett och samma ställe.",
+      featuresCtaTitle: "Redo att effektivisera dina byggprojekt?",
+      featuresCtaText: "Anmäl dig för tidig åtkomst och var först med att testa framtidens byggplattform.",
+      featuresCtaSecurity: "Dina data är alltid skyddade hos oss.",
+      featuresCtaBtn: "Anmäl Dig Nu"
     }
   };
   

@@ -539,4 +539,100 @@ document.addEventListener("DOMContentLoaded", (() => {
       updateCarousel();
     }
   }
+
+  // === FEATURES SUMMARY PAGE SCRIPTS ===
+  document.addEventListener('DOMContentLoaded', function() {
+    // Sticky nav active
+    const navLinks = document.querySelectorAll('.features-nav a');
+    const sections = [
+      document.getElementById('project-section'),
+      document.getElementById('supplier-section'),
+      document.getElementById('legal-section')
+    ];
+    function setActiveNav() {
+      let scrollPos = window.scrollY || window.pageYOffset;
+      let found = false;
+      sections.forEach((section, i) => {
+        if (section && !found && section.offsetTop - 120 <= scrollPos) {
+          navLinks.forEach(l => l.classList.remove('active'));
+          navLinks[i].classList.add('active');
+          found = true;
+        }
+      });
+      if (!found) navLinks.forEach(l => l.classList.remove('active'));
+    }
+    if (navLinks.length && sections.length) {
+      window.addEventListener('scroll', setActiveNav);
+      setActiveNav();
+    }
+
+    // Expand/collapse feature-cards
+    document.querySelectorAll('.expand-btn').forEach(btn => {
+      btn.addEventListener('click', function() {
+        const expanded = btn.getAttribute('aria-expanded') === 'true';
+        btn.setAttribute('aria-expanded', !expanded);
+        const info = btn.parentElement.querySelector('.expanded-info');
+        if (info) info.classList.toggle('show');
+      });
+    });
+
+    // Scroll to top button (mobile)
+    document.querySelectorAll('.scroll-to-top').forEach(btn => {
+      btn.addEventListener('click', function() {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+    });
+
+    // FAQ expand/collapse
+    document.querySelectorAll('.faq-question').forEach(q => {
+      q.addEventListener('click', function() {
+        const expanded = q.getAttribute('aria-expanded') === 'true';
+        q.setAttribute('aria-expanded', !expanded);
+        const ans = document.getElementById(q.getAttribute('aria-controls'));
+        if (ans) ans.classList.toggle('show');
+      });
+      q.addEventListener('keydown', function(e) {
+        if (e.key === 'Enter' || e.key === ' ') q.click();
+      });
+    });
+
+    // Carousel accessibility & swipe
+    const carousel = document.querySelector('.use-cases-carousel');
+    const track = carousel ? carousel.querySelector('.carousel-track') : null;
+    const prevBtn = carousel ? carousel.querySelector('.carousel-prev') : null;
+    const nextBtn = carousel ? carousel.querySelector('.carousel-next') : null;
+    const cards = carousel ? carousel.querySelectorAll('.use-case-card') : [];
+    let currentIndex = 0;
+    function updateCarousel() {
+      if (!track || !cards.length) return;
+      const cardWidth = cards[0].offsetWidth;
+      track.style.transform = `translateX(-${currentIndex * (cardWidth + 32)}px)`;
+      if (prevBtn) prevBtn.disabled = currentIndex === 0;
+      if (nextBtn) nextBtn.disabled = currentIndex === cards.length - 1;
+    }
+    if (prevBtn && nextBtn) {
+      prevBtn.addEventListener('click', () => {
+        if (currentIndex > 0) { currentIndex--; updateCarousel(); }
+      });
+      nextBtn.addEventListener('click', () => {
+        if (currentIndex < cards.length - 1) { currentIndex++; updateCarousel(); }
+      });
+      updateCarousel();
+    }
+    // Swipe for mobile
+    let startX = null;
+    if (track) {
+      track.addEventListener('touchstart', e => { startX = e.touches[0].clientX; });
+      track.addEventListener('touchmove', e => {
+        if (startX === null) return;
+        let dx = e.touches[0].clientX - startX;
+        if (Math.abs(dx) > 50) {
+          if (dx < 0 && currentIndex < cards.length - 1) { currentIndex++; updateCarousel(); }
+          if (dx > 0 && currentIndex > 0) { currentIndex--; updateCarousel(); }
+          startX = null;
+        }
+      });
+      track.addEventListener('touchend', () => { startX = null; });
+    }
+  });
 }));

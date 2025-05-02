@@ -20,50 +20,67 @@
         });
     </script>
 
+    <!-- Hero/Intro Section -->
+    <section class="pricing-hero">
+      <div class="pricing-hero-content">
+        <h1 data-translate="featuresSummaryTitle"></h1>
+        <p class="pricing-hero-subtitle" data-translate="featuresSummaryIntro"></p>
+        <div class="pricing-hero-features">
+          <div class="feature-item">
+            <i class="fas fa-check-circle"></i>
+            <span data-translate="featuresUSP1"></span>
+          </div>
+          <div class="feature-item">
+            <i class="fas fa-check-circle"></i>
+            <span data-translate="featuresUSP2"></span>
+          </div>
+          <div class="feature-item">
+            <i class="fas fa-check-circle"></i>
+            <span data-translate="featuresUSP3"></span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Internmeny -->
+    <nav class="features-nav" aria-label="Sektioner">
+      <a href="#project-section" data-translate="featuresNavProject"></a>
+      <a href="#supplier-section" data-translate="featuresNavSupplier"></a>
+      <a href="#legal-section" data-translate="featuresNavLegal"></a>
+    </nav>
+
     <section id="funktioner" class="features-summary-wrapper section-hidden">
-      <h2 data-translate="featuresSummaryTitle"></h2>
-      <p class="features-intro2" data-translate="featuresSummaryIntro"></p>
-      
-      <div class="use-cases-carousel">
+      <div class="use-cases-carousel" aria-label="Use cases" aria-live="polite">
         <div class="carousel-track">
           <div class="use-case-card">
-            <div class="use-case-visual">
-              <img src="assets/use-case-procurement.png" alt="Smart Procurement" />
-            </div>
+            <div class="use-case-visual"><img src="assets/use-case-procurement.png" alt="" /></div>
             <div class="use-case-content">
               <h4 data-translate="useCase1Title"></h4>
               <p data-translate="useCase1Desc"></p>
             </div>
           </div>
           <div class="use-case-card">
-            <div class="use-case-visual">
-              <img src="assets/use-case-project.png" alt="Project Management" />
-            </div>
+            <div class="use-case-visual"><img src="assets/use-case-project.png" alt="" /></div>
             <div class="use-case-content">
               <h4 data-translate="useCase2Title"></h4>
               <p data-translate="useCase2Desc"></p>
             </div>
           </div>
           <div class="use-case-card">
-            <div class="use-case-visual">
-              <img src="assets/use-case-communication.png" alt="Communication Hub" />
-            </div>
+            <div class="use-case-visual"><img src="assets/use-case-communication.png" alt="" /></div>
             <div class="use-case-content">
               <h4 data-translate="useCase3Title"></h4>
               <p data-translate="useCase3Desc"></p>
             </div>
           </div>
         </div>
-        <button class="carousel-prev" aria-label="Previous use case">
-          <i data-lucide="chevron-left"></i>
-        </button>
-        <button class="carousel-next" aria-label="Next use case">
-          <i data-lucide="chevron-right"></i>
-        </button>
+        <button class="carousel-prev" aria-label="Föregående" tabindex="0"><i data-lucide="chevron-left"></i></button>
+        <button class="carousel-next" aria-label="Nästa" tabindex="0"><i data-lucide="chevron-right"></i></button>
       </div>
 
       <div class="pricing-cards">
-        <div class="pricing-card">
+        <div class="pricing-card" id="project-section">
+          <div class="feature-card-icon"><i class="fa-solid fa-diagram-project"></i></div>
           <h3 data-translate="featuresProjectTitle"></h3>
           <ul class="features-list">
             <li data-translate="featuresProject1"></li>
@@ -72,12 +89,15 @@
             <li data-translate="featuresProject4"></li>
             <li data-translate="featuresProject5"></li>
           </ul>
-          <div class="expanded-info">
+          <button class="expand-btn" aria-expanded="false" aria-controls="project-expanded" data-translate="readMore"></button>
+          <div class="expanded-info" id="project-expanded">
             <p data-translate="featuresProjectExpanded"></p>
           </div>
+          <button class="scroll-to-top" aria-label="Till toppen"><i class="fa-solid fa-arrow-up"></i></button>
         </div>
 
-        <div class="pricing-card">
+        <div class="pricing-card" id="supplier-section">
+          <div class="feature-card-icon"><i class="fa-solid fa-network-wired"></i></div>
           <h3 data-translate="featuresConnectTitle"></h3>
           <ul class="features-list">
             <li data-translate="featuresConnect1"></li>
@@ -86,12 +106,15 @@
             <li data-translate="featuresConnect4"></li>
             <li data-translate="featuresConnect5"></li>
           </ul>
-          <div class="expanded-info">
+          <button class="expand-btn" aria-expanded="false" aria-controls="supplier-expanded" data-translate="readMore"></button>
+          <div class="expanded-info" id="supplier-expanded">
             <p data-translate="featuresConnectExpanded"></p>
           </div>
+          <button class="scroll-to-top" aria-label="Till toppen"><i class="fa-solid fa-arrow-up"></i></button>
         </div>
 
-        <div class="pricing-card">
+        <div class="pricing-card" id="legal-section">
+          <div class="feature-card-icon"><i class="fa-solid fa-scale-balanced"></i></div>
           <h3 data-translate="featuresLegalTitle"></h3>
           <ul class="features-list">
             <li data-translate="featuresLegal1"></li>
@@ -100,11 +123,56 @@
             <li data-translate="featuresLegal4"></li>
             <li data-translate="featuresLegal5"></li>
           </ul>
-          <div class="expanded-info">
+          <button class="expand-btn" aria-expanded="false" aria-controls="legal-expanded" data-translate="readMore"></button>
+          <div class="expanded-info" id="legal-expanded">
             <p data-translate="featuresLegalExpanded"></p>
+          </div>
+          <button class="scroll-to-top" aria-label="Till toppen"><i class="fa-solid fa-arrow-up"></i></button>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="pricing-faq" aria-labelledby="faq-title">
+      <h2 id="faq-title" data-translate="featuresFaqTitle"></h2>
+      <div class="faq-container">
+        <div class="faq-item">
+          <div class="faq-question">
+            <h3 data-translate="featuresFaqQ1"></h3>
+            <i class="fas fa-chevron-down"></i>
+          </div>
+          <div class="faq-answer">
+            <p data-translate="featuresFaqA1"></p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">
+            <h3 data-translate="featuresFaqQ2"></h3>
+            <i class="fas fa-chevron-down"></i>
+          </div>
+          <div class="faq-answer">
+            <p data-translate="featuresFaqA2"></p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">
+            <h3 data-translate="featuresFaqQ3"></h3>
+            <i class="fas fa-chevron-down"></i>
+          </div>
+          <div class="faq-answer">
+            <p data-translate="featuresFaqA3"></p>
           </div>
         </div>
       </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="features-cta">
+      <div class="features-cta-icon" aria-hidden="true"><i class="fa-solid fa-shield-halved"></i></div>
+      <h2 data-translate="featuresCtaTitle"></h2>
+      <p data-translate="featuresCtaText"></p>
+      <p class="features-cta-security" data-translate="featuresCtaSecurity"></p>
+      <button class="cta-btn" onclick="toggleModal(true)" data-translate="featuresCtaBtn"></button>
     </section>
 
     <div class="section-divider"></div>
