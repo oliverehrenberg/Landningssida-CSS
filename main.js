@@ -1,12 +1,12 @@
 document.addEventListener("DOMContentLoaded", (() => {
-  // Load header, footer, features summary, about, and pricing sections
+  // Load header, footer, features summary, about, and CTA sections
   Promise.all([
     fetch('header.html').then(response => response.text()),
     fetch('footer.html').then(response => response.text()),
     fetch('features-summary.html').then(response => response.text()),
     fetch('about.html').then(response => response.text()),
-    fetch('pricing.html').then(response => response.text())
-  ]).then(([headerData, footerData, featuresSummaryData, aboutData, pricingData]) => {
+    fetch('cta.html').then(response => response.text())
+  ]).then(([headerData, footerData, featuresSummaryData, aboutData, ctaData]) => {
     // Insert header
     const headerContainer = document.getElementById('header-container');
     if (headerContainer) {
@@ -49,6 +49,7 @@ document.addEventListener("DOMContentLoaded", (() => {
     const aboutContainer = document.getElementById('about-container');
     if (aboutContainer) {
       aboutContainer.innerHTML = aboutData;
+      
       // Make about section visible
       const about = aboutContainer.querySelector('.about-wrapper');
       if (about) {
@@ -56,19 +57,17 @@ document.addEventListener("DOMContentLoaded", (() => {
       }
     }
 
-    // Insert pricing section
-    const pricingContainer = document.getElementById('pricing-container');
-    if (pricingContainer) {
-      pricingContainer.innerHTML = pricingData;
-      // Make pricing section visible
-      const pricing = pricingContainer.querySelector('.pricing-wrapper');
-      if (pricing) {
-        pricing.classList.remove('section-hidden');
+    // Insert CTA section
+    const ctaContainer = document.getElementById('cta-container');
+    if (ctaContainer) {
+      ctaContainer.innerHTML = ctaData;
+      
+      // Make CTA section visible
+      const cta = ctaContainer.querySelector('.cta-section');
+      if (cta) {
+        cta.classList.remove('section-hidden');
       }
     }
-
-    // Initialize Lucide icons
-    lucide.createIcons();
 
     // Apply language translations
     const savedLanguage = localStorage.getItem('language') || 'sv';

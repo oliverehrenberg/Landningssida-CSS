@@ -262,7 +262,24 @@ const translations = {
       aboutOliverRole: "CEO & Co-founder",
       aboutOliverBio: "Oliver Ehrenberg holds a Bachelor's degree in Innovation Management and is the founder of Neo Marketing, with extensive experience in CRM implementation and data-driven business models. As CEO of Swedish Construction Sales from 2021 to 2024, he led the work of connecting Nordic construction companies to European suppliers and witnessed firsthand how lack of transparency and incorrect communication caused unnecessary conflicts. This insight made him determined to develop a platform that not only handles data but also enables simple, transparent dialogue between all parties – regardless of where in Europe they operate.",
       aboutAndersRole: "CTO & Co-founder",
-      aboutAndersBio: "Anders Niclazon has over two decades of experience as an entrepreneur and strategic advisor, specializing in HubSpot CRM and digital sales. As chairman of Swedish Construction Sales, he was responsible for partnerships, business development, and structured due diligence processes that significantly reduced disputes and increased trust between customers and suppliers. Together with Oliver, he founded Construction Sourcing Sweden AB to scale up this solution, centralize all contacts and communication flows, and create a secure, efficient platform where every construction company and supplier in Europe can establish themselves, grow, and collaborate successfully."
+      aboutAndersBio: "Anders Niclazon has over two decades of experience as an entrepreneur and strategic advisor, specializing in HubSpot CRM and digital sales. As chairman of Swedish Construction Sales, he was responsible for partnerships, business development, and structured due diligence processes that significantly reduced disputes and increased trust between customers and suppliers. Together with Oliver, he founded Construction Sourcing Sweden AB to scale up this solution, centralize all contacts and communication flows, and create a secure, efficient platform where every construction company and supplier in Europe can establish themselves, grow, and collaborate successfully.",
+      pricingPageTitle: "Pricing - Construction Sourcing",
+      pricingHeroTitle: "Choose the right plan for your business",
+      pricingHeroSubtitle: "Flexible pricing that grows with your business",
+      pricingHeroFeature1: "No binding periods",
+      pricingHeroFeature2: "14-day free trial",
+      pricingHeroFeature3: "Scalable solutions",
+      planComparisonTitle: "Which plan is right for you?",
+      comparisonSmall: "Small businesses",
+      comparisonMedium: "Medium businesses",
+      comparisonLarge: "Large businesses",
+      pricingFaqTitle: "Frequently Asked Questions",
+      faqQuestion1: "Can I change plans at any time?",
+      faqAnswer1: "Yes, you can upgrade or downgrade your plan at any time. The change will take effect at the next billing period.",
+      faqQuestion2: "Is there a free trial?",
+      faqAnswer2: "Yes, all plans include a 14-day free trial with no credit card required.",
+      faqQuestion3: "What's included in support?",
+      faqAnswer3: "All plans include email support. Plus and Premium plans also include chat and phone support during business hours."
     },
     sv: {
       features: "Funktioner",
@@ -529,7 +546,24 @@ const translations = {
       aboutOliverRole: "VD & Medgrundare",
       aboutOliverBio: "Oliver Ehrenberg är kandidatexamen i innovation management och grundare av Neo Marketing, med bred erfarenhet av CRM-implementation och datadrivna affärsmodeller. Som VD för Swedish Construction Sales 2021–2024 ledde han arbetet med att koppla nordiska byggföretag till europeiska leverantörer och bevittnade på nära håll hur bristande insyn och felaktig kommunikation orsakade onödiga konflikter. Denna insikt gjorde honom fast besluten att utveckla en plattform som inte bara hanterar data utan också möjliggör enkel, transparent dialog mellan alla parter – oavsett var i Europa de verkar.",
       aboutAndersRole: "CTO & Medgrundare",
-      aboutAndersBio: "Anders Niclazon har över två decennier av erfarenhet som entreprenör och strategisk rådgivare, specialiserad på HubSpot CRM och digital försäljning. Som ordförande i Swedish Construction Sales ansvarade han för partnerskap, affärsutveckling och strukturerade due-diligence-processer som kraftigt minskade tvister och ökade förtroendet mellan kunder och leverantörer. Tillsammans med Oliver grundade han Construction Sourcing Sweden AB för att skala upp denna lösning, centralisera alla kontakter och kommunikationsflöden och skapa en trygg, effektiv plattform där varje byggföretag och leverantör i Europa kan etablera sig, växa och samarbeta framgångsrikt."
+      aboutAndersBio: "Anders Niclazon har över två decennier av erfarenhet som entreprenör och strategisk rådgivare, specialiserad på HubSpot CRM och digital försäljning. Som ordförande i Swedish Construction Sales ansvarade han för partnerskap, affärsutveckling och strukturerade due-diligence-processer som kraftigt minskade tvister och ökade förtroendet mellan kunder och leverantörer. Tillsammans med Oliver grundade han Construction Sourcing Sweden AB för att skala upp denna lösning, centralisera alla kontakter och kommunikationsflöden och skapa en trygg, effektiv plattform där varje byggföretag och leverantör i Europa kan etablera sig, växa och samarbeta framgångsrikt.",
+      pricingPageTitle: "Priser - Construction Sourcing",
+      pricingHeroTitle: "Välj rätt plan för ditt företag",
+      pricingHeroSubtitle: "Flexibla priser som växer med ditt företag",
+      pricingHeroFeature1: "Inga bindningstider",
+      pricingHeroFeature2: "14 dagars gratis provperiod",
+      pricingHeroFeature3: "Skalbara lösningar",
+      planComparisonTitle: "Vilken plan passar dig?",
+      comparisonSmall: "Små företag",
+      comparisonMedium: "Medelstora företag",
+      comparisonLarge: "Stora företag",
+      pricingFaqTitle: "Vanliga frågor",
+      faqQuestion1: "Kan jag byta plan när som helst?",
+      faqAnswer1: "Ja, du kan uppgradera eller nedgradera din plan när som helst. Ändringen träder i kraft vid nästa faktureringsperiod.",
+      faqQuestion2: "Finns det en gratis provperiod?",
+      faqAnswer2: "Ja, alla planer inkluderar en 14-dagars gratis provperiod utan krav på kreditkort.",
+      faqQuestion3: "Vad ingår i supporten?",
+      faqAnswer3: "Alla planer inkluderar e-postsupport. Plus och Premium planer inkluderar även chatt och telefonstöd under kontorstid."
     }
   };
   

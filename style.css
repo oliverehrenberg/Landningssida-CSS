@@ -17,6 +17,9 @@
   --accent-hover-end: #c99d00;
   --header-bg: rgba(15, 14, 23, 0.85);
   --hero-bg: rgba(28, 26, 46, 0.2);
+  --section-spacing: 6rem;
+  --content-spacing: 2rem;
+  --card-spacing: 1.5rem;
 }
 
 body {
@@ -24,6 +27,7 @@ body {
   background: var(--bg-gradient);
   color: var(--text-primary);
   overflow-x: hidden;
+  line-height: 1.6;
 }
 
 img {
@@ -782,23 +786,27 @@ html {
 =============================== */
 .pricing-wrapper {
   max-width: 1200px;
-  margin: 2.5rem auto;
-  padding: 0 1rem;
+  margin: var(--section-spacing) auto;
+  padding: 0 var(--content-spacing);
   text-align: center;
 }
 
 .pricing-wrapper h2 {
-  font-size: 2rem;
-  margin-bottom: 0.5rem;
+  font-size: 2.5rem;
+  margin-bottom: var(--content-spacing);
   font-weight: 600;
+  background: linear-gradient(135deg, #ffffff 0%, #e5b447 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .pricing-intro {
-  color: #a7a9be;
+  color: var(--text-secondary);
   max-width: 900px;
-  margin: 0.5rem auto;
-  line-height: 1.5;
+  margin: 0 auto var(--section-spacing);
+  line-height: 1.6;
   text-align: center;
+  font-size: 1.1rem;
 }
 
 .pricing-cards {
@@ -1869,7 +1877,8 @@ footer {
 
 .pricing-comparison-table-wrapper {
   overflow-x: auto;
-  margin: 2.5rem 0 0 0;
+  margin: var(--section-spacing) 0;
+  padding: 0 var(--content-spacing);
 }
 
 .pricing-comparison-table {
@@ -1887,7 +1896,7 @@ footer {
 
 .pricing-comparison-table th,
 .pricing-comparison-table td {
-  padding: 1.1rem 1rem;
+  padding: 1.2rem 1rem;
   text-align: center;
   border-bottom: 1px solid rgba(255,255,255,0.07);
 }
@@ -2622,5 +2631,331 @@ button[type="button"]:hover {
   height: 100%;
   background: var(--accent-primary);
   transition: width 0.2s ease;
+}
+
+/* Pricing Hero Section */
+.pricing-hero {
+  background: linear-gradient(135deg, rgba(28, 26, 46, 0.95) 0%, rgba(15, 14, 23, 0.95) 100%);
+  color: white;
+  padding: 0;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pricing-hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at center, rgba(249, 200, 81, 0.1) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.pricing-hero-content {
+  max-width: 1000px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+  padding: 2rem;
+}
+
+.pricing-hero h1 {
+  font-size: 3.2rem;
+  margin-bottom: 2rem;
+  font-weight: 600;
+  background: linear-gradient(135deg, #ffffff 0%, #e5b447 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  line-height: 1.2;
+}
+
+.pricing-hero-subtitle {
+  font-size: 1.4rem;
+  margin-bottom: 3rem;
+  opacity: 0.9;
+  line-height: 1.6;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.pricing-hero-features {
+  display: flex;
+  justify-content: center;
+  gap: 2.5rem;
+  flex-wrap: wrap;
+  margin-top: 2rem;
+}
+
+.feature-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem 2rem;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+  min-width: 250px;
+}
+
+.feature-item:hover {
+  transform: translateY(-5px);
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(229, 180, 71, 0.3);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.feature-item i {
+  color: #e5b447;
+  font-size: 1.4rem;
+}
+
+@media (max-width: 768px) {
+  .pricing-hero {
+    padding: 6rem 1rem;
+    min-height: auto;
+  }
+
+  .pricing-hero h1 {
+    font-size: 2.4rem;
+  }
+
+  .pricing-hero-subtitle {
+    font-size: 1.2rem;
+  }
+
+  .pricing-hero-features {
+    gap: 1.5rem;
+  }
+
+  .feature-item {
+    padding: 0.8rem 1.5rem;
+    min-width: 200px;
+  }
+}
+
+/* Plan Comparison Section */
+.plan-comparison {
+  padding: var(--section-spacing) var(--content-spacing);
+  background: rgba(28, 26, 46, 0.5);
+  position: relative;
+  overflow: hidden;
+  margin-bottom: var(--section-spacing);
+}
+
+.plan-comparison::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at top right, rgba(249, 200, 81, 0.05) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+.comparison-card {
+  max-width: 800px;
+  margin: 0 auto;
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 20px;
+  padding: 3rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+}
+
+.comparison-options {
+  display: flex;
+  gap: var(--card-spacing);
+  margin: var(--content-spacing) 0;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.comparison-option {
+  position: relative;
+  flex: 1;
+  min-width: 200px;
+}
+
+.comparison-option input[type="radio"] {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.comparison-option label {
+  display: block;
+  padding: 1.2rem 2rem;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.comparison-option label:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(229, 180, 71, 0.3);
+}
+
+.comparison-option input[type="radio"]:checked + label {
+  background: rgba(229, 180, 71, 0.2);
+  border-color: rgba(229, 180, 71, 0.5);
+  color: #e5b447;
+}
+
+/* FAQ Section */
+.pricing-faq {
+  padding: var(--section-spacing) var(--content-spacing);
+  background: rgba(15, 14, 23, 0.5);
+  position: relative;
+  margin-top: var(--section-spacing);
+}
+
+.pricing-faq h2 {
+  text-align: center;
+  font-size: 2.4rem;
+  margin-bottom: var(--section-spacing);
+  background: linear-gradient(135deg, #ffffff 0%, #e5b447 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.faq-container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.faq-item {
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 16px;
+  margin-bottom: var(--card-spacing);
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+}
+
+.faq-item:hover {
+  border-color: rgba(229, 180, 71, 0.3);
+}
+
+.faq-question {
+  padding: 1.5rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.faq-question:hover {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.faq-question h3 {
+  margin: 0;
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+.faq-question i {
+  color: #e5b447;
+  transition: transform 0.3s ease;
+}
+
+.faq-item.active .faq-question i {
+  transform: rotate(180deg);
+}
+
+.faq-answer {
+  padding: 0 2rem;
+  max-height: 0;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  opacity: 0;
+  line-height: 1.6;
+}
+
+.faq-item.active .faq-answer {
+  padding: 0 2rem 2rem;
+  max-height: 500px;
+  opacity: 1;
+}
+
+@media (max-width: 768px) {
+  .plan-comparison {
+    padding: 3rem 1rem;
+  }
+
+  .comparison-card {
+    padding: 2rem;
+  }
+
+  .comparison-options {
+    gap: 1rem;
+  }
+
+  .comparison-option {
+    min-width: 150px;
+  }
+
+  .comparison-option label {
+    padding: 1rem 1.5rem;
+  }
+
+  .pricing-faq {
+    padding: 4rem 1rem;
+  }
+
+  .pricing-faq h2 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  .faq-question {
+    padding: 1.2rem 1.5rem;
+  }
+
+  .faq-question h3 {
+    font-size: 1.1rem;
+  }
+
+  .faq-answer {
+    padding: 0 1.5rem;
+  }
+
+  .faq-item.active .faq-answer {
+    padding: 0 1.5rem 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  :root {
+    --section-spacing: 3rem;
+    --content-spacing: 1rem;
+  }
+
+  .pricing-wrapper h2 {
+    font-size: 1.8rem;
+  }
+
+  .comparison-card {
+    padding: 1.5rem;
+  }
+
+  .comparison-option {
+    min-width: 100%;
+  }
 }
 
