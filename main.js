@@ -55,6 +55,16 @@ document.addEventListener("DOMContentLoaded", (() => {
       if (about) {
         about.classList.remove('section-hidden');
       }
+
+      // Apply language translations specifically for about section
+      const savedLanguage = localStorage.getItem('language') || 'sv';
+      const aboutElements = aboutContainer.querySelectorAll('[data-translate]');
+      aboutElements.forEach((el) => {
+        const key = el.getAttribute('data-translate');
+        if (translations[savedLanguage][key]) {
+          el.innerHTML = translations[savedLanguage][key];
+        }
+      });
     }
 
     // Insert CTA section

@@ -279,7 +279,12 @@ const translations = {
       faqQuestion2: "Is there a free trial?",
       faqAnswer2: "Yes, all plans include a 14-day free trial with no credit card required.",
       faqQuestion3: "What's included in support?",
-      faqAnswer3: "All plans include email support. Plus and Premium plans also include chat and phone support during business hours."
+      faqAnswer3: "All plans include email support. Plus and Premium plans also include chat and phone support during business hours.",
+      aboutHeroTitle: "<span class='highlight-bransch'>Construction</span> industry's future is shaped by us",
+      aboutHeroSubtitle: "Construction Sourcing Sweden AB was founded from our own experiences of the industry's lack of transparency and recurring problems with disputes, late or missing invoice payments, and unreliable actors.",
+      aboutHeroFeature1: "Transparent Communication",
+      aboutHeroFeature2: "Secure Transactions",
+      aboutHeroFeature3: "Trusted Partnerships"
     },
     sv: {
       features: "Funktioner",
@@ -563,7 +568,12 @@ const translations = {
       faqQuestion2: "Finns det en gratis provperiod?",
       faqAnswer2: "Ja, alla planer inkluderar en 14-dagars gratis provperiod utan krav på kreditkort.",
       faqQuestion3: "Vad ingår i supporten?",
-      faqAnswer3: "Alla planer inkluderar e-postsupport. Plus och Premium planer inkluderar även chatt och telefonstöd under kontorstid."
+      faqAnswer3: "Alla planer inkluderar e-postsupport. Plus och Premium planer inkluderar även chatt och telefonstöd under kontorstid.",
+      aboutHeroTitle: "<span class='highlight-bransch'>Byggbranschens</span> framtid formas av oss",
+      aboutHeroSubtitle: "Construction Sourcing Sweden AB grundades ur våra egna erfarenheter av branschens bristande insyn och de återkommande problemen med tvister, sena eller uteblivna fakturabetalningar och oseriösa aktörer.",
+      aboutHeroFeature1: "Transparent Kommunikation",
+      aboutHeroFeature2: "Säkra Transaktioner",
+      aboutHeroFeature3: "Pålitliga Partnerskap"
     }
   };
   

@@ -1,41 +1,163 @@
-<section id="about" class="about-wrapper section-hidden">
-  <div class="about-card">
-    <div class="about-top">
-      <h2 class="about-title"><span class='highlight-bransch' data-translate="aboutTitleHighlight"></span> <span data-translate="aboutTitle"></span></h2>
-      <p class="about-subtitle" data-translate="aboutSubtitle"></p>
-    </div>
+<!DOCTYPE html>
+<html lang="sv">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title data-translate="aboutPageTitle">Om oss - Construction Sourcing</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" type="image/svg+xml" href="assets/Favicon.svg" />
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  </head>
 
-    <div class="about-bottom">
-      <div class="about-text">
-        <h3 data-translate="aboutVisionTitle"></h3>
-        <p data-translate="aboutVisionText"></p>
-      </div>
+  <body>
+    <div class="scroll-progress"><div class="scroll-progress__bar"></div></div>
+    <div id="header-container"></div>
 
-      <div class="founders-section">
-        <h3 data-translate="aboutFoundersTitle"></h3>
-        <div class="founders-grid">
-          <div class="founder-card">
-            <div class="founder-image">
-              <img src="assets/oliver new.png" alt="Oliver Ehrenberg" />
-            </div>
-            <div class="founder-info">
-              <h4>Oliver Ehrenberg</h4>
-              <p class="founder-role" data-translate="aboutOliverRole"></p>
-              <p class="founder-bio" data-translate="aboutOliverBio"></p>
-            </div>
+    <!-- About Hero Section -->
+    <section class="pricing-hero">
+      <div class="pricing-hero-content">
+        <h1 data-translate="aboutHeroTitle"></h1>
+        <p class="pricing-hero-subtitle" data-translate="aboutHeroSubtitle"></p>
+        <div class="pricing-hero-features">
+          <div class="feature-item">
+            <i class="fas fa-check-circle"></i>
+            <span data-translate="aboutHeroFeature1"></span>
           </div>
-          <div class="founder-card">
-            <div class="founder-image">
-              <img src="assets/anders-niclazon.jpeg" alt="Anders Niclazon" />
-            </div>
-            <div class="founder-info">
-              <h4>Anders Niclazon</h4>
-              <p class="founder-role" data-translate="aboutAndersRole"></p>
-              <p class="founder-bio" data-translate="aboutAndersBio"></p>
-            </div>
+          <div class="feature-item">
+            <i class="fas fa-check-circle"></i>
+            <span data-translate="aboutHeroFeature2"></span>
+          </div>
+          <div class="feature-item">
+            <i class="fas fa-check-circle"></i>
+            <span data-translate="aboutHeroFeature3"></span>
           </div>
         </div>
       </div>
+    </section>
+
+    <!-- About Content Section -->
+    <section class="about-wrapper">
+      <div class="about-card">
+        <h2 class="about-title">
+          <span data-translate="aboutTitleHighlight"></span>
+          <span data-translate="aboutTitle"></span>
+        </h2>
+        <p class="about-subtitle" data-translate="aboutSubtitle"></p>
+        
+        <div class="about-bottom">
+          <div class="about-text">
+            <h3 data-translate="aboutMissionTitle"></h3>
+            <p data-translate="aboutMissionText"></p>
+          </div>
+          <div class="about-image">
+            <img src="assets/about-mission.jpg" alt="Mission" />
+          </div>
+        </div>
+
+        <div class="about-bottom">
+          <div class="about-image">
+            <img src="assets/about-vision.jpg" alt="Vision" />
+          </div>
+          <div class="about-text">
+            <h3 data-translate="aboutVisionTitle"></h3>
+            <p data-translate="aboutVisionText"></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Founders Section -->
+    <section class="founders-section">
+      <h3 data-translate="foundersTitle"></h3>
+      <div class="founders-grid">
+        <div class="founder-card">
+          <div class="founder-image">
+            <img src="assets/Oliver New.png" alt="Oliver Ehrenberg" />
+          </div>
+          <div class="founder-info">
+            <h4 data-translate="aboutOliverName">Oliver Ehrenberg</h4>
+            <p class="founder-role" data-translate="aboutOliverRole"></p>
+            <p class="founder-bio" data-translate="aboutOliverBio"></p>
+          </div>
+        </div>
+        <div class="founder-card">
+          <div class="founder-image">
+            <img src="assets/anders-niclazon.jpeg" alt="Anders Niclazon" />
+          </div>
+          <div class="founder-info">
+            <h4 data-translate="aboutAndersName">Anders Niclazon</h4>
+            <p class="founder-role" data-translate="aboutAndersRole"></p>
+            <p class="founder-bio" data-translate="aboutAndersBio"></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="section-divider"></div>
+    <div id="cta-container"></div>
+
+    <div class="section-divider"></div>
+    <div id="footer-container"></div>
+
+    <!-- POPUP HTML -->
+    <div id="popup-root">
+      <div class="popup-overlay" id="newsletterModal">
+        <div class="popup-box">
+          <button class="close-btn" onclick="toggleModal(false)" data-translate="closeButton"></button>
+          <h3 data-translate="popupTitle"></h3>
+          <form class="popup-form">
+            <input type="email" placeholder="" data-translate="popupEmailPlaceholder" required />
+            <div class="phone-input">
+              <select id="countrySelect" onchange="updateFlagAndCode()">
+                <option value="se" data-code="46" data-translate="countrySE"></option>
+                <option value="dk" data-code="45" data-translate="countryDK"></option>
+                <option value="no" data-code="47" data-translate="countryNO"></option>
+                <option value="fi" data-code="358" data-translate="countryFI"></option>
+                <option value="de" data-code="49" data-translate="countryDE"></option>
+                <option value="fr" data-code="33" data-translate="countryFR"></option>
+                <option value="es" data-code="34" data-translate="countryES"></option>
+                <option value="it" data-code="39" data-translate="countryIT"></option>
+                <option value="nl" data-code="31" data-translate="countryNL"></option>
+                <option value="be" data-code="32" data-translate="countryBE"></option>
+              </select>
+              <input type="tel" id="phoneNumber" placeholder="" data-translate="popupPhonePlaceholder" required />
+            </div>
+            <button type="submit" class="submit-btn" data-translate="popupSubmit"></button>
+            <button type="button" class="decline-btn" onclick="toggleModal(false)" data-translate="popupDecline"></button>
+          </form>
+          <p class="disclaimer" data-translate="popupDisclaimer"></p>
+        </div>
+      </div>
+
+      <div class="popup-overlay" id="confirmationPopup">
+        <div class="popup-box">
+          <h3 data-translate="confirmationTitle"></h3>
+          <p data-translate="confirmationText"></p>
+          <button class="submit-btn" onclick="toggleConfirmation(false)" data-translate="confirmationClose"></button>
+        </div>
+      </div>
     </div>
-  </div>
-</section> 
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollTrigger.min.js"></script>
+    <script src="main.js"></script>
+    <script src="popup.js"></script>
+    <script src="lang.js"></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        lucide.createIcons();
+        
+        // Apply language translations
+        const savedLanguage = localStorage.getItem('language') || 'sv';
+        const elements = document.querySelectorAll('[data-translate]');
+        elements.forEach((el) => {
+          const key = el.getAttribute('data-translate');
+          if (translations[savedLanguage][key]) {
+            el.innerHTML = translations[savedLanguage][key];
+          }
+        });
+      });
+    </script>
+  </body>
+</html> 

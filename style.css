@@ -1622,13 +1622,13 @@ footer {
 
 .about-wrapper {
   background-color: #0e0e1a;
-  padding: 6rem 2rem;
+  padding: var(--section-spacing) var(--content-spacing);
 }
 
 .about-card {
   background-color: #15151f;
   border-radius: 1.5rem;
-  padding: 4rem 2rem;
+  padding: var(--section-spacing) var(--content-spacing);
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
   max-width: 1200px;
   margin: 0 auto;
@@ -1638,14 +1638,17 @@ footer {
 .about-title {
   font-size: 2.5rem;
   font-weight: 600;
-  margin-bottom: 1.5rem;
+  margin-bottom: var(--content-spacing);
   text-align: center;
+  background: linear-gradient(135deg, #ffffff 0%, #e5b447 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .about-subtitle {
   font-size: 1.125rem;
   max-width: 800px;
-  margin: 0 auto 3rem auto;
+  margin: 0 auto var(--section-spacing) auto;
   color: #ccc;
   text-align: center;
   line-height: 1.7;
@@ -1654,14 +1657,16 @@ footer {
 .about-bottom {
   display: flex;
   flex-wrap: wrap;
-  gap: 2rem;
+  gap: var(--section-spacing);
   align-items: center;
   justify-content: center;
-  margin-top: 2rem;
+  margin-top: var(--content-spacing);
 }
+
 .about-text {
   flex: 1 1 480px;
   text-align: center;
+  margin-bottom: var(--content-spacing);
 }
 
 .about-text h3 {
@@ -1679,6 +1684,7 @@ footer {
 .about-image {
   flex: 1 1 480px;
   text-align: center;
+  margin-bottom: var(--content-spacing);
 }
 
 .about-image img {
@@ -1688,18 +1694,133 @@ footer {
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
 }
 
-/* Responsive */
+/* Founders Section */
+.founders-section {
+  position: relative;
+  padding: var(--section-spacing) 0 0 0;
+  margin-top: var(--section-spacing);
+}
+
+.founders-section h3 {
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: var(--content-spacing);
+  text-align: center;
+  background: linear-gradient(135deg, #ffffff 0%, #e5b447 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.founders-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--card-spacing);
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 var(--content-spacing);
+}
+
+.founder-card {
+  position: relative;
+  background: linear-gradient(135deg, rgba(28, 26, 46, 0.6) 0%, rgba(28, 26, 46, 0.6) 35%, rgba(229, 180, 71, 0.4) 100%);
+  border-radius: 1rem;
+  padding: var(--content-spacing);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  overflow: hidden;
+}
+
+.founder-image {
+  position: relative;
+  width: 150px;
+  height: 150px;
+  margin: 0 auto var(--content-spacing);
+  border-radius: 50%;
+  overflow: hidden;
+  filter: grayscale(100%);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.founder-info {
+  text-align: center;
+}
+
+.founder-info h4 {
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: #ffffff;
+  position: relative;
+  display: inline-block;
+}
+
+.founder-role {
+  font-size: 1.1rem;
+  color: #e5b447;
+  margin-bottom: 1rem;
+  font-weight: 500;
+}
+
+.founder-bio {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.8);
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+/* Responsive adjustments */
+@media (max-width: 900px) {
+  .about-bottom {
+    flex-direction: column;
+    gap: var(--content-spacing);
+  }
+  .founders-grid {
+    grid-template-columns: 1fr;
+    gap: var(--content-spacing);
+  }
+}
+
 @media (max-width: 768px) {
   .about-title {
     font-size: 2rem;
   }
-
-  .about-bottom {
-  flex-direction: column;
+  .about-card {
+    padding: var(--content-spacing);
   }
+  .about-bottom {
+    gap: var(--content-spacing);
+  }
+  .founders-section {
+    padding: var(--content-spacing) 0 0 0;
+    margin-top: var(--content-spacing);
+  }
+  .founders-section h3 {
+    font-size: 1.5rem;
+  }
+  .founder-image {
+    width: 120px;
+    height: 120px;
+  }
+}
 
-  .about-image img {
-    max-width: 100%;
+@media (max-width: 480px) {
+  .about-title {
+    font-size: 1.5rem;
+  }
+  .about-card {
+    padding: var(--content-spacing);
+  }
+  .founders-section h3 {
+    font-size: 1.2rem;
+  }
+  .founder-info h4 {
+    font-size: 1.1rem;
+  }
+  .founder-role {
+    font-size: 1rem;
+  }
+  .founder-bio {
+    font-size: 0.9rem;
   }
 }
 
@@ -2325,8 +2446,8 @@ button[type="button"]:hover {
 =============================== */
 .founders-section {
   position: relative;
-  padding: 4rem 0;
-  margin-top: 4rem;
+  padding: var(--section-spacing) 0 0 0;
+  margin-top: var(--section-spacing);
 }
 
 .founders-section::before {
@@ -2345,9 +2466,9 @@ button[type="button"]:hover {
 }
 
 .founders-section h3 {
-  font-size: 2.5rem;
+  font-size: 2rem;
   font-weight: 600;
-  margin-bottom: 3rem;
+  margin-bottom: var(--content-spacing);
   text-align: center;
   background: linear-gradient(135deg, #ffffff 0%, #e5b447 100%);
   -webkit-background-clip: text;
@@ -2357,21 +2478,17 @@ button[type="button"]:hover {
 .founders-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 3rem;
-  max-width: 1200px;
+  gap: var(--card-spacing);
+  max-width: 900px;
   margin: 0 auto;
-  padding: 0 2rem;
+  padding: 0 var(--content-spacing);
 }
 
 .founder-card {
   position: relative;
-  background: linear-gradient(135deg, 
-    rgba(28, 26, 46, 0.6) 0%,
-    rgba(28, 26, 46, 0.6) 35%,
-    rgba(229, 180, 71, 0.4) 100%
-  );
+  background: linear-gradient(135deg, rgba(28, 26, 46, 0.6) 0%, rgba(28, 26, 46, 0.6) 35%, rgba(229, 180, 71, 0.4) 100%);
   border-radius: 1rem;
-  padding: 2rem;
+  padding: var(--content-spacing);
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   overflow: hidden;
 }
@@ -2425,7 +2542,7 @@ button[type="button"]:hover {
   position: relative;
   width: 150px;
   height: 150px;
-  margin: 0 auto 2rem;
+  margin: 0 auto var(--content-spacing);
   border-radius: 50%;
   overflow: hidden;
   filter: grayscale(100%);
@@ -2486,7 +2603,7 @@ button[type="button"]:hover {
 }
 
 .founder-info h4 {
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   font-weight: 600;
   margin-bottom: 0.5rem;
   color: #ffffff;
@@ -2541,11 +2658,11 @@ button[type="button"]:hover {
 @media (max-width: 768px) {
   .founders-grid {
     grid-template-columns: 1fr;
-    gap: 2rem;
+    gap: var(--content-spacing);
   }
 
   .founder-card {
-    padding: 1.5rem;
+    padding: var(--content-spacing);
   }
 
   .founder-image {
@@ -2560,11 +2677,11 @@ button[type="button"]:hover {
 
 @media (max-width: 480px) {
   .founders-section h3 {
-    font-size: 2rem;
+    font-size: 1.5rem;
   }
 
   .founder-info h4 {
-    font-size: 1.3rem;
+    font-size: 1.1rem;
   }
 
   .founder-role {
@@ -2956,6 +3073,285 @@ button[type="button"]:hover {
 
   .comparison-option {
     min-width: 100%;
+  }
+}
+
+/* About Hero Section */
+.about-hero {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  position: relative;
+  background: var(--bg-gradient);
+}
+
+.about-hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at center, rgba(249, 200, 81, 0.1) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.about-hero-content {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+  padding: 4rem 1rem;
+  background: var(--hero-bg);
+  border-radius: 12px;
+  box-shadow: 0 0 40px rgba(0, 0, 0, 0.5);
+  position: relative;
+  z-index: 1;
+}
+
+.about-hero h1 {
+  font-size: 3.2rem;
+  margin-bottom: 2rem;
+  font-weight: 600;
+  background: linear-gradient(135deg, #ffffff 0%, #e5b447 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  line-height: 1.2;
+}
+
+.about-hero-subtitle {
+  font-size: 1.4rem;
+  margin-bottom: 3rem;
+  opacity: 0.9;
+  line-height: 1.6;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* About Content Section */
+.about-wrapper {
+  background-color: #0e0e1a;
+  padding: var(--section-spacing) var(--content-spacing);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.about-card {
+  background-color: #15151f;
+  border-radius: 1.5rem;
+  padding: var(--section-spacing) var(--content-spacing);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.about-title {
+  font-size: 2.5rem;
+  font-weight: 600;
+  margin-bottom: var(--content-spacing);
+  text-align: center;
+  background: linear-gradient(135deg, #ffffff 0%, #e5b447 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.about-subtitle {
+  font-size: 1.125rem;
+  max-width: 800px;
+  margin: 0 auto var(--section-spacing) auto;
+  color: #ccc;
+  text-align: center;
+  line-height: 1.6;
+}
+
+.about-bottom {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--section-spacing);
+  align-items: center;
+  justify-content: center;
+  margin-top: var(--content-spacing);
+}
+
+.about-text {
+  flex: 1 1 480px;
+  text-align: center;
+  margin-bottom: var(--content-spacing);
+}
+
+.about-text h3 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  color: #fff;
+  font-weight: 600;
+}
+
+.about-text p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #ccc;
+}
+
+.about-image {
+  flex: 1 1 480px;
+  text-align: center;
+}
+
+.about-image img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+/* Founders Section */
+.founders-section {
+  position: relative;
+  padding: var(--section-spacing) 0 0 0;
+  margin-top: var(--section-spacing);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: var(--bg-gradient);
+}
+
+.founders-section h3 {
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: var(--content-spacing);
+  text-align: center;
+  background: linear-gradient(135deg, #ffffff 0%, #e5b447 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.founders-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--card-spacing);
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 var(--content-spacing);
+}
+
+.founder-card {
+  position: relative;
+  background: linear-gradient(135deg, rgba(28, 26, 46, 0.6) 0%, rgba(28, 26, 46, 0.6) 35%, rgba(229, 180, 71, 0.4) 100%);
+  border-radius: 1rem;
+  padding: var(--content-spacing);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  overflow: hidden;
+}
+
+.founder-image {
+  position: relative;
+  width: 150px;
+  height: 150px;
+  margin: 0 auto var(--content-spacing);
+  border-radius: 50%;
+  overflow: hidden;
+  filter: grayscale(100%);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.founder-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.founder-info {
+  text-align: center;
+}
+
+.founder-info h4 {
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: #ffffff;
+  position: relative;
+  display: inline-block;
+}
+
+.founder-role {
+  font-size: 1.1rem;
+  color: #e5b447;
+  margin-bottom: 1rem;
+  font-weight: 500;
+}
+
+.founder-bio {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.8);
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+/* Responsive adjustments */
+@media (max-width: 900px) {
+  .about-bottom {
+    flex-direction: column;
+    gap: var(--content-spacing);
+  }
+  .founders-grid {
+    grid-template-columns: 1fr;
+    gap: var(--content-spacing);
+  }
+}
+
+@media (max-width: 768px) {
+  .about-title {
+    font-size: 2rem;
+  }
+  .about-card {
+    padding: var(--content-spacing);
+  }
+  .about-bottom {
+    gap: var(--content-spacing);
+  }
+  .founders-section {
+    padding: var(--content-spacing) 0 0 0;
+    margin-top: var(--content-spacing);
+  }
+  .founders-section h3 {
+    font-size: 1.5rem;
+  }
+  .founder-image {
+    width: 120px;
+    height: 120px;
+  }
+}
+
+@media (max-width: 480px) {
+  .about-title {
+    font-size: 1.5rem;
+  }
+  .about-card {
+    padding: var(--content-spacing);
+  }
+  .founders-section h3 {
+    font-size: 1.2rem;
+  }
+  .founder-info h4 {
+    font-size: 1.1rem;
+  }
+  .founder-role {
+    font-size: 1rem;
+  }
+  .founder-bio {
+    font-size: 0.9rem;
   }
 }
 
