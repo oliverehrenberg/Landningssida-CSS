@@ -46,15 +46,24 @@ button {
    HEADER
 =============================== */
 .header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background: rgba(28, 26, 46, 0.95);
+  backdrop-filter: blur(10px);
+  padding: 1rem 2rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem 2rem;
-  background: var(--header-bg);
-  backdrop-filter: blur(10px);
-  position: sticky;
-  top: 0;
-  z-index: 1000;
+  transform: translateY(0);
+  transition: transform 0.3s ease-in-out;
+  will-change: transform;
+}
+
+.header.hide {
+  transform: translateY(-100%);
 }
 
 .nav-left img {

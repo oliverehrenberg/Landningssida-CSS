@@ -1,4 +1,55 @@
 document.addEventListener("DOMContentLoaded", (() => {
+  // Load header, footer and features summary
+  Promise.all([
+    fetch('header.html').then(response => response.text()),
+    fetch('footer.html').then(response => response.text()),
+    fetch('features-summary.html').then(response => response.text())
+  ]).then(([headerData, footerData, featuresSummaryData]) => {
+    // Insert header
+    const headerContainer = document.getElementById('header-container');
+    if (headerContainer) {
+      headerContainer.innerHTML = headerData;
+      initializeHeader();
+    }
+
+    // Insert footer
+    const footerContainer = document.getElementById('footer-container');
+    if (footerContainer) {
+      footerContainer.innerHTML = footerData;
+      initializeFooter();
+      
+      // Make footer visible
+      const footer = footerContainer.querySelector('footer');
+      if (footer) {
+        footer.classList.remove('section-hidden');
+      }
+    }
+
+    // Insert features summary
+    const featuresSummaryContainer = document.getElementById('features-summary-container');
+    if (featuresSummaryContainer) {
+      featuresSummaryContainer.innerHTML = featuresSummaryData;
+      
+      // Make features summary section visible
+      const featuresSummarySection = featuresSummaryContainer.querySelector('.features-summary-wrapper');
+      if (featuresSummarySection) {
+        featuresSummarySection.classList.remove('section-hidden');
+      }
+      
+      // Initialize Lucide icons in the features summary section
+      lucide.createIcons();
+      
+      // Initialize carousel functionality
+      initializeCarousel();
+    }
+    
+    // Apply language translations
+    const savedLang = localStorage.getItem('language') || 'sv';
+    applyLanguage(savedLang);
+  }).catch(error => {
+    console.error('Error loading sections:', error);
+  });
+
   const hero = document.querySelector(".hero"), sections = document.querySelectorAll(".features-wrapper, .features-summary-wrapper, #pricing, #about, .cta-section, footer");
   lucide.createIcons(), gsap.registerPlugin(ScrollTrigger);
   const carouselTrack = document.querySelector(".carousel-track"), carouselPrev = document.querySelector(".carousel-prev"), carouselNext = document.querySelector(".carousel-next"), useCaseCards = document.querySelectorAll(".use-case-card");
@@ -341,4 +392,115 @@ document.addEventListener("DOMContentLoaded", (() => {
     const bar = document.querySelector('.scroll-progress__bar');
     if (bar) bar.style.width = percent + '%';
   });
+
+  // Add header initialization function
+  function initializeHeader() {
+    // Initialize language switcher
+    const langButtons = document.querySelectorAll(".language-switcher a");
+    const currentLang = localStorage.getItem('language') || 'sv';
+    
+    langButtons.forEach(btn => {
+      if (btn.dataset.lang === currentLang) {
+        btn.classList.add('active');
+      }
+      
+      btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        const lang = btn.dataset.lang;
+        window.switchLanguage(lang);
+      });
+    });
+
+    // Initialize Lucide icons in header
+    lucide.createIcons();
+  }
+
+  // Add footer initialization function
+  function initializeFooter() {
+    // Initialize footer language switcher
+    const footerLangButtons = document.querySelectorAll(".language-switcher-footer .lang-btn");
+    const currentLang = localStorage.getItem('language') || 'sv';
+    
+    footerLangButtons.forEach(btn => {
+      if (btn.dataset.lang === currentLang) {
+        btn.classList.add('active');
+      }
+      
+      btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        const lang = btn.dataset.lang;
+        window.switchLanguage(lang);
+      });
+    });
+
+    // Initialize Font Awesome icons in footer
+    if (window.FontAwesome) {
+      window.FontAwesome.dom.i2svg();
+    }
+  }
+
+  // Header scroll behavior
+  let lastScrollTop = 0;
+  let ticking = false;
+
+  window.addEventListener('scroll', () => {
+    if (!ticking) {
+      window.requestAnimationFrame(() => {
+        const header = document.querySelector('.header');
+        if (header) {
+          const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+          
+          if (scrollTop > lastScrollTop) {
+            // Scrolling down
+            header.classList.add('hide');
+          } else {
+            // Scrolling up
+            header.classList.remove('hide');
+          }
+          
+          lastScrollTop = scrollTop;
+        }
+        ticking = false;
+      });
+      ticking = true;
+    }
+  });
+
+  // Add carousel initialization function
+  function initializeCarousel() {
+    const carouselTrack = document.querySelector(".carousel-track");
+    const carouselPrev = document.querySelector(".carousel-prev");
+    const carouselNext = document.querySelector(".carousel-next");
+    const useCaseCards = document.querySelectorAll(".use-case-card");
+    let currentIndex = 0;
+
+    function updateCarousel() {
+      const cardWidth = useCaseCards[0].offsetWidth;
+      carouselTrack.style.transform = `translateX(-${currentIndex * (cardWidth + 32)}px)`;
+      carouselPrev.style.opacity = currentIndex === 0 ? "0.5" : "1";
+      carouselNext.style.opacity = currentIndex === useCaseCards.length - 1 ? "0.5" : "1";
+    }
+
+    if (carouselPrev && carouselNext) {
+      carouselPrev.addEventListener("click", () => {
+        if (currentIndex > 0) {
+          currentIndex--;
+          updateCarousel();
+        } else {
+          gsap.fromTo(carouselTrack, { x: 0 }, { x: 20, duration: 0.2, yoyo: true, repeat: 1, ease: "power1.inOut" });
+        }
+      });
+
+      carouselNext.addEventListener("click", () => {
+        if (currentIndex < useCaseCards.length - 1) {
+          currentIndex++;
+          updateCarousel();
+        } else {
+          gsap.fromTo(carouselTrack, { x: 0 }, { x: -20, duration: 0.2, yoyo: true, repeat: 1, ease: "power1.inOut" });
+        }
+      });
+
+      updateCarousel();
+    }
+  }
 }));
