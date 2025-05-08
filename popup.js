@@ -1,13 +1,16 @@
+// Denna funktion öppnar eller stänger nyhetsbrevsmodalen
 function toggleModal(show = true) {
   const modal = document.getElementById('newsletterModal');
   if (modal) modal.classList.toggle('active', show);
 }
 
+// Denna funktion öppnar eller stänger bekräftelse-popupen
 function toggleConfirmation(show = true) {
   const popup = document.getElementById('confirmationPopup');
   if (popup) popup.classList.toggle('active', show);
 }
 
+// Denna funktion uppdaterar placeholder och landskod för telefonnummer
 function updateFlagAndCode() {
   const select = document.getElementById('countrySelect');
   const phoneInput = document.getElementById('phoneNumber');
@@ -16,11 +19,13 @@ function updateFlagAndCode() {
   phoneInput.placeholder = `+${countryCode}`;
 }
 
+// Denna funktion validerar e-postadressen
 function validateEmail(email) {
   const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   return re.test(email);
 }
 
+// Denna funktion validerar telefonnumret
 function validatePhone(phone, countryCode) {
   // Remove all non-digit characters
   const digits = phone.replace(/\D/g, '');
@@ -28,6 +33,7 @@ function validatePhone(phone, countryCode) {
   return digits.length >= 5;
 }
 
+// Denna funktion visar ett felmeddelande under ett formulärfält
 function showError(element, message) {
   const errorDiv = element.nextElementSibling || document.createElement('div');
   if (!errorDiv.classList.contains('error-message')) {
@@ -38,6 +44,7 @@ function showError(element, message) {
   element.classList.add('error');
 }
 
+// Denna funktion tar bort felmeddelande från ett formulärfält
 function clearError(element) {
   const errorDiv = element.nextElementSibling;
   if (errorDiv && errorDiv.classList.contains('error-message')) {
@@ -46,6 +53,7 @@ function clearError(element) {
   element.classList.remove('error');
 }
 
+// Denna funktion visar laddningsindikator på en knapp
 function setLoading(button, isLoading) {
   button.disabled = isLoading;
   button.innerHTML = isLoading ? 
@@ -53,6 +61,7 @@ function setLoading(button, isLoading) {
     button.getAttribute('data-translate');
 }
 
+// Denna funktion initierar popup-logiken och formulärhantering
 function initPopupLogic() {
   document.querySelectorAll('.cta-btn').forEach((btn) => {
     btn.addEventListener('click', (e) => {
