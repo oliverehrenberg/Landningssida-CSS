@@ -542,7 +542,7 @@ document.addEventListener("DOMContentLoaded", (() => {
 
   // === FEATURES SUMMARY PAGE SCRIPTS ===
   document.addEventListener('DOMContentLoaded', function() {
-    // Sticky nav active
+    // Sticky nav active - disabled
     const navLinks = document.querySelectorAll('.features-nav a');
     const sections = [
       document.getElementById('project-section'),
@@ -550,31 +550,14 @@ document.addEventListener("DOMContentLoaded", (() => {
       document.getElementById('legal-section')
     ];
     function setActiveNav() {
-      let scrollPos = window.scrollY || window.pageYOffset;
-      let found = false;
-      sections.forEach((section, i) => {
-        if (section && !found && section.offsetTop - 120 <= scrollPos) {
-          navLinks.forEach(l => l.classList.remove('active'));
-          navLinks[i].classList.add('active');
-          found = true;
-        }
-      });
-      if (!found) navLinks.forEach(l => l.classList.remove('active'));
+      // Function disabled
+      return;
     }
-    if (navLinks.length && sections.length) {
-      window.addEventListener('scroll', setActiveNav);
-      setActiveNav();
-    }
-
+    // Disabled sticky nav
+    // window.addEventListener('scroll', setActiveNav);
+    
     // Expand/collapse feature-cards
-    document.querySelectorAll('.expand-btn').forEach(btn => {
-      btn.addEventListener('click', function() {
-        const expanded = btn.getAttribute('aria-expanded') === 'true';
-        btn.setAttribute('aria-expanded', !expanded);
-        const info = btn.parentElement.querySelector('.expanded-info');
-        if (info) info.classList.toggle('show');
-      });
-    });
+    initFeatureCardExpand();
 
     // Scroll to top button (mobile)
     document.querySelectorAll('.scroll-to-top').forEach(btn => {
@@ -584,17 +567,7 @@ document.addEventListener("DOMContentLoaded", (() => {
     });
 
     // FAQ expand/collapse
-    document.querySelectorAll('.faq-question').forEach(q => {
-      q.addEventListener('click', function() {
-        const expanded = q.getAttribute('aria-expanded') === 'true';
-        q.setAttribute('aria-expanded', !expanded);
-        const ans = document.getElementById(q.getAttribute('aria-controls'));
-        if (ans) ans.classList.toggle('show');
-      });
-      q.addEventListener('keydown', function(e) {
-        if (e.key === 'Enter' || e.key === ' ') q.click();
-      });
-    });
+    initFaqAccessibility();
 
     // Carousel accessibility & swipe
     const carousel = document.querySelector('.use-cases-carousel');
@@ -635,4 +608,38 @@ document.addEventListener("DOMContentLoaded", (() => {
       track.addEventListener('touchend', () => { startX = null; });
     }
   });
+
+  // Hanterar klick på 'Läs mer'-knappar i feature cards
+  // Öppnar detaljsidan i en ny flik/fönster
+  function initFeatureCardExpand() {
+    document.querySelectorAll('.expand-btn').forEach(btn => {
+      btn.addEventListener('click', function() {
+        const card = btn.closest('.pricing-card');
+        if (card && card.id === 'project-section') {
+          window.open('project-details.html', '_blank');
+        } else if (card && card.id === 'supplier-section') {
+          window.open('supplier-details.html', '_blank');
+        } else if (card && card.id === 'legal-section') {
+          window.open('legal-details.html', '_blank');
+        }
+      });
+    });
+  }
+
+  // Hanterar tillgänglig FAQ expand/collapse
+  // Lägger till klick och tangentbordsstöd för att visa/dölja svar
+  function initFaqAccessibility() {
+    document.querySelectorAll('.faq-question').forEach(q => {
+      q.addEventListener('click', function() {
+        const expanded = q.getAttribute('aria-expanded') === 'true';
+        q.setAttribute('aria-expanded', !expanded);
+        const ans = document.getElementById(q.getAttribute('aria-controls'));
+        if (ans) ans.classList.toggle('show');
+        q.parentElement.classList.toggle('active');
+      });
+      q.addEventListener('keydown', function(e) {
+        if (e.key === 'Enter' || e.key === ' ') q.click();
+      });
+    });
+  }
 }));

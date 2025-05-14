@@ -27,29 +27,23 @@
         <p class="pricing-hero-subtitle" data-translate="featuresSummaryIntro"></p>
         <div class="pricing-hero-features">
           <div class="feature-item">
-            <i class="fas fa-check-circle"></i>
+            <i class="fas fa-check-circle" aria-hidden="true"></i>
             <span data-translate="featuresUSP1"></span>
           </div>
           <div class="feature-item">
-            <i class="fas fa-check-circle"></i>
+            <i class="fas fa-check-circle" aria-hidden="true"></i>
             <span data-translate="featuresUSP2"></span>
           </div>
           <div class="feature-item">
-            <i class="fas fa-check-circle"></i>
+            <i class="fas fa-check-circle" aria-hidden="true"></i>
             <span data-translate="featuresUSP3"></span>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Internmeny -->
-    <nav class="features-nav" aria-label="Sektioner">
-      <a href="#project-section" data-translate="featuresNavProject"></a>
-      <a href="#supplier-section" data-translate="featuresNavSupplier"></a>
-      <a href="#legal-section" data-translate="featuresNavLegal"></a>
-    </nav>
-
-    <section id="funktioner" class="features-summary-wrapper section-hidden">
+    <!-- Use Cases Carousel -->
+    <section class="features-summary-wrapper section-hidden" id="funktioner">
       <div class="use-cases-carousel" aria-label="Use cases" aria-live="polite">
         <div class="carousel-track">
           <div class="use-case-card">
@@ -78,9 +72,10 @@
         <button class="carousel-next" aria-label="Nästa" tabindex="0"><i data-lucide="chevron-right"></i></button>
       </div>
 
+      <!-- Feature Cards -->
       <div class="pricing-cards">
         <div class="pricing-card" id="project-section">
-          <div class="feature-card-icon"><i class="fa-solid fa-diagram-project"></i></div>
+          <div class="feature-card-icon"><i class="fa-solid fa-diagram-project" aria-hidden="true"></i></div>
           <h3 data-translate="featuresProjectTitle"></h3>
           <ul class="features-list">
             <li data-translate="featuresProject1"></li>
@@ -89,15 +84,12 @@
             <li data-translate="featuresProject4"></li>
             <li data-translate="featuresProject5"></li>
           </ul>
-          <button class="expand-btn" aria-expanded="false" aria-controls="project-expanded" data-translate="readMore"></button>
-          <div class="expanded-info" id="project-expanded">
-            <p data-translate="featuresProjectExpanded"></p>
-          </div>
-          <button class="scroll-to-top" aria-label="Till toppen"><i class="fa-solid fa-arrow-up"></i></button>
+          <button class="expand-btn" onclick="window.open('project-details.html','_blank')" data-translate="readMore"></button>
+          <button class="scroll-to-top" aria-label="Till toppen"><i class="fa-solid fa-arrow-up" aria-hidden="true"></i></button>
         </div>
 
         <div class="pricing-card" id="supplier-section">
-          <div class="feature-card-icon"><i class="fa-solid fa-network-wired"></i></div>
+          <div class="feature-card-icon"><i class="fa-solid fa-network-wired" aria-hidden="true"></i></div>
           <h3 data-translate="featuresConnectTitle"></h3>
           <ul class="features-list">
             <li data-translate="featuresConnect1"></li>
@@ -106,15 +98,12 @@
             <li data-translate="featuresConnect4"></li>
             <li data-translate="featuresConnect5"></li>
           </ul>
-          <button class="expand-btn" aria-expanded="false" aria-controls="supplier-expanded" data-translate="readMore"></button>
-          <div class="expanded-info" id="supplier-expanded">
-            <p data-translate="featuresConnectExpanded"></p>
-          </div>
-          <button class="scroll-to-top" aria-label="Till toppen"><i class="fa-solid fa-arrow-up"></i></button>
+          <button class="expand-btn" onclick="window.open('supplier-details.html','_blank')" data-translate="readMore"></button>
+          <button class="scroll-to-top" aria-label="Till toppen"><i class="fa-solid fa-arrow-up" aria-hidden="true"></i></button>
         </div>
 
         <div class="pricing-card" id="legal-section">
-          <div class="feature-card-icon"><i class="fa-solid fa-scale-balanced"></i></div>
+          <div class="feature-card-icon"><i class="fa-solid fa-scale-balanced" aria-hidden="true"></i></div>
           <h3 data-translate="featuresLegalTitle"></h3>
           <ul class="features-list">
             <li data-translate="featuresLegal1"></li>
@@ -123,11 +112,8 @@
             <li data-translate="featuresLegal4"></li>
             <li data-translate="featuresLegal5"></li>
           </ul>
-          <button class="expand-btn" aria-expanded="false" aria-controls="legal-expanded" data-translate="readMore"></button>
-          <div class="expanded-info" id="legal-expanded">
-            <p data-translate="featuresLegalExpanded"></p>
-          </div>
-          <button class="scroll-to-top" aria-label="Till toppen"><i class="fa-solid fa-arrow-up"></i></button>
+          <button class="expand-btn" onclick="window.open('legal-details.html','_blank')" data-translate="readMore"></button>
+          <button class="scroll-to-top" aria-label="Till toppen"><i class="fa-solid fa-arrow-up" aria-hidden="true"></i></button>
         </div>
       </div>
     </section>
@@ -137,29 +123,29 @@
       <h2 id="faq-title" data-translate="featuresFaqTitle"></h2>
       <div class="faq-container">
         <div class="faq-item">
-          <div class="faq-question">
+          <div class="faq-question" tabindex="0" aria-expanded="false" aria-controls="faq1-answer">
             <h3 data-translate="featuresFaqQ1"></h3>
-            <i class="fas fa-chevron-down"></i>
+            <i class="fas fa-chevron-down" aria-hidden="true"></i>
           </div>
-          <div class="faq-answer">
+          <div class="faq-answer" id="faq1-answer">
             <p data-translate="featuresFaqA1"></p>
           </div>
         </div>
         <div class="faq-item">
-          <div class="faq-question">
+          <div class="faq-question" tabindex="0" aria-expanded="false" aria-controls="faq2-answer">
             <h3 data-translate="featuresFaqQ2"></h3>
-            <i class="fas fa-chevron-down"></i>
+            <i class="fas fa-chevron-down" aria-hidden="true"></i>
           </div>
-          <div class="faq-answer">
+          <div class="faq-answer" id="faq2-answer">
             <p data-translate="featuresFaqA2"></p>
           </div>
         </div>
         <div class="faq-item">
-          <div class="faq-question">
+          <div class="faq-question" tabindex="0" aria-expanded="false" aria-controls="faq3-answer">
             <h3 data-translate="featuresFaqQ3"></h3>
-            <i class="fas fa-chevron-down"></i>
+            <i class="fas fa-chevron-down" aria-hidden="true"></i>
           </div>
-          <div class="faq-answer">
+          <div class="faq-answer" id="faq3-answer">
             <p data-translate="featuresFaqA3"></p>
           </div>
         </div>
