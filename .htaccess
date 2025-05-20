@@ -3,6 +3,13 @@ RewriteEngine On
 RewriteCond %{HTTPS} !=on
 RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 
+# Tillåt laddning av header.html och footer.html från alla mappar
+RewriteCond %{REQUEST_URI} !^/header\.html$
+RewriteCond %{REQUEST_URI} !^/footer\.html$
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^.*$ /index.html [L,QSA]
+
 # Ange en anpassad 404-sida
 ErrorDocument 404 /404.html
 

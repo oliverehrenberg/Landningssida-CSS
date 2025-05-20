@@ -642,4 +642,230 @@ document.addEventListener("DOMContentLoaded", (() => {
       });
     });
   }
+
+  // Features Grid Animation
+  const featuresGrid = document.querySelector('.features-grid');
+  const featureItems = document.querySelectorAll('.feature-grid-item');
+  
+  if (featuresGrid) {
+    // Remove section-hidden class initially
+    featuresGrid.classList.remove('section-hidden');
+    
+    // Create GSAP animation for the grid
+    gsap.fromTo(featuresGrid, 
+      {
+        opacity: 0,
+        y: 40
+      },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 0.8,
+        ease: "power2.out",
+        scrollTrigger: {
+          trigger: featuresGrid,
+          start: "top 80%",
+          toggleActions: "play none none reverse"
+        }
+      }
+    );
+
+    // Animate each feature item
+    featureItems.forEach((item, index) => {
+      const icon = item.querySelector('.feature-icon');
+      const title = item.querySelector('h3');
+      const desc = item.querySelector('p');
+
+      gsap.set([icon, title, desc], {
+        opacity: 0,
+        y: 20
+      });
+
+      gsap.to([icon, title, desc], {
+        opacity: 1,
+        y: 0,
+        duration: 0.8,
+        stagger: 0.1,
+        ease: "power2.out",
+        scrollTrigger: {
+          trigger: item,
+          start: "top 85%",
+          toggleActions: "play none none reverse"
+        }
+      });
+    });
+  }
+
+  // Feature card functionality
+  function initializeFeatureCards() {
+    const featureCards = document.querySelectorAll('.feature-grid-item');
+    
+    featureCards.forEach(card => {
+      card.addEventListener('click', () => {
+        const featureType = card.dataset.feature;
+        const details = card.querySelector('.feature-details');
+        
+        // Toggle details visibility
+        if (details.style.opacity === '1') {
+          gsap.to(details, {
+            top: '100%',
+            opacity: 0,
+            duration: 0.3,
+            ease: 'power2.inOut'
+          });
+        } else {
+          gsap.to(details, {
+            top: '0',
+            opacity: 1,
+            duration: 0.3,
+            ease: 'power2.inOut'
+          });
+        }
+      });
+    });
+  }
+
+  // Feature comparison table functionality
+  function initializeFeatureComparison() {
+    const searchInput = document.querySelector('.feature-search');
+    const categoryButtons = document.querySelectorAll('.category-button');
+    const tableRows = document.querySelectorAll('.feature-comparison-table tbody tr');
+
+    if (searchInput) {
+      searchInput.addEventListener('input', (e) => {
+        const searchTerm = e.target.value.toLowerCase();
+        tableRows.forEach(row => {
+          const featureName = row.querySelector('td:first-child').textContent.toLowerCase();
+          const isVisible = featureName.includes(searchTerm);
+          row.style.display = isVisible ? '' : 'none';
+          
+          if (isVisible) {
+            gsap.fromTo(row, 
+              { opacity: 0, y: 20 },
+              { opacity: 1, y: 0, duration: 0.3, ease: 'power2.out' }
+            );
+          }
+        });
+      });
+    }
+
+    if (categoryButtons.length > 0) {
+      categoryButtons.forEach(button => {
+        button.addEventListener('click', () => {
+          const category = button.dataset.category;
+          
+          categoryButtons.forEach(btn => btn.classList.remove('active'));
+          button.classList.add('active');
+
+          tableRows.forEach(row => {
+            const rowCategory = row.dataset.category;
+            const isVisible = category === 'all' || rowCategory === category;
+            row.style.display = isVisible ? '' : 'none';
+            
+            if (isVisible) {
+              gsap.fromTo(row, 
+                { opacity: 0, y: 20 },
+                { opacity: 1, y: 0, duration: 0.3, ease: 'power2.out' }
+              );
+            }
+          });
+        });
+      });
+
+      // Initialize with all features visible
+      categoryButtons[0].click();
+    }
+  }
+
+  // Initialize all feature-related functionality when DOM is loaded
+  document.addEventListener('DOMContentLoaded', () => {
+    initFeatureComparison();
+    initFeatureCards();
+    
+    // Add smooth scroll for feature cards
+    const featureLearnMoreButtons = document.querySelectorAll('.feature-learn-more');
+    featureLearnMoreButtons.forEach(button => {
+      button.addEventListener('click', (e) => {
+        e.stopPropagation(); // Prevent card click event
+        const featureType = button.closest('.feature-grid-item').dataset.feature;
+        const targetSection = document.querySelector(`#${featureType}-section`);
+        
+        if (targetSection) {
+          targetSection.scrollIntoView({ behavior: 'smooth' });
+        }
+      });
+    });
+  });
+
+  // Initialize feature detail page animations
+  function initFeatureDetailPage() {
+    // Animate hero section
+    gsap.from('.feature-hero-content', {
+      duration: 1,
+      y: 50,
+      opacity: 0,
+      ease: 'power3.out'
+    });
+
+    // Animate feature cards
+    gsap.from('.feature-detail-card', {
+      duration: 0.8,
+      y: 30,
+      opacity: 0,
+      stagger: 0.2,
+      ease: 'power2.out',
+      scrollTrigger: {
+        trigger: '.feature-details',
+        start: 'top 80%'
+      }
+    });
+
+    // Animate steps
+    gsap.from('.step', {
+      duration: 0.8,
+      y: 30,
+      opacity: 0,
+      stagger: 0.2,
+      ease: 'power2.out',
+      scrollTrigger: {
+        trigger: '.how-it-works',
+        start: 'top 80%'
+      }
+    });
+
+    // Animate benefits
+    gsap.from('.benefit-card', {
+      duration: 0.8,
+      y: 30,
+      opacity: 0,
+      stagger: 0.2,
+      ease: 'power2.out',
+      scrollTrigger: {
+        trigger: '.benefits',
+        start: 'top 80%'
+      }
+    });
+
+    // Animate CTA section
+    gsap.from('.feature-cta', {
+      duration: 1,
+      y: 30,
+      opacity: 0,
+      ease: 'power2.out',
+      scrollTrigger: {
+        trigger: '.feature-cta',
+        start: 'top 80%'
+      }
+    });
+  }
+
+  // Initialize all functionality when DOM is loaded
+  document.addEventListener('DOMContentLoaded', () => {
+    // ... existing code ...
+    
+    // Initialize feature detail page if we're on a feature detail page
+    if (document.querySelector('.feature-hero')) {
+      initFeatureDetailPage();
+    }
+  });
 }));

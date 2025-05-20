@@ -23,8 +23,8 @@
     <!-- Hero/Intro Section -->
     <section class="pricing-hero">
       <div class="pricing-hero-content">
-        <h1 data-translate="featuresSummaryTitle"></h1>
-        <p class="pricing-hero-subtitle" data-translate="featuresSummaryIntro"></p>
+        <h1 data-translate="featureTitle"></h1>
+        <p class="pricing-hero-subtitle" data-translate="featureIntro"></p>
         <div class="pricing-hero-features">
           <div class="feature-item">
             <i class="fas fa-check-circle" aria-hidden="true"></i>
@@ -42,79 +42,176 @@
       </div>
     </section>
 
-    <!-- Use Cases Carousel -->
-    <section class="features-summary-wrapper section-hidden" id="funktioner">
-      <div class="use-cases-carousel" aria-label="Use cases" aria-live="polite">
-        <div class="carousel-track">
-          <div class="use-case-card">
-            <div class="use-case-visual"><img src="assets/use-case-procurement.png" alt="" /></div>
-            <div class="use-case-content">
-              <h4 data-translate="useCase1Title"></h4>
-              <p data-translate="useCase1Desc"></p>
-            </div>
-          </div>
-          <div class="use-case-card">
-            <div class="use-case-visual"><img src="assets/use-case-project.png" alt="" /></div>
-            <div class="use-case-content">
-              <h4 data-translate="useCase2Title"></h4>
-              <p data-translate="useCase2Desc"></p>
-            </div>
-          </div>
-          <div class="use-case-card">
-            <div class="use-case-visual"><img src="assets/use-case-communication.png" alt="" /></div>
-            <div class="use-case-content">
-              <h4 data-translate="useCase3Title"></h4>
-              <p data-translate="useCase3Desc"></p>
-            </div>
+    <!-- Main Features Grid -->
+    <section class="features-grid">
+      <div class="feature-grid-container">
+        <div class="feature-grid-item" data-feature="network">
+          <div class="feature-icon"><i class="fa-solid fa-network-wired" aria-hidden="true"></i></div>
+          <h3 data-translate="feature1Title"></h3>
+          <p data-translate="feature1Desc"></p>
+          <div class="feature-details">
+            <ul class="feature-benefits">
+              <li data-translate="feature1Benefit1">AI-powered supplier matching</li>
+              <li data-translate="feature1Benefit2">Real-time supplier verification</li>
+              <li data-translate="feature1Benefit3">Performance analytics</li>
+            </ul>
+            <button class="feature-learn-more" onclick="window.location.href='features/supplier-network.html'" data-translate="learnMore">Learn More</button>
           </div>
         </div>
-        <button class="carousel-prev" aria-label="Föregående" tabindex="0"><i data-lucide="chevron-left"></i></button>
-        <button class="carousel-next" aria-label="Nästa" tabindex="0"><i data-lucide="chevron-right"></i></button>
+        <div class="feature-grid-item" data-feature="project">
+          <div class="feature-icon"><i class="fa-solid fa-diagram-project" aria-hidden="true"></i></div>
+          <h3 data-translate="feature2Title"></h3>
+          <p data-translate="feature2Desc"></p>
+          <div class="feature-details">
+            <ul class="feature-benefits">
+              <li data-translate="feature2Benefit1">Real-time project tracking</li>
+              <li data-translate="feature2Benefit2">Resource management</li>
+              <li data-translate="feature2Benefit3">Team collaboration tools</li>
+            </ul>
+            <button class="feature-learn-more" onclick="window.location.href='features/project-management.html'" data-translate="learnMore">Learn More</button>
+          </div>
+        </div>
+        <div class="feature-grid-item" data-feature="communication">
+          <div class="feature-icon"><i class="fa-solid fa-comments" aria-hidden="true"></i></div>
+          <h3 data-translate="feature3Title"></h3>
+          <p data-translate="feature3Desc"></p>
+          <div class="feature-details">
+            <ul class="feature-benefits">
+              <li data-translate="feature3Benefit1">Integrated chat system</li>
+              <li data-translate="feature3Benefit2">Video conferencing</li>
+              <li data-translate="feature3Benefit3">Smart notifications</li>
+            </ul>
+            <button class="feature-learn-more" onclick="window.location.href='features/communication-hub.html'" data-translate="learnMore">Learn More</button>
+          </div>
+        </div>
+        <div class="feature-grid-item" data-feature="security">
+          <div class="feature-icon"><i class="fa-solid fa-file-shield" aria-hidden="true"></i></div>
+          <h3 data-translate="feature4Title"></h3>
+          <p data-translate="feature4Desc"></p>
+          <div class="feature-details">
+            <ul class="feature-benefits">
+              <li data-translate="feature4Benefit1">End-to-end encryption</li>
+              <li data-translate="feature4Benefit2">Version control</li>
+              <li data-translate="feature4Benefit3">Access management</li>
+            </ul>
+            <button class="feature-learn-more" onclick="window.location.href='features/security.html'" data-translate="learnMore">Learn More</button>
+          </div>
+        </div>
+        <div class="feature-grid-item" data-feature="ai">
+          <div class="feature-icon"><i class="fa-solid fa-robot" aria-hidden="true"></i></div>
+          <h3 data-translate="feature5Title"></h3>
+          <p data-translate="feature5Desc"></p>
+          <div class="feature-details">
+            <ul class="feature-benefits">
+              <li data-translate="feature5Benefit1">Contract analysis</li>
+              <li data-translate="feature5Benefit2">Risk assessment</li>
+              <li data-translate="feature5Benefit3">Legal guidance</li>
+            </ul>
+            <button class="feature-learn-more" onclick="window.location.href='features/ai-features.html'" data-translate="learnMore">Learn More</button>
+          </div>
+        </div>
+        <div class="feature-grid-item" data-feature="analytics">
+          <div class="feature-icon"><i class="fa-solid fa-chart-line" aria-hidden="true"></i></div>
+          <h3 data-translate="feature6Title"></h3>
+          <p data-translate="feature6Desc"></p>
+          <div class="feature-details">
+            <ul class="feature-benefits">
+              <li data-translate="feature6Benefit1">Custom dashboards</li>
+              <li data-translate="feature6Benefit2">Performance metrics</li>
+              <li data-translate="feature6Benefit3">Cost analysis</li>
+            </ul>
+            <button class="feature-learn-more" onclick="window.location.href='features/analytics.html'" data-translate="learnMore">Learn More</button>
+          </div>
+        </div>
+        <div class="feature-grid-item" data-feature="finance">
+          <div class="feature-icon"><i class="fa-solid fa-money-bill-trend-up" aria-hidden="true"></i></div>
+          <h3 data-translate="feature7Title"></h3>
+          <p data-translate="feature7Desc"></p>
+          <div class="feature-details">
+            <ul class="feature-benefits">
+              <li data-translate="feature7Benefit1">Budget tracking</li>
+              <li data-translate="feature7Benefit2">Payment automation</li>
+              <li data-translate="feature7Benefit3">Financial reporting</li>
+            </ul>
+            <button class="feature-learn-more" onclick="window.location.href='features/finance.html'" data-translate="learnMore">Learn More</button>
+          </div>
+        </div>
       </div>
+    </section>
 
-      <!-- Feature Cards -->
-      <div class="pricing-cards">
-        <div class="pricing-card" id="project-section">
-          <div class="feature-card-icon"><i class="fa-solid fa-diagram-project" aria-hidden="true"></i></div>
-          <h3 data-translate="featuresProjectTitle"></h3>
-          <ul class="features-list">
-            <li data-translate="featuresProject1"></li>
-            <li data-translate="featuresProject2"></li>
-            <li data-translate="featuresProject3"></li>
-            <li data-translate="featuresProject4"></li>
-            <li data-translate="featuresProject5"></li>
-          </ul>
-          <button class="expand-btn" onclick="window.open('project-details.html','_blank')" data-translate="readMore"></button>
-          <button class="scroll-to-top" aria-label="Till toppen"><i class="fa-solid fa-arrow-up" aria-hidden="true"></i></button>
+    <!-- Feature Comparison Table -->
+    <section class="feature-comparison">
+      <h2 data-translate="featureComparisonTitle">Feature Comparison</h2>
+      <div class="feature-filter">
+        <input type="text" id="featureSearch" placeholder="Search features..." data-translate="searchFeatures">
+        <div class="feature-categories">
+          <button class="category-btn active" data-category="all" data-translate="allFeatures">All Features</button>
+          <button class="category-btn" data-category="project" data-translate="projectManagement">Project Management</button>
+          <button class="category-btn" data-category="communication" data-translate="communication">Communication</button>
+          <button class="category-btn" data-category="security" data-translate="security">Security</button>
         </div>
-
-        <div class="pricing-card" id="supplier-section">
-          <div class="feature-card-icon"><i class="fa-solid fa-network-wired" aria-hidden="true"></i></div>
-          <h3 data-translate="featuresConnectTitle"></h3>
-          <ul class="features-list">
-            <li data-translate="featuresConnect1"></li>
-            <li data-translate="featuresConnect2"></li>
-            <li data-translate="featuresConnect3"></li>
-            <li data-translate="featuresConnect4"></li>
-            <li data-translate="featuresConnect5"></li>
-          </ul>
-          <button class="expand-btn" onclick="window.open('supplier-details.html','_blank')" data-translate="readMore"></button>
-          <button class="scroll-to-top" aria-label="Till toppen"><i class="fa-solid fa-arrow-up" aria-hidden="true"></i></button>
-        </div>
-
-        <div class="pricing-card" id="legal-section">
-          <div class="feature-card-icon"><i class="fa-solid fa-scale-balanced" aria-hidden="true"></i></div>
-          <h3 data-translate="featuresLegalTitle"></h3>
-          <ul class="features-list">
-            <li data-translate="featuresLegal1"></li>
-            <li data-translate="featuresLegal2"></li>
-            <li data-translate="featuresLegal3"></li>
-            <li data-translate="featuresLegal4"></li>
-            <li data-translate="featuresLegal5"></li>
-          </ul>
-          <button class="expand-btn" onclick="window.open('legal-details.html','_blank')" data-translate="readMore"></button>
-          <button class="scroll-to-top" aria-label="Till toppen"><i class="fa-solid fa-arrow-up" aria-hidden="true"></i></button>
-        </div>
+      </div>
+      <div class="comparison-table-wrapper">
+        <table class="feature-comparison-table">
+          <thead>
+            <tr>
+              <th data-translate="featureName">Feature</th>
+              <th data-translate="basicPlan">Basic</th>
+              <th data-translate="proPlan">Pro</th>
+              <th data-translate="enterprisePlan">Enterprise</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr data-category="project">
+              <td data-translate="projectManagement">Project Management</td>
+              <td><i class="fas fa-check"></i></td>
+              <td><i class="fas fa-check"></i></td>
+              <td><i class="fas fa-check"></i></td>
+            </tr>
+            <tr data-category="communication">
+              <td data-translate="teamChat">Team Chat</td>
+              <td><i class="fas fa-check"></i></td>
+              <td><i class="fas fa-check"></i></td>
+              <td><i class="fas fa-check"></i></td>
+            </tr>
+            <tr data-category="security">
+              <td data-translate="advancedSecurity">Advanced Security</td>
+              <td><i class="fas fa-times"></i></td>
+              <td><i class="fas fa-check"></i></td>
+              <td><i class="fas fa-check"></i></td>
+            </tr>
+            <tr data-category="project">
+              <td data-translate="aiFeatures">AI Features</td>
+              <td><i class="fas fa-times"></i></td>
+              <td><i class="fas fa-check"></i></td>
+              <td><i class="fas fa-check"></i></td>
+            </tr>
+            <tr data-category="analytics">
+              <td data-translate="analyticsFeatures">Analytics & Reporting</td>
+              <td><i class="fas fa-times"></i></td>
+              <td><i class="fas fa-check"></i></td>
+              <td><i class="fas fa-check"></i></td>
+            </tr>
+            <tr data-category="finance">
+              <td data-translate="financeFeatures">Financial Tools</td>
+              <td><i class="fas fa-times"></i></td>
+              <td><i class="fas fa-check"></i></td>
+              <td><i class="fas fa-check"></i></td>
+            </tr>
+            <tr data-category="legal">
+              <td data-translate="legalFeatures">Legal Support</td>
+              <td><i class="fas fa-times"></i></td>
+              <td><i class="fas fa-check"></i></td>
+              <td><i class="fas fa-check"></i></td>
+            </tr>
+            <tr data-category="support">
+              <td data-translate="supportFeatures">Priority Support</td>
+              <td><i class="fas fa-times"></i></td>
+              <td><i class="fas fa-check"></i></td>
+              <td><i class="fas fa-check"></i></td>
+            </tr>
+          </tbody>
+        </table>
       </div>
     </section>
 
@@ -152,6 +249,56 @@
       </div>
     </section>
 
+    <!-- Detailed Feature Sections -->
+    <section class="features-summary-wrapper section-hidden" id="funktioner">
+      <div class="pricing-cards">
+        <div class="pricing-card" id="project-section">
+          <div class="feature-card-icon"><i class="fa-solid fa-diagram-project" aria-hidden="true"></i></div>
+          <h3 data-translate="featuresProjectTitle"></h3>
+          <p class="feature-expanded" data-translate="featuresProjectExpanded"></p>
+          <ul class="features-list">
+            <li data-translate="featuresProject1"></li>
+            <li data-translate="featuresProject2"></li>
+            <li data-translate="featuresProject3"></li>
+            <li data-translate="featuresProject4"></li>
+            <li data-translate="featuresProject5"></li>
+          </ul>
+          <button class="expand-btn" onclick="window.open('project-details.html','_blank')" data-translate="readMore"></button>
+          <button class="scroll-to-top" aria-label="Till toppen"><i class="fa-solid fa-arrow-up" aria-hidden="true"></i></button>
+        </div>
+
+        <div class="pricing-card" id="supplier-section">
+          <div class="feature-card-icon"><i class="fa-solid fa-network-wired" aria-hidden="true"></i></div>
+          <h3 data-translate="featuresConnectTitle"></h3>
+          <p class="feature-expanded" data-translate="featuresConnectExpanded"></p>
+          <ul class="features-list">
+            <li data-translate="featuresConnect1"></li>
+            <li data-translate="featuresConnect2"></li>
+            <li data-translate="featuresConnect3"></li>
+            <li data-translate="featuresConnect4"></li>
+            <li data-translate="featuresConnect5"></li>
+          </ul>
+          <button class="expand-btn" onclick="window.open('supplier-details.html','_blank')" data-translate="readMore"></button>
+          <button class="scroll-to-top" aria-label="Till toppen"><i class="fa-solid fa-arrow-up" aria-hidden="true"></i></button>
+        </div>
+
+        <div class="pricing-card" id="legal-section">
+          <div class="feature-card-icon"><i class="fa-solid fa-scale-balanced" aria-hidden="true"></i></div>
+          <h3 data-translate="featuresLegalTitle"></h3>
+          <p class="feature-expanded" data-translate="featuresLegalExpanded"></p>
+          <ul class="features-list">
+            <li data-translate="featuresLegal1"></li>
+            <li data-translate="featuresLegal2"></li>
+            <li data-translate="featuresLegal3"></li>
+            <li data-translate="featuresLegal4"></li>
+            <li data-translate="featuresLegal5"></li>
+          </ul>
+          <button class="expand-btn" onclick="window.open('legal-details.html','_blank')" data-translate="readMore"></button>
+          <button class="scroll-to-top" aria-label="Till toppen"><i class="fa-solid fa-arrow-up" aria-hidden="true"></i></button>
+        </div>
+      </div>
+    </section>
+    
     <!-- CTA Section -->
     <section class="features-cta">
       <div class="features-cta-icon" aria-hidden="true"><i class="fa-solid fa-shield-halved"></i></div>

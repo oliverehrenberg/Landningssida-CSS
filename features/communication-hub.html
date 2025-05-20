@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="sv">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title data-translate="communicationHubTitle">Communication Hub - Construction Sourcing</title>
+    <link rel="stylesheet" href="../style.css" />
+    <link rel="icon" type="image/svg+xml" href="../assets/Favicon.svg" />
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  </head>
+  <body>
+    <div class="scroll-progress"><div class="scroll-progress__bar"></div></div>
+    <div id="header-container"></div>
+    <script>
+      fetch('../header.html')
+        .then(response => response.text())
+        .then(data => {
+          document.getElementById('header-container').innerHTML = data;
+        });
+    </script>
+
+    <!-- Hero Section -->
+    <section class="pricing-hero">
+      <div class="pricing-hero-content">
+        <h1 data-translate="communicationHubTitle">Communication Hub</h1>
+        <p class="pricing-hero-subtitle" data-translate="communicationHubIntro">Connect and collaborate seamlessly with your team, suppliers, and stakeholders through our integrated communication platform.</p>
+        <div class="pricing-hero-features">
+          <div class="feature-item">
+            <i class="fas fa-check-circle" aria-hidden="true"></i>
+            <span data-translate="communicationUSP1">Integrated Chat System</span>
+          </div>
+          <div class="feature-item">
+            <i class="fas fa-check-circle" aria-hidden="true"></i>
+            <span data-translate="communicationUSP2">Video Conferencing</span>
+          </div>
+          <div class="feature-item">
+            <i class="fas fa-check-circle" aria-hidden="true"></i>
+            <span data-translate="communicationUSP3">Smart Notifications</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Feature Details -->
+    <section class="feature-detail-section">
+      <h2 data-translate="communicationHubFeaturesTitle">Key Features</h2>
+      <p class="feature-detail-intro" data-translate="communicationHubIntro">Enhance team collaboration and streamline communication across your construction projects.</p>
+      <div class="feature-details-grid">
+        <div class="feature-detail-card">
+          <div class="feature-icon"><i class="fa-solid fa-comments" aria-hidden="true"></i></div>
+          <h3 data-translate="integratedChatTitle">Integrated Chat System</h3>
+          <p data-translate="integratedChatDesc">Real-time messaging with file sharing, project-specific channels, and instant notifications.</p>
+        </div>
+        <div class="feature-detail-card">
+          <div class="feature-icon"><i class="fa-solid fa-video" aria-hidden="true"></i></div>
+          <h3 data-translate="videoConferencingTitle">Video Conferencing</h3>
+          <p data-translate="videoConferencingDesc">High-quality video meetings with screen sharing and recording capabilities.</p>
+        </div>
+        <div class="feature-detail-card">
+          <div class="feature-icon"><i class="fa-solid fa-bell" aria-hidden="true"></i></div>
+          <h3 data-translate="smartNotificationsTitle">Smart Notifications</h3>
+          <p data-translate="smartNotificationsDesc">Customizable alerts and notifications for important updates and deadlines.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- How It Works -->
+    <section class="how-it-works">
+      <h2 data-translate="howItWorksTitle">How It Works</h2>
+      <div class="steps-container">
+        <div class="step">
+          <div class="step-number">1</div>
+          <h3 data-translate="communicationStep1Title">Setup Channels</h3>
+          <p data-translate="communicationStep1Desc">Create project-specific communication channels and invite team members.</p>
+        </div>
+        <div class="step">
+          <div class="step-number">2</div>
+          <h3 data-translate="communicationStep2Title">Connect Your Team</h3>
+          <p data-translate="communicationStep2Desc">Add team members, suppliers, and stakeholders to relevant channels.</p>
+        </div>
+        <div class="step">
+          <div class="step-number">3</div>
+          <h3 data-translate="communicationStep3Title">Start Collaborating</h3>
+          <p data-translate="communicationStep3Desc">Begin communicating, sharing files, and conducting meetings seamlessly.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Benefits -->
+    <section class="benefits">
+      <h2 data-translate="benefitsTitle">Benefits</h2>
+      <div class="benefits-grid">
+        <div class="benefit-card">
+          <i class="fa-solid fa-clock" aria-hidden="true"></i>
+          <h3 data-translate="communicationBenefit1Title">Save Time</h3>
+          <p data-translate="communicationBenefit1Desc">Reduce communication delays and streamline information sharing.</p>
+        </div>
+        <div class="benefit-card">
+          <i class="fa-solid fa-users" aria-hidden="true"></i>
+          <h3 data-translate="communicationBenefit2Title">Better Collaboration</h3>
+          <p data-translate="communicationBenefit2Desc">Enhance team coordination and project alignment.</p>
+        </div>
+        <div class="benefit-card">
+          <i class="fa-solid fa-file-alt" aria-hidden="true"></i>
+          <h3 data-translate="communicationBenefit3Title">Document Sharing</h3>
+          <p data-translate="communicationBenefit3Desc">Easily share and collaborate on project documents and files.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="feature-cta">
+      <h2 data-translate="communicationCtaTitle">Ready to Transform Your Team Communication?</h2>
+      <p data-translate="communicationCtaText">Join our early access program and be among the first to experience the future of construction team collaboration.</p>
+      <button class="cta-btn" onclick="toggleModal(true)" data-translate="joinEarlyAccess">Join Early Access</button>
+    </section>
+
+    <div id="footer-container"></div>
+    <script>
+      fetch('../footer.html')
+        .then(response => response.text())
+        .then(data => {
+          document.getElementById('footer-container').innerHTML = data;
+        });
+    </script>
+
+    <div id="popup-root"></div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollTrigger.min.js"></script>
+    <script src="../main.js"></script>
+    <script src="../popup.js"></script>
+    <script src="../lang.js"></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        lucide.createIcons();
+      });
+    </script>
+  </body>
+</html> 
