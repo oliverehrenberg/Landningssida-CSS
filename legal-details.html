@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="sv">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title data-translate="legalDetailsTitle">Juridik & Stöd - Construction Sourcing</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" type="image/svg+xml" href="assets/Favicon.svg" />
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  </head>
+  <body>
+    <div class="scroll-progress"><div class="scroll-progress__bar"></div></div>
+    <div id="header-container"></div>
+    <script>
+      fetch('header.html')
+        .then(response => response.text())
+        .then(data => {
+          document.getElementById('header-container').innerHTML = data;
+        });
+    </script>
+
+    <main class="details-main with-header-space">
+      <section class="details-hero">
+        <div class="details-hero-icon"><i class="fa-solid fa-scale-balanced" aria-hidden="true"></i></div>
+        <h1 data-translate="legalDetailsTitle"></h1>
+        <p data-translate="legalDetailsIntro"></p>
+      </section>
+      
+      <section class="details-section">
+        <h2 data-translate="legalDetailsFeaturesTitle"></h2>
+        <div class="details-features-grid">
+          <div class="details-feature-card">
+            <div class="details-feature-icon"><i class="fa-solid fa-file-contract"></i></div>
+            <h3 data-translate="legalDetailsFeatureTitle1"></h3>
+            <p data-translate="legalDetailsFeatureDesc1"></p>
+          </div>
+          <div class="details-feature-card">
+            <div class="details-feature-icon"><i class="fa-solid fa-magnifying-glass-chart"></i></div>
+            <h3 data-translate="legalDetailsFeatureTitle2"></h3>
+            <p data-translate="legalDetailsFeatureDesc2"></p>
+          </div>
+          <div class="details-feature-card">
+            <div class="details-feature-icon"><i class="fa-solid fa-clipboard-check"></i></div>
+            <h3 data-translate="legalDetailsFeatureTitle3"></h3>
+            <p data-translate="legalDetailsFeatureDesc3"></p>
+          </div>
+          <div class="details-feature-card">
+            <div class="details-feature-icon"><i class="fa-solid fa-handshake-simple"></i></div>
+            <h3 data-translate="legalDetailsFeatureTitle4"></h3>
+            <p data-translate="legalDetailsFeatureDesc4"></p>
+          </div>
+          <div class="details-feature-card">
+            <div class="details-feature-icon"><i class="fa-solid fa-robot"></i></div>
+            <h3 data-translate="legalDetailsFeatureTitle5"></h3>
+            <p data-translate="legalDetailsFeatureDesc5"></p>
+          </div>
+        </div>
+      </section>
+
+      <section class="details-section">
+        <h2 data-translate="legalDetailsContractsTitle"></h2>
+        <div class="details-contracts-info">
+          <div class="details-contracts-image">
+            <i class="fa-solid fa-file-signature fa-4x"></i>
+          </div>
+          <div class="details-contracts-content">
+            <h3 data-translate="legalDetailsContractsSubtitle"></h3>
+            <p data-translate="legalDetailsContractsText"></p>
+            <div class="details-contracts-types">
+              <div class="details-contract-type">
+                <h4 data-translate="legalDetailsContractType1"></h4>
+                <p data-translate="legalDetailsContractDesc1"></p>
+              </div>
+              <div class="details-contract-type">
+                <h4 data-translate="legalDetailsContractType2"></h4>
+                <p data-translate="legalDetailsContractDesc2"></p>
+              </div>
+              <div class="details-contract-type">
+                <h4 data-translate="legalDetailsContractType3"></h4>
+                <p data-translate="legalDetailsContractDesc3"></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+      <section class="details-section">
+        <h2 data-translate="legalDetailsDisputeTitle"></h2>
+        <div class="details-dispute-resolution">
+          <p data-translate="legalDetailsDisputeIntro"></p>
+          <div class="details-dispute-steps">
+            <div class="details-dispute-step">
+              <div class="details-step-number">1</div>
+              <div class="details-dispute-step-content">
+                <h3 data-translate="legalDetailsDisputeStep1"></h3>
+                <p data-translate="legalDetailsDisputeText1"></p>
+              </div>
+            </div>
+            <div class="details-dispute-step">
+              <div class="details-step-number">2</div>
+              <div class="details-dispute-step-content">
+                <h3 data-translate="legalDetailsDisputeStep2"></h3>
+                <p data-translate="legalDetailsDisputeText2"></p>
+              </div>
+            </div>
+            <div class="details-dispute-step">
+              <div class="details-step-number">3</div>
+              <div class="details-dispute-step-content">
+                <h3 data-translate="legalDetailsDisputeStep3"></h3>
+                <p data-translate="legalDetailsDisputeText3"></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="details-section">
+        <h2 data-translate="legalDetailsBenefitsTitle"></h2>
+        <ul class="details-list">
+          <li data-translate="legalDetailsBenefit1"></li>
+          <li data-translate="legalDetailsBenefit2"></li>
+          <li data-translate="legalDetailsBenefit3"></li>
+          <li data-translate="legalDetailsBenefit4"></li>
+          <li data-translate="legalDetailsBenefit5"></li>
+        </ul>
+      </section>
+
+      <section class="details-section">
+        <h2 data-translate="legalDetailsAITitle"></h2>
+        <div class="details-ai-support">
+          <div class="details-ai-icon">
+            <i class="fa-solid fa-brain fa-3x"></i>
+          </div>
+          <div class="details-ai-content">
+            <h3 data-translate="legalDetailsAISubtitle"></h3>
+            <p data-translate="legalDetailsAIText"></p>
+            <ul class="details-ai-features">
+              <li data-translate="legalDetailsAIFeature1"></li>
+              <li data-translate="legalDetailsAIFeature2"></li>
+              <li data-translate="legalDetailsAIFeature3"></li>
+              <li data-translate="legalDetailsAIFeature4"></li>
+            </ul>
+          </div>
+        </div>
+      </section>
+      
+      <section class="details-cta">
+        <h2 data-translate="legalDetailsCtaTitle"></h2>
+        <p data-translate="legalDetailsCtaText"></p>
+        <button class="cta-btn" onclick="toggleModal(true)" data-translate="legalDetailsCtaBtn"></button>
+      </section>
+    </main>
+
+    <div class="section-divider"></div>
+    <div id="footer-container"></div>
+    <script>
+      fetch('footer.html')
+        .then(response => response.text())
+        .then(data => {
+          document.getElementById('footer-container').innerHTML = data;
+        });
+    </script>
+    
+    <div id="popup-root"></div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollTrigger.min.js"></script>
+    <script src="main.js"></script>
+    <script src="popup.js"></script>
+    <script src="lang.js"></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        lucide.createIcons();
+        
+        // Applicera översättning efter DOM är laddad
+        const savedLang = localStorage.getItem('language') || 'sv';
+        if (typeof applyLanguage === 'function') {
+          applyLanguage(savedLang);
+        }
+      });
+    </script>
+  </body>
+</html> 

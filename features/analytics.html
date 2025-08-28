@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="sv">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title data-translate="analyticsTitle">Analytics - Construction Sourcing</title>
+    <link rel="stylesheet" href="../style.css" />
+    <link rel="icon" type="image/svg+xml" href="../assets/Favicon.svg" />
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  </head>
+  <body>
+    <div class="scroll-progress"><div class="scroll-progress__bar"></div></div>
+    <div id="header-container"></div>
+    <script>
+      fetch('../header.html')
+        .then(response => response.text())
+        .then(data => {
+          document.getElementById('header-container').innerHTML = data;
+        });
+    </script>
+
+    <!-- Hero Section -->
+    <section class="pricing-hero">
+      <div class="pricing-hero-content">
+        <h1 data-translate="analyticsTitle"></h1>
+        <p class="pricing-hero-subtitle" data-translate="analyticsIntro"></p>
+        <div class="pricing-hero-features">
+          <div class="feature-item">
+            <i class="fas fa-check-circle" aria-hidden="true"></i>
+            <span data-translate="analyticsUSP1"></span>
+          </div>
+          <div class="feature-item">
+            <i class="fas fa-check-circle" aria-hidden="true"></i>
+            <span data-translate="analyticsUSP2"></span>
+          </div>
+          <div class="feature-item">
+            <i class="fas fa-check-circle" aria-hidden="true"></i>
+            <span data-translate="analyticsUSP3"></span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Feature Details -->
+    <section class="feature-detail-section">
+      <h2 data-translate="analyticsFeaturesTitle"></h2>
+      <p class="feature-detail-intro" data-translate="analyticsIntro"></p>
+      <div class="feature-details-grid">
+        <div class="feature-detail-card">
+          <div class="feature-icon"><i class="fa-solid fa-chart-simple" aria-hidden="true"></i></div>
+          <h3 data-translate="customDashboardsTitle"></h3>
+          <p data-translate="customDashboardsDesc"></p>
+        </div>
+        <div class="feature-detail-card">
+          <div class="feature-icon"><i class="fa-solid fa-chart-line" aria-hidden="true"></i></div>
+          <h3 data-translate="performanceMetricsTitle"></h3>
+          <p data-translate="performanceMetricsDesc"></p>
+        </div>
+        <div class="feature-detail-card">
+          <div class="feature-icon"><i class="fa-solid fa-calculator" aria-hidden="true"></i></div>
+          <h3 data-translate="costAnalysisTitle"></h3>
+          <p data-translate="costAnalysisDesc"></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- How It Works -->
+    <section class="how-it-works">
+      <h2 data-translate="howItWorksTitle"></h2>
+      <div class="steps-container">
+        <div class="step">
+          <div class="step-number">1</div>
+          <h3 data-translate="dataCollectionTitle"></h3>
+          <p data-translate="dataCollectionDesc"></p>
+        </div>
+        <div class="step">
+          <div class="step-number">2</div>
+          <h3 data-translate="dataAnalysisTitle"></h3>
+          <p data-translate="dataAnalysisDesc"></p>
+        </div>
+        <div class="step">
+          <div class="step-number">3</div>
+          <h3 data-translate="reportingTitle"></h3>
+          <p data-translate="reportingDesc"></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Benefits -->
+    <section class="benefits">
+      <h2 data-translate="benefitsTitle"></h2>
+      <div class="benefits-grid">
+        <div class="benefit-card">
+          <i class="fa-solid fa-chart-line" aria-hidden="true"></i>
+          <h3 data-translate="analyticsBenefit1Title"></h3>
+          <p data-translate="analyticsBenefit1Desc"></p>
+        </div>
+        <div class="benefit-card">
+          <i class="fa-solid fa-money-bill-trend-up" aria-hidden="true"></i>
+          <h3 data-translate="analyticsBenefit2Title"></h3>
+          <p data-translate="analyticsBenefit2Desc"></p>
+        </div>
+        <div class="benefit-card">
+          <i class="fa-solid fa-chart-pie" aria-hidden="true"></i>
+          <h3 data-translate="analyticsBenefit3Title"></h3>
+          <p data-translate="analyticsBenefit3Desc"></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="feature-cta">
+      <h2 data-translate="analyticsCtaTitle"></h2>
+      <p data-translate="analyticsCtaText"></p>
+      <button class="cta-btn" onclick="toggleModal(true)" data-translate="joinEarlyAccess"></button>
+    </section>
+
+    <div id="footer-container"></div>
+    <script>
+      fetch('../footer.html')
+        .then(response => response.text())
+        .then(data => {
+          document.getElementById('footer-container').innerHTML = data;
+        });
+    </script>
+
+    <div id="popup-root"></div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollTrigger.min.js"></script>
+    <script src="../main.js"></script>
+    <script src="../popup.js"></script>
+    <script src="../lang.js"></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        lucide.createIcons();
+      });
+    </script>
+  </body>
+</html> 
