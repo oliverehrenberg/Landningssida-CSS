@@ -1971,7 +1971,7 @@ footer {
 #pricing,
 #about,
 .cta-section {
-  min-height: 100vh;
+  min-height: auto; /* avoid forcing large gaps between sections */
   display: flex;
   flex-direction: column;
   justify-content: center;

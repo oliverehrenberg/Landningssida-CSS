@@ -8,6 +8,10 @@
     <link rel="icon" type="image/svg+xml" href="assets/Favicon.svg" />
     <script src="https://unpkg.com/lucide@latest"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+      /* Page-specific override: remove forced full-screen height on wrapper sections */
+      .features-summary-wrapper { min-height: auto; justify-content: flex-start; }
+    </style>
   </head>
   <body>
     <div class="scroll-progress"><div class="scroll-progress__bar"></div></div>
@@ -180,7 +184,7 @@
     </section>
 
     <!-- Feature Comparison Table -->
-    <section class="feature-comparison">
+    <section class="feature-comparison" hidden>
       <h2 data-translate="featureComparisonTitle">Feature Comparison</h2>
       <div class="feature-filter">
         <input type="text" id="featureSearch" placeholder="Search features..." data-translate="searchFeatures">
