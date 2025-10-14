@@ -648,6 +648,19 @@ document.addEventListener("DOMContentLoaded", (() => {
   const featureItems = document.querySelectorAll('.feature-grid-item');
   
   if (featuresGrid) {
+    // Skip scroll animation if data-no-animate flag is present
+    if (featuresGrid.hasAttribute('data-no-animate')) {
+      featuresGrid.classList.remove('section-hidden');
+      featureItems.forEach((item) => {
+        const icon = item.querySelector('.feature-icon');
+        const title = item.querySelector('h3');
+        const desc = item.querySelector('p');
+        if (icon) icon.style.opacity = '1';
+        if (title) title.style.opacity = '1';
+        if (desc) desc.style.opacity = '1';
+        if (icon) icon.style.transform = 'none';
+      });
+    } else {
     // Remove section-hidden class initially
     featuresGrid.classList.remove('section-hidden');
     
@@ -676,24 +689,27 @@ document.addEventListener("DOMContentLoaded", (() => {
       const title = item.querySelector('h3');
       const desc = item.querySelector('p');
 
-      gsap.set([icon, title, desc], {
-        opacity: 0,
-        y: 20
-      });
+      if (!featuresGrid.hasAttribute('data-no-animate')) {
+        gsap.set([icon, title, desc], {
+          opacity: 0,
+          y: 20
+        });
 
-      gsap.to([icon, title, desc], {
-        opacity: 1,
-        y: 0,
-        duration: 0.8,
-        stagger: 0.1,
-        ease: "power2.out",
-        scrollTrigger: {
-          trigger: item,
-          start: "top 85%",
-          toggleActions: "play none none reverse"
-        }
-      });
+        gsap.to([icon, title, desc], {
+          opacity: 1,
+          y: 0,
+          duration: 0.8,
+          stagger: 0.1,
+          ease: "power2.out",
+          scrollTrigger: {
+            trigger: item,
+            start: "top 85%",
+            toggleActions: "play none none reverse"
+          }
+        });
+      }
     });
+    }
   }
 
   // Feature card functionality

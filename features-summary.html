@@ -42,8 +42,17 @@
       </div>
     </section>
 
+    <!-- Internmeny -->
+    <nav class="features-nav" aria-label="Sektioner">
+      <a href="#project-section" data-translate="featuresNavProject"></a>
+      <a href="#supplier-section" data-translate="featuresNavSupplier"></a>
+      <a href="#legal-section" data-translate="featuresNavLegal"></a>
+    </nav>
+
+    
+
     <!-- Main Features Grid -->
-    <section class="features-grid">
+    <section class="features-grid" data-no-animate="true">
       <div class="feature-grid-container">
         <div class="feature-grid-item" data-feature="network">
           <div class="feature-icon"><i class="fa-solid fa-network-wired" aria-hidden="true"></i></div>
@@ -136,6 +145,37 @@
             <button class="feature-learn-more" onclick="window.location.href='features/finance.html'" data-translate="learnMore">Learn More</button>
           </div>
         </div>
+      </div>
+    </section>
+
+    <!-- Restored Use Cases Carousel (from commit 5049872) -->
+    <section id="use-cases" class="features-summary-wrapper section-hidden">
+      <div class="use-cases-carousel" aria-label="Use cases" aria-live="polite">
+        <div class="carousel-track">
+          <div class="use-case-card">
+            <div class="use-case-visual"><img src="assets/feature-suppliers.png" alt="Leverantörsmatchning" /></div>
+            <div class="use-case-content">
+              <h4 data-translate="useCase1Title"></h4>
+              <p data-translate="useCase1Desc"></p>
+            </div>
+          </div>
+          <div class="use-case-card">
+            <div class="use-case-visual"><img src="assets/feature-project.png" alt="Projektledning" /></div>
+            <div class="use-case-content">
+              <h4 data-translate="useCase2Title"></h4>
+              <p data-translate="useCase2Desc"></p>
+            </div>
+          </div>
+          <div class="use-case-card">
+            <div class="use-case-visual"><img src="assets/feature-chat.png" alt="Kommunikation" /></div>
+            <div class="use-case-content">
+              <h4 data-translate="useCase3Title"></h4>
+              <p data-translate="useCase3Desc"></p>
+            </div>
+          </div>
+        </div>
+        <button class="carousel-prev" aria-label="Föregående" tabindex="0"><i data-lucide="chevron-left"></i></button>
+        <button class="carousel-next" aria-label="Nästa" tabindex="0"><i data-lucide="chevron-right"></i></button>
       </div>
     </section>
 
@@ -314,9 +354,9 @@
     <div id="popup-root"></div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollTrigger.min.js"></script>
+    <script src="lang.js"></script>
     <script src="main.js"></script>
     <script src="popup.js"></script>
-    <script src="lang.js"></script>
     <script>
       document.addEventListener('DOMContentLoaded', () => {
         lucide.createIcons();
