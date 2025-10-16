@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Construction Sourcing - Nästa generations upphandlingssystem</title>
     <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="landing-styles.css?v=57" />
     <link rel="icon" type="image/svg+xml" href="assets/Favicon.svg" />
     <script src="https://unpkg.com/lucide@latest"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
@@ -23,112 +24,205 @@
     </script>
    
     <section class="hero">
-      <div class="hero-text-container">
-        <!-- <div class="small-top-text" data-translate="heroTopText">
-          <span class="highlight-text" data-translate="heroHighlightText">
-            <span class="arrow">➔</span>
-          </span>
-        </div> -->
-        <h1 data-translate="heroTitle">
-          <span class="highlight-bransch"></span>
-        </h1>
-        <p class="subtitle" data-translate="heroSubtitle"></p>
-        <button class="cta-btn" data-translate="heroCTA" onclick="toggleModal(true)"></button>
+      <div class="hero-content">
+        <div class="hero-left">
+          <h1 data-translate="heroTitle">Var med och forma framtidens byggplattform.</h1>
+        </div>
+        <div class="hero-right">
+          <p class="subtitle" data-translate="heroSubtitle">Testa plattformen före lansering och hjälp oss skapa de bästa verktygen</p>
+          <button class="cta-btn" data-translate="heroCTA" onclick="toggleModal(true)">Anmäl intresse</button>
+        </div>
       </div>
     </section>
 
-    <section class="features-wrapper section-hidden">
-      <div class="features-intro">
-        <h2 data-translate="featureTitle"></h2>
-        <p class="intro" data-translate="featureIntro"></p>
+    <!-- Process Flow Section -->
+    <section class="process-flow">
+      <div class="process-steps">
+        <div class="step">
+          <div class="step-circle">1</div>
+          <span data-translate="step1Title">Definiera Dina Behov</span>
+        </div>
+        <div class="step-arrow">→</div>
+        <div class="step">
+          <div class="step-circle">2</div>
+          <span data-translate="step2Title">Få Matchning</span>
+        </div>
+        <div class="step-arrow">→</div>
+        <div class="step">
+          <div class="step-circle">✓</div>
+          <span data-translate="step3Title">Anslut & Samarbeta</span>
+        </div>
+        <div class="step-arrow">→</div>
+        <div class="step">
+          <div class="step-circle">☰</div>
+          <span data-translate="step4Title">Complete Project</span>
+        </div>
       </div>
+    </section>
 
-      <div class="features-grid">
-        <div class="feature-card">
-          <div class="feature-content">
-            <div class="feature-icon"><i data-lucide="building-2"></i></div>
-            <h3 data-translate="feature1Title"></h3>
-            <p data-translate="feature1Desc"></p>
+    <!-- Why Join Beta Section -->
+    <section class="why-beta-section">
+      <div class="why-beta-container">
+        <h2 data-translate="whyBetaTitle">Varför gå med i betan?</h2>
+        <div class="benefits-grid">
+          <div class="benefit-card">
+            <div class="benefit-icon">⚡</div>
+            <div class="benefit-content">
+              <h3 data-translate="benefit1Title">Snabbare upphandling</h3>
+              <p data-translate="benefit1Desc">"Mindre administration, snabbare beslut."</p>
+            </div>
           </div>
-          <div class="feature-visual">
-            <img src="assets/feature-suppliers.png" alt="Leverantörssökning" />
+          <div class="benefit-card">
+            <div class="benefit-icon">🛡️</div>
+            <div class="benefit-content">
+              <h3 data-translate="benefit2Title">Verifierade leverantörer</h3>
+              <p data-translate="benefit2Desc">"Kvalitet och transparens i ett."</p>
+            </div>
           </div>
-        </div>
-
-        <div class="feature-card">
-          <div class="feature-content">
-            <div class="feature-icon"><i data-lucide="shield-check"></i></div>
-            <h3 data-translate="feature2Title"></h3>
-            <p data-translate="feature2Desc"></p>
+          <div class="benefit-card">
+            <div class="benefit-icon">💬</div>
+            <div class="benefit-content">
+              <h3 data-translate="benefit3Title">Inbyggd kommunikation</h3>
+              <p data-translate="benefit3Desc">"Chatta, dela filer, håll alla synkade."</p>
+            </div>
           </div>
-          <div class="feature-visual">
-            <img src="assets/feature-resolution.png" alt="Konfliktlösning" />
-          </div>
-        </div>
-
-        <div class="feature-card">
-          <div class="feature-content">
-            <div class="feature-icon"><i data-lucide="message-square-text"></i></div>
-            <h3 data-translate="feature3Title"></h3>
-            <p data-translate="feature3Desc"></p>
-          </div>
-          <div class="feature-visual">
-            <img src="assets/feature-chat.png" alt="Kommunikation" />
-          </div>
-        </div>
-
-        <div class="feature-card">
-          <div class="feature-content">
-            <div class="feature-icon"><i data-lucide="file-signature"></i></div>
-            <h3 data-translate="feature4Title"></h3>
-            <p data-translate="feature4Desc"></p>
-          </div>
-          <div class="feature-visual">
-            <img src="assets/feature-docs.png" alt="Dokumenthantering" />
-          </div>
-        </div>
-
-        <div class="feature-card">
-          <div class="feature-content">
-            <div class="feature-icon"><i data-lucide="bot"></i></div>
-            <h3 data-translate="feature5Title"></h3>
-            <p data-translate="feature5Desc"></p>
-          </div>
-          <div class="feature-visual">
-            <img src="assets/feature-ai.png" alt="AI Support" />
-          </div>
-        </div>
-
-        <div class="feature-card">
-          <div class="feature-content">
-            <div class="feature-icon"><i data-lucide="layout-dashboard"></i></div>
-            <h3 data-translate="feature6Title"></h3>
-            <p data-translate="feature6Desc"></p>
-          </div>
-          <div class="feature-visual">
-            <img src="assets/feature-project.png" alt="Projektverktyg" />
-          </div>
-        </div>
-
-        <div class="feature-card">
-          <div class="feature-content">
-            <div class="feature-icon"><i data-lucide="scale"></i></div>
-            <h3 data-translate="feature7Title"></h3>
-            <p data-translate="feature7Desc"></p>
-          </div>
-          <div class="feature-visual">
-            <img src="assets/feature-legal.png" alt="Juridisk Rådgivning" />
+          <div class="benefit-card">
+            <div class="benefit-icon">🎯</div>
+            <div class="benefit-content">
+              <h3 data-translate="benefit4Title">Tydlig spårning</h3>
+              <p data-translate="benefit4Desc">"Se status och nästa steg i realtid."</p>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- <div id="about-container"></div> -->
+    <!-- Step Sections -->
+    <div class="steps-intro">
+      <div class="steps-intro-container">
+        <h2 class="steps-intro-title" data-translate="stepsIntroTitle">Så här fungerar det</h2>
+        <p class="steps-intro-subtitle" data-translate="stepsIntroSubtitle">En enkel process i fyra steg för att hitta rätt leverantörer och genomföra ditt projekt</p>
+      </div>
+    </div>
 
-    <div class="section-divider"></div>
-    <div id="cta-container"></div>
+    <section class="step-section">
+      <div class="step-container">
+        <div class="step-content">
+          <div class="step-text">
+            <h2 data-translate="step1Heading">Step 1: Create a project – describe your needs</h2>
+            <button class="step-btn" data-translate="stepCTA" onclick="toggleModal(true)">Anmäl intresse</button>
+          </div>
+          <div class="step-visual">
+            <img src="assets/feature-project.png" alt="Create Project Interface" class="step-screenshot" />
+            <p class="screenshot-caption" data-translate="step1Caption">Beskriv behov, omfattning och tidslinje.</p>
+          </div>
+        </div>
+      </div>
+    </section>
 
-    <div class="section-divider"></div>
+    <section class="step-section reverse">
+      <div class="step-container">
+        <div class="step-content">
+          <div class="step-visual">
+            <img src="assets/feature-suppliers.png" alt="Supplier Network Interface" class="step-screenshot" />
+            <p class="screenshot-caption" data-translate="step2Caption">Få relevanta förslag med tydliga signaler.</p>
+          </div>
+          <div class="step-text">
+            <h2 data-translate="step2Heading">Step 2: Connect with suppliers</h2>
+            <button class="step-btn" data-translate="stepCTA" onclick="toggleModal(true)">Anmäl intresse</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="step-section">
+      <div class="step-container">
+        <div class="step-content">
+          <div class="step-text">
+            <h2 data-translate="step3Heading">Step 3: Collaborate and finalize</h2>
+            <button class="step-btn" data-translate="stepCTA" onclick="toggleModal(true)">Anmäl intresse</button>
+          </div>
+          <div class="step-visual">
+            <img src="assets/feature-chat.png" alt="Collaboration Interface" class="step-screenshot" />
+            <p class="screenshot-caption" data-translate="step3Caption">Samordna i chatten, dela filer, säkra beslut.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="step-section reverse">
+      <div class="step-container">
+        <div class="step-content">
+          <div class="step-visual">
+            <img src="assets/feature-resolution.png" alt="Project Completion Interface" class="step-screenshot" />
+            <p class="screenshot-caption" data-translate="step4Caption">Stäng uppdraget och hjälp andra med ditt omdöme.</p>
+          </div>
+          <div class="step-text">
+            <h2 data-translate="step4Heading">Steg 4: Avslut & feedback</h2>
+            <button class="step-btn" data-translate="stepCTA" onclick="toggleModal(true)">Anmäl intresse</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+      <div class="faq-container">
+        <h2 data-translate="faqTitle">Vanliga Frågor</h2>
+        <div class="faq-list">
+          <div class="faq-item">
+            <div class="faq-question" onclick="toggleFAQ(this)">
+              <h3 data-translate="faq1Question">Vem kan gå med i betaprogrammet?</h3>
+              <span class="faq-icon">+</span>
+            </div>
+            <div class="faq-answer">
+              <p data-translate="faq1Answer">Alla som arbetar inom byggbranschen eller är intresserade av att testa plattformen före lansering är välkomna att delta.</p>
+            </div>
+          </div>
+          
+          <div class="faq-item">
+            <div class="faq-question" onclick="toggleFAQ(this)">
+              <h3 data-translate="faq2Question">Kostar det något?</h3>
+              <span class="faq-icon">+</span>
+            </div>
+            <div class="faq-answer">
+              <p data-translate="faq2Answer">Nej, betaprogrammet är helt kostnadsfritt under testperioden.</p>
+            </div>
+          </div>
+          
+          <div class="faq-item">
+            <div class="faq-question" onclick="toggleFAQ(this)">
+              <h3 data-translate="faq3Question">Vilka data sparas?</h3>
+              <span class="faq-icon">+</span>
+            </div>
+            <div class="faq-answer">
+              <p data-translate="faq3Answer">Endast den information som behövs för att skapa konto och hantera testningen sparas, i enlighet med vår integritetspolicy.</p>
+            </div>
+          </div>
+          
+          <div class="faq-item">
+            <div class="faq-question" onclick="toggleFAQ(this)">
+              <h3 data-translate="faq4Question">Kan jag bjuda in mitt team?</h3>
+              <span class="faq-icon">+</span>
+            </div>
+            <div class="faq-answer">
+              <p data-translate="faq4Answer">Ja, du kan bjuda in kollegor så att ni kan testa och ge feedback tillsammans.</p>
+            </div>
+          </div>
+          
+          <div class="faq-item">
+            <div class="faq-question" onclick="toggleFAQ(this)">
+              <h3 data-translate="faq5Question">Hur lämnar jag feedback?</h3>
+              <span class="faq-icon">+</span>
+            </div>
+            <div class="faq-answer">
+              <p data-translate="faq5Answer">Du kan enkelt skicka feedback direkt via plattformen eller kontakta vårt supportteam under testperioden.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <div id="footer-container"></div>
 
     <!-- POPUP HTML -->
