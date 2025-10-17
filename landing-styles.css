@@ -773,14 +773,14 @@ html body .step-section.reverse {
 }
 
 .step-section .step-container {
-  max-width: 900px;
+  max-width: 1200px;
   margin: 0 auto;
   padding: 0 2rem;
 }
 
 html body .step-section .step-content {
   display: grid !important;
-  grid-template-columns: 1fr 1fr !important;
+  grid-template-columns: 1fr 1.2fr !important;
   gap: 2.5rem !important;
   align-items: center !important;
 }
@@ -797,7 +797,7 @@ html body .step-section .step-visual {
 }
 
 html body .step-section.reverse .step-content {
-  grid-template-columns: 1fr 1fr !important;
+  grid-template-columns: 1.2fr 1fr !important;
 }
 
 html body .step-section.reverse .step-visual {
@@ -839,12 +839,29 @@ html body .step-section.reverse .step-text {
 
 /* Screenshot Styles */
 .step-screenshot {
-  width: 100%;
-  max-width: 400px;
-  height: auto;
+  width: 100% !important;
+  max-width: 600px !important;
+  height: auto !important;
   border-radius: 12px;
   box-shadow: 0 10px 40px rgba(0,0,0,0.1);
   border: 1px solid #e0e0e0;
+}
+
+/* More specific rule to override general img styles */
+html body .step-section .step-visual .step-screenshot {
+  max-width: 600px !important;
+  width: 100% !important;
+}
+
+/* Even more specific rules */
+.step-section .step-visual img.step-screenshot {
+  max-width: 600px !important;
+  width: 100% !important;
+}
+
+html body .step-section .step-visual img.step-screenshot {
+  max-width: 600px !important;
+  width: 100% !important;
 }
 
 html body .step-section .step-visual .screenshot-caption {
@@ -1611,7 +1628,19 @@ footer::before {
   
   
   .step-screenshot {
-    max-width: 280px;
+    max-width: 400px !important;
+  }
+  
+  html body .step-section .step-visual .step-screenshot {
+    max-width: 400px !important;
+  }
+  
+  .step-section .step-visual img.step-screenshot {
+    max-width: 400px !important;
+  }
+  
+  html body .step-section .step-visual img.step-screenshot {
+    max-width: 400px !important;
   }
   
   .hero-content {
