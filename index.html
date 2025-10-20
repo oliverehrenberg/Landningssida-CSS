@@ -30,7 +30,7 @@
         </div>
         <div class="hero-right">
           <p class="subtitle" data-translate="heroSubtitle">Testa plattformen före lansering och hjälp oss skapa de bästa verktygen</p>
-          <button class="cta-btn" data-translate="heroCTA" onclick="toggleModal(true)">Anmäl intresse</button>
+          <button class="cta-btn" data-translate="heroCTA" onclick="toggleModal(true)" aria-label="Anmäl intresse för att testa plattformen">Anmäl intresse</button>
         </div>
       </div>
     </section>
@@ -110,10 +110,10 @@
         <div class="step-content">
           <div class="step-text">
             <h2 data-translate="step1Heading">Step 1: Create a project – describe your needs</h2>
-            <button class="step-btn" data-translate="stepCTA" onclick="toggleModal(true)">Anmäl intresse</button>
+            <button class="step-btn" data-translate="stepCTA" onclick="toggleModal(true)" aria-label="Anmäl intresse för steg 1: Skapa projekt">Anmäl intresse</button>
           </div>
           <div class="step-visual">
-            <img src="assets/skapa_nytt_project.png" alt="Create Project Interface" class="step-screenshot" />
+            <img src="assets/skapa_nytt_project.png" alt="Skärmdump av projekt-skapande gränssnitt där användare kan beskriva sina behov och skapa nya projekt" class="step-screenshot" />
             <p class="screenshot-caption" data-translate="step1Caption">Beskriv behov, omfattning och tidslinje.</p>
           </div>
         </div>
@@ -124,12 +124,12 @@
       <div class="step-container">
         <div class="step-content">
           <div class="step-visual">
-            <img src="assets/anslut_med_leverantörer.png" alt="Supplier Network Interface" class="step-screenshot" />
+            <img src="assets/anslut_med_leverantörer.png" alt="Skärmdump av leverantörs-nätverk gränssnitt där användare kan ansluta och kommunicera med leverantörer" class="step-screenshot" />
             <p class="screenshot-caption" data-translate="step2Caption">Få relevanta förslag med tydliga signaler.</p>
           </div>
           <div class="step-text">
             <h2 data-translate="step2Heading">Step 2: Connect with suppliers</h2>
-            <button class="step-btn" data-translate="stepCTA" onclick="toggleModal(true)">Anmäl intresse</button>
+            <button class="step-btn" data-translate="stepCTA" onclick="toggleModal(true)" aria-label="Anmäl intresse för steg 2: Anslut med leverantörer">Anmäl intresse</button>
           </div>
         </div>
       </div>
@@ -140,10 +140,10 @@
         <div class="step-content">
           <div class="step-text">
             <h2 data-translate="step3Heading">Step 3: Collaborate and finalize</h2>
-            <button class="step-btn" data-translate="stepCTA" onclick="toggleModal(true)">Anmäl intresse</button>
+            <button class="step-btn" data-translate="stepCTA" onclick="toggleModal(true)" aria-label="Anmäl intresse för steg 3: Samarbeta och slutför">Anmäl intresse</button>
           </div>
           <div class="step-visual">
-            <img src="assets/samarbeta_och_slutför.png" alt="Collaboration Interface" class="step-screenshot" />
+            <img src="assets/samarbeta_och_slutför.png" alt="Skärmdump av samarbets-gränssnitt där användare kan chatta, dela filer och slutföra projekt" class="step-screenshot" />
             <p class="screenshot-caption" data-translate="step3Caption">Samordna i chatten, dela filer, säkra beslut.</p>
           </div>
         </div>
@@ -154,12 +154,12 @@
       <div class="step-container">
         <div class="step-content">
           <div class="step-visual">
-            <img src="assets/kontrakt_dokumentation.png" alt="Project Completion Interface" class="step-screenshot" />
+            <img src="assets/kontrakt_dokumentation.png" alt="Skärmdump av kontrakt och dokumentations-gränssnitt där användare kan skapa kontrakt och dokumentera avtal" class="step-screenshot" />
             <p class="screenshot-caption" data-translate="step4Caption">Skapa kontrakt, dokumentera avtal och slutför projektet.</p>
           </div>
           <div class="step-text">
             <h2 data-translate="step4Heading">Steg 4: Kontrakt & dokumentation</h2>
-            <button class="step-btn" data-translate="stepCTA" onclick="toggleModal(true)">Anmäl intresse</button>
+            <button class="step-btn" data-translate="stepCTA" onclick="toggleModal(true)" aria-label="Anmäl intresse för steg 4: Kontrakt och dokumentation">Anmäl intresse</button>
           </div>
         </div>
       </div>
@@ -229,7 +229,7 @@
     <div id="popup-root">
       <div class="popup-overlay" id="newsletterModal">
         <div class="popup-box">
-          <button class="close-btn" onclick="toggleModal(false)" data-translate="closeButton"></button>
+          <button class="close-btn" onclick="toggleModal(false)" data-translate="closeButton" aria-label="Stäng popup-formulär">×</button>
           <h3 data-translate="popupTitle"></h3>
           <form class="popup-form">
             <input type="email" placeholder="" data-translate="popupEmailPlaceholder" required />
@@ -248,8 +248,8 @@
               </select>
               <input type="tel" id="phoneNumber" placeholder="" data-translate="popupPhonePlaceholder" required />
             </div>
-            <button type="submit" class="submit-btn" data-translate="popupSubmit"></button>
-            <button type="button" class="decline-btn" onclick="toggleModal(false)" data-translate="popupDecline"></button>
+            <button type="submit" class="submit-btn" data-translate="popupSubmit" aria-label="Skicka intresseanmälan">Skicka</button>
+            <button type="button" class="decline-btn" onclick="toggleModal(false)" data-translate="popupDecline" aria-label="Avböj och stäng formulär">Avböj</button>
           </form>
           <p class="disclaimer" data-translate="popupDisclaimer"></p>
         </div>
@@ -259,7 +259,7 @@
         <div class="popup-box">
           <h3 data-translate="confirmationTitle"></h3>
           <p data-translate="confirmationText"></p>
-          <button class="submit-btn" onclick="toggleConfirmation(false)" data-translate="confirmationClose"></button>
+          <button class="submit-btn" onclick="toggleConfirmation(false)" data-translate="confirmationClose" aria-label="Stäng bekräftelse-meddelande">Stäng</button>
         </div>
       </div>
     </div>
