@@ -3,9 +3,12 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
     <title>Construction Sourcing - Nästa generations upphandlingssystem</title>
     <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="landing-styles.css?v=57" />
+    <link rel="stylesheet" href="landing-styles.css?v=66" />
     <link rel="icon" type="image/svg+xml" href="assets/Favicon.svg" />
     <script src="https://unpkg.com/lucide@latest"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
@@ -23,10 +26,10 @@
         });
     </script>
    
-    <section class="hero">
+    <section class="hero reveal">
       <div class="hero-content">
         <div class="hero-left">
-          <h1 data-translate="heroTitle">Var med och forma framtidens byggplattform.</h1>
+          <h1 data-translate="heroTitle" class="reveal">Var med och forma framtidens byggplattform.</h1>
         </div>
         <div class="hero-right">
           <p class="subtitle" data-translate="heroSubtitle">Testa plattformen före lansering och hjälp oss skapa de bästa verktygen</p>
@@ -36,7 +39,7 @@
     </section>
 
     <!-- Process Flow Section -->
-    <section class="process-flow">
+    <section class="process-flow reveal">
       <div class="process-steps">
         <div class="step">
           <div class="step-circle">1</div>
@@ -49,13 +52,18 @@
         </div>
         <div class="step-arrow">→</div>
         <div class="step">
+          <div class="step-circle">3</div>
+          <span data-translate="step3Title">Offert & Priser</span>
+        </div>
+        <div class="step-arrow">→</div>
+        <div class="step">
           <div class="step-circle">✓</div>
-          <span data-translate="step3Title">Anslut & Samarbeta</span>
+          <span data-translate="step4Title">Anslut & Samarbeta</span>
         </div>
         <div class="step-arrow">→</div>
         <div class="step">
           <div class="step-circle">☰</div>
-          <span data-translate="step4Title">Complete Project</span>
+          <span data-translate="step5Title">Complete Project</span>
         </div>
       </div>
     </section>
@@ -63,30 +71,30 @@
     <!-- Why Join Beta Section -->
     <section class="why-beta-section">
       <div class="why-beta-container">
-        <h2 data-translate="whyBetaTitle">Varför gå med i betan?</h2>
+        <h2 data-translate="whyBetaTitle" class="reveal">Varför gå med i betan?</h2>
         <div class="benefits-grid">
-          <div class="benefit-card">
+          <div class="benefit-card reveal" style="animation-delay: 0.1s;">
             <div class="benefit-icon">⚡</div>
             <div class="benefit-content">
               <h3 data-translate="benefit1Title">Snabbare upphandling</h3>
               <p data-translate="benefit1Desc">"Mindre administration, snabbare beslut."</p>
             </div>
           </div>
-          <div class="benefit-card">
+          <div class="benefit-card reveal" style="animation-delay: 0.2s;">
             <div class="benefit-icon">🛡️</div>
             <div class="benefit-content">
               <h3 data-translate="benefit2Title">Verifierade leverantörer</h3>
               <p data-translate="benefit2Desc">"Kvalitet och transparens i ett."</p>
             </div>
           </div>
-          <div class="benefit-card">
+          <div class="benefit-card reveal" style="animation-delay: 0.3s;">
             <div class="benefit-icon">💬</div>
             <div class="benefit-content">
               <h3 data-translate="benefit3Title">Inbyggd kommunikation</h3>
               <p data-translate="benefit3Desc">"Chatta, dela filer, håll alla synkade."</p>
             </div>
           </div>
-          <div class="benefit-card">
+          <div class="benefit-card reveal" style="animation-delay: 0.4s;">
             <div class="benefit-icon">🎯</div>
             <div class="benefit-content">
               <h3 data-translate="benefit4Title">Tydlig spårning</h3>
@@ -97,78 +105,266 @@
       </div>
     </section>
 
-    <!-- Step Sections -->
-    <div class="steps-intro">
-      <div class="steps-intro-container">
-        <h2 class="steps-intro-title" data-translate="stepsIntroTitle">Så här fungerar det</h2>
-        <p class="steps-intro-subtitle" data-translate="stepsIntroSubtitle">En enkel process i fyra steg för att hitta rätt leverantörer och genomföra ditt projekt</p>
+    <!-- How It Works Slideshow Section -->
+    <section class="slideshow-section reveal">
+      <div class="slideshow-container">
+        <h2 data-translate="stepsIntroTitle" class="slideshow-title reveal">Så här fungerar det</h2>
+        
+        <div class="slideshow-wrapper">
+          <!-- Slide 1 -->
+          <div class="slide active" data-slide="1">
+            <div class="slide-content">
+              <div class="slide-text">
+                <h3 data-translate="step1Heading">Steg 1: Skapa ett projekt</h3>
+                <p data-translate="step1Caption">Beskriv behov, omfattning och tidslinje.</p>
+              </div>
+              <div class="slide-visual">
+                <div class="main-image">
+                  <img src="assets/create_project.png" alt="Skapa nytt projekt" onclick="openLightbox(this)" />
+                  <p class="main-caption" data-translate="step1Image1"></p>
+                </div>
+                <div class="mini-gallery-container">
+                  <div class="mini-gallery">
+                    <div class="mini-image active" onclick="setMainImage(this, 'assets/create_project.png', 'step1Image1')">
+                      <img src="assets/create_project.png" alt="Skapa nytt projekt" />
+                      <p class="mini-caption" data-translate="step1Image1"></p>
+                    </div>
+                    <div class="mini-image" onclick="setMainImage(this, 'assets/project_info.png', 'step1Image2')">
+                      <img src="assets/project_info.png" alt="Projektinformation och översikt" />
+                      <p class="mini-caption" data-translate="step1Image2"></p>
+                    </div>
+                    <div class="mini-image" onclick="setMainImage(this, 'assets/generally_about_project.png', 'step1Image3')">
+                      <img src="assets/generally_about_project.png" alt="Detaljerad projektbeskrivning" />
+                      <p class="mini-caption" data-translate="step1Image3"></p>
+                    </div>
+                    <div class="mini-image" onclick="setMainImage(this, 'assets/go_to_project.png', 'step1Image4')">
+                      <img src="assets/go_to_project.png" alt="Navigera till projekt" />
+                      <p class="mini-caption" data-translate="step1Image4"></p>
+                    </div>
+                    <div class="mini-image" onclick="setMainImage(this, 'assets/supplier_register.png', 'step1Image5')">
+                      <img src="assets/supplier_register.png" alt="Leverantörsregister" />
+                      <p class="mini-caption" data-translate="step1Image5"></p>
+                    </div>
       </div>
     </div>
+          </div>
+            </div>
+          </div>
 
-    <section class="step-section">
-      <div class="step-container">
-        <div class="step-content">
-          <div class="step-text">
-            <h2 data-translate="step1Heading">Step 1: Create a project – describe your needs</h2>
-            <button class="step-btn" data-translate="stepCTA" onclick="toggleModal(true)" aria-label="Anmäl intresse för steg 1: Skapa projekt">Anmäl intresse</button>
+          <!-- Slide 2 -->
+          <div class="slide" data-slide="2">
+            <div class="slide-content">
+              <div class="slide-text">
+                <h3 data-translate="step2Heading">Steg 2: Anslut med leverantörer</h3>
+                <p data-translate="step2Caption">Få relevanta förslag med tydliga signaler.</p>
+                <p>Jämför leverantörer, se deras profil och tidigare uppdrag</p>
+              </div>
+              <div class="slide-visual">
+                <div class="main-image">
+                  <img src="assets/choose_material.png" alt="Välj materialkategorier" onclick="openLightbox(this)" />
+                  <p class="main-caption" data-translate="step2Image1"></p>
+                </div>
+                <div class="mini-gallery-container">
+                  <div class="mini-gallery">
+                    <div class="mini-image active visible" onclick="setMainImage(this, 'assets/choose_material.png', 'step2Image1')">
+                      <img src="assets/choose_material.png" alt="Välj materialkategorier" />
+                      <p class="mini-caption" data-translate="step2Image1"></p>
+                    </div>
+                    <div class="mini-image" onclick="setMainImage(this, 'assets/anslut_med_leverantörer.png', 'step2Image2')">
+                      <img src="assets/anslut_med_leverantörer.png" alt="Anslut med leverantörer" />
+                      <p class="mini-caption" data-translate="step2Image2"></p>
+                    </div>
+                    <div class="mini-image" onclick="setMainImage(this, 'assets/connection_with_supplier.png', 'step2Image3')">
+                      <img src="assets/connection_with_supplier.png" alt="Leverantörsprofil och kontakt" />
+                      <p class="mini-caption" data-translate="step2Image3"></p>
+                    </div>
+                    <div class="mini-image" onclick="setMainImage(this, 'assets/message_materials.png', 'step2Image4')">
+                      <img src="assets/message_materials.png" alt="Meddelanden om material" />
+                      <p class="mini-caption" data-translate="step2Image4"></p>
+                    </div>
+                    <div class="mini-image" onclick="setMainImage(this, 'assets/recipients_project.png', 'step2Image5')">
+                      <img src="assets/recipients_project.png" alt="Välj mottagare för projekt" />
+                      <p class="mini-caption" data-translate="step2Image5"></p>
+            </div>
           </div>
-          <div class="step-visual">
-            <img src="assets/skapa_nytt_project.png" alt="Skärmdump av projekt-skapande gränssnitt där användare kan beskriva sina behov och skapa nya projekt" class="step-screenshot" />
-            <p class="screenshot-caption" data-translate="step1Caption">Beskriv behov, omfattning och tidslinje.</p>
+        </div>
+      </div>
+            </div>
           </div>
+
+          <!-- Slide 3 -->
+          <div class="slide" data-slide="3">
+            <div class="slide-content">
+              <div class="slide-text">
+                <h3 data-translate="step3Heading">Steg 3: Offerter & Priser</h3>
+                <p data-translate="step3Caption">Skapa offertförfrågningar, hantera priser och välj bästa erbjudanden.</p>
+              </div>
+              <div class="slide-visual">
+                <div class="main-image">
+                  <img src="assets/quotes.png" alt="Offertöversikt och status" onclick="openLightbox(this)" />
+                  <p class="main-caption" data-translate="step3Image1"></p>
+                </div>
+                <div class="mini-gallery-container">
+                  <div class="mini-gallery">
+                    <div class="mini-image active" onclick="setMainImage(this, 'assets/quotes.png', 'step3Image1')">
+                      <img src="assets/quotes.png" alt="Offertöversikt och status" />
+                      <p class="mini-caption" data-translate="step3Image1"></p>
+                    </div>
+                    <div class="mini-image" onclick="setMainImage(this, 'assets/new_quote_request.png', 'step3Image2')">
+                      <img src="assets/new_quote_request.png" alt="Skapa ny offertförfrågan" />
+                      <p class="mini-caption" data-translate="step3Image2"></p>
+                    </div>
+                    <div class="mini-image" onclick="setMainImage(this, 'assets/send_quote.png', 'step3Image3')">
+                      <img src="assets/send_quote.png" alt="Skicka offert till kund" />
+                      <p class="mini-caption" data-translate="step3Image3"></p>
+                    </div>
+                    <div class="mini-image" onclick="setMainImage(this, 'assets/get_quotes.png', 'step3Image4')">
+                      <img src="assets/get_quotes.png" alt="Hantera inkommande offerter" />
+                      <p class="mini-caption" data-translate="step3Image4"></p>
+                    </div>
+                  </div>
+          </div>
+        </div>
+      </div>
+          </div>
+
+          <!-- Slide 4 -->
+          <div class="slide" data-slide="4">
+            <div class="slide-content">
+              <div class="slide-text">
+                <h3 data-translate="step4Heading">Steg 4: Samarbeta & Kommunisera</h3>
+                <p data-translate="step4Caption">Chatta, dela filer och följ projektets status i realtid.</p>
+              </div>
+              <div class="slide-visual">
+                <div class="main-image">
+                  <img src="assets/samarbeta_och_slutför.png" alt="Samarbeta och slutför projekt" onclick="openLightbox(this)" />
+                  <p class="main-caption" data-translate="step4Image1"></p>
+                </div>
+                <div class="mini-gallery-container">
+                  <div class="mini-gallery">
+                    <div class="mini-image active visible" onclick="setMainImage(this, 'assets/samarbeta_och_slutför.png', 'step4Image1')">
+                      <img src="assets/samarbeta_och_slutför.png" alt="Samarbeta och slutför projekt" />
+                      <p class="mini-caption" data-translate="step4Image1"></p>
+                    </div>
+                    <div class="mini-image" onclick="setMainImage(this, 'assets/chat.png', 'step4Image2')">
+                      <img src="assets/chat.png" alt="Chatt med leverantörer" />
+                      <p class="mini-caption" data-translate="step4Image2"></p>
+                    </div>
+                    <div class="mini-image" onclick="setMainImage(this, 'assets/feedback.png', 'step4Image3')">
+                      <img src="assets/feedback.png" alt="Bedöm leverantörer och ge feedback" />
+                      <p class="mini-caption" data-translate="step4Image3"></p>
+                    </div>
+            </div>
+          </div>
+        </div>
+      </div>
+          </div>
+
+          <!-- Slide 5 -->
+          <div class="slide" data-slide="5">
+            <div class="slide-content">
+              <div class="slide-text">
+                <h3 data-translate="step5Heading">Steg 5: Kontrakt & Dokumentation</h3>
+                <p data-translate="step5Caption">När arbetet är godkänt signeras avtalet digitalt och dokumenten sparas automatiskt i plattformen</p>
+              </div>
+              <div class="slide-visual">
+                <div class="main-image">
+                  <img src="assets/choose_agreement.png" alt="Välj offert för avtal" onclick="openLightbox(this)" />
+                  <p class="main-caption" data-translate="step5Image1"></p>
+                </div>
+                <div class="mini-gallery-container">
+                  <div class="mini-gallery">
+                    <div class="mini-image active" onclick="setMainImage(this, 'assets/choose_agreement.png', 'step5Image1')">
+                      <img src="assets/choose_agreement.png" alt="Välj offert för avtal" />
+                      <p class="mini-caption" data-translate="step5Image1"></p>
+                    </div>
+                    <div class="mini-image" onclick="setMainImage(this, 'assets/get_quotes_create_agreement.png', 'step5Image2')">
+                      <img src="assets/get_quotes_create_agreement.png" alt="Skapa avtal från offerter" />
+                      <p class="mini-caption" data-translate="step5Image2"></p>
+                    </div>
+                    <div class="mini-image" onclick="setMainImage(this, 'assets/contract.png', 'step5Image3')">
+                      <img src="assets/contract.png" alt="Kontraktshantering och dokumentation" />
+                      <p class="mini-caption" data-translate="step5Image3"></p>
+                    </div>
+                    <div class="mini-image" onclick="setMainImage(this, 'assets/all_agreement.png', 'step5Image4')">
+                      <img src="assets/all_agreement.png" alt="Översikt över alla avtal" />
+                      <p class="mini-caption" data-translate="step5Image4"></p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Slide 6 -->
+          <div class="slide" data-slide="6">
+            <div class="slide-content">
+              <div class="slide-text">
+                <h3 data-translate="step6Heading">Steg 6: Signera Kontrakt</h3>
+                <p data-translate="step6Caption">När arbetet är godkänt signeras avtalet digitalt och dokumenten sparas automatiskt i plattformen.</p>
+              </div>
+              <div class="slide-visual">
+                <div class="main-image">
+                  <img src="assets/respond_agreement.png" alt="Svara på avtal" onclick="openLightbox(this)" />
+                  <p class="main-caption" data-translate="step6Image3"></p>
+                </div>
+                <div class="mini-gallery-container">
+                  <div class="mini-gallery">
+                    <div class="mini-image active" onclick="setMainImage(this, 'assets/respond_agreement.png', 'step6Image3')">
+                      <img src="assets/respond_agreement.png" alt="Svara på avtal" />
+                      <p class="mini-caption" data-translate="step6Image3"></p>
+                    </div>
+                    <div class="mini-image" onclick="setMainImage(this, 'assets/message_sign.png', 'step6Image2')">
+                      <img src="assets/message_sign.png" alt="Meddelande om signering" />
+                      <p class="mini-caption" data-translate="step6Image2"></p>
+                    </div>
+                    <div class="mini-image" onclick="setMainImage(this, 'assets/signed_contact.png', 'step6Image1')">
+                      <img src="assets/signed_contact.png" alt="Signerat kontrakt" />
+                      <p class="mini-caption" data-translate="step6Image1"></p>
+                    </div>
+                    <div class="mini-image" onclick="setMainImage(this, 'assets/mission.png', 'step6Image4')">
+                      <img src="assets/mission.png" alt="Uppdrag och projekt" />
+                      <p class="mini-caption" data-translate="step6Image4"></p>
+            </div>
+          </div>
+        </div>
+      </div>
+            </div>
+          </div>
+
+        <!-- Navigation Controls -->
+        <div class="slideshow-controls">
+          <button class="slide-nav-btn prev-slide" onclick="goToSlide(currentSlide - 1)" aria-label="Previous slide">
+            <i class="fas fa-chevron-left"></i>
+          </button>
+          
+          <div class="slide-indicators">
+            <span class="indicator active" onclick="goToSlide(1)">1</span>
+            <span class="indicator" onclick="goToSlide(2)">2</span>
+            <span class="indicator" onclick="goToSlide(3)">3</span>
+            <span class="indicator" onclick="goToSlide(4)">4</span>
+            <span class="indicator" onclick="goToSlide(5)">5</span>
+            <span class="indicator" onclick="goToSlide(6)">6</span>
+          </div>
+          
+          <button class="slide-nav-btn next-slide" onclick="goToSlide(currentSlide + 1)" aria-label="Next slide">
+            <i class="fas fa-chevron-right"></i>
+          </button>
         </div>
       </div>
     </section>
 
-    <section class="step-section reverse">
-      <div class="step-container">
-        <div class="step-content">
-          <div class="step-visual">
-            <img src="assets/anslut_med_leverantörer.png" alt="Skärmdump av leverantörs-nätverk gränssnitt där användare kan ansluta och kommunicera med leverantörer" class="step-screenshot" />
-            <p class="screenshot-caption" data-translate="step2Caption">Få relevanta förslag med tydliga signaler.</p>
-          </div>
-          <div class="step-text">
-            <h2 data-translate="step2Heading">Step 2: Connect with suppliers</h2>
-            <button class="step-btn" data-translate="stepCTA" onclick="toggleModal(true)" aria-label="Anmäl intresse för steg 2: Anslut med leverantörer">Anmäl intresse</button>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="step-section">
-      <div class="step-container">
-        <div class="step-content">
-          <div class="step-text">
-            <h2 data-translate="step3Heading">Step 3: Collaborate and finalize</h2>
-            <button class="step-btn" data-translate="stepCTA" onclick="toggleModal(true)" aria-label="Anmäl intresse för steg 3: Samarbeta och slutför">Anmäl intresse</button>
-          </div>
-          <div class="step-visual">
-            <img src="assets/samarbeta_och_slutför.png" alt="Skärmdump av samarbets-gränssnitt där användare kan chatta, dela filer och slutföra projekt" class="step-screenshot" />
-            <p class="screenshot-caption" data-translate="step3Caption">Samordna i chatten, dela filer, säkra beslut.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="step-section reverse">
-      <div class="step-container">
-        <div class="step-content">
-          <div class="step-visual">
-            <img src="assets/kontrakt_dokumentation.png" alt="Skärmdump av kontrakt och dokumentations-gränssnitt där användare kan skapa kontrakt och dokumentera avtal" class="step-screenshot" />
-            <p class="screenshot-caption" data-translate="step4Caption">Skapa kontrakt, dokumentera avtal och slutför projektet.</p>
-          </div>
-          <div class="step-text">
-            <h2 data-translate="step4Heading">Steg 4: Kontrakt & dokumentation</h2>
-            <button class="step-btn" data-translate="stepCTA" onclick="toggleModal(true)" aria-label="Anmäl intresse för steg 4: Kontrakt och dokumentation">Anmäl intresse</button>
-          </div>
-        </div>
-      </div>
-    </section>
+    <!-- Back to Top Button -->
+    <button id="backToTop" class="back-to-top" aria-label="Tillbaka till toppen">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M7 14L12 9L17 14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </button>
 
     <!-- FAQ Section -->
     <section class="faq-section">
       <div class="faq-container">
-        <h2 data-translate="faqTitle">Vanliga Frågor</h2>
+        <h2 data-translate="faqTitle" class="reveal">Vanliga Frågor</h2>
         <div class="faq-list">
           <div class="faq-item">
             <div class="faq-question" onclick="toggleFAQ(this)">
@@ -225,6 +421,12 @@
 
     <div id="footer-container"></div>
 
+    <!-- Image Lightbox -->
+    <div id="imageLightbox" class="image-lightbox" onclick="closeLightbox(event)">
+      <span class="close-btn" onclick="closeLightbox(event)">&times;</span>
+      <img src="" alt="" onclick="event.stopPropagation()" />
+    </div>
+
     <!-- POPUP HTML -->
     <div id="popup-root">
       <div class="popup-overlay" id="newsletterModal">
@@ -276,6 +478,400 @@
     </script>
     <script>
       // IntersectionObserver disabled: using GSAP ScrollTrigger instead
+    </script>
+    <script>
+      // Image Lightbox functionality
+      function openLightbox(img) {
+        const lightbox = document.getElementById('imageLightbox');
+        const lightboxImg = lightbox.querySelector('img');
+        const closeBtn = lightbox.querySelector('.close-btn');
+        
+        lightboxImg.src = img.src;
+        lightboxImg.alt = img.alt;
+        lightbox.classList.add('active');
+        
+        // Ensure close button is visible
+        if (closeBtn) {
+          closeBtn.style.display = 'flex';
+          closeBtn.style.opacity = '1';
+          closeBtn.style.visibility = 'visible';
+        }
+        
+        document.body.style.overflow = 'hidden';
+      }
+
+      function closeLightbox(event) {
+        // Prevent closing if clicking on the image itself
+        if (event && event.target.tagName === 'IMG') {
+          return;
+        }
+        
+        const lightbox = document.getElementById('imageLightbox');
+        lightbox.classList.remove('active');
+        document.body.style.overflow = 'auto';
+      }
+
+      // Close lightbox with Escape key
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') {
+          closeLightbox();
+        }
+      });
+
+      // Flow indicator functionality
+      function updateFlowIndicator() {
+        const steps = document.querySelectorAll('.step-section');
+        const flowIndicators = document.querySelectorAll('.step-flow-indicator');
+        
+        steps.forEach((step, index) => {
+          const rect = step.getBoundingClientRect();
+          const isVisible = rect.top < window.innerHeight && rect.bottom > 0;
+          
+          if (isVisible) {
+            // Update all flow indicators
+            flowIndicators.forEach((indicator, indicatorIndex) => {
+              const dots = indicator.querySelectorAll('.flow-dot');
+              
+              // Reset all dots in this indicator
+              dots.forEach(dot => {
+                dot.classList.remove('active', 'completed');
+              });
+              
+              // Mark appropriate dots based on current step
+              if (indicatorIndex < index) {
+                // Previous indicators - mark both dots as completed
+                dots.forEach(dot => dot.classList.add('completed'));
+              } else if (indicatorIndex === index) {
+                // Current indicator - mark first dot as completed, second as active
+                if (dots[0]) dots[0].classList.add('completed');
+                if (dots[1]) dots[1].classList.add('active');
+              }
+              // Future indicators remain inactive
+            });
+          }
+        });
+      }
+
+      // Update flow indicator on scroll
+      window.addEventListener('scroll', updateFlowIndicator);
+      
+      // Initialize flow indicator
+      updateFlowIndicator();
+
+      // Slideshow functionality
+      let currentSlide = 1;
+      const totalSlides = 6;
+
+      function showSlide(slideNumber) {
+        // Hide all slides
+        const slides = document.querySelectorAll('.slide');
+        slides.forEach(slide => {
+          slide.classList.remove('active');
+        });
+
+        // Show current slide
+        const currentSlideElement = document.querySelector(`[data-slide="${slideNumber}"]`);
+        if (currentSlideElement) {
+          currentSlideElement.classList.add('active');
+        }
+
+        // Update indicators
+        const indicators = document.querySelectorAll('.indicator');
+        indicators.forEach((indicator, index) => {
+          indicator.classList.remove('active');
+          if (index === slideNumber - 1) {
+            indicator.classList.add('active');
+          }
+        });
+
+        currentSlide = slideNumber;
+        updateNavigationButtons();
+      }
+
+      function changeSlide(direction) {
+        let newSlide = currentSlide + direction;
+        
+        if (newSlide < 1) {
+          newSlide = totalSlides;
+        } else if (newSlide > totalSlides) {
+          newSlide = 1;
+        }
+        
+        showSlide(newSlide);
+      }
+
+      function goToSlide(slideNumber) {
+        if (slideNumber < 1) slideNumber = 1;
+        if (slideNumber > totalSlides) slideNumber = totalSlides;
+        
+        showSlide(slideNumber);
+        updateNavigationButtons();
+      }
+
+      function updateNavigationButtons() {
+        const prevBtn = document.querySelector('.prev-slide');
+        const nextBtn = document.querySelector('.next-slide');
+        
+        if (prevBtn) {
+          prevBtn.disabled = currentSlide === 1;
+        }
+        if (nextBtn) {
+          nextBtn.disabled = currentSlide === totalSlides;
+        }
+      }
+
+      // Auto-play slideshow (optional)
+      function startAutoPlay() {
+        setInterval(() => {
+          changeSlide(1);
+        }, 5000); // Change slide every 5 seconds
+      }
+
+      // Initialize slideshow
+      showSlide(1);
+      
+      // Enable auto-play for testing
+      // startAutoPlay(); // Disabled auto-play
+
+      // Function to change main image when clicking on mini images
+      function setMainImage(element, imageSrc, captionKey) {
+        const slide = element.closest('.slide');
+        const mainImage = slide.querySelector('.main-image img');
+        const mainCaption = slide.querySelector('.main-caption');
+        const miniImages = slide.querySelectorAll('.mini-image');
+        
+        // Remove active class from all mini images
+        miniImages.forEach(img => img.classList.remove('active'));
+        
+        // Add active class to clicked image
+        element.classList.add('active');
+        
+        // Update main image
+        mainImage.src = imageSrc;
+        mainImage.alt = element.querySelector('img').alt;
+        
+        // Update caption - copy text from mini-image caption
+        if (mainCaption) {
+          const miniCaption = element.querySelector('.mini-caption');
+          if (miniCaption) {
+            // Copy the actual text content
+            mainCaption.textContent = miniCaption.textContent;
+            
+            // Also update data-translate attribute if it exists
+            if (mainCaption.hasAttribute('data-translate')) {
+              mainCaption.setAttribute('data-translate', captionKey);
+            }
+            
+            // Trigger translation update if translation system is available
+            if (typeof applyLanguage === 'function') {
+              const currentLang = localStorage.getItem('language') || 'sv';
+              applyLanguage(currentLang);
+            }
+          }
+        }
+      }
+
+      // Function to scroll mini gallery
+      function scrollGallery(button, direction) {
+        const container = button.parentElement;
+        const gallery = container.querySelector('.mini-gallery');
+        const miniImages = gallery.querySelectorAll('.mini-image');
+        const visibleCount = 3;
+        const totalImages = miniImages.length;
+        
+        // Get current visible range
+        let currentStart = -1;
+        for (let i = 0; i < totalImages; i++) {
+          if (miniImages[i].classList.contains('visible')) {
+            currentStart = i;
+            break;
+          }
+        }
+        
+        // If no visible images found, default to 0
+        if (currentStart === -1) {
+          currentStart = 0;
+        }
+        
+        // Calculate new start position (move by 1 image at a time)
+        let newStart = currentStart + direction;
+        
+        // Ensure we don't go beyond boundaries
+        // For cases where totalImages <= visibleCount, always start at 0
+        const maxStart = totalImages <= visibleCount ? 0 : Math.max(0, totalImages - visibleCount);
+        newStart = Math.max(0, Math.min(newStart, maxStart));
+        
+        // Only proceed if position actually changed
+        if (newStart !== currentStart) {
+          // Update visibility
+          miniImages.forEach((img, index) => {
+            img.classList.remove('visible');
+            if (index >= newStart && index < newStart + visibleCount) {
+              img.classList.add('visible');
+            }
+          });
+          
+          // Update button states
+          updateGalleryButtons(container);
+        }
+      }
+
+      // Function to update gallery navigation buttons
+      function updateGalleryButtons(container) {
+        const gallery = container.querySelector('.mini-gallery');
+        const miniImages = gallery.querySelectorAll('.mini-image');
+        const prevBtn = container.querySelector('.gallery-nav.prev');
+        const nextBtn = container.querySelector('.gallery-nav.next');
+        const visibleCount = 3;
+        const totalImages = miniImages.length;
+        
+        // Find current start position - find the first visible image
+        let currentStart = -1;
+        for (let i = 0; i < totalImages; i++) {
+          if (miniImages[i].classList.contains('visible')) {
+            currentStart = i;
+            break;
+          }
+        }
+        
+        // If no visible images found, default to 0
+        if (currentStart === -1) {
+          currentStart = 0;
+        }
+        
+        // Calculate max start position
+        const maxStart = totalImages <= visibleCount ? 0 : Math.max(0, totalImages - visibleCount);
+        
+        // Update button states
+        if (prevBtn) prevBtn.disabled = currentStart <= 0;
+        if (nextBtn) nextBtn.disabled = currentStart >= maxStart;
+      }
+
+      // Auto-progression for slides
+      let autoSlideInterval;
+      let isAutoPlaying = false;
+
+      function startAutoSlide() {
+        if (isAutoPlaying) return;
+        
+        isAutoPlaying = true;
+        autoSlideInterval = setInterval(() => {
+          changeSlide(1);
+        }, 4000); // Change slide every 4 seconds
+      }
+
+      function stopAutoSlide() {
+        if (autoSlideInterval) {
+          clearInterval(autoSlideInterval);
+          autoSlideInterval = null;
+        }
+        isAutoPlaying = false;
+      }
+
+      // Initialize auto-slide after a delay
+      setTimeout(() => {
+        startAutoSlide();
+      }, 2000);
+
+      // Stop auto-slide when user interacts
+      document.addEventListener('click', () => {
+        stopAutoSlide();
+      });
+
+      // Test function to check visible images
+      function testVisibleImages() {
+        // Function removed - no longer needed
+      }
+
+      // Initialize gallery buttons for all slides
+      function initializeGalleryButtons() {
+        const containers = document.querySelectorAll('.mini-gallery-container');
+        
+        containers.forEach((container, index) => {
+          const gallery = container.querySelector('.mini-gallery');
+          const miniImages = gallery.querySelectorAll('.mini-image');
+          const visibleCount = 3;
+          const totalImages = miniImages.length;
+          
+          // Calculate starting position to center the visible images
+          let startPosition = 0;
+          if (totalImages > visibleCount) {
+            // Start from the middle if possible, but not beyond the end
+            startPosition = Math.max(0, Math.floor((totalImages - visibleCount) / 2));
+          }
+          
+          // Show images starting from calculated position
+          miniImages.forEach((img, imgIndex) => {
+            img.classList.remove('visible');
+            if (imgIndex >= startPosition && imgIndex < startPosition + visibleCount) {
+              img.classList.add('visible');
+            }
+          });
+          
+          updateGalleryButtons(container);
+        });
+      }
+
+      // Initialize everything
+      document.addEventListener('DOMContentLoaded', function() {
+        initializeGalleryButtons();
+        initializeScrollAnimations();
+        initializeBackToTop();
+        initializeKeyboardSupport(); // Added
+      });
+      
+      // Also initialize immediately in case DOM is already loaded
+      if (document.readyState === 'loading') {
+        // DOM is still loading, wait for DOMContentLoaded
+      } else {
+        // DOM is already loaded, initialize immediately
+        initializeGalleryButtons();
+        initializeScrollAnimations();
+        initializeBackToTop();
+        initializeKeyboardSupport(); // Added
+      }
+
+      // Keyboard support for slideshow
+      function initializeKeyboardSupport() {
+        document.addEventListener('keydown', function(e) {
+          if (e.key === 'ArrowLeft') {
+            goToSlide(currentSlide - 1);
+          } else if (e.key === 'ArrowRight') {
+            goToSlide(currentSlide + 1);
+          }
+        });
+      }
+
+      // Back to Top functionality
+      function initializeBackToTop() {
+        const backToTopButton = document.getElementById('backToTop');
+        
+        if (!backToTopButton) return;
+
+        // Show/hide button based on scroll position
+        function toggleBackToTop() {
+          if (window.scrollY > 300) {
+            backToTopButton.classList.add('visible');
+          } else {
+            backToTopButton.classList.remove('visible');
+          }
+        }
+
+        // Scroll to top function
+        function scrollToTop() {
+          window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+          });
+        }
+
+        // Add event listeners
+        window.addEventListener('scroll', toggleBackToTop);
+        backToTopButton.addEventListener('click', scrollToTop);
+
+        // Initial check
+        toggleBackToTop();
+      }
     </script>
   
 

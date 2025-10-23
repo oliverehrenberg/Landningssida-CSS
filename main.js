@@ -955,4 +955,55 @@ document.addEventListener("DOMContentLoaded", (() => {
 
     // Initialize scroll progress
     initScrollProgress();
+
+    // === REVEAL ANIMATIONS ===
+    // Enhanced reveal animation system
+    function initRevealAnimations() {
+      // Check if user prefers reduced motion
+      const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      
+      if (prefersReducedMotion) {
+        // If user prefers reduced motion, show all elements immediately
+        const revealElements = document.querySelectorAll('.reveal');
+        revealElements.forEach(element => {
+          element.classList.add('revealed');
+        });
+        return;
+      }
+
+      // Always show hero section immediately
+      const heroSection = document.querySelector('.hero.reveal');
+      const heroTitle = document.querySelector('.hero h1.reveal');
+      if (heroSection) {
+        heroSection.classList.add('revealed');
+        console.log('Hero section revealed');
+      }
+      if (heroTitle) {
+        heroTitle.classList.add('revealed');
+        console.log('Hero title revealed');
+      }
+
+      // Create intersection observer for scroll animations
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('revealed');
+            // Unobserve after animation to improve performance
+            observer.unobserve(entry.target);
+          }
+        });
+      }, {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+      });
+
+      // Observe all reveal elements except hero
+      const revealElements = document.querySelectorAll('.reveal:not(.hero):not(.hero h1)');
+      revealElements.forEach(element => {
+        observer.observe(element);
+      });
+    }
+
+    // Initialize reveal animations
+    initRevealAnimations();
   }));
