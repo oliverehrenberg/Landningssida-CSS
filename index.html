@@ -28,18 +28,67 @@
    
     <section class="hero reveal">
       <div class="hero-content">
-        <div class="hero-left">
-          <h1 data-translate="heroTitle" class="reveal">Var med och forma framtidens byggplattform.</h1>
+        <div class="hero-main">
+          <!-- H1: Що це -->
+          <h1 data-translate="heroTitle" class="hero-heading reveal">Byggplattformen som kopplar ihop beställare och leverantörer.</h1>
+          
+          <!-- Subtext: Для кого це -->
+          <p class="hero-subtitle" data-translate="heroSubtitle">Skapa uppdrag, jämför offerter och slutför projekt – allt på ett ställe.</p>
+          
+          <!-- CTA: Що можу зробити зараз -->
+          <div class="hero-cta-wrapper">
+            <button class="cta-btn hero-cta" data-translate="heroCTA" onclick="toggleModal(true)" aria-label="Anmäl intresse för att testa plattformen">
+              <span>Anmäl intresse</span>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </button>
+          </div>
         </div>
-        <div class="hero-right">
-          <p class="subtitle" data-translate="heroSubtitle">Testa plattformen före lansering och hjälp oss skapa de bästa verktygen</p>
-          <button class="cta-btn" data-translate="heroCTA" onclick="toggleModal(true)" aria-label="Anmäl intresse för att testa plattformen">Anmäl intresse</button>
+        
+        <!-- Візуальна підказка -->
+        <div class="hero-visual">
+          <div class="hero-icon-wrapper">
+            <svg class="hero-icon" viewBox="0 0 240 240" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <!-- Dashboard/Platform Background -->
+              <rect x="20" y="20" width="200" height="160" rx="12" fill="rgba(255,255,255,0.15)" stroke="rgba(255,255,255,0.3)" stroke-width="2"/>
+              
+              <!-- Top Bar -->
+              <rect x="30" y="30" width="180" height="8" rx="4" fill="rgba(255,255,255,0.4)"/>
+              
+              <!-- Building Icon -->
+              <g transform="translate(130, 60)">
+                <rect x="0" y="20" width="50" height="50" rx="2" fill="rgba(255,255,255,0.6)" stroke="rgba(255,255,255,0.7)" stroke-width="1.5"/>
+                <rect x="8" y="30" width="8" height="8" rx="1" fill="rgba(255,255,255,0.8)"/>
+                <rect x="20" y="30" width="8" height="8" rx="1" fill="rgba(255,255,255,0.8)"/>
+                <rect x="34" y="30" width="8" height="8" rx="1" fill="rgba(255,255,255,0.8)"/>
+                <rect x="8" y="42" width="8" height="8" rx="1" fill="rgba(255,255,255,0.8)"/>
+                <rect x="20" y="42" width="8" height="8" rx="1" fill="rgba(255,255,255,0.8)"/>
+                <rect x="34" y="42" width="8" height="8" rx="1" fill="rgba(255,255,255,0.8)"/>
+                <path d="M0 20 L25 0 L50 20 Z" fill="rgba(255,255,255,0.7)" stroke="rgba(255,255,255,0.8)" stroke-width="1.5"/>
+              </g>
+              
+              <!-- Connection Lines/Network -->
+              <circle cx="60" cy="80" r="12" fill="rgba(255,255,255,0.5)" stroke="rgba(255,255,255,0.6)" stroke-width="1.5"/>
+              <circle cx="60" cy="130" r="12" fill="rgba(255,255,255,0.5)" stroke="rgba(255,255,255,0.6)" stroke-width="1.5"/>
+              <line x1="72" y1="80" x2="130" y2="80" stroke="rgba(255,255,255,0.4)" stroke-width="2" stroke-linecap="round"/>
+              <line x1="72" y1="130" x2="130" y2="130" stroke="rgba(255,255,255,0.4)" stroke-width="2" stroke-linecap="round"/>
+              
+              <!-- Chart/Data Visualization -->
+              <rect x="40" y="150" width="80" height="20" rx="2" fill="rgba(255,255,255,0.3)"/>
+              <rect x="45" y="158" width="15" height="8" rx="1" fill="rgba(255,255,255,0.6)"/>
+              <rect x="65" y="155" width="15" height="11" rx="1" fill="rgba(255,255,255,0.6)"/>
+              <rect x="85" y="152" width="15" height="14" rx="1" fill="rgba(255,255,255,0.6)"/>
+              <rect x="105" y="150" width="15" height="16" rx="1" fill="rgba(255,255,255,0.6)"/>
+            </svg>
+          </div>
         </div>
       </div>
     </section>
 
     <!-- Process Flow Section -->
     <section class="process-flow reveal">
+      <p class="process-flow-intro" data-translate="processFlowIntro">Testa plattformen före lansering och hjälp oss skapa de bästa verktygen</p>
       <div class="process-steps">
         <div class="step">
           <div class="step-circle">1</div>
@@ -361,6 +410,53 @@
       </svg>
     </button>
 
+    <!-- Testimonials Section -->
+    <section class="testimonials-section reveal">
+      <div class="testimonials-container">
+        <h2 data-translate="testimonialsTitle" class="reveal">Vad säger användare?</h2>
+        <div class="testimonials-grid">
+          <div class="testimonial-card reveal" style="animation-delay: 0.1s;">
+            <div class="testimonial-content">
+              <div class="testimonial-quote">"</div>
+              <p class="testimonial-text" data-translate="testimonial1Text">Plattformen har revolutionerat hur vi hanterar upphandlingar. Enkel, snabb och effektiv!</p>
+              <div class="testimonial-author">
+                <div class="author-info">
+                  <h4 data-translate="testimonial1Author">Maria Andersson</h4>
+                  <p class="author-role" data-translate="testimonial1Role">Projektledare</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="testimonial-card reveal" style="animation-delay: 0.2s;">
+            <div class="testimonial-content">
+              <div class="testimonial-quote">"</div>
+              <p class="testimonial-text" data-translate="testimonial2Text">Verifierade leverantörer och tydlig kommunikation gör vårt arbete mycket enklare.</p>
+              <div class="testimonial-author">
+                <div class="author-info">
+                  <h4 data-translate="testimonial2Author">Erik Johansson</h4>
+                  <p class="author-role" data-translate="testimonial2Role">Entreprenör</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="testimonial-card reveal" style="animation-delay: 0.3s;">
+            <div class="testimonial-content">
+              <div class="testimonial-quote">"</div>
+              <p class="testimonial-text" data-translate="testimonial3Text">Fantastiskt verktyg för att jämföra offerter och fatta beslut. Sparar oss mycket tid!</p>
+              <div class="testimonial-author">
+                <div class="author-info">
+                  <h4 data-translate="testimonial3Author">Anna Larsson</h4>
+                  <p class="author-role" data-translate="testimonial3Role">Beställare</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- FAQ Section -->
     <section class="faq-section">
       <div class="faq-container">
@@ -424,7 +520,7 @@
     <!-- Image Lightbox -->
     <div id="imageLightbox" class="image-lightbox" onclick="closeLightbox(event)">
       <span class="close-btn" onclick="closeLightbox(event)">&times;</span>
-      <img src="" alt="" onclick="event.stopPropagation()" />
+      <img src="" alt="Förstoring av plattformbild" onclick="event.stopPropagation()" />
     </div>
 
     <!-- POPUP HTML -->
