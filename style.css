@@ -376,7 +376,10 @@ button {
     inset 0 0 20px rgba(0, 0, 0, 0.1),
     0 0 0 1px rgba(255, 255, 255, 0.05);
   transform-style: preserve-3d;
-  overflow: hidden;
+  overflow: visible;
+  display: flex;
+  flex-direction: column;
+  min-height: auto;
 }
 
 .feature-content::before {
@@ -417,6 +420,9 @@ button {
   opacity: 0;
   transform: translateX(-50px);
   transition: all 0.8s cubic-bezier(0.19, 1, 0.22, 1);
+  max-width: 800px;
+  max-height: 80vh;
+  overflow: visible;
 }
 
 .feature-card.active .feature-visual {
@@ -437,6 +443,7 @@ button {
   transform: scale(0.95);
   transition: all 0.8s cubic-bezier(0.19, 1, 0.22, 1);
   transform-style: preserve-3d;
+  pointer-events: none;
 }
 
 @keyframes visualGlow {
@@ -445,30 +452,72 @@ button {
 }
 
 .feature-visual img {
-  max-width: 100%;
+  width: 100%;
+  max-width: 800px;
+  max-height: 80vh;
   height: auto;
-  border-radius: 24px;
+  object-fit: contain;
+  border-radius: 12px;
   box-shadow: 
     0 20px 40px rgba(0, 0, 0, 0.3),
     0 0 0 1px rgba(255, 255, 255, 0.05);
-  transform: none;
+  transform: scale(1);
   filter: brightness(0.95) contrast(1.05);
+  transition: transform 0.4s cubic-bezier(0.19, 1, 0.22, 1), box-shadow 0.4s ease;
+  cursor: zoom-in;
+  position: relative;
+  z-index: 2;
 }
 
 .feature-card.active .feature-visual img {
-  transform: perspective(1000px) rotateY(-5deg) scale(1);
+  transform: scale(1);
   box-shadow: 
     0 30px 60px rgba(0, 0, 0, 0.4),
     0 0 0 1px rgba(255, 255, 255, 0.1);
   filter: brightness(1) contrast(1);
 }
 
+.feature-card.active .feature-visual:hover img,
+.feature-card.active .feature-visual img:hover {
+  transform: scale(1.15) !important;
+  box-shadow: 
+    0 40px 80px rgba(0, 0, 0, 0.5),
+    0 0 0 1px rgba(255, 255, 255, 0.15);
+  z-index: 10;
+  position: relative;
+}
+
+/* Збільшені зображення для кроків 4, 5 та 6 */
+.feature-card:nth-child(4) .feature-visual img,
+.feature-card:nth-child(5) .feature-visual img,
+.feature-card:nth-child(6) .feature-visual img {
+  max-width: 1000px;
+  max-height: 85vh;
+}
+
+.feature-card:nth-child(4).active .feature-visual img,
+.feature-card:nth-child(5).active .feature-visual img,
+.feature-card:nth-child(6).active .feature-visual img {
+  max-width: 1000px;
+  max-height: 85vh;
+}
+
 .feature-card:nth-child(even).active .feature-visual img {
-  transform: perspective(1000px) rotateY(5deg) scale(1);
+  transform: scale(1);
   box-shadow: 
   0 30px 60px rgba(0, 0, 0, 0.4),
   0 0 0 1px rgba(255, 255, 255, 0.1);
   filter: brightness(1) contrast(1);
+}
+
+.feature-card:nth-child(even).active .feature-visual:hover img,
+.feature-card:nth-child(even).active .feature-visual img:hover {
+  transform: scale(1.15) !important;
+  box-shadow: 
+    0 40px 80px rgba(0, 0, 0, 0.5),
+    0 0 0 1px rgba(255, 255, 255, 0.15);
+  z-index: 10;
+  position: relative;
 }
 
 .feature-icon {
@@ -572,10 +621,10 @@ button {
 }
 
 .feature-card p {
-  font-size: 1.15rem;
-  line-height: 1.7;
+  font-size: 1.1rem;
+  line-height: 1.8;
   color: rgba(255,255,255,0.9);
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem;
   opacity: 0;
   transform: translateY(20px) translateZ(0);
   transition: all 0.8s cubic-bezier(0.19, 1, 0.22, 1) 0.3s;
@@ -583,6 +632,8 @@ button {
   transform-style: preserve-3d;
   position: relative;
   max-width: 100%;
+  flex: 1;
+  overflow: visible;
 }
 
 /* Hide decorative quotes in feature-card paragraphs */
@@ -606,6 +657,19 @@ button {
   100% { transform: scale(1); opacity: 1; }
 }
 
+.feature-content .cta-btn {
+  margin-top: auto;
+  align-self: flex-start;
+  opacity: 0;
+  transform: translateY(20px) translateZ(0);
+  transition: all 0.8s cubic-bezier(0.19, 1, 0.22, 1) 0.5s;
+}
+
+.feature-card.active .feature-content .cta-btn {
+  opacity: 1;
+  transform: translateY(0) translateZ(10px);
+}
+
 /* Responsive adjustments */
 @media (max-width: 1200px) {
   .feature-card {
@@ -621,6 +685,33 @@ button {
     padding: 2rem;
     margin-left: 2rem;
     margin-right: 2rem;
+    max-width: 600px;
+    max-height: 70vh;
+    overflow: visible;
+  }
+  
+  .feature-visual img {
+    max-width: 600px;
+    max-height: 70vh;
+    border-radius: 12px;
+  }
+  
+  /* Збільшені зображення для кроків 4, 5 та 6 на середніх екранах */
+  .feature-card:nth-child(4) .feature-visual img,
+  .feature-card:nth-child(5) .feature-visual img,
+  .feature-card:nth-child(6) .feature-visual img {
+    max-width: 750px;
+    max-height: 75vh;
+  }
+  
+  .feature-card.active .feature-visual:hover img,
+  .feature-card.active .feature-visual img:hover {
+    transform: scale(1.1) !important;
+  }
+  
+  .feature-card:nth-child(even).active .feature-visual:hover img,
+  .feature-card:nth-child(even).active .feature-visual img:hover {
+    transform: scale(1.1) !important;
   }
 }
 
@@ -639,6 +730,27 @@ button {
     padding: 2rem;
     margin: 0;
     width: 100%;
+    max-width: 100%;
+    max-height: 60vh;
+    overflow: visible;
+  }
+  
+  .feature-visual img {
+    max-width: 100%;
+    max-height: 60vh;
+    border-radius: 12px;
+  }
+  
+  /* Збільшені зображення для кроків 4, 5 та 6 на мобільних екранах */
+  .feature-card:nth-child(4) .feature-visual img,
+  .feature-card:nth-child(5) .feature-visual img,
+  .feature-card:nth-child(6) .feature-visual img {
+    max-height: 65vh;
+  }
+  
+  .feature-card.active .feature-visual:hover img,
+  .feature-card.active .feature-visual img:hover {
+    transform: scale(1.08) !important;
   }
   
   .feature-card h3 {

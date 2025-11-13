@@ -11,12 +11,22 @@ const translations = {
       newsletterSub: "Join our early access program to test features, provide feedback, and influence the platform's development before launch.",
       featureTitle: "Powerful Features for Modern Construction",
       featureIntro: "Discover our comprehensive suite of tools designed to revolutionize how you manage construction projects. From intelligent supplier matching to AI-powered legal support, we've built everything you need to succeed.",
-      feature1Title: "Smart Supplier Network",
-      feature1Desc: "Connect with verified suppliers and contractors through our AI-powered matching system. Get personalized recommendations based on your project requirements, past performance, and industry reputation.",
-      feature2Title: "Advanced Project Management",
-      feature2Desc: "Streamline your entire project lifecycle with our integrated management tools. Track progress, manage resources, and collaborate with your team in real-time, all in one place.",
-      feature3Title: "Intelligent Communication Hub",
-      feature3Desc: "Experience seamless communication with built-in chat, video calls, and document sharing. Our smart notification system keeps everyone informed and aligned with project goals.",
+      feature1Title: "Step 1: Browse and Search Companies",
+      feature1Desc: "Access the directory of construction companies. Use filters to refine by location, rating, or category. Navigate to Materials section, select your category, and use filter options. Click 'View Profile' to see details. Shows all available suppliers in your selected category for easy comparison.",
+      feature2Title: "Step 2: Evaluate Supplier Compatibility",
+      feature2Desc: "Review the supplier profile to assess if they meet your requirements as a construction company. Check company information, ratings, certifications, and sustainability work. After evaluation, you can start a direct conversation with them or send a quote request to initiate collaboration.",
+      feature3Title: "Step 3: Communicate with All Suppliers",
+      feature3Desc: "Communicate with all suppliers you collaborate with by exchanging messages, clarifying order details, and agreeing on collaboration terms. The chat enables direct communication between the buyer and suppliers.",
+      step4Title: "Step 4: Create New Project",
+      step4Desc: "As a buyer, create a new project by filling in project information such as project name, project number, project manager, and project type. This step allows you to organize and structure your construction project from the start.",
+      step5Title: "Step 5: Send Quote Request",
+      step5Desc: "As a buyer, create a new quote request by selecting visibility settings and choosing suppliers. Specify your requirements and send the request to selected suppliers to receive competitive offers. This can be done directly in the chat window where you communicate with suppliers.",
+      step6Title: "Step 6: Receive Quote",
+      step6Desc: "As a buyer, receive detailed quotes from suppliers in response to your quote requests. Review payment terms, warranty conditions, delivery terms, logistics details, and transportation information to evaluate the complete offers. Quotes are received directly in the chat window where you communicate with suppliers.",
+      step7Title: "Step 7: Create Agreement",
+      step7Desc: "As a buyer, after reviewing and accepting a quote from a supplier, create a formal agreement. Define all terms and conditions, including payment schedules, delivery dates, warranty terms, and project specifications. The agreement serves as the official contract that formalizes your collaboration with the supplier.",
+      step8Title: "Step 8: Digital Agreement Ready for Signature",
+      step8Desc: "Create a complete digital agreement with all terms and conditions clearly defined. The agreement includes all necessary details such as scope of supply, delivery terms, payment conditions, warranty, and legal provisions. Once finalized, the digital agreement is ready to be sent to all parties for electronic signature, ensuring a secure and legally binding contract.",
       feature4Title: "Secure Document Management",
       feature4Desc: "Handle all your project documentation with enterprise-grade security. From contract signing to blueprint sharing, every document is encrypted, version-controlled, and easily accessible.",
       feature5Title: "AI-Powered Legal Assistant",
@@ -714,12 +724,22 @@ const translations = {
       newsletterSub: "Gå med i vårt early access-program för att testa funktioner, ge feedback och påverka plattformens utveckling innan lanseringen.",
       featureTitle: "Kraftfulla Funktioner för Modern Byggindustri",
       featureIntro: "Upptäck vår omfattande verktygssvit utformad för att revolutionera hur du hanterar byggprojekt. Från intelligent leverantörsmatchning till AI-drivet juridiskt stöd har vi byggt allt du behöver för att lyckas.",
-      feature1Title: "Smart Leverantörsnätverk",
-      feature1Desc: "Anslut till verifierade leverantörer och entreprenörer genom vårt AI-drivna matchningssystem. Få personliga rekommendationer baserade på dina projektkrav, tidigare prestanda och branschrykte.",
-      feature2Title: "Avancerad Projekthantering",
-      feature2Desc: "Effektivisera hela din projektlivscykel med våra integrerade hanteringsverktyg. Följ upp framsteg, hantera resurser och samarbeta med ditt team i realtid, allt på ett ställe.",
-      feature3Title: "Intelligent Kommunikationsnav",
-      feature3Desc: "Upplev sömlös kommunikation med inbyggd chatt, videosamtal och dokumentdelning. Vårt smarta notifieringssystem håller alla informerade och anpassade efter projektets mål.",
+      feature1Title: "Steg 1: Bläddra och sök företag",
+      feature1Desc: "Få tillgång till katalogen över byggföretag. Använd filter för att förfina efter plats, betyg eller kategori. Navigera till avsnittet Material, välj din kategori och använd filteralternativ. Klicka på 'Visa profil' för att se detaljer. Visar alla tillgängliga leverantörer i din valda kategori för enkel jämförelse.",
+      feature2Title: "Steg 2: Utvärdera leverantörens lämplighet",
+      feature2Desc: "Granska leverantörsprofilen för att bedöma om de uppfyller dina krav som byggföretag. Kontrollera företagsinformation, betyg, certifikat och hållbarhetsarbete. Efter utvärdering kan du starta en direktkonversation med dem eller göra en offertförfrågan för att påbörja samarbete.",
+      feature3Title: "Steg 3: Kommunicera med alla leverantörer",
+      feature3Desc: "Kommunicera med alla leverantörer som du samarbetar med genom att utbyta meddelanden, förtydliga beställningsdetaljer och komma överens om samarbetsvillkor. Chatten möjliggör direkt kommunikation mellan beställaren och leverantörerna.",
+      step4Title: "Steg 4: Skapa nytt projekt",
+      step4Desc: "Som beställare skapar du ett nytt projekt genom att fylla i projektinformation som projektnamn, projektnummer, projektledare och projekttyp. Detta steg gör att du kan organisera och strukturera ditt byggprojekt från början.",
+      step5Title: "Steg 5: Skicka offertförfrågan",
+      step5Desc: "Som beställare skapar du en ny offertförfrågan genom att välja synlighetsinställningar och välja leverantörer. Specificera dina krav och skicka förfrågan till valda leverantörer för att få konkurrenskraftiga erbjudanden. Detta kan göras direkt i chattfönstret där du kommunicerar med leverantörer.",
+      step6Title: "Steg 6: Ta emot offert",
+      step6Desc: "Som beställare tar du emot detaljerade offerter från leverantörer som svar på dina offertförfrågningar. Granska betalningsvillkor, garantivillkor, leveransvillkor, logistikdetaljer och transportinformation för att utvärdera de kompletta erbjudandena. Offerterna tas emot direkt i chattfönstret där du kommunicerar med leverantörer.",
+      step7Title: "Steg 7: Skapa avtal",
+      step7Desc: "Som beställare, efter att ha granskat och accepterat en offert från en leverantör, skapar du ett formellt avtal. Definiera alla villkor och bestämmelser, inklusive betalningsplaner, leveransdatum, garantivillkor och projektspecifikationer. Avtalet fungerar som det officiella kontraktet som formaliserar ditt samarbete med leverantören.",
+      step8Title: "Steg 8: Digitalt avtal redo för signering",
+      step8Desc: "Skapa ett komplett digitalt avtal med alla villkor och bestämmelser tydligt definierade. Avtalet innehåller alla nödvändiga detaljer såsom leveransomfattning, leveransvillkor, betalningsvillkor, garanti och juridiska bestämmelser. När avtalet är slutfört är det redo att skickas till alla parter för elektronisk signering, vilket säkerställer ett säkert och juridiskt bindande kontrakt.",
       feature4Title: "Säker Dokumenthantering",
       feature4Desc: "Hantera all din projektdokumentation med företagsklass säkerhet. Från kontraktsignering till ritningsdelning är varje dokument krypterat, versionskontrollerat och lättillgängligt.",
       feature5Title: "AI-driven Juridisk Assistans",
@@ -1448,8 +1468,13 @@ const translations = {
     document.querySelectorAll('.feature-card').forEach((card, index) => {
       const title = card.querySelector('h3');
       const desc = card.querySelector('p');
-      if (title) title.innerHTML = translations[lang][`feature${index + 1}Title`];
-      if (desc) desc.innerHTML = translations[lang][`feature${index + 1}Desc`];
+      // Only apply automatic translations if elements don't have data-translate attribute
+      if (title && !title.hasAttribute('data-translate')) {
+        title.innerHTML = translations[lang][`feature${index + 1}Title`];
+      }
+      if (desc && !desc.hasAttribute('data-translate')) {
+        desc.innerHTML = translations[lang][`feature${index + 1}Desc`];
+      }
     });
   
     const footer = {
