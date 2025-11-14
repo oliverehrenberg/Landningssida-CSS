@@ -487,20 +487,6 @@ button {
   position: relative;
 }
 
-/* Збільшені зображення для кроків 4, 5 та 6 */
-.feature-card:nth-child(4) .feature-visual img,
-.feature-card:nth-child(5) .feature-visual img,
-.feature-card:nth-child(6) .feature-visual img {
-  max-width: 1000px;
-  max-height: 85vh;
-}
-
-.feature-card:nth-child(4).active .feature-visual img,
-.feature-card:nth-child(5).active .feature-visual img,
-.feature-card:nth-child(6).active .feature-visual img {
-  max-width: 1000px;
-  max-height: 85vh;
-}
 
 .feature-card:nth-child(even).active .feature-visual img {
   transform: scale(1);
@@ -696,14 +682,6 @@ button {
     border-radius: 12px;
   }
   
-  /* Збільшені зображення для кроків 4, 5 та 6 на середніх екранах */
-  .feature-card:nth-child(4) .feature-visual img,
-  .feature-card:nth-child(5) .feature-visual img,
-  .feature-card:nth-child(6) .feature-visual img {
-    max-width: 750px;
-    max-height: 75vh;
-  }
-  
   .feature-card.active .feature-visual:hover img,
   .feature-card.active .feature-visual img:hover {
     transform: scale(1.1) !important;
@@ -739,13 +717,6 @@ button {
     max-width: 100%;
     max-height: 60vh;
     border-radius: 12px;
-  }
-  
-  /* Збільшені зображення для кроків 4, 5 та 6 на мобільних екранах */
-  .feature-card:nth-child(4) .feature-visual img,
-  .feature-card:nth-child(5) .feature-visual img,
-  .feature-card:nth-child(6) .feature-visual img {
-    max-height: 65vh;
   }
   
   .feature-card.active .feature-visual:hover img,
