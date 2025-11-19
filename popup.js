@@ -64,6 +64,14 @@ function setLoading(button, isLoading) {
 // Denna funktion initierar popup-logiken och formulärhantering
 function initPopupLogic() {
   document.querySelectorAll('.cta-btn').forEach((btn) => {
+    // Skip buttons that are links (have href attribute)
+    if (btn.tagName === 'A' && btn.hasAttribute('href')) {
+      return;
+    }
+    // Skip buttons that have onclick attribute (they handle their own click)
+    if (btn.hasAttribute('onclick')) {
+      return;
+    }
     btn.addEventListener('click', (e) => {
       e.preventDefault();
       toggleModal(true);

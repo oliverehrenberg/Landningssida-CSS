@@ -214,6 +214,15 @@ button {
   border-radius: 30px;
   font-weight: 600;
   transition: background 0.3s ease;
+  display: inline-block;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+}
+
+a.cta-btn {
+  text-decoration: none;
+  color: #0f0e17;
 }
 
 .cta-btn:hover {
@@ -3624,6 +3633,7 @@ button[type="button"]:hover {
   border-radius: 12px;
   padding: 1.5rem;
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+  gap: 1.5rem;
 }
 
 .details-step-number {
@@ -3637,14 +3647,52 @@ button[type="button"]:hover {
   justify-content: center;
   font-weight: 700;
   font-size: 1.2rem;
-  margin-right: 1.5rem;
   flex-shrink: 0;
 }
 
+.details-step > div:last-child,
+.details-step-content {
+  flex: 1;
+  min-width: 0;
+}
+
 .details-step h3 {
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   margin-bottom: 0.5rem;
   color: #ffffff;
+  line-height: 1.4;
+  word-wrap: break-word;
+}
+
+.details-step p {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #e0e0e0;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+@media (max-width: 768px) {
+  .details-step {
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1.25rem;
+  }
+
+  .details-step-number {
+    width: 35px;
+    height: 35px;
+    font-size: 1rem;
+    margin-right: 0;
+  }
+
+  .details-step h3 {
+    font-size: 1rem;
+  }
+
+  .details-step p {
+    font-size: 0.9rem;
+  }
 }
 
 .details-statistics {
