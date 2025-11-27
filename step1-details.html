@@ -20,85 +20,206 @@
         });
     </script>
 
-    <main class="details-main with-header-space">
-      <section class="details-hero">
-        <div class="details-hero-icon"><i class="fa-solid fa-building" aria-hidden="true"></i></div>
-        <h1 data-translate="step1DetailTitle"></h1>
-        <p data-translate="step1DetailIntro"></p>
-      </section>
+    <!-- Hero Section -->
+    <section class="step1-hero">
+      <div class="step1-hero-content">
+        <div class="step1-hero-icon"><i class="fa-solid fa-building" aria-hidden="true"></i></div>
+        <h1 data-translate="step1DetailTitle">Steg 1: Bläddra och sök företag</h1>
+        <p class="step1-hero-subtitle">Hitta rätt byggföretag för ditt projekt. Bläddra bland leverantörer, sök efter specifika företag eller använd filter för att hitta exakt det du behöver.</p>
+        <div class="step1-hero-features">
+          <div class="step1-hero-feature-item">
+            <i class="fa-solid fa-search" aria-hidden="true"></i>
+            <span>Sökfunktion för snabb sökning</span>
+          </div>
+          <div class="step1-hero-feature-item">
+            <i class="fa-solid fa-filter" aria-hidden="true"></i>
+            <span>Avancerade filter för exakt matchning</span>
+          </div>
+          <div class="step1-hero-feature-item">
+            <i class="fa-solid fa-list" aria-hidden="true"></i>
+            <span>Strukturerad lista med visuell information</span>
+          </div>
+        </div>
+      </div>
+    </section>
 
-      <section class="details-section">
+    <!-- Feature Details -->
+    <section class="feature-detail-section">
+      <div class="section-header">
+        <h2 data-translate="step1DetailInterfaceTitle">Gränssnittselement</h2>
+        <div class="section-divider-line"></div>
+      </div>
+      <div class="step1-visual-in-context">
+        <div class="step1-visual-wrapper">
+          <div class="step1-visual-image">
+            <img src="assets/leverantorer-step01-alla-företag.png" alt="Företagslista och sökfunktion" />
+          </div>
+          <div class="step1-visual-info">
+            <div class="step1-visual-info-item" onclick="openInfoPopup('visual-category')">
+              <div class="step1-visual-icon"><i class="fa-solid fa-folder-tree"></i></div>
+              <div class="step1-visual-text">
+                <h4>Kategoriorganisering</h4>
+                <p>Logisk hierarkisk struktur för enkel navigering</p>
+              </div>
+              <div class="step1-visual-arrow"><i class="fa-solid fa-chevron-right"></i></div>
+            </div>
+            <div class="step1-visual-info-item" onclick="openInfoPopup('visual-navigation')">
+              <div class="step1-visual-icon"><i class="fa-solid fa-bars"></i></div>
+              <div class="step1-visual-text">
+                <h4>Navigation och layout</h4>
+                <p>Kategorinavigation och filteralternativ</p>
+              </div>
+              <div class="step1-visual-arrow"><i class="fa-solid fa-chevron-right"></i></div>
+            </div>
+            <div class="step1-visual-info-item" onclick="openInfoPopup('visual-interactive')">
+              <div class="step1-visual-icon"><i class="fa-solid fa-mouse-pointer"></i></div>
+              <div class="step1-visual-text">
+                <h4>Interaktiva element</h4>
+                <p>Klickbara kort och snabbåtgärder</p>
+              </div>
+              <div class="step1-visual-arrow"><i class="fa-solid fa-chevron-right"></i></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- How It Works -->
+    <section class="how-it-works step1-how-works">
+      <div class="section-header">
         <h2 data-translate="howItWorksTitle">Så fungerar det</h2>
-        <div class="details-how-steps">
-          <div class="details-step">
-            <div class="details-step-number">1</div>
-            <div class="details-step-content">
-              <h3 data-translate="step1DetailStep1Title"></h3>
-              <p data-translate="step1DetailStep1Text"></p>
+        <div class="section-divider-line"></div>
+      </div>
+      <div class="step1-steps-container">
+        <div class="step1-step">
+          <div class="step1-step-header">
+            <div class="step1-step-number">1</div>
+            <h3 data-translate="step1DetailStep1Title"></h3>
+          </div>
+          
+          <div class="step-blocks">
+            <div class="step-block step-block-action">
+              <div class="step-block-icon"><i class="fa-solid fa-hand-pointer"></i></div>
+              <div class="step-block-content">
+                <h4>Vad du ska göra här</h4>
+                <ul>
+                  <li>Klicka på kategoriflik (t.ex. "Material")</li>
+                  <li>Välj specifik typ från underkategorier</li>
+                  <li>Se lista med matchande leverantörer</li>
+                </ul>
+              </div>
             </div>
           </div>
-          <div class="details-step">
-            <div class="details-step-number">2</div>
-            <div class="details-step-content">
-              <h3 data-translate="step1DetailStep2Title"></h3>
-              <p data-translate="step1DetailStep2Text"></p>
-            </div>
+          
+          <div class="step-tip-inline">
+            <i class="fa-solid fa-lightbulb"></i>
+            <span>Växla mellan olika kategorier för att jämföra leverantörer inom olika områden.</span>
           </div>
-          <div class="details-step">
-            <div class="details-step-number">3</div>
-            <div class="details-step-content">
-              <h3 data-translate="step1DetailStep3Title"></h3>
-              <p data-translate="step1DetailStep3Text"></p>
-            </div>
-          </div>
-          <div class="details-step">
-            <div class="details-step-number">4</div>
-            <div class="details-step-content">
-              <h3 data-translate="step1DetailStep4Title"></h3>
-              <p data-translate="step1DetailStep4Text"></p>
-            </div>
+          
+          <div class="step-button-wrapper">
+            <button class="step1-info-btn" onclick="openInfoPopup('step1')" aria-label="Mer information">
+              <i class="fa-solid fa-circle-info"></i> <span>Läs mer</span>
+            </button>
           </div>
         </div>
-      </section>
-
-      <section class="details-section">
-        <div class="feature-visual-large">
-          <img src="assets/leverantorer-step01-alla-företag.png" alt="Bläddra och sök företag" />
-        </div>
-      </section>
-
-      <section class="details-section">
-        <h2 data-translate="step1DetailInterfaceTitle"></h2>
-        <p data-translate="step1DetailInterfaceDesc"></p>
-        <div class="details-features-grid">
-          <div class="details-feature-card">
-            <div class="details-feature-icon"><i class="fa-solid fa-list"></i></div>
-            <h3 data-translate="step1DetailElement1Title"></h3>
-            <p data-translate="step1DetailElement1Desc"></p>
+        
+        <div class="step1-step">
+          <div class="step1-step-header">
+            <div class="step1-step-number">2</div>
+            <h3 data-translate="step1DetailStep2Title"></h3>
           </div>
-          <div class="details-feature-card">
-            <div class="details-feature-icon"><i class="fa-solid fa-bars"></i></div>
-            <h3 data-translate="step1DetailElement2Title"></h3>
-            <p data-translate="step1DetailElement2Desc"></p>
+          
+          <div class="step-blocks">
+            <div class="step-block step-block-action">
+              <div class="step-block-icon"><i class="fa-solid fa-filter"></i></div>
+              <div class="step-block-content">
+                <h4>Vad du ska göra här</h4>
+                <ul>
+                  <li>Välj filterkriterier: plats, betyg, certifieringar</li>
+                  <li>Kombinera flera filter för specifika resultat</li>
+                  <li>Resultat uppdateras automatiskt</li>
+                </ul>
+              </div>
+            </div>
           </div>
-          <div class="details-feature-card">
-            <div class="details-feature-icon"><i class="fa-solid fa-eye"></i></div>
-            <h3 data-translate="step1DetailElement3Title"></h3>
-            <p data-translate="step1DetailElement3Desc"></p>
+          
+          <div class="step-tip-inline">
+            <i class="fa-solid fa-lightbulb"></i>
+            <span>Du kan alltid återställa filter för att se alla alternativ igen.</span>
           </div>
-          <div class="details-feature-card">
-            <div class="details-feature-icon"><i class="fa-solid fa-folder-tree"></i></div>
-            <h3 data-translate="step1DetailElement4Title"></h3>
-            <p data-translate="step1DetailElement4Desc"></p>
-          </div>
-          <div class="details-feature-card">
-            <div class="details-feature-icon"><i class="fa-solid fa-mouse-pointer"></i></div>
-            <h3 data-translate="step1DetailElement5Title"></h3>
-            <p data-translate="step1DetailElement5Desc"></p>
+          
+          <div class="step-button-wrapper">
+            <button class="step1-info-btn" onclick="openInfoPopup('step2')" aria-label="Mer information">
+              <i class="fa-solid fa-circle-info"></i> <span>Läs mer</span>
+            </button>
           </div>
         </div>
-      </section>
-    </main>
+        
+        <div class="step1-step">
+          <div class="step1-step-header">
+            <div class="step1-step-number">3</div>
+            <h3 data-translate="step1DetailStep3Title"></h3>
+          </div>
+          
+          <div class="step-blocks">
+            <div class="step-block step-block-action">
+              <div class="step-block-icon"><i class="fa-solid fa-list"></i></div>
+              <div class="step-block-content">
+                <h4>Vad du ska göra här</h4>
+                <ul>
+                  <li>Bläddra genom företagskort i rutnät/listvy</li>
+                  <li>Se översikt: namn, plats, betyg, specialisering</li>
+                  <li>Sortera efter betyg, pris eller relevans</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          
+          <div class="step-tip-inline">
+            <i class="fa-solid fa-lightbulb"></i>
+            <span>Använd sorteringsalternativ för att hitta bästa matchningen först.</span>
+          </div>
+          
+          <div class="step-button-wrapper">
+            <button class="step1-info-btn" onclick="openInfoPopup('step3')" aria-label="Mer information">
+              <i class="fa-solid fa-circle-info"></i> <span>Läs mer</span>
+            </button>
+          </div>
+        </div>
+        
+        <div class="step1-step">
+          <div class="step1-step-header">
+            <div class="step1-step-number">4</div>
+            <h3 data-translate="step1DetailStep4Title"></h3>
+          </div>
+          
+          <div class="step-blocks">
+            <div class="step-block step-block-action">
+              <div class="step-block-icon"><i class="fa-solid fa-eye"></i></div>
+              <div class="step-block-content">
+                <h4>Vad du ska göra här</h4>
+                <ul>
+                  <li>Klicka "Visa profil" på valfritt företagskort</li>
+                  <li>Granska komplett information och certifieringar</li>
+                  <li>Läs recensioner och projektportfölj</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          
+          <div class="step-tip-inline">
+            <i class="fa-solid fa-lightbulb"></i>
+            <span>Granska projektportföljen för att bedöma företagets kompetens och pålitlighet.</span>
+          </div>
+          
+          <div class="step-button-wrapper">
+            <button class="step1-info-btn" onclick="openInfoPopup('step4')" aria-label="Mer information">
+              <i class="fa-solid fa-circle-info"></i> <span>Läs mer</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
 
     <div class="section-divider"></div>
     <div id="footer-container"></div>
@@ -111,12 +232,188 @@
     </script>
     
     <div id="popup-root"></div>
+    
+    <!-- Info Popup for detailed information -->
+    <div class="info-popup-overlay" id="infoPopup">
+      <div class="info-popup-box">
+        <button class="info-close-btn" onclick="closeInfoPopup()" aria-label="Stäng">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+        <div class="info-popup-content" id="infoPopupContent">
+          <!-- Content will be dynamically inserted here -->
+        </div>
+      </div>
+    </div>
+    
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollTrigger.min.js"></script>
     <script src="main.js"></script>
     <script src="popup.js"></script>
     <script src="lang.js"></script>
     <script>
+      // Info popup data - detailed information for each section
+      const infoPopupData = {
+        step1: {
+          title: 'Steg 1: Bläddra och sök',
+          content: `
+            <h3>Detaljerad information om bläddring och sökning</h3>
+            <p>I detta steg kan du utforska vår omfattande databas med företag inom byggbranschen. Använd sökfunktionen för att hitta specifika leverantörer baserat på olika kriterier som bransch, geografisk plats, specialisering och mer.</p>
+            <h4>Sökfunktion</h4>
+            <p>Snabbt hitta specifika företag med sökfältet. Använd sökord för att filtrera resultaten direkt. Sökfunktionen stöder:</p>
+            <ul>
+              <li><strong>Namnsökning:</strong> Sök efter specifika företagsnamn</li>
+              <li><strong>Kategorisökning:</strong> Hitta företag inom specifika kategorier</li>
+              <li><strong>Platssökning:</strong> Sök efter företag i specifika områden</li>
+              <li><strong>Realtidsresultat:</strong> Sökresultaten uppdateras direkt när du skriver</li>
+            </ul>
+            <h4>Kategorisering och navigering</h4>
+            <ul>
+              <li><strong>Kategorisering:</strong> Företag är organiserade i logiska kategorier för enkel navigering</li>
+              <li><strong>Favoriter:</strong> Spara intressanta företag för senare granskning</li>
+              <li><strong>Bläddring:</strong> Enkelt navigera mellan olika kategorier och underkategorier</li>
+            </ul>
+            <p>Systemet är designat för att vara intuitivt och användarvänligt, även för dem som inte är tekniskt kunniga.</p>
+          `
+        },
+        step2: {
+          title: 'Steg 2: Filtrera resultat',
+          content: `
+            <h3>Detaljerad information om filtrering</h3>
+            <p>Filtreringssystemet ger dig full kontroll över vilka företag som visas. Du kan kombinera flera filter för att skapa en mycket specifik sökning.</p>
+            <h4>Avancerade filter</h4>
+            <p>Förfina resultaten med många filteralternativ. Kombinera olika kriterier för exakt matchning. Systemet erbjuder:</p>
+            <ul>
+              <li><strong>Geografiska filter:</strong> Välj specifika regioner, städer eller avstånd från din plats</li>
+              <li><strong>Branschfilter:</strong> Filtrera efter specifika byggbranscher eller specialiseringar</li>
+              <li><strong>Verifieringsstatus:</strong> Visa endast verifierade företag med fullständig dokumentation</li>
+              <li><strong>Betyg och recensioner:</strong> Filtrera baserat på företagens betyg och användarrecensioner</li>
+              <li><strong>Prisintervall:</strong> Ange önskat prisintervall för ditt projekt</li>
+              <li><strong>Certifieringar:</strong> Filtrera efter specifika certifieringar eller kvalifikationer</li>
+              <li><strong>Kombinera filter:</strong> Använd flera filter samtidigt för mer exakta resultat</li>
+            </ul>
+            <p>Alla filter kan kombineras och justeras i realtid, vilket ger dig omedelbar feedback på dina val. Resultaten uppdateras automatiskt när du ändrar filterinställningar.</p>
+          `
+        },
+        step3: {
+          title: 'Steg 3: Granska profiler',
+          content: `
+            <h3>Detaljerad information om profilgranskning</h3>
+            <p>Varje företagsprofil innehåller omfattande information som hjälper dig att fatta välgrundade beslut.</p>
+            <ul>
+              <li><strong>Företagsinformation:</strong> Detaljerad beskrivning av företaget, dess historia och specialiseringar.</li>
+              <li><strong>Portfölj:</strong> Bildgalleri med tidigare projekt och referenser.</li>
+              <li><strong>Certifieringar:</strong> Alla relevanta certifieringar och kvalifikationer.</li>
+              <li><strong>Kontaktinformation:</strong> Direkta kontaktuppgifter för snabb kommunikation.</li>
+              <li><strong>Recensioner:</strong> Verifierade recensioner från tidigare kunder.</li>
+              <li><strong>Prisinformation:</strong> Transparent prissättning och offertförfrågningar.</li>
+            </ul>
+            <p>Profiler är kontinuerligt uppdaterade och verifierade för att säkerställa aktuell och korrekt information.</p>
+          `
+        },
+        step4: {
+          title: 'Steg 4: Kontakta företag',
+          content: `
+            <h3>Detaljerad information om kontakt</h3>
+            <p>När du har hittat rätt företag kan du enkelt initiera kontakt på flera sätt.</p>
+            <ul>
+              <li><strong>Direktmeddelanden:</strong> Skicka meddelanden direkt via plattformen för snabb kommunikation.</li>
+              <li><strong>Offertförfrågningar:</strong> Skicka detaljerade offertförfrågningar med dina specifika krav.</li>
+              <li><strong>Telefonkontakt:</strong> Direkta telefonnummer för omedelbar kontakt.</li>
+              <li><strong>E-post:</strong> Kontakta företag via e-post för formell korrespondens.</li>
+              <li><strong>Mötesbokning:</strong> Boka direkt möten med företag via kalenderintegration.</li>
+            </ul>
+            <p>All kommunikation loggas och sparas för din referens, vilket gör det enkelt att hålla koll på alla kontakter och offerter.</p>
+          `
+        },
+        'visual-category': {
+          title: 'Kategoriorganisering',
+          content: `
+            <h3>Detaljerad information om kategoriorganisering</h3>
+            <p>Företag är organiserade i en logisk hierarkisk struktur som gör det enkelt att navigera och hitta rätt specialisering.</p>
+            <ul>
+              <li><strong>Huvudkategorier:</strong> Övergripande kategorier som bygg, renovering, installationer</li>
+              <li><strong>Underkategorier:</strong> Specifika specialiseringar inom varje huvudkategori</li>
+              <li><strong>Taggar:</strong> Ytterligare taggar för mer detaljerad kategorisering</li>
+              <li><strong>Korsreferenser:</strong> Företag kan tillhöra flera kategorier för bättre synlighet</li>
+              <li><strong>Dynamisk struktur:</strong> Kategorier uppdateras kontinuerligt baserat på branschtrender</li>
+              <li><strong>Logisk hierarki:</strong> Enkel navigering från huvudkategori till specifik specialisering</li>
+            </ul>
+            <p>Strukturen är designad för att vara både omfattande och användarvänlig, vilket gör det enkelt att hitta exakt det du behöver.</p>
+          `
+        },
+        'visual-navigation': {
+          title: 'Navigation och layout',
+          content: `
+            <h3>Detaljerad information om navigation och layout</h3>
+            <p>Sidlayouten är designad för effektiv bläddring och filtrering av leverantörer.</p>
+            <ul>
+              <li><strong>Kategorinavigation:</strong> Horisontell navigationsmeny högst upp med alla huvudkategorier</li>
+              <li><strong>Filterpanel:</strong> Vänstra sidopanelen med omfattande filteralternativ</li>
+              <li><strong>Huvudområde:</strong> Centrum för leverantörslistor och företagskort</li>
+              <li><strong>Responsiv design:</strong> Layouten anpassar sig automatiskt till din skärmstorlek</li>
+              <li><strong>Snabbnavigering:</strong> Direkta länkar och genvägar för vanliga åtgärder</li>
+              <li><strong>Breadcrumbs:</strong> Tydlig vägvisning för att visa din nuvarande position</li>
+            </ul>
+            <p>Denna struktur möjliggör effektiv bläddring och filtrering, vilket gör det enkelt att hitta rätt leverantör snabbt.</p>
+          `
+        },
+        'visual-interactive': {
+          title: 'Interaktiva element',
+          content: `
+            <h3>Detaljerad information om interaktiva element</h3>
+            <p>Plattformen är full av interaktiva element som gör navigeringen smidig och intuitiv.</p>
+            <ul>
+              <li><strong>Klickbara kort:</strong> Varje företag visas som ett interaktivt kort med hover-effekter</li>
+              <li><strong>Drag-and-drop:</strong> Organisera dina favoriter genom att dra och släppa</li>
+              <li><strong>Snabbåtgärder:</strong> Direkta knappar för kontakt, favoriter och delning</li>
+              <li><strong>Tooltips:</strong> Hjälptext som visas vid hover för att förklara funktioner</li>
+              <li><strong>Animeringar:</strong> Smidiga övergångar och animationer för bättre användarupplevelse</li>
+              <li><strong>Responsiv design:</strong> Alla interaktiva element fungerar perfekt på både desktop och mobil</li>
+            </ul>
+            <p>Varje interaktivt element är designat med användarupplevelse i fokus för att göra plattformen så intuitiv som möjligt.</p>
+          `
+        }
+      };
+
+      // Function to open info popup
+      function openInfoPopup(id) {
+        const popup = document.getElementById('infoPopup');
+        const content = document.getElementById('infoPopupContent');
+        
+        if (infoPopupData[id]) {
+          content.innerHTML = `
+            <h2>${infoPopupData[id].title}</h2>
+            ${infoPopupData[id].content}
+          `;
+          popup.classList.add('active');
+          document.body.style.overflow = 'hidden';
+        }
+      }
+
+      // Function to close info popup
+      function closeInfoPopup() {
+        const popup = document.getElementById('infoPopup');
+        popup.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+
+      // Close popup when clicking overlay
+      document.addEventListener('DOMContentLoaded', () => {
+        const popup = document.getElementById('infoPopup');
+        popup.addEventListener('click', (e) => {
+          if (e.target === popup) {
+            closeInfoPopup();
+          }
+        });
+
+        // Close on Escape key
+        document.addEventListener('keydown', (e) => {
+          if (e.key === 'Escape' && popup.classList.contains('active')) {
+            closeInfoPopup();
+          }
+        });
+      });
+
       document.addEventListener('DOMContentLoaded', () => {
         lucide.createIcons();
         
