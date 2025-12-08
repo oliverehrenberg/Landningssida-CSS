@@ -9,7 +9,7 @@
     <script src="https://unpkg.com/lucide@latest"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   </head>
-  <body>
+  <body class="step1-details-page">
     <div class="scroll-progress"><div class="scroll-progress__bar"></div></div>
     <div id="header-container"></div>
     <script>
@@ -20,85 +20,206 @@
         });
     </script>
 
-    <main class="details-main with-header-space">
-      <section class="details-hero">
-        <div class="details-hero-icon"><i class="fa-solid fa-message" aria-hidden="true"></i></div>
-        <h1 data-translate="step3DetailTitle"></h1>
-        <p data-translate="step3DetailIntro"></p>
-      </section>
+    <!-- Hero Section -->
+    <section class="step1-hero">
+      <div class="step1-hero-content">
+        <div class="step1-hero-icon"><i class="fa-solid fa-message" aria-hidden="true"></i></div>
+        <h1 data-translate="step3DetailTitle">Steg 3: Kommunicera med alla leverantörer</h1>
+        <p class="step1-hero-subtitle" data-translate="step3DetailIntro">Kommunicera med leverantörer via chattgränssnittet. Följ de stegvisa instruktionerna nedan för att utbyta meddelanden, förtydliga beställningsdetaljer och koordinera samarbete effektivt.</p>
+        <div class="step1-hero-features">
+          <div class="step1-hero-feature-item">
+            <i class="fa-solid fa-comments" aria-hidden="true"></i>
+            <span>Direktmeddelanden i realtid</span>
+          </div>
+          <div class="step1-hero-feature-item">
+            <i class="fa-solid fa-file-invoice" aria-hidden="true"></i>
+            <span>Offertförfrågningar och offerter</span>
+          </div>
+          <div class="step1-hero-feature-item">
+            <i class="fa-solid fa-list" aria-hidden="true"></i>
+            <span>Hantera alla konversationer</span>
+          </div>
+        </div>
+      </div>
+    </section>
 
-      <section class="details-section">
+    <!-- Feature Details -->
+    <section class="feature-detail-section">
+      <div class="section-header">
+        <h2 data-translate="step3DetailInterfaceTitle">Översikt över chattgränssnittet</h2>
+        <div class="section-divider-line"></div>
+      </div>
+      <div class="step1-visual-in-context">
+        <div class="step1-visual-wrapper">
+          <div class="step1-visual-image">
+            <img src="assets/leverantorer-step03-förslag.png" alt="Chattgränssnitt och kommunikation" loading="lazy" />
+          </div>
+          <div class="step1-visual-info">
+            <div class="step1-visual-info-item" role="button" tabindex="0" aria-expanded="false" aria-label="Läs mer om konversationslista" data-popup-id="visual-conversations">
+              <div class="step1-visual-icon"><i class="fa-solid fa-list" aria-hidden="true"></i></div>
+              <div class="step1-visual-text">
+                <h4>Konversationslista</h4>
+                <p>Översikt över alla aktiva konversationer med leverantörer</p>
+              </div>
+              <div class="step1-visual-arrow"><i class="fa-solid fa-chevron-right" aria-hidden="true"></i></div>
+            </div>
+            <div class="step1-visual-info-item" role="button" tabindex="0" aria-expanded="false" aria-label="Läs mer om meddelandevisning" data-popup-id="visual-messages">
+              <div class="step1-visual-icon"><i class="fa-solid fa-comments" aria-hidden="true"></i></div>
+              <div class="step1-visual-text">
+                <h4>Meddelandevisning</h4>
+                <p>Chronologisk visning av meddelanden i konversationen</p>
+              </div>
+              <div class="step1-visual-arrow"><i class="fa-solid fa-chevron-right" aria-hidden="true"></i></div>
+            </div>
+            <div class="step1-visual-info-item" role="button" tabindex="0" aria-expanded="false" aria-label="Läs mer om offertförfrågningar" data-popup-id="visual-quotes">
+              <div class="step1-visual-icon"><i class="fa-solid fa-file-invoice" aria-hidden="true"></i></div>
+              <div class="step1-visual-text">
+                <h4>Offertförfrågningar</h4>
+                <p>Skicka och hantera offertförfrågningar direkt i chatten</p>
+              </div>
+              <div class="step1-visual-arrow"><i class="fa-solid fa-chevron-right" aria-hidden="true"></i></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- How It Works -->
+    <section class="how-it-works step1-how-works">
+      <div class="section-header">
         <h2 data-translate="howItWorksTitle">Så fungerar det</h2>
-        <div class="details-how-steps">
-          <div class="details-step">
-            <div class="details-step-number">1</div>
-            <div class="details-step-content">
-              <h3 data-translate="step3DetailStep1Title"></h3>
-              <p data-translate="step3DetailStep1Text"></p>
+        <div class="section-divider-line"></div>
+      </div>
+      <div class="step1-steps-container">
+        <div class="step1-step">
+          <div class="step1-step-header">
+            <div class="step1-step-number">1</div>
+            <h3 data-translate="step3DetailStep1Title">Steg 1: Få tillgång till chattgränssnittet</h3>
+          </div>
+          
+          <div class="step-blocks">
+            <div class="step-block step-block-action">
+              <div class="step-block-icon"><i class="fa-solid fa-sign-in-alt" aria-hidden="true"></i></div>
+              <div class="step-block-content">
+                <h4>Vad du ska göra här</h4>
+                <ul>
+                  <li>Logga in på ditt konto</li>
+                  <li>Klicka på kuvertikonen i menyn eller din avatar</li>
+                  <li>Välj 'Meddelanden' för att öppna chattgränssnittet</li>
+                </ul>
+              </div>
             </div>
           </div>
-          <div class="details-step">
-            <div class="details-step-number">2</div>
-            <div class="details-step-content">
-              <h3 data-translate="step3DetailStep2Title"></h3>
-              <p data-translate="step3DetailStep2Text"></p>
-            </div>
+          
+          <div class="step-tip-inline">
+            <i class="fa-solid fa-lightbulb" aria-hidden="true"></i>
+            <span>Du kan också komma åt chatten direkt från leverantörsprofilsidan.</span>
           </div>
-          <div class="details-step">
-            <div class="details-step-number">3</div>
-            <div class="details-step-content">
-              <h3 data-translate="step3DetailStep3Title"></h3>
-              <p data-translate="step3DetailStep3Text"></p>
-            </div>
-          </div>
-          <div class="details-step">
-            <div class="details-step-number">4</div>
-            <div class="details-step-content">
-              <h3 data-translate="step3DetailStep4Title"></h3>
-              <p data-translate="step3DetailStep4Text"></p>
-            </div>
+          
+          <div class="step-button-wrapper">
+            <button type="button" class="step1-info-btn" data-popup-id="step1" aria-label="Mer information om steg 1">
+              <i class="fa-solid fa-circle-info" aria-hidden="true"></i> <span>Läs mer</span>
+            </button>
           </div>
         </div>
-      </section>
-
-      <section class="details-section">
-        <div class="feature-visual-large">
-          <img src="assets/leverantorer-step03-förslag.png" alt="Kommunicera med alla leverantörer" />
-        </div>
-      </section>
-
-      <section class="details-section">
-        <h2 data-translate="step3DetailInterfaceTitle"></h2>
-        <p data-translate="step3DetailInterfaceDesc"></p>
-        <div class="details-features-grid">
-          <div class="details-feature-card">
-            <div class="details-feature-icon"><i class="fa-solid fa-list"></i></div>
-            <h3 data-translate="step3DetailElement1Title"></h3>
-            <p data-translate="step3DetailElement1Desc"></p>
+        
+        <div class="step1-step">
+          <div class="step1-step-header">
+            <div class="step1-step-number">2</div>
+            <h3 data-translate="step3DetailStep2Title">Steg 2: Initiera eller fortsätt konversation</h3>
           </div>
-          <div class="details-feature-card">
-            <div class="details-feature-icon"><i class="fa-solid fa-comments"></i></div>
-            <h3 data-translate="step3DetailElement2Title"></h3>
-            <p data-translate="step3DetailElement2Desc"></p>
+          
+          <div class="step-blocks">
+            <div class="step-block step-block-action">
+              <div class="step-block-icon"><i class="fa-solid fa-comment-dots" aria-hidden="true"></i></div>
+              <div class="step-block-content">
+                <h4>Vad du ska göra här</h4>
+                <ul>
+                  <li>Välj leverantör från din kontaktlista</li>
+                  <li>Klicka på befintlig konversation för att fortsätta</li>
+                  <li>Starta ny konversation med 'Starta konversation'</li>
+                </ul>
+              </div>
+            </div>
           </div>
-          <div class="details-feature-card">
-            <div class="details-feature-icon"><i class="fa-solid fa-keyboard"></i></div>
-            <h3 data-translate="step3DetailElement3Title"></h3>
-            <p data-translate="step3DetailElement3Desc"></p>
+          
+          <div class="step-tip-inline">
+            <i class="fa-solid fa-lightbulb" aria-hidden="true"></i>
+            <span>Alla konversationer sparas automatiskt för framtida referens.</span>
           </div>
-          <div class="details-feature-card">
-            <div class="details-feature-icon"><i class="fa-solid fa-user-tie"></i></div>
-            <h3 data-translate="step3DetailElement4Title"></h3>
-            <p data-translate="step3DetailElement4Desc"></p>
-          </div>
-          <div class="details-feature-card">
-            <div class="details-feature-icon"><i class="fa-solid fa-file-invoice"></i></div>
-            <h3 data-translate="step3DetailElement5Title"></h3>
-            <p data-translate="step3DetailElement5Desc"></p>
+          
+          <div class="step-button-wrapper">
+            <button type="button" class="step1-info-btn" data-popup-id="step2" aria-label="Mer information om steg 2">
+              <i class="fa-solid fa-circle-info" aria-hidden="true"></i> <span>Läs mer</span>
+            </button>
           </div>
         </div>
-      </section>
-    </main>
+        
+        <div class="step1-step">
+          <div class="step1-step-header">
+            <div class="step1-step-number">3</div>
+            <h3 data-translate="step3DetailStep3Title">Steg 3: Utbyta meddelanden</h3>
+          </div>
+          
+          <div class="step-blocks">
+            <div class="step-block step-block-action">
+              <div class="step-block-icon"><i class="fa-solid fa-keyboard" aria-hidden="true"></i></div>
+              <div class="step-block-content">
+                <h4>Vad du ska göra här</h4>
+                <ul>
+                  <li>Skriv ditt meddelande i meddelandefältet</li>
+                  <li>Ställ frågor eller förtydliga beställningsdetaljer</li>
+                  <li>Klicka 'Skicka' eller tryck Enter för att skicka</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          
+          <div class="step-tip-inline">
+            <i class="fa-solid fa-lightbulb" aria-hidden="true"></i>
+            <span>Meddelanden levereras i realtid för omedelbar kommunikation.</span>
+          </div>
+          
+          <div class="step-button-wrapper">
+            <button type="button" class="step1-info-btn" data-popup-id="step3" aria-label="Mer information om steg 3">
+              <i class="fa-solid fa-circle-info" aria-hidden="true"></i> <span>Läs mer</span>
+            </button>
+          </div>
+        </div>
+        
+        <div class="step1-step">
+          <div class="step1-step-header">
+            <div class="step1-step-number">4</div>
+            <h3 data-translate="step3DetailStep4Title">Steg 4: Hantera konversationer och förfrågningar</h3>
+          </div>
+          
+          <div class="step-blocks">
+            <div class="step-block step-block-action">
+              <div class="step-block-icon"><i class="fa-solid fa-file-invoice" aria-hidden="true"></i></div>
+              <div class="step-block-content">
+                <h4>Vad du ska göra här</h4>
+                <ul>
+                  <li>Skicka offertförfrågningar direkt i chatten</li>
+                  <li>Granska mottagna offerter och diskutera villkor</li>
+                  <li>Bifoga filer och dela projektdokument</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          
+          <div class="step-tip-inline">
+            <i class="fa-solid fa-lightbulb" aria-hidden="true"></i>
+            <span>All konversationshistorik sparas automatiskt för framtida referens.</span>
+          </div>
+          
+          <div class="step-button-wrapper">
+            <button type="button" class="step1-info-btn" data-popup-id="step4" aria-label="Mer information om steg 4">
+              <i class="fa-solid fa-circle-info" aria-hidden="true"></i> <span>Läs mer</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
 
     <div class="section-divider"></div>
     <div id="footer-container"></div>
@@ -111,13 +232,377 @@
     </script>
     
     <div id="popup-root"></div>
+    
+    <!-- Info Popup for detailed information -->
+    <div class="info-popup-overlay" id="infoPopup" role="dialog" aria-modal="true" aria-labelledby="infoPopupTitle" aria-hidden="true">
+      <div class="info-popup-box">
+        <button class="info-close-btn" id="infoCloseBtn" aria-label="Stäng popup">
+          <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+        </button>
+        <div class="info-popup-content" id="infoPopupContent">
+          <h2 id="infoPopupTitle" class="sr-only">Detaljerad information</h2>
+          <!-- Content will be dynamically inserted here -->
+        </div>
+      </div>
+    </div>
+    
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollTrigger.min.js"></script>
     <script src="main.js"></script>
     <script src="popup.js"></script>
     <script src="lang.js"></script>
     <script>
+      // Info popup data - detailed information for each section
+      const infoPopupData = {
+        step1: {
+          title: 'Steg 1: Få tillgång till chattgränssnittet',
+          content: `
+            <h3>Detaljerad information om att komma åt chattgränssnittet</h3>
+            <p>Chattgränssnittet är din centrala plats för all kommunikation med leverantörer. Det finns flera sätt att komma åt chatten beroende på var du befinner dig på plattformen.</p>
+            <h4>Tillgång via huvudmenyn</h4>
+            <ul>
+              <li><strong>Kuvertikonen:</strong> Klicka på kuvertikonen i menyn längst upp för att öppna meddelandesektionen</li>
+              <li><strong>Direktlänk:</strong> Snabb åtkomst till alla dina meddelanden och konversationer</li>
+              <li><strong>Notiser:</strong> Se antal olästa meddelanden direkt i ikonen</li>
+            </ul>
+            <h4>Tillgång via avatar</h4>
+            <ul>
+              <li><strong>Avatar-klick:</strong> Klicka på din avatar längst ner på skärmen</li>
+              <li><strong>Menyval:</strong> Välj 'Meddelanden' från menyn som visas</li>
+              <li><strong>Snabbnavigering:</strong> Enkel åtkomst från var som helst på plattformen</li>
+            </ul>
+            <h4>Tillgång från leverantörsprofil</h4>
+            <ul>
+              <li><strong>'Starta konversation':</strong> Klicka på knappen för att öppna chatten direkt med leverantören</li>
+              <li><strong>'Kontakta leverantör':</strong> Alternativ knapp för att initiera kommunikation</li>
+              <li><strong>Kontextuell start:</strong> Starta konversation med relevant kontext från profilen</li>
+            </ul>
+            <p>Chattgränssnittet är designat för att vara lättillgängligt och intuitivt, oavsett var du befinner dig på plattformen.</p>
+          `
+        },
+        step2: {
+          title: 'Steg 2: Initiera eller fortsätt konversation',
+          content: `
+            <h3>Detaljerad information om konversationshantering</h3>
+            <p>Chattgränssnittet gör det enkelt att både starta nya konversationer och fortsätta befintliga diskussioner med leverantörer.</p>
+            <h4>Starta ny konversation</h4>
+            <ul>
+              <li><strong>Kontaktlista:</strong> Välj leverantör från din lista över kontakter eller leverantörer</li>
+              <li><strong>Sökfunktion:</strong> Använd sökfunktionen för att snabbt hitta specifik leverantör</li>
+              <li><strong>Från profil:</strong> Starta konversation direkt från leverantörsprofilsidan</li>
+              <li><strong>Kontextuell start:</strong> Ny konversation skapas automatiskt med relevant kontext</li>
+            </ul>
+            <h4>Fortsätt befintlig konversation</h4>
+            <ul>
+              <li><strong>Konversationslista:</strong> Klicka på konversationstråden i listan</li>
+              <li><strong>Konversationshistorik:</strong> Alla tidigare meddelanden visas automatiskt</li>
+              <li><strong>Kontextbevarande:</strong> All kontext och information från tidigare meddelanden bevaras</li>
+              <li><strong>Snabbåtergång:</strong> Enkelt att återgå till tidigare diskussioner</li>
+            </ul>
+            <h4>Konversationshantering</h4>
+            <ul>
+              <li><strong>Automatisk sparande:</strong> Alla konversationer sparas automatiskt</li>
+              <li><strong>Sök i historik:</strong> Sök i tidigare meddelanden och konversationer</li>
+              <li><strong>Organisering:</strong> Konversationer organiseras efter leverantör och datum</li>
+            </ul>
+            <p>Systemet är designat för att göra kommunikationen så smidig och organiserad som möjligt.</p>
+          `
+        },
+        step3: {
+          title: 'Steg 3: Utbyta meddelanden',
+          content: `
+            <h3>Detaljerad information om meddelandeutbyte</h3>
+            <p>Meddelandeutbytet är kärnan i chattgränssnittet och ger dig möjlighet att kommunicera direkt med leverantörer i realtid.</p>
+            <h4>Skriva och skicka meddelanden</h4>
+            <ul>
+              <li><strong>Meddelandefält:</strong> Skriv ditt meddelande i fältet längst ner i chattfönstret</li>
+              <li><strong>Skicka-knapp:</strong> Klicka på 'Skicka'-knappen för att skicka meddelandet</li>
+              <li><strong>Enter-tangent:</strong> Tryck på Enter för snabb sändning</li>
+              <li><strong>Realtidsleverans:</strong> Meddelanden levereras omedelbart till mottagaren</li>
+            </ul>
+            <h4>Meddelandetyper</h4>
+            <ul>
+              <li><strong>Textmeddelanden:</strong> Vanliga textmeddelanden för kommunikation</li>
+              <li><strong>Förfrågningar:</strong> Ställ frågor och förtydliga beställningsdetaljer</li>
+              <li><strong>Specifikationer:</strong> Diskutera projektkrav och specifikationer</li>
+              <li><strong>Koordinering:</strong> Koordinera projektkrav och samarbetsdetaljer</li>
+            </ul>
+            <h4>Avancerade funktioner</h4>
+            <ul>
+              <li><strong>Offertförfrågningar:</strong> Skicka offertförfrågningar direkt från chatten</li>
+              <li><strong>Offertskickning:</strong> Skicka offerter direkt till leverantörer</li>
+              <li><strong>Filbifogning:</strong> Bifoga filer och dokument till meddelanden</li>
+              <li><strong>Projektreferenser:</strong> Referera till specifika objekt från ditt projekt</li>
+            </ul>
+            <p>All kommunikation sker i realtid, vilket möjliggör snabb och effektiv koordinering med leverantörer.</p>
+          `
+        },
+        step4: {
+          title: 'Steg 4: Hantera konversationer och förfrågningar',
+          content: `
+            <h3>Detaljerad information om hantering av konversationer och förfrågningar</h3>
+            <p>Chattgränssnittet erbjuder omfattande funktioner för att hantera konversationer, offertförfrågningar och samarbetsdetaljer.</p>
+            <h4>Offertförfrågningar</h4>
+            <ul>
+              <li><strong>Skicka förfrågningar:</strong> Skicka detaljerade offertförfrågningar direkt i chatten</li>
+              <li><strong>Specifikationer:</strong> Inkludera detaljerade projektkrav och specifikationer</li>
+              <li><strong>Spårning:</strong> Följ status på dina offertförfrågningar</li>
+              <li><strong>Påminnelser:</strong> Få påminnelser om svar på förfrågningar</li>
+            </ul>
+            <h4>Offertgranskning</h4>
+            <ul>
+              <li><strong>Mottagna offerter:</strong> Granska alla mottagna offerter i chatten</li>
+              <li><strong>Jämförelse:</strong> Jämför offerter från olika leverantörer</li>
+              <li><strong>Diskussion:</strong> Diskutera villkor och detaljer direkt med leverantören</li>
+              <li><strong>Beslut:</strong> Fatta beslut baserat på offerter och diskussioner</li>
+            </ul>
+            <h4>Dokumenthantering</h4>
+            <ul>
+              <li><strong>Filbifogning:</strong> Bifoga filer och dokument till meddelanden</li>
+              <li><strong>Projektdokument:</strong> Dela projektdokument direkt i chatten</li>
+              <li><strong>Referenser:</strong> Referera till specifika objekt från ditt projekt</li>
+              <li><strong>Dokumentarkiv:</strong> Alla delade dokument sparas för framtida referens</li>
+            </ul>
+            <h4>Konversationshistorik</h4>
+            <ul>
+              <li><strong>Automatisk sparande:</strong> All konversationshistorik sparas automatiskt</li>
+              <li><strong>Sökfunktion:</strong> Sök i tidigare meddelanden och konversationer</li>
+              <li><strong>Export:</strong> Exportera konversationshistorik för arkivering</li>
+              <li><strong>Referens:</strong> Enkelt att återgå till tidigare diskussioner och beslut</li>
+            </ul>
+            <p>Alla dessa funktioner är integrerade i chattgränssnittet för sömlös koordinering och effektiv kommunikation.</p>
+          `
+        },
+        'visual-conversations': {
+          title: 'Konversationslista',
+          content: `
+            <h3>Detaljerad information om konversationslista</h3>
+            <p>Konversationslistan ger dig en översikt över alla dina aktiva konversationer med leverantörer och gör det enkelt att navigera mellan olika diskussioner.</p>
+            <ul>
+              <li><strong>Leverantörsnamn:</strong> Tydlig visning av vilken leverantör varje konversation är med</li>
+              <li><strong>Förhandsvisning:</strong> Se förhandsvisning av senaste meddelandet i varje konversation</li>
+              <li><strong>Tidsstämpel:</strong> Se när senaste meddelandet skickades</li>
+              <li><strong>Notiser:</strong> Visuella indikatorer för olästa meddelanden</li>
+              <li><strong>Sortering:</strong> Konversationer sorteras automatiskt efter senaste aktivitet</li>
+              <li><strong>Sökfunktion:</strong> Sök efter specifika konversationer eller leverantörer</li>
+            </ul>
+            <p>Konversationslistan är designad för att göra det enkelt att hålla koll på alla dina kommunikationer och snabbt växla mellan olika konversationer.</p>
+          `
+        },
+        'visual-messages': {
+          title: 'Meddelandevisning',
+          content: `
+            <h3>Detaljerad information om meddelandevisning</h3>
+            <p>Meddelandevisningsområdet visar hela konversationshistoriken på ett tydligt och organiserat sätt.</p>
+            <ul>
+              <li><strong>Chronologisk ordning:</strong> Meddelanden visas i kronologisk ordning för enkel följd</li>
+              <li><strong>Visuell separation:</strong> Dina meddelanden visas på ena sidan, leverantörsmeddelanden på den andra</li>
+              <li><strong>Meddelandeformat:</strong> Tydlig formatering med tidsstämplar och avsändarinformation</li>
+              <li><strong>Scrollbar:</strong> Enkel scrollning genom långa konversationer</li>
+              <li><strong>Automatisk uppdatering:</strong> Nya meddelanden visas automatiskt när de anländer</li>
+              <li><strong>Meddelandestatus:</strong> Se status på skickade meddelanden (levererat, läst, etc.)</li>
+            </ul>
+            <p>Meddelandevisningen är designad för att göra det enkelt att följa konversationsflödet och förstå sammanhanget i diskussionen.</p>
+          `
+        },
+        'visual-quotes': {
+          title: 'Offertförfrågningar',
+          content: `
+            <h3>Detaljerad information om offertförfrågningar</h3>
+            <p>Offertförfrågningar är integrerade direkt i chattgränssnittet, vilket gör det enkelt att skicka och hantera offerter.</p>
+            <ul>
+              <li><strong>Skicka förfrågningar:</strong> Skicka detaljerade offertförfrågningar direkt från chatten</li>
+              <li><strong>Specifikationer:</strong> Inkludera detaljerade projektkrav och specifikationer i förfrågningen</li>
+              <li><strong>Spårning:</strong> Följ status på dina offertförfrågningar och se när de har besvarats</li>
+              <li><strong>Mottagna offerter:</strong> Granska mottagna offerter direkt i chatten</li>
+              <li><strong>Diskussion:</strong> Diskutera offertdetaljer och villkor direkt med leverantören</li>
+              <li><strong>Jämförelse:</strong> Jämför offerter från olika leverantörer för att fatta bästa beslut</li>
+            </ul>
+            <p>Offertförfrågningar är designade för att vara en sömlös del av kommunikationsprocessen, vilket gör det enkelt att koordinera och fatta beslut.</p>
+          `
+        }
+      };
+
+      // Store reference to previously focused element for accessibility
+      let previousActiveElement = null;
+
+      // Function to open info popup
+      function openInfoPopup(id) {
+        const popup = document.getElementById('infoPopup');
+        const content = document.getElementById('infoPopupContent');
+        const title = document.getElementById('infoPopupTitle');
+        const closeBtn = document.getElementById('infoCloseBtn');
+        
+        if (!popup || !content || !title) {
+          console.error('Popup elements not found');
+          return;
+        }
+        
+        if (!infoPopupData[id]) {
+          console.error('Popup data not found for ID:', id);
+          return;
+        }
+        
+        // Reset aria-expanded for all triggers first
+        document.querySelectorAll('[data-popup-id]').forEach(el => {
+          el.setAttribute('aria-expanded', 'false');
+        });
+        
+        // If popup is already open, just update the content
+        const wasOpen = popup.classList.contains('active');
+        
+        // Store current focus for restoration (only if popup wasn't open)
+        if (!wasOpen) {
+          previousActiveElement = document.activeElement;
+        }
+        
+        // Update content
+        title.textContent = infoPopupData[id].title;
+        title.classList.remove('sr-only');
+        content.innerHTML = infoPopupData[id].content;
+        
+        // Update ARIA attributes
+        popup.setAttribute('aria-hidden', 'false');
+        popup.classList.add('active');
+        document.body.style.overflow = 'hidden';
+        
+        // Update aria-expanded on trigger elements
+        document.querySelectorAll(`[data-popup-id="${id}"]`).forEach(el => {
+          el.setAttribute('aria-expanded', 'true');
+        });
+        
+        // Focus management - focus close button for accessibility
+        setTimeout(() => {
+          if (closeBtn) {
+            closeBtn.focus();
+          }
+        }, wasOpen ? 50 : 100);
+      }
+
+      // Function to close info popup
+      function closeInfoPopup() {
+        const popup = document.getElementById('infoPopup');
+        const title = document.getElementById('infoPopupTitle');
+        
+        if (!popup) return;
+        
+        // Update ARIA attributes
+        popup.setAttribute('aria-hidden', 'true');
+        popup.classList.remove('active');
+        document.body.style.overflow = '';
+        
+        // Reset aria-expanded on all trigger elements
+        document.querySelectorAll('[data-popup-id]').forEach(el => {
+          el.setAttribute('aria-expanded', 'false');
+        });
+        
+        // Restore focus to previously focused element
+        if (previousActiveElement && typeof previousActiveElement.focus === 'function') {
+          try {
+            previousActiveElement.focus();
+          } catch (e) {
+            // Element might not be focusable anymore, ignore
+            console.warn('Could not restore focus:', e);
+          }
+          previousActiveElement = null;
+        }
+      }
+
+      // Initialize popup functionality
       document.addEventListener('DOMContentLoaded', () => {
+        // Wait a bit to ensure all elements are ready
+        setTimeout(() => {
+          const popup = document.getElementById('infoPopup');
+          const closeBtn = document.getElementById('infoCloseBtn');
+          const content = document.getElementById('infoPopupContent');
+          const title = document.getElementById('infoPopupTitle');
+          
+          if (!popup || !content || !title) {
+            console.warn('Popup elements not found, popup functionality disabled');
+            return;
+          }
+          
+          // Close button click handler
+          if (closeBtn) {
+            closeBtn.addEventListener('click', closeInfoPopup);
+          }
+          
+          // Close popup when clicking overlay (but not on popup box)
+          popup.addEventListener('click', (e) => {
+            // Only close if clicking directly on overlay background, not on popup box
+            if (e.target === popup) {
+              closeInfoPopup();
+            }
+          });
+
+          // Close on Escape key
+          document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && popup.classList.contains('active')) {
+              closeInfoPopup();
+            }
+          });
+          
+          // Handle click and keyboard events on popup triggers using event delegation
+          // Use capture phase to catch events before overlay intercepts them
+          document.addEventListener('click', (e) => {
+            // Check if popup elements exist before handling
+            const popupEl = document.getElementById('infoPopup');
+            if (!popupEl) {
+              return; // Popup elements not ready yet
+            }
+            
+            // Check if click is on a popup trigger
+            const trigger = e.target.closest('[data-popup-id]');
+            
+            if (trigger) {
+              // Don't handle clicks inside popup box
+              const popupBox = e.target.closest('.info-popup-box');
+              const closeBtnEl = e.target.closest('.info-close-btn');
+              
+              // If click is on close button, let it handle the close
+              if (closeBtnEl) {
+                return;
+              }
+              
+              // If click is inside popup box (but not on close button), don't handle it
+              if (popupBox) {
+                return;
+              }
+              
+              // Prevent default and stop propagation
+              e.preventDefault();
+              e.stopImmediatePropagation();
+              
+              const popupId = trigger.getAttribute('data-popup-id');
+              if (popupId) {
+                // Open popup immediately (elements are already checked)
+                openInfoPopup(popupId);
+              }
+            }
+          }, true); // Capture phase - catches events before they bubble
+          
+          // Keyboard handler for popup triggers
+          document.addEventListener('keydown', (e) => {
+            // Check if popup elements exist before handling
+            const popupEl = document.getElementById('infoPopup');
+            if (!popupEl) {
+              return; // Popup elements not ready yet
+            }
+            
+            if (e.key === 'Enter' || e.key === ' ') {
+              const trigger = e.target.closest('[data-popup-id]');
+              if (trigger) {
+                e.preventDefault();
+                const popupId = trigger.getAttribute('data-popup-id');
+                if (popupId) {
+                  // Open popup immediately (elements are already checked)
+                  openInfoPopup(popupId);
+                }
+              }
+            }
+          });
+        }, 100); // Small delay to ensure DOM is fully ready
+        
         lucide.createIcons();
         
         // Applicera översättning efter DOM är laddad
@@ -129,4 +614,3 @@
     </script>
   </body>
 </html>
-

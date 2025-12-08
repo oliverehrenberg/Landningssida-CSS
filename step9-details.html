@@ -9,7 +9,7 @@
     <script src="https://unpkg.com/lucide@latest"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   </head>
-  <body>
+  <body class="step1-details-page">
     <div class="scroll-progress"><div class="scroll-progress__bar"></div></div>
     <div id="header-container"></div>
     <script>
@@ -20,85 +20,206 @@
         });
     </script>
 
-    <main class="details-main with-header-space">
-      <section class="details-hero">
-        <div class="details-hero-icon"><i class="fa-solid fa-clipboard-list" aria-hidden="true"></i></div>
-        <h1 data-translate="step9DetailTitle"></h1>
-        <p data-translate="step9DetailIntro"></p>
-      </section>
+    <!-- Hero Section -->
+    <section class="step1-hero">
+      <div class="step1-hero-content">
+        <div class="step1-hero-icon"><i class="fa-solid fa-clipboard-list" aria-hidden="true"></i></div>
+        <h1 data-translate="step9DetailTitle">Steg 9: Uppdragsstyrning & Uppföljning</h1>
+        <p class="step1-hero-subtitle" data-translate="step9DetailIntro">Hantera och följ upp uppdragsgenomförande efter att avtalet är signerat. Följ de stegvisa instruktionerna nedan för att övervaka framsteg, spåra leveranser, hantera kvalitetskontroller och få tillgång till uppdragsinformation via uppdragsdetailjsidan.</p>
+        <div class="step1-hero-features">
+          <div class="step1-hero-feature-item">
+            <i class="fa-solid fa-chart-line" aria-hidden="true"></i>
+            <span>Övervaka framsteg</span>
+          </div>
+          <div class="step1-hero-feature-item">
+            <i class="fa-solid fa-truck" aria-hidden="true"></i>
+            <span>Spåra leveranser</span>
+          </div>
+          <div class="step1-hero-feature-item">
+            <i class="fa-solid fa-check-circle" aria-hidden="true"></i>
+            <span>Kvalitetskontroller</span>
+          </div>
+        </div>
+      </div>
+    </section>
 
-      <section class="details-section">
+    <!-- Feature Details -->
+    <section class="feature-detail-section">
+      <div class="section-header">
+        <h2 data-translate="step9DetailInterfaceTitle">Översikt över uppdragsdetailjsidan</h2>
+        <div class="section-divider-line"></div>
+      </div>
+      <div class="step1-visual-in-context">
+        <div class="step1-visual-wrapper">
+          <div class="step1-visual-image">
+            <img src="assets/mission.png" alt="Uppdragsstyrning & Uppföljning" loading="lazy" />
+          </div>
+          <div class="step1-visual-info">
+            <div class="step1-visual-info-item" role="button" tabindex="0" aria-expanded="false" aria-label="Läs mer om framstegsindikatorer" data-popup-id="visual-progress">
+              <div class="step1-visual-icon"><i class="fa-solid fa-chart-line" aria-hidden="true"></i></div>
+              <div class="step1-visual-text">
+                <h4>Framstegsindikatorer</h4>
+                <p>Översikt över uppdragets totala framsteg och slutförandestatus</p>
+              </div>
+              <div class="step1-visual-arrow"><i class="fa-solid fa-chevron-right" aria-hidden="true"></i></div>
+            </div>
+            <div class="step1-visual-info-item" role="button" tabindex="0" aria-expanded="false" aria-label="Läs mer om navigationsflikar" data-popup-id="visual-tabs">
+              <div class="step1-visual-icon"><i class="fa-solid fa-folder-open" aria-hidden="true"></i></div>
+              <div class="step1-visual-text">
+                <h4>Navigationsflikar</h4>
+                <p>Växla mellan olika sektioner för uppdragsstyrning</p>
+              </div>
+              <div class="step1-visual-arrow"><i class="fa-solid fa-chevron-right" aria-hidden="true"></i></div>
+            </div>
+            <div class="step1-visual-info-item" role="button" tabindex="0" aria-expanded="false" aria-label="Läs mer om tidslinje och uppföljning" data-popup-id="visual-timeline">
+              <div class="step1-visual-icon"><i class="fa-solid fa-clock" aria-hidden="true"></i></div>
+              <div class="step1-visual-text">
+                <h4>Tidslinje och uppföljning</h4>
+                <p>Spåra kronologiska händelser och milstolv</p>
+              </div>
+              <div class="step1-visual-arrow"><i class="fa-solid fa-chevron-right" aria-hidden="true"></i></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- How It Works -->
+    <section class="how-it-works step1-how-works">
+      <div class="section-header">
         <h2 data-translate="howItWorksTitle">Så fungerar det</h2>
-        <div class="details-how-steps">
-          <div class="details-step">
-            <div class="details-step-number">1</div>
-            <div class="details-step-content">
-              <h3 data-translate="step9DetailStep1Title"></h3>
-              <p data-translate="step9DetailStep1Text"></p>
+        <div class="section-divider-line"></div>
+      </div>
+      <div class="step1-steps-container">
+        <div class="step1-step">
+          <div class="step1-step-header">
+            <div class="step1-step-number">1</div>
+            <h3 data-translate="step9DetailStep1Title">Steg 1: Få tillgång till uppdragsdetaljer</h3>
+          </div>
+          
+          <div class="step-blocks">
+            <div class="step-block step-block-action">
+              <div class="step-block-icon"><i class="fa-solid fa-sign-in-alt" aria-hidden="true"></i></div>
+              <div class="step-block-content">
+                <h4>Vad du ska göra här</h4>
+                <ul>
+                  <li>Logga in på ditt konto</li>
+                  <li>Klicka på din avatar och välj 'Dashboard'</li>
+                  <li>Gå till fliken 'Uppdrag' och välj projektet</li>
+                </ul>
+              </div>
             </div>
           </div>
-          <div class="details-step">
-            <div class="details-step-number">2</div>
-            <div class="details-step-content">
-              <h3 data-translate="step9DetailStep2Title"></h3>
-              <p data-translate="step9DetailStep2Text"></p>
-            </div>
+          
+          <div class="step-tip-inline">
+            <i class="fa-solid fa-lightbulb" aria-hidden="true"></i>
+            <span>Uppdragsdetailjsidan visar omfattande information om uppdraget inklusive status, datum och kontaktpersoner.</span>
           </div>
-          <div class="details-step">
-            <div class="details-step-number">3</div>
-            <div class="details-step-content">
-              <h3 data-translate="step9DetailStep3Title"></h3>
-              <p data-translate="step9DetailStep3Text"></p>
-            </div>
-          </div>
-          <div class="details-step">
-            <div class="details-step-number">4</div>
-            <div class="details-step-content">
-              <h3 data-translate="step9DetailStep4Title"></h3>
-              <p data-translate="step9DetailStep4Text"></p>
-            </div>
+          
+          <div class="step-button-wrapper">
+            <button type="button" class="step1-info-btn" data-popup-id="step1" aria-label="Mer information om steg 1">
+              <i class="fa-solid fa-circle-info" aria-hidden="true"></i> <span>Läs mer</span>
+            </button>
           </div>
         </div>
-      </section>
-
-      <section class="details-section">
-        <div class="feature-visual-large">
-          <img src="assets/mission.png" alt="Uppdragsstyrning & Uppföljning" />
-        </div>
-      </section>
-
-      <section class="details-section">
-        <h2 data-translate="step9DetailInterfaceTitle"></h2>
-        <p data-translate="step9DetailInterfaceDesc"></p>
-        <div class="details-features-grid">
-          <div class="details-feature-card">
-            <div class="details-feature-icon"><i class="fa-solid fa-info-circle"></i></div>
-            <h3 data-translate="step9DetailElement1Title"></h3>
-            <p data-translate="step9DetailElement1Desc"></p>
+        
+        <div class="step1-step">
+          <div class="step1-step-header">
+            <div class="step1-step-number">2</div>
+            <h3 data-translate="step9DetailStep2Title">Steg 2: Övervaka totalt framsteg</h3>
           </div>
-          <div class="details-feature-card">
-            <div class="details-feature-icon"><i class="fa-solid fa-chart-line"></i></div>
-            <h3 data-translate="step9DetailElement2Title"></h3>
-            <p data-translate="step9DetailElement2Desc"></p>
+          
+          <div class="step-blocks">
+            <div class="step-block step-block-action">
+              <div class="step-block-icon"><i class="fa-solid fa-chart-line" aria-hidden="true"></i></div>
+              <div class="step-block-content">
+                <h4>Vad du ska göra här</h4>
+                <ul>
+                  <li>Granska framstegsindikatorer och statusvisningar</li>
+                  <li>Kontrollera slutförandeprocent och milstolvprestationer</li>
+                  <li>Använd tidslinjefliken för att visa kronologiska händelser</li>
+                </ul>
+              </div>
+            </div>
           </div>
-          <div class="details-feature-card">
-            <div class="details-feature-icon"><i class="fa-solid fa-folder-open"></i></div>
-            <h3 data-translate="step9DetailElement3Title"></h3>
-            <p data-translate="step9DetailElement3Desc"></p>
+          
+          <div class="step-tip-inline">
+            <i class="fa-solid fa-lightbulb" aria-hidden="true"></i>
+            <span>Framstegsindikatorer ger dig en snabb översikt över uppdragets status.</span>
           </div>
-          <div class="details-feature-card">
-            <div class="details-feature-icon"><i class="fa-solid fa-clock"></i></div>
-            <h3 data-translate="step9DetailElement4Title"></h3>
-            <p data-translate="step9DetailElement4Desc"></p>
-          </div>
-          <div class="details-feature-card">
-            <div class="details-feature-icon"><i class="fa-solid fa-truck"></i></div>
-            <h3 data-translate="step9DetailElement5Title"></h3>
-            <p data-translate="step9DetailElement5Desc"></p>
+          
+          <div class="step-button-wrapper">
+            <button type="button" class="step1-info-btn" data-popup-id="step2" aria-label="Mer information om steg 2">
+              <i class="fa-solid fa-circle-info" aria-hidden="true"></i> <span>Läs mer</span>
+            </button>
           </div>
         </div>
-      </section>
-    </main>
+        
+        <div class="step1-step">
+          <div class="step1-step-header">
+            <div class="step1-step-number">3</div>
+            <h3 data-translate="step9DetailStep3Title">Steg 3: Spåra leveranser och logistik</h3>
+          </div>
+          
+          <div class="step-blocks">
+            <div class="step-block step-block-action">
+              <div class="step-block-icon"><i class="fa-solid fa-truck" aria-hidden="true"></i></div>
+              <div class="step-block-content">
+                <h4>Vad du ska göra här</h4>
+                <ul>
+                  <li>Kom åt leverans & logistik-fliken</li>
+                  <li>Övervaka materialleveransstatus och fraktinformation</li>
+                  <li>Spåra leveransscheman och kontrollera leveransbekräftelser</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          
+          <div class="step-tip-inline">
+            <i class="fa-solid fa-lightbulb" aria-hidden="true"></i>
+            <span>Leverans & logistik-fliken ger dig full kontroll över alla leveranser.</span>
+          </div>
+          
+          <div class="step-button-wrapper">
+            <button type="button" class="step1-info-btn" data-popup-id="step3" aria-label="Mer information om steg 3">
+              <i class="fa-solid fa-circle-info" aria-hidden="true"></i> <span>Läs mer</span>
+            </button>
+          </div>
+        </div>
+        
+        <div class="step1-step">
+          <div class="step1-step-header">
+            <div class="step1-step-number">4</div>
+            <h3 data-translate="step9DetailStep4Title">Steg 4: Hantera kvalitet och ekonomi</h3>
+          </div>
+          
+          <div class="step-blocks">
+            <div class="step-block step-block-action">
+              <div class="step-block-icon"><i class="fa-solid fa-check-circle" aria-hidden="true"></i></div>
+              <div class="step-block-content">
+                <h4>Vad du ska göra här</h4>
+                <ul>
+                  <li>Använd kvalitetsfliken för att granska kvalitetskontroller</li>
+                  <li>Kom åt ekonomifliken för att övervaka finansiella aspekter</li>
+                  <li>Granska modifieringsarbeten om ändringar har gjorts</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          
+          <div class="step-tip-inline">
+            <i class="fa-solid fa-lightbulb" aria-hidden="true"></i>
+            <span>Kvalitets- och ekonomiflikar ger dig detaljerad information om varje aspekt av uppdraget.</span>
+          </div>
+          
+          <div class="step-button-wrapper">
+            <button type="button" class="step1-info-btn" data-popup-id="step4" aria-label="Mer information om steg 4">
+              <i class="fa-solid fa-circle-info" aria-hidden="true"></i> <span>Läs mer</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
 
     <div class="section-divider"></div>
     <div id="footer-container"></div>
@@ -111,13 +232,403 @@
     </script>
     
     <div id="popup-root"></div>
+    
+    <!-- Info Popup for detailed information -->
+    <div class="info-popup-overlay" id="infoPopup" role="dialog" aria-modal="true" aria-labelledby="infoPopupTitle" aria-hidden="true">
+      <div class="info-popup-box">
+        <button class="info-close-btn" id="infoCloseBtn" aria-label="Stäng popup">
+          <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+        </button>
+        <div class="info-popup-content" id="infoPopupContent">
+          <h2 id="infoPopupTitle" class="sr-only">Detaljerad information</h2>
+          <!-- Content will be dynamically inserted here -->
+        </div>
+      </div>
+    </div>
+    
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollTrigger.min.js"></script>
     <script src="main.js"></script>
     <script src="popup.js"></script>
     <script src="lang.js"></script>
     <script>
+      // Info popup data - detailed information for each section
+      const infoPopupData = {
+        step1: {
+          title: 'Steg 1: Få tillgång till uppdragsdetaljer',
+          content: `
+            <h3>Detaljerad information om att komma åt uppdragsdetaljer</h3>
+            <p>Uppdragsdetailjsidan är din centrala plats för att hantera och följa upp uppdragsgenomförande efter att avtalet är signerat.</p>
+            <h4>Tillgång via Dashboard</h4>
+            <ul>
+              <li><strong>Avatar-klick:</strong> Klicka på din avatar längst ner på skärmen</li>
+              <li><strong>Menyval:</strong> Välj 'Dashboard' från menyn</li>
+              <li><strong>Uppdrag-flik:</strong> I Dashboard, gå till fliken 'Uppdrag'</li>
+              <li><strong>Projektval:</strong> Välj det projekt du vill visa</li>
+            </ul>
+            <h4>Uppdragsinformation</h4>
+            <ul>
+              <li><strong>Uppdragsnamn:</strong> Tydlig identifiering av uppdraget</li>
+              <li><strong>Status:</strong> Nuvarande status för uppdraget</li>
+              <li><strong>Datum:</strong> Start- och slutdatum för uppdraget</li>
+              <li><strong>Totalt värde:</strong> Totala värdet för uppdraget</li>
+              <li><strong>Kontaktpersoner:</strong> Information om kontaktpersoner</li>
+              <li><strong>Relaterade kontrakt:</strong> Länkar till relaterade kontrakt</li>
+            </ul>
+            <h4>Uppdragsdetailjsidan</h4>
+            <ul>
+              <li><strong>Omfattande information:</strong> All information om uppdraget på ett ställe</li>
+              <li><strong>Organiserad layout:</strong> Tydlig organisation av information</li>
+              <li><strong>Snabbåtkomst:</strong> Enkel åtkomst till alla uppdragsfunktioner</li>
+              <li><strong>Realtidsuppdateringar:</strong> Uppdaterad information i realtid</li>
+            </ul>
+            <p>Uppdragsdetailjsidan ger dig full kontroll över uppdragsgenomförandet.</p>
+          `
+        },
+        step2: {
+          title: 'Steg 2: Övervaka totalt framsteg',
+          content: `
+            <h3>Detaljerad information om att övervaka totalt framsteg</h3>
+            <p>Framstegsövervakning hjälper dig att hålla koll på uppdragets utveckling och se vad som återstår att slutföra.</p>
+            <h4>Framstegsindikatorer</h4>
+            <ul>
+              <li><strong>Framstegsstänger:</strong> Visuell representation av framsteg</li>
+              <li><strong>Procentvisningar:</strong> Exakt procentuell slutförandestatus</li>
+              <li><strong>Statusmärken:</strong> Tydlig visning av nuvarande status</li>
+              <li><strong>Färgkodning:</strong> Färgkodade indikatorer för snabb översikt</li>
+            </ul>
+            <h4>Slutförandestatus</h4>
+            <ul>
+              <li><strong>Slutförandeprocent:</strong> Hur mycket av uppdraget som är slutfört</li>
+              <li><strong>Milstolvprestationer:</strong> Status på viktiga milstolv</li>
+              <li><strong>Återstående arbete:</strong> Vad som återstår att slutföra</li>
+              <li><strong>Förväntad slutförande:</strong> Förväntat datum för slutförande</li>
+            </ul>
+            <h4>Tidslinjeinformation</h4>
+            <ul>
+              <li><strong>Kronologiska händelser:</strong> Händelser i tidsordning</li>
+              <li><strong>Milstolv:</strong> Viktiga milstolv i uppdraget</li>
+              <li><strong>Uppdragsutveckling:</strong> Utveckling över tid</li>
+              <li><strong>Historiska aktiviteter:</strong> Tidigare aktiviteter och händelser</li>
+            </ul>
+            <h4>Tidslinjefliken</h4>
+            <ul>
+              <li><strong>Kronologisk visning:</strong> Alla händelser i tidsordning</li>
+              <li><strong>Milstolvmarkeringar:</strong> Tydlig markering av milstolv</li>
+              <li><strong>Filtrering:</strong> Filtrera händelser efter typ eller datum</li>
+              <li><strong>Detaljerad information:</strong> Klicka på händelser för mer information</li>
+            </ul>
+            <p>Framstegsövervakning hjälper dig att hålla koll på uppdragets utveckling och identifiera eventuella problem i tid.</p>
+          `
+        },
+        step3: {
+          title: 'Steg 3: Spåra leveranser och logistik',
+          content: `
+            <h3>Detaljerad information om att spåra leveranser och logistik</h3>
+            <p>Leverans & logistik-fliken ger dig full kontroll över alla leveranser och logistikarrangemang för uppdraget.</p>
+            <h4>Materialleveransstatus</h4>
+            <ul>
+              <li><strong>Leveransstatus:</strong> Status för varje leverans</li>
+              <li><strong>Leveransscheman:</strong> Planerade leveransdatum</li>
+              <li><strong>Leveransbekräftelser:</strong> Bekräftade leveranser</li>
+              <li><strong>Leveransproblem:</strong> Eventuella problem eller förseningar</li>
+            </ul>
+            <h4>Fraktinformation</h4>
+            <ul>
+              <li><strong>Fraktmetoder:</strong> Vilka fraktmetoder som används</li>
+              <li><strong>Fraktnummer:</strong> Spårningsnummer för leveranser</li>
+              <li><strong>Fraktstatus:</strong> Nuvarande status för frakter</li>
+              <li><strong>Fraktkostnader:</strong> Kostnader för frakt</li>
+            </ul>
+            <h4>Logistikdetaljer</h4>
+            <ul>
+              <li><strong>Logistikarrangemang:</strong> Specifika logistikarrangemang</li>
+              <li><strong>Leveransplatser:</strong> Var leveranser ska ske</li>
+              <li><strong>Leveransvillkor:</strong> Specifika villkor för leveranser</li>
+              <li><strong>Logistikkoordinering:</strong> Koordinering av logistik</li>
+            </ul>
+            <h4>Leveranshantering</h4>
+            <ul>
+              <li><strong>Leveransspårning:</strong> Spåra leveranser i realtid</li>
+              <li><strong>Bekräftelser:</strong> Bekräfta mottagna leveranser</li>
+              <li><strong>Problemhantering:</strong> Hantera leveransrelaterade problem</li>
+              <li><strong>Uppdateringar:</strong> Uppdatera leveransstatus</li>
+            </ul>
+            <p>Leverans & logistik-fliken säkerställer att alla leveranser spåras och hanteras effektivt.</p>
+          `
+        },
+        step4: {
+          title: 'Steg 4: Hantera kvalitet och ekonomi',
+          content: `
+            <h3>Detaljerad information om att hantera kvalitet och ekonomi</h3>
+            <p>Kvalitets- och ekonomiflikar ger dig detaljerad information om varje aspekt av uppdraget.</p>
+            <h4>Kvalitetsfliken</h4>
+            <ul>
+              <li><strong>Kvalitetskontroller:</strong> Alla kvalitetskontroller och inspektioner</li>
+              <li><strong>Inspektionsrapporter:</strong> Detaljerade inspektionsrapporter</li>
+              <li><strong>Kvalitetsdokumentation:</strong> All kvalitetsrelaterad dokumentation</li>
+              <li><strong>Kvalitetsstandarder:</strong> Tillämpade kvalitetsstandarder</li>
+              <li><strong>Kvalitetsproblem:</strong> Eventuella kvalitetsproblem och åtgärder</li>
+              <li><strong>Kvalitetsförbättringar:</strong> Förbättringar och rekommendationer</li>
+            </ul>
+            <h4>Ekonomifliken</h4>
+            <ul>
+              <li><strong>Finansiella aspekter:</strong> Alla finansiella aspekter av uppdraget</li>
+              <li><strong>Budgetar:</strong> Budgetar och budgetspårning</li>
+              <li><strong>Betalningar:</strong> Betalningar och betalningsstatus</li>
+              <li><strong>Ekonomisk prestanda:</strong> Översikt över ekonomisk prestanda</li>
+              <li><strong>Kostnadsanalys:</strong> Detaljerad kostnadsanalys</li>
+              <li><strong>Ekonomiska rapporter:</strong> Ekonomiska rapporter och översikter</li>
+            </ul>
+            <h4>Modifieringsarbeten</h4>
+            <ul>
+              <li><strong>Ändringar:</strong> Eventuella ändringar i det ursprungliga avtalet</li>
+              <li><strong>Modifieringsförfrågningar:</strong> Förfrågningar om modifieringar</li>
+              <li><strong>Godkända ändringar:</strong> Godkända modifieringar</li>
+              <li><strong>Modifieringsdokumentation:</strong> Dokumentation av modifieringar</li>
+              <li><strong>Kostnadspåverkan:</strong> Hur modifieringar påverkar kostnader</li>
+              <li><strong>Tidspåverkan:</strong> Hur modifieringar påverkar tidslinjen</li>
+            </ul>
+            <h4>Integrerad hantering</h4>
+            <ul>
+              <li><strong>Kvalitets-ekonomi-länk:</strong> Länk mellan kvalitet och ekonomi</li>
+              <li><strong>Rapportering:</strong> Integrerad rapportering för båda aspekter</li>
+              <li><strong>Analys:</strong> Analys av kvalitets- och ekonomiska data</li>
+              <li><strong>Beslutsstöd:</strong> Data för att fatta välgrundade beslut</li>
+            </ul>
+            <p>Kvalitets- och ekonomiflikar ger dig full kontroll över dessa kritiska aspekter av uppdraget.</p>
+          `
+        },
+        'visual-progress': {
+          title: 'Framstegsindikatorer',
+          content: `
+            <h3>Detaljerad information om framstegsindikatorer</h3>
+            <p>Framstegsindikatorer ger dig en snabb översikt över uppdragets totala framsteg och slutförandestatus.</p>
+            <ul>
+              <li><strong>Framstegsstänger:</strong> Visuell representation av framsteg med färgkodning</li>
+              <li><strong>Procentvisningar:</strong> Exakt procentuell slutförandestatus</li>
+              <li><strong>Statusmärken:</strong> Tydlig visning av nuvarande status (pågående, slutfört, etc.)</li>
+              <li><strong>Milstolvindikatorer:</strong> Status på viktiga milstolv</li>
+              <li><strong>Återstående arbete:</strong> Tydlig visning av vad som återstår</li>
+              <li><strong>Förväntat slutförande:</strong> Förväntat datum för slutförande</li>
+            </ul>
+            <p>Framstegsindikatorer hjälper dig att snabbt bedöma uppdragets status och identifiera eventuella problem.</p>
+          `
+        },
+        'visual-tabs': {
+          title: 'Navigationsflikar',
+          content: `
+            <h3>Detaljerad information om navigationsflikar</h3>
+            <p>Navigationsflikar gör det möjligt att växla mellan olika sektioner av uppdragsstyrning för organiserad hantering.</p>
+            <ul>
+              <li><strong>Tidslinje:</strong> Kronologiska händelser och milstolv</li>
+              <li><strong>Uppföljning:</strong> Detaljerad spårningsinformation</li>
+              <li><strong>Leverans & Logistik:</strong> Materialleveranser och logistikdetaljer</li>
+              <li><strong>Kvalitet:</strong> Kvalitetskontroller och inspektioner</li>
+              <li><strong>Ekonomi:</strong> Finansiella aspekter och budgetar</li>
+              <li><strong>Modifieringsarbeten:</strong> Ändringar i det ursprungliga avtalet</li>
+            </ul>
+            <p>Navigationsflikar gör det enkelt att navigera mellan olika aspekter av uppdragsstyrning.</p>
+          `
+        },
+        'visual-timeline': {
+          title: 'Tidslinje och uppföljning',
+          content: `
+            <h3>Detaljerad information om tidslinje och uppföljning</h3>
+            <p>Tidslinje- och uppföljningssektioner hjälper dig att spåra uppdragsutveckling över tid.</p>
+            <ul>
+              <li><strong>Kronologiska händelser:</strong> Alla händelser i tidsordning</li>
+              <li><strong>Milstolv:</strong> Viktiga milstolv och deras status</li>
+              <li><strong>Uppdragsutveckling:</strong> Utveckling av uppdraget över tid</li>
+              <li><strong>Historiska aktiviteter:</strong> Tidigare aktiviteter och händelser</li>
+              <li><strong>Framtida planering:</strong> Planerade händelser och milstolv</li>
+              <li><strong>Detaljerad spårning:</strong> Detaljerad information om varje händelse</li>
+            </ul>
+            <p>Tidslinje och uppföljning ger dig en komplett bild av uppdragsutvecklingen.</p>
+          `
+        }
+      };
+
+      // Store reference to previously focused element for accessibility
+      let previousActiveElement = null;
+
+      // Function to open info popup
+      function openInfoPopup(id) {
+        const popup = document.getElementById('infoPopup');
+        const content = document.getElementById('infoPopupContent');
+        const title = document.getElementById('infoPopupTitle');
+        const closeBtn = document.getElementById('infoCloseBtn');
+        
+        if (!popup || !content || !title) {
+          console.error('Popup elements not found');
+          return;
+        }
+        
+        if (!infoPopupData[id]) {
+          console.error('Popup data not found for ID:', id);
+          return;
+        }
+        
+        // Reset aria-expanded for all triggers first
+        document.querySelectorAll('[data-popup-id]').forEach(el => {
+          el.setAttribute('aria-expanded', 'false');
+        });
+        
+        // If popup is already open, just update the content
+        const wasOpen = popup.classList.contains('active');
+        
+        // Store current focus for restoration (only if popup wasn't open)
+        if (!wasOpen) {
+          previousActiveElement = document.activeElement;
+        }
+        
+        // Update content
+        title.textContent = infoPopupData[id].title;
+        title.classList.remove('sr-only');
+        content.innerHTML = infoPopupData[id].content;
+        
+        // Update ARIA attributes
+        popup.setAttribute('aria-hidden', 'false');
+        popup.classList.add('active');
+        document.body.style.overflow = 'hidden';
+        
+        // Update aria-expanded on trigger elements
+        document.querySelectorAll(`[data-popup-id="${id}"]`).forEach(el => {
+          el.setAttribute('aria-expanded', 'true');
+        });
+        
+        // Focus management - focus close button for accessibility
+        setTimeout(() => {
+          if (closeBtn) {
+            closeBtn.focus();
+          }
+        }, wasOpen ? 50 : 100);
+      }
+
+      // Function to close info popup
+      function closeInfoPopup() {
+        const popup = document.getElementById('infoPopup');
+        const title = document.getElementById('infoPopupTitle');
+        
+        if (!popup) return;
+        
+        // Update ARIA attributes
+        popup.setAttribute('aria-hidden', 'true');
+        popup.classList.remove('active');
+        document.body.style.overflow = '';
+        
+        // Reset aria-expanded on all trigger elements
+        document.querySelectorAll('[data-popup-id]').forEach(el => {
+          el.setAttribute('aria-expanded', 'false');
+        });
+        
+        // Restore focus to previously focused element
+        if (previousActiveElement && typeof previousActiveElement.focus === 'function') {
+          try {
+            previousActiveElement.focus();
+          } catch (e) {
+            // Element might not be focusable anymore, ignore
+            console.warn('Could not restore focus:', e);
+          }
+          previousActiveElement = null;
+        }
+      }
+
+      // Initialize popup functionality
       document.addEventListener('DOMContentLoaded', () => {
+        // Wait a bit to ensure all elements are ready
+        setTimeout(() => {
+          const popup = document.getElementById('infoPopup');
+          const closeBtn = document.getElementById('infoCloseBtn');
+          const content = document.getElementById('infoPopupContent');
+          const title = document.getElementById('infoPopupTitle');
+          
+          if (!popup || !content || !title) {
+            console.warn('Popup elements not found, popup functionality disabled');
+            return;
+          }
+          
+          // Close button click handler
+          if (closeBtn) {
+            closeBtn.addEventListener('click', closeInfoPopup);
+          }
+          
+          // Close popup when clicking overlay (but not on popup box)
+          popup.addEventListener('click', (e) => {
+            // Only close if clicking directly on overlay background, not on popup box
+            if (e.target === popup) {
+              closeInfoPopup();
+            }
+          });
+
+          // Close on Escape key
+          document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && popup.classList.contains('active')) {
+              closeInfoPopup();
+            }
+          });
+          
+          // Handle click and keyboard events on popup triggers using event delegation
+          // Use capture phase to catch events before overlay intercepts them
+          document.addEventListener('click', (e) => {
+            // Check if popup elements exist before handling
+            const popupEl = document.getElementById('infoPopup');
+            if (!popupEl) {
+              return; // Popup elements not ready yet
+            }
+            
+            // Check if click is on a popup trigger
+            const trigger = e.target.closest('[data-popup-id]');
+            
+            if (trigger) {
+              // Don't handle clicks inside popup box
+              const popupBox = e.target.closest('.info-popup-box');
+              const closeBtnEl = e.target.closest('.info-close-btn');
+              
+              // If click is on close button, let it handle the close
+              if (closeBtnEl) {
+                return;
+              }
+              
+              // If click is inside popup box (but not on close button), don't handle it
+              if (popupBox) {
+                return;
+              }
+              
+              // Prevent default and stop propagation
+              e.preventDefault();
+              e.stopImmediatePropagation();
+              
+              const popupId = trigger.getAttribute('data-popup-id');
+              if (popupId) {
+                // Open popup immediately (elements are already checked)
+                openInfoPopup(popupId);
+              }
+            }
+          }, true); // Capture phase - catches events before they bubble
+          
+          // Keyboard handler for popup triggers
+          document.addEventListener('keydown', (e) => {
+            // Check if popup elements exist before handling
+            const popupEl = document.getElementById('infoPopup');
+            if (!popupEl) {
+              return; // Popup elements not ready yet
+            }
+            
+            if (e.key === 'Enter' || e.key === ' ') {
+              const trigger = e.target.closest('[data-popup-id]');
+              if (trigger) {
+                e.preventDefault();
+                const popupId = trigger.getAttribute('data-popup-id');
+                if (popupId) {
+                  // Open popup immediately (elements are already checked)
+                  openInfoPopup(popupId);
+                }
+              }
+            }
+          });
+        }, 100); // Small delay to ensure DOM is fully ready
+        
         lucide.createIcons();
         
         // Applicera översättning efter DOM är laddad
@@ -129,4 +640,3 @@
     </script>
   </body>
 </html>
-

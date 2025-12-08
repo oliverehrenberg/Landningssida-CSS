@@ -9,7 +9,7 @@
     <script src="https://unpkg.com/lucide@latest"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   </head>
-  <body>
+  <body class="step1-details-page">
     <div class="scroll-progress"><div class="scroll-progress__bar"></div></div>
     <div id="header-container"></div>
     <script>
@@ -20,85 +20,206 @@
         });
     </script>
 
-    <main class="details-main with-header-space">
-      <section class="details-hero">
-        <div class="details-hero-icon"><i class="fa-solid fa-file-signature" aria-hidden="true"></i></div>
-        <h1 data-translate="step7DetailTitle"></h1>
-        <p data-translate="step7DetailIntro"></p>
-      </section>
+    <!-- Hero Section -->
+    <section class="step1-hero">
+      <div class="step1-hero-content">
+        <div class="step1-hero-icon"><i class="fa-solid fa-file-signature" aria-hidden="true"></i></div>
+        <h1 data-translate="step7DetailTitle">Steg 7: Acceptera offert och skapa avtal</h1>
+        <p class="step1-hero-subtitle" data-translate="step7DetailIntro">Efter att ha granskat och accepterat en offert från en leverantör, skapa ett formellt avtal för att formalisera ditt samarbete. Följ de stegvisa instruktionerna nedan för att acceptera offerter, definiera avtalsvillkor och skapa officiella kontrakt.</p>
+        <div class="step1-hero-features">
+          <div class="step1-hero-feature-item">
+            <i class="fa-solid fa-circle-check" aria-hidden="true"></i>
+            <span>Acceptera offerter</span>
+          </div>
+          <div class="step1-hero-feature-item">
+            <i class="fa-solid fa-file-lines" aria-hidden="true"></i>
+            <span>Definiera avtalsvillkor</span>
+          </div>
+          <div class="step1-hero-feature-item">
+            <i class="fa-solid fa-handshake" aria-hidden="true"></i>
+            <span>Skapa formella avtal</span>
+          </div>
+        </div>
+      </div>
+    </section>
 
-      <section class="details-section">
+    <!-- Feature Details -->
+    <section class="feature-detail-section">
+      <div class="section-header">
+        <h2 data-translate="step7DetailInterfaceTitle">Översikt över avtalskapandesidan</h2>
+        <div class="section-divider-line"></div>
+      </div>
+      <div class="step1-visual-in-context">
+        <div class="step1-visual-wrapper">
+          <div class="step1-visual-image">
+            <img src="assets/create_agreement.png" alt="Acceptera offert och skapa avtal" loading="lazy" />
+          </div>
+          <div class="step1-visual-info">
+            <div class="step1-visual-info-item" role="button" tabindex="0" aria-expanded="false" aria-label="Läs mer om avtalsinformationsformulär" data-popup-id="visual-form">
+              <div class="step1-visual-icon"><i class="fa-solid fa-file-lines" aria-hidden="true"></i></div>
+              <div class="step1-visual-text">
+                <h4>Avtalsinformationsformulär</h4>
+                <p>Strukturerat formulär för att ange avtalsdetaljer</p>
+              </div>
+              <div class="step1-visual-arrow"><i class="fa-solid fa-chevron-right" aria-hidden="true"></i></div>
+            </div>
+            <div class="step1-visual-info-item" role="button" tabindex="0" aria-expanded="false" aria-label="Läs mer om villkor och bestämmelser" data-popup-id="visual-terms">
+              <div class="step1-visual-icon"><i class="fa-solid fa-clipboard-list" aria-hidden="true"></i></div>
+              <div class="step1-visual-text">
+                <h4>Villkor och bestämmelser</h4>
+                <p>Definiera alla avtalsvillkor och bestämmelser</p>
+              </div>
+              <div class="step1-visual-arrow"><i class="fa-solid fa-chevron-right" aria-hidden="true"></i></div>
+            </div>
+            <div class="step1-visual-info-item" role="button" tabindex="0" aria-expanded="false" aria-label="Läs mer om offertreferens" data-popup-id="visual-quote">
+              <div class="step1-visual-icon"><i class="fa-solid fa-file-invoice" aria-hidden="true"></i></div>
+              <div class="step1-visual-text">
+                <h4>Offertreferens</h4>
+                <p>Referens till accepterad offert i avtalet</p>
+              </div>
+              <div class="step1-visual-arrow"><i class="fa-solid fa-chevron-right" aria-hidden="true"></i></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- How It Works -->
+    <section class="how-it-works step1-how-works">
+      <div class="section-header">
         <h2 data-translate="howItWorksTitle">Så fungerar det</h2>
-        <div class="details-how-steps">
-          <div class="details-step">
-            <div class="details-step-number">1</div>
-            <div class="details-step-content">
-              <h3 data-translate="step7DetailStep1Title"></h3>
-              <p data-translate="step7DetailStep1Text"></p>
+        <div class="section-divider-line"></div>
+      </div>
+      <div class="step1-steps-container">
+        <div class="step1-step">
+          <div class="step1-step-header">
+            <div class="step1-step-number">1</div>
+            <h3 data-translate="step7DetailStep1Title">Steg 1: Granska och acceptera offert</h3>
+          </div>
+          
+          <div class="step-blocks">
+            <div class="step-block step-block-action">
+              <div class="step-block-icon"><i class="fa-solid fa-file-invoice" aria-hidden="true"></i></div>
+              <div class="step-block-content">
+                <h4>Vad du ska göra här</h4>
+                <ul>
+                  <li>Navigera till offertsektionen eller chattgränssnittet</li>
+                  <li>Granska alla offertdetaljer inklusive prissättning och villkor</li>
+                  <li>Klicka på 'Acceptera offert' om den uppfyller dina krav</li>
+                </ul>
+              </div>
             </div>
           </div>
-          <div class="details-step">
-            <div class="details-step-number">2</div>
-            <div class="details-step-content">
-              <h3 data-translate="step7DetailStep2Title"></h3>
-              <p data-translate="step7DetailStep2Text"></p>
-            </div>
+          
+          <div class="step-tip-inline">
+            <i class="fa-solid fa-lightbulb" aria-hidden="true"></i>
+            <span>En noggrann granskning säkerställer att offerten uppfyller alla dina krav innan du accepterar den.</span>
           </div>
-          <div class="details-step">
-            <div class="details-step-number">3</div>
-            <div class="details-step-content">
-              <h3 data-translate="step7DetailStep3Title"></h3>
-              <p data-translate="step7DetailStep3Text"></p>
-            </div>
-          </div>
-          <div class="details-step">
-            <div class="details-step-number">4</div>
-            <div class="details-step-content">
-              <h3 data-translate="step7DetailStep4Title"></h3>
-              <p data-translate="step7DetailStep4Text"></p>
-            </div>
+          
+          <div class="step-button-wrapper">
+            <button type="button" class="step1-info-btn" data-popup-id="step1" aria-label="Mer information om steg 1">
+              <i class="fa-solid fa-circle-info" aria-hidden="true"></i> <span>Läs mer</span>
+            </button>
           </div>
         </div>
-      </section>
-
-      <section class="details-section">
-        <div class="feature-visual-large">
-          <img src="assets/create_agreement.png" alt="Acceptera offert och skapa avtal" />
-        </div>
-      </section>
-
-      <section class="details-section">
-        <h2 data-translate="step7DetailInterfaceTitle"></h2>
-        <p data-translate="step7DetailInterfaceDesc"></p>
-        <div class="details-features-grid">
-          <div class="details-feature-card">
-            <div class="details-feature-icon"><i class="fa-solid fa-file-lines"></i></div>
-            <h3 data-translate="step7DetailElement1Title"></h3>
-            <p data-translate="step7DetailElement1Desc"></p>
+        
+        <div class="step1-step">
+          <div class="step1-step-header">
+            <div class="step1-step-number">2</div>
+            <h3 data-translate="step7DetailStep2Title">Steg 2: Få tillgång till avtalskapande</h3>
           </div>
-          <div class="details-feature-card">
-            <div class="details-feature-icon"><i class="fa-solid fa-clipboard-list"></i></div>
-            <h3 data-translate="step7DetailElement2Title"></h3>
-            <p data-translate="step7DetailElement2Desc"></p>
+          
+          <div class="step-blocks">
+            <div class="step-block step-block-action">
+              <div class="step-block-icon"><i class="fa-solid fa-file-signature" aria-hidden="true"></i></div>
+              <div class="step-block-content">
+                <h4>Vad du ska göra här</h4>
+                <ul>
+                  <li>Du dirigeras automatiskt till avtalskapandesidan</li>
+                  <li>Eller kom åt den från avtalssektionen</li>
+                  <li>Avtalsformuläret är förfyllt med information från offerten</li>
+                </ul>
+              </div>
+            </div>
           </div>
-          <div class="details-feature-card">
-            <div class="details-feature-icon"><i class="fa-solid fa-file-invoice"></i></div>
-            <h3 data-translate="step7DetailElement3Title"></h3>
-            <p data-translate="step7DetailElement3Desc"></p>
+          
+          <div class="step-tip-inline">
+            <i class="fa-solid fa-lightbulb" aria-hidden="true"></i>
+            <span>Formuläret är redan förfyllt med information från den accepterade offerten för enkel process.</span>
           </div>
-          <div class="details-feature-card">
-            <div class="details-feature-icon"><i class="fa-solid fa-circle-check"></i></div>
-            <h3 data-translate="step7DetailElement4Title"></h3>
-            <p data-translate="step7DetailElement4Desc"></p>
-          </div>
-          <div class="details-feature-card">
-            <div class="details-feature-icon"><i class="fa-solid fa-hand-pointer"></i></div>
-            <h3 data-translate="step7DetailElement5Title"></h3>
-            <p data-translate="step7DetailElement5Desc"></p>
+          
+          <div class="step-button-wrapper">
+            <button type="button" class="step1-info-btn" data-popup-id="step2" aria-label="Mer information om steg 2">
+              <i class="fa-solid fa-circle-info" aria-hidden="true"></i> <span>Läs mer</span>
+            </button>
           </div>
         </div>
-      </section>
-    </main>
+        
+        <div class="step1-step">
+          <div class="step1-step-header">
+            <div class="step1-step-number">3</div>
+            <h3 data-translate="step7DetailStep3Title">Steg 3: Definiera avtalsvillkor</h3>
+          </div>
+          
+          <div class="step-blocks">
+            <div class="step-block step-block-action">
+              <div class="step-block-icon"><i class="fa-solid fa-clipboard-list" aria-hidden="true"></i></div>
+              <div class="step-block-content">
+                <h4>Vad du ska göra här</h4>
+                <ul>
+                  <li>Fyll i eller granska alla avtalsvillkor</li>
+                  <li>Definiera betalningsplaner, leveransdatum och garantivillkor</li>
+                  <li>Lägg till eventuella ytterligare villkor eller ändringar</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          
+          <div class="step-tip-inline">
+            <i class="fa-solid fa-lightbulb" aria-hidden="true"></i>
+            <span>Tydliga och detaljerade avtalsvillkor säkerställer en smidig samarbetsprocess.</span>
+          </div>
+          
+          <div class="step-button-wrapper">
+            <button type="button" class="step1-info-btn" data-popup-id="step3" aria-label="Mer information om steg 3">
+              <i class="fa-solid fa-circle-info" aria-hidden="true"></i> <span>Läs mer</span>
+            </button>
+          </div>
+        </div>
+        
+        <div class="step1-step">
+          <div class="step1-step-header">
+            <div class="step1-step-number">4</div>
+            <h3 data-translate="step7DetailStep4Title">Steg 4: Granska och skapa avtal</h3>
+          </div>
+          
+          <div class="step-blocks">
+            <div class="step-block step-block-action">
+              <div class="step-block-icon"><i class="fa-solid fa-handshake" aria-hidden="true"></i></div>
+              <div class="step-block-content">
+                <h4>Vad du ska göra här</h4>
+                <ul>
+                  <li>Granska alla avtalsdetaljer för korrekthet</li>
+                  <li>Kontrollera att alla villkor och specifikationer är korrekta</li>
+                  <li>Klicka på 'Skapa avtal' för att slutföra avtalet</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          
+          <div class="step-tip-inline">
+            <i class="fa-solid fa-lightbulb" aria-hidden="true"></i>
+            <span>När avtalet är skapat är det redo för signering av båda parter.</span>
+          </div>
+          
+          <div class="step-button-wrapper">
+            <button type="button" class="step1-info-btn" data-popup-id="step4" aria-label="Mer information om steg 4">
+              <i class="fa-solid fa-circle-info" aria-hidden="true"></i> <span>Läs mer</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
 
     <div class="section-divider"></div>
     <div id="footer-container"></div>
@@ -111,13 +232,404 @@
     </script>
     
     <div id="popup-root"></div>
+    
+    <!-- Info Popup for detailed information -->
+    <div class="info-popup-overlay" id="infoPopup" role="dialog" aria-modal="true" aria-labelledby="infoPopupTitle" aria-hidden="true">
+      <div class="info-popup-box">
+        <button class="info-close-btn" id="infoCloseBtn" aria-label="Stäng popup">
+          <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+        </button>
+        <div class="info-popup-content" id="infoPopupContent">
+          <h2 id="infoPopupTitle" class="sr-only">Detaljerad information</h2>
+          <!-- Content will be dynamically inserted here -->
+        </div>
+      </div>
+    </div>
+    
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollTrigger.min.js"></script>
     <script src="main.js"></script>
     <script src="popup.js"></script>
     <script src="lang.js"></script>
     <script>
+      // Info popup data - detailed information for each section
+      const infoPopupData = {
+        step1: {
+          title: 'Steg 1: Granska och acceptera offert',
+          content: `
+            <h3>Detaljerad information om att granska och acceptera offerter</h3>
+            <p>Innan du accepterar en offert är det viktigt att noggrant granska alla detaljer för att säkerställa att den uppfyller dina krav.</p>
+            <h4>Offertgranskning</h4>
+            <ul>
+              <li><strong>Prisinformation:</strong> Granska prissättning och prisuppdelning</li>
+              <li><strong>Villkor:</strong> Kontrollera alla villkor och bestämmelser</li>
+              <li><strong>Leveransinformation:</strong> Verifiera leveransdatum och platser</li>
+              <li><strong>Garantivillkor:</strong> Granska garantivillkor och service</li>
+              <li><strong>Specifikationer:</strong> Kontrollera att specifikationer matchar dina krav</li>
+            </ul>
+            <h4>Acceptera process</h4>
+            <ul>
+              <li><strong>Acceptera-knapp:</strong> Klicka på 'Acceptera offert' när du är nöjd</li>
+              <li><strong>Bekräftelse:</strong> Få bekräftelse när offerten har accepterats</li>
+              <li><strong>Automatisk övergång:</strong> Dirigeras automatiskt till avtalskapande</li>
+              <li><strong>Offertstatus:</strong> Offertstatus uppdateras till 'Accepterad'</li>
+            </ul>
+            <h4>Fördelar med acceptans</h4>
+            <ul>
+              <li><strong>Formalisering:</strong> Börja processen att formalisera samarbetet</li>
+              <li><strong>Avtalskapande:</strong> Automatisk övergång till avtalskapande</li>
+              <li><strong>Dokumentation:</strong> Offerten dokumenteras som accepterad</li>
+              <li><strong>Spårning:</strong> Enkel spårning av accepterade offerter</li>
+            </ul>
+            <p>När offerten är accepterad kan du fortsätta med att skapa ett formellt avtal.</p>
+          `
+        },
+        step2: {
+          title: 'Steg 2: Få tillgång till avtalskapande',
+          content: `
+            <h3>Detaljerad information om att komma åt avtalskapande</h3>
+            <p>Efter att ha accepterat en offert kan du enkelt komma åt avtalskapandefunktionen för att skapa ett formellt avtal.</p>
+            <h4>Automatisk dirigerings</h4>
+            <ul>
+              <li><strong>Efter acceptans:</strong> Dirigeras automatiskt till avtalskapandesidan</li>
+              <li><strong>Sömlös övergång:</strong> Smidig övergång från offert till avtal</li>
+              <li><strong>Förfyllt formulär:</strong> Formuläret är redan förfyllt med information</li>
+              <li><strong>Kontextbevarande:</strong> All kontext från offerten bevaras</li>
+            </ul>
+            <h4>Manuell tillgång</h4>
+            <ul>
+              <li><strong>Från avtalssektionen:</strong> Kom åt avtalskapande från avtalssektionen</li>
+              <li><strong>Från Dashboard:</strong> Navigera till avtalskapande via Dashboard</li>
+              <li><strong>Från offert:</strong> Starta avtalskapande direkt från accepterad offert</li>
+              <li><strong>Flexibilitet:</strong> Välj det sätt som passar bäst för dig</li>
+            </ul>
+            <h4>Förfyllt formulär</h4>
+            <ul>
+              <li><strong>Offertinformation:</strong> All information från offerten är redan ifylld</li>
+              <li><strong>Prisinformation:</strong> Prissättning och villkor är förfyllda</li>
+              <li><strong>Projektinformation:</strong> Projektrelaterad information är inkluderad</li>
+              <li><strong>Redigering:</strong> Du kan redigera och modifiera all information</li>
+            </ul>
+            <p>Avtalskapandet är designat för att vara enkelt och intuitivt, med all nödvändig information redan tillgänglig.</p>
+          `
+        },
+        step3: {
+          title: 'Steg 3: Definiera avtalsvillkor',
+          content: `
+            <h3>Detaljerad information om att definiera avtalsvillkor</h3>
+            <p>Avtalsvillkor är kärnan i avtalet och definierar alla aspekter av samarbetet mellan beställare och leverantör.</p>
+            <h4>Betalningsvillkor</h4>
+            <ul>
+              <li><strong>Betalningsplan:</strong> Definiera när och hur betalningar ska göras</li>
+              <li><strong>Betalningsmetoder:</strong> Specificera vilka betalningsmetoder som accepteras</li>
+              <li><strong>Betalningsvillkor:</strong> Detaljerade villkor för betalningar</li>
+              <li><strong>Förskottsbetalningar:</strong> Eventuella förskottsbetalningar och villkor</li>
+            </ul>
+            <h4>Leveransvillkor</h4>
+            <ul>
+              <li><strong>Leveransdatum:</strong> Specificera när leveransen ska ske</li>
+              <li><strong>Leveransplats:</strong> Var leveransen ska ske</li>
+              <li><strong>Leveransmetod:</strong> Hur leveransen ska ske</li>
+              <li><strong>Leveransvillkor:</strong> Specifika villkor för leverans</li>
+            </ul>
+            <h4>Garantivillkor</h4>
+            <ul>
+              <li><strong>Garantitid:</strong> Hur lång garantiperiod som gäller</li>
+              <li><strong>Garantitäckning:</strong> Vad garantin täcker</li>
+              <li><strong>Servicevillkor:</strong> Villkor för service och support</li>
+              <li><strong>Garantiprocess:</strong> Hur garantiprocessen fungerar</li>
+            </ul>
+            <h4>Projektspecifikationer</h4>
+            <ul>
+              <li><strong>Projektomfattning:</strong> Vad som ingår i projektet</li>
+              <li><strong>Tekniska specifikationer:</strong> Detaljerade tekniska krav</li>
+              <li><strong>Kvalitetskrav:</strong> Kvalitetsstandarder och krav</li>
+              <li><strong>Projektmilstolpar:</strong> Viktiga milstolpar i projektet</li>
+            </ul>
+            <h4>Ytterligare villkor</h4>
+            <ul>
+              <li><strong>Juridiska bestämmelser:</strong> Juridiska villkor och bestämmelser</li>
+              <li><strong>Konfidentialitet:</strong> Konfidentialitetsvillkor</li>
+              <li><strong>Force majeure:</strong> Force majeure-klausuler</li>
+              <li><strong>Disputlösning:</strong> Process för att lösa eventuella tvister</li>
+            </ul>
+            <p>Tydliga och detaljerade avtalsvillkor säkerställer att båda parter har samma förståelse av samarbetet.</p>
+          `
+        },
+        step4: {
+          title: 'Steg 4: Granska och skapa avtal',
+          content: `
+            <h3>Detaljerad information om att granska och skapa avtal</h3>
+            <p>Innan du skapar avtalet är det viktigt att noggrant granska alla detaljer för att säkerställa korrekthet och fullständighet.</p>
+            <h4>Granskning av avtalsdetaljer</h4>
+            <ul>
+              <li><strong>Avtalsinformation:</strong> Kontrollera att all avtalsinformation är korrekt</li>
+              <li><strong>Villkor:</strong> Verifiera att alla villkor är korrekt definierade</li>
+              <li><strong>Specifikationer:</strong> Kontrollera att projektspecifikationer är korrekta</li>
+              <li><strong>Prisinformation:</strong> Verifiera prissättning och betalningsvillkor</li>
+              <li><strong>Leveransinformation:</strong> Kontrollera leveransdatum och villkor</li>
+            </ul>
+            <h4>Validering och kontroller</h4>
+            <ul>
+              <li><strong>Obligatoriska fält:</strong> Kontrollera att alla obligatoriska fält är ifyllda</li>
+              <li><strong>Formatering:</strong> Verifiera att all formatering är korrekt</li>
+              <li><strong>Konsistens:</strong> Kontrollera att all information är konsistent</li>
+              <li><strong>Kompletthet:</strong> Säkerställ att avtalet är komplett</li>
+            </ul>
+            <h4>Skapa process</h4>
+            <ul>
+              <li><strong>Skapa avtal-knapp:</strong> Klicka på 'Skapa avtal' eller 'Spara avtal'</li>
+              <li><strong>Bekräftelse:</strong> Få bekräftelse när avtalet har skapats</li>
+              <li><strong>Avtals-ID:</strong> Ett unikt avtals-ID genereras automatiskt</li>
+              <li><strong>Tillgänglighet:</strong> Avtalet blir tillgängligt för båda parter</li>
+            </ul>
+            <h4>Efter avtalskapande</h4>
+            <ul>
+              <li><strong>Signering:</strong> Avtalet är redo för signering av båda parter</li>
+              <li><strong>Granskning:</strong> Båda parter kan granska avtalet</li>
+              <li><strong>Modifieringar:</strong> Modifieringar kan göras innan signering</li>
+              <li><strong>Dokumentation:</strong> Avtalet dokumenteras och sparas</li>
+            </ul>
+            <h4>Avtalshantering</h4>
+            <ul>
+              <li><strong>Avtalslista:</strong> Avtalet visas i avtalslistan</li>
+              <li><strong>Statusspårning:</strong> Följ status på avtalet</li>
+              <li><strong>Åtkomst:</strong> Båda parter har åtkomst till avtalet</li>
+              <li><strong>Arkivering:</strong> Avtalet arkiveras för framtida referens</li>
+            </ul>
+            <p>När avtalet är skapat är det redo för signering och formaliserar samarbetet mellan beställare och leverantör.</p>
+          `
+        },
+        'visual-form': {
+          title: 'Avtalsinformationsformulär',
+          content: `
+            <h3>Detaljerad information om avtalsinformationsformulär</h3>
+            <p>Avtalsinformationsformuläret är strukturerat för att fånga all nödvändig information för att skapa ett komplett avtal.</p>
+            <ul>
+              <li><strong>Avtalsnamn:</strong> Ett beskrivande namn som identifierar avtalet</li>
+              <li><strong>Inblandade parter:</strong> Information om beställare och leverantör</li>
+              <li><strong>Projektinformation:</strong> Projektrelaterad information och referenser</li>
+              <li><strong>Offertreferens:</strong> Referens till den accepterade offerten</li>
+              <li><strong>Datum:</strong> Avtalsdatum och giltighetsperiod</li>
+              <li><strong>Organiserad layout:</strong> Formuläret är organiserat i logiska sektioner</li>
+            </ul>
+            <p>Formuläret är designat för att vara både omfattande och användarvänligt, vilket gör det enkelt att skapa detaljerade avtal.</p>
+          `
+        },
+        'visual-terms': {
+          title: 'Villkor och bestämmelser',
+          content: `
+            <h3>Detaljerad information om villkor och bestämmelser</h3>
+            <p>Villkor och bestämmelser-sektionen gör det möjligt att definiera alla aspekter av avtalet på ett strukturerat sätt.</p>
+            <ul>
+              <li><strong>Betalningsplaner:</strong> Definiera när och hur betalningar ska göras</li>
+              <li><strong>Leveransvillkor:</strong> Specificera leveransdatum, platser och metoder</li>
+              <li><strong>Garantivillkor:</strong> Definiera garantitid, täckning och process</li>
+              <li><strong>Projektspecifikationer:</strong> Detaljerade tekniska specifikationer och krav</li>
+              <li><strong>Juridiska bestämmelser:</strong> Juridiska villkor och bestämmelser</li>
+              <li><strong>Redigering:</strong> Villkor kan läggas till, modifieras eller tas bort</li>
+            </ul>
+            <p>Villkor och bestämmelser-sektionen är designad för att göra det enkelt att definiera alla aspekter av avtalet.</p>
+          `
+        },
+        'visual-quote': {
+          title: 'Offertreferens',
+          content: `
+            <h3>Detaljerad information om offertreferens</h3>
+            <p>Offertreferensen länkar avtalet till den accepterade offerten och bevarar all relevant information.</p>
+            <ul>
+              <li><strong>Offertinformation:</strong> All information från den accepterade offerten visas</li>
+              <li><strong>Prisinformation:</strong> Prissättning och prisuppdelning från offerten</li>
+              <li><strong>Villkor:</strong> Villkor och bestämmelser från offerten</li>
+              <li><strong>Specifikationer:</strong> Tekniska specifikationer och krav från offerten</li>
+              <li><strong>Referens:</strong> Tydlig referens till den accepterade offerten</li>
+              <li><strong>Konsistens:</strong> Säkerställer konsistens mellan offert och avtal</li>
+            </ul>
+            <p>Offertreferensen säkerställer att all information från offerten bevaras i avtalet.</p>
+          `
+        }
+      };
+
+      // Store reference to previously focused element for accessibility
+      let previousActiveElement = null;
+
+      // Function to open info popup
+      function openInfoPopup(id) {
+        const popup = document.getElementById('infoPopup');
+        const content = document.getElementById('infoPopupContent');
+        const title = document.getElementById('infoPopupTitle');
+        const closeBtn = document.getElementById('infoCloseBtn');
+        
+        if (!popup || !content || !title) {
+          console.error('Popup elements not found');
+          return;
+        }
+        
+        if (!infoPopupData[id]) {
+          console.error('Popup data not found for ID:', id);
+          return;
+        }
+        
+        // Reset aria-expanded for all triggers first
+        document.querySelectorAll('[data-popup-id]').forEach(el => {
+          el.setAttribute('aria-expanded', 'false');
+        });
+        
+        // If popup is already open, just update the content
+        const wasOpen = popup.classList.contains('active');
+        
+        // Store current focus for restoration (only if popup wasn't open)
+        if (!wasOpen) {
+          previousActiveElement = document.activeElement;
+        }
+        
+        // Update content
+        title.textContent = infoPopupData[id].title;
+        title.classList.remove('sr-only');
+        content.innerHTML = infoPopupData[id].content;
+        
+        // Update ARIA attributes
+        popup.setAttribute('aria-hidden', 'false');
+        popup.classList.add('active');
+        document.body.style.overflow = 'hidden';
+        
+        // Update aria-expanded on trigger elements
+        document.querySelectorAll(`[data-popup-id="${id}"]`).forEach(el => {
+          el.setAttribute('aria-expanded', 'true');
+        });
+        
+        // Focus management - focus close button for accessibility
+        setTimeout(() => {
+          if (closeBtn) {
+            closeBtn.focus();
+          }
+        }, wasOpen ? 50 : 100);
+      }
+
+      // Function to close info popup
+      function closeInfoPopup() {
+        const popup = document.getElementById('infoPopup');
+        const title = document.getElementById('infoPopupTitle');
+        
+        if (!popup) return;
+        
+        // Update ARIA attributes
+        popup.setAttribute('aria-hidden', 'true');
+        popup.classList.remove('active');
+        document.body.style.overflow = '';
+        
+        // Reset aria-expanded on all trigger elements
+        document.querySelectorAll('[data-popup-id]').forEach(el => {
+          el.setAttribute('aria-expanded', 'false');
+        });
+        
+        // Restore focus to previously focused element
+        if (previousActiveElement && typeof previousActiveElement.focus === 'function') {
+          try {
+            previousActiveElement.focus();
+          } catch (e) {
+            // Element might not be focusable anymore, ignore
+            console.warn('Could not restore focus:', e);
+          }
+          previousActiveElement = null;
+        }
+      }
+
+      // Initialize popup functionality
       document.addEventListener('DOMContentLoaded', () => {
+        // Wait a bit to ensure all elements are ready
+        setTimeout(() => {
+          const popup = document.getElementById('infoPopup');
+          const closeBtn = document.getElementById('infoCloseBtn');
+          const content = document.getElementById('infoPopupContent');
+          const title = document.getElementById('infoPopupTitle');
+          
+          if (!popup || !content || !title) {
+            console.warn('Popup elements not found, popup functionality disabled');
+            return;
+          }
+          
+          // Close button click handler
+          if (closeBtn) {
+            closeBtn.addEventListener('click', closeInfoPopup);
+          }
+          
+          // Close popup when clicking overlay (but not on popup box)
+          popup.addEventListener('click', (e) => {
+            // Only close if clicking directly on overlay background, not on popup box
+            if (e.target === popup) {
+              closeInfoPopup();
+            }
+          });
+
+          // Close on Escape key
+          document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && popup.classList.contains('active')) {
+              closeInfoPopup();
+            }
+          });
+          
+          // Handle click and keyboard events on popup triggers using event delegation
+          // Use capture phase to catch events before overlay intercepts them
+          document.addEventListener('click', (e) => {
+            // Check if popup elements exist before handling
+            const popupEl = document.getElementById('infoPopup');
+            if (!popupEl) {
+              return; // Popup elements not ready yet
+            }
+            
+            // Check if click is on a popup trigger
+            const trigger = e.target.closest('[data-popup-id]');
+            
+            if (trigger) {
+              // Don't handle clicks inside popup box
+              const popupBox = e.target.closest('.info-popup-box');
+              const closeBtnEl = e.target.closest('.info-close-btn');
+              
+              // If click is on close button, let it handle the close
+              if (closeBtnEl) {
+                return;
+              }
+              
+              // If click is inside popup box (but not on close button), don't handle it
+              if (popupBox) {
+                return;
+              }
+              
+              // Prevent default and stop propagation
+              e.preventDefault();
+              e.stopImmediatePropagation();
+              
+              const popupId = trigger.getAttribute('data-popup-id');
+              if (popupId) {
+                // Open popup immediately (elements are already checked)
+                openInfoPopup(popupId);
+              }
+            }
+          }, true); // Capture phase - catches events before they bubble
+          
+          // Keyboard handler for popup triggers
+          document.addEventListener('keydown', (e) => {
+            // Check if popup elements exist before handling
+            const popupEl = document.getElementById('infoPopup');
+            if (!popupEl) {
+              return; // Popup elements not ready yet
+            }
+            
+            if (e.key === 'Enter' || e.key === ' ') {
+              const trigger = e.target.closest('[data-popup-id]');
+              if (trigger) {
+                e.preventDefault();
+                const popupId = trigger.getAttribute('data-popup-id');
+                if (popupId) {
+                  // Open popup immediately (elements are already checked)
+                  openInfoPopup(popupId);
+                }
+              }
+            }
+          });
+        }, 100); // Small delay to ensure DOM is fully ready
+        
         lucide.createIcons();
         
         // Applicera översättning efter DOM är laddad
@@ -129,4 +641,3 @@
     </script>
   </body>
 </html>
-

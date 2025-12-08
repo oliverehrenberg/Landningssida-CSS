@@ -9,7 +9,7 @@
     <script src="https://unpkg.com/lucide@latest"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   </head>
-  <body>
+  <body class="step1-details-page">
     <div class="scroll-progress"><div class="scroll-progress__bar"></div></div>
     <div id="header-container"></div>
     <script>
@@ -20,85 +20,206 @@
         });
     </script>
 
-    <main class="details-main with-header-space">
-      <section class="details-hero">
-        <div class="details-hero-icon"><i class="fa-solid fa-folder-open" aria-hidden="true"></i></div>
-        <h1 data-translate="step11DetailTitle"></h1>
-        <p data-translate="step11DetailIntro"></p>
-      </section>
+    <!-- Hero Section -->
+    <section class="step1-hero">
+      <div class="step1-hero-content">
+        <div class="step1-hero-icon"><i class="fa-solid fa-folder-open" aria-hidden="true"></i></div>
+        <h1 data-translate="step11DetailTitle">Steg 11: Projektdokumenthantering</h1>
+        <p class="step1-hero-subtitle" data-translate="step11DetailIntro">Organisera och hantera alla projektdokument i en centraliserad dokumentbibliotek. Följ de stegvisa instruktionerna nedan för att ladda upp, organisera, söka och hantera projektdokument effektivt.</p>
+        <div class="step1-hero-features">
+          <div class="step1-hero-feature-item">
+            <i class="fa-solid fa-cloud-arrow-up" aria-hidden="true"></i>
+            <span>Ladda upp dokument</span>
+          </div>
+          <div class="step1-hero-feature-item">
+            <i class="fa-solid fa-filter" aria-hidden="true"></i>
+            <span>Organisera och filtrera</span>
+          </div>
+          <div class="step1-hero-feature-item">
+            <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
+            <span>Sökfunktion</span>
+          </div>
+        </div>
+      </div>
+    </section>
 
-      <section class="details-section">
+    <!-- Feature Details -->
+    <section class="feature-detail-section">
+      <div class="section-header">
+        <h2 data-translate="step11DetailInterfaceTitle">Översikt över dokumentbibliotekssidan</h2>
+        <div class="section-divider-line"></div>
+      </div>
+      <div class="step1-visual-in-context">
+        <div class="step1-visual-wrapper">
+          <div class="step1-visual-image">
+            <img src="assets/document.png" alt="Projektdokumenthantering" loading="lazy" />
+          </div>
+          <div class="step1-visual-info">
+            <div class="step1-visual-info-item" role="button" tabindex="0" aria-expanded="false" aria-label="Läs mer om dokumentkortlayout" data-popup-id="visual-cards">
+              <div class="step1-visual-icon"><i class="fa-solid fa-file-lines" aria-hidden="true"></i></div>
+              <div class="step1-visual-text">
+                <h4>Dokumentkortlayout</h4>
+                <p>Kortbaserat layout för enkel översikt och identifiering</p>
+              </div>
+              <div class="step1-visual-arrow"><i class="fa-solid fa-chevron-right" aria-hidden="true"></i></div>
+            </div>
+            <div class="step1-visual-info-item" role="button" tabindex="0" aria-expanded="false" aria-label="Läs mer om uppladdningsområde" data-popup-id="visual-upload">
+              <div class="step1-visual-icon"><i class="fa-solid fa-cloud-arrow-up" aria-hidden="true"></i></div>
+              <div class="step1-visual-text">
+                <h4>Uppladdningsområde</h4>
+                <p>Dra och släpp eller välj filer för uppladdning</p>
+              </div>
+              <div class="step1-visual-arrow"><i class="fa-solid fa-chevron-right" aria-hidden="true"></i></div>
+            </div>
+            <div class="step1-visual-info-item" role="button" tabindex="0" aria-expanded="false" aria-label="Läs mer om sök och filter" data-popup-id="visual-search">
+              <div class="step1-visual-icon"><i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i></div>
+              <div class="step1-visual-text">
+                <h4>Sök och filter</h4>
+                <p>Snabbt hitta dokument med sökfunktion och filter</p>
+              </div>
+              <div class="step1-visual-arrow"><i class="fa-solid fa-chevron-right" aria-hidden="true"></i></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- How It Works -->
+    <section class="how-it-works step1-how-works">
+      <div class="section-header">
         <h2 data-translate="howItWorksTitle">Så fungerar det</h2>
-        <div class="details-how-steps">
-          <div class="details-step">
-            <div class="details-step-number">1</div>
-            <div class="details-step-content">
-              <h3 data-translate="step11DetailStep1Title"></h3>
-              <p data-translate="step11DetailStep1Text"></p>
+        <div class="section-divider-line"></div>
+      </div>
+      <div class="step1-steps-container">
+        <div class="step1-step">
+          <div class="step1-step-header">
+            <div class="step1-step-number">1</div>
+            <h3 data-translate="step11DetailStep1Title">Steg 1: Få tillgång till dokumentbiblioteket</h3>
+          </div>
+          
+          <div class="step-blocks">
+            <div class="step-block step-block-action">
+              <div class="step-block-icon"><i class="fa-solid fa-folder-open" aria-hidden="true"></i></div>
+              <div class="step-block-content">
+                <h4>Vad du ska göra här</h4>
+                <ul>
+                  <li>Navigera till dokumenthanteringssektionen</li>
+                  <li>Öppna dokumentbiblioteket för ditt projekt</li>
+                  <li>Se alla dokument associerade med projektet</li>
+                </ul>
+              </div>
             </div>
           </div>
-          <div class="details-step">
-            <div class="details-step-number">2</div>
-            <div class="details-step-content">
-              <h3 data-translate="step11DetailStep2Title"></h3>
-              <p data-translate="step11DetailStep2Text"></p>
-            </div>
+          
+          <div class="step-tip-inline">
+            <i class="fa-solid fa-lightbulb" aria-hidden="true"></i>
+            <span>Dokumentbiblioteket visar alla dokument i en organiserad layout.</span>
           </div>
-          <div class="details-step">
-            <div class="details-step-number">3</div>
-            <div class="details-step-content">
-              <h3 data-translate="step11DetailStep3Title"></h3>
-              <p data-translate="step11DetailStep3Text"></p>
-            </div>
-          </div>
-          <div class="details-step">
-            <div class="details-step-number">4</div>
-            <div class="details-step-content">
-              <h3 data-translate="step11DetailStep4Title"></h3>
-              <p data-translate="step11DetailStep4Text"></p>
-            </div>
+          
+          <div class="step-button-wrapper">
+            <button type="button" class="step1-info-btn" data-popup-id="step1" aria-label="Mer information om steg 1">
+              <i class="fa-solid fa-circle-info" aria-hidden="true"></i> <span>Läs mer</span>
+            </button>
           </div>
         </div>
-      </section>
-
-      <section class="details-section">
-        <div class="feature-visual-large">
-          <img src="assets/document.png" alt="Projektdokumenthantering" />
-        </div>
-      </section>
-
-      <section class="details-section">
-        <h2 data-translate="step11DetailInterfaceTitle"></h2>
-        <p data-translate="step11DetailInterfaceDesc"></p>
-        <div class="details-features-grid">
-          <div class="details-feature-card">
-            <div class="details-feature-icon"><i class="fa-solid fa-file-lines"></i></div>
-            <h3 data-translate="step11DetailElement1Title"></h3>
-            <p data-translate="step11DetailElement1Desc"></p>
+        
+        <div class="step1-step">
+          <div class="step1-step-header">
+            <div class="step1-step-number">2</div>
+            <h3 data-translate="step11DetailStep2Title">Steg 2: Ladda upp dokument</h3>
           </div>
-          <div class="details-feature-card">
-            <div class="details-feature-icon"><i class="fa-solid fa-cloud-arrow-up"></i></div>
-            <h3 data-translate="step11DetailElement2Title"></h3>
-            <p data-translate="step11DetailElement2Desc"></p>
+          
+          <div class="step-blocks">
+            <div class="step-block step-block-action">
+              <div class="step-block-icon"><i class="fa-solid fa-cloud-arrow-up" aria-hidden="true"></i></div>
+              <div class="step-block-content">
+                <h4>Vad du ska göra här</h4>
+                <ul>
+                  <li>Dra och släpp filer i uppladdningsområdet</li>
+                  <li>Eller klicka för att välja filer manuellt</li>
+                  <li>Ladda upp flera filer samtidigt (upp till 50MB per fil)</li>
+                </ul>
+              </div>
+            </div>
           </div>
-          <div class="details-feature-card">
-            <div class="details-feature-icon"><i class="fa-solid fa-filter"></i></div>
-            <h3 data-translate="step11DetailElement3Title"></h3>
-            <p data-translate="step11DetailElement3Desc"></p>
+          
+          <div class="step-tip-inline">
+            <i class="fa-solid fa-lightbulb" aria-hidden="true"></i>
+            <span>Dokument organiseras automatiskt per projekt och kan kategoriseras.</span>
           </div>
-          <div class="details-feature-card">
-            <div class="details-feature-icon"><i class="fa-solid fa-info-circle"></i></div>
-            <h3 data-translate="step11DetailElement4Title"></h3>
-            <p data-translate="step11DetailElement4Desc"></p>
-          </div>
-          <div class="details-feature-card">
-            <div class="details-feature-icon"><i class="fa-solid fa-hand-pointer"></i></div>
-            <h3 data-translate="step11DetailElement5Title"></h3>
-            <p data-translate="step11DetailElement5Desc"></p>
+          
+          <div class="step-button-wrapper">
+            <button type="button" class="step1-info-btn" data-popup-id="step2" aria-label="Mer information om steg 2">
+              <i class="fa-solid fa-circle-info" aria-hidden="true"></i> <span>Läs mer</span>
+            </button>
           </div>
         </div>
-      </section>
-    </main>
+        
+        <div class="step1-step">
+          <div class="step1-step-header">
+            <div class="step1-step-number">3</div>
+            <h3 data-translate="step11DetailStep3Title">Steg 3: Visa och organisera dokument</h3>
+          </div>
+          
+          <div class="step-blocks">
+            <div class="step-block step-block-action">
+              <div class="step-block-icon"><i class="fa-solid fa-file-lines" aria-hidden="true"></i></div>
+              <div class="step-block-content">
+                <h4>Vad du ska göra här</h4>
+                <ul>
+                  <li>Bläddra genom dokumentkort för att hitta filer</li>
+                  <li>Se filnamn, storlek, uppladdningsdatum och kategori</li>
+                  <li>Organisera dokument per projekt och filtrera efter kategori</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          
+          <div class="step-tip-inline">
+            <i class="fa-solid fa-lightbulb" aria-hidden="true"></i>
+            <span>Dokument kan filtreras efter kategori som material, tjänster eller tekniska specifikationer.</span>
+          </div>
+          
+          <div class="step-button-wrapper">
+            <button type="button" class="step1-info-btn" data-popup-id="step3" aria-label="Mer information om steg 3">
+              <i class="fa-solid fa-circle-info" aria-hidden="true"></i> <span>Läs mer</span>
+            </button>
+          </div>
+        </div>
+        
+        <div class="step1-step">
+          <div class="step1-step-header">
+            <div class="step1-step-number">4</div>
+            <h3 data-translate="step11DetailStep4Title">Steg 4: Sök och hantera dokument</h3>
+          </div>
+          
+          <div class="step-blocks">
+            <div class="step-block step-block-action">
+              <div class="step-block-icon"><i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i></div>
+              <div class="step-block-content">
+                <h4>Vad du ska göra här</h4>
+                <ul>
+                  <li>Använd sökfunktionen för att hitta specifika dokument</li>
+                  <li>Applicera avancerade filter efter kategori, datum eller filtyp</li>
+                  <li>Visa, ladda ner eller radera filer direkt från dokumentkorten</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          
+          <div class="step-tip-inline">
+            <i class="fa-solid fa-lightbulb" aria-hidden="true"></i>
+            <span>Alla dokumentåtgärder är lättillgängliga direkt från dokumentkorten.</span>
+          </div>
+          
+          <div class="step-button-wrapper">
+            <button type="button" class="step1-info-btn" data-popup-id="step4" aria-label="Mer information om steg 4">
+              <i class="fa-solid fa-circle-info" aria-hidden="true"></i> <span>Läs mer</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
 
     <div class="section-divider"></div>
     <div id="footer-container"></div>
@@ -111,13 +232,414 @@
     </script>
     
     <div id="popup-root"></div>
+    
+    <!-- Info Popup for detailed information -->
+    <div class="info-popup-overlay" id="infoPopup" role="dialog" aria-modal="true" aria-labelledby="infoPopupTitle" aria-hidden="true">
+      <div class="info-popup-box">
+        <button class="info-close-btn" id="infoCloseBtn" aria-label="Stäng popup">
+          <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+        </button>
+        <div class="info-popup-content" id="infoPopupContent">
+          <h2 id="infoPopupTitle" class="sr-only">Detaljerad information</h2>
+          <!-- Content will be dynamically inserted here -->
+        </div>
+      </div>
+    </div>
+    
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollTrigger.min.js"></script>
     <script src="main.js"></script>
     <script src="popup.js"></script>
     <script src="lang.js"></script>
     <script>
+      // Info popup data - detailed information for each section
+      const infoPopupData = {
+        step1: {
+          title: 'Steg 1: Få tillgång till dokumentbiblioteket',
+          content: `
+            <h3>Detaljerad information om att komma åt dokumentbiblioteket</h3>
+            <p>Dokumentbiblioteket är din centrala plats för att hantera alla projektdokument på ett ställe.</p>
+            <h4>Tillgång via projekt</h4>
+            <ul>
+              <li><strong>Från projekt:</strong> Navigera till dokumenthanteringssektionen från projektet</li>
+              <li><strong>Projektbibliotek:</strong> Öppna dokumentbiblioteket för specifikt projekt</li>
+              <li><strong>Projektorganisering:</strong> Dokument är automatiskt organiserade per projekt</li>
+              <li><strong>Snabbåtkomst:</strong> Enkel åtkomst till projektets dokument</li>
+            </ul>
+            <h4>Tillgång via huvudmenyn</h4>
+            <ul>
+              <li><strong>Huvudnavigationsmeny:</strong> Navigera till dokumenthanteringssektionen från huvudmenyn</li>
+              <li><strong>Centraliserad hantering:</strong> Hantera dokument från centraliserad plats</li>
+              <li><strong>Projektval:</strong> Välj projekt för att se dess dokument</li>
+              <li><strong>Översikt:</strong> Se översikt över alla projektdokument</li>
+            </ul>
+            <h4>Dokumentbibliotekets layout</h4>
+            <ul>
+              <li><strong>Organiserad layout:</strong> Alla dokument visas i en organiserad layout</li>
+              <li><strong>Kortbaserat:</strong> Dokument visas som kort för enkel översikt</li>
+              <li><strong>Kategorisering:</strong> Dokument kan kategoriseras för bättre organisering</li>
+              <li><strong>Snabbidentifiering:</strong> Enkel identifiering av dokument på ett ögonkast</li>
+            </ul>
+            <p>Dokumentbiblioteket ger dig full kontroll över alla projektdokument.</p>
+          `
+        },
+        step2: {
+          title: 'Steg 2: Ladda upp dokument',
+          content: `
+            <h3>Detaljerad information om att ladda upp dokument</h3>
+            <p>Uppladdningsprocessen är designad för att vara enkel och effektiv, med stöd för olika uppladdningsmetoder.</p>
+            <h4>Dra och släpp</h4>
+            <ul>
+              <li><strong>Drag and drop:</strong> Dra filer direkt till uppladdningsområdet</li>
+              <li><strong>Snabb uppladdning:</strong> Snabb och enkel uppladdning av filer</li>
+              <li><strong>Flera filer:</strong> Ladda upp flera filer samtidigt</li>
+              <li><strong>Visuell feedback:</strong> Visuell feedback under uppladdningsprocessen</li>
+            </ul>
+            <h4>Manuell val</h4>
+            <ul>
+              <li><strong>Klicka för att välja:</strong> Klicka på uppladdningsområdet för att välja filer</li>
+              <li><strong>Filväljare:</strong> Använd filväljaren för att välja filer från din enhet</li>
+              <li><strong>Flera val:</strong> Välj flera filer samtidigt</li>
+              <li><strong>Filtyper:</strong> Stöd för olika filtyper och format</li>
+            </ul>
+            <h4>Filstorlekar och begränsningar</h4>
+            <ul>
+              <li><strong>Maximal storlek:</strong> Filstorlekar upp till 50MB per fil</li>
+              <li><strong>Stödda format:</strong> Olika filformat stöds (PDF, DOC, XLS, bilder, etc.)</li>
+              <li><strong>Validering:</strong> Automatisk validering av filstorlek och format</li>
+              <li><strong>Felhantering:</strong> Tydliga felmeddelanden om filer inte kan laddas upp</li>
+            </ul>
+            <h4>Organisering och kategorisering</h4>
+            <ul>
+              <li><strong>Automatisk organisering:</strong> Dokument organiseras automatiskt per projekt</li>
+              <li><strong>Kategorisering:</strong> Kategorisera dokument under eller efter uppladdning</li>
+              <li><strong>Kategorier:</strong> Material, tjänster, tekniska specifikationer, etc.</li>
+              <li><strong>Taggar:</strong> Lägg till taggar för bättre organisering</li>
+            </ul>
+            <h4>Uppladdningsstatus</h4>
+            <ul>
+              <li><strong>Förloppsindikatorer:</strong> Se förlopp för varje uppladdning</li>
+              <li><strong>Bekräftelse:</strong> Få bekräftelse när uppladdningen är klar</li>
+              <li><strong>Felhantering:</strong> Hantera eventuella fel under uppladdning</li>
+              <li><strong>Återförsök:</strong> Möjlighet att försöka igen om uppladdning misslyckas</li>
+            </ul>
+            <p>Uppladdningsprocessen är designad för att vara så enkel och användarvänlig som möjligt.</p>
+          `
+        },
+        step3: {
+          title: 'Steg 3: Visa och organisera dokument',
+          content: `
+            <h3>Detaljerad information om att visa och organisera dokument</h3>
+            <p>Dokumentbiblioteket ger dig olika sätt att visa och organisera dokument för enkel hantering.</p>
+            <h4>Kortbaserat layout</h4>
+            <ul>
+              <li><strong>Dokumentkort:</strong> Varje dokument visas som ett kort</li>
+              <li><strong>Rutnätslayout:</strong> Kort visas i ett rutnätslayout för enkel översikt</li>
+              <li><strong>Visuell identifiering:</strong> Enkel identifiering av dokument på ett ögonkast</li>
+              <li><strong>Snabbnavigering:</strong> Snabb navigering mellan dokument</li>
+            </ul>
+            <h4>Dokumentinformation</h4>
+            <ul>
+              <li><strong>Filnamn:</strong> Tydlig visning av filnamn</li>
+              <li><strong>Filstorlek:</strong> Storlek i MB eller KB</li>
+              <li><strong>Uppladdningsdatum:</strong> När dokumentet laddades upp</li>
+              <li><strong>Kategori:</strong> Kategorimärken för enkel identifiering</li>
+              <li><strong>Filtyp:</strong> Typ av fil (PDF, DOC, bild, etc.)</li>
+              <li><strong>Förhandsvisning:</strong> Förhandsvisning av dokument om tillgängligt</li>
+            </ul>
+            <h4>Organisering</h4>
+            <ul>
+              <li><strong>Per projekt:</strong> Dokument organiseras automatiskt per projekt</li>
+              <li><strong>Kategorisering:</strong> Filtrera dokument efter kategori</li>
+              <li><strong>Kategorier:</strong> Material, tjänster, tekniska specifikationer, etc.</li>
+              <li><strong>Sortering:</strong> Sortera dokument efter namn, datum, storlek</li>
+              <li><strong>Gruppering:</strong> Gruppera dokument efter olika kriterier</li>
+            </ul>
+            <h4>Bläddring och navigering</h4>
+            <ul>
+              <li><strong>Scrollning:</strong> Scrolla genom dokumentkort för att hitta filer</li>
+              <li><strong>Detaljvy:</strong> Klicka på kort för att se detaljerad information</li>
+              <li><strong>Snabbåtkomst:</strong> Snabb åtkomst till dokumentåtgärder</li>
+              <li><strong>Filtrering:</strong> Filtrera dokument för att hitta specifika filer</li>
+            </ul>
+            <p>Dokumentbiblioteket gör det enkelt att hitta och hantera dokument effektivt.</p>
+          `
+        },
+        step4: {
+          title: 'Steg 4: Sök och hantera dokument',
+          content: `
+            <h3>Detaljerad information om att söka och hantera dokument</h3>
+            <p>Sökfunktion och dokumenthantering gör det enkelt att hitta och hantera specifika dokument.</p>
+            <h4>Sökfunktion</h4>
+            <ul>
+              <li><strong>Sökfält:</strong> Ange nyckelord eller filnamn i sökfältet</li>
+              <li><strong>Realtidssökning:</strong> Sökresultat uppdateras i realtid när du skriver</li>
+              <li><strong>Flera kriterier:</strong> Sök efter namn, kategori, innehåll eller andra kriterier</li>
+              <li><strong>Höjdpunkter:</strong> Sökord markeras i resultaten</li>
+            </ul>
+            <h4>Avancerade filter</h4>
+            <ul>
+              <li><strong>Kategorifilter:</strong> Filtrera efter kategori (material, tjänster, tekniska specifikationer)</li>
+              <li><strong>Datumfilter:</strong> Filtrera efter uppladdningsdatum eller datumintervall</li>
+              <li><strong>Filtypfilter:</strong> Filtrera efter filtyp (PDF, DOC, bilder, etc.)</li>
+              <li><strong>Kombinera filter:</strong> Kombinera flera filter för mer precisa resultat</li>
+            </ul>
+            <h4>Dokumentåtgärder</h4>
+            <ul>
+              <li><strong>Visa:</strong> Öppna och visa dokument direkt i webbläsaren</li>
+              <li><strong>Ladda ner:</strong> Ladda ner dokument till din enhet</li>
+              <li><strong>Radera:</strong> Ta bort dokument från biblioteket</li>
+              <li><strong>Dela:</strong> Dela dokument med andra användare</li>
+              <li><strong>Redigera:</strong> Redigera dokumentinformation och kategorier</li>
+              <li><strong>Förhandsvisning:</strong> Förhandsgranska dokument innan nedladdning</li>
+            </ul>
+            <h4>Åtgärder från kort</h4>
+            <ul>
+              <li><strong>Lättillgängliga:</strong> Alla åtgärder är lättillgängliga direkt från dokumentkorten</li>
+              <li><strong>Snabbåtgärder:</strong> Utför åtgärder utan att navigera till separata sidor</li>
+              <li><strong>Kontextmeny:</strong> Högerklicka för ytterligare åtgärder</li>
+              <li><strong>Bulkåtgärder:</strong> Utför åtgärder på flera dokument samtidigt</li>
+            </ul>
+            <h4>Hanteringseffektivitet</h4>
+            <ul>
+              <li><strong>Snabb sökning:</strong> Hitta dokument snabbt med sökfunktion</li>
+              <li><strong>Effektiv filtrering:</strong> Filtrera dokument för att hitta exakt vad du behöver</li>
+              <li><strong>Enkel hantering:</strong> Hantera dokument enkelt från kort</li>
+              <li><strong>Organiserad:</strong> Organiserad visning för enkel hantering</li>
+            </ul>
+            <p>Sökfunktion och dokumenthantering gör det enkelt att hantera även stora antal dokument effektivt.</p>
+          `
+        },
+        'visual-cards': {
+          title: 'Dokumentkortlayout',
+          content: `
+            <h3>Detaljerad information om dokumentkortlayout</h3>
+            <p>Dokumentkortlayouten gör det enkelt att bläddra och identifiera dokument på ett ögonkast.</p>
+            <ul>
+              <li><strong>Rutnätslayout:</strong> Dokument visas i ett kortbaserat rutnätslayout</li>
+              <li><strong>Viktig information:</strong> Varje kort visar filnamn, filstorlek, uppladdningsdatum och kategori</li>
+              <li><strong>Visuell identifiering:</strong> Enkel identifiering av dokument på ett ögonkast</li>
+              <li><strong>Förhandsvisning:</strong> Förhandsvisning av dokument om tillgängligt</li>
+              <li><strong>Åtgärder:</strong> Snabbåtkomst till dokumentåtgärder från kortet</li>
+              <li><strong>Responsiv design:</strong> Layouten anpassar sig automatiskt till din skärmstorlek</li>
+            </ul>
+            <p>Dokumentkortlayouten är designad för enkel översikt och identifiering av dokument.</p>
+          `
+        },
+        'visual-upload': {
+          title: 'Uppladdningsområde',
+          content: `
+            <h3>Detaljerad information om uppladdningsområde</h3>
+            <p>Uppladdningsområdet ger dig flexibla alternativ för att lägga till nya dokument i biblioteket.</p>
+            <ul>
+              <li><strong>Dra och släpp:</strong> Dra filer direkt till uppladdningszonen för snabb uppladdning</li>
+              <li><strong>Manuell val:</strong> Klicka för att bläddra och välja filer från din enhet</li>
+              <li><strong>Flera filer:</strong> Ladda upp flera filer samtidigt</li>
+              <li><strong>Filstorlekar:</strong> Tydlig indikering av stödda filstorlekar (upp till 50MB)</li>
+              <li><strong>Filformat:</strong> Information om stödda filformat</li>
+              <li><strong>Förloppsindikatorer:</strong> Se förlopp för varje uppladdning</li>
+            </ul>
+            <p>Uppladdningsområdet är designat för att göra uppladdning så enkel och effektiv som möjligt.</p>
+          `
+        },
+        'visual-search': {
+          title: 'Sök och filter',
+          content: `
+            <h3>Detaljerad information om sök och filter</h3>
+            <p>Sökfunktion och filter gör det möjligt att snabbt hitta specifika dokument.</p>
+            <ul>
+              <li><strong>Sökfunktion:</strong> Sök efter dokument med nyckelord eller filnamn</li>
+              <li><strong>Realtidssökning:</strong> Sökresultat uppdateras i realtid när du skriver</li>
+              <li><strong>Kategorifilter:</strong> Filtrera efter kategori (material, tjänster, tekniska specifikationer)</li>
+              <li><strong>Datumfilter:</strong> Filtrera efter uppladdningsdatum eller datumintervall</li>
+              <li><strong>Filtypfilter:</strong> Filtrera efter filtyp för mer precisa resultat</li>
+              <li><strong>Filterkombination:</strong> Kombinera flera filter för exakt matchning</li>
+            </ul>
+            <p>Sökfunktion och filter hjälper dig att snabbt hitta de dokument du behöver.</p>
+          `
+        }
+      };
+
+      // Store reference to previously focused element for accessibility
+      let previousActiveElement = null;
+
+      // Function to open info popup
+      function openInfoPopup(id) {
+        const popup = document.getElementById('infoPopup');
+        const content = document.getElementById('infoPopupContent');
+        const title = document.getElementById('infoPopupTitle');
+        const closeBtn = document.getElementById('infoCloseBtn');
+        
+        if (!popup || !content || !title) {
+          console.error('Popup elements not found');
+          return;
+        }
+        
+        if (!infoPopupData[id]) {
+          console.error('Popup data not found for ID:', id);
+          return;
+        }
+        
+        // Reset aria-expanded for all triggers first
+        document.querySelectorAll('[data-popup-id]').forEach(el => {
+          el.setAttribute('aria-expanded', 'false');
+        });
+        
+        // If popup is already open, just update the content
+        const wasOpen = popup.classList.contains('active');
+        
+        // Store current focus for restoration (only if popup wasn't open)
+        if (!wasOpen) {
+          previousActiveElement = document.activeElement;
+        }
+        
+        // Update content
+        title.textContent = infoPopupData[id].title;
+        title.classList.remove('sr-only');
+        content.innerHTML = infoPopupData[id].content;
+        
+        // Update ARIA attributes
+        popup.setAttribute('aria-hidden', 'false');
+        popup.classList.add('active');
+        document.body.style.overflow = 'hidden';
+        
+        // Update aria-expanded on trigger elements
+        document.querySelectorAll(`[data-popup-id="${id}"]`).forEach(el => {
+          el.setAttribute('aria-expanded', 'true');
+        });
+        
+        // Focus management - focus close button for accessibility
+        setTimeout(() => {
+          if (closeBtn) {
+            closeBtn.focus();
+          }
+        }, wasOpen ? 50 : 100);
+      }
+
+      // Function to close info popup
+      function closeInfoPopup() {
+        const popup = document.getElementById('infoPopup');
+        const title = document.getElementById('infoPopupTitle');
+        
+        if (!popup) return;
+        
+        // Update ARIA attributes
+        popup.setAttribute('aria-hidden', 'true');
+        popup.classList.remove('active');
+        document.body.style.overflow = '';
+        
+        // Reset aria-expanded on all trigger elements
+        document.querySelectorAll('[data-popup-id]').forEach(el => {
+          el.setAttribute('aria-expanded', 'false');
+        });
+        
+        // Restore focus to previously focused element
+        if (previousActiveElement && typeof previousActiveElement.focus === 'function') {
+          try {
+            previousActiveElement.focus();
+          } catch (e) {
+            // Element might not be focusable anymore, ignore
+            console.warn('Could not restore focus:', e);
+          }
+          previousActiveElement = null;
+        }
+      }
+
+      // Initialize popup functionality
       document.addEventListener('DOMContentLoaded', () => {
+        // Wait a bit to ensure all elements are ready
+        setTimeout(() => {
+          const popup = document.getElementById('infoPopup');
+          const closeBtn = document.getElementById('infoCloseBtn');
+          const content = document.getElementById('infoPopupContent');
+          const title = document.getElementById('infoPopupTitle');
+          
+          if (!popup || !content || !title) {
+            console.warn('Popup elements not found, popup functionality disabled');
+            return;
+          }
+          
+          // Close button click handler
+          if (closeBtn) {
+            closeBtn.addEventListener('click', closeInfoPopup);
+          }
+          
+          // Close popup when clicking overlay (but not on popup box)
+          popup.addEventListener('click', (e) => {
+            // Only close if clicking directly on overlay background, not on popup box
+            if (e.target === popup) {
+              closeInfoPopup();
+            }
+          });
+
+          // Close on Escape key
+          document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && popup.classList.contains('active')) {
+              closeInfoPopup();
+            }
+          });
+          
+          // Handle click and keyboard events on popup triggers using event delegation
+          // Use capture phase to catch events before overlay intercepts them
+          document.addEventListener('click', (e) => {
+            // Check if popup elements exist before handling
+            const popupEl = document.getElementById('infoPopup');
+            if (!popupEl) {
+              return; // Popup elements not ready yet
+            }
+            
+            // Check if click is on a popup trigger
+            const trigger = e.target.closest('[data-popup-id]');
+            
+            if (trigger) {
+              // Don't handle clicks inside popup box
+              const popupBox = e.target.closest('.info-popup-box');
+              const closeBtnEl = e.target.closest('.info-close-btn');
+              
+              // If click is on close button, let it handle the close
+              if (closeBtnEl) {
+                return;
+              }
+              
+              // If click is inside popup box (but not on close button), don't handle it
+              if (popupBox) {
+                return;
+              }
+              
+              // Prevent default and stop propagation
+              e.preventDefault();
+              e.stopImmediatePropagation();
+              
+              const popupId = trigger.getAttribute('data-popup-id');
+              if (popupId) {
+                // Open popup immediately (elements are already checked)
+                openInfoPopup(popupId);
+              }
+            }
+          }, true); // Capture phase - catches events before they bubble
+          
+          // Keyboard handler for popup triggers
+          document.addEventListener('keydown', (e) => {
+            // Check if popup elements exist before handling
+            const popupEl = document.getElementById('infoPopup');
+            if (!popupEl) {
+              return; // Popup elements not ready yet
+            }
+            
+            if (e.key === 'Enter' || e.key === ' ') {
+              const trigger = e.target.closest('[data-popup-id]');
+              if (trigger) {
+                e.preventDefault();
+                const popupId = trigger.getAttribute('data-popup-id');
+                if (popupId) {
+                  // Open popup immediately (elements are already checked)
+                  openInfoPopup(popupId);
+                }
+              }
+            }
+          });
+        }, 100); // Small delay to ensure DOM is fully ready
+        
         lucide.createIcons();
         
         // Applicera översättning efter DOM är laddad
@@ -129,4 +651,3 @@
     </script>
   </body>
 </html>
-

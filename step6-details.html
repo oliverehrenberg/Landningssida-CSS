@@ -9,7 +9,7 @@
     <script src="https://unpkg.com/lucide@latest"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   </head>
-  <body>
+  <body class="step1-details-page">
     <div class="scroll-progress"><div class="scroll-progress__bar"></div></div>
     <div id="header-container"></div>
     <script>
@@ -20,85 +20,206 @@
         });
     </script>
 
-    <main class="details-main with-header-space">
-      <section class="details-hero">
-        <div class="details-hero-icon"><i class="fa-solid fa-paper-plane" aria-hidden="true"></i></div>
-        <h1 data-translate="step6DetailTitle"></h1>
-        <p data-translate="step6DetailIntro"></p>
-      </section>
+    <!-- Hero Section -->
+    <section class="step1-hero">
+      <div class="step1-hero-content">
+        <div class="step1-hero-icon"><i class="fa-solid fa-paper-plane" aria-hidden="true"></i></div>
+        <h1 data-translate="step6DetailTitle">Steg 6: Svara på offertförfrågan och skicka offert</h1>
+        <p class="step1-hero-subtitle" data-translate="step6DetailIntro">Ta emot och granska detaljerade offerter från leverantörer, svara sedan genom att skicka dina egna offerter när du agerar som leverantör. Följ de stegvisa instruktionerna nedan för att utvärdera mottagna offerter och skapa och skicka offerter som svar på offertförfrågningar.</p>
+        <div class="step1-hero-features">
+          <div class="step1-hero-feature-item">
+            <i class="fa-solid fa-file-invoice" aria-hidden="true"></i>
+            <span>Granska mottagna offerter</span>
+          </div>
+          <div class="step1-hero-feature-item">
+            <i class="fa-solid fa-file-lines" aria-hidden="true"></i>
+            <span>Skapa och skicka offerter</span>
+          </div>
+          <div class="step1-hero-feature-item">
+            <i class="fa-solid fa-comments" aria-hidden="true"></i>
+            <span>Kommunikation om offerter</span>
+          </div>
+        </div>
+      </div>
+    </section>
 
-      <section class="details-section">
+    <!-- Feature Details -->
+    <section class="feature-detail-section">
+      <div class="section-header">
+        <h2 data-translate="step6DetailInterfaceTitle">Översikt över offerthanteringssidan</h2>
+        <div class="section-divider-line"></div>
+      </div>
+      <div class="step1-visual-in-context">
+        <div class="step1-visual-wrapper">
+          <div class="step1-visual-image">
+            <img src="assets/6_send quote.png" alt="Svara på offertförfrågan och skicka offert" loading="lazy" />
+          </div>
+          <div class="step1-visual-info">
+            <div class="step1-visual-info-item" role="button" tabindex="0" aria-expanded="false" aria-label="Läs mer om offertlista" data-popup-id="visual-list">
+              <div class="step1-visual-icon"><i class="fa-solid fa-list" aria-hidden="true"></i></div>
+              <div class="step1-visual-text">
+                <h4>Offertlista</h4>
+                <p>Översikt över mottagna och skickade offerter</p>
+              </div>
+              <div class="step1-visual-arrow"><i class="fa-solid fa-chevron-right" aria-hidden="true"></i></div>
+            </div>
+            <div class="step1-visual-info-item" role="button" tabindex="0" aria-expanded="false" aria-label="Läs mer om offertdetaljer" data-popup-id="visual-details">
+              <div class="step1-visual-icon"><i class="fa-solid fa-file-invoice" aria-hidden="true"></i></div>
+              <div class="step1-visual-text">
+                <h4>Offertdetaljer</h4>
+                <p>Detaljerad visning av all offertinformation</p>
+              </div>
+              <div class="step1-visual-arrow"><i class="fa-solid fa-chevron-right" aria-hidden="true"></i></div>
+            </div>
+            <div class="step1-visual-info-item" role="button" tabindex="0" aria-expanded="false" aria-label="Läs mer om offertstatus och åtgärder" data-popup-id="visual-actions">
+              <div class="step1-visual-icon"><i class="fa-solid fa-circle-check" aria-hidden="true"></i></div>
+              <div class="step1-visual-text">
+                <h4>Offertstatus och åtgärder</h4>
+                <p>Hantera offerter med olika åtgärder</p>
+              </div>
+              <div class="step1-visual-arrow"><i class="fa-solid fa-chevron-right" aria-hidden="true"></i></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- How It Works -->
+    <section class="how-it-works step1-how-works">
+      <div class="section-header">
         <h2 data-translate="howItWorksTitle">Så fungerar det</h2>
-        <div class="details-how-steps">
-          <div class="details-step">
-            <div class="details-step-number">1</div>
-            <div class="details-step-content">
-              <h3 data-translate="step6DetailStep1Title"></h3>
-              <p data-translate="step6DetailStep1Text"></p>
+        <div class="section-divider-line"></div>
+      </div>
+      <div class="step1-steps-container">
+        <div class="step1-step">
+          <div class="step1-step-header">
+            <div class="step1-step-number">1</div>
+            <h3 data-translate="step6DetailStep1Title">Steg 1: Få tillgång till mottagna offerter</h3>
+          </div>
+          
+          <div class="step-blocks">
+            <div class="step-block step-block-action">
+              <div class="step-block-icon"><i class="fa-solid fa-inbox" aria-hidden="true"></i></div>
+              <div class="step-block-content">
+                <h4>Vad du ska göra här</h4>
+                <ul>
+                  <li>Navigera till offertsektionen i Dashboard</li>
+                  <li>Eller kom åt offerter direkt från chattgränssnittet</li>
+                  <li>Visa offerter från konversationstråden</li>
+                </ul>
+              </div>
             </div>
           </div>
-          <div class="details-step">
-            <div class="details-step-number">2</div>
-            <div class="details-step-content">
-              <h3 data-translate="step6DetailStep2Title"></h3>
-              <p data-translate="step6DetailStep2Text"></p>
-            </div>
+          
+          <div class="step-tip-inline">
+            <i class="fa-solid fa-lightbulb" aria-hidden="true"></i>
+            <span>Offerter visas både i offertsektionen och i relevanta konversationer.</span>
           </div>
-          <div class="details-step">
-            <div class="details-step-number">3</div>
-            <div class="details-step-content">
-              <h3 data-translate="step6DetailStep3Title"></h3>
-              <p data-translate="step6DetailStep3Text"></p>
-            </div>
-          </div>
-          <div class="details-step">
-            <div class="details-step-number">4</div>
-            <div class="details-step-content">
-              <h3 data-translate="step6DetailStep4Title"></h3>
-              <p data-translate="step6DetailStep4Text"></p>
-            </div>
+          
+          <div class="step-button-wrapper">
+            <button type="button" class="step1-info-btn" data-popup-id="step1" aria-label="Mer information om steg 1">
+              <i class="fa-solid fa-circle-info" aria-hidden="true"></i> <span>Läs mer</span>
+            </button>
           </div>
         </div>
-      </section>
-
-      <section class="details-section">
-        <div class="feature-visual-large">
-          <img src="assets/6_send quote.png" alt="Svara på offertförfrågan och skicka offert" />
-        </div>
-      </section>
-
-      <section class="details-section">
-        <h2 data-translate="step6DetailInterfaceTitle"></h2>
-        <p data-translate="step6DetailInterfaceDesc"></p>
-        <div class="details-features-grid">
-          <div class="details-feature-card">
-            <div class="details-feature-icon"><i class="fa-solid fa-list"></i></div>
-            <h3 data-translate="step6DetailElement1Title"></h3>
-            <p data-translate="step6DetailElement1Desc"></p>
+        
+        <div class="step1-step">
+          <div class="step1-step-header">
+            <div class="step1-step-number">2</div>
+            <h3 data-translate="step6DetailStep2Title">Steg 2: Granska offertdetaljer</h3>
           </div>
-          <div class="details-feature-card">
-            <div class="details-feature-icon"><i class="fa-solid fa-file-invoice"></i></div>
-            <h3 data-translate="step6DetailElement2Title"></h3>
-            <p data-translate="step6DetailElement2Desc"></p>
+          
+          <div class="step-blocks">
+            <div class="step-block step-block-action">
+              <div class="step-block-icon"><i class="fa-solid fa-file-invoice" aria-hidden="true"></i></div>
+              <div class="step-block-content">
+                <h4>Vad du ska göra här</h4>
+                <ul>
+                  <li>Öppna en mottagen offert för att se alla detaljer</li>
+                  <li>Granska prissättning, betalningsvillkor och leveransvillkor</li>
+                  <li>Utvärdera om erbjudandet uppfyller dina krav</li>
+                </ul>
+              </div>
+            </div>
           </div>
-          <div class="details-feature-card">
-            <div class="details-feature-icon"><i class="fa-solid fa-file-lines"></i></div>
-            <h3 data-translate="step6DetailElement3Title"></h3>
-            <p data-translate="step6DetailElement3Desc"></p>
+          
+          <div class="step-tip-inline">
+            <i class="fa-solid fa-lightbulb" aria-hidden="true"></i>
+            <span>Detaljerad granskning hjälper dig att fatta välgrundade beslut om offerter.</span>
           </div>
-          <div class="details-feature-card">
-            <div class="details-feature-icon"><i class="fa-solid fa-circle-check"></i></div>
-            <h3 data-translate="step6DetailElement4Title"></h3>
-            <p data-translate="step6DetailElement4Desc"></p>
-          </div>
-          <div class="details-feature-card">
-            <div class="details-feature-icon"><i class="fa-solid fa-comments"></i></div>
-            <h3 data-translate="step6DetailElement5Title"></h3>
-            <p data-translate="step6DetailElement5Desc"></p>
+          
+          <div class="step-button-wrapper">
+            <button type="button" class="step1-info-btn" data-popup-id="step2" aria-label="Mer information om steg 2">
+              <i class="fa-solid fa-circle-info" aria-hidden="true"></i> <span>Läs mer</span>
+            </button>
           </div>
         </div>
-      </section>
-    </main>
+        
+        <div class="step1-step">
+          <div class="step1-step-header">
+            <div class="step1-step-number">3</div>
+            <h3 data-translate="step6DetailStep3Title">Steg 3: Skapa och skicka offert (som leverantör)</h3>
+          </div>
+          
+          <div class="step-blocks">
+            <div class="step-block step-block-action">
+              <div class="step-block-icon"><i class="fa-solid fa-file-lines" aria-hidden="true"></i></div>
+              <div class="step-block-content">
+                <h4>Vad du ska göra här</h4>
+                <ul>
+                  <li>Kom åt offertförfrågan från chatt eller offertsektionen</li>
+                  <li>Fyll i offertformuläret med prissättning och villkor</li>
+                  <li>Granska all information innan du skickar</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          
+          <div class="step-tip-inline">
+            <i class="fa-solid fa-lightbulb" aria-hidden="true"></i>
+            <span>En komplett offert inkluderar all relevant information för att ge beställaren en tydlig bild.</span>
+          </div>
+          
+          <div class="step-button-wrapper">
+            <button type="button" class="step1-info-btn" data-popup-id="step3" aria-label="Mer information om steg 3">
+              <i class="fa-solid fa-circle-info" aria-hidden="true"></i> <span>Läs mer</span>
+            </button>
+          </div>
+        </div>
+        
+        <div class="step1-step">
+          <div class="step1-step-header">
+            <div class="step1-step-number">4</div>
+            <h3 data-translate="step6DetailStep4Title">Steg 4: Skicka offert och hantera svar</h3>
+          </div>
+          
+          <div class="step-blocks">
+            <div class="step-block step-block-action">
+              <div class="step-block-icon"><i class="fa-solid fa-paper-plane" aria-hidden="true"></i></div>
+              <div class="step-block-content">
+                <h4>Vad du ska göra här</h4>
+                <ul>
+                  <li>Skicka offerten via chattgränssnittet</li>
+                  <li>Spåra statusen för skickade offerter</li>
+                  <li>Hantera svar och kommunikation om offerter</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          
+          <div class="step-tip-inline">
+            <i class="fa-solid fa-lightbulb" aria-hidden="true"></i>
+            <span>All kommunikation om offerter sker direkt i chattgränssnittet för enkel spårning.</span>
+          </div>
+          
+          <div class="step-button-wrapper">
+            <button type="button" class="step1-info-btn" data-popup-id="step4" aria-label="Mer information om steg 4">
+              <i class="fa-solid fa-circle-info" aria-hidden="true"></i> <span>Läs mer</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
 
     <div class="section-divider"></div>
     <div id="footer-container"></div>
@@ -111,13 +232,412 @@
     </script>
     
     <div id="popup-root"></div>
+    
+    <!-- Info Popup for detailed information -->
+    <div class="info-popup-overlay" id="infoPopup" role="dialog" aria-modal="true" aria-labelledby="infoPopupTitle" aria-hidden="true">
+      <div class="info-popup-box">
+        <button class="info-close-btn" id="infoCloseBtn" aria-label="Stäng popup">
+          <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+        </button>
+        <div class="info-popup-content" id="infoPopupContent">
+          <h2 id="infoPopupTitle" class="sr-only">Detaljerad information</h2>
+          <!-- Content will be dynamically inserted here -->
+        </div>
+      </div>
+    </div>
+    
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollTrigger.min.js"></script>
     <script src="main.js"></script>
     <script src="popup.js"></script>
     <script src="lang.js"></script>
     <script>
+      // Info popup data - detailed information for each section
+      const infoPopupData = {
+        step1: {
+          title: 'Steg 1: Få tillgång till mottagna offerter',
+          content: `
+            <h3>Detaljerad information om att komma åt mottagna offerter</h3>
+            <p>Offertsektionen är din centrala plats för att hantera alla offerter - både mottagna och skickade.</p>
+            <h4>Tillgång via Dashboard</h4>
+            <ul>
+              <li><strong>Offertsektion:</strong> Navigera till offertsektionen i Dashboard</li>
+              <li><strong>Offertlista:</strong> Se alla mottagna offerter från leverantörer</li>
+              <li><strong>Statusöversikt:</strong> Se status på alla offerter på ett ställe</li>
+              <li><strong>Filtrering:</strong> Filtrera offerter efter status, datum eller leverantör</li>
+            </ul>
+            <h4>Tillgång via chattgränssnittet</h4>
+            <ul>
+              <li><strong>Direkt från chatten:</strong> Kom åt offerter direkt från konversationstråden</li>
+              <li><strong>Kontextuell visning:</strong> Se offerter i kontexten av konversationen</li>
+              <li><strong>Snabbåtkomst:</strong> Enkel åtkomst utan att lämna chatten</li>
+              <li><strong>Realtidsuppdateringar:</strong> Se nya offerter direkt när de anländer</li>
+            </ul>
+            <h4>Offertorganisation</h4>
+            <ul>
+              <li><strong>Mottagna offerter:</strong> Offerter som du har mottagit från leverantörer</li>
+              <li><strong>Skickade offerter:</strong> Offerter som du har skickat som leverantör</li>
+              <li><strong>Statusindikatorer:</strong> Tydlig visning av offertstatus</li>
+              <li><strong>Sortering:</strong> Sortera offerter efter datum, status eller belopp</li>
+            </ul>
+            <p>Båda tillgångssätten ger dig full funktionalitet för att hantera offerter effektivt.</p>
+          `
+        },
+        step2: {
+          title: 'Steg 2: Granska offertdetaljer',
+          content: `
+            <h3>Detaljerad information om att granska offertdetaljer</h3>
+            <p>Offertdetaljvyn ger dig all information du behöver för att utvärdera och fatta beslut om offerter.</p>
+            <h4>Prisinformation</h4>
+            <ul>
+              <li><strong>Prisuppdelning:</strong> Detaljerad uppdelning av priser per artikel eller tjänst</li>
+              <li><strong>Totalpris:</strong> Totalt pris för hela erbjudandet</li>
+              <li><strong>Prisjämförelse:</strong> Jämför priser med andra offerter</li>
+              <li><strong>Valuta:</strong> Valuta för prissättningen</li>
+            </ul>
+            <h4>Betalningsvillkor</h4>
+            <ul>
+              <li><strong>Betalningsplan:</strong> När och hur betalningar ska göras</li>
+              <li><strong>Betalningsmetoder:</strong> Vilka betalningsmetoder som accepteras</li>
+              <li><strong>Betalningsvillkor:</strong> Specifika villkor för betalningar</li>
+              <li><strong>Rabatter:</strong> Eventuella rabatter eller specialpriser</li>
+            </ul>
+            <h4>Leveransvillkor</h4>
+            <ul>
+              <li><strong>Leveransdatum:</strong> När leveransen förväntas ske</li>
+              <li><strong>Leveransplats:</strong> Var leveransen ska ske</li>
+              <li><strong>Leveransmetod:</strong> Hur leveransen ska ske</li>
+              <li><strong>Leveranskostnader:</strong> Kostnader för leverans</li>
+            </ul>
+            <h4>Garantivillkor</h4>
+            <ul>
+              <li><strong>Garantitid:</strong> Hur lång garantiperiod som erbjuds</li>
+              <li><strong>Garantitäckning:</strong> Vad garantin täcker</li>
+              <li><strong>Servicevillkor:</strong> Villkor för service och support</li>
+              <li><strong>Garantiprocess:</strong> Hur garantiprocessen fungerar</li>
+            </ul>
+            <h4>Logistik och transport</h4>
+            <ul>
+              <li><strong>Logistikdetaljer:</strong> Specifika logistikkrav och arrangemang</li>
+              <li><strong>Transportinformation:</strong> Transportmetoder och krav</li>
+              <li><strong>Försäkring:</strong> Försäkringsdetaljer för transport</li>
+              <li><strong>Spårning:</strong> Möjlighet att spåra leveranser</li>
+            </ul>
+            <p>All denna information hjälper dig att fatta välgrundade beslut om offerter.</p>
+          `
+        },
+        step3: {
+          title: 'Steg 3: Skapa och skicka offert (som leverantör)',
+          content: `
+            <h3>Detaljerad information om att skapa och skicka offerter</h3>
+            <p>När du agerar som leverantör kan du skapa och skicka offerter som svar på offertförfrågningar från beställare.</p>
+            <h4>Tillgång till offertförfrågan</h4>
+            <ul>
+              <li><strong>Från chatten:</strong> Kom åt offertförfrågan direkt från konversationstråden</li>
+              <li><strong>Från offertsektionen:</strong> Hitta offertförfrågan i offertsektionen</li>
+              <li><strong>Notifikationer:</strong> Få notifikationer när nya offertförfrågningar anländer</li>
+              <li><strong>Kontextuell skapande:</strong> Skapa offert med relevant kontext från förfrågan</li>
+            </ul>
+            <h4>Offertformulär</h4>
+            <ul>
+              <li><strong>Prisinformation:</strong> Ange priser för alla artiklar eller tjänster</li>
+              <li><strong>Kvantiteter:</strong> Specificera kvantiteter för varje artikel</li>
+              <li><strong>Leveransdatum:</strong> Ange när leveransen kan ske</li>
+              <li><strong>Betalningsvillkor:</strong> Definiera betalningsvillkor och planer</li>
+              <li><strong>Garantivillkor:</strong> Specificera garantivillkor och service</li>
+              <li><strong>Leveransinformation:</strong> Ange leveransplatser och metoder</li>
+            </ul>
+            <h4>Ytterligare information</h4>
+            <ul>
+              <li><strong>Anteckningar:</strong> Lägg till ytterligare information eller kommentarer</li>
+              <li><strong>Specifikationer:</strong> Detaljerade specifikationer för produkter eller tjänster</li>
+              <li><strong>Alternativ:</strong> Erbjud alternativ eller varianter</li>
+              <li><strong>Bilagor:</strong> Bifoga relevanta dokument eller bilder</li>
+            </ul>
+            <h4>Granskning och skickande</h4>
+            <ul>
+              <li><strong>Förhandsgranskning:</strong> Granska offerten innan du skickar</li>
+              <li><strong>Validering:</strong> Kontrollera att all nödvändig information är ifylld</li>
+              <li><strong>Skicka:</strong> Skicka offerten till beställaren</li>
+              <li><strong>Bekräftelse:</strong> Få bekräftelse när offerten har skickats</li>
+            </ul>
+            <p>En komplett och välstrukturerad offert ökar chanserna för att få ordern.</p>
+          `
+        },
+        step4: {
+          title: 'Steg 4: Skicka offert och hantera svar',
+          content: `
+            <h3>Detaljerad information om att skicka offerter och hantera svar</h3>
+            <p>När offerten är skickad kan du spåra dess status och hantera kommunikation och svar.</p>
+            <h4>Skicka process</h4>
+            <ul>
+              <li><strong>Via chattgränssnittet:</strong> Offerter skickas direkt via chattgränssnittet</li>
+              <li><strong>Synlighet:</strong> Offerten blir synlig för mottagaren i chatten</li>
+              <li><strong>Notifikationer:</strong> Mottagaren får notifikation om ny offert</li>
+              <li><strong>Bekräftelse:</strong> Få bekräftelse när offerten har levererats</li>
+            </ul>
+            <h4>Statusspårning</h4>
+            <ul>
+              <li><strong>Skickad:</strong> Offerten har skickats och väntar på svar</li>
+              <li><strong>Läst:</strong> Mottagaren har läst offerten</li>
+              <li><strong>Accepterad:</strong> Offerten har accepterats av mottagaren</li>
+              <li><strong>Avvisad:</strong> Offerten har avvisats</li>
+              <li><strong>Under förhandling:</strong> Offerten diskuteras eller förhandlas</li>
+            </ul>
+            <h4>Svarshantering</h4>
+            <ul>
+              <li><strong>Acceptera offerter:</strong> Acceptera mottagna offerter från leverantörer</li>
+              <li><strong>Avvisa offerter:</strong> Avvisa offerter som inte uppfyller krav</li>
+              <li><strong>Begära ändringar:</strong> Begär ändringar eller förtydliganden</li>
+              <li><strong>Förhandla:</strong> Förhandla om villkor och priser</li>
+            </ul>
+            <h4>Kommunikation</h4>
+            <ul>
+              <li><strong>Chattintegration:</strong> All kommunikation sker i chattgränssnittet</li>
+              <li><strong>Diskussion:</strong> Diskutera offertdetaljer direkt i chatten</li>
+              <li><strong>Förtydliganden:</strong> Be om förtydliganden eller ställ frågor</li>
+              <li><strong>Uppdateringar:</strong> Få uppdateringar om offertstatus</li>
+            </ul>
+            <h4>Offertjämförelse</h4>
+            <ul>
+              <li><strong>Jämföra offerter:</strong> Jämför offerter från olika leverantörer</li>
+              <li><strong>Analys:</strong> Analysera priser, villkor och erbjudanden</li>
+              <li><strong>Beslut:</strong> Fatta beslut baserat på jämförelser</li>
+              <li><strong>Dokumentation:</strong> Dokumentera beslutsprocessen</li>
+            </ul>
+            <p>Effektiv hantering av offerter och svar hjälper dig att fatta bästa beslut för ditt projekt.</p>
+          `
+        },
+        'visual-list': {
+          title: 'Offertlista',
+          content: `
+            <h3>Detaljerad information om offertlista</h3>
+            <p>Offertlistan ger dig en översikt över alla offerter - både mottagna och skickade.</p>
+            <ul>
+              <li><strong>Offertnummer:</strong> Unikt nummer för varje offert för enkel identifiering</li>
+              <li><strong>Leverantörs-/beställarnamn:</strong> Vem offerten är från eller till</li>
+              <li><strong>Datum:</strong> När offerten skapades eller skickades</li>
+              <li><strong>Status:</strong> Nuvarande status (väntande, accepterad, avvisad, etc.)</li>
+              <li><strong>Belopp:</strong> Totalt belopp för offerten</li>
+              <li><strong>Organisering:</strong> Offerter organiseras för enkel navigering och granskning</li>
+            </ul>
+            <p>Offertlistan är designad för att göra det enkelt att hålla koll på alla offerter och deras status.</p>
+          `
+        },
+        'visual-details': {
+          title: 'Offertdetaljer',
+          content: `
+            <h3>Detaljerad information om offertdetaljvy</h3>
+            <p>Offertdetaljvyn visar all omfattande information om en offert på ett strukturerat sätt.</p>
+            <ul>
+              <li><strong>Prisuppdelning:</strong> Detaljerad uppdelning av priser per artikel eller tjänst</li>
+              <li><strong>Villkor:</strong> Alla villkor och bestämmelser för offerten</li>
+              <li><strong>Leveransdetaljer:</strong> Detaljerad information om leveransdatum, platser och metoder</li>
+              <li><strong>Betalningsvillkor:</strong> Betalningsplaner, metoder och villkor</li>
+              <li><strong>Garantinformation:</strong> Garantivillkor och serviceinformation</li>
+              <li><strong>Ytterligare anteckningar:</strong> Eventuella ytterligare specifikationer eller kommentarer</li>
+            </ul>
+            <p>Offertdetaljvyn är designad för att ge dig all information du behöver för att utvärdera offerten.</p>
+          `
+        },
+        'visual-actions': {
+          title: 'Offertstatus och åtgärder',
+          content: `
+            <h3>Detaljerad information om offertstatus och åtgärder</h3>
+            <p>Offertstatus och åtgärder ger dig möjlighet att hantera offerter på olika sätt beroende på din roll och offertstatusen.</p>
+            <ul>
+              <li><strong>Statusindikatorer:</strong> Tydlig visning av offertstatus (väntande, accepterad, avvisad, utgången)</li>
+              <li><strong>Acceptera offerter:</strong> Acceptera offerter som uppfyller dina krav</li>
+              <li><strong>Avvisa offerter:</strong> Avvisa offerter som inte passar</li>
+              <li><strong>Begära ändringar:</strong> Begär ändringar eller förtydliganden i offerter</li>
+              <li><strong>Förhandla:</strong> Initiera förhandlingar om villkor och priser</li>
+              <li><strong>Spårning:</strong> Följ status på offerter över tid</li>
+            </ul>
+            <p>Offertstatus och åtgärder hjälper dig att hantera offerter effektivt och fatta välgrundade beslut.</p>
+          `
+        }
+      };
+
+      // Store reference to previously focused element for accessibility
+      let previousActiveElement = null;
+
+      // Function to open info popup
+      function openInfoPopup(id) {
+        const popup = document.getElementById('infoPopup');
+        const content = document.getElementById('infoPopupContent');
+        const title = document.getElementById('infoPopupTitle');
+        const closeBtn = document.getElementById('infoCloseBtn');
+        
+        if (!popup || !content || !title) {
+          console.error('Popup elements not found');
+          return;
+        }
+        
+        if (!infoPopupData[id]) {
+          console.error('Popup data not found for ID:', id);
+          return;
+        }
+        
+        // Reset aria-expanded for all triggers first
+        document.querySelectorAll('[data-popup-id]').forEach(el => {
+          el.setAttribute('aria-expanded', 'false');
+        });
+        
+        // If popup is already open, just update the content
+        const wasOpen = popup.classList.contains('active');
+        
+        // Store current focus for restoration (only if popup wasn't open)
+        if (!wasOpen) {
+          previousActiveElement = document.activeElement;
+        }
+        
+        // Update content
+        title.textContent = infoPopupData[id].title;
+        title.classList.remove('sr-only');
+        content.innerHTML = infoPopupData[id].content;
+        
+        // Update ARIA attributes
+        popup.setAttribute('aria-hidden', 'false');
+        popup.classList.add('active');
+        document.body.style.overflow = 'hidden';
+        
+        // Update aria-expanded on trigger elements
+        document.querySelectorAll(`[data-popup-id="${id}"]`).forEach(el => {
+          el.setAttribute('aria-expanded', 'true');
+        });
+        
+        // Focus management - focus close button for accessibility
+        setTimeout(() => {
+          if (closeBtn) {
+            closeBtn.focus();
+          }
+        }, wasOpen ? 50 : 100);
+      }
+
+      // Function to close info popup
+      function closeInfoPopup() {
+        const popup = document.getElementById('infoPopup');
+        const title = document.getElementById('infoPopupTitle');
+        
+        if (!popup) return;
+        
+        // Update ARIA attributes
+        popup.setAttribute('aria-hidden', 'true');
+        popup.classList.remove('active');
+        document.body.style.overflow = '';
+        
+        // Reset aria-expanded on all trigger elements
+        document.querySelectorAll('[data-popup-id]').forEach(el => {
+          el.setAttribute('aria-expanded', 'false');
+        });
+        
+        // Restore focus to previously focused element
+        if (previousActiveElement && typeof previousActiveElement.focus === 'function') {
+          try {
+            previousActiveElement.focus();
+          } catch (e) {
+            // Element might not be focusable anymore, ignore
+            console.warn('Could not restore focus:', e);
+          }
+          previousActiveElement = null;
+        }
+      }
+
+      // Initialize popup functionality
       document.addEventListener('DOMContentLoaded', () => {
+        // Wait a bit to ensure all elements are ready
+        setTimeout(() => {
+          const popup = document.getElementById('infoPopup');
+          const closeBtn = document.getElementById('infoCloseBtn');
+          const content = document.getElementById('infoPopupContent');
+          const title = document.getElementById('infoPopupTitle');
+          
+          if (!popup || !content || !title) {
+            console.warn('Popup elements not found, popup functionality disabled');
+            return;
+          }
+          
+          // Close button click handler
+          if (closeBtn) {
+            closeBtn.addEventListener('click', closeInfoPopup);
+          }
+          
+          // Close popup when clicking overlay (but not on popup box)
+          popup.addEventListener('click', (e) => {
+            // Only close if clicking directly on overlay background, not on popup box
+            if (e.target === popup) {
+              closeInfoPopup();
+            }
+          });
+
+          // Close on Escape key
+          document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && popup.classList.contains('active')) {
+              closeInfoPopup();
+            }
+          });
+          
+          // Handle click and keyboard events on popup triggers using event delegation
+          // Use capture phase to catch events before overlay intercepts them
+          document.addEventListener('click', (e) => {
+            // Check if popup elements exist before handling
+            const popupEl = document.getElementById('infoPopup');
+            if (!popupEl) {
+              return; // Popup elements not ready yet
+            }
+            
+            // Check if click is on a popup trigger
+            const trigger = e.target.closest('[data-popup-id]');
+            
+            if (trigger) {
+              // Don't handle clicks inside popup box
+              const popupBox = e.target.closest('.info-popup-box');
+              const closeBtnEl = e.target.closest('.info-close-btn');
+              
+              // If click is on close button, let it handle the close
+              if (closeBtnEl) {
+                return;
+              }
+              
+              // If click is inside popup box (but not on close button), don't handle it
+              if (popupBox) {
+                return;
+              }
+              
+              // Prevent default and stop propagation
+              e.preventDefault();
+              e.stopImmediatePropagation();
+              
+              const popupId = trigger.getAttribute('data-popup-id');
+              if (popupId) {
+                // Open popup immediately (elements are already checked)
+                openInfoPopup(popupId);
+              }
+            }
+          }, true); // Capture phase - catches events before they bubble
+          
+          // Keyboard handler for popup triggers
+          document.addEventListener('keydown', (e) => {
+            // Check if popup elements exist before handling
+            const popupEl = document.getElementById('infoPopup');
+            if (!popupEl) {
+              return; // Popup elements not ready yet
+            }
+            
+            if (e.key === 'Enter' || e.key === ' ') {
+              const trigger = e.target.closest('[data-popup-id]');
+              if (trigger) {
+                e.preventDefault();
+                const popupId = trigger.getAttribute('data-popup-id');
+                if (popupId) {
+                  // Open popup immediately (elements are already checked)
+                  openInfoPopup(popupId);
+                }
+              }
+            }
+          });
+        }, 100); // Small delay to ensure DOM is fully ready
+        
         lucide.createIcons();
         
         // Applicera översättning efter DOM är laddad
@@ -129,4 +649,3 @@
     </script>
   </body>
 </html>
-

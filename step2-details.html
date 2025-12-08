@@ -9,7 +9,7 @@
     <script src="https://unpkg.com/lucide@latest"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   </head>
-  <body>
+  <body class="step1-details-page">
     <div class="scroll-progress"><div class="scroll-progress__bar"></div></div>
     <div id="header-container"></div>
     <script>
@@ -20,85 +20,206 @@
         });
     </script>
 
-    <main class="details-main with-header-space">
-      <section class="details-hero">
-        <div class="details-hero-icon"><i class="fa-solid fa-shield-halved" aria-hidden="true"></i></div>
-        <h1 data-translate="step2DetailTitle"></h1>
-        <p data-translate="step2DetailIntro"></p>
-      </section>
+    <!-- Hero Section -->
+    <section class="step1-hero">
+      <div class="step1-hero-content">
+        <div class="step1-hero-icon"><i class="fa-solid fa-shield-halved" aria-hidden="true"></i></div>
+        <h1 data-translate="step2DetailTitle">Steg 2: Utvärdera leverantörens lämplighet</h1>
+        <p class="step1-hero-subtitle" data-translate="step2DetailIntro">Granska och utvärdera leverantörsprofiler för att avgöra om de uppfyller dina projektkrav. Följ de stegvisa instruktionerna nedan för att bedöma företagsinformation, betyg, certifikat och fatta välgrundade beslut om potentiella leverantörer.</p>
+        <div class="step1-hero-features">
+          <div class="step1-hero-feature-item">
+            <i class="fa-solid fa-building" aria-hidden="true"></i>
+            <span>Omfattande företagsinformation</span>
+          </div>
+          <div class="step1-hero-feature-item">
+            <i class="fa-solid fa-star" aria-hidden="true"></i>
+            <span>Betyg och recensioner</span>
+          </div>
+          <div class="step1-hero-feature-item">
+            <i class="fa-solid fa-certificate" aria-hidden="true"></i>
+            <span>Certifieringar och verifieringar</span>
+          </div>
+        </div>
+      </div>
+    </section>
 
-      <section class="details-section">
+    <!-- Feature Details -->
+    <section class="feature-detail-section">
+      <div class="section-header">
+        <h2 data-translate="step2DetailInterfaceTitle">Översikt över leverantörsprofilsidan</h2>
+        <div class="section-divider-line"></div>
+      </div>
+      <div class="step1-visual-in-context">
+        <div class="step1-visual-wrapper">
+          <div class="step1-visual-image">
+            <img src="assets/leverantorer-step02-info.png" alt="Leverantörsprofil och information" loading="lazy" />
+          </div>
+          <div class="step1-visual-info">
+            <div class="step1-visual-info-item" role="button" tabindex="0" aria-expanded="false" aria-label="Läs mer om företagsprofil" data-popup-id="visual-profile">
+              <div class="step1-visual-icon"><i class="fa-solid fa-building" aria-hidden="true"></i></div>
+              <div class="step1-visual-text">
+                <h4>Företagsprofil</h4>
+                <p>Omfattande information om företaget och dess specialiseringar</p>
+              </div>
+              <div class="step1-visual-arrow"><i class="fa-solid fa-chevron-right" aria-hidden="true"></i></div>
+            </div>
+            <div class="step1-visual-info-item" role="button" tabindex="0" aria-expanded="false" aria-label="Läs mer om betyg och recensioner" data-popup-id="visual-ratings">
+              <div class="step1-visual-icon"><i class="fa-solid fa-star" aria-hidden="true"></i></div>
+              <div class="step1-visual-text">
+                <h4>Betyg och recensioner</h4>
+                <p>Visuell visning av betyg och kundrecensioner</p>
+              </div>
+              <div class="step1-visual-arrow"><i class="fa-solid fa-chevron-right" aria-hidden="true"></i></div>
+            </div>
+            <div class="step1-visual-info-item" role="button" tabindex="0" aria-expanded="false" aria-label="Läs mer om certifieringar" data-popup-id="visual-certifications">
+              <div class="step1-visual-icon"><i class="fa-solid fa-certificate" aria-hidden="true"></i></div>
+              <div class="step1-visual-text">
+                <h4>Certifieringar</h4>
+                <p>Verifierade certifikat och kvalifikationer</p>
+              </div>
+              <div class="step1-visual-arrow"><i class="fa-solid fa-chevron-right" aria-hidden="true"></i></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- How It Works -->
+    <section class="how-it-works step1-how-works">
+      <div class="section-header">
         <h2 data-translate="howItWorksTitle">Så fungerar det</h2>
-        <div class="details-how-steps">
-          <div class="details-step">
-            <div class="details-step-number">1</div>
-            <div class="details-step-content">
-              <h3 data-translate="step2DetailStep1Title"></h3>
-              <p data-translate="step2DetailStep1Text"></p>
+        <div class="section-divider-line"></div>
+      </div>
+      <div class="step1-steps-container">
+        <div class="step1-step">
+          <div class="step1-step-header">
+            <div class="step1-step-number">1</div>
+            <h3 data-translate="step2DetailStep1Title">Steg 1: Öppna leverantörsprofil</h3>
+          </div>
+          
+          <div class="step-blocks">
+            <div class="step-block step-block-action">
+              <div class="step-block-icon"><i class="fa-solid fa-hand-pointer" aria-hidden="true"></i></div>
+              <div class="step-block-content">
+                <h4>Vad du ska göra här</h4>
+                <ul>
+                  <li>Klicka på 'Visa profil'-knappen på leverantörskortet</li>
+                  <li>Öppna den detaljerade leverantörsprofilsidan</li>
+                  <li>Få tillgång till omfattande information om företaget</li>
+                </ul>
+              </div>
             </div>
           </div>
-          <div class="details-step">
-            <div class="details-step-number">2</div>
-            <div class="details-step-content">
-              <h3 data-translate="step2DetailStep2Title"></h3>
-              <p data-translate="step2DetailStep2Text"></p>
-            </div>
+          
+          <div class="step-tip-inline">
+            <i class="fa-solid fa-lightbulb"></i>
+            <span>Du kan öppna flera profiler i olika flikar för att jämföra leverantörer.</span>
           </div>
-          <div class="details-step">
-            <div class="details-step-number">3</div>
-            <div class="details-step-content">
-              <h3 data-translate="step2DetailStep3Title"></h3>
-              <p data-translate="step2DetailStep3Text"></p>
-            </div>
-          </div>
-          <div class="details-step">
-            <div class="details-step-number">4</div>
-            <div class="details-step-content">
-              <h3 data-translate="step2DetailStep4Title"></h3>
-              <p data-translate="step2DetailStep4Text"></p>
-            </div>
+          
+          <div class="step-button-wrapper">
+            <button type="button" class="step1-info-btn" data-popup-id="step1" aria-label="Mer information om steg 1">
+              <i class="fa-solid fa-circle-info" aria-hidden="true"></i> <span>Läs mer</span>
+            </button>
           </div>
         </div>
-      </section>
-
-      <section class="details-section">
-        <div class="feature-visual-large">
-          <img src="assets/leverantorer-step02-info.png" alt="Utvärdera leverantörens lämplighet" />
-        </div>
-      </section>
-
-      <section class="details-section">
-        <h2 data-translate="step2DetailInterfaceTitle"></h2>
-        <p data-translate="step2DetailInterfaceDesc"></p>
-        <div class="details-features-grid">
-          <div class="details-feature-card">
-            <div class="details-feature-icon"><i class="fa-solid fa-building"></i></div>
-            <h3 data-translate="step2DetailElement1Title"></h3>
-            <p data-translate="step2DetailElement1Desc"></p>
+        
+        <div class="step1-step">
+          <div class="step1-step-header">
+            <div class="step1-step-number">2</div>
+            <h3 data-translate="step2DetailStep2Title">Steg 2: Granska företagsinformation</h3>
           </div>
-          <div class="details-feature-card">
-            <div class="details-feature-icon"><i class="fa-solid fa-folder-open"></i></div>
-            <h3 data-translate="step2DetailElement2Title"></h3>
-            <p data-translate="step2DetailElement2Desc"></p>
+          
+          <div class="step-blocks">
+            <div class="step-block step-block-action">
+              <div class="step-block-icon"><i class="fa-solid fa-file-lines" aria-hidden="true"></i></div>
+              <div class="step-block-content">
+                <h4>Vad du ska göra här</h4>
+                <ul>
+                  <li>Granska företagets grundläggande information</li>
+                  <li>Läs företagsbeskrivningen för att förstå expertis</li>
+                  <li>Kontrollera plats och kontaktuppgifter</li>
+                </ul>
+              </div>
+            </div>
           </div>
-          <div class="details-feature-card">
-            <div class="details-feature-icon"><i class="fa-solid fa-star"></i></div>
-            <h3 data-translate="step2DetailElement3Title"></h3>
-            <p data-translate="step2DetailElement3Desc"></p>
+          
+          <div class="step-tip-inline">
+            <i class="fa-solid fa-lightbulb" aria-hidden="true"></i>
+            <span>Företagsbeskrivningen ger värdefull insikt i deras erfarenhet och specialiseringar.</span>
           </div>
-          <div class="details-feature-card">
-            <div class="details-feature-icon"><i class="fa-solid fa-certificate"></i></div>
-            <h3 data-translate="step2DetailElement4Title"></h3>
-            <p data-translate="step2DetailElement4Desc"></p>
-          </div>
-          <div class="details-feature-card">
-            <div class="details-feature-icon"><i class="fa-solid fa-hand-pointer"></i></div>
-            <h3 data-translate="step2DetailElement5Title"></h3>
-            <p data-translate="step2DetailElement5Desc"></p>
+          
+          <div class="step-button-wrapper">
+            <button type="button" class="step1-info-btn" data-popup-id="step2" aria-label="Mer information om steg 2">
+              <i class="fa-solid fa-circle-info" aria-hidden="true"></i> <span>Läs mer</span>
+            </button>
           </div>
         </div>
-      </section>
-    </main>
+        
+        <div class="step1-step">
+          <div class="step1-step-header">
+            <div class="step1-step-number">3</div>
+            <h3 data-translate="step2DetailStep3Title">Steg 3: Kontrollera betyg och certifikat</h3>
+          </div>
+          
+          <div class="step-blocks">
+            <div class="step-block step-block-action">
+              <div class="step-block-icon"><i class="fa-solid fa-star" aria-hidden="true"></i></div>
+              <div class="step-block-content">
+                <h4>Vad du ska göra här</h4>
+                <ul>
+                  <li>Granska företagets betyg och poäng</li>
+                  <li>Kontrollera certifikatavsnittet</li>
+                  <li>Verifiera nödvändiga certifikat för ditt projekt</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          
+          <div class="step-tip-inline">
+            <i class="fa-solid fa-lightbulb" aria-hidden="true"></i>
+            <span>Betyg och certifikat är viktiga indikatorer på företagets kvalitet och pålitlighet.</span>
+          </div>
+          
+          <div class="step-button-wrapper">
+            <button type="button" class="step1-info-btn" data-popup-id="step3" aria-label="Mer information om steg 3">
+              <i class="fa-solid fa-circle-info" aria-hidden="true"></i> <span>Läs mer</span>
+            </button>
+          </div>
+        </div>
+        
+        <div class="step1-step">
+          <div class="step1-step-header">
+            <div class="step1-step-number">4</div>
+            <h3 data-translate="step2DetailStep4Title">Steg 4: Utvärdera hållbarhet och ytterligare information</h3>
+          </div>
+          
+          <div class="step-blocks">
+            <div class="step-block step-block-action">
+              <div class="step-block-icon"><i class="fa-solid fa-leaf" aria-hidden="true"></i></div>
+              <div class="step-block-content">
+                <h4>Vad du ska göra här</h4>
+                <ul>
+                  <li>Granska hållbarhetsavsnittet</li>
+                  <li>Kontrollera tidigare projekt och kundrecensioner</li>
+                  <li>Utvärdera leverantörens lämplighet för dina behov</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          
+          <div class="step-tip-inline">
+            <i class="fa-solid fa-lightbulb" aria-hidden="true"></i>
+            <span>Hållbarhetsinformation och projektportfölj ger en komplett bild av företagets kompetens.</span>
+          </div>
+          
+          <div class="step-button-wrapper">
+            <button type="button" class="step1-info-btn" data-popup-id="step4" aria-label="Mer information om steg 4">
+              <i class="fa-solid fa-circle-info" aria-hidden="true"></i> <span>Läs mer</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
 
     <div class="section-divider"></div>
     <div id="footer-container"></div>
@@ -111,13 +232,348 @@
     </script>
     
     <div id="popup-root"></div>
+    
+    <!-- Info Popup for detailed information -->
+    <div class="info-popup-overlay" id="infoPopup" role="dialog" aria-modal="true" aria-labelledby="infoPopupTitle" aria-hidden="true">
+      <div class="info-popup-box">
+        <button class="info-close-btn" id="infoCloseBtn" aria-label="Stäng popup">
+          <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+        </button>
+        <div class="info-popup-content" id="infoPopupContent">
+          <h2 id="infoPopupTitle" class="sr-only">Detaljerad information</h2>
+          <!-- Content will be dynamically inserted here -->
+        </div>
+      </div>
+    </div>
+    
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollTrigger.min.js"></script>
     <script src="main.js"></script>
     <script src="popup.js"></script>
     <script src="lang.js"></script>
     <script>
+      // Info popup data - detailed information for each section
+      const infoPopupData = {
+        step1: {
+          title: 'Steg 1: Öppna leverantörsprofil',
+          content: `
+            <h3>Detaljerad information om att öppna leverantörsprofil</h3>
+            <p>Från katalogsidan kan du enkelt komma åt detaljerad information om varje leverantör genom att klicka på 'Visa profil'-knappen. Detta öppnar en omfattande profilsida med all relevant information om företaget.</p>
+            <h4>Navigering till profil</h4>
+            <ul>
+              <li><strong>Från katalogsidan:</strong> Klicka på 'Visa profil'-knappen på valfritt leverantörskort</li>
+              <li><strong>Direktlänkar:</strong> Använd direkta länkar för att dela specifika profiler</li>
+              <li><strong>Snabbtillgång:</strong> Profiler öppnas i samma flik eller ny flik beroende på inställningar</li>
+              <li><strong>Breadcrumbs:</strong> Tydlig navigering visar din nuvarande position</li>
+            </ul>
+            <h4>Profilsidans struktur</h4>
+            <ul>
+              <li><strong>Huvudsektion:</strong> Företagslogotyp, namn, plats och övergripande betyg</li>
+              <li><strong>Informationsflikar:</strong> Organiserad information i olika kategorier</li>
+              <li><strong>Åtgärdsknappar:</strong> Direkta länkar för kontakt och kommunikation</li>
+            </ul>
+            <p>Profilsidan är designad för att ge dig all information du behöver för att fatta välgrundade beslut om leverantörer.</p>
+          `
+        },
+        step2: {
+          title: 'Steg 2: Granska företagsinformation',
+          content: `
+            <h3>Detaljerad information om företagsinformation</h3>
+            <p>Företagsinformationssektionen ger dig en omfattande översikt över leverantörens grundläggande detaljer och specialiseringar.</p>
+            <h4>Grundläggande information</h4>
+            <ul>
+              <li><strong>Företagsnamn:</strong> Officiellt registrerat namn och eventuella handelsnamn</li>
+              <li><strong>Plats:</strong> Fysisk adress och verksamhetsområde</li>
+              <li><strong>Kontaktuppgifter:</strong> Telefonnummer, e-post och webbplats</li>
+              <li><strong>Specialisering:</strong> Huvudsakliga områden och expertis</li>
+            </ul>
+            <h4>Företagsbeskrivning</h4>
+            <ul>
+              <li><strong>Historia:</strong> Företagets bakgrund och erfarenhet</li>
+              <li><strong>Expertis:</strong> Specifika kompetenser och färdigheter</li>
+              <li><strong>Projekttyper:</strong> Typer av projekt företaget vanligtvis hanterar</li>
+              <li><strong>Unika fördelar:</strong> Vad som gör företaget särskilt</li>
+            </ul>
+            <p>Denna information hjälper dig att förstå om företaget passar dina specifika projektkrav och förväntningar.</p>
+          `
+        },
+        step3: {
+          title: 'Steg 3: Kontrollera betyg och certifikat',
+          content: `
+            <h3>Detaljerad information om betyg och certifikat</h3>
+            <p>Betyg och certifikat är kritiska faktorer för att bedöma en leverantörs kvalitet, pålitlighet och förmåga att uppfylla dina projektkrav.</p>
+            <h4>Betygssystem</h4>
+            <ul>
+              <li><strong>Stjärnbetyg:</strong> Visuell representation av övergripande betyg (1-5 stjärnor)</li>
+              <li><strong>Numeriska poäng:</strong> Detaljerade poäng för olika aspekter</li>
+              <li><strong>Kategoribetyg:</strong> Betyg för specifika områden som kvalitet, service, prissättning</li>
+              <li><strong>Kundrecensioner:</strong> Verifierade recensioner från tidigare kunder</li>
+            </ul>
+            <h4>Certifieringar</h4>
+            <ul>
+              <li><strong>Kvalitetsstandarder:</strong> ISO-certifieringar och kvalitetssystem</li>
+              <li><strong>Säkerhetscertifikat:</strong> Arbetsmiljö- och säkerhetscertifikat</li>
+              <li><strong>Branschspecifika:</strong> Certifikat relevanta för byggbranschen</li>
+              <li><strong>Miljöcertifieringar:</strong> Hållbarhets- och miljöcertifikat</li>
+              <li><strong>Verifieringsstatus:</strong> Bekräftad verifiering av certifikatens giltighet</li>
+            </ul>
+            <p>Alla betyg och certifikat är kontinuerligt uppdaterade och verifierade för att säkerställa aktuell och korrekt information.</p>
+          `
+        },
+        step4: {
+          title: 'Steg 4: Utvärdera hållbarhet och ytterligare information',
+          content: `
+            <h3>Detaljerad information om hållbarhet och ytterligare information</h3>
+            <p>Hållbarhetssektionen och ytterligare information ger dig en komplett bild av företagets miljöengagemang och övergripande kompetens.</p>
+            <h4>Hållbarhetsinformation</h4>
+            <ul>
+              <li><strong>Miljöpraxis:</strong> Företagets miljöarbete och initiativ</li>
+              <li><strong>Hållbara material:</strong> Användning av miljövänliga och återvinningsbara material</li>
+              <li><strong>Energieffektivitet:</strong> Fokus på energieffektiva lösningar</li>
+              <li><strong>Certifieringar:</strong> Miljö- och hållbarhetscertifikat</li>
+              <li><strong>Framtidsplaner:</strong> Strategier för kontinuerlig förbättring</li>
+            </ul>
+            <h4>Ytterligare information</h4>
+            <ul>
+              <li><strong>Projektportfölj:</strong> Bildgalleri och beskrivningar av tidigare projekt</li>
+              <li><strong>Kundrecensioner:</strong> Detaljerade recensioner från tidigare kunder</li>
+              <li><strong>Referenser:</strong> Kontaktuppgifter till tidigare kunder för referenser</li>
+              <li><strong>Medlemskap:</strong> Medlemskap i branschorganisationer</li>
+              <li><strong>Utmärkelser:</strong> Tävlingar och utmärkelser företaget har vunnit</li>
+            </ul>
+            <p>Denna omfattande information hjälper dig att utvärdera leverantörens lämplighet för dina specifika behov och projektkrav.</p>
+          `
+        },
+        'visual-profile': {
+          title: 'Företagsprofil',
+          content: `
+            <h3>Detaljerad information om företagsprofil</h3>
+            <p>Företagsprofilen är den centrala platsen där all information om leverantören samlas och presenteras på ett organiserat sätt.</p>
+            <ul>
+              <li><strong>Huvudsektion:</strong> Företagslogotyp, namn, plats och övergripande betyg visas tydligt</li>
+              <li><strong>Informationsflikar:</strong> Profilen är organiserad i flikar för olika typer av information</li>
+              <li><strong>Företagsinformation:</strong> Detaljerad beskrivning av företaget, dess historia och specialiseringar</li>
+              <li><strong>Kontaktinformation:</strong> Direkta kontaktuppgifter för snabb kommunikation</li>
+              <li><strong>Specialiseringar:</strong> Tydlig översikt över företagets huvudområden och expertis</li>
+              <li><strong>Responsiv design:</strong> Profilen anpassar sig automatiskt till din skärmstorlek</li>
+            </ul>
+            <p>Profilen är designad för att ge dig all information du behöver för att fatta välgrundade beslut om leverantörer.</p>
+          `
+        },
+        'visual-ratings': {
+          title: 'Betyg och recensioner',
+          content: `
+            <h3>Detaljerad information om betyg och recensioner</h3>
+            <p>Betyg och recensioner ger dig värdefull insikt i leverantörens prestanda och tillförlitlighet baserat på tidigare kunders erfarenheter.</p>
+            <ul>
+              <li><strong>Visuell visning:</strong> Betyg visas med stjärnor eller numeriska poäng för snabb översikt</li>
+              <li><strong>Kategoribetyg:</strong> Detaljerade betyg för olika aspekter som kvalitet, service, prissättning</li>
+              <li><strong>Kundrecensioner:</strong> Verifierade recensioner från tidigare kunder med detaljerade kommentarer</li>
+              <li><strong>Betygshistorik:</strong> Översikt över betygsutveckling över tid</li>
+              <li><strong>Verifierade recensioner:</strong> Endast verifierade kundrecensioner visas för att säkerställa autenticitet</li>
+              <li><strong>Filtrering:</strong> Möjlighet att filtrera recensioner efter datum, betyg eller kategori</li>
+            </ul>
+            <p>Betyg och recensioner hjälper dig att bedöma leverantörens pålitlighet och kvalitet baserat på verkliga kunders erfarenheter.</p>
+          `
+        },
+        'visual-certifications': {
+          title: 'Certifieringar',
+          content: `
+            <h3>Detaljerad information om certifieringar</h3>
+            <p>Certifieringar är viktiga indikatorer på en leverantörs kvalitet, kompetens och förmåga att uppfylla branschstandarder.</p>
+            <ul>
+              <li><strong>Visuella märken:</strong> Certifikat visas som märken eller ikoner för snabb identifiering</li>
+              <li><strong>Kvalitetsstandarder:</strong> ISO-certifieringar och andra kvalitetssystem</li>
+              <li><strong>Säkerhetscertifikat:</strong> Arbetsmiljö- och säkerhetscertifikat som bevisar säker arbetsmiljö</li>
+              <li><strong>Branschspecifika:</strong> Certifikat relevanta för byggbranschen och specifika specialiseringar</li>
+              <li><strong>Miljöcertifieringar:</strong> Hållbarhets- och miljöcertifikat som visar miljöengagemang</li>
+              <li><strong>Verifieringsstatus:</strong> Alla certifikat är verifierade för att säkerställa giltighet</li>
+            </ul>
+            <p>Certifieringar hjälper dig att verifiera att leverantören uppfyller de nödvändiga standarderna och krav som krävs för ditt projekt.</p>
+          `
+        }
+      };
+
+      // Store reference to previously focused element for accessibility
+      let previousActiveElement = null;
+
+      // Function to open info popup
+      function openInfoPopup(id) {
+        const popup = document.getElementById('infoPopup');
+        const content = document.getElementById('infoPopupContent');
+        const title = document.getElementById('infoPopupTitle');
+        const closeBtn = document.getElementById('infoCloseBtn');
+        
+        if (!popup || !content || !title) {
+          console.error('Popup elements not found');
+          return;
+        }
+        
+        if (!infoPopupData[id]) {
+          console.error('Popup data not found for ID:', id);
+          return;
+        }
+        
+        // Reset aria-expanded for all triggers first
+        document.querySelectorAll('[data-popup-id]').forEach(el => {
+          el.setAttribute('aria-expanded', 'false');
+        });
+        
+        // If popup is already open, just update the content
+        const wasOpen = popup.classList.contains('active');
+        
+        // Store current focus for restoration (only if popup wasn't open)
+        if (!wasOpen) {
+          previousActiveElement = document.activeElement;
+        }
+        
+        // Update content
+        title.textContent = infoPopupData[id].title;
+        title.classList.remove('sr-only');
+        content.innerHTML = infoPopupData[id].content;
+        
+        // Update ARIA attributes
+        popup.setAttribute('aria-hidden', 'false');
+        popup.classList.add('active');
+        document.body.style.overflow = 'hidden';
+        
+        // Update aria-expanded on trigger elements
+        document.querySelectorAll(`[data-popup-id="${id}"]`).forEach(el => {
+          el.setAttribute('aria-expanded', 'true');
+        });
+        
+        // Focus management - focus close button for accessibility
+        setTimeout(() => {
+          if (closeBtn) {
+            closeBtn.focus();
+          }
+        }, wasOpen ? 50 : 100);
+      }
+
+      // Function to close info popup
+      function closeInfoPopup() {
+        const popup = document.getElementById('infoPopup');
+        const title = document.getElementById('infoPopupTitle');
+        
+        if (!popup) return;
+        
+        // Update ARIA attributes
+        popup.setAttribute('aria-hidden', 'true');
+        popup.classList.remove('active');
+        document.body.style.overflow = '';
+        
+        // Reset aria-expanded on all trigger elements
+        document.querySelectorAll('[data-popup-id]').forEach(el => {
+          el.setAttribute('aria-expanded', 'false');
+        });
+        
+        // Restore focus to previously focused element
+        if (previousActiveElement && typeof previousActiveElement.focus === 'function') {
+          try {
+            previousActiveElement.focus();
+          } catch (e) {
+            // Element might not be focusable anymore, ignore
+            console.warn('Could not restore focus:', e);
+          }
+          previousActiveElement = null;
+        }
+      }
+
+      // Initialize popup functionality
       document.addEventListener('DOMContentLoaded', () => {
+        // Wait a bit to ensure all elements are ready
+        setTimeout(() => {
+          const popup = document.getElementById('infoPopup');
+          const closeBtn = document.getElementById('infoCloseBtn');
+          const content = document.getElementById('infoPopupContent');
+          const title = document.getElementById('infoPopupTitle');
+          
+          if (!popup || !content || !title) {
+            console.warn('Popup elements not found, popup functionality disabled');
+            return;
+          }
+          
+          // Close button click handler
+          if (closeBtn) {
+            closeBtn.addEventListener('click', closeInfoPopup);
+          }
+          
+          // Close popup when clicking overlay (but not on popup box)
+          popup.addEventListener('click', (e) => {
+            // Only close if clicking directly on overlay background, not on popup box
+            if (e.target === popup) {
+              closeInfoPopup();
+            }
+          });
+
+          // Close on Escape key
+          document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && popup.classList.contains('active')) {
+              closeInfoPopup();
+            }
+          });
+          
+          // Handle click and keyboard events on popup triggers using event delegation
+          // Use capture phase to catch events before overlay intercepts them
+          document.addEventListener('click', (e) => {
+            // Check if popup elements exist before handling
+            const popupEl = document.getElementById('infoPopup');
+            if (!popupEl) {
+              return; // Popup elements not ready yet
+            }
+            
+            // Check if click is on a popup trigger
+            const trigger = e.target.closest('[data-popup-id]');
+            
+            if (trigger) {
+              // Don't handle clicks inside popup box
+              const popupBox = e.target.closest('.info-popup-box');
+              const closeBtnEl = e.target.closest('.info-close-btn');
+              
+              // If click is on close button, let it handle the close
+              if (closeBtnEl) {
+                return;
+              }
+              
+              // If click is inside popup box (but not on close button), don't handle it
+              if (popupBox) {
+                return;
+              }
+              
+              // Prevent default and stop propagation
+              e.preventDefault();
+              e.stopImmediatePropagation();
+              
+              const popupId = trigger.getAttribute('data-popup-id');
+              if (popupId) {
+                // Open popup immediately (elements are already checked)
+                openInfoPopup(popupId);
+              }
+            }
+          }, true); // Capture phase - catches events before they bubble
+          
+          // Keyboard handler for popup triggers
+          document.addEventListener('keydown', (e) => {
+            // Check if popup elements exist before handling
+            const popupEl = document.getElementById('infoPopup');
+            if (!popupEl) {
+              return; // Popup elements not ready yet
+            }
+            
+            if (e.key === 'Enter' || e.key === ' ') {
+              const trigger = e.target.closest('[data-popup-id]');
+              if (trigger) {
+                e.preventDefault();
+                const popupId = trigger.getAttribute('data-popup-id');
+                if (popupId) {
+                  // Open popup immediately (elements are already checked)
+                  openInfoPopup(popupId);
+                }
+              }
+            }
+          });
+        }, 100); // Small delay to ensure DOM is fully ready
+        
         lucide.createIcons();
         
         // Applicera översättning efter DOM är laddad
@@ -129,4 +585,3 @@
     </script>
   </body>
 </html>
-
