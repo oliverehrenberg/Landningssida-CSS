@@ -438,14 +438,26 @@
 
       // Function to open info popup
       function openInfoPopup(id) {
-        const popup = document.getElementById('infoPopup');
-        const content = document.getElementById('infoPopupContent');
-        const title = document.getElementById('infoPopupTitle');
-        const closeBtn = document.getElementById('infoCloseBtn');
+        // Always get fresh references to elements in case DOM was modified
+        let popup = document.getElementById('infoPopup');
+        let content = document.getElementById('infoPopupContent');
+        let title = document.getElementById('infoPopupTitle');
+        let closeBtn = document.getElementById('infoCloseBtn');
         
-        if (!popup || !content || !title) {
-          console.error('Popup elements not found');
+        // If popup or content not found, return
+        if (!popup || !content) {
+          console.error('Popup or content element not found');
           return;
+        }
+        
+        // If title not found, create it
+        if (!title) {
+          title = document.createElement('h2');
+          title.id = 'infoPopupTitle';
+          title.className = 'sr-only';
+          // Insert title at the beginning of content
+          content.insertBefore(title, content.firstChild);
+          console.log('Created missing title element');
         }
         
         if (!infoPopupData[id]) {
@@ -453,23 +465,45 @@
           return;
         }
         
-        // Reset aria-expanded for all triggers first
-        document.querySelectorAll('[data-popup-id]').forEach(el => {
-          el.setAttribute('aria-expanded', 'false');
-        });
-        
-        // If popup is already open, just update the content
-        const wasOpen = popup.classList.contains('active');
-        
-        // Store current focus for restoration (only if popup wasn't open)
-        if (!wasOpen) {
-          previousActiveElement = document.activeElement;
+        // If popup is already open, close it first using unified close function
+        if (popup.classList.contains('active')) {
+          // Store the button that was clicked before closing
+          const clickedButton = document.activeElement;
+          closeInfoPopup();
+          // Small delay to ensure close completes and DOM updates
+          setTimeout(() => {
+            // Set previousActiveElement to the button that triggered this popup
+            previousActiveElement = clickedButton;
+            openInfoPopup(id);
+          }, 50);
+          return;
         }
         
-        // Update content
+        // Store current focus for restoration (before opening new popup)
+        previousActiveElement = document.activeElement;
+        
+        // Update title first
         title.textContent = infoPopupData[id].title;
         title.classList.remove('sr-only');
-        content.innerHTML = infoPopupData[id].content;
+        
+        // Update content - preserve title element
+        // Get all child nodes except title
+        const contentNodes = Array.from(content.childNodes).filter(node => 
+          node !== title && node.nodeType !== Node.TEXT_NODE
+        );
+        // Remove old content nodes
+        contentNodes.forEach(node => node.remove());
+        // Insert new content after title
+        const tempDiv = document.createElement('div');
+        tempDiv.innerHTML = infoPopupData[id].content;
+        // Move all nodes from tempDiv to content after title
+        while (tempDiv.firstChild) {
+          content.appendChild(tempDiv.firstChild);
+        }
+        
+        // Explicitly set overlay styles to ensure it's visible and clickable
+        popup.style.display = 'flex';
+        popup.style.pointerEvents = 'auto';
         
         // Update ARIA attributes
         popup.setAttribute('aria-hidden', 'false');
@@ -486,15 +520,18 @@
           if (closeBtn) {
             closeBtn.focus();
           }
-        }, wasOpen ? 50 : 100);
+        }, 100);
       }
 
-      // Function to close info popup
+      // Function to close info popup - unified for all close methods
       function closeInfoPopup() {
         const popup = document.getElementById('infoPopup');
-        const title = document.getElementById('infoPopupTitle');
         
         if (!popup) return;
+        
+        // Explicitly reset overlay styles to ensure it doesn't block clicks
+        popup.style.display = 'none';
+        popup.style.pointerEvents = 'none';
         
         // Update ARIA attributes
         popup.setAttribute('aria-hidden', 'true');
@@ -514,23 +551,33 @@
             // Element might not be focusable anymore, ignore
             console.warn('Could not restore focus:', e);
           }
-          previousActiveElement = null;
         }
+        // Reset previousActiveElement after restoring focus
+        previousActiveElement = null;
       }
 
       // Initialize popup functionality
       document.addEventListener('DOMContentLoaded', () => {
-        // Wait a bit to ensure all elements are ready
-        setTimeout(() => {
+        // Function to initialize popup handlers
+        function initPopupHandlers() {
           const popup = document.getElementById('infoPopup');
           const closeBtn = document.getElementById('infoCloseBtn');
           const content = document.getElementById('infoPopupContent');
           const title = document.getElementById('infoPopupTitle');
           
           if (!popup || !content || !title) {
-            console.warn('Popup elements not found, popup functionality disabled');
+            console.warn('Popup elements not found, retrying in 100ms...', {
+              popup: !!popup,
+              content: !!content,
+              title: !!title,
+              readyState: document.readyState
+            });
+            // Retry after a short delay
+            setTimeout(initPopupHandlers, 100);
             return;
           }
+          
+          console.log('Popup elements found, initializing handlers');
           
           // Close button click handler
           if (closeBtn) {
@@ -552,44 +599,31 @@
             }
           });
           
-          // Handle click and keyboard events on popup triggers using event delegation
-          // Use capture phase to catch events before overlay intercepts them
-          document.addEventListener('click', (e) => {
-            // Check if popup elements exist before handling
-            const popupEl = document.getElementById('infoPopup');
-            if (!popupEl) {
-              return; // Popup elements not ready yet
-            }
-            
-            // Check if click is on a popup trigger
-            const trigger = e.target.closest('[data-popup-id]');
-            
-            if (trigger) {
+          // Handle click events on popup triggers - use direct event listeners
+          const popupTriggers = document.querySelectorAll('[data-popup-id]');
+          if (popupTriggers.length === 0) {
+            console.warn('No popup triggers found');
+          }
+          popupTriggers.forEach(trigger => {
+            trigger.addEventListener('click', function(e) {
               // Don't handle clicks inside popup box
               const popupBox = e.target.closest('.info-popup-box');
               const closeBtnEl = e.target.closest('.info-close-btn');
               
-              // If click is on close button, let it handle the close
-              if (closeBtnEl) {
+              // If click is on close button or inside popup box, don't handle it
+              if (closeBtnEl || popupBox) {
                 return;
               }
               
-              // If click is inside popup box (but not on close button), don't handle it
-              if (popupBox) {
-                return;
-              }
-              
-              // Prevent default and stop propagation
-              e.preventDefault();
-              e.stopImmediatePropagation();
-              
-              const popupId = trigger.getAttribute('data-popup-id');
+              const popupId = this.getAttribute('data-popup-id');
               if (popupId) {
-                // Open popup immediately (elements are already checked)
+                e.preventDefault();
+                e.stopPropagation();
+                console.log('Opening popup with ID:', popupId);
                 openInfoPopup(popupId);
               }
-            }
-          }, true); // Capture phase - catches events before they bubble
+            });
+          });
           
           // Keyboard handler for popup triggers
           document.addEventListener('keydown', (e) => {
@@ -611,7 +645,10 @@
               }
             }
           });
-        }, 100); // Small delay to ensure DOM is fully ready
+        }
+        
+        // Initialize popup handlers
+        initPopupHandlers();
         
         lucide.createIcons();
         
