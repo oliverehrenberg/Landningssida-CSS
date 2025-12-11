@@ -202,7 +202,7 @@ document.addEventListener("DOMContentLoaded", (() => {
       y: 40
     }), ScrollTrigger.create({
       trigger: section,
-      start: "top 80%",
+      start: "top 90%",
       end: "bottom 20%",
       onEnter: () => {
         section.classList.remove("section-hidden"), gsap.to(section, {
@@ -220,32 +220,24 @@ document.addEventListener("DOMContentLoaded", (() => {
                 }, {
                   opacity: 1,
                   y: 0,
-                  duration: .8,
-                  delay: 1e-4 * i,
-                  ease: "expo.out",
+                  duration: .5,
+                  delay: 0.03 * i,
+                  ease: "power2.out",
                   scrollTrigger: {
                     trigger: card,
-                    start: "top 85%",
+                    start: "top 95%",
                     end: "bottom center",
                     toggleActions: "play reverse play reverse"
                   }
                 }), ScrollTrigger.create({
                   trigger: card,
-                  start: "top 85%",
+                  start: "top 95%",
                   end: "bottom center",
                   onEnter: () => {
-                    card.classList.add("active"), gsap.to(card, {
-                      background: "linear-gradient(to bottom, rgba(28, 26, 46, 0.6) 0%, rgba(28, 26, 46, 0.6) 35%, rgba(229, 180, 71, 0.4) 100%)",
-                      duration: .8,
-                      ease: "expo.out"
-                    });
+                    card.classList.add("active");
                   },
                   onLeaveBack: () => {
-                    card.classList.remove("active"), gsap.to(card, {
-                      background: "transparent",
-                      duration: .8,
-                      ease: "expo.out"
-                    });
+                    card.classList.remove("active");
                   }
                 });
               }));
@@ -317,7 +309,7 @@ document.addEventListener("DOMContentLoaded", (() => {
       ease: "power2.out",
       scrollTrigger: {
         trigger: featuresIntro,
-        start: "top 90%",
+        start: "top 95%",
         toggleActions: "play none none none"
       }
     });
@@ -331,7 +323,7 @@ document.addEventListener("DOMContentLoaded", (() => {
       y: 20
     }), ScrollTrigger.create({
       trigger: card,
-      start: "top 90%",
+      start: "top 100%",
       end: "bottom center",
       onEnter: () => {
         card.classList.add("active");
@@ -340,8 +332,8 @@ document.addEventListener("DOMContentLoaded", (() => {
           y: 0,
           x: 0,
           scale: 1,
-          duration: 0.35,
-          stagger: 0.03,
+          duration: 0.3,
+          stagger: 0.02,
           ease: "power2.out"
         });
       },
