@@ -225,13 +225,13 @@ document.addEventListener("DOMContentLoaded", (() => {
                   ease: "expo.out",
                   scrollTrigger: {
                     trigger: card,
-                    start: "top center",
+                    start: "top 85%",
                     end: "bottom center",
                     toggleActions: "play reverse play reverse"
                   }
                 }), ScrollTrigger.create({
                   trigger: card,
-                  start: "top center",
+                  start: "top 85%",
                   end: "bottom center",
                   onEnter: () => {
                     card.classList.add("active"), gsap.to(card, {
@@ -317,7 +317,7 @@ document.addEventListener("DOMContentLoaded", (() => {
       ease: "power2.out",
       scrollTrigger: {
         trigger: featuresIntro,
-        start: "top center",
+        start: "top 90%",
         toggleActions: "play none none none"
       }
     });
@@ -331,33 +331,29 @@ document.addEventListener("DOMContentLoaded", (() => {
       y: 20
     }), ScrollTrigger.create({
       trigger: card,
-      start: "top center",
+      start: "top 90%",
       end: "bottom center",
       onEnter: () => {
+        card.classList.add("active");
         gsap.to([ content, visual, icon, title, description ], {
           opacity: 1,
           y: 0,
-          duration: .8,
-          stagger: .1,
-          ease: "expo.out"
+          x: 0,
+          scale: 1,
+          duration: 0.35,
+          stagger: 0.03,
+          ease: "power2.out"
         });
       },
       onLeaveBack: () => {
         gsap.to([ content, visual, icon, title, description ], {
           opacity: 0,
-          y: 20,
-          duration: .8,
-          ease: "expo.out"
+          y: 15,
+          x: 0,
+          scale: 1,
+          duration: 0.2,
+          ease: "power2.in"
         });
-      }
-    }), gsap.to(card, {
-      yPercent: 15,
-      ease: "none",
-      scrollTrigger: {
-        trigger: card,
-        start: "top bottom",
-        end: "bottom top",
-        scrub: .8
       }
     });
   })), document.querySelectorAll(".features-grid .feature-card").forEach((card => {

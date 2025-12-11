@@ -3,9 +3,9 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title data-translate="step2DetailTitle">Steg 2: Utvärdera leverantörens lämplighet - Construction Sourcing</title>
-    <link rel="stylesheet" href="style.css" />
-    <link rel="icon" type="image/svg+xml" href="assets/Favicon.svg" />
+    <title data-translate="step3DetailTitle">Steg 3: Kommunicera med alla leverantörer - Construction Sourcing</title>
+    <link rel="stylesheet" href="../style.css" />
+    <link rel="icon" type="image/svg+xml" href="../assets/Favicon.svg" />
     <script src="https://unpkg.com/lucide@latest"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   </head>
@@ -13,7 +13,7 @@
     <div class="scroll-progress"><div class="scroll-progress__bar"></div></div>
     <div id="header-container"></div>
     <script>
-      fetch('header.html')
+      fetch('../header.html')
         .then(response => response.text())
         .then(data => {
           document.getElementById('header-container').innerHTML = data;
@@ -23,21 +23,21 @@
     <!-- Hero Section -->
     <section class="step1-hero">
       <div class="step1-hero-content">
-        <div class="step1-hero-icon"><i class="fa-solid fa-shield-halved" aria-hidden="true"></i></div>
-        <h1 data-translate="step2DetailTitle">Steg 2: Utvärdera leverantörens lämplighet</h1>
-        <p class="step1-hero-subtitle" data-translate="step2DetailIntro">Granska och utvärdera leverantörsprofiler för att avgöra om de uppfyller dina projektkrav. Följ de stegvisa instruktionerna nedan för att bedöma företagsinformation, betyg, certifikat och fatta välgrundade beslut om potentiella leverantörer.</p>
+        <div class="step1-hero-icon"><i class="fa-solid fa-message" aria-hidden="true"></i></div>
+        <h1 data-translate="step3DetailTitle">Steg 3: Kommunicera med alla leverantörer</h1>
+        <p class="step1-hero-subtitle" data-translate="step3DetailIntro">Kommunicera med leverantörer via chattgränssnittet. Följ de stegvisa instruktionerna nedan för att utbyta meddelanden, förtydliga beställningsdetaljer och koordinera samarbete effektivt.</p>
         <div class="step1-hero-features">
           <div class="step1-hero-feature-item">
-            <i class="fa-solid fa-building" aria-hidden="true"></i>
-            <span>Omfattande företagsinformation</span>
+            <i class="fa-solid fa-comments" aria-hidden="true"></i>
+            <span>Direktmeddelanden i realtid</span>
           </div>
           <div class="step1-hero-feature-item">
-            <i class="fa-solid fa-star" aria-hidden="true"></i>
-            <span>Betyg och recensioner</span>
+            <i class="fa-solid fa-file-invoice" aria-hidden="true"></i>
+            <span>Offertförfrågningar och offerter</span>
           </div>
           <div class="step1-hero-feature-item">
-            <i class="fa-solid fa-certificate" aria-hidden="true"></i>
-            <span>Certifieringar och verifieringar</span>
+            <i class="fa-solid fa-list" aria-hidden="true"></i>
+            <span>Hantera alla konversationer</span>
           </div>
         </div>
       </div>
@@ -46,36 +46,36 @@
     <!-- Feature Details -->
     <section class="feature-detail-section">
       <div class="section-header">
-        <h2 data-translate="step2DetailInterfaceTitle">Översikt över leverantörsprofilsidan</h2>
+        <h2 data-translate="step3DetailInterfaceTitle">Översikt över chattgränssnittet</h2>
         <div class="section-divider-line"></div>
       </div>
       <div class="step1-visual-in-context">
         <div class="step1-visual-wrapper">
           <div class="step1-visual-image">
-            <img src="assets/leverantorer-step02-info.png" alt="Leverantörsprofil och information" loading="lazy" />
+            <img src="../assets/leverantorer-step03-förslag.png" alt="Chattgränssnitt och kommunikation" loading="lazy" />
           </div>
           <div class="step1-visual-info">
-            <div class="step1-visual-info-item" role="button" tabindex="0" aria-expanded="false" aria-label="Läs mer om företagsprofil" data-popup-id="visual-profile">
-              <div class="step1-visual-icon"><i class="fa-solid fa-building" aria-hidden="true"></i></div>
+            <div class="step1-visual-info-item" role="button" tabindex="0" aria-expanded="false" aria-label="Läs mer om konversationslista" data-popup-id="visual-conversations">
+              <div class="step1-visual-icon"><i class="fa-solid fa-list" aria-hidden="true"></i></div>
               <div class="step1-visual-text">
-                <h4>Företagsprofil</h4>
-                <p>Omfattande information om företaget och dess specialiseringar</p>
+                <h4>Konversationslista</h4>
+                <p>Översikt över alla aktiva konversationer med leverantörer</p>
               </div>
               <div class="step1-visual-arrow"><i class="fa-solid fa-chevron-right" aria-hidden="true"></i></div>
             </div>
-            <div class="step1-visual-info-item" role="button" tabindex="0" aria-expanded="false" aria-label="Läs mer om betyg och recensioner" data-popup-id="visual-ratings">
-              <div class="step1-visual-icon"><i class="fa-solid fa-star" aria-hidden="true"></i></div>
+            <div class="step1-visual-info-item" role="button" tabindex="0" aria-expanded="false" aria-label="Läs mer om meddelandevisning" data-popup-id="visual-messages">
+              <div class="step1-visual-icon"><i class="fa-solid fa-comments" aria-hidden="true"></i></div>
               <div class="step1-visual-text">
-                <h4>Betyg och recensioner</h4>
-                <p>Visuell visning av betyg och kundrecensioner</p>
+                <h4>Meddelandevisning</h4>
+                <p>Chronologisk visning av meddelanden i konversationen</p>
               </div>
               <div class="step1-visual-arrow"><i class="fa-solid fa-chevron-right" aria-hidden="true"></i></div>
             </div>
-            <div class="step1-visual-info-item" role="button" tabindex="0" aria-expanded="false" aria-label="Läs mer om certifieringar" data-popup-id="visual-certifications">
-              <div class="step1-visual-icon"><i class="fa-solid fa-certificate" aria-hidden="true"></i></div>
+            <div class="step1-visual-info-item" role="button" tabindex="0" aria-expanded="false" aria-label="Läs mer om offertförfrågningar" data-popup-id="visual-quotes">
+              <div class="step1-visual-icon"><i class="fa-solid fa-file-invoice" aria-hidden="true"></i></div>
               <div class="step1-visual-text">
-                <h4>Certifieringar</h4>
-                <p>Verifierade certifikat och kvalifikationer</p>
+                <h4>Offertförfrågningar</h4>
+                <p>Skicka och hantera offertförfrågningar direkt i chatten</p>
               </div>
               <div class="step1-visual-arrow"><i class="fa-solid fa-chevron-right" aria-hidden="true"></i></div>
             </div>
@@ -94,26 +94,26 @@
         <div class="step1-step">
           <div class="step1-step-header">
             <div class="step1-step-number">1</div>
-            <h3 data-translate="step2DetailStep1Title">Steg 1: Öppna leverantörsprofil</h3>
+            <h3 data-translate="step3DetailStep1Title">Steg 1: Få tillgång till chattgränssnittet</h3>
           </div>
           
           <div class="step-blocks">
             <div class="step-block step-block-action">
-              <div class="step-block-icon"><i class="fa-solid fa-hand-pointer" aria-hidden="true"></i></div>
+              <div class="step-block-icon"><i class="fa-solid fa-sign-in-alt" aria-hidden="true"></i></div>
               <div class="step-block-content">
                 <h4>Vad du ska göra här</h4>
                 <ul>
-                  <li>Klicka på 'Visa profil'-knappen på leverantörskortet</li>
-                  <li>Öppna den detaljerade leverantörsprofilsidan</li>
-                  <li>Få tillgång till omfattande information om företaget</li>
+                  <li>Logga in på ditt konto</li>
+                  <li>Klicka på kuvertikonen i menyn eller din avatar</li>
+                  <li>Välj 'Meddelanden' för att öppna chattgränssnittet</li>
                 </ul>
               </div>
             </div>
           </div>
           
           <div class="step-tip-inline">
-            <i class="fa-solid fa-lightbulb"></i>
-            <span>Du kan öppna flera profiler i olika flikar för att jämföra leverantörer.</span>
+            <i class="fa-solid fa-lightbulb" aria-hidden="true"></i>
+            <span>Du kan också komma åt chatten direkt från leverantörsprofilsidan.</span>
           </div>
           
           <div class="step-button-wrapper">
@@ -126,18 +126,18 @@
         <div class="step1-step">
           <div class="step1-step-header">
             <div class="step1-step-number">2</div>
-            <h3 data-translate="step2DetailStep2Title">Steg 2: Granska företagsinformation</h3>
+            <h3 data-translate="step3DetailStep2Title">Steg 2: Initiera eller fortsätt konversation</h3>
           </div>
           
           <div class="step-blocks">
             <div class="step-block step-block-action">
-              <div class="step-block-icon"><i class="fa-solid fa-file-lines" aria-hidden="true"></i></div>
+              <div class="step-block-icon"><i class="fa-solid fa-comment-dots" aria-hidden="true"></i></div>
               <div class="step-block-content">
                 <h4>Vad du ska göra här</h4>
                 <ul>
-                  <li>Granska företagets grundläggande information</li>
-                  <li>Läs företagsbeskrivningen för att förstå expertis</li>
-                  <li>Kontrollera plats och kontaktuppgifter</li>
+                  <li>Välj leverantör från din kontaktlista</li>
+                  <li>Klicka på befintlig konversation för att fortsätta</li>
+                  <li>Starta ny konversation med 'Starta konversation'</li>
                 </ul>
               </div>
             </div>
@@ -145,7 +145,7 @@
           
           <div class="step-tip-inline">
             <i class="fa-solid fa-lightbulb" aria-hidden="true"></i>
-            <span>Företagsbeskrivningen ger värdefull insikt i deras erfarenhet och specialiseringar.</span>
+            <span>Alla konversationer sparas automatiskt för framtida referens.</span>
           </div>
           
           <div class="step-button-wrapper">
@@ -158,18 +158,18 @@
         <div class="step1-step">
           <div class="step1-step-header">
             <div class="step1-step-number">3</div>
-            <h3 data-translate="step2DetailStep3Title">Steg 3: Kontrollera betyg och certifikat</h3>
+            <h3 data-translate="step3DetailStep3Title">Steg 3: Utbyta meddelanden</h3>
           </div>
           
           <div class="step-blocks">
             <div class="step-block step-block-action">
-              <div class="step-block-icon"><i class="fa-solid fa-star" aria-hidden="true"></i></div>
+              <div class="step-block-icon"><i class="fa-solid fa-keyboard" aria-hidden="true"></i></div>
               <div class="step-block-content">
                 <h4>Vad du ska göra här</h4>
                 <ul>
-                  <li>Granska företagets betyg och poäng</li>
-                  <li>Kontrollera certifikatavsnittet</li>
-                  <li>Verifiera nödvändiga certifikat för ditt projekt</li>
+                  <li>Skriv ditt meddelande i meddelandefältet</li>
+                  <li>Ställ frågor eller förtydliga beställningsdetaljer</li>
+                  <li>Klicka 'Skicka' eller tryck Enter för att skicka</li>
                 </ul>
               </div>
             </div>
@@ -177,7 +177,7 @@
           
           <div class="step-tip-inline">
             <i class="fa-solid fa-lightbulb" aria-hidden="true"></i>
-            <span>Betyg och certifikat är viktiga indikatorer på företagets kvalitet och pålitlighet.</span>
+            <span>Meddelanden levereras i realtid för omedelbar kommunikation.</span>
           </div>
           
           <div class="step-button-wrapper">
@@ -190,18 +190,18 @@
         <div class="step1-step">
           <div class="step1-step-header">
             <div class="step1-step-number">4</div>
-            <h3 data-translate="step2DetailStep4Title">Steg 4: Utvärdera hållbarhet och ytterligare information</h3>
+            <h3 data-translate="step3DetailStep4Title">Steg 4: Hantera konversationer och förfrågningar</h3>
           </div>
           
           <div class="step-blocks">
             <div class="step-block step-block-action">
-              <div class="step-block-icon"><i class="fa-solid fa-leaf" aria-hidden="true"></i></div>
+              <div class="step-block-icon"><i class="fa-solid fa-file-invoice" aria-hidden="true"></i></div>
               <div class="step-block-content">
                 <h4>Vad du ska göra här</h4>
                 <ul>
-                  <li>Granska hållbarhetsavsnittet</li>
-                  <li>Kontrollera tidigare projekt och kundrecensioner</li>
-                  <li>Utvärdera leverantörens lämplighet för dina behov</li>
+                  <li>Skicka offertförfrågningar direkt i chatten</li>
+                  <li>Granska mottagna offerter och diskutera villkor</li>
+                  <li>Bifoga filer och dela projektdokument</li>
                 </ul>
               </div>
             </div>
@@ -209,7 +209,7 @@
           
           <div class="step-tip-inline">
             <i class="fa-solid fa-lightbulb" aria-hidden="true"></i>
-            <span>Hållbarhetsinformation och projektportfölj ger en komplett bild av företagets kompetens.</span>
+            <span>All konversationshistorik sparas automatiskt för framtida referens.</span>
           </div>
           
           <div class="step-button-wrapper">
@@ -224,7 +224,7 @@
     <div class="section-divider"></div>
     <div id="footer-container"></div>
     <script>
-      fetch('footer.html')
+      fetch('../footer.html')
         .then(response => response.text())
         .then(data => {
           document.getElementById('footer-container').innerHTML = data;
@@ -248,148 +248,177 @@
     
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollTrigger.min.js"></script>
-    <script src="main.js"></script>
-    <script src="popup.js"></script>
-    <script src="lang.js"></script>
+    <script src="../main.js"></script>
+    <script src="../popup.js"></script>
+    <script src="../lang.js"></script>
     <script>
       // Info popup data - detailed information for each section
       const infoPopupData = {
         step1: {
-          title: 'Steg 1: Öppna leverantörsprofil',
+          title: 'Steg 1: Få tillgång till chattgränssnittet',
           content: `
-            <h3>Detaljerad information om att öppna leverantörsprofil</h3>
-            <p>Från katalogsidan kan du enkelt komma åt detaljerad information om varje leverantör genom att klicka på 'Visa profil'-knappen. Detta öppnar en omfattande profilsida med all relevant information om företaget.</p>
-            <h4>Navigering till profil</h4>
+            <h3>Detaljerad information om att komma åt chattgränssnittet</h3>
+            <p>Chattgränssnittet är din centrala plats för all kommunikation med leverantörer. Det finns flera sätt att komma åt chatten beroende på var du befinner dig på plattformen.</p>
+            <h4>Tillgång via huvudmenyn</h4>
             <ul>
-              <li><strong>Från katalogsidan:</strong> Klicka på 'Visa profil'-knappen på valfritt leverantörskort</li>
-              <li><strong>Direktlänkar:</strong> Använd direkta länkar för att dela specifika profiler</li>
-              <li><strong>Snabbtillgång:</strong> Profiler öppnas i samma flik eller ny flik beroende på inställningar</li>
-              <li><strong>Breadcrumbs:</strong> Tydlig navigering visar din nuvarande position</li>
+              <li><strong>Kuvertikonen:</strong> Klicka på kuvertikonen i menyn längst upp för att öppna meddelandesektionen</li>
+              <li><strong>Direktlänk:</strong> Snabb åtkomst till alla dina meddelanden och konversationer</li>
+              <li><strong>Notiser:</strong> Se antal olästa meddelanden direkt i ikonen</li>
             </ul>
-            <h4>Profilsidans struktur</h4>
+            <h4>Tillgång via avatar</h4>
             <ul>
-              <li><strong>Huvudsektion:</strong> Företagslogotyp, namn, plats och övergripande betyg</li>
-              <li><strong>Informationsflikar:</strong> Organiserad information i olika kategorier</li>
-              <li><strong>Åtgärdsknappar:</strong> Direkta länkar för kontakt och kommunikation</li>
+              <li><strong>Avatar-klick:</strong> Klicka på din avatar längst ner på skärmen</li>
+              <li><strong>Menyval:</strong> Välj 'Meddelanden' från menyn som visas</li>
+              <li><strong>Snabbnavigering:</strong> Enkel åtkomst från var som helst på plattformen</li>
             </ul>
-            <p>Profilsidan är designad för att ge dig all information du behöver för att fatta välgrundade beslut om leverantörer.</p>
+            <h4>Tillgång från leverantörsprofil</h4>
+            <ul>
+              <li><strong>'Starta konversation':</strong> Klicka på knappen för att öppna chatten direkt med leverantören</li>
+              <li><strong>'Kontakta leverantör':</strong> Alternativ knapp för att initiera kommunikation</li>
+              <li><strong>Kontextuell start:</strong> Starta konversation med relevant kontext från profilen</li>
+            </ul>
+            <p>Chattgränssnittet är designat för att vara lättillgängligt och intuitivt, oavsett var du befinner dig på plattformen.</p>
           `
         },
         step2: {
-          title: 'Steg 2: Granska företagsinformation',
+          title: 'Steg 2: Initiera eller fortsätt konversation',
           content: `
-            <h3>Detaljerad information om företagsinformation</h3>
-            <p>Företagsinformationssektionen ger dig en omfattande översikt över leverantörens grundläggande detaljer och specialiseringar.</p>
-            <h4>Grundläggande information</h4>
+            <h3>Detaljerad information om konversationshantering</h3>
+            <p>Chattgränssnittet gör det enkelt att både starta nya konversationer och fortsätta befintliga diskussioner med leverantörer.</p>
+            <h4>Starta ny konversation</h4>
             <ul>
-              <li><strong>Företagsnamn:</strong> Officiellt registrerat namn och eventuella handelsnamn</li>
-              <li><strong>Plats:</strong> Fysisk adress och verksamhetsområde</li>
-              <li><strong>Kontaktuppgifter:</strong> Telefonnummer, e-post och webbplats</li>
-              <li><strong>Specialisering:</strong> Huvudsakliga områden och expertis</li>
+              <li><strong>Kontaktlista:</strong> Välj leverantör från din lista över kontakter eller leverantörer</li>
+              <li><strong>Sökfunktion:</strong> Använd sökfunktionen för att snabbt hitta specifik leverantör</li>
+              <li><strong>Från profil:</strong> Starta konversation direkt från leverantörsprofilsidan</li>
+              <li><strong>Kontextuell start:</strong> Ny konversation skapas automatiskt med relevant kontext</li>
             </ul>
-            <h4>Företagsbeskrivning</h4>
+            <h4>Fortsätt befintlig konversation</h4>
             <ul>
-              <li><strong>Historia:</strong> Företagets bakgrund och erfarenhet</li>
-              <li><strong>Expertis:</strong> Specifika kompetenser och färdigheter</li>
-              <li><strong>Projekttyper:</strong> Typer av projekt företaget vanligtvis hanterar</li>
-              <li><strong>Unika fördelar:</strong> Vad som gör företaget särskilt</li>
+              <li><strong>Konversationslista:</strong> Klicka på konversationstråden i listan</li>
+              <li><strong>Konversationshistorik:</strong> Alla tidigare meddelanden visas automatiskt</li>
+              <li><strong>Kontextbevarande:</strong> All kontext och information från tidigare meddelanden bevaras</li>
+              <li><strong>Snabbåtergång:</strong> Enkelt att återgå till tidigare diskussioner</li>
             </ul>
-            <p>Denna information hjälper dig att förstå om företaget passar dina specifika projektkrav och förväntningar.</p>
+            <h4>Konversationshantering</h4>
+            <ul>
+              <li><strong>Automatisk sparande:</strong> Alla konversationer sparas automatiskt</li>
+              <li><strong>Sök i historik:</strong> Sök i tidigare meddelanden och konversationer</li>
+              <li><strong>Organisering:</strong> Konversationer organiseras efter leverantör och datum</li>
+            </ul>
+            <p>Systemet är designat för att göra kommunikationen så smidig och organiserad som möjligt.</p>
           `
         },
         step3: {
-          title: 'Steg 3: Kontrollera betyg och certifikat',
+          title: 'Steg 3: Utbyta meddelanden',
           content: `
-            <h3>Detaljerad information om betyg och certifikat</h3>
-            <p>Betyg och certifikat är kritiska faktorer för att bedöma en leverantörs kvalitet, pålitlighet och förmåga att uppfylla dina projektkrav.</p>
-            <h4>Betygssystem</h4>
+            <h3>Detaljerad information om meddelandeutbyte</h3>
+            <p>Meddelandeutbytet är kärnan i chattgränssnittet och ger dig möjlighet att kommunicera direkt med leverantörer i realtid.</p>
+            <h4>Skriva och skicka meddelanden</h4>
             <ul>
-              <li><strong>Stjärnbetyg:</strong> Visuell representation av övergripande betyg (1-5 stjärnor)</li>
-              <li><strong>Numeriska poäng:</strong> Detaljerade poäng för olika aspekter</li>
-              <li><strong>Kategoribetyg:</strong> Betyg för specifika områden som kvalitet, service, prissättning</li>
-              <li><strong>Kundrecensioner:</strong> Verifierade recensioner från tidigare kunder</li>
+              <li><strong>Meddelandefält:</strong> Skriv ditt meddelande i fältet längst ner i chattfönstret</li>
+              <li><strong>Skicka-knapp:</strong> Klicka på 'Skicka'-knappen för att skicka meddelandet</li>
+              <li><strong>Enter-tangent:</strong> Tryck på Enter för snabb sändning</li>
+              <li><strong>Realtidsleverans:</strong> Meddelanden levereras omedelbart till mottagaren</li>
             </ul>
-            <h4>Certifieringar</h4>
+            <h4>Meddelandetyper</h4>
             <ul>
-              <li><strong>Kvalitetsstandarder:</strong> ISO-certifieringar och kvalitetssystem</li>
-              <li><strong>Säkerhetscertifikat:</strong> Arbetsmiljö- och säkerhetscertifikat</li>
-              <li><strong>Branschspecifika:</strong> Certifikat relevanta för byggbranschen</li>
-              <li><strong>Miljöcertifieringar:</strong> Hållbarhets- och miljöcertifikat</li>
-              <li><strong>Verifieringsstatus:</strong> Bekräftad verifiering av certifikatens giltighet</li>
+              <li><strong>Textmeddelanden:</strong> Vanliga textmeddelanden för kommunikation</li>
+              <li><strong>Förfrågningar:</strong> Ställ frågor och förtydliga beställningsdetaljer</li>
+              <li><strong>Specifikationer:</strong> Diskutera projektkrav och specifikationer</li>
+              <li><strong>Koordinering:</strong> Koordinera projektkrav och samarbetsdetaljer</li>
             </ul>
-            <p>Alla betyg och certifikat är kontinuerligt uppdaterade och verifierade för att säkerställa aktuell och korrekt information.</p>
+            <h4>Avancerade funktioner</h4>
+            <ul>
+              <li><strong>Offertförfrågningar:</strong> Skicka offertförfrågningar direkt från chatten</li>
+              <li><strong>Offertskickning:</strong> Skicka offerter direkt till leverantörer</li>
+              <li><strong>Filbifogning:</strong> Bifoga filer och dokument till meddelanden</li>
+              <li><strong>Projektreferenser:</strong> Referera till specifika objekt från ditt projekt</li>
+            </ul>
+            <p>All kommunikation sker i realtid, vilket möjliggör snabb och effektiv koordinering med leverantörer.</p>
           `
         },
         step4: {
-          title: 'Steg 4: Utvärdera hållbarhet och ytterligare information',
+          title: 'Steg 4: Hantera konversationer och förfrågningar',
           content: `
-            <h3>Detaljerad information om hållbarhet och ytterligare information</h3>
-            <p>Hållbarhetssektionen och ytterligare information ger dig en komplett bild av företagets miljöengagemang och övergripande kompetens.</p>
-            <h4>Hållbarhetsinformation</h4>
+            <h3>Detaljerad information om hantering av konversationer och förfrågningar</h3>
+            <p>Chattgränssnittet erbjuder omfattande funktioner för att hantera konversationer, offertförfrågningar och samarbetsdetaljer.</p>
+            <h4>Offertförfrågningar</h4>
             <ul>
-              <li><strong>Miljöpraxis:</strong> Företagets miljöarbete och initiativ</li>
-              <li><strong>Hållbara material:</strong> Användning av miljövänliga och återvinningsbara material</li>
-              <li><strong>Energieffektivitet:</strong> Fokus på energieffektiva lösningar</li>
-              <li><strong>Certifieringar:</strong> Miljö- och hållbarhetscertifikat</li>
-              <li><strong>Framtidsplaner:</strong> Strategier för kontinuerlig förbättring</li>
+              <li><strong>Skicka förfrågningar:</strong> Skicka detaljerade offertförfrågningar direkt i chatten</li>
+              <li><strong>Specifikationer:</strong> Inkludera detaljerade projektkrav och specifikationer</li>
+              <li><strong>Spårning:</strong> Följ status på dina offertförfrågningar</li>
+              <li><strong>Påminnelser:</strong> Få påminnelser om svar på förfrågningar</li>
             </ul>
-            <h4>Ytterligare information</h4>
+            <h4>Offertgranskning</h4>
             <ul>
-              <li><strong>Projektportfölj:</strong> Bildgalleri och beskrivningar av tidigare projekt</li>
-              <li><strong>Kundrecensioner:</strong> Detaljerade recensioner från tidigare kunder</li>
-              <li><strong>Referenser:</strong> Kontaktuppgifter till tidigare kunder för referenser</li>
-              <li><strong>Medlemskap:</strong> Medlemskap i branschorganisationer</li>
-              <li><strong>Utmärkelser:</strong> Tävlingar och utmärkelser företaget har vunnit</li>
+              <li><strong>Mottagna offerter:</strong> Granska alla mottagna offerter i chatten</li>
+              <li><strong>Jämförelse:</strong> Jämför offerter från olika leverantörer</li>
+              <li><strong>Diskussion:</strong> Diskutera villkor och detaljer direkt med leverantören</li>
+              <li><strong>Beslut:</strong> Fatta beslut baserat på offerter och diskussioner</li>
             </ul>
-            <p>Denna omfattande information hjälper dig att utvärdera leverantörens lämplighet för dina specifika behov och projektkrav.</p>
+            <h4>Dokumenthantering</h4>
+            <ul>
+              <li><strong>Filbifogning:</strong> Bifoga filer och dokument till meddelanden</li>
+              <li><strong>Projektdokument:</strong> Dela projektdokument direkt i chatten</li>
+              <li><strong>Referenser:</strong> Referera till specifika objekt från ditt projekt</li>
+              <li><strong>Dokumentarkiv:</strong> Alla delade dokument sparas för framtida referens</li>
+            </ul>
+            <h4>Konversationshistorik</h4>
+            <ul>
+              <li><strong>Automatisk sparande:</strong> All konversationshistorik sparas automatiskt</li>
+              <li><strong>Sökfunktion:</strong> Sök i tidigare meddelanden och konversationer</li>
+              <li><strong>Export:</strong> Exportera konversationshistorik för arkivering</li>
+              <li><strong>Referens:</strong> Enkelt att återgå till tidigare diskussioner och beslut</li>
+            </ul>
+            <p>Alla dessa funktioner är integrerade i chattgränssnittet för sömlös koordinering och effektiv kommunikation.</p>
           `
         },
-        'visual-profile': {
-          title: 'Företagsprofil',
+        'visual-conversations': {
+          title: 'Konversationslista',
           content: `
-            <h3>Detaljerad information om företagsprofil</h3>
-            <p>Företagsprofilen är den centrala platsen där all information om leverantören samlas och presenteras på ett organiserat sätt.</p>
+            <h3>Detaljerad information om konversationslista</h3>
+            <p>Konversationslistan ger dig en översikt över alla dina aktiva konversationer med leverantörer och gör det enkelt att navigera mellan olika diskussioner.</p>
             <ul>
-              <li><strong>Huvudsektion:</strong> Företagslogotyp, namn, plats och övergripande betyg visas tydligt</li>
-              <li><strong>Informationsflikar:</strong> Profilen är organiserad i flikar för olika typer av information</li>
-              <li><strong>Företagsinformation:</strong> Detaljerad beskrivning av företaget, dess historia och specialiseringar</li>
-              <li><strong>Kontaktinformation:</strong> Direkta kontaktuppgifter för snabb kommunikation</li>
-              <li><strong>Specialiseringar:</strong> Tydlig översikt över företagets huvudområden och expertis</li>
-              <li><strong>Responsiv design:</strong> Profilen anpassar sig automatiskt till din skärmstorlek</li>
+              <li><strong>Leverantörsnamn:</strong> Tydlig visning av vilken leverantör varje konversation är med</li>
+              <li><strong>Förhandsvisning:</strong> Se förhandsvisning av senaste meddelandet i varje konversation</li>
+              <li><strong>Tidsstämpel:</strong> Se när senaste meddelandet skickades</li>
+              <li><strong>Notiser:</strong> Visuella indikatorer för olästa meddelanden</li>
+              <li><strong>Sortering:</strong> Konversationer sorteras automatiskt efter senaste aktivitet</li>
+              <li><strong>Sökfunktion:</strong> Sök efter specifika konversationer eller leverantörer</li>
             </ul>
-            <p>Profilen är designad för att ge dig all information du behöver för att fatta välgrundade beslut om leverantörer.</p>
+            <p>Konversationslistan är designad för att göra det enkelt att hålla koll på alla dina kommunikationer och snabbt växla mellan olika konversationer.</p>
           `
         },
-        'visual-ratings': {
-          title: 'Betyg och recensioner',
+        'visual-messages': {
+          title: 'Meddelandevisning',
           content: `
-            <h3>Detaljerad information om betyg och recensioner</h3>
-            <p>Betyg och recensioner ger dig värdefull insikt i leverantörens prestanda och tillförlitlighet baserat på tidigare kunders erfarenheter.</p>
+            <h3>Detaljerad information om meddelandevisning</h3>
+            <p>Meddelandevisningsområdet visar hela konversationshistoriken på ett tydligt och organiserat sätt.</p>
             <ul>
-              <li><strong>Visuell visning:</strong> Betyg visas med stjärnor eller numeriska poäng för snabb översikt</li>
-              <li><strong>Kategoribetyg:</strong> Detaljerade betyg för olika aspekter som kvalitet, service, prissättning</li>
-              <li><strong>Kundrecensioner:</strong> Verifierade recensioner från tidigare kunder med detaljerade kommentarer</li>
-              <li><strong>Betygshistorik:</strong> Översikt över betygsutveckling över tid</li>
-              <li><strong>Verifierade recensioner:</strong> Endast verifierade kundrecensioner visas för att säkerställa autenticitet</li>
-              <li><strong>Filtrering:</strong> Möjlighet att filtrera recensioner efter datum, betyg eller kategori</li>
+              <li><strong>Chronologisk ordning:</strong> Meddelanden visas i kronologisk ordning för enkel följd</li>
+              <li><strong>Visuell separation:</strong> Dina meddelanden visas på ena sidan, leverantörsmeddelanden på den andra</li>
+              <li><strong>Meddelandeformat:</strong> Tydlig formatering med tidsstämplar och avsändarinformation</li>
+              <li><strong>Scrollbar:</strong> Enkel scrollning genom långa konversationer</li>
+              <li><strong>Automatisk uppdatering:</strong> Nya meddelanden visas automatiskt när de anländer</li>
+              <li><strong>Meddelandestatus:</strong> Se status på skickade meddelanden (levererat, läst, etc.)</li>
             </ul>
-            <p>Betyg och recensioner hjälper dig att bedöma leverantörens pålitlighet och kvalitet baserat på verkliga kunders erfarenheter.</p>
+            <p>Meddelandevisningen är designad för att göra det enkelt att följa konversationsflödet och förstå sammanhanget i diskussionen.</p>
           `
         },
-        'visual-certifications': {
-          title: 'Certifieringar',
+        'visual-quotes': {
+          title: 'Offertförfrågningar',
           content: `
-            <h3>Detaljerad information om certifieringar</h3>
-            <p>Certifieringar är viktiga indikatorer på en leverantörs kvalitet, kompetens och förmåga att uppfylla branschstandarder.</p>
+            <h3>Detaljerad information om offertförfrågningar</h3>
+            <p>Offertförfrågningar är integrerade direkt i chattgränssnittet, vilket gör det enkelt att skicka och hantera offerter.</p>
             <ul>
-              <li><strong>Visuella märken:</strong> Certifikat visas som märken eller ikoner för snabb identifiering</li>
-              <li><strong>Kvalitetsstandarder:</strong> ISO-certifieringar och andra kvalitetssystem</li>
-              <li><strong>Säkerhetscertifikat:</strong> Arbetsmiljö- och säkerhetscertifikat som bevisar säker arbetsmiljö</li>
-              <li><strong>Branschspecifika:</strong> Certifikat relevanta för byggbranschen och specifika specialiseringar</li>
-              <li><strong>Miljöcertifieringar:</strong> Hållbarhets- och miljöcertifikat som visar miljöengagemang</li>
-              <li><strong>Verifieringsstatus:</strong> Alla certifikat är verifierade för att säkerställa giltighet</li>
+              <li><strong>Skicka förfrågningar:</strong> Skicka detaljerade offertförfrågningar direkt från chatten</li>
+              <li><strong>Specifikationer:</strong> Inkludera detaljerade projektkrav och specifikationer i förfrågningen</li>
+              <li><strong>Spårning:</strong> Följ status på dina offertförfrågningar och se när de har besvarats</li>
+              <li><strong>Mottagna offerter:</strong> Granska mottagna offerter direkt i chatten</li>
+              <li><strong>Diskussion:</strong> Diskutera offertdetaljer och villkor direkt med leverantören</li>
+              <li><strong>Jämförelse:</strong> Jämför offerter från olika leverantörer för att fatta bästa beslut</li>
             </ul>
-            <p>Certifieringar hjälper dig att verifiera att leverantören uppfyller de nödvändiga standarderna och krav som krävs för ditt projekt.</p>
+            <p>Offertförfrågningar är designade för att vara en sömlös del av kommunikationsprocessen, vilket gör det enkelt att koordinera och fatta beslut.</p>
           `
         }
       };
