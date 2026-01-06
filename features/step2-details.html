@@ -23,7 +23,6 @@
     <!-- Hero Section -->
     <section class="step1-hero">
       <div class="step1-hero-content">
-        <div class="step1-hero-icon"><i class="fa-solid fa-shield-halved" aria-hidden="true"></i></div>
         <h1 data-translate="step2DetailTitle">Steg 2: Utvärdera leverantörens lämplighet</h1>
         <p class="step1-hero-subtitle" data-translate="step2DetailIntro">Granska och utvärdera leverantörsprofiler för att avgöra om de uppfyller dina projektkrav. Följ de stegvisa instruktionerna nedan för att bedöma företagsinformation, betyg, certifikat och fatta välgrundade beslut om potentiella leverantörer.</p>
         <div class="step1-hero-features">
@@ -61,7 +60,6 @@
                 <h4>Företagsprofil</h4>
                 <p>Omfattande information om företaget och dess specialiseringar</p>
               </div>
-              <div class="step1-visual-arrow"><i class="fa-solid fa-chevron-right" aria-hidden="true"></i></div>
             </div>
             <div class="step1-visual-info-item" role="button" tabindex="0" aria-expanded="false" aria-label="Läs mer om betyg och recensioner" data-popup-id="visual-ratings">
               <div class="step1-visual-icon"><i class="fa-solid fa-star" aria-hidden="true"></i></div>
@@ -69,7 +67,6 @@
                 <h4>Betyg och recensioner</h4>
                 <p>Visuell visning av betyg och kundrecensioner</p>
               </div>
-              <div class="step1-visual-arrow"><i class="fa-solid fa-chevron-right" aria-hidden="true"></i></div>
             </div>
             <div class="step1-visual-info-item" role="button" tabindex="0" aria-expanded="false" aria-label="Läs mer om certifieringar" data-popup-id="visual-certifications">
               <div class="step1-visual-icon"><i class="fa-solid fa-certificate" aria-hidden="true"></i></div>
@@ -77,7 +74,6 @@
                 <h4>Certifieringar</h4>
                 <p>Verifierade certifikat och kvalifikationer</p>
               </div>
-              <div class="step1-visual-arrow"><i class="fa-solid fa-chevron-right" aria-hidden="true"></i></div>
             </div>
           </div>
         </div>
@@ -223,13 +219,6 @@
 
     <div class="section-divider"></div>
     <div id="footer-container"></div>
-    <script>
-      fetch('../footer.html')
-        .then(response => response.text())
-        .then(data => {
-          document.getElementById('footer-container').innerHTML = data;
-        });
-    </script>
     
     <div id="popup-root"></div>
     

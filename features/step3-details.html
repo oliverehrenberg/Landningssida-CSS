@@ -23,7 +23,6 @@
     <!-- Hero Section -->
     <section class="step1-hero">
       <div class="step1-hero-content">
-        <div class="step1-hero-icon"><i class="fa-solid fa-message" aria-hidden="true"></i></div>
         <h1 data-translate="step3DetailTitle">Steg 3: Kommunicera med alla leverantörer</h1>
         <p class="step1-hero-subtitle" data-translate="step3DetailIntro">Kommunicera med leverantörer via chattgränssnittet. Följ de stegvisa instruktionerna nedan för att utbyta meddelanden, förtydliga beställningsdetaljer och koordinera samarbete effektivt.</p>
         <div class="step1-hero-features">
@@ -61,7 +60,6 @@
                 <h4>Konversationslista</h4>
                 <p>Översikt över alla aktiva konversationer med leverantörer</p>
               </div>
-              <div class="step1-visual-arrow"><i class="fa-solid fa-chevron-right" aria-hidden="true"></i></div>
             </div>
             <div class="step1-visual-info-item" role="button" tabindex="0" aria-expanded="false" aria-label="Läs mer om meddelandevisning" data-popup-id="visual-messages">
               <div class="step1-visual-icon"><i class="fa-solid fa-comments" aria-hidden="true"></i></div>
@@ -69,7 +67,6 @@
                 <h4>Meddelandevisning</h4>
                 <p>Chronologisk visning av meddelanden i konversationen</p>
               </div>
-              <div class="step1-visual-arrow"><i class="fa-solid fa-chevron-right" aria-hidden="true"></i></div>
             </div>
             <div class="step1-visual-info-item" role="button" tabindex="0" aria-expanded="false" aria-label="Läs mer om offertförfrågningar" data-popup-id="visual-quotes">
               <div class="step1-visual-icon"><i class="fa-solid fa-file-invoice" aria-hidden="true"></i></div>
@@ -77,7 +74,6 @@
                 <h4>Offertförfrågningar</h4>
                 <p>Skicka och hantera offertförfrågningar direkt i chatten</p>
               </div>
-              <div class="step1-visual-arrow"><i class="fa-solid fa-chevron-right" aria-hidden="true"></i></div>
             </div>
           </div>
         </div>
@@ -223,13 +219,6 @@
 
     <div class="section-divider"></div>
     <div id="footer-container"></div>
-    <script>
-      fetch('../footer.html')
-        .then(response => response.text())
-        .then(data => {
-          document.getElementById('footer-container').innerHTML = data;
-        });
-    </script>
     
     <div id="popup-root"></div>
     

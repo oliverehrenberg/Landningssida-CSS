@@ -1,22 +1,26 @@
 document.addEventListener("DOMContentLoaded", (() => {
+  // Determine base path based on current location
+  const isFeaturesPage = window.location.pathname.includes('/features/');
+  const basePath = isFeaturesPage ? '../' : '';
+  
   // Load header, footer, features summary, about, and CTA sections
   Promise.all([
-    fetch('header.html').then(response => response.text()),
-    fetch('footer.html').then(response => response.text()),
-    fetch('features-summary.html').then(response => response.text()),
-    fetch('about.html').then(response => response.text()),
-    fetch('cta.html').then(response => response.text())
+    fetch(basePath + 'header.html').then(response => response.text()),
+    fetch(basePath + 'footer.html').then(response => response.text()),
+    fetch(basePath + 'features-summary.html').then(response => response.text()),
+    fetch(basePath + 'about.html').then(response => response.text()),
+    fetch(basePath + 'cta.html').then(response => response.text())
   ]).then(([headerData, footerData, featuresSummaryData, aboutData, ctaData]) => {
-    // Insert header
+    // Insert header only if container exists and is empty
     const headerContainer = document.getElementById('header-container');
-    if (headerContainer) {
+    if (headerContainer && !headerContainer.innerHTML.trim()) {
       headerContainer.innerHTML = headerData;
       initializeHeader();
     }
 
-    // Insert footer
+    // Insert footer only if container exists and is empty
     const footerContainer = document.getElementById('footer-container');
-    if (footerContainer) {
+    if (footerContainer && !footerContainer.innerHTML.trim()) {
       footerContainer.innerHTML = footerData;
       initializeFooter();
       
