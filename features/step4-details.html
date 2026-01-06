@@ -3,9 +3,9 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title data-translate="step5DetailTitle">Steg 5: Skicka offertförfrågan - Construction Sourcing</title>
-    <link rel="stylesheet" href="style.css" />
-    <link rel="icon" type="image/svg+xml" href="assets/Favicon.svg" />
+    <title data-translate="step4DetailTitle">Steg 4: Skapa nytt projekt - Construction Sourcing</title>
+    <link rel="stylesheet" href="../style.css" />
+    <link rel="icon" type="image/svg+xml" href="../assets/Favicon.svg" />
     <script src="https://unpkg.com/lucide@latest"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   </head>
@@ -13,7 +13,7 @@
     <div class="scroll-progress"><div class="scroll-progress__bar"></div></div>
     <div id="header-container"></div>
     <script>
-      fetch('header.html')
+      fetch('../header.html')
         .then(response => response.text())
         .then(data => {
           document.getElementById('header-container').innerHTML = data;
@@ -23,21 +23,21 @@
     <!-- Hero Section -->
     <section class="step1-hero">
       <div class="step1-hero-content">
-        <div class="step1-hero-icon"><i class="fa-solid fa-file-text" aria-hidden="true"></i></div>
-        <h1 data-translate="step5DetailTitle">Steg 5: Skicka offertförfrågan</h1>
-        <p class="step1-hero-subtitle" data-translate="step5DetailIntro">Skapa och skicka offertförfrågningar till leverantörer för att få konkurrenskraftiga erbjudanden för dina projektbehov. Följ de stegvisa instruktionerna nedan för att specificera krav, välja leverantörer och hantera offertförfrågningar.</p>
+        <div class="step1-hero-icon"><i class="fa-solid fa-folder-plus" aria-hidden="true"></i></div>
+        <h1 data-translate="step4DetailTitle">Steg 4: Skapa nytt projekt</h1>
+        <p class="step1-hero-subtitle" data-translate="step4DetailIntro">Skapa ett nytt projekt för att organisera och strukturera ditt byggprojekt. Följ de stegvisa instruktionerna nedan för att konfigurera projektinformation, tilldela projektledare och ställa in projektspecifika inställningar.</p>
         <div class="step1-hero-features">
           <div class="step1-hero-feature-item">
             <i class="fa-solid fa-file-lines" aria-hidden="true"></i>
-            <span>Detaljerade projektkrav</span>
+            <span>Projektinformationsformulär</span>
           </div>
           <div class="step1-hero-feature-item">
-            <i class="fa-solid fa-users" aria-hidden="true"></i>
-            <span>Välj leverantörer</span>
+            <i class="fa-solid fa-user-tie" aria-hidden="true"></i>
+            <span>Tilldela projektledare</span>
           </div>
           <div class="step1-hero-feature-item">
-            <i class="fa-solid fa-paper-plane" aria-hidden="true"></i>
-            <span>Skicka offertförfrågningar</span>
+            <i class="fa-solid fa-cog" aria-hidden="true"></i>
+            <span>Konfigurera projektspecifika inställningar</span>
           </div>
         </div>
       </div>
@@ -46,36 +46,36 @@
     <!-- Feature Details -->
     <section class="feature-detail-section">
       <div class="section-header">
-        <h2 data-translate="step5DetailInterfaceTitle">Översikt över offertförfrågningssidan</h2>
+        <h2 data-translate="step4DetailInterfaceTitle">Översikt över projektskapandesidan</h2>
         <div class="section-divider-line"></div>
       </div>
       <div class="step1-visual-in-context">
         <div class="step1-visual-wrapper">
           <div class="step1-visual-image">
-            <img src="assets/send quote request.png" alt="Skicka offertförfrågan" loading="lazy" />
+            <img src="../assets/create_new_project.png" alt="Skapa nytt projekt" loading="lazy" />
           </div>
           <div class="step1-visual-info">
-            <div class="step1-visual-info-item" role="button" tabindex="0" aria-expanded="false" aria-label="Läs mer om offertförfrågningsformulär" data-popup-id="visual-form">
+            <div class="step1-visual-info-item" role="button" tabindex="0" aria-expanded="false" aria-label="Läs mer om projektinformationsformulär" data-popup-id="visual-form">
               <div class="step1-visual-icon"><i class="fa-solid fa-file-lines" aria-hidden="true"></i></div>
               <div class="step1-visual-text">
-                <h4>Offertförfrågningsformulär</h4>
-                <p>Strukturerat formulär för att ange projektkrav och detaljer</p>
+                <h4>Projektinformationsformulär</h4>
+                <p>Strukturerat formulär för att ange projektuppgifter</p>
               </div>
               <div class="step1-visual-arrow"><i class="fa-solid fa-chevron-right" aria-hidden="true"></i></div>
             </div>
-            <div class="step1-visual-info-item" role="button" tabindex="0" aria-expanded="false" aria-label="Läs mer om leverantörsval" data-popup-id="visual-suppliers">
-              <div class="step1-visual-icon"><i class="fa-solid fa-users" aria-hidden="true"></i></div>
+            <div class="step1-visual-info-item" role="button" tabindex="0" aria-expanded="false" aria-label="Läs mer om formulärsektioner" data-popup-id="visual-sections">
+              <div class="step1-visual-icon"><i class="fa-solid fa-folder-tree" aria-hidden="true"></i></div>
               <div class="step1-visual-text">
-                <h4>Leverantörsval</h4>
-                <p>Välj vilka leverantörer som ska få offertförfrågan</p>
+                <h4>Formulärsektioner</h4>
+                <p>Organiserade sektioner för olika aspekter av projektet</p>
               </div>
               <div class="step1-visual-arrow"><i class="fa-solid fa-chevron-right" aria-hidden="true"></i></div>
             </div>
-            <div class="step1-visual-info-item" role="button" tabindex="0" aria-expanded="false" aria-label="Läs mer om synlighetsinställningar" data-popup-id="visual-visibility">
-              <div class="step1-visual-icon"><i class="fa-solid fa-eye" aria-hidden="true"></i></div>
+            <div class="step1-visual-info-item" role="button" tabindex="0" aria-expanded="false" aria-label="Läs mer om validering och kontroller" data-popup-id="visual-validation">
+              <div class="step1-visual-icon"><i class="fa-solid fa-circle-check" aria-hidden="true"></i></div>
               <div class="step1-visual-text">
-                <h4>Synlighetsinställningar</h4>
-                <p>Konfigurera vem som kan se och svara på förfrågan</p>
+                <h4>Validering och kontroller</h4>
+                <p>Automatisk validering och felindikatorer</p>
               </div>
               <div class="step1-visual-arrow"><i class="fa-solid fa-chevron-right" aria-hidden="true"></i></div>
             </div>
@@ -94,18 +94,18 @@
         <div class="step1-step">
           <div class="step1-step-header">
             <div class="step1-step-number">1</div>
-            <h3 data-translate="step5DetailStep1Title">Steg 1: Få tillgång till offertförfrågningsskapande</h3>
+            <h3 data-translate="step4DetailStep1Title">Steg 1: Få tillgång till projektskapande</h3>
           </div>
           
           <div class="step-blocks">
             <div class="step-block step-block-action">
-              <div class="step-block-icon"><i class="fa-solid fa-file-text" aria-hidden="true"></i></div>
+              <div class="step-block-icon"><i class="fa-solid fa-sign-in-alt" aria-hidden="true"></i></div>
               <div class="step-block-content">
                 <h4>Vad du ska göra här</h4>
                 <ul>
-                  <li>Navigera till offertförfrågningssektionen</li>
-                  <li>Eller kom åt den direkt från chattgränssnittet</li>
-                  <li>Klicka på 'Skapa offertförfrågan' eller 'Skicka offertförfrågan'</li>
+                  <li>Logga in på ditt konto</li>
+                  <li>Klicka på din avatar och välj 'Dashboard'</li>
+                  <li>Gå till fliken 'Projects' och klicka 'New Project'</li>
                 </ul>
               </div>
             </div>
@@ -113,7 +113,7 @@
           
           <div class="step-tip-inline">
             <i class="fa-solid fa-lightbulb" aria-hidden="true"></i>
-            <span>Du kan skapa offertförfrågningar både från huvudmenyn och direkt från chatten med leverantörer.</span>
+            <span>Dashboard är din centrala plats för att hantera alla dina projekt.</span>
           </div>
           
           <div class="step-button-wrapper">
@@ -126,18 +126,18 @@
         <div class="step1-step">
           <div class="step1-step-header">
             <div class="step1-step-number">2</div>
-            <h3 data-translate="step5DetailStep2Title">Steg 2: Specificera projektkrav</h3>
+            <h3 data-translate="step4DetailStep2Title">Steg 2: Fyll i projektinformation</h3>
           </div>
           
           <div class="step-blocks">
             <div class="step-block step-block-action">
-              <div class="step-block-icon"><i class="fa-solid fa-clipboard-list" aria-hidden="true"></i></div>
+              <div class="step-block-icon"><i class="fa-solid fa-keyboard" aria-hidden="true"></i></div>
               <div class="step-block-content">
                 <h4>Vad du ska göra här</h4>
                 <ul>
-                  <li>Fyll i offertförfrågningsformuläret med projektkrav</li>
-                  <li>Inkludera material, kvantiteter och specifikationer</li>
-                  <li>Ange leveransdatum och andra relevanta detaljer</li>
+                  <li>Ange projektnamn, projektnummer och projekttyp</li>
+                  <li>Välj eller tilldela en projektledare</li>
+                  <li>Lägg till ytterligare projektinformation eller anteckningar</li>
                 </ul>
               </div>
             </div>
@@ -145,7 +145,7 @@
           
           <div class="step-tip-inline">
             <i class="fa-solid fa-lightbulb" aria-hidden="true"></i>
-            <span>Ju mer detaljerad information du ger, desto mer exakta offerter kan leverantörerna ge.</span>
+            <span>Detaljerad projektinformation hjälper till att organisera och strukturera ditt projekt effektivt.</span>
           </div>
           
           <div class="step-button-wrapper">
@@ -158,18 +158,18 @@
         <div class="step1-step">
           <div class="step1-step-header">
             <div class="step1-step-number">3</div>
-            <h3 data-translate="step5DetailStep3Title">Steg 3: Välj leverantörer och synlighetsinställningar</h3>
+            <h3 data-translate="step4DetailStep3Title">Steg 3: Konfigurera projektspecifika inställningar</h3>
           </div>
           
           <div class="step-blocks">
             <div class="step-block step-block-action">
-              <div class="step-block-icon"><i class="fa-solid fa-users" aria-hidden="true"></i></div>
+              <div class="step-block-icon"><i class="fa-solid fa-cog" aria-hidden="true"></i></div>
               <div class="step-block-content">
                 <h4>Vad du ska göra här</h4>
                 <ul>
-                  <li>Välj vilka leverantörer som ska få offertförfrågan</li>
-                  <li>Välj synlighetsinställningar (offentlig eller privat)</li>
-                  <li>Konfigurera eventuella ytterligare inställningar</li>
+                  <li>Ställ in projektstartdatum och slutförandedatum</li>
+                  <li>Ange budgetinformation och andra inställningar</li>
+                  <li>Granska all angiven information innan du fortsätter</li>
                 </ul>
               </div>
             </div>
@@ -177,7 +177,7 @@
           
           <div class="step-tip-inline">
             <i class="fa-solid fa-lightbulb" aria-hidden="true"></i>
-            <span>Du kan välja flera leverantörer för samma offertförfrågan för att jämföra erbjudanden.</span>
+            <span>Projektspecifika inställningar hjälper till att spåra och hantera projektet effektivt.</span>
           </div>
           
           <div class="step-button-wrapper">
@@ -190,18 +190,18 @@
         <div class="step1-step">
           <div class="step1-step-header">
             <div class="step1-step-number">4</div>
-            <h3 data-translate="step5DetailStep4Title">Steg 4: Granska och skicka offertförfrågan</h3>
+            <h3 data-translate="step4DetailStep4Title">Steg 4: Spara och aktivera projekt</h3>
           </div>
           
           <div class="step-blocks">
             <div class="step-block step-block-action">
-              <div class="step-block-icon"><i class="fa-solid fa-paper-plane" aria-hidden="true"></i></div>
+              <div class="step-block-icon"><i class="fa-solid fa-save" aria-hidden="true"></i></div>
               <div class="step-block-content">
                 <h4>Vad du ska göra här</h4>
                 <ul>
-                  <li>Granska all angiven information</li>
-                  <li>Gör eventuella nödvändiga justeringar</li>
-                  <li>Klicka på 'Skicka' för att skicka förfrågan</li>
+                  <li>Granska all projektinformation för att säkerställa korrekthet</li>
+                  <li>Klicka på 'Spara' eller 'Skapa projekt'</li>
+                  <li>Projektet blir tillgängligt i din projektlista</li>
                 </ul>
               </div>
             </div>
@@ -209,7 +209,7 @@
           
           <div class="step-tip-inline">
             <i class="fa-solid fa-lightbulb" aria-hidden="true"></i>
-            <span>Leverantörerna kommer att få förfrågan och kan svara med sina offerter.</span>
+            <span>När projektet är skapat kan du börja samarbeta med leverantörer och hantera projektet.</span>
           </div>
           
           <div class="step-button-wrapper">
@@ -224,7 +224,7 @@
     <div class="section-divider"></div>
     <div id="footer-container"></div>
     <script>
-      fetch('footer.html')
+      fetch('../footer.html')
         .then(response => response.text())
         .then(data => {
           document.getElementById('footer-container').innerHTML = data;
@@ -248,192 +248,187 @@
     
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollTrigger.min.js"></script>
-    <script src="main.js"></script>
-    <script src="popup.js"></script>
-    <script src="lang.js"></script>
+    <script src="../main.js"></script>
+    <script src="../popup.js"></script>
+    <script src="../lang.js"></script>
     <script>
       // Info popup data - detailed information for each section
       const infoPopupData = {
         step1: {
-          title: 'Steg 1: Få tillgång till offertförfrågningsskapande',
+          title: 'Steg 1: Få tillgång till projektskapande',
           content: `
-            <h3>Detaljerad information om att komma åt offertförfrågningsskapande</h3>
-            <p>Offertförfrågningsskapande är en central funktion som gör det möjligt att skicka detaljerade förfrågningar till leverantörer för att få konkurrenskraftiga erbjudanden.</p>
-            <h4>Tillgång via huvudmenyn</h4>
+            <h3>Detaljerad information om att komma åt projektskapande</h3>
+            <p>Projektskapande är en central funktion i plattformen som gör det möjligt att organisera och strukturera dina byggprojekt från början.</p>
+            <h4>Tillgång via Dashboard</h4>
             <ul>
-              <li><strong>Offertförfrågningssektion:</strong> Navigera till offertförfrågningssektionen i huvudmenyn</li>
-              <li><strong>Skapa förfrågan:</strong> Klicka på 'Skapa offertförfrågan' eller 'Skicka offertförfrågan'</li>
-              <li><strong>Formulär:</strong> Öppna formuläret för att skapa offertförfrågan</li>
+              <li><strong>Avatar-klick:</strong> Klicka på din avatar längst ner på skärmen</li>
+              <li><strong>Menyval:</strong> Välj 'Dashboard' från menyn som visas</li>
+              <li><strong>Projects-flik:</strong> I Dashboard, gå till fliken 'Projects'</li>
+              <li><strong>New Project:</strong> Klicka på 'New Project' för att öppna projektskapandefönstret</li>
             </ul>
-            <h4>Tillgång via chattgränssnittet</h4>
+            <h4>Dashboard-funktioner</h4>
             <ul>
-              <li><strong>Direkt från chatten:</strong> Kom åt offertförfrågningsskapande direkt från chattgränssnittet</li>
-              <li><strong>Kontextuell skapande:</strong> Skapa förfrågan med relevant kontext från konversationen</li>
-              <li><strong>Snabbåtkomst:</strong> Enkel åtkomst utan att lämna chatten</li>
+              <li><strong>Projektöversikt:</strong> Se alla dina projekt på ett ställe</li>
+              <li><strong>Snabbåtkomst:</strong> Enkel navigering till alla projektfunktioner</li>
+              <li><strong>Projektstatus:</strong> Följ status på alla dina projekt</li>
+              <li><strong>Organisering:</strong> Organisera projekt efter olika kriterier</li>
             </ul>
-            <h4>Fördelar med olika tillgångssätt</h4>
+            <h4>Projektskapandefönster</h4>
             <ul>
-              <li><strong>Från huvudmenyn:</strong> Skapa nya förfrågningar oberoende av konversationer</li>
-              <li><strong>Från chatten:</strong> Skapa förfrågningar baserat på pågående diskussioner</li>
-              <li><strong>Flexibilitet:</strong> Välj det sätt som passar bäst för din situation</li>
+              <li><strong>Formulärbaserat:</strong> Strukturerat formulär för enkel projektskapande</li>
+              <li><strong>Stegvis process:</strong> Tydlig process för att skapa projekt</li>
+              <li><strong>Validering:</strong> Automatisk validering av inmatad information</li>
             </ul>
-            <p>Båda tillgångssätten ger dig full funktionalitet för att skapa och skicka offertförfrågningar.</p>
+            <p>Projektskapande är designat för att vara intuitivt och användarvänligt, även för dem som inte är tekniskt kunniga.</p>
           `
         },
         step2: {
-          title: 'Steg 2: Specificera projektkrav',
+          title: 'Steg 2: Fyll i projektinformation',
           content: `
-            <h3>Detaljerad information om att specificera projektkrav</h3>
-            <p>Projektkrav är kärnan i offertförfrågan och ger leverantörerna all information de behöver för att ge korrekta och konkurrenskraftiga offerter.</p>
+            <h3>Detaljerad information om projektinformation</h3>
+            <p>Projektinformationsformuläret är strukturerat för att fånga all nödvändig information för att skapa ett komplett projekt.</p>
             <h4>Grundläggande projektinformation</h4>
             <ul>
-              <li><strong>Projektnamn:</strong> Identifiera projektet tydligt</li>
-              <li><strong>Projektbeskrivning:</strong> Detaljerad beskrivning av projektet och dess mål</li>
-              <li><strong>Projekttyp:</strong> Kategorisering av projektet</li>
-              <li><strong>Projektplats:</strong> Var projektet ska utföras</li>
+              <li><strong>Projektnamn:</strong> Ett beskrivande namn som identifierar projektet</li>
+              <li><strong>Projektnummer:</strong> Unikt nummer för projektspårning och referens</li>
+              <li><strong>Projekttyp:</strong> Kategorisering av projektet (bygg, renovering, installation, etc.)</li>
+              <li><strong>Beskrivning:</strong> Detaljerad beskrivning av projektet och dess mål</li>
             </ul>
-            <h4>Materialkrav</h4>
+            <h4>Projektledarhantering</h4>
             <ul>
-              <li><strong>Materialtyper:</strong> Specificera vilka material som behövs</li>
-              <li><strong>Kvantiteter:</strong> Ange exakta kvantiteter för varje material</li>
-              <li><strong>Specifikationer:</strong> Tekniska specifikationer och krav</li>
-              <li><strong>Kvalitetskrav:</strong> Kvalitetsstandarder och certifieringar</li>
+              <li><strong>Tilldela projektledare:</strong> Välj projektledare från tillgängliga alternativ</li>
+              <li><strong>Roller och ansvar:</strong> Definiera roller och ansvar för projektet</li>
+              <li><strong>Teammedlemmar:</strong> Lägg till teammedlemmar och deras roller</li>
+              <li><strong>Kontaktinformation:</strong> Projektledarens kontaktuppgifter</li>
             </ul>
-            <h4>Leverans och logistik</h4>
+            <h4>Ytterligare information</h4>
             <ul>
-              <li><strong>Leveransdatum:</strong> När material behöver levereras</li>
-              <li><strong>Leveransplats:</strong> Var material ska levereras</li>
-              <li><strong>Logistikdetaljer:</strong> Specifika logistikkrav</li>
-              <li><strong>Transportinformation:</strong> Transportmetoder och krav</li>
+              <li><strong>Anteckningar:</strong> Lägg till anteckningar och kommentarer</li>
+              <li><strong>Dokument:</strong> Bifoga relevanta dokument vid projektskapande</li>
+              <li><strong>Taggar:</strong> Använd taggar för bättre organisering</li>
+              <li><strong>Kategorisering:</strong> Kategorisera projektet för enkel sökning</li>
             </ul>
-            <h4>Ytterligare krav</h4>
-            <ul>
-              <li><strong>Betalningsvillkor:</strong> Önskade betalningsvillkor</li>
-              <li><strong>Garantivillkor:</strong> Krav på garantier och service</li>
-              <li><strong>Leveransvillkor:</strong> Specifika leveransvillkor</li>
-              <li><strong>Övriga detaljer:</strong> Eventuella ytterligare krav eller information</li>
-            </ul>
-            <p>Ju mer detaljerad information du ger, desto mer exakta och användbara offerter kan leverantörerna ge.</p>
+            <p>All projektinformation hjälper till att organisera och strukturera projektet effektivt från början.</p>
           `
         },
         step3: {
-          title: 'Steg 3: Välj leverantörer och synlighetsinställningar',
+          title: 'Steg 3: Konfigurera projektspecifika inställningar',
           content: `
-            <h3>Detaljerad information om leverantörsval och synlighetsinställningar</h3>
-            <p>Leverantörsval och synlighetsinställningar ger dig kontroll över vem som kan se och svara på din offertförfrågan.</p>
-            <h4>Leverantörsval</h4>
+            <h3>Detaljerad information om projektspecifika inställningar</h3>
+            <p>Projektspecifika inställningar gör det möjligt att konfigurera projektet enligt dina specifika behov och krav.</p>
+            <h4>Tidsinställningar</h4>
             <ul>
-              <li><strong>Från kontaktlista:</strong> Välj specifika leverantörer från din kontaktlista</li>
-              <li><strong>Sökfunktion:</strong> Sök efter specifika leverantörer</li>
-              <li><strong>Bläddring:</strong> Bläddra bland tillgängliga leverantörer</li>
-              <li><strong>Flera val:</strong> Välj flera leverantörer för samma förfrågan</li>
+              <li><strong>Projektstartdatum:</strong> När projektet ska starta</li>
+              <li><strong>Förväntat slutförandedatum:</strong> När projektet förväntas vara klart</li>
+              <li><strong>Milstolpar:</strong> Definiera viktiga milstolpar i projektet</li>
+              <li><strong>Tidslinje:</strong> Skapa tidslinje för projektets olika faser</li>
             </ul>
-            <h4>Synlighetsinställningar</h4>
+            <h4>Budget och ekonomi</h4>
             <ul>
-              <li><strong>Offentlig synlighet:</strong> Alla leverantörer kan se och svara på förfrågan</li>
-              <li><strong>Privat synlighet:</strong> Endast valda leverantörer kan se förfrågan</li>
-              <li><strong>Åtkomstkontroll:</strong> Ytterligare åtkomstkontrollinställningar</li>
-              <li><strong>Anpassade inställningar:</strong> Skapa anpassade synlighetsregler</li>
+              <li><strong>Budgetinformation:</strong> Ange total budget för projektet</li>
+              <li><strong>Kostnadsfördelning:</strong> Fördela budget över olika projektområden</li>
+              <li><strong>Ekonomisk spårning:</strong> Konfigurera ekonomisk spårning och rapportering</li>
+              <li><strong>Valuta:</strong> Välj valuta för projektet</li>
             </ul>
-            <h4>Ytterligare inställningar</h4>
+            <h4>Projektspecifika konfigurationer</h4>
             <ul>
-              <li><strong>Deadline-datum:</strong> Sätt deadline för när offerter ska vara inkomna</li>
-              <li><strong>Svarskrav:</strong> Konfigurera krav på hur leverantörer ska svara</li>
-              <li><strong>Notifikationer:</strong> Ställ in notifikationer för svar</li>
-              <li><strong>Automatiska påminnelser:</strong> Automatiska påminnelser till leverantörer</li>
+              <li><strong>Synlighetsinställningar:</strong> Kontrollera vem som kan se projektet</li>
+              <li><strong>Åtkomstkontroll:</strong> Definiera åtkomstnivåer för olika användare</li>
+              <li><strong>Notifikationer:</strong> Konfigurera notifikationer för projektet</li>
+              <li><strong>Integrationer:</strong> Anslut externa verktyg och system</li>
             </ul>
-            <h4>Fördelar med olika inställningar</h4>
+            <h4>Granskning och validering</h4>
             <ul>
-              <li><strong>Offentlig:</strong> Få fler erbjudanden och jämföra bredare</li>
-              <li><strong>Privat:</strong> Mer kontrollerad process med specifika leverantörer</li>
-              <li><strong>Flexibilitet:</strong> Välj inställningar som passar ditt projekt</li>
+              <li><strong>Automatisk validering:</strong> Systemet validerar automatiskt inmatad information</li>
+              <li><strong>Felindikatorer:</strong> Visuella indikatorer för fel eller saknade information</li>
+              <li><strong>Förhandsgranskning:</strong> Granska all information innan du sparar</li>
+              <li><strong>Bekräftelse:</strong> Bekräfta alla inställningar innan projektet skapas</li>
             </ul>
-            <p>Rätt inställningar hjälper dig att få de bästa erbjudandena från rätt leverantörer.</p>
+            <p>Alla inställningar kan justeras efter att projektet har skapats, men det är bäst att konfigurera dem korrekt från början.</p>
           `
         },
         step4: {
-          title: 'Steg 4: Granska och skicka offertförfrågan',
+          title: 'Steg 4: Spara och aktivera projekt',
           content: `
-            <h3>Detaljerad information om att granska och skicka offertförfrågan</h3>
-            <p>Innan du skickar offertförfrågan är det viktigt att granska all information för att säkerställa att allt är korrekt och komplett.</p>
-            <h4>Granskning av information</h4>
+            <h3>Detaljerad information om att spara och aktivera projekt</h3>
+            <p>När all projektinformation är ifylld och inställningar är konfigurerade, är det dags att spara och aktivera projektet.</p>
+            <h4>Granskning av projektinformation</h4>
             <ul>
-              <li><strong>Projektkrav:</strong> Kontrollera att alla projektkrav är korrekt angivna</li>
-              <li><strong>Materialkrav:</strong> Verifiera materialtyper, kvantiteter och specifikationer</li>
-              <li><strong>Leveransinformation:</strong> Kontrollera leveransdatum och platser</li>
-              <li><strong>Valda leverantörer:</strong> Verifiera att rätt leverantörer är valda</li>
-              <li><strong>Synlighetsinställningar:</strong> Kontrollera att synlighetsinställningar är korrekta</li>
+              <li><strong>Komplett kontroll:</strong> Granska all angiven information för att säkerställa korrekthet</li>
+              <li><strong>Validering:</strong> Kontrollera att alla obligatoriska fält är ifyllda</li>
+              <li><strong>Konsistens:</strong> Verifiera att all information är konsistent och korrekt</li>
+              <li><strong>Dokumentation:</strong> Kontrollera att alla relevanta dokument är bifogade</li>
             </ul>
-            <h4>Justeringar och förbättringar</h4>
+            <h4>Sparprocess</h4>
             <ul>
-              <li><strong>Redigering:</strong> Gör eventuella nödvändiga justeringar</li>
-              <li><strong>Komplettering:</strong> Lägg till eventuell saknad information</li>
-              <li><strong>Förtydligande:</strong> Förtydliga eventuella otydligheter</li>
-              <li><strong>Optimering:</strong> Optimera förfrågan för bästa resultat</li>
+              <li><strong>Spara-knapp:</strong> Klicka på 'Spara' eller 'Skapa projekt' för att slutföra processen</li>
+              <li><strong>Automatisk validering:</strong> Systemet validerar automatiskt all information innan sparande</li>
+              <li><strong>Bekräftelse:</strong> Få bekräftelse när projektet har skapats</li>
+              <li><strong>Projekt-ID:</strong> Ett unikt projekt-ID genereras automatiskt</li>
             </ul>
-            <h4>Skicka process</h4>
+            <h4>Projektaktivering</h4>
             <ul>
-              <li><strong>Skicka-knapp:</strong> Klicka på 'Skicka' eller 'Skicka offertförfrågan'</li>
-              <li><strong>Bekräftelse:</strong> Få bekräftelse när förfrågan har skickats</li>
-              <li><strong>Leverans:</strong> Förfrågan levereras till valda leverantörer</li>
-              <li><strong>Notifikationer:</strong> Leverantörer får notifikationer om förfrågan</li>
+              <li><strong>Automatisk aktivering:</strong> Projektet aktiveras automatiskt när det skapas</li>
+              <li><strong>Projektlista:</strong> Projektet visas i din projektlista</li>
+              <li><strong>Tillgänglighet:</strong> Projektet är redo att användas i samarbete med leverantörer</li>
+              <li><strong>Projektstatus:</strong> Projektstatus sätts till 'Aktivt'</li>
             </ul>
-            <h4>Efter skickande</h4>
+            <h4>Efter projektskapande</h4>
             <ul>
-              <li><strong>Spårning:</strong> Följ status på din offertförfrågan</li>
-              <li><strong>Svar:</strong> Ta emot svar från leverantörer</li>
-              <li><strong>Jämförelse:</strong> Jämför erbjudanden från olika leverantörer</li>
-              <li><strong>Beslut:</strong> Fatta beslut baserat på mottagna offerter</li>
+              <li><strong>Projekthantering:</strong> Hantera projektet från Dashboard eller projektlistan</li>
+              <li><strong>Leverantörssamarbete:</strong> Börja samarbeta med leverantörer för projektet</li>
+              <li><strong>Offertförfrågningar:</strong> Skicka offertförfrågningar relaterade till projektet</li>
+              <li><strong>Projektspårning:</strong> Följ projektets framsteg och status</li>
             </ul>
-            <p>När offertförfrågan är skickad kan leverantörerna svara med sina offerter, vilket ger dig möjlighet att jämföra och välja det bästa erbjudandet.</p>
+            <p>När projektet är skapat och aktiverat kan du börja använda det för att organisera och hantera ditt byggprojekt effektivt.</p>
           `
         },
         'visual-form': {
-          title: 'Offertförfrågningsformulär',
+          title: 'Projektinformationsformulär',
           content: `
-            <h3>Detaljerad information om offertförfrågningsformulär</h3>
-            <p>Offertförfrågningsformuläret är strukturerat för att fånga all nödvändig information för att leverantörer ska kunna ge korrekta och användbara offerter.</p>
+            <h3>Detaljerad information om projektinformationsformulär</h3>
+            <p>Projektinformationsformuläret är strukturerat för att fånga all nödvändig information för att skapa ett komplett projekt.</p>
             <ul>
-              <li><strong>Strukturerade fält:</strong> Tydligt märkta fält för projektinformation, materialkrav, kvantiteter</li>
-              <li><strong>Specifikationer:</strong> Omfattande fält för tekniska specifikationer och krav</li>
-              <li><strong>Leveransinformation:</strong> Fält för leveransdatum, platser och logistik</li>
-              <li><strong>Organiserad layout:</strong> Fälten är organiserade i logiska sektioner</li>
+              <li><strong>Strukturerade fält:</strong> Tydligt märkta fält för projektnamn, projektnummer, projekttyp</li>
+              <li><strong>Projektledarval:</strong> Dropdown-meny för att välja eller tilldela projektledare</li>
+              <li><strong>Logisk sekvens:</strong> Fälten är organiserade i en logisk sekvens för enkel fyllning</li>
               <li><strong>Validering:</strong> Automatisk validering av inmatad information</li>
               <li><strong>Hjälptext:</strong> Hjälptext och tooltips för att förklara varje fält</li>
+              <li><strong>Responsiv design:</strong> Formuläret anpassar sig automatiskt till din skärmstorlek</li>
             </ul>
-            <p>Formuläret är designat för att vara både omfattande och användarvänligt, vilket gör det enkelt att skapa detaljerade offertförfrågningar.</p>
+            <p>Formuläret är designat för att vara både omfattande och användarvänligt, vilket gör det enkelt att skapa projekt korrekt.</p>
           `
         },
-        'visual-suppliers': {
-          title: 'Leverantörsval',
+        'visual-sections': {
+          title: 'Formulärsektioner',
           content: `
-            <h3>Detaljerad information om leverantörsval</h3>
-            <p>Leverantörsvalsektionen gör det möjligt att välja vilka leverantörer som ska få offertförfrågan.</p>
+            <h3>Detaljerad information om formulärsektioner</h3>
+            <p>Formuläret är organiserat i sektioner eller flikar för olika aspekter av projektskapande, vilket gör processen mer strukturerad och hanterbar.</p>
             <ul>
-              <li><strong>Kontaktlista:</strong> Välj från din lista över kontakter och leverantörer</li>
-              <li><strong>Sökfunktion:</strong> Sök efter specifika leverantörer baserat på namn eller specialisering</li>
-              <li><strong>Bläddring:</strong> Bläddra bland tillgängliga leverantörer</li>
-              <li><strong>Flera val:</strong> Välj flera leverantörer för samma offertförfrågan</li>
-              <li><strong>Leverantörsinformation:</strong> Se relevant information om varje leverantör</li>
-              <li><strong>Filtrering:</strong> Filtrera leverantörer baserat på olika kriterier</li>
+              <li><strong>Grundläggande information:</strong> Sektion för projektnamn, projektnummer, projekttyp</li>
+              <li><strong>Projektspecifika inställningar:</strong> Sektion för datum, budget och andra inställningar</li>
+              <li><strong>Ytterligare detaljer:</strong> Sektion för anteckningar, dokument och taggar</li>
+              <li><strong>Navigering:</strong> Enkel navigering mellan olika sektioner</li>
+              <li><strong>Förloppsindikator:</strong> Visuell indikator för var du befinner dig i processen</li>
+              <li><strong>Stegvis process:</strong> Tydlig process för att gå igenom alla sektioner</li>
             </ul>
-            <p>Leverantörsvalet är designat för att göra det enkelt att välja rätt leverantörer för din offertförfrågan.</p>
+            <p>Denna organisation gör det enkelt att navigera genom projektskapandeprocessen och säkerställa att all nödvändig information samlas in.</p>
           `
         },
-        'visual-visibility': {
-          title: 'Synlighetsinställningar',
+        'visual-validation': {
+          title: 'Validering och kontroller',
           content: `
-            <h3>Detaljerad information om synlighetsinställningar</h3>
-            <p>Synlighetsinställningar ger dig kontroll över vem som kan se och svara på din offertförfrågan.</p>
+            <h3>Detaljerad information om validering och kontroller</h3>
+            <p>Formuläret inkluderar omfattande validering och kontroller för att säkerställa att all information är korrekt innan projektet skapas.</p>
             <ul>
-              <li><strong>Offentlig synlighet:</strong> Alla leverantörer på plattformen kan se och svara</li>
-              <li><strong>Privat synlighet:</strong> Endast valda leverantörer kan se förfrågan</li>
-              <li><strong>Åtkomstkontroll:</strong> Ytterligare åtkomstkontrollinställningar för specifik kontroll</li>
-              <li><strong>Deadline-datum:</strong> Sätt deadline för när offerter ska vara inkomna</li>
-              <li><strong>Svarskrav:</strong> Konfigurera krav på hur leverantörer ska svara</li>
-              <li><strong>Notifikationer:</strong> Ställ in notifikationer för svar och uppdateringar</li>
+              <li><strong>Obligatoriska fält:</strong> Tydlig markering av obligatoriska fält med asterisk eller färgkodning</li>
+              <li><strong>Formateringskrav:</strong> Automatisk validering av format (datum, nummer, e-post, etc.)</li>
+              <li><strong>Felmeddelanden:</strong> Tydliga felmeddelanden när information är felaktig eller saknas</li>
+              <li><strong>Realtidsvalidering:</strong> Validering sker i realtid när du skriver</li>
+              <li><strong>Visuella indikatorer:</strong> Färgkodade indikatorer för status (korrekt, fel, varning)</li>
+              <li><strong>Hjälptext:</strong> Kontextuell hjälptext för att förklara krav och format</li>
             </ul>
-            <p>Synlighetsinställningar hjälper dig att kontrollera processen och säkerställa att rätt leverantörer får din offertförfrågan.</p>
+            <p>Validering och kontroller hjälper till att säkerställa att projektet skapas med korrekt och komplett information från början.</p>
           `
         }
       };
