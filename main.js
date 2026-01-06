@@ -304,9 +304,7 @@ document.addEventListener("DOMContentLoaded", (() => {
         toggleActions: "play none none none"
       }
     });
-  })(".hero h1"), window.switchLanguage = function(lang) {
-    localStorage.setItem("language", lang), location.reload();
-  };
+  })(".hero h1");
   const featureCards = gsap.utils.toArray(".feature-card"), featuresIntro = document.querySelector(".features-intro");
   if (featuresIntro) {
     const introTitle = featuresIntro.querySelector("h2"), introText = featuresIntro.querySelector(".intro");
