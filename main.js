@@ -3,6 +3,41 @@ document.addEventListener("DOMContentLoaded", (() => {
   const isFeaturesPage = window.location.pathname.includes('/features/');
   const basePath = isFeaturesPage ? '../' : '';
   
+  // Global function to update active state on all language buttons
+  const updateLanguageButtons = () => {
+    const currentLang = localStorage.getItem('language') || 'sv';
+    const allHeaderButtons = document.querySelectorAll(".language-switcher a");
+    const allFooterButtons = document.querySelectorAll(".language-switcher-footer .lang-btn");
+    
+    allHeaderButtons.forEach((btn) => {
+      if (btn.dataset.lang === currentLang) {
+        btn.classList.add('active');
+      } else {
+        btn.classList.remove('active');
+      }
+    });
+    
+    allFooterButtons.forEach((btn) => {
+      if (btn.dataset.lang === currentLang) {
+        btn.classList.add('active');
+      } else {
+        btn.classList.remove('active');
+      }
+    });
+  };
+  
+  // Set up global language change listener (only once)
+  if (!window.languageChangedListenerAdded) {
+    window.addEventListener('languageChanged', (e) => {
+      updateLanguageButtons();
+    });
+    window.languageChangedListenerAdded = true;
+  }
+  
+  // Initialize language switcher for existing headers (e.g. index.html)
+  // This will be called after header is loaded, so we don't need to run it here
+  // The initializeHeader() function will handle it
+  
   // Load header, footer, features summary, about, and CTA sections
   Promise.all([
     fetch(basePath + 'header.html').then(response => response.text()),
@@ -13,9 +48,20 @@ document.addEventListener("DOMContentLoaded", (() => {
   ]).then(([headerData, footerData, featuresSummaryData, aboutData, ctaData]) => {
     // Insert header only if container exists and is empty
     const headerContainer = document.getElementById('header-container');
-    if (headerContainer && !headerContainer.innerHTML.trim()) {
-      headerContainer.innerHTML = headerData;
-      initializeHeader();
+    if (headerContainer) {
+      // Check if header is already loaded (e.g., from inline script in index.html)
+      if (!headerContainer.innerHTML.trim()) {
+        headerContainer.innerHTML = headerData;
+        // Wait a bit for DOM to update
+        setTimeout(() => {
+          initializeHeader();
+        }, 50);
+      } else {
+        // Header already loaded, wait a bit and then initialize the language switcher
+        setTimeout(() => {
+          initializeHeader();
+        }, 100);
+      }
     }
 
     // Insert footer only if container exists and is empty
@@ -366,20 +412,6 @@ document.addEventListener("DOMContentLoaded", (() => {
     const newClone = card.cloneNode(!0);
     card.parentNode.replaceChild(newClone, card);
   }));
-  const langButtons = document.querySelectorAll(".language-switcher .lang-btn, .language-switcher-footer .lang-btn, .language-switcher a"), currentLang = localStorage.getItem("language") || "sv";
-  langButtons.forEach((btn => {
-    btn.dataset.lang === currentLang ? btn.classList.add("active") : btn.classList.remove("active"), 
-    btn.addEventListener("click", (e => {
-      e.preventDefault();
-      const lang = btn.dataset.lang;
-      window.switchLanguage(lang);
-    }));
-  })), window.addEventListener("languageChanged", (e => {
-    const newLang = e.detail.lang;
-    langButtons.forEach((btn => {
-      btn.dataset.lang === newLang ? btn.classList.add("active") : btn.classList.remove("active");
-    }));
-  }));
 
   // Lägg till hero intro-animation timeline
   const heroTimeline = gsap.timeline({ defaults: { duration: 0.8, ease: "power1.out" } });
@@ -433,43 +465,69 @@ document.addEventListener("DOMContentLoaded", (() => {
 
   // Add header initialization function
   function initializeHeader() {
-    // Initialize language switcher
-    const langButtons = document.querySelectorAll(".language-switcher a");
-    const currentLang = localStorage.getItem('language') || 'sv';
-    
-    langButtons.forEach(btn => {
-      if (btn.dataset.lang === currentLang) {
-        btn.classList.add('active');
-      }
+    // Initialize language switcher - wait for switchLanguage to be available
+    const initLanguageSwitcher = () => {
+      const langButtons = document.querySelectorAll(".language-switcher a");
       
-      btn.addEventListener('click', (e) => {
-        e.preventDefault();
-        const lang = btn.dataset.lang;
-        window.switchLanguage(lang);
-      });
-    });
+      if (langButtons.length > 0 && typeof window.switchLanguage === 'function') {
+        langButtons.forEach(btn => {
+          // Check if button already has event listener (avoid re-initializing)
+          if (btn.hasAttribute('data-lang-initialized')) {
+            return;
+          }
+          
+          // Mark as initialized
+          btn.setAttribute('data-lang-initialized', 'true');
+          
+          btn.addEventListener('click', (e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            const lang = btn.dataset.lang;
+            if (typeof window.switchLanguage === 'function') {
+              window.switchLanguage(lang);
+            }
+          });
+        });
+        
+        // Set initial active state
+        updateLanguageButtons();
+      } else if (langButtons.length > 0) {
+        // Retry after a short delay if switchLanguage is not yet available
+        setTimeout(initLanguageSwitcher, 100);
+      }
+    };
+    
+    initLanguageSwitcher();
 
     // Initialize Lucide icons in header
-    lucide.createIcons();
+    if (typeof lucide !== 'undefined' && lucide.createIcons) {
+      lucide.createIcons();
+    }
   }
 
   // Add footer initialization function
   function initializeFooter() {
     // Initialize footer language switcher
     const footerLangButtons = document.querySelectorAll(".language-switcher-footer .lang-btn");
-    const currentLang = localStorage.getItem('language') || 'sv';
     
-    footerLangButtons.forEach(btn => {
-      if (btn.dataset.lang === currentLang) {
-        btn.classList.add('active');
-      }
-      
-      btn.addEventListener('click', (e) => {
-        e.preventDefault();
-        const lang = btn.dataset.lang;
-        window.switchLanguage(lang);
+    if (footerLangButtons.length > 0 && typeof window.switchLanguage === 'function') {
+      footerLangButtons.forEach(btn => {
+        // Remove existing listeners to avoid duplicates
+        const newBtn = btn.cloneNode(true);
+        btn.parentNode.replaceChild(newBtn, btn);
+        
+        newBtn.addEventListener('click', (e) => {
+          e.preventDefault();
+          const lang = newBtn.dataset.lang;
+          if (typeof window.switchLanguage === 'function') {
+            window.switchLanguage(lang);
+          }
+        });
       });
-    });
+      
+      // Set initial active state
+      updateLanguageButtons();
+    }
 
     // Initialize Font Awesome icons in footer
     if (window.FontAwesome) {

@@ -130,6 +130,7 @@ button {
   height: 20px;
   width: auto;
   margin: 0;
+  pointer-events: none; /* Allow clicks to pass through to parent link */
 }
 
 .contact-btn {
