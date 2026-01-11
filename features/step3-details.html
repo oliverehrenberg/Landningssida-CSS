@@ -28,22 +28,22 @@
         <div class="step1-hero-features">
           <div class="step1-hero-feature-item">
             <i class="fa-solid fa-comments" aria-hidden="true"></i>
-            <span>Direktmeddelanden i realtid</span>
+            <span data-translate="step3HeroFeatureMessagingTitle">Direktmeddelanden i realtid</span>
           </div>
           <div class="step1-hero-feature-item">
             <i class="fa-solid fa-file-invoice" aria-hidden="true"></i>
-            <span>Offertförfrågningar och offerter</span>
+            <span data-translate="step3HeroFeatureQuotesTitle">Offertförfrågningar och offerter</span>
           </div>
           <div class="step1-hero-feature-item">
             <i class="fa-solid fa-list" aria-hidden="true"></i>
-            <span>Hantera alla konversationer</span>
+            <span data-translate="step3HeroFeatureConversationsTitle">Hantera alla konversationer</span>
           </div>
         </div>
       </div>
     </section>
 
     <!-- Feature Details -->
-    <section class="feature-detail-section">
+    <section class="feature-detail-section section-hidden">
       <div class="section-header">
         <h2 data-translate="step3DetailInterfaceTitle">Översikt över chattgränssnittet</h2>
         <div class="section-divider-line"></div>
@@ -81,7 +81,7 @@
     </section>
 
     <!-- How It Works -->
-    <section class="how-it-works step1-how-works">
+    <section class="how-it-works section-hidden step1-how-works">
       <div class="section-header">
         <h2 data-translate="howItWorksTitle">Så fungerar det</h2>
         <div class="section-divider-line"></div>
@@ -239,173 +239,35 @@
     <script src="../main.js"></script>
     <script>
       // Info popup data - detailed information for each section
+      // Info popup data - using translation keys instead of hardcoded text
       const infoPopupData = {
         step1: {
-          title: 'Steg 1: Få tillgång till chattgränssnittet',
-          content: `
-            <h3>Detaljerad information om att komma åt chattgränssnittet</h3>
-            <p>Chattgränssnittet är din centrala plats för all kommunikation med leverantörer. Det finns flera sätt att komma åt chatten beroende på var du befinner dig på plattformen.</p>
-            <h4>Tillgång via huvudmenyn</h4>
-            <ul>
-              <li><strong>Kuvertikonen:</strong> Klicka på kuvertikonen i menyn längst upp för att öppna meddelandesektionen</li>
-              <li><strong>Direktlänk:</strong> Snabb åtkomst till alla dina meddelanden och konversationer</li>
-              <li><strong>Notiser:</strong> Se antal olästa meddelanden direkt i ikonen</li>
-            </ul>
-            <h4>Tillgång via avatar</h4>
-            <ul>
-              <li><strong>Avatar-klick:</strong> Klicka på din avatar längst ner på skärmen</li>
-              <li><strong>Menyval:</strong> Välj 'Meddelanden' från menyn som visas</li>
-              <li><strong>Snabbnavigering:</strong> Enkel åtkomst från var som helst på plattformen</li>
-            </ul>
-            <h4>Tillgång från leverantörsprofil</h4>
-            <ul>
-              <li><strong>'Starta konversation':</strong> Klicka på knappen för att öppna chatten direkt med leverantören</li>
-              <li><strong>'Kontakta leverantör':</strong> Alternativ knapp för att initiera kommunikation</li>
-              <li><strong>Kontextuell start:</strong> Starta konversation med relevant kontext från profilen</li>
-            </ul>
-            <p>Chattgränssnittet är designat för att vara lättillgängligt och intuitivt, oavsett var du befinner dig på plattformen.</p>
-          `
+          titleKey: 'step3PopupStep1Title',
+          contentKey: 'step3PopupStep1Content'
         },
         step2: {
-          title: 'Steg 2: Initiera eller fortsätt konversation',
-          content: `
-            <h3>Detaljerad information om konversationshantering</h3>
-            <p>Chattgränssnittet gör det enkelt att både starta nya konversationer och fortsätta befintliga diskussioner med leverantörer.</p>
-            <h4>Starta ny konversation</h4>
-            <ul>
-              <li><strong>Kontaktlista:</strong> Välj leverantör från din lista över kontakter eller leverantörer</li>
-              <li><strong>Sökfunktion:</strong> Använd sökfunktionen för att snabbt hitta specifik leverantör</li>
-              <li><strong>Från profil:</strong> Starta konversation direkt från leverantörsprofilsidan</li>
-              <li><strong>Kontextuell start:</strong> Ny konversation skapas automatiskt med relevant kontext</li>
-            </ul>
-            <h4>Fortsätt befintlig konversation</h4>
-            <ul>
-              <li><strong>Konversationslista:</strong> Klicka på konversationstråden i listan</li>
-              <li><strong>Konversationshistorik:</strong> Alla tidigare meddelanden visas automatiskt</li>
-              <li><strong>Kontextbevarande:</strong> All kontext och information från tidigare meddelanden bevaras</li>
-              <li><strong>Snabbåtergång:</strong> Enkelt att återgå till tidigare diskussioner</li>
-            </ul>
-            <h4>Konversationshantering</h4>
-            <ul>
-              <li><strong>Automatisk sparande:</strong> Alla konversationer sparas automatiskt</li>
-              <li><strong>Sök i historik:</strong> Sök i tidigare meddelanden och konversationer</li>
-              <li><strong>Organisering:</strong> Konversationer organiseras efter leverantör och datum</li>
-            </ul>
-            <p>Systemet är designat för att göra kommunikationen så smidig och organiserad som möjligt.</p>
-          `
+          titleKey: 'step3PopupStep2Title',
+          contentKey: 'step3PopupStep2Content'
         },
         step3: {
-          title: 'Steg 3: Utbyta meddelanden',
-          content: `
-            <h3>Detaljerad information om meddelandeutbyte</h3>
-            <p>Meddelandeutbytet är kärnan i chattgränssnittet och ger dig möjlighet att kommunicera direkt med leverantörer i realtid.</p>
-            <h4>Skriva och skicka meddelanden</h4>
-            <ul>
-              <li><strong>Meddelandefält:</strong> Skriv ditt meddelande i fältet längst ner i chattfönstret</li>
-              <li><strong>Skicka-knapp:</strong> Klicka på 'Skicka'-knappen för att skicka meddelandet</li>
-              <li><strong>Enter-tangent:</strong> Tryck på Enter för snabb sändning</li>
-              <li><strong>Realtidsleverans:</strong> Meddelanden levereras omedelbart till mottagaren</li>
-            </ul>
-            <h4>Meddelandetyper</h4>
-            <ul>
-              <li><strong>Textmeddelanden:</strong> Vanliga textmeddelanden för kommunikation</li>
-              <li><strong>Förfrågningar:</strong> Ställ frågor och förtydliga beställningsdetaljer</li>
-              <li><strong>Specifikationer:</strong> Diskutera projektkrav och specifikationer</li>
-              <li><strong>Koordinering:</strong> Koordinera projektkrav och samarbetsdetaljer</li>
-            </ul>
-            <h4>Avancerade funktioner</h4>
-            <ul>
-              <li><strong>Offertförfrågningar:</strong> Skicka offertförfrågningar direkt från chatten</li>
-              <li><strong>Offertskickning:</strong> Skicka offerter direkt till leverantörer</li>
-              <li><strong>Filbifogning:</strong> Bifoga filer och dokument till meddelanden</li>
-              <li><strong>Projektreferenser:</strong> Referera till specifika objekt från ditt projekt</li>
-            </ul>
-            <p>All kommunikation sker i realtid, vilket möjliggör snabb och effektiv koordinering med leverantörer.</p>
-          `
+          titleKey: 'step3PopupStep3Title',
+          contentKey: 'step3PopupStep3Content'
         },
         step4: {
-          title: 'Steg 4: Hantera konversationer och förfrågningar',
-          content: `
-            <h3>Detaljerad information om hantering av konversationer och förfrågningar</h3>
-            <p>Chattgränssnittet erbjuder omfattande funktioner för att hantera konversationer, offertförfrågningar och samarbetsdetaljer.</p>
-            <h4>Offertförfrågningar</h4>
-            <ul>
-              <li><strong>Skicka förfrågningar:</strong> Skicka detaljerade offertförfrågningar direkt i chatten</li>
-              <li><strong>Specifikationer:</strong> Inkludera detaljerade projektkrav och specifikationer</li>
-              <li><strong>Spårning:</strong> Följ status på dina offertförfrågningar</li>
-              <li><strong>Påminnelser:</strong> Få påminnelser om svar på förfrågningar</li>
-            </ul>
-            <h4>Offertgranskning</h4>
-            <ul>
-              <li><strong>Mottagna offerter:</strong> Granska alla mottagna offerter i chatten</li>
-              <li><strong>Jämförelse:</strong> Jämför offerter från olika leverantörer</li>
-              <li><strong>Diskussion:</strong> Diskutera villkor och detaljer direkt med leverantören</li>
-              <li><strong>Beslut:</strong> Fatta beslut baserat på offerter och diskussioner</li>
-            </ul>
-            <h4>Dokumenthantering</h4>
-            <ul>
-              <li><strong>Filbifogning:</strong> Bifoga filer och dokument till meddelanden</li>
-              <li><strong>Projektdokument:</strong> Dela projektdokument direkt i chatten</li>
-              <li><strong>Referenser:</strong> Referera till specifika objekt från ditt projekt</li>
-              <li><strong>Dokumentarkiv:</strong> Alla delade dokument sparas för framtida referens</li>
-            </ul>
-            <h4>Konversationshistorik</h4>
-            <ul>
-              <li><strong>Automatisk sparande:</strong> All konversationshistorik sparas automatiskt</li>
-              <li><strong>Sökfunktion:</strong> Sök i tidigare meddelanden och konversationer</li>
-              <li><strong>Export:</strong> Exportera konversationshistorik för arkivering</li>
-              <li><strong>Referens:</strong> Enkelt att återgå till tidigare diskussioner och beslut</li>
-            </ul>
-            <p>Alla dessa funktioner är integrerade i chattgränssnittet för sömlös koordinering och effektiv kommunikation.</p>
-          `
+          titleKey: 'step3PopupStep4Title',
+          contentKey: 'step3PopupStep4Content'
         },
         'visual-conversations': {
-          title: 'Konversationslista',
-          content: `
-            <h3>Detaljerad information om konversationslista</h3>
-            <p>Konversationslistan ger dig en översikt över alla dina aktiva konversationer med leverantörer och gör det enkelt att navigera mellan olika diskussioner.</p>
-            <ul>
-              <li><strong>Leverantörsnamn:</strong> Tydlig visning av vilken leverantör varje konversation är med</li>
-              <li><strong>Förhandsvisning:</strong> Se förhandsvisning av senaste meddelandet i varje konversation</li>
-              <li><strong>Tidsstämpel:</strong> Se när senaste meddelandet skickades</li>
-              <li><strong>Notiser:</strong> Visuella indikatorer för olästa meddelanden</li>
-              <li><strong>Sortering:</strong> Konversationer sorteras automatiskt efter senaste aktivitet</li>
-              <li><strong>Sökfunktion:</strong> Sök efter specifika konversationer eller leverantörer</li>
-            </ul>
-            <p>Konversationslistan är designad för att göra det enkelt att hålla koll på alla dina kommunikationer och snabbt växla mellan olika konversationer.</p>
-          `
+          titleKey: 'step3PopupVisualConversationsTitle',
+          contentKey: 'step3PopupVisualConversationsContent'
         },
         'visual-messages': {
-          title: 'Meddelandevisning',
-          content: `
-            <h3>Detaljerad information om meddelandevisning</h3>
-            <p>Meddelandevisningsområdet visar hela konversationshistoriken på ett tydligt och organiserat sätt.</p>
-            <ul>
-              <li><strong>Chronologisk ordning:</strong> Meddelanden visas i kronologisk ordning för enkel följd</li>
-              <li><strong>Visuell separation:</strong> Dina meddelanden visas på ena sidan, leverantörsmeddelanden på den andra</li>
-              <li><strong>Meddelandeformat:</strong> Tydlig formatering med tidsstämplar och avsändarinformation</li>
-              <li><strong>Scrollbar:</strong> Enkel scrollning genom långa konversationer</li>
-              <li><strong>Automatisk uppdatering:</strong> Nya meddelanden visas automatiskt när de anländer</li>
-              <li><strong>Meddelandestatus:</strong> Se status på skickade meddelanden (levererat, läst, etc.)</li>
-            </ul>
-            <p>Meddelandevisningen är designad för att göra det enkelt att följa konversationsflödet och förstå sammanhanget i diskussionen.</p>
-          `
+          titleKey: 'step3PopupVisualMessagesTitle',
+          contentKey: 'step3PopupVisualMessagesContent'
         },
         'visual-quotes': {
-          title: 'Offertförfrågningar',
-          content: `
-            <h3>Detaljerad information om offertförfrågningar</h3>
-            <p>Offertförfrågningar är integrerade direkt i chattgränssnittet, vilket gör det enkelt att skicka och hantera offerter.</p>
-            <ul>
-              <li><strong>Skicka förfrågningar:</strong> Skicka detaljerade offertförfrågningar direkt från chatten</li>
-              <li><strong>Specifikationer:</strong> Inkludera detaljerade projektkrav och specifikationer i förfrågningen</li>
-              <li><strong>Spårning:</strong> Följ status på dina offertförfrågningar och se när de har besvarats</li>
-              <li><strong>Mottagna offerter:</strong> Granska mottagna offerter direkt i chatten</li>
-              <li><strong>Diskussion:</strong> Diskutera offertdetaljer och villkor direkt med leverantören</li>
-              <li><strong>Jämförelse:</strong> Jämför offerter från olika leverantörer för att fatta bästa beslut</li>
-            </ul>
-            <p>Offertförfrågningar är designade för att vara en sömlös del av kommunikationsprocessen, vilket gör det enkelt att koordinera och fatta beslut.</p>
-          `
+          titleKey: 'step3PopupVisualQuotesTitle',
+          contentKey: 'step3PopupVisualQuotesContent'
         }
       };
 
@@ -458,8 +320,41 @@
         // Store current focus for restoration (before opening new popup)
         previousActiveElement = document.activeElement;
         
+        // Get current language
+        const currentLang = localStorage.getItem('language') || 'sv';
+        
+        // Get translations from global translations object (defined in lang.js)
+        const popupData = infoPopupData[id];
+        if (!popupData) {
+          console.error('Popup data not found for ID:', id);
+          return;
+        }
+        
+        // Get translated title and content - use translations from lang.js
+        let translatedTitle = '';
+        let translatedContent = '';
+        
+        // Check if using new structure with keys or old structure with direct text
+        if (popupData.titleKey && popupData.contentKey) {
+          // New structure: use translation keys
+          if (typeof translations !== 'undefined' && translations[currentLang]) {
+            translatedTitle = translations[currentLang][popupData.titleKey] || popupData.titleKey;
+            translatedContent = translations[currentLang][popupData.contentKey] || popupData.contentKey;
+          } else {
+            translatedTitle = popupData.titleKey;
+            translatedContent = popupData.contentKey;
+          }
+        } else if (popupData.title && popupData.content) {
+          // Old structure: use direct text (backward compatibility)
+          translatedTitle = popupData.title;
+          translatedContent = popupData.content;
+        } else {
+          console.error('Popup data structure invalid for ID:', id);
+          return;
+        }
+        
         // Update title first
-        title.textContent = infoPopupData[id].title;
+        title.textContent = translatedTitle;
         title.classList.remove('sr-only');
         
         // Update content - preserve title element
@@ -471,15 +366,15 @@
         contentNodes.forEach(node => node.remove());
         // Insert new content after title
         const tempDiv = document.createElement('div');
-        tempDiv.innerHTML = infoPopupData[id].content;
+        tempDiv.innerHTML = translatedContent;
         // Move all nodes from tempDiv to content after title
         while (tempDiv.firstChild) {
           content.appendChild(tempDiv.firstChild);
         }
         
-        // Explicitly set overlay styles to ensure it's visible and clickable
-        popup.style.display = 'flex';
-        popup.style.pointerEvents = 'auto';
+        // Remove inline styles to let CSS handle display (CSS uses .active class)
+        popup.style.display = '';
+        popup.style.pointerEvents = '';
         
         // Update ARIA attributes
         popup.setAttribute('aria-hidden', 'false');
@@ -505,9 +400,9 @@
         
         if (!popup) return;
         
-        // Explicitly reset overlay styles to ensure it doesn't block clicks
-        popup.style.display = 'none';
-        popup.style.pointerEvents = 'none';
+        // Remove inline styles to let CSS handle display
+        popup.style.display = '';
+        popup.style.pointerEvents = '';
         
         // Update ARIA attributes
         popup.setAttribute('aria-hidden', 'true');

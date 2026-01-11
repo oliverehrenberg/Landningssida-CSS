@@ -28,22 +28,22 @@
         <div class="step1-hero-features">
           <div class="step1-hero-feature-item">
             <i class="fa-solid fa-building" aria-hidden="true"></i>
-            <span>Omfattande företagsinformation</span>
+            <span data-translate="step2HeroFeatureInfoTitle">Omfattande företagsinformation</span>
           </div>
           <div class="step1-hero-feature-item">
             <i class="fa-solid fa-star" aria-hidden="true"></i>
-            <span>Betyg och recensioner</span>
+            <span data-translate="step2HeroFeatureRatingsTitle">Betyg och recensioner</span>
           </div>
           <div class="step1-hero-feature-item">
             <i class="fa-solid fa-certificate" aria-hidden="true"></i>
-            <span>Certifieringar och verifieringar</span>
+            <span data-translate="step2HeroFeatureCertsTitle">Certifieringar och verifieringar</span>
           </div>
         </div>
       </div>
     </section>
 
     <!-- Feature Details -->
-    <section class="feature-detail-section">
+    <section class="feature-detail-section section-hidden">
       <div class="section-header">
         <h2 data-translate="step2DetailInterfaceTitle">Översikt över leverantörsprofilsidan</h2>
         <div class="section-divider-line"></div>
@@ -81,7 +81,7 @@
     </section>
 
     <!-- How It Works -->
-    <section class="how-it-works step1-how-works">
+    <section class="how-it-works section-hidden step1-how-works">
       <div class="section-header">
         <h2 data-translate="howItWorksTitle">Så fungerar det</h2>
         <div class="section-divider-line"></div>
@@ -239,144 +239,35 @@
     <script src="../popup.js"></script>
     <script>
       // Info popup data - detailed information for each section
+      // Info popup data - using translation keys instead of hardcoded text
       const infoPopupData = {
         step1: {
-          title: 'Steg 1: Öppna leverantörsprofil',
-          content: `
-            <h3>Detaljerad information om att öppna leverantörsprofil</h3>
-            <p>Från katalogsidan kan du enkelt komma åt detaljerad information om varje leverantör genom att klicka på 'Visa profil'-knappen. Detta öppnar en omfattande profilsida med all relevant information om företaget.</p>
-            <h4>Navigering till profil</h4>
-            <ul>
-              <li><strong>Från katalogsidan:</strong> Klicka på 'Visa profil'-knappen på valfritt leverantörskort</li>
-              <li><strong>Direktlänkar:</strong> Använd direkta länkar för att dela specifika profiler</li>
-              <li><strong>Snabbtillgång:</strong> Profiler öppnas i samma flik eller ny flik beroende på inställningar</li>
-              <li><strong>Breadcrumbs:</strong> Tydlig navigering visar din nuvarande position</li>
-            </ul>
-            <h4>Profilsidans struktur</h4>
-            <ul>
-              <li><strong>Huvudsektion:</strong> Företagslogotyp, namn, plats och övergripande betyg</li>
-              <li><strong>Informationsflikar:</strong> Organiserad information i olika kategorier</li>
-              <li><strong>Åtgärdsknappar:</strong> Direkta länkar för kontakt och kommunikation</li>
-            </ul>
-            <p>Profilsidan är designad för att ge dig all information du behöver för att fatta välgrundade beslut om leverantörer.</p>
-          `
+          titleKey: 'step2PopupStep1Title',
+          contentKey: 'step2PopupStep1Content'
         },
         step2: {
-          title: 'Steg 2: Granska företagsinformation',
-          content: `
-            <h3>Detaljerad information om företagsinformation</h3>
-            <p>Företagsinformationssektionen ger dig en omfattande översikt över leverantörens grundläggande detaljer och specialiseringar.</p>
-            <h4>Grundläggande information</h4>
-            <ul>
-              <li><strong>Företagsnamn:</strong> Officiellt registrerat namn och eventuella handelsnamn</li>
-              <li><strong>Plats:</strong> Fysisk adress och verksamhetsområde</li>
-              <li><strong>Kontaktuppgifter:</strong> Telefonnummer, e-post och webbplats</li>
-              <li><strong>Specialisering:</strong> Huvudsakliga områden och expertis</li>
-            </ul>
-            <h4>Företagsbeskrivning</h4>
-            <ul>
-              <li><strong>Historia:</strong> Företagets bakgrund och erfarenhet</li>
-              <li><strong>Expertis:</strong> Specifika kompetenser och färdigheter</li>
-              <li><strong>Projekttyper:</strong> Typer av projekt företaget vanligtvis hanterar</li>
-              <li><strong>Unika fördelar:</strong> Vad som gör företaget särskilt</li>
-            </ul>
-            <p>Denna information hjälper dig att förstå om företaget passar dina specifika projektkrav och förväntningar.</p>
-          `
+          titleKey: 'step2PopupStep2Title',
+          contentKey: 'step2PopupStep2Content'
         },
         step3: {
-          title: 'Steg 3: Kontrollera betyg och certifikat',
-          content: `
-            <h3>Detaljerad information om betyg och certifikat</h3>
-            <p>Betyg och certifikat är kritiska faktorer för att bedöma en leverantörs kvalitet, pålitlighet och förmåga att uppfylla dina projektkrav.</p>
-            <h4>Betygssystem</h4>
-            <ul>
-              <li><strong>Stjärnbetyg:</strong> Visuell representation av övergripande betyg (1-5 stjärnor)</li>
-              <li><strong>Numeriska poäng:</strong> Detaljerade poäng för olika aspekter</li>
-              <li><strong>Kategoribetyg:</strong> Betyg för specifika områden som kvalitet, service, prissättning</li>
-              <li><strong>Kundrecensioner:</strong> Verifierade recensioner från tidigare kunder</li>
-            </ul>
-            <h4>Certifieringar</h4>
-            <ul>
-              <li><strong>Kvalitetsstandarder:</strong> ISO-certifieringar och kvalitetssystem</li>
-              <li><strong>Säkerhetscertifikat:</strong> Arbetsmiljö- och säkerhetscertifikat</li>
-              <li><strong>Branschspecifika:</strong> Certifikat relevanta för byggbranschen</li>
-              <li><strong>Miljöcertifieringar:</strong> Hållbarhets- och miljöcertifikat</li>
-              <li><strong>Verifieringsstatus:</strong> Bekräftad verifiering av certifikatens giltighet</li>
-            </ul>
-            <p>Alla betyg och certifikat är kontinuerligt uppdaterade och verifierade för att säkerställa aktuell och korrekt information.</p>
-          `
+          titleKey: 'step2PopupStep3Title',
+          contentKey: 'step2PopupStep3Content'
         },
         step4: {
-          title: 'Steg 4: Utvärdera hållbarhet och ytterligare information',
-          content: `
-            <h3>Detaljerad information om hållbarhet och ytterligare information</h3>
-            <p>Hållbarhetssektionen och ytterligare information ger dig en komplett bild av företagets miljöengagemang och övergripande kompetens.</p>
-            <h4>Hållbarhetsinformation</h4>
-            <ul>
-              <li><strong>Miljöpraxis:</strong> Företagets miljöarbete och initiativ</li>
-              <li><strong>Hållbara material:</strong> Användning av miljövänliga och återvinningsbara material</li>
-              <li><strong>Energieffektivitet:</strong> Fokus på energieffektiva lösningar</li>
-              <li><strong>Certifieringar:</strong> Miljö- och hållbarhetscertifikat</li>
-              <li><strong>Framtidsplaner:</strong> Strategier för kontinuerlig förbättring</li>
-            </ul>
-            <h4>Ytterligare information</h4>
-            <ul>
-              <li><strong>Projektportfölj:</strong> Bildgalleri och beskrivningar av tidigare projekt</li>
-              <li><strong>Kundrecensioner:</strong> Detaljerade recensioner från tidigare kunder</li>
-              <li><strong>Referenser:</strong> Kontaktuppgifter till tidigare kunder för referenser</li>
-              <li><strong>Medlemskap:</strong> Medlemskap i branschorganisationer</li>
-              <li><strong>Utmärkelser:</strong> Tävlingar och utmärkelser företaget har vunnit</li>
-            </ul>
-            <p>Denna omfattande information hjälper dig att utvärdera leverantörens lämplighet för dina specifika behov och projektkrav.</p>
-          `
+          titleKey: 'step2PopupStep4Title',
+          contentKey: 'step2PopupStep4Content'
         },
         'visual-profile': {
-          title: 'Företagsprofil',
-          content: `
-            <h3>Detaljerad information om företagsprofil</h3>
-            <p>Företagsprofilen är den centrala platsen där all information om leverantören samlas och presenteras på ett organiserat sätt.</p>
-            <ul>
-              <li><strong>Huvudsektion:</strong> Företagslogotyp, namn, plats och övergripande betyg visas tydligt</li>
-              <li><strong>Informationsflikar:</strong> Profilen är organiserad i flikar för olika typer av information</li>
-              <li><strong>Företagsinformation:</strong> Detaljerad beskrivning av företaget, dess historia och specialiseringar</li>
-              <li><strong>Kontaktinformation:</strong> Direkta kontaktuppgifter för snabb kommunikation</li>
-              <li><strong>Specialiseringar:</strong> Tydlig översikt över företagets huvudområden och expertis</li>
-              <li><strong>Responsiv design:</strong> Profilen anpassar sig automatiskt till din skärmstorlek</li>
-            </ul>
-            <p>Profilen är designad för att ge dig all information du behöver för att fatta välgrundade beslut om leverantörer.</p>
-          `
+          titleKey: 'step2PopupVisualProfileTitle',
+          contentKey: 'step2PopupVisualProfileContent'
         },
         'visual-ratings': {
-          title: 'Betyg och recensioner',
-          content: `
-            <h3>Detaljerad information om betyg och recensioner</h3>
-            <p>Betyg och recensioner ger dig värdefull insikt i leverantörens prestanda och tillförlitlighet baserat på tidigare kunders erfarenheter.</p>
-            <ul>
-              <li><strong>Visuell visning:</strong> Betyg visas med stjärnor eller numeriska poäng för snabb översikt</li>
-              <li><strong>Kategoribetyg:</strong> Detaljerade betyg för olika aspekter som kvalitet, service, prissättning</li>
-              <li><strong>Kundrecensioner:</strong> Verifierade recensioner från tidigare kunder med detaljerade kommentarer</li>
-              <li><strong>Betygshistorik:</strong> Översikt över betygsutveckling över tid</li>
-              <li><strong>Verifierade recensioner:</strong> Endast verifierade kundrecensioner visas för att säkerställa autenticitet</li>
-              <li><strong>Filtrering:</strong> Möjlighet att filtrera recensioner efter datum, betyg eller kategori</li>
-            </ul>
-            <p>Betyg och recensioner hjälper dig att bedöma leverantörens pålitlighet och kvalitet baserat på verkliga kunders erfarenheter.</p>
-          `
+          titleKey: 'step2PopupVisualRatingsTitle',
+          contentKey: 'step2PopupVisualRatingsContent'
         },
         'visual-certifications': {
-          title: 'Certifieringar',
-          content: `
-            <h3>Detaljerad information om certifieringar</h3>
-            <p>Certifieringar är viktiga indikatorer på en leverantörs kvalitet, kompetens och förmåga att uppfylla branschstandarder.</p>
-            <ul>
-              <li><strong>Visuella märken:</strong> Certifikat visas som märken eller ikoner för snabb identifiering</li>
-              <li><strong>Kvalitetsstandarder:</strong> ISO-certifieringar och andra kvalitetssystem</li>
-              <li><strong>Säkerhetscertifikat:</strong> Arbetsmiljö- och säkerhetscertifikat som bevisar säker arbetsmiljö</li>
-              <li><strong>Branschspecifika:</strong> Certifikat relevanta för byggbranschen och specifika specialiseringar</li>
-              <li><strong>Miljöcertifieringar:</strong> Hållbarhets- och miljöcertifikat som visar miljöengagemang</li>
-              <li><strong>Verifieringsstatus:</strong> Alla certifikat är verifierade för att säkerställa giltighet</li>
-            </ul>
-            <p>Certifieringar hjälper dig att verifiera att leverantören uppfyller de nödvändiga standarderna och krav som krävs för ditt projekt.</p>
-          `
+          titleKey: 'step2PopupVisualCertificationsTitle',
+          contentKey: 'step2PopupVisualCertificationsContent'
         }
       };
 
@@ -429,8 +320,41 @@
         // Store current focus for restoration (before opening new popup)
         previousActiveElement = document.activeElement;
         
+        // Get current language
+        const currentLang = localStorage.getItem('language') || 'sv';
+        
+        // Get translations from global translations object (defined in lang.js)
+        const popupData = infoPopupData[id];
+        if (!popupData) {
+          console.error('Popup data not found for ID:', id);
+          return;
+        }
+        
+        // Get translated title and content - use translations from lang.js
+        let translatedTitle = '';
+        let translatedContent = '';
+        
+        // Check if using new structure with keys or old structure with direct text
+        if (popupData.titleKey && popupData.contentKey) {
+          // New structure: use translation keys
+          if (typeof translations !== 'undefined' && translations[currentLang]) {
+            translatedTitle = translations[currentLang][popupData.titleKey] || popupData.titleKey;
+            translatedContent = translations[currentLang][popupData.contentKey] || popupData.contentKey;
+          } else {
+            translatedTitle = popupData.titleKey;
+            translatedContent = popupData.contentKey;
+          }
+        } else if (popupData.title && popupData.content) {
+          // Old structure: use direct text (backward compatibility)
+          translatedTitle = popupData.title;
+          translatedContent = popupData.content;
+        } else {
+          console.error('Popup data structure invalid for ID:', id);
+          return;
+        }
+        
         // Update title first
-        title.textContent = infoPopupData[id].title;
+        title.textContent = translatedTitle;
         title.classList.remove('sr-only');
         
         // Update content - preserve title element
@@ -442,15 +366,15 @@
         contentNodes.forEach(node => node.remove());
         // Insert new content after title
         const tempDiv = document.createElement('div');
-        tempDiv.innerHTML = infoPopupData[id].content;
+        tempDiv.innerHTML = translatedContent;
         // Move all nodes from tempDiv to content after title
         while (tempDiv.firstChild) {
           content.appendChild(tempDiv.firstChild);
         }
         
-        // Explicitly set overlay styles to ensure it's visible and clickable
-        popup.style.display = 'flex';
-        popup.style.pointerEvents = 'auto';
+        // Remove inline styles to let CSS handle display (CSS uses .active class)
+        popup.style.display = '';
+        popup.style.pointerEvents = '';
         
         // Update ARIA attributes
         popup.setAttribute('aria-hidden', 'false');
@@ -476,9 +400,9 @@
         
         if (!popup) return;
         
-        // Explicitly reset overlay styles to ensure it doesn't block clicks
-        popup.style.display = 'none';
-        popup.style.pointerEvents = 'none';
+        // Remove inline styles to let CSS handle display
+        popup.style.display = '';
+        popup.style.pointerEvents = '';
         
         // Update ARIA attributes
         popup.setAttribute('aria-hidden', 'true');

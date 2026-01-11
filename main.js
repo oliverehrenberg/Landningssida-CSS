@@ -136,7 +136,9 @@ document.addEventListener("DOMContentLoaded", (() => {
     console.error('Error loading sections:', error);
   });
 
-  const hero = document.querySelector(".hero"), sections = document.querySelectorAll(".features-wrapper, .features-summary-wrapper, #pricing, #about, .cta-section, footer");
+  const hero = document.querySelector(".hero");
+  // Find all sections with section-hidden class (works for both main page and step-details pages)
+  const sections = document.querySelectorAll(".section-hidden, .features-wrapper, .features-summary-wrapper, #pricing, #about, .cta-section, footer");
   lucide.createIcons(), gsap.registerPlugin(ScrollTrigger);
   const carouselTrack = document.querySelector(".carousel-track"), carouselPrev = document.querySelector(".carousel-prev"), carouselNext = document.querySelector(".carousel-next"), useCaseCards = document.querySelectorAll(".use-case-card");
   let currentIndex = 0;

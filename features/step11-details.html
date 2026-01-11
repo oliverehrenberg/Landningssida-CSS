@@ -28,22 +28,22 @@
         <div class="step1-hero-features">
           <div class="step1-hero-feature-item">
             <i class="fa-solid fa-cloud-arrow-up" aria-hidden="true"></i>
-            <span>Ladda upp dokument</span>
+            <span data-translate="step11HeroFeatureUploadTitle">Ladda upp dokument</span>
           </div>
           <div class="step1-hero-feature-item">
             <i class="fa-solid fa-filter" aria-hidden="true"></i>
-            <span>Organisera och filtrera</span>
+            <span data-translate="step11HeroFeatureOrganizeTitle">Organisera och filtrera</span>
           </div>
           <div class="step1-hero-feature-item">
             <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
-            <span>Sökfunktion</span>
+            <span data-translate="step11HeroFeatureSearchTitle">Sökfunktion</span>
           </div>
         </div>
       </div>
     </section>
 
     <!-- Feature Details -->
-    <section class="feature-detail-section">
+    <section class="feature-detail-section section-hidden">
       <div class="section-header">
         <h2 data-translate="step11DetailInterfaceTitle">Översikt över dokumentbibliotekssidan</h2>
         <div class="section-divider-line"></div>
@@ -81,7 +81,7 @@
     </section>
 
     <!-- How It Works -->
-    <section class="how-it-works step1-how-works">
+    <section class="how-it-works section-hidden step1-how-works">
       <div class="section-header">
         <h2 data-translate="howItWorksTitle">Så fungerar det</h2>
         <div class="section-divider-line"></div>
@@ -239,210 +239,35 @@
     <script src="../main.js"></script>
     <script>
       // Info popup data - detailed information for each section
+      // Info popup data - using translation keys instead of hardcoded text
       const infoPopupData = {
         step1: {
-          title: 'Steg 1: Få tillgång till dokumentbiblioteket',
-          content: `
-            <h3>Detaljerad information om att komma åt dokumentbiblioteket</h3>
-            <p>Dokumentbiblioteket är din centrala plats för att hantera alla projektdokument på ett ställe.</p>
-            <h4>Tillgång via projekt</h4>
-            <ul>
-              <li><strong>Från projekt:</strong> Navigera till dokumenthanteringssektionen från projektet</li>
-              <li><strong>Projektbibliotek:</strong> Öppna dokumentbiblioteket för specifikt projekt</li>
-              <li><strong>Projektorganisering:</strong> Dokument är automatiskt organiserade per projekt</li>
-              <li><strong>Snabbåtkomst:</strong> Enkel åtkomst till projektets dokument</li>
-            </ul>
-            <h4>Tillgång via huvudmenyn</h4>
-            <ul>
-              <li><strong>Huvudnavigationsmeny:</strong> Navigera till dokumenthanteringssektionen från huvudmenyn</li>
-              <li><strong>Centraliserad hantering:</strong> Hantera dokument från centraliserad plats</li>
-              <li><strong>Projektval:</strong> Välj projekt för att se dess dokument</li>
-              <li><strong>Översikt:</strong> Se översikt över alla projektdokument</li>
-            </ul>
-            <h4>Dokumentbibliotekets layout</h4>
-            <ul>
-              <li><strong>Organiserad layout:</strong> Alla dokument visas i en organiserad layout</li>
-              <li><strong>Kortbaserat:</strong> Dokument visas som kort för enkel översikt</li>
-              <li><strong>Kategorisering:</strong> Dokument kan kategoriseras för bättre organisering</li>
-              <li><strong>Snabbidentifiering:</strong> Enkel identifiering av dokument på ett ögonkast</li>
-            </ul>
-            <p>Dokumentbiblioteket ger dig full kontroll över alla projektdokument.</p>
-          `
+          titleKey: 'step11PopupStep1Title',
+          contentKey: 'step11PopupStep1Content'
         },
         step2: {
-          title: 'Steg 2: Ladda upp dokument',
-          content: `
-            <h3>Detaljerad information om att ladda upp dokument</h3>
-            <p>Uppladdningsprocessen är designad för att vara enkel och effektiv, med stöd för olika uppladdningsmetoder.</p>
-            <h4>Dra och släpp</h4>
-            <ul>
-              <li><strong>Drag and drop:</strong> Dra filer direkt till uppladdningsområdet</li>
-              <li><strong>Snabb uppladdning:</strong> Snabb och enkel uppladdning av filer</li>
-              <li><strong>Flera filer:</strong> Ladda upp flera filer samtidigt</li>
-              <li><strong>Visuell feedback:</strong> Visuell feedback under uppladdningsprocessen</li>
-            </ul>
-            <h4>Manuell val</h4>
-            <ul>
-              <li><strong>Klicka för att välja:</strong> Klicka på uppladdningsområdet för att välja filer</li>
-              <li><strong>Filväljare:</strong> Använd filväljaren för att välja filer från din enhet</li>
-              <li><strong>Flera val:</strong> Välj flera filer samtidigt</li>
-              <li><strong>Filtyper:</strong> Stöd för olika filtyper och format</li>
-            </ul>
-            <h4>Filstorlekar och begränsningar</h4>
-            <ul>
-              <li><strong>Maximal storlek:</strong> Filstorlekar upp till 50MB per fil</li>
-              <li><strong>Stödda format:</strong> Olika filformat stöds (PDF, DOC, XLS, bilder, etc.)</li>
-              <li><strong>Validering:</strong> Automatisk validering av filstorlek och format</li>
-              <li><strong>Felhantering:</strong> Tydliga felmeddelanden om filer inte kan laddas upp</li>
-            </ul>
-            <h4>Organisering och kategorisering</h4>
-            <ul>
-              <li><strong>Automatisk organisering:</strong> Dokument organiseras automatiskt per projekt</li>
-              <li><strong>Kategorisering:</strong> Kategorisera dokument under eller efter uppladdning</li>
-              <li><strong>Kategorier:</strong> Material, tjänster, tekniska specifikationer, etc.</li>
-              <li><strong>Taggar:</strong> Lägg till taggar för bättre organisering</li>
-            </ul>
-            <h4>Uppladdningsstatus</h4>
-            <ul>
-              <li><strong>Förloppsindikatorer:</strong> Se förlopp för varje uppladdning</li>
-              <li><strong>Bekräftelse:</strong> Få bekräftelse när uppladdningen är klar</li>
-              <li><strong>Felhantering:</strong> Hantera eventuella fel under uppladdning</li>
-              <li><strong>Återförsök:</strong> Möjlighet att försöka igen om uppladdning misslyckas</li>
-            </ul>
-            <p>Uppladdningsprocessen är designad för att vara så enkel och användarvänlig som möjligt.</p>
-          `
+          titleKey: 'step11PopupStep2Title',
+          contentKey: 'step11PopupStep2Content'
         },
         step3: {
-          title: 'Steg 3: Visa och organisera dokument',
-          content: `
-            <h3>Detaljerad information om att visa och organisera dokument</h3>
-            <p>Dokumentbiblioteket ger dig olika sätt att visa och organisera dokument för enkel hantering.</p>
-            <h4>Kortbaserat layout</h4>
-            <ul>
-              <li><strong>Dokumentkort:</strong> Varje dokument visas som ett kort</li>
-              <li><strong>Rutnätslayout:</strong> Kort visas i ett rutnätslayout för enkel översikt</li>
-              <li><strong>Visuell identifiering:</strong> Enkel identifiering av dokument på ett ögonkast</li>
-              <li><strong>Snabbnavigering:</strong> Snabb navigering mellan dokument</li>
-            </ul>
-            <h4>Dokumentinformation</h4>
-            <ul>
-              <li><strong>Filnamn:</strong> Tydlig visning av filnamn</li>
-              <li><strong>Filstorlek:</strong> Storlek i MB eller KB</li>
-              <li><strong>Uppladdningsdatum:</strong> När dokumentet laddades upp</li>
-              <li><strong>Kategori:</strong> Kategorimärken för enkel identifiering</li>
-              <li><strong>Filtyp:</strong> Typ av fil (PDF, DOC, bild, etc.)</li>
-              <li><strong>Förhandsvisning:</strong> Förhandsvisning av dokument om tillgängligt</li>
-            </ul>
-            <h4>Organisering</h4>
-            <ul>
-              <li><strong>Per projekt:</strong> Dokument organiseras automatiskt per projekt</li>
-              <li><strong>Kategorisering:</strong> Filtrera dokument efter kategori</li>
-              <li><strong>Kategorier:</strong> Material, tjänster, tekniska specifikationer, etc.</li>
-              <li><strong>Sortering:</strong> Sortera dokument efter namn, datum, storlek</li>
-              <li><strong>Gruppering:</strong> Gruppera dokument efter olika kriterier</li>
-            </ul>
-            <h4>Bläddring och navigering</h4>
-            <ul>
-              <li><strong>Scrollning:</strong> Scrolla genom dokumentkort för att hitta filer</li>
-              <li><strong>Detaljvy:</strong> Klicka på kort för att se detaljerad information</li>
-              <li><strong>Snabbåtkomst:</strong> Snabb åtkomst till dokumentåtgärder</li>
-              <li><strong>Filtrering:</strong> Filtrera dokument för att hitta specifika filer</li>
-            </ul>
-            <p>Dokumentbiblioteket gör det enkelt att hitta och hantera dokument effektivt.</p>
-          `
+          titleKey: 'step11PopupStep3Title',
+          contentKey: 'step11PopupStep3Content'
         },
         step4: {
-          title: 'Steg 4: Sök och hantera dokument',
-          content: `
-            <h3>Detaljerad information om att söka och hantera dokument</h3>
-            <p>Sökfunktion och dokumenthantering gör det enkelt att hitta och hantera specifika dokument.</p>
-            <h4>Sökfunktion</h4>
-            <ul>
-              <li><strong>Sökfält:</strong> Ange nyckelord eller filnamn i sökfältet</li>
-              <li><strong>Realtidssökning:</strong> Sökresultat uppdateras i realtid när du skriver</li>
-              <li><strong>Flera kriterier:</strong> Sök efter namn, kategori, innehåll eller andra kriterier</li>
-              <li><strong>Höjdpunkter:</strong> Sökord markeras i resultaten</li>
-            </ul>
-            <h4>Avancerade filter</h4>
-            <ul>
-              <li><strong>Kategorifilter:</strong> Filtrera efter kategori (material, tjänster, tekniska specifikationer)</li>
-              <li><strong>Datumfilter:</strong> Filtrera efter uppladdningsdatum eller datumintervall</li>
-              <li><strong>Filtypfilter:</strong> Filtrera efter filtyp (PDF, DOC, bilder, etc.)</li>
-              <li><strong>Kombinera filter:</strong> Kombinera flera filter för mer precisa resultat</li>
-            </ul>
-            <h4>Dokumentåtgärder</h4>
-            <ul>
-              <li><strong>Visa:</strong> Öppna och visa dokument direkt i webbläsaren</li>
-              <li><strong>Ladda ner:</strong> Ladda ner dokument till din enhet</li>
-              <li><strong>Radera:</strong> Ta bort dokument från biblioteket</li>
-              <li><strong>Dela:</strong> Dela dokument med andra användare</li>
-              <li><strong>Redigera:</strong> Redigera dokumentinformation och kategorier</li>
-              <li><strong>Förhandsvisning:</strong> Förhandsgranska dokument innan nedladdning</li>
-            </ul>
-            <h4>Åtgärder från kort</h4>
-            <ul>
-              <li><strong>Lättillgängliga:</strong> Alla åtgärder är lättillgängliga direkt från dokumentkorten</li>
-              <li><strong>Snabbåtgärder:</strong> Utför åtgärder utan att navigera till separata sidor</li>
-              <li><strong>Kontextmeny:</strong> Högerklicka för ytterligare åtgärder</li>
-              <li><strong>Bulkåtgärder:</strong> Utför åtgärder på flera dokument samtidigt</li>
-            </ul>
-            <h4>Hanteringseffektivitet</h4>
-            <ul>
-              <li><strong>Snabb sökning:</strong> Hitta dokument snabbt med sökfunktion</li>
-              <li><strong>Effektiv filtrering:</strong> Filtrera dokument för att hitta exakt vad du behöver</li>
-              <li><strong>Enkel hantering:</strong> Hantera dokument enkelt från kort</li>
-              <li><strong>Organiserad:</strong> Organiserad visning för enkel hantering</li>
-            </ul>
-            <p>Sökfunktion och dokumenthantering gör det enkelt att hantera även stora antal dokument effektivt.</p>
-          `
+          titleKey: 'step11PopupStep4Title',
+          contentKey: 'step11PopupStep4Content'
         },
         'visual-cards': {
-          title: 'Dokumentkortlayout',
-          content: `
-            <h3>Detaljerad information om dokumentkortlayout</h3>
-            <p>Dokumentkortlayouten gör det enkelt att bläddra och identifiera dokument på ett ögonkast.</p>
-            <ul>
-              <li><strong>Rutnätslayout:</strong> Dokument visas i ett kortbaserat rutnätslayout</li>
-              <li><strong>Viktig information:</strong> Varje kort visar filnamn, filstorlek, uppladdningsdatum och kategori</li>
-              <li><strong>Visuell identifiering:</strong> Enkel identifiering av dokument på ett ögonkast</li>
-              <li><strong>Förhandsvisning:</strong> Förhandsvisning av dokument om tillgängligt</li>
-              <li><strong>Åtgärder:</strong> Snabbåtkomst till dokumentåtgärder från kortet</li>
-              <li><strong>Responsiv design:</strong> Layouten anpassar sig automatiskt till din skärmstorlek</li>
-            </ul>
-            <p>Dokumentkortlayouten är designad för enkel översikt och identifiering av dokument.</p>
-          `
+          titleKey: 'step11PopupVisualCardsTitle',
+          contentKey: 'step11PopupVisualCardsContent'
         },
         'visual-upload': {
-          title: 'Uppladdningsområde',
-          content: `
-            <h3>Detaljerad information om uppladdningsområde</h3>
-            <p>Uppladdningsområdet ger dig flexibla alternativ för att lägga till nya dokument i biblioteket.</p>
-            <ul>
-              <li><strong>Dra och släpp:</strong> Dra filer direkt till uppladdningszonen för snabb uppladdning</li>
-              <li><strong>Manuell val:</strong> Klicka för att bläddra och välja filer från din enhet</li>
-              <li><strong>Flera filer:</strong> Ladda upp flera filer samtidigt</li>
-              <li><strong>Filstorlekar:</strong> Tydlig indikering av stödda filstorlekar (upp till 50MB)</li>
-              <li><strong>Filformat:</strong> Information om stödda filformat</li>
-              <li><strong>Förloppsindikatorer:</strong> Se förlopp för varje uppladdning</li>
-            </ul>
-            <p>Uppladdningsområdet är designat för att göra uppladdning så enkel och effektiv som möjligt.</p>
-          `
+          titleKey: 'step11PopupVisualUploadTitle',
+          contentKey: 'step11PopupVisualUploadContent'
         },
         'visual-search': {
-          title: 'Sök och filter',
-          content: `
-            <h3>Detaljerad information om sök och filter</h3>
-            <p>Sökfunktion och filter gör det möjligt att snabbt hitta specifika dokument.</p>
-            <ul>
-              <li><strong>Sökfunktion:</strong> Sök efter dokument med nyckelord eller filnamn</li>
-              <li><strong>Realtidssökning:</strong> Sökresultat uppdateras i realtid när du skriver</li>
-              <li><strong>Kategorifilter:</strong> Filtrera efter kategori (material, tjänster, tekniska specifikationer)</li>
-              <li><strong>Datumfilter:</strong> Filtrera efter uppladdningsdatum eller datumintervall</li>
-              <li><strong>Filtypfilter:</strong> Filtrera efter filtyp för mer precisa resultat</li>
-              <li><strong>Filterkombination:</strong> Kombinera flera filter för exakt matchning</li>
-            </ul>
-            <p>Sökfunktion och filter hjälper dig att snabbt hitta de dokument du behöver.</p>
-          `
+          titleKey: 'step11PopupVisualSearchTitle',
+          contentKey: 'step11PopupVisualSearchContent'
         }
       };
 
@@ -479,10 +304,43 @@
           previousActiveElement = document.activeElement;
         }
         
+        // Get current language
+        const currentLang = localStorage.getItem('language') || 'sv';
+        
+        // Get translations from global translations object (defined in lang.js)
+        const popupData = infoPopupData[id];
+        if (!popupData) {
+          console.error('Popup data not found for ID:', id);
+          return;
+        }
+        
+        // Get translated title and content - use translations from lang.js
+        let translatedTitle = '';
+        let translatedContent = '';
+        
+        // Check if using new structure with keys or old structure with direct text
+        if (popupData.titleKey && popupData.contentKey) {
+          // New structure: use translation keys
+          if (typeof translations !== 'undefined' && translations[currentLang]) {
+            translatedTitle = translations[currentLang][popupData.titleKey] || popupData.titleKey;
+            translatedContent = translations[currentLang][popupData.contentKey] || popupData.contentKey;
+          } else {
+            translatedTitle = popupData.titleKey;
+            translatedContent = popupData.contentKey;
+          }
+        } else if (popupData.title && popupData.content) {
+          // Old structure: use direct text (backward compatibility)
+          translatedTitle = popupData.title;
+          translatedContent = popupData.content;
+        } else {
+          console.error('Popup data structure invalid for ID:', id);
+          return;
+        }
+        
         // Update content
-        title.textContent = infoPopupData[id].title;
+        title.textContent = translatedTitle;
         title.classList.remove('sr-only');
-        content.innerHTML = infoPopupData[id].content;
+        content.innerHTML = translatedContent;
         
         // Update ARIA attributes
         popup.setAttribute('aria-hidden', 'false');

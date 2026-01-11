@@ -28,22 +28,22 @@
         <div class="step1-hero-features">
           <div class="step1-hero-feature-item">
             <i class="fa-solid fa-file-invoice" aria-hidden="true"></i>
-            <span>Granska mottagna offerter</span>
+            <span data-translate="step6HeroFeatureReviewTitle">Granska mottagna offerter</span>
           </div>
           <div class="step1-hero-feature-item">
             <i class="fa-solid fa-file-lines" aria-hidden="true"></i>
-            <span>Skapa och skicka offerter</span>
+            <span data-translate="step6HeroFeatureCreateTitle">Skapa och skicka offerter</span>
           </div>
           <div class="step1-hero-feature-item">
             <i class="fa-solid fa-comments" aria-hidden="true"></i>
-            <span>Kommunikation om offerter</span>
+            <span data-translate="step6HeroFeatureCommunicationTitle">Kommunikation om offerter</span>
           </div>
         </div>
       </div>
     </section>
 
     <!-- Feature Details -->
-    <section class="feature-detail-section">
+    <section class="feature-detail-section section-hidden">
       <div class="section-header">
         <h2 data-translate="step6DetailInterfaceTitle">Översikt över offerthanteringssidan</h2>
         <div class="section-divider-line"></div>
@@ -81,7 +81,7 @@
     </section>
 
     <!-- How It Works -->
-    <section class="how-it-works step1-how-works">
+    <section class="how-it-works section-hidden step1-how-works">
       <div class="section-header">
         <h2 data-translate="howItWorksTitle">Så fungerar det</h2>
         <div class="section-divider-line"></div>
@@ -239,208 +239,35 @@
     <script src="../main.js"></script>
     <script>
       // Info popup data - detailed information for each section
+      // Info popup data - using translation keys instead of hardcoded text
       const infoPopupData = {
         step1: {
-          title: 'Steg 1: Få tillgång till mottagna offerter',
-          content: `
-            <h3>Detaljerad information om att komma åt mottagna offerter</h3>
-            <p>Offertsektionen är din centrala plats för att hantera alla offerter - både mottagna och skickade.</p>
-            <h4>Tillgång via Dashboard</h4>
-            <ul>
-              <li><strong>Offertsektion:</strong> Navigera till offertsektionen i Dashboard</li>
-              <li><strong>Offertlista:</strong> Se alla mottagna offerter från leverantörer</li>
-              <li><strong>Statusöversikt:</strong> Se status på alla offerter på ett ställe</li>
-              <li><strong>Filtrering:</strong> Filtrera offerter efter status, datum eller leverantör</li>
-            </ul>
-            <h4>Tillgång via chattgränssnittet</h4>
-            <ul>
-              <li><strong>Direkt från chatten:</strong> Kom åt offerter direkt från konversationstråden</li>
-              <li><strong>Kontextuell visning:</strong> Se offerter i kontexten av konversationen</li>
-              <li><strong>Snabbåtkomst:</strong> Enkel åtkomst utan att lämna chatten</li>
-              <li><strong>Realtidsuppdateringar:</strong> Se nya offerter direkt när de anländer</li>
-            </ul>
-            <h4>Offertorganisation</h4>
-            <ul>
-              <li><strong>Mottagna offerter:</strong> Offerter som du har mottagit från leverantörer</li>
-              <li><strong>Skickade offerter:</strong> Offerter som du har skickat som leverantör</li>
-              <li><strong>Statusindikatorer:</strong> Tydlig visning av offertstatus</li>
-              <li><strong>Sortering:</strong> Sortera offerter efter datum, status eller belopp</li>
-            </ul>
-            <p>Båda tillgångssätten ger dig full funktionalitet för att hantera offerter effektivt.</p>
-          `
+          titleKey: 'step6PopupStep1Title',
+          contentKey: 'step6PopupStep1Content'
         },
         step2: {
-          title: 'Steg 2: Granska offertdetaljer',
-          content: `
-            <h3>Detaljerad information om att granska offertdetaljer</h3>
-            <p>Offertdetaljvyn ger dig all information du behöver för att utvärdera och fatta beslut om offerter.</p>
-            <h4>Prisinformation</h4>
-            <ul>
-              <li><strong>Prisuppdelning:</strong> Detaljerad uppdelning av priser per artikel eller tjänst</li>
-              <li><strong>Totalpris:</strong> Totalt pris för hela erbjudandet</li>
-              <li><strong>Prisjämförelse:</strong> Jämför priser med andra offerter</li>
-              <li><strong>Valuta:</strong> Valuta för prissättningen</li>
-            </ul>
-            <h4>Betalningsvillkor</h4>
-            <ul>
-              <li><strong>Betalningsplan:</strong> När och hur betalningar ska göras</li>
-              <li><strong>Betalningsmetoder:</strong> Vilka betalningsmetoder som accepteras</li>
-              <li><strong>Betalningsvillkor:</strong> Specifika villkor för betalningar</li>
-              <li><strong>Rabatter:</strong> Eventuella rabatter eller specialpriser</li>
-            </ul>
-            <h4>Leveransvillkor</h4>
-            <ul>
-              <li><strong>Leveransdatum:</strong> När leveransen förväntas ske</li>
-              <li><strong>Leveransplats:</strong> Var leveransen ska ske</li>
-              <li><strong>Leveransmetod:</strong> Hur leveransen ska ske</li>
-              <li><strong>Leveranskostnader:</strong> Kostnader för leverans</li>
-            </ul>
-            <h4>Garantivillkor</h4>
-            <ul>
-              <li><strong>Garantitid:</strong> Hur lång garantiperiod som erbjuds</li>
-              <li><strong>Garantitäckning:</strong> Vad garantin täcker</li>
-              <li><strong>Servicevillkor:</strong> Villkor för service och support</li>
-              <li><strong>Garantiprocess:</strong> Hur garantiprocessen fungerar</li>
-            </ul>
-            <h4>Logistik och transport</h4>
-            <ul>
-              <li><strong>Logistikdetaljer:</strong> Specifika logistikkrav och arrangemang</li>
-              <li><strong>Transportinformation:</strong> Transportmetoder och krav</li>
-              <li><strong>Försäkring:</strong> Försäkringsdetaljer för transport</li>
-              <li><strong>Spårning:</strong> Möjlighet att spåra leveranser</li>
-            </ul>
-            <p>All denna information hjälper dig att fatta välgrundade beslut om offerter.</p>
-          `
+          titleKey: 'step6PopupStep2Title',
+          contentKey: 'step6PopupStep2Content'
         },
         step3: {
-          title: 'Steg 3: Skapa och skicka offert (som leverantör)',
-          content: `
-            <h3>Detaljerad information om att skapa och skicka offerter</h3>
-            <p>När du agerar som leverantör kan du skapa och skicka offerter som svar på offertförfrågningar från beställare.</p>
-            <h4>Tillgång till offertförfrågan</h4>
-            <ul>
-              <li><strong>Från chatten:</strong> Kom åt offertförfrågan direkt från konversationstråden</li>
-              <li><strong>Från offertsektionen:</strong> Hitta offertförfrågan i offertsektionen</li>
-              <li><strong>Notifikationer:</strong> Få notifikationer när nya offertförfrågningar anländer</li>
-              <li><strong>Kontextuell skapande:</strong> Skapa offert med relevant kontext från förfrågan</li>
-            </ul>
-            <h4>Offertformulär</h4>
-            <ul>
-              <li><strong>Prisinformation:</strong> Ange priser för alla artiklar eller tjänster</li>
-              <li><strong>Kvantiteter:</strong> Specificera kvantiteter för varje artikel</li>
-              <li><strong>Leveransdatum:</strong> Ange när leveransen kan ske</li>
-              <li><strong>Betalningsvillkor:</strong> Definiera betalningsvillkor och planer</li>
-              <li><strong>Garantivillkor:</strong> Specificera garantivillkor och service</li>
-              <li><strong>Leveransinformation:</strong> Ange leveransplatser och metoder</li>
-            </ul>
-            <h4>Ytterligare information</h4>
-            <ul>
-              <li><strong>Anteckningar:</strong> Lägg till ytterligare information eller kommentarer</li>
-              <li><strong>Specifikationer:</strong> Detaljerade specifikationer för produkter eller tjänster</li>
-              <li><strong>Alternativ:</strong> Erbjud alternativ eller varianter</li>
-              <li><strong>Bilagor:</strong> Bifoga relevanta dokument eller bilder</li>
-            </ul>
-            <h4>Granskning och skickande</h4>
-            <ul>
-              <li><strong>Förhandsgranskning:</strong> Granska offerten innan du skickar</li>
-              <li><strong>Validering:</strong> Kontrollera att all nödvändig information är ifylld</li>
-              <li><strong>Skicka:</strong> Skicka offerten till beställaren</li>
-              <li><strong>Bekräftelse:</strong> Få bekräftelse när offerten har skickats</li>
-            </ul>
-            <p>En komplett och välstrukturerad offert ökar chanserna för att få ordern.</p>
-          `
+          titleKey: 'step6PopupStep3Title',
+          contentKey: 'step6PopupStep3Content'
         },
         step4: {
-          title: 'Steg 4: Skicka offert och hantera svar',
-          content: `
-            <h3>Detaljerad information om att skicka offerter och hantera svar</h3>
-            <p>När offerten är skickad kan du spåra dess status och hantera kommunikation och svar.</p>
-            <h4>Skicka process</h4>
-            <ul>
-              <li><strong>Via chattgränssnittet:</strong> Offerter skickas direkt via chattgränssnittet</li>
-              <li><strong>Synlighet:</strong> Offerten blir synlig för mottagaren i chatten</li>
-              <li><strong>Notifikationer:</strong> Mottagaren får notifikation om ny offert</li>
-              <li><strong>Bekräftelse:</strong> Få bekräftelse när offerten har levererats</li>
-            </ul>
-            <h4>Statusspårning</h4>
-            <ul>
-              <li><strong>Skickad:</strong> Offerten har skickats och väntar på svar</li>
-              <li><strong>Läst:</strong> Mottagaren har läst offerten</li>
-              <li><strong>Accepterad:</strong> Offerten har accepterats av mottagaren</li>
-              <li><strong>Avvisad:</strong> Offerten har avvisats</li>
-              <li><strong>Under förhandling:</strong> Offerten diskuteras eller förhandlas</li>
-            </ul>
-            <h4>Svarshantering</h4>
-            <ul>
-              <li><strong>Acceptera offerter:</strong> Acceptera mottagna offerter från leverantörer</li>
-              <li><strong>Avvisa offerter:</strong> Avvisa offerter som inte uppfyller krav</li>
-              <li><strong>Begära ändringar:</strong> Begär ändringar eller förtydliganden</li>
-              <li><strong>Förhandla:</strong> Förhandla om villkor och priser</li>
-            </ul>
-            <h4>Kommunikation</h4>
-            <ul>
-              <li><strong>Chattintegration:</strong> All kommunikation sker i chattgränssnittet</li>
-              <li><strong>Diskussion:</strong> Diskutera offertdetaljer direkt i chatten</li>
-              <li><strong>Förtydliganden:</strong> Be om förtydliganden eller ställ frågor</li>
-              <li><strong>Uppdateringar:</strong> Få uppdateringar om offertstatus</li>
-            </ul>
-            <h4>Offertjämförelse</h4>
-            <ul>
-              <li><strong>Jämföra offerter:</strong> Jämför offerter från olika leverantörer</li>
-              <li><strong>Analys:</strong> Analysera priser, villkor och erbjudanden</li>
-              <li><strong>Beslut:</strong> Fatta beslut baserat på jämförelser</li>
-              <li><strong>Dokumentation:</strong> Dokumentera beslutsprocessen</li>
-            </ul>
-            <p>Effektiv hantering av offerter och svar hjälper dig att fatta bästa beslut för ditt projekt.</p>
-          `
+          titleKey: 'step6PopupStep4Title',
+          contentKey: 'step6PopupStep4Content'
         },
         'visual-list': {
-          title: 'Offertlista',
-          content: `
-            <h3>Detaljerad information om offertlista</h3>
-            <p>Offertlistan ger dig en översikt över alla offerter - både mottagna och skickade.</p>
-            <ul>
-              <li><strong>Offertnummer:</strong> Unikt nummer för varje offert för enkel identifiering</li>
-              <li><strong>Leverantörs-/beställarnamn:</strong> Vem offerten är från eller till</li>
-              <li><strong>Datum:</strong> När offerten skapades eller skickades</li>
-              <li><strong>Status:</strong> Nuvarande status (väntande, accepterad, avvisad, etc.)</li>
-              <li><strong>Belopp:</strong> Totalt belopp för offerten</li>
-              <li><strong>Organisering:</strong> Offerter organiseras för enkel navigering och granskning</li>
-            </ul>
-            <p>Offertlistan är designad för att göra det enkelt att hålla koll på alla offerter och deras status.</p>
-          `
+          titleKey: 'step6PopupVisualListTitle',
+          contentKey: 'step6PopupVisualListContent'
         },
         'visual-details': {
-          title: 'Offertdetaljer',
-          content: `
-            <h3>Detaljerad information om offertdetaljvy</h3>
-            <p>Offertdetaljvyn visar all omfattande information om en offert på ett strukturerat sätt.</p>
-            <ul>
-              <li><strong>Prisuppdelning:</strong> Detaljerad uppdelning av priser per artikel eller tjänst</li>
-              <li><strong>Villkor:</strong> Alla villkor och bestämmelser för offerten</li>
-              <li><strong>Leveransdetaljer:</strong> Detaljerad information om leveransdatum, platser och metoder</li>
-              <li><strong>Betalningsvillkor:</strong> Betalningsplaner, metoder och villkor</li>
-              <li><strong>Garantinformation:</strong> Garantivillkor och serviceinformation</li>
-              <li><strong>Ytterligare anteckningar:</strong> Eventuella ytterligare specifikationer eller kommentarer</li>
-            </ul>
-            <p>Offertdetaljvyn är designad för att ge dig all information du behöver för att utvärdera offerten.</p>
-          `
+          titleKey: 'step6PopupVisualDetailsTitle',
+          contentKey: 'step6PopupVisualDetailsContent'
         },
         'visual-actions': {
-          title: 'Offertstatus och åtgärder',
-          content: `
-            <h3>Detaljerad information om offertstatus och åtgärder</h3>
-            <p>Offertstatus och åtgärder ger dig möjlighet att hantera offerter på olika sätt beroende på din roll och offertstatusen.</p>
-            <ul>
-              <li><strong>Statusindikatorer:</strong> Tydlig visning av offertstatus (väntande, accepterad, avvisad, utgången)</li>
-              <li><strong>Acceptera offerter:</strong> Acceptera offerter som uppfyller dina krav</li>
-              <li><strong>Avvisa offerter:</strong> Avvisa offerter som inte passar</li>
-              <li><strong>Begära ändringar:</strong> Begär ändringar eller förtydliganden i offerter</li>
-              <li><strong>Förhandla:</strong> Initiera förhandlingar om villkor och priser</li>
-              <li><strong>Spårning:</strong> Följ status på offerter över tid</li>
-            </ul>
-            <p>Offertstatus och åtgärder hjälper dig att hantera offerter effektivt och fatta välgrundade beslut.</p>
-          `
+          titleKey: 'step6PopupVisualActionsTitle',
+          contentKey: 'step6PopupVisualActionsContent'
         }
       };
 
@@ -477,10 +304,43 @@
           previousActiveElement = document.activeElement;
         }
         
+        // Get current language
+        const currentLang = localStorage.getItem('language') || 'sv';
+        
+        // Get translations from global translations object (defined in lang.js)
+        const popupData = infoPopupData[id];
+        if (!popupData) {
+          console.error('Popup data not found for ID:', id);
+          return;
+        }
+        
+        // Get translated title and content - use translations from lang.js
+        let translatedTitle = '';
+        let translatedContent = '';
+        
+        // Check if using new structure with keys or old structure with direct text
+        if (popupData.titleKey && popupData.contentKey) {
+          // New structure: use translation keys
+          if (typeof translations !== 'undefined' && translations[currentLang]) {
+            translatedTitle = translations[currentLang][popupData.titleKey] || popupData.titleKey;
+            translatedContent = translations[currentLang][popupData.contentKey] || popupData.contentKey;
+          } else {
+            translatedTitle = popupData.titleKey;
+            translatedContent = popupData.contentKey;
+          }
+        } else if (popupData.title && popupData.content) {
+          // Old structure: use direct text (backward compatibility)
+          translatedTitle = popupData.title;
+          translatedContent = popupData.content;
+        } else {
+          console.error('Popup data structure invalid for ID:', id);
+          return;
+        }
+        
         // Update content
-        title.textContent = infoPopupData[id].title;
+        title.textContent = translatedTitle;
         title.classList.remove('sr-only');
-        content.innerHTML = infoPopupData[id].content;
+        content.innerHTML = translatedContent;
         
         // Update ARIA attributes
         popup.setAttribute('aria-hidden', 'false');

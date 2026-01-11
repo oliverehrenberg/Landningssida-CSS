@@ -28,22 +28,22 @@
         <div class="step1-hero-features">
           <div class="step1-hero-feature-item">
             <i class="fa-solid fa-circle-check" aria-hidden="true"></i>
-            <span>Acceptera offerter</span>
+            <span data-translate="step7HeroFeatureAcceptTitle">Acceptera offerter</span>
           </div>
           <div class="step1-hero-feature-item">
             <i class="fa-solid fa-file-lines" aria-hidden="true"></i>
-            <span>Definiera avtalsvillkor</span>
+            <span data-translate="step7HeroFeatureTermsTitle">Definiera avtalsvillkor</span>
           </div>
           <div class="step1-hero-feature-item">
             <i class="fa-solid fa-handshake" aria-hidden="true"></i>
-            <span>Skapa formella avtal</span>
+            <span data-translate="step7HeroFeatureAgreementsTitle">Skapa formella avtal</span>
           </div>
         </div>
       </div>
     </section>
 
     <!-- Feature Details -->
-    <section class="feature-detail-section">
+    <section class="feature-detail-section section-hidden">
       <div class="section-header">
         <h2 data-translate="step7DetailInterfaceTitle">Översikt över avtalskapandesidan</h2>
         <div class="section-divider-line"></div>
@@ -81,7 +81,7 @@
     </section>
 
     <!-- How It Works -->
-    <section class="how-it-works step1-how-works">
+    <section class="how-it-works section-hidden step1-how-works">
       <div class="section-header">
         <h2 data-translate="howItWorksTitle">Så fungerar det</h2>
         <div class="section-divider-line"></div>
@@ -239,200 +239,35 @@
     <script src="../main.js"></script>
     <script>
       // Info popup data - detailed information for each section
+      // Info popup data - using translation keys instead of hardcoded text
       const infoPopupData = {
         step1: {
-          title: 'Steg 1: Granska och acceptera offert',
-          content: `
-            <h3>Detaljerad information om att granska och acceptera offerter</h3>
-            <p>Innan du accepterar en offert är det viktigt att noggrant granska alla detaljer för att säkerställa att den uppfyller dina krav.</p>
-            <h4>Offertgranskning</h4>
-            <ul>
-              <li><strong>Prisinformation:</strong> Granska prissättning och prisuppdelning</li>
-              <li><strong>Villkor:</strong> Kontrollera alla villkor och bestämmelser</li>
-              <li><strong>Leveransinformation:</strong> Verifiera leveransdatum och platser</li>
-              <li><strong>Garantivillkor:</strong> Granska garantivillkor och service</li>
-              <li><strong>Specifikationer:</strong> Kontrollera att specifikationer matchar dina krav</li>
-            </ul>
-            <h4>Acceptera process</h4>
-            <ul>
-              <li><strong>Acceptera-knapp:</strong> Klicka på 'Acceptera offert' när du är nöjd</li>
-              <li><strong>Bekräftelse:</strong> Få bekräftelse när offerten har accepterats</li>
-              <li><strong>Automatisk övergång:</strong> Dirigeras automatiskt till avtalskapande</li>
-              <li><strong>Offertstatus:</strong> Offertstatus uppdateras till 'Accepterad'</li>
-            </ul>
-            <h4>Fördelar med acceptans</h4>
-            <ul>
-              <li><strong>Formalisering:</strong> Börja processen att formalisera samarbetet</li>
-              <li><strong>Avtalskapande:</strong> Automatisk övergång till avtalskapande</li>
-              <li><strong>Dokumentation:</strong> Offerten dokumenteras som accepterad</li>
-              <li><strong>Spårning:</strong> Enkel spårning av accepterade offerter</li>
-            </ul>
-            <p>När offerten är accepterad kan du fortsätta med att skapa ett formellt avtal.</p>
-          `
+          titleKey: 'step7PopupStep1Title',
+          contentKey: 'step7PopupStep1Content'
         },
         step2: {
-          title: 'Steg 2: Få tillgång till avtalskapande',
-          content: `
-            <h3>Detaljerad information om att komma åt avtalskapande</h3>
-            <p>Efter att ha accepterat en offert kan du enkelt komma åt avtalskapandefunktionen för att skapa ett formellt avtal.</p>
-            <h4>Automatisk dirigerings</h4>
-            <ul>
-              <li><strong>Efter acceptans:</strong> Dirigeras automatiskt till avtalskapandesidan</li>
-              <li><strong>Sömlös övergång:</strong> Smidig övergång från offert till avtal</li>
-              <li><strong>Förfyllt formulär:</strong> Formuläret är redan förfyllt med information</li>
-              <li><strong>Kontextbevarande:</strong> All kontext från offerten bevaras</li>
-            </ul>
-            <h4>Manuell tillgång</h4>
-            <ul>
-              <li><strong>Från avtalssektionen:</strong> Kom åt avtalskapande från avtalssektionen</li>
-              <li><strong>Från Dashboard:</strong> Navigera till avtalskapande via Dashboard</li>
-              <li><strong>Från offert:</strong> Starta avtalskapande direkt från accepterad offert</li>
-              <li><strong>Flexibilitet:</strong> Välj det sätt som passar bäst för dig</li>
-            </ul>
-            <h4>Förfyllt formulär</h4>
-            <ul>
-              <li><strong>Offertinformation:</strong> All information från offerten är redan ifylld</li>
-              <li><strong>Prisinformation:</strong> Prissättning och villkor är förfyllda</li>
-              <li><strong>Projektinformation:</strong> Projektrelaterad information är inkluderad</li>
-              <li><strong>Redigering:</strong> Du kan redigera och modifiera all information</li>
-            </ul>
-            <p>Avtalskapandet är designat för att vara enkelt och intuitivt, med all nödvändig information redan tillgänglig.</p>
-          `
+          titleKey: 'step7PopupStep2Title',
+          contentKey: 'step7PopupStep2Content'
         },
         step3: {
-          title: 'Steg 3: Definiera avtalsvillkor',
-          content: `
-            <h3>Detaljerad information om att definiera avtalsvillkor</h3>
-            <p>Avtalsvillkor är kärnan i avtalet och definierar alla aspekter av samarbetet mellan beställare och leverantör.</p>
-            <h4>Betalningsvillkor</h4>
-            <ul>
-              <li><strong>Betalningsplan:</strong> Definiera när och hur betalningar ska göras</li>
-              <li><strong>Betalningsmetoder:</strong> Specificera vilka betalningsmetoder som accepteras</li>
-              <li><strong>Betalningsvillkor:</strong> Detaljerade villkor för betalningar</li>
-              <li><strong>Förskottsbetalningar:</strong> Eventuella förskottsbetalningar och villkor</li>
-            </ul>
-            <h4>Leveransvillkor</h4>
-            <ul>
-              <li><strong>Leveransdatum:</strong> Specificera när leveransen ska ske</li>
-              <li><strong>Leveransplats:</strong> Var leveransen ska ske</li>
-              <li><strong>Leveransmetod:</strong> Hur leveransen ska ske</li>
-              <li><strong>Leveransvillkor:</strong> Specifika villkor för leverans</li>
-            </ul>
-            <h4>Garantivillkor</h4>
-            <ul>
-              <li><strong>Garantitid:</strong> Hur lång garantiperiod som gäller</li>
-              <li><strong>Garantitäckning:</strong> Vad garantin täcker</li>
-              <li><strong>Servicevillkor:</strong> Villkor för service och support</li>
-              <li><strong>Garantiprocess:</strong> Hur garantiprocessen fungerar</li>
-            </ul>
-            <h4>Projektspecifikationer</h4>
-            <ul>
-              <li><strong>Projektomfattning:</strong> Vad som ingår i projektet</li>
-              <li><strong>Tekniska specifikationer:</strong> Detaljerade tekniska krav</li>
-              <li><strong>Kvalitetskrav:</strong> Kvalitetsstandarder och krav</li>
-              <li><strong>Projektmilstolpar:</strong> Viktiga milstolpar i projektet</li>
-            </ul>
-            <h4>Ytterligare villkor</h4>
-            <ul>
-              <li><strong>Juridiska bestämmelser:</strong> Juridiska villkor och bestämmelser</li>
-              <li><strong>Konfidentialitet:</strong> Konfidentialitetsvillkor</li>
-              <li><strong>Force majeure:</strong> Force majeure-klausuler</li>
-              <li><strong>Disputlösning:</strong> Process för att lösa eventuella tvister</li>
-            </ul>
-            <p>Tydliga och detaljerade avtalsvillkor säkerställer att båda parter har samma förståelse av samarbetet.</p>
-          `
+          titleKey: 'step7PopupStep3Title',
+          contentKey: 'step7PopupStep3Content'
         },
         step4: {
-          title: 'Steg 4: Granska och skapa avtal',
-          content: `
-            <h3>Detaljerad information om att granska och skapa avtal</h3>
-            <p>Innan du skapar avtalet är det viktigt att noggrant granska alla detaljer för att säkerställa korrekthet och fullständighet.</p>
-            <h4>Granskning av avtalsdetaljer</h4>
-            <ul>
-              <li><strong>Avtalsinformation:</strong> Kontrollera att all avtalsinformation är korrekt</li>
-              <li><strong>Villkor:</strong> Verifiera att alla villkor är korrekt definierade</li>
-              <li><strong>Specifikationer:</strong> Kontrollera att projektspecifikationer är korrekta</li>
-              <li><strong>Prisinformation:</strong> Verifiera prissättning och betalningsvillkor</li>
-              <li><strong>Leveransinformation:</strong> Kontrollera leveransdatum och villkor</li>
-            </ul>
-            <h4>Validering och kontroller</h4>
-            <ul>
-              <li><strong>Obligatoriska fält:</strong> Kontrollera att alla obligatoriska fält är ifyllda</li>
-              <li><strong>Formatering:</strong> Verifiera att all formatering är korrekt</li>
-              <li><strong>Konsistens:</strong> Kontrollera att all information är konsistent</li>
-              <li><strong>Kompletthet:</strong> Säkerställ att avtalet är komplett</li>
-            </ul>
-            <h4>Skapa process</h4>
-            <ul>
-              <li><strong>Skapa avtal-knapp:</strong> Klicka på 'Skapa avtal' eller 'Spara avtal'</li>
-              <li><strong>Bekräftelse:</strong> Få bekräftelse när avtalet har skapats</li>
-              <li><strong>Avtals-ID:</strong> Ett unikt avtals-ID genereras automatiskt</li>
-              <li><strong>Tillgänglighet:</strong> Avtalet blir tillgängligt för båda parter</li>
-            </ul>
-            <h4>Efter avtalskapande</h4>
-            <ul>
-              <li><strong>Signering:</strong> Avtalet är redo för signering av båda parter</li>
-              <li><strong>Granskning:</strong> Båda parter kan granska avtalet</li>
-              <li><strong>Modifieringar:</strong> Modifieringar kan göras innan signering</li>
-              <li><strong>Dokumentation:</strong> Avtalet dokumenteras och sparas</li>
-            </ul>
-            <h4>Avtalshantering</h4>
-            <ul>
-              <li><strong>Avtalslista:</strong> Avtalet visas i avtalslistan</li>
-              <li><strong>Statusspårning:</strong> Följ status på avtalet</li>
-              <li><strong>Åtkomst:</strong> Båda parter har åtkomst till avtalet</li>
-              <li><strong>Arkivering:</strong> Avtalet arkiveras för framtida referens</li>
-            </ul>
-            <p>När avtalet är skapat är det redo för signering och formaliserar samarbetet mellan beställare och leverantör.</p>
-          `
+          titleKey: 'step7PopupStep4Title',
+          contentKey: 'step7PopupStep4Content'
         },
         'visual-form': {
-          title: 'Avtalsinformationsformulär',
-          content: `
-            <h3>Detaljerad information om avtalsinformationsformulär</h3>
-            <p>Avtalsinformationsformuläret är strukturerat för att fånga all nödvändig information för att skapa ett komplett avtal.</p>
-            <ul>
-              <li><strong>Avtalsnamn:</strong> Ett beskrivande namn som identifierar avtalet</li>
-              <li><strong>Inblandade parter:</strong> Information om beställare och leverantör</li>
-              <li><strong>Projektinformation:</strong> Projektrelaterad information och referenser</li>
-              <li><strong>Offertreferens:</strong> Referens till den accepterade offerten</li>
-              <li><strong>Datum:</strong> Avtalsdatum och giltighetsperiod</li>
-              <li><strong>Organiserad layout:</strong> Formuläret är organiserat i logiska sektioner</li>
-            </ul>
-            <p>Formuläret är designat för att vara både omfattande och användarvänligt, vilket gör det enkelt att skapa detaljerade avtal.</p>
-          `
+          titleKey: 'step7PopupVisualFormTitle',
+          contentKey: 'step7PopupVisualFormContent'
         },
         'visual-terms': {
-          title: 'Villkor och bestämmelser',
-          content: `
-            <h3>Detaljerad information om villkor och bestämmelser</h3>
-            <p>Villkor och bestämmelser-sektionen gör det möjligt att definiera alla aspekter av avtalet på ett strukturerat sätt.</p>
-            <ul>
-              <li><strong>Betalningsplaner:</strong> Definiera när och hur betalningar ska göras</li>
-              <li><strong>Leveransvillkor:</strong> Specificera leveransdatum, platser och metoder</li>
-              <li><strong>Garantivillkor:</strong> Definiera garantitid, täckning och process</li>
-              <li><strong>Projektspecifikationer:</strong> Detaljerade tekniska specifikationer och krav</li>
-              <li><strong>Juridiska bestämmelser:</strong> Juridiska villkor och bestämmelser</li>
-              <li><strong>Redigering:</strong> Villkor kan läggas till, modifieras eller tas bort</li>
-            </ul>
-            <p>Villkor och bestämmelser-sektionen är designad för att göra det enkelt att definiera alla aspekter av avtalet.</p>
-          `
+          titleKey: 'step7PopupVisualTermsTitle',
+          contentKey: 'step7PopupVisualTermsContent'
         },
         'visual-quote': {
-          title: 'Offertreferens',
-          content: `
-            <h3>Detaljerad information om offertreferens</h3>
-            <p>Offertreferensen länkar avtalet till den accepterade offerten och bevarar all relevant information.</p>
-            <ul>
-              <li><strong>Offertinformation:</strong> All information från den accepterade offerten visas</li>
-              <li><strong>Prisinformation:</strong> Prissättning och prisuppdelning från offerten</li>
-              <li><strong>Villkor:</strong> Villkor och bestämmelser från offerten</li>
-              <li><strong>Specifikationer:</strong> Tekniska specifikationer och krav från offerten</li>
-              <li><strong>Referens:</strong> Tydlig referens till den accepterade offerten</li>
-              <li><strong>Konsistens:</strong> Säkerställer konsistens mellan offert och avtal</li>
-            </ul>
-            <p>Offertreferensen säkerställer att all information från offerten bevaras i avtalet.</p>
-          `
+          titleKey: 'step7PopupVisualQuoteTitle',
+          contentKey: 'step7PopupVisualQuoteContent'
         }
       };
 
@@ -469,10 +304,35 @@
           previousActiveElement = document.activeElement;
         }
         
+        // Get current language
+        const currentLang = localStorage.getItem('language') || 'sv';
+        
+        // Get translations from global translations object (defined in lang.js)
+        const popupData = infoPopupData[id];
+        if (!popupData || !popupData.titleKey || !popupData.contentKey) {
+          console.error('Popup data structure invalid for ID:', id);
+          return;
+        }
+        
+        // Get translated title and content - use translations from lang.js
+        // translations is defined globally in lang.js
+        let translatedTitle = '';
+        let translatedContent = '';
+        
+        if (typeof translations !== 'undefined' && translations[currentLang]) {
+          translatedTitle = translations[currentLang][popupData.titleKey] || popupData.titleKey;
+          translatedContent = translations[currentLang][popupData.contentKey] || popupData.contentKey;
+        } else {
+          // Fallback if translations not loaded yet
+          console.warn('Translations not available, using keys as fallback');
+          translatedTitle = popupData.titleKey;
+          translatedContent = popupData.contentKey;
+        }
+        
         // Update content
-        title.textContent = infoPopupData[id].title;
+        title.textContent = translatedTitle;
         title.classList.remove('sr-only');
-        content.innerHTML = infoPopupData[id].content;
+        content.innerHTML = translatedContent;
         
         // Update ARIA attributes
         popup.setAttribute('aria-hidden', 'false');

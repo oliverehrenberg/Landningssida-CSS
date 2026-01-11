@@ -28,22 +28,22 @@
         <div class="step1-hero-features">
           <div class="step1-hero-feature-item">
             <i class="fa-solid fa-file-lines" aria-hidden="true"></i>
-            <span>Granska avtalsdetaljer</span>
+            <span data-translate="step8HeroFeatureReviewTitle">Granska avtalsdetaljer</span>
           </div>
           <div class="step1-hero-feature-item">
             <i class="fa-solid fa-signature" aria-hidden="true"></i>
-            <span>Digital signering</span>
+            <span data-translate="step8HeroFeatureSigningTitle">Digital signering</span>
           </div>
           <div class="step1-hero-feature-item">
             <i class="fa-solid fa-circle-check" aria-hidden="true"></i>
-            <span>Juridiskt bindande avtal</span>
+            <span data-translate="step8HeroFeatureBindingTitle">Juridiskt bindande avtal</span>
           </div>
         </div>
       </div>
     </section>
 
     <!-- Feature Details -->
-    <section class="feature-detail-section">
+    <section class="feature-detail-section section-hidden">
       <div class="section-header">
         <h2 data-translate="step8DetailInterfaceTitle">Översikt över avtalsigneringssidan</h2>
         <div class="section-divider-line"></div>
@@ -81,7 +81,7 @@
     </section>
 
     <!-- How It Works -->
-    <section class="how-it-works step1-how-works">
+    <section class="how-it-works section-hidden step1-how-works">
       <div class="section-header">
         <h2 data-translate="howItWorksTitle">Så fungerar det</h2>
         <div class="section-divider-line"></div>
@@ -239,219 +239,35 @@
     <script src="../main.js"></script>
     <script>
       // Info popup data - detailed information for each section
+      // Info popup data - using translation keys instead of hardcoded text
       const infoPopupData = {
         step1: {
-          title: 'Steg 1: Få tillgång till avtalet',
-          content: `
-            <h3>Detaljerad information om att komma åt avtalet</h3>
-            <p>Avtal som är redo för signering kan nås på flera sätt för enkel tillgång och hantering.</p>
-            <h4>Tillgång via avtalssektionen</h4>
-            <ul>
-              <li><strong>Avtalslista:</strong> Navigera till avtalssektionen i Dashboard</li>
-              <li><strong>Statusfilter:</strong> Filtrera avtal efter status (väntande signering, signerat, etc.)</li>
-              <li><strong>Avtalsöversikt:</strong> Se alla avtal som väntar på din signering</li>
-              <li><strong>Snabbåtkomst:</strong> Enkel åtkomst till alla avtal på ett ställe</li>
-            </ul>
-            <h4>Tillgång via notifikationer</h4>
-            <ul>
-              <li><strong>Notifikationer:</strong> Få notifikationer när avtal är redo för signering</li>
-              <li><strong>Direktlänkar:</strong> Klicka på notifikationen för direkt åtkomst till avtalet</li>
-              <li><strong>Påminnelser:</strong> Automatiska påminnelser om avtal som väntar på signering</li>
-              <li><strong>Statusuppdateringar:</strong> Få uppdateringar om signaturstatus</li>
-            </ul>
-            <h4>Tillgång via chattgränssnittet</h4>
-            <ul>
-              <li><strong>Från konversationen:</strong> Kom åt avtalet direkt från relevant konversation</li>
-              <li><strong>Kontextuell visning:</strong> Se avtalet i kontexten av diskussionen</li>
-              <li><strong>Snabbåtkomst:</strong> Enkel åtkomst utan att lämna chatten</li>
-              <li><strong>Realtidsuppdateringar:</strong> Se signaturstatus i realtid</li>
-            </ul>
-            <h4>Avtalsinformation</h4>
-            <ul>
-              <li><strong>Avtalsnamn:</strong> Tydlig identifiering av avtalet</li>
-              <li><strong>Inblandade parter:</strong> Information om beställare och leverantör</li>
-              <li><strong>Status:</strong> Nuvarande status (väntande signering, signerat, etc.)</li>
-              <li><strong>Skapelsedatum:</strong> När avtalet skapades</li>
-            </ul>
-            <p>Alla tillgångssätt ger dig full funktionalitet för att hantera avtalssignering effektivt.</p>
-          `
+          titleKey: 'step8PopupStep1Title',
+          contentKey: 'step8PopupStep1Content'
         },
         step2: {
-          title: 'Steg 2: Granska avtalsdetaljer',
-          content: `
-            <h3>Detaljerad information om att granska avtalsdetaljer</h3>
-            <p>Innan du signerar avtalet är det viktigt att noggrant granska alla detaljer för att säkerställa att allt är korrekt.</p>
-            <h4>Leveransomfattning</h4>
-            <ul>
-              <li><strong>Omfattning:</strong> Vad som ingår i avtalet och leveransen</li>
-              <li><strong>Material och tjänster:</strong> Specifika material och tjänster som ska levereras</li>
-              <li><strong>Kvantiteter:</strong> Exakta kvantiteter för varje artikel</li>
-              <li><strong>Specifikationer:</strong> Tekniska specifikationer och krav</li>
-            </ul>
-            <h4>Leveransvillkor</h4>
-            <ul>
-              <li><strong>Leveransdatum:</strong> När leveransen ska ske</li>
-              <li><strong>Leveransplats:</strong> Var leveransen ska ske</li>
-              <li><strong>Leveransmetod:</strong> Hur leveransen ska ske</li>
-              <li><strong>Leveransvillkor:</strong> Specifika villkor för leverans</li>
-            </ul>
-            <h4>Betalningsvillkor</h4>
-            <ul>
-              <li><strong>Betalningsplan:</strong> När och hur betalningar ska göras</li>
-              <li><strong>Betalningsmetoder:</strong> Vilka betalningsmetoder som accepteras</li>
-              <li><strong>Betalningsvillkor:</strong> Detaljerade villkor för betalningar</li>
-              <li><strong>Förskottsbetalningar:</strong> Eventuella förskottsbetalningar</li>
-            </ul>
-            <h4>Garantivillkor</h4>
-            <ul>
-              <li><strong>Garantitid:</strong> Hur lång garantiperiod som gäller</li>
-              <li><strong>Garantitäckning:</strong> Vad garantin täcker</li>
-              <li><strong>Servicevillkor:</strong> Villkor för service och support</li>
-              <li><strong>Garantiprocess:</strong> Hur garantiprocessen fungerar</li>
-            </ul>
-            <h4>Projektspecifikationer</h4>
-            <ul>
-              <li><strong>Projektomfattning:</strong> Vad som ingår i projektet</li>
-              <li><strong>Tekniska specifikationer:</strong> Detaljerade tekniska krav</li>
-              <li><strong>Kvalitetskrav:</strong> Kvalitetsstandarder och krav</li>
-              <li><strong>Milstolpar:</strong> Viktiga milstolpar i projektet</li>
-            </ul>
-            <h4>Juridiska bestämmelser</h4>
-            <ul>
-              <li><strong>Juridiska villkor:</strong> Juridiska villkor och bestämmelser</li>
-              <li><strong>Konfidentialitet:</strong> Konfidentialitetsvillkor</li>
-              <li><strong>Force majeure:</strong> Force majeure-klausuler</li>
-              <li><strong>Disputlösning:</strong> Process för att lösa eventuella tvister</li>
-            </ul>
-            <p>En noggrann granskning säkerställer att avtalet matchar dina förväntningar och krav innan signering.</p>
-          `
+          titleKey: 'step8PopupStep2Title',
+          contentKey: 'step8PopupStep2Content'
         },
         step3: {
-          title: 'Steg 3: Initiera digital signering',
-          content: `
-            <h3>Detaljerad information om digital signering</h3>
-            <p>Digital signering är en säker och juridiskt bindande metod för att signera avtal elektroniskt.</p>
-            <h4>Signeringsprocess</h4>
-            <ul>
-              <li><strong>Signera-knapp:</strong> Klicka på 'Signera avtal'-knappen eller signaturfältet</li>
-              <li><strong>Instruktioner:</strong> Följ instruktionerna på skärmen för att fortsätta</li>
-              <li><strong>Verifiering:</strong> Verifiera din identitet om det krävs</li>
-              <li><strong>Signering:</strong> Slutför den digitala signeringen</li>
-            </ul>
-            <h4>Digital signatur</h4>
-            <ul>
-              <li><strong>Säkerhet:</strong> Digital signering är säker och krypterad</li>
-              <li><strong>Juridisk giltighet:</strong> Digital signering är juridiskt bindande</li>
-              <li><strong>Spårbarhet:</strong> Alla signeringar är spårbara och dokumenterade</li>
-              <li><strong>Verifiering:</strong> Signaturer kan verifieras för autenticitet</li>
-            </ul>
-            <h4>Signaturmetoder</h4>
-            <ul>
-              <li><strong>Elektronisk signatur:</strong> Signera direkt i systemet</li>
-              <li><strong>Handskriven signatur:</strong> Uppladda handskriven signatur om det krävs</li>
-              <li><strong>Biometrisk signatur:</strong> Använd biometrisk verifiering om tillgängligt</li>
-              <li><strong>Certifikatbaserad:</strong> Använd digitalt certifikat för signering</li>
-            </ul>
-            <h4>Signaturbekräftelse</h4>
-            <ul>
-              <li><strong>Bekräftelse:</strong> Få bekräftelse när signeringen är klar</li>
-              <li><strong>Dokumentation:</strong> Signeringen dokumenteras automatiskt</li>
-              <li><strong>Tidsstämpel:</strong> Tidsstämpel för när signeringen skedde</li>
-              <li><strong>Statusuppdatering:</strong> Signaturstatus uppdateras i realtid</li>
-            </ul>
-            <p>Digital signering är säker, snabb och juridiskt bindande, vilket gör det enkelt att slutföra avtalsprocessen.</p>
-          `
+          titleKey: 'step8PopupStep3Title',
+          contentKey: 'step8PopupStep3Content'
         },
         step4: {
-          title: 'Steg 4: Slutför signering och finalisera',
-          content: `
-            <h3>Detaljerad information om att slutföra signering och finalisera</h3>
-            <p>När båda parter har signerat avtalet blir det juridiskt bindande och formaliserar samarbetet.</p>
-            <h4>Signaturstatus</h4>
-            <ul>
-              <li><strong>Din signatur:</strong> Se status på din egen signatur</li>
-              <li><strong>Andra partens signatur:</strong> Följ status på andra partens signatur</li>
-              <li><strong>Totalt status:</strong> Se när båda parter har signerat</li>
-              <li><strong>Realtidsuppdateringar:</strong> Få uppdateringar när signeringar sker</li>
-            </ul>
-            <h4>Bekräftelse</h4>
-            <ul>
-              <li><strong>Signeringsbekräftelse:</strong> Få bekräftelse när du har signerat</li>
-              <li><strong>Slutförandebekräftelse:</strong> Få bekräftelse när båda parter har signerat</li>
-              <li><strong>E-postbekräftelse:</strong> Få e-postbekräftelse om signeringen</li>
-              <li><strong>Notifikationer:</strong> Få notifikationer om signaturstatus</li>
-            </ul>
-            <h4>Juridiskt bindande avtal</h4>
-            <ul>
-              <li><strong>Juridisk giltighet:</strong> Avtalet blir juridiskt bindande när båda parter har signerat</li>
-              <li><strong>Formalisering:</strong> Samarbetet formaliseras officiellt</li>
-              <li><strong>Dokumentation:</strong> Det signerade avtalet dokumenteras och sparas</li>
-              <li><strong>Arkivering:</strong> Avtalet arkiveras för framtida referens</li>
-            </ul>
-            <h4>Avtalshantering</h4>
-            <ul>
-              <li><strong>Avtalslista:</strong> Det signerade avtalet visas i avtalslistan</li>
-              <li><strong>Status:</strong> Avtalsstatus uppdateras till 'Signerat'</li>
-              <li><strong>Åtkomst:</strong> Båda parter har åtkomst till det signerade avtalet</li>
-              <li><strong>Export:</strong> Exportera det signerade avtalet för arkivering</li>
-            </ul>
-            <h4>Efter signering</h4>
-            <ul>
-              <li><strong>Samarbete:</strong> Börja det formella samarbetet enligt avtalet</li>
-              <li><strong>Uppföljning:</strong> Följ upp avtalets genomförande</li>
-              <li><strong>Dokumentation:</strong> Använd avtalet som referens under samarbetet</li>
-              <li><strong>Kommunikation:</strong> Fortsätt kommunikationen via plattformen</li>
-            </ul>
-            <p>När båda parter har signerat avtalet är samarbetet officiellt formaliserat och redo att börja.</p>
-          `
+          titleKey: 'step8PopupStep4Title',
+          contentKey: 'step8PopupStep4Content'
         },
         'visual-document': {
-          title: 'Avtalsdokumentvisning',
-          content: `
-            <h3>Detaljerad information om avtalsdokumentvisning</h3>
-            <p>Avtalsdokumentvisningen visar det kompletta avtalet i ett läsbart format för enkel granskning.</p>
-            <ul>
-              <li><strong>Komplett dokument:</strong> Alla villkor, bestämmelser och detaljer visas</li>
-              <li><strong>Läsbart format:</strong> Dokumentet presenteras i ett tydligt och läsbart format</li>
-              <li><strong>Scrollbar:</strong> Enkel scrollning genom hela dokumentet</li>
-              <li><strong>Sektioner:</strong> Dokumentet är organiserat i logiska sektioner</li>
-              <li><strong>Navigering:</strong> Enkel navigering mellan olika sektioner</li>
-              <li><strong>Förhandsvisning:</strong> Förhandsvisning av hela dokumentet innan signering</li>
-            </ul>
-            <p>Avtalsdokumentvisningen är designad för att göra det enkelt att granska alla detaljer innan signering.</p>
-          `
+          titleKey: 'step8PopupVisualDocumentTitle',
+          contentKey: 'step8PopupVisualDocumentContent'
         },
         'visual-signature': {
-          title: 'Signatursektion',
-          content: `
-            <h3>Detaljerad information om signatursektion</h3>
-            <p>Signatursektionen gör det möjligt för alla inblandade parter att signera avtalet digitalt.</p>
-            <ul>
-              <li><strong>Signaturfält:</strong> Dedikerade signaturfält för varje part</li>
-              <li><strong>Signaturstatus:</strong> Tydlig visning av signaturstatus för varje part</li>
-              <li><strong>Digital signering:</strong> Säker och juridiskt bindande digital signering</li>
-              <li><strong>Verifiering:</strong> Verifiering av signaturernas autenticitet</li>
-              <li><strong>Tidsstämplar:</strong> Tidsstämplar för när varje signering skedde</li>
-              <li><strong>Bekräftelse:</strong> Bekräftelse när signeringar är klara</li>
-            </ul>
-            <p>Signatursektionen är designad för att göra digital signering enkel och säker.</p>
-          `
+          titleKey: 'step8PopupVisualSignatureTitle',
+          contentKey: 'step8PopupVisualSignatureContent'
         },
         'visual-status': {
-          title: 'Signaturstatus',
-          content: `
-            <h3>Detaljerad information om signaturstatus</h3>
-            <p>Signaturstatus ger dig en översikt över signeringsprocessen och statusen för alla parter.</p>
-            <ul>
-              <li><strong>Statusindikatorer:</strong> Tydlig visning av signaturstatus för varje part</li>
-              <li><strong>Väntande signering:</strong> Se vilka parter som ännu inte har signerat</li>
-              <li><strong>Signerat:</strong> Se vilka parter som redan har signerat</li>
-              <li><strong>Totalt status:</strong> Översikt över hela signeringsprocessen</li>
-              <li><strong>Realtidsuppdateringar:</strong> Få uppdateringar när signeringar sker</li>
-              <li><strong>Slutförande:</strong> Se när alla parter har signerat och avtalet är klart</li>
-            </ul>
-            <p>Signaturstatus hjälper dig att hålla koll på signeringsprocessen och se när avtalet är redo.</p>
-          `
+          titleKey: 'step8PopupVisualStatusTitle',
+          contentKey: 'step8PopupVisualStatusContent'
         }
       };
 
@@ -488,10 +304,43 @@
           previousActiveElement = document.activeElement;
         }
         
+        // Get current language
+        const currentLang = localStorage.getItem('language') || 'sv';
+        
+        // Get translations from global translations object (defined in lang.js)
+        const popupData = infoPopupData[id];
+        if (!popupData) {
+          console.error('Popup data not found for ID:', id);
+          return;
+        }
+        
+        // Get translated title and content - use translations from lang.js
+        let translatedTitle = '';
+        let translatedContent = '';
+        
+        // Check if using new structure with keys or old structure with direct text
+        if (popupData.titleKey && popupData.contentKey) {
+          // New structure: use translation keys
+          if (typeof translations !== 'undefined' && translations[currentLang]) {
+            translatedTitle = translations[currentLang][popupData.titleKey] || popupData.titleKey;
+            translatedContent = translations[currentLang][popupData.contentKey] || popupData.contentKey;
+          } else {
+            translatedTitle = popupData.titleKey;
+            translatedContent = popupData.contentKey;
+          }
+        } else if (popupData.title && popupData.content) {
+          // Old structure: use direct text (backward compatibility)
+          translatedTitle = popupData.title;
+          translatedContent = popupData.content;
+        } else {
+          console.error('Popup data structure invalid for ID:', id);
+          return;
+        }
+        
         // Update content
-        title.textContent = infoPopupData[id].title;
+        title.textContent = translatedTitle;
         title.classList.remove('sr-only');
-        content.innerHTML = infoPopupData[id].content;
+        content.innerHTML = translatedContent;
         
         // Update ARIA attributes
         popup.setAttribute('aria-hidden', 'false');

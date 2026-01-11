@@ -28,22 +28,22 @@
         <div class="step1-hero-features">
           <div class="step1-hero-feature-item">
             <i class="fa-solid fa-file-lines" aria-hidden="true"></i>
-            <span>Projektinformationsformulär</span>
+            <span data-translate="step4HeroFeatureFormTitle">Projektinformationsformulär</span>
           </div>
           <div class="step1-hero-feature-item">
             <i class="fa-solid fa-user-tie" aria-hidden="true"></i>
-            <span>Tilldela projektledare</span>
+            <span data-translate="step4HeroFeatureManagerTitle">Tilldela projektledare</span>
           </div>
           <div class="step1-hero-feature-item">
             <i class="fa-solid fa-cog" aria-hidden="true"></i>
-            <span>Konfigurera projektspecifika inställningar</span>
+            <span data-translate="step4HeroFeatureSettingsTitle">Konfigurera projektspecifika inställningar</span>
           </div>
         </div>
       </div>
     </section>
 
     <!-- Feature Details -->
-    <section class="feature-detail-section">
+    <section class="feature-detail-section section-hidden">
       <div class="section-header">
         <h2 data-translate="step4DetailInterfaceTitle">Översikt över projektskapandesidan</h2>
         <div class="section-divider-line"></div>
@@ -81,7 +81,7 @@
     </section>
 
     <!-- How It Works -->
-    <section class="how-it-works step1-how-works">
+    <section class="how-it-works section-hidden step1-how-works">
       <div class="section-header">
         <h2 data-translate="howItWorksTitle">Så fungerar det</h2>
         <div class="section-divider-line"></div>
@@ -239,183 +239,35 @@
     <script src="../main.js"></script>
     <script>
       // Info popup data - detailed information for each section
+      // Info popup data - using translation keys instead of hardcoded text
       const infoPopupData = {
         step1: {
-          title: 'Steg 1: Få tillgång till projektskapande',
-          content: `
-            <h3>Detaljerad information om att komma åt projektskapande</h3>
-            <p>Projektskapande är en central funktion i plattformen som gör det möjligt att organisera och strukturera dina byggprojekt från början.</p>
-            <h4>Tillgång via Dashboard</h4>
-            <ul>
-              <li><strong>Avatar-klick:</strong> Klicka på din avatar längst ner på skärmen</li>
-              <li><strong>Menyval:</strong> Välj 'Dashboard' från menyn som visas</li>
-              <li><strong>Projects-flik:</strong> I Dashboard, gå till fliken 'Projects'</li>
-              <li><strong>New Project:</strong> Klicka på 'New Project' för att öppna projektskapandefönstret</li>
-            </ul>
-            <h4>Dashboard-funktioner</h4>
-            <ul>
-              <li><strong>Projektöversikt:</strong> Se alla dina projekt på ett ställe</li>
-              <li><strong>Snabbåtkomst:</strong> Enkel navigering till alla projektfunktioner</li>
-              <li><strong>Projektstatus:</strong> Följ status på alla dina projekt</li>
-              <li><strong>Organisering:</strong> Organisera projekt efter olika kriterier</li>
-            </ul>
-            <h4>Projektskapandefönster</h4>
-            <ul>
-              <li><strong>Formulärbaserat:</strong> Strukturerat formulär för enkel projektskapande</li>
-              <li><strong>Stegvis process:</strong> Tydlig process för att skapa projekt</li>
-              <li><strong>Validering:</strong> Automatisk validering av inmatad information</li>
-            </ul>
-            <p>Projektskapande är designat för att vara intuitivt och användarvänligt, även för dem som inte är tekniskt kunniga.</p>
-          `
+          titleKey: 'step4PopupStep1Title',
+          contentKey: 'step4PopupStep1Content'
         },
         step2: {
-          title: 'Steg 2: Fyll i projektinformation',
-          content: `
-            <h3>Detaljerad information om projektinformation</h3>
-            <p>Projektinformationsformuläret är strukturerat för att fånga all nödvändig information för att skapa ett komplett projekt.</p>
-            <h4>Grundläggande projektinformation</h4>
-            <ul>
-              <li><strong>Projektnamn:</strong> Ett beskrivande namn som identifierar projektet</li>
-              <li><strong>Projektnummer:</strong> Unikt nummer för projektspårning och referens</li>
-              <li><strong>Projekttyp:</strong> Kategorisering av projektet (bygg, renovering, installation, etc.)</li>
-              <li><strong>Beskrivning:</strong> Detaljerad beskrivning av projektet och dess mål</li>
-            </ul>
-            <h4>Projektledarhantering</h4>
-            <ul>
-              <li><strong>Tilldela projektledare:</strong> Välj projektledare från tillgängliga alternativ</li>
-              <li><strong>Roller och ansvar:</strong> Definiera roller och ansvar för projektet</li>
-              <li><strong>Teammedlemmar:</strong> Lägg till teammedlemmar och deras roller</li>
-              <li><strong>Kontaktinformation:</strong> Projektledarens kontaktuppgifter</li>
-            </ul>
-            <h4>Ytterligare information</h4>
-            <ul>
-              <li><strong>Anteckningar:</strong> Lägg till anteckningar och kommentarer</li>
-              <li><strong>Dokument:</strong> Bifoga relevanta dokument vid projektskapande</li>
-              <li><strong>Taggar:</strong> Använd taggar för bättre organisering</li>
-              <li><strong>Kategorisering:</strong> Kategorisera projektet för enkel sökning</li>
-            </ul>
-            <p>All projektinformation hjälper till att organisera och strukturera projektet effektivt från början.</p>
-          `
+          titleKey: 'step4PopupStep2Title',
+          contentKey: 'step4PopupStep2Content'
         },
         step3: {
-          title: 'Steg 3: Konfigurera projektspecifika inställningar',
-          content: `
-            <h3>Detaljerad information om projektspecifika inställningar</h3>
-            <p>Projektspecifika inställningar gör det möjligt att konfigurera projektet enligt dina specifika behov och krav.</p>
-            <h4>Tidsinställningar</h4>
-            <ul>
-              <li><strong>Projektstartdatum:</strong> När projektet ska starta</li>
-              <li><strong>Förväntat slutförandedatum:</strong> När projektet förväntas vara klart</li>
-              <li><strong>Milstolpar:</strong> Definiera viktiga milstolpar i projektet</li>
-              <li><strong>Tidslinje:</strong> Skapa tidslinje för projektets olika faser</li>
-            </ul>
-            <h4>Budget och ekonomi</h4>
-            <ul>
-              <li><strong>Budgetinformation:</strong> Ange total budget för projektet</li>
-              <li><strong>Kostnadsfördelning:</strong> Fördela budget över olika projektområden</li>
-              <li><strong>Ekonomisk spårning:</strong> Konfigurera ekonomisk spårning och rapportering</li>
-              <li><strong>Valuta:</strong> Välj valuta för projektet</li>
-            </ul>
-            <h4>Projektspecifika konfigurationer</h4>
-            <ul>
-              <li><strong>Synlighetsinställningar:</strong> Kontrollera vem som kan se projektet</li>
-              <li><strong>Åtkomstkontroll:</strong> Definiera åtkomstnivåer för olika användare</li>
-              <li><strong>Notifikationer:</strong> Konfigurera notifikationer för projektet</li>
-              <li><strong>Integrationer:</strong> Anslut externa verktyg och system</li>
-            </ul>
-            <h4>Granskning och validering</h4>
-            <ul>
-              <li><strong>Automatisk validering:</strong> Systemet validerar automatiskt inmatad information</li>
-              <li><strong>Felindikatorer:</strong> Visuella indikatorer för fel eller saknade information</li>
-              <li><strong>Förhandsgranskning:</strong> Granska all information innan du sparar</li>
-              <li><strong>Bekräftelse:</strong> Bekräfta alla inställningar innan projektet skapas</li>
-            </ul>
-            <p>Alla inställningar kan justeras efter att projektet har skapats, men det är bäst att konfigurera dem korrekt från början.</p>
-          `
+          titleKey: 'step4PopupStep3Title',
+          contentKey: 'step4PopupStep3Content'
         },
         step4: {
-          title: 'Steg 4: Spara och aktivera projekt',
-          content: `
-            <h3>Detaljerad information om att spara och aktivera projekt</h3>
-            <p>När all projektinformation är ifylld och inställningar är konfigurerade, är det dags att spara och aktivera projektet.</p>
-            <h4>Granskning av projektinformation</h4>
-            <ul>
-              <li><strong>Komplett kontroll:</strong> Granska all angiven information för att säkerställa korrekthet</li>
-              <li><strong>Validering:</strong> Kontrollera att alla obligatoriska fält är ifyllda</li>
-              <li><strong>Konsistens:</strong> Verifiera att all information är konsistent och korrekt</li>
-              <li><strong>Dokumentation:</strong> Kontrollera att alla relevanta dokument är bifogade</li>
-            </ul>
-            <h4>Sparprocess</h4>
-            <ul>
-              <li><strong>Spara-knapp:</strong> Klicka på 'Spara' eller 'Skapa projekt' för att slutföra processen</li>
-              <li><strong>Automatisk validering:</strong> Systemet validerar automatiskt all information innan sparande</li>
-              <li><strong>Bekräftelse:</strong> Få bekräftelse när projektet har skapats</li>
-              <li><strong>Projekt-ID:</strong> Ett unikt projekt-ID genereras automatiskt</li>
-            </ul>
-            <h4>Projektaktivering</h4>
-            <ul>
-              <li><strong>Automatisk aktivering:</strong> Projektet aktiveras automatiskt när det skapas</li>
-              <li><strong>Projektlista:</strong> Projektet visas i din projektlista</li>
-              <li><strong>Tillgänglighet:</strong> Projektet är redo att användas i samarbete med leverantörer</li>
-              <li><strong>Projektstatus:</strong> Projektstatus sätts till 'Aktivt'</li>
-            </ul>
-            <h4>Efter projektskapande</h4>
-            <ul>
-              <li><strong>Projekthantering:</strong> Hantera projektet från Dashboard eller projektlistan</li>
-              <li><strong>Leverantörssamarbete:</strong> Börja samarbeta med leverantörer för projektet</li>
-              <li><strong>Offertförfrågningar:</strong> Skicka offertförfrågningar relaterade till projektet</li>
-              <li><strong>Projektspårning:</strong> Följ projektets framsteg och status</li>
-            </ul>
-            <p>När projektet är skapat och aktiverat kan du börja använda det för att organisera och hantera ditt byggprojekt effektivt.</p>
-          `
+          titleKey: 'step4PopupStep4Title',
+          contentKey: 'step4PopupStep4Content'
         },
         'visual-form': {
-          title: 'Projektinformationsformulär',
-          content: `
-            <h3>Detaljerad information om projektinformationsformulär</h3>
-            <p>Projektinformationsformuläret är strukturerat för att fånga all nödvändig information för att skapa ett komplett projekt.</p>
-            <ul>
-              <li><strong>Strukturerade fält:</strong> Tydligt märkta fält för projektnamn, projektnummer, projekttyp</li>
-              <li><strong>Projektledarval:</strong> Dropdown-meny för att välja eller tilldela projektledare</li>
-              <li><strong>Logisk sekvens:</strong> Fälten är organiserade i en logisk sekvens för enkel fyllning</li>
-              <li><strong>Validering:</strong> Automatisk validering av inmatad information</li>
-              <li><strong>Hjälptext:</strong> Hjälptext och tooltips för att förklara varje fält</li>
-              <li><strong>Responsiv design:</strong> Formuläret anpassar sig automatiskt till din skärmstorlek</li>
-            </ul>
-            <p>Formuläret är designat för att vara både omfattande och användarvänligt, vilket gör det enkelt att skapa projekt korrekt.</p>
-          `
+          titleKey: 'step4PopupVisualFormTitle',
+          contentKey: 'step4PopupVisualFormContent'
         },
         'visual-sections': {
-          title: 'Formulärsektioner',
-          content: `
-            <h3>Detaljerad information om formulärsektioner</h3>
-            <p>Formuläret är organiserat i sektioner eller flikar för olika aspekter av projektskapande, vilket gör processen mer strukturerad och hanterbar.</p>
-            <ul>
-              <li><strong>Grundläggande information:</strong> Sektion för projektnamn, projektnummer, projekttyp</li>
-              <li><strong>Projektspecifika inställningar:</strong> Sektion för datum, budget och andra inställningar</li>
-              <li><strong>Ytterligare detaljer:</strong> Sektion för anteckningar, dokument och taggar</li>
-              <li><strong>Navigering:</strong> Enkel navigering mellan olika sektioner</li>
-              <li><strong>Förloppsindikator:</strong> Visuell indikator för var du befinner dig i processen</li>
-              <li><strong>Stegvis process:</strong> Tydlig process för att gå igenom alla sektioner</li>
-            </ul>
-            <p>Denna organisation gör det enkelt att navigera genom projektskapandeprocessen och säkerställa att all nödvändig information samlas in.</p>
-          `
+          titleKey: 'step4PopupVisualSectionsTitle',
+          contentKey: 'step4PopupVisualSectionsContent'
         },
         'visual-validation': {
-          title: 'Validering och kontroller',
-          content: `
-            <h3>Detaljerad information om validering och kontroller</h3>
-            <p>Formuläret inkluderar omfattande validering och kontroller för att säkerställa att all information är korrekt innan projektet skapas.</p>
-            <ul>
-              <li><strong>Obligatoriska fält:</strong> Tydlig markering av obligatoriska fält med asterisk eller färgkodning</li>
-              <li><strong>Formateringskrav:</strong> Automatisk validering av format (datum, nummer, e-post, etc.)</li>
-              <li><strong>Felmeddelanden:</strong> Tydliga felmeddelanden när information är felaktig eller saknas</li>
-              <li><strong>Realtidsvalidering:</strong> Validering sker i realtid när du skriver</li>
-              <li><strong>Visuella indikatorer:</strong> Färgkodade indikatorer för status (korrekt, fel, varning)</li>
-              <li><strong>Hjälptext:</strong> Kontextuell hjälptext för att förklara krav och format</li>
-            </ul>
-            <p>Validering och kontroller hjälper till att säkerställa att projektet skapas med korrekt och komplett information från början.</p>
-          `
+          titleKey: 'step4PopupVisualValidationTitle',
+          contentKey: 'step4PopupVisualValidationContent'
         }
       };
 
@@ -468,8 +320,41 @@
         // Store current focus for restoration (before opening new popup)
         previousActiveElement = document.activeElement;
         
+        // Get current language
+        const currentLang = localStorage.getItem('language') || 'sv';
+        
+        // Get translations from global translations object (defined in lang.js)
+        const popupData = infoPopupData[id];
+        if (!popupData) {
+          console.error('Popup data not found for ID:', id);
+          return;
+        }
+        
+        // Get translated title and content - use translations from lang.js
+        let translatedTitle = '';
+        let translatedContent = '';
+        
+        // Check if using new structure with keys or old structure with direct text
+        if (popupData.titleKey && popupData.contentKey) {
+          // New structure: use translation keys
+          if (typeof translations !== 'undefined' && translations[currentLang]) {
+            translatedTitle = translations[currentLang][popupData.titleKey] || popupData.titleKey;
+            translatedContent = translations[currentLang][popupData.contentKey] || popupData.contentKey;
+          } else {
+            translatedTitle = popupData.titleKey;
+            translatedContent = popupData.contentKey;
+          }
+        } else if (popupData.title && popupData.content) {
+          // Old structure: use direct text (backward compatibility)
+          translatedTitle = popupData.title;
+          translatedContent = popupData.content;
+        } else {
+          console.error('Popup data structure invalid for ID:', id);
+          return;
+        }
+        
         // Update title first
-        title.textContent = infoPopupData[id].title;
+        title.textContent = translatedTitle;
         title.classList.remove('sr-only');
         
         // Update content - preserve title element
@@ -481,15 +366,15 @@
         contentNodes.forEach(node => node.remove());
         // Insert new content after title
         const tempDiv = document.createElement('div');
-        tempDiv.innerHTML = infoPopupData[id].content;
+        tempDiv.innerHTML = translatedContent;
         // Move all nodes from tempDiv to content after title
         while (tempDiv.firstChild) {
           content.appendChild(tempDiv.firstChild);
         }
         
-        // Explicitly set overlay styles to ensure it's visible and clickable
-        popup.style.display = 'flex';
-        popup.style.pointerEvents = 'auto';
+        // Remove inline styles to let CSS handle display (CSS uses .active class)
+        popup.style.display = '';
+        popup.style.pointerEvents = '';
         
         // Update ARIA attributes
         popup.setAttribute('aria-hidden', 'false');
@@ -515,9 +400,9 @@
         
         if (!popup) return;
         
-        // Explicitly reset overlay styles to ensure it doesn't block clicks
-        popup.style.display = 'none';
-        popup.style.pointerEvents = 'none';
+        // Remove inline styles to let CSS handle display
+        popup.style.display = '';
+        popup.style.pointerEvents = '';
         
         // Update ARIA attributes
         popup.setAttribute('aria-hidden', 'true');

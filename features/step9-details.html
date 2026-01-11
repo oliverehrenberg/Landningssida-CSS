@@ -28,22 +28,22 @@
         <div class="step1-hero-features">
           <div class="step1-hero-feature-item">
             <i class="fa-solid fa-chart-line" aria-hidden="true"></i>
-            <span>Övervaka framsteg</span>
+            <span data-translate="step9HeroFeatureProgressTitle">Övervaka framsteg</span>
           </div>
           <div class="step1-hero-feature-item">
             <i class="fa-solid fa-truck" aria-hidden="true"></i>
-            <span>Spåra leveranser</span>
+            <span data-translate="step9HeroFeatureDeliveriesTitle">Spåra leveranser</span>
           </div>
           <div class="step1-hero-feature-item">
             <i class="fa-solid fa-check-circle" aria-hidden="true"></i>
-            <span>Kvalitetskontroller</span>
+            <span data-translate="step9HeroFeatureQualityTitle">Kvalitetskontroller</span>
           </div>
         </div>
       </div>
     </section>
 
     <!-- Feature Details -->
-    <section class="feature-detail-section">
+    <section class="feature-detail-section section-hidden">
       <div class="section-header">
         <h2 data-translate="step9DetailInterfaceTitle">Översikt över uppdragsdetailjsidan</h2>
         <div class="section-divider-line"></div>
@@ -81,7 +81,7 @@
     </section>
 
     <!-- How It Works -->
-    <section class="how-it-works step1-how-works">
+    <section class="how-it-works section-hidden step1-how-works">
       <div class="section-header">
         <h2 data-translate="howItWorksTitle">Så fungerar det</h2>
         <div class="section-divider-line"></div>
@@ -239,199 +239,35 @@
     <script src="../main.js"></script>
     <script>
       // Info popup data - detailed information for each section
+      // Info popup data - using translation keys instead of hardcoded text
       const infoPopupData = {
         step1: {
-          title: 'Steg 1: Få tillgång till uppdragsdetaljer',
-          content: `
-            <h3>Detaljerad information om att komma åt uppdragsdetaljer</h3>
-            <p>Uppdragsdetailjsidan är din centrala plats för att hantera och följa upp uppdragsgenomförande efter att avtalet är signerat.</p>
-            <h4>Tillgång via Dashboard</h4>
-            <ul>
-              <li><strong>Avatar-klick:</strong> Klicka på din avatar längst ner på skärmen</li>
-              <li><strong>Menyval:</strong> Välj 'Dashboard' från menyn</li>
-              <li><strong>Uppdrag-flik:</strong> I Dashboard, gå till fliken 'Uppdrag'</li>
-              <li><strong>Projektval:</strong> Välj det projekt du vill visa</li>
-            </ul>
-            <h4>Uppdragsinformation</h4>
-            <ul>
-              <li><strong>Uppdragsnamn:</strong> Tydlig identifiering av uppdraget</li>
-              <li><strong>Status:</strong> Nuvarande status för uppdraget</li>
-              <li><strong>Datum:</strong> Start- och slutdatum för uppdraget</li>
-              <li><strong>Totalt värde:</strong> Totala värdet för uppdraget</li>
-              <li><strong>Kontaktpersoner:</strong> Information om kontaktpersoner</li>
-              <li><strong>Relaterade kontrakt:</strong> Länkar till relaterade kontrakt</li>
-            </ul>
-            <h4>Uppdragsdetailjsidan</h4>
-            <ul>
-              <li><strong>Omfattande information:</strong> All information om uppdraget på ett ställe</li>
-              <li><strong>Organiserad layout:</strong> Tydlig organisation av information</li>
-              <li><strong>Snabbåtkomst:</strong> Enkel åtkomst till alla uppdragsfunktioner</li>
-              <li><strong>Realtidsuppdateringar:</strong> Uppdaterad information i realtid</li>
-            </ul>
-            <p>Uppdragsdetailjsidan ger dig full kontroll över uppdragsgenomförandet.</p>
-          `
+          titleKey: 'step9PopupStep1Title',
+          contentKey: 'step9PopupStep1Content'
         },
         step2: {
-          title: 'Steg 2: Övervaka totalt framsteg',
-          content: `
-            <h3>Detaljerad information om att övervaka totalt framsteg</h3>
-            <p>Framstegsövervakning hjälper dig att hålla koll på uppdragets utveckling och se vad som återstår att slutföra.</p>
-            <h4>Framstegsindikatorer</h4>
-            <ul>
-              <li><strong>Framstegsstänger:</strong> Visuell representation av framsteg</li>
-              <li><strong>Procentvisningar:</strong> Exakt procentuell slutförandestatus</li>
-              <li><strong>Statusmärken:</strong> Tydlig visning av nuvarande status</li>
-              <li><strong>Färgkodning:</strong> Färgkodade indikatorer för snabb översikt</li>
-            </ul>
-            <h4>Slutförandestatus</h4>
-            <ul>
-              <li><strong>Slutförandeprocent:</strong> Hur mycket av uppdraget som är slutfört</li>
-              <li><strong>Milstolvprestationer:</strong> Status på viktiga milstolv</li>
-              <li><strong>Återstående arbete:</strong> Vad som återstår att slutföra</li>
-              <li><strong>Förväntad slutförande:</strong> Förväntat datum för slutförande</li>
-            </ul>
-            <h4>Tidslinjeinformation</h4>
-            <ul>
-              <li><strong>Kronologiska händelser:</strong> Händelser i tidsordning</li>
-              <li><strong>Milstolv:</strong> Viktiga milstolv i uppdraget</li>
-              <li><strong>Uppdragsutveckling:</strong> Utveckling över tid</li>
-              <li><strong>Historiska aktiviteter:</strong> Tidigare aktiviteter och händelser</li>
-            </ul>
-            <h4>Tidslinjefliken</h4>
-            <ul>
-              <li><strong>Kronologisk visning:</strong> Alla händelser i tidsordning</li>
-              <li><strong>Milstolvmarkeringar:</strong> Tydlig markering av milstolv</li>
-              <li><strong>Filtrering:</strong> Filtrera händelser efter typ eller datum</li>
-              <li><strong>Detaljerad information:</strong> Klicka på händelser för mer information</li>
-            </ul>
-            <p>Framstegsövervakning hjälper dig att hålla koll på uppdragets utveckling och identifiera eventuella problem i tid.</p>
-          `
+          titleKey: 'step9PopupStep2Title',
+          contentKey: 'step9PopupStep2Content'
         },
         step3: {
-          title: 'Steg 3: Spåra leveranser och logistik',
-          content: `
-            <h3>Detaljerad information om att spåra leveranser och logistik</h3>
-            <p>Leverans & logistik-fliken ger dig full kontroll över alla leveranser och logistikarrangemang för uppdraget.</p>
-            <h4>Materialleveransstatus</h4>
-            <ul>
-              <li><strong>Leveransstatus:</strong> Status för varje leverans</li>
-              <li><strong>Leveransscheman:</strong> Planerade leveransdatum</li>
-              <li><strong>Leveransbekräftelser:</strong> Bekräftade leveranser</li>
-              <li><strong>Leveransproblem:</strong> Eventuella problem eller förseningar</li>
-            </ul>
-            <h4>Fraktinformation</h4>
-            <ul>
-              <li><strong>Fraktmetoder:</strong> Vilka fraktmetoder som används</li>
-              <li><strong>Fraktnummer:</strong> Spårningsnummer för leveranser</li>
-              <li><strong>Fraktstatus:</strong> Nuvarande status för frakter</li>
-              <li><strong>Fraktkostnader:</strong> Kostnader för frakt</li>
-            </ul>
-            <h4>Logistikdetaljer</h4>
-            <ul>
-              <li><strong>Logistikarrangemang:</strong> Specifika logistikarrangemang</li>
-              <li><strong>Leveransplatser:</strong> Var leveranser ska ske</li>
-              <li><strong>Leveransvillkor:</strong> Specifika villkor för leveranser</li>
-              <li><strong>Logistikkoordinering:</strong> Koordinering av logistik</li>
-            </ul>
-            <h4>Leveranshantering</h4>
-            <ul>
-              <li><strong>Leveransspårning:</strong> Spåra leveranser i realtid</li>
-              <li><strong>Bekräftelser:</strong> Bekräfta mottagna leveranser</li>
-              <li><strong>Problemhantering:</strong> Hantera leveransrelaterade problem</li>
-              <li><strong>Uppdateringar:</strong> Uppdatera leveransstatus</li>
-            </ul>
-            <p>Leverans & logistik-fliken säkerställer att alla leveranser spåras och hanteras effektivt.</p>
-          `
+          titleKey: 'step9PopupStep3Title',
+          contentKey: 'step9PopupStep3Content'
         },
         step4: {
-          title: 'Steg 4: Hantera kvalitet och ekonomi',
-          content: `
-            <h3>Detaljerad information om att hantera kvalitet och ekonomi</h3>
-            <p>Kvalitets- och ekonomiflikar ger dig detaljerad information om varje aspekt av uppdraget.</p>
-            <h4>Kvalitetsfliken</h4>
-            <ul>
-              <li><strong>Kvalitetskontroller:</strong> Alla kvalitetskontroller och inspektioner</li>
-              <li><strong>Inspektionsrapporter:</strong> Detaljerade inspektionsrapporter</li>
-              <li><strong>Kvalitetsdokumentation:</strong> All kvalitetsrelaterad dokumentation</li>
-              <li><strong>Kvalitetsstandarder:</strong> Tillämpade kvalitetsstandarder</li>
-              <li><strong>Kvalitetsproblem:</strong> Eventuella kvalitetsproblem och åtgärder</li>
-              <li><strong>Kvalitetsförbättringar:</strong> Förbättringar och rekommendationer</li>
-            </ul>
-            <h4>Ekonomifliken</h4>
-            <ul>
-              <li><strong>Finansiella aspekter:</strong> Alla finansiella aspekter av uppdraget</li>
-              <li><strong>Budgetar:</strong> Budgetar och budgetspårning</li>
-              <li><strong>Betalningar:</strong> Betalningar och betalningsstatus</li>
-              <li><strong>Ekonomisk prestanda:</strong> Översikt över ekonomisk prestanda</li>
-              <li><strong>Kostnadsanalys:</strong> Detaljerad kostnadsanalys</li>
-              <li><strong>Ekonomiska rapporter:</strong> Ekonomiska rapporter och översikter</li>
-            </ul>
-            <h4>Modifieringsarbeten</h4>
-            <ul>
-              <li><strong>Ändringar:</strong> Eventuella ändringar i det ursprungliga avtalet</li>
-              <li><strong>Modifieringsförfrågningar:</strong> Förfrågningar om modifieringar</li>
-              <li><strong>Godkända ändringar:</strong> Godkända modifieringar</li>
-              <li><strong>Modifieringsdokumentation:</strong> Dokumentation av modifieringar</li>
-              <li><strong>Kostnadspåverkan:</strong> Hur modifieringar påverkar kostnader</li>
-              <li><strong>Tidspåverkan:</strong> Hur modifieringar påverkar tidslinjen</li>
-            </ul>
-            <h4>Integrerad hantering</h4>
-            <ul>
-              <li><strong>Kvalitets-ekonomi-länk:</strong> Länk mellan kvalitet och ekonomi</li>
-              <li><strong>Rapportering:</strong> Integrerad rapportering för båda aspekter</li>
-              <li><strong>Analys:</strong> Analys av kvalitets- och ekonomiska data</li>
-              <li><strong>Beslutsstöd:</strong> Data för att fatta välgrundade beslut</li>
-            </ul>
-            <p>Kvalitets- och ekonomiflikar ger dig full kontroll över dessa kritiska aspekter av uppdraget.</p>
-          `
+          titleKey: 'step9PopupStep4Title',
+          contentKey: 'step9PopupStep4Content'
         },
         'visual-progress': {
-          title: 'Framstegsindikatorer',
-          content: `
-            <h3>Detaljerad information om framstegsindikatorer</h3>
-            <p>Framstegsindikatorer ger dig en snabb översikt över uppdragets totala framsteg och slutförandestatus.</p>
-            <ul>
-              <li><strong>Framstegsstänger:</strong> Visuell representation av framsteg med färgkodning</li>
-              <li><strong>Procentvisningar:</strong> Exakt procentuell slutförandestatus</li>
-              <li><strong>Statusmärken:</strong> Tydlig visning av nuvarande status (pågående, slutfört, etc.)</li>
-              <li><strong>Milstolvindikatorer:</strong> Status på viktiga milstolv</li>
-              <li><strong>Återstående arbete:</strong> Tydlig visning av vad som återstår</li>
-              <li><strong>Förväntat slutförande:</strong> Förväntat datum för slutförande</li>
-            </ul>
-            <p>Framstegsindikatorer hjälper dig att snabbt bedöma uppdragets status och identifiera eventuella problem.</p>
-          `
+          titleKey: 'step9PopupVisualProgressTitle',
+          contentKey: 'step9PopupVisualProgressContent'
         },
         'visual-tabs': {
-          title: 'Navigationsflikar',
-          content: `
-            <h3>Detaljerad information om navigationsflikar</h3>
-            <p>Navigationsflikar gör det möjligt att växla mellan olika sektioner av uppdragsstyrning för organiserad hantering.</p>
-            <ul>
-              <li><strong>Tidslinje:</strong> Kronologiska händelser och milstolv</li>
-              <li><strong>Uppföljning:</strong> Detaljerad spårningsinformation</li>
-              <li><strong>Leverans & Logistik:</strong> Materialleveranser och logistikdetaljer</li>
-              <li><strong>Kvalitet:</strong> Kvalitetskontroller och inspektioner</li>
-              <li><strong>Ekonomi:</strong> Finansiella aspekter och budgetar</li>
-              <li><strong>Modifieringsarbeten:</strong> Ändringar i det ursprungliga avtalet</li>
-            </ul>
-            <p>Navigationsflikar gör det enkelt att navigera mellan olika aspekter av uppdragsstyrning.</p>
-          `
+          titleKey: 'step9PopupVisualTabsTitle',
+          contentKey: 'step9PopupVisualTabsContent'
         },
         'visual-timeline': {
-          title: 'Tidslinje och uppföljning',
-          content: `
-            <h3>Detaljerad information om tidslinje och uppföljning</h3>
-            <p>Tidslinje- och uppföljningssektioner hjälper dig att spåra uppdragsutveckling över tid.</p>
-            <ul>
-              <li><strong>Kronologiska händelser:</strong> Alla händelser i tidsordning</li>
-              <li><strong>Milstolv:</strong> Viktiga milstolv och deras status</li>
-              <li><strong>Uppdragsutveckling:</strong> Utveckling av uppdraget över tid</li>
-              <li><strong>Historiska aktiviteter:</strong> Tidigare aktiviteter och händelser</li>
-              <li><strong>Framtida planering:</strong> Planerade händelser och milstolv</li>
-              <li><strong>Detaljerad spårning:</strong> Detaljerad information om varje händelse</li>
-            </ul>
-            <p>Tidslinje och uppföljning ger dig en komplett bild av uppdragsutvecklingen.</p>
-          `
+          titleKey: 'step9PopupVisualTimelineTitle',
+          contentKey: 'step9PopupVisualTimelineContent'
         }
       };
 
@@ -468,10 +304,43 @@
           previousActiveElement = document.activeElement;
         }
         
+        // Get current language
+        const currentLang = localStorage.getItem('language') || 'sv';
+        
+        // Get translations from global translations object (defined in lang.js)
+        const popupData = infoPopupData[id];
+        if (!popupData) {
+          console.error('Popup data not found for ID:', id);
+          return;
+        }
+        
+        // Get translated title and content - use translations from lang.js
+        let translatedTitle = '';
+        let translatedContent = '';
+        
+        // Check if using new structure with keys or old structure with direct text
+        if (popupData.titleKey && popupData.contentKey) {
+          // New structure: use translation keys
+          if (typeof translations !== 'undefined' && translations[currentLang]) {
+            translatedTitle = translations[currentLang][popupData.titleKey] || popupData.titleKey;
+            translatedContent = translations[currentLang][popupData.contentKey] || popupData.contentKey;
+          } else {
+            translatedTitle = popupData.titleKey;
+            translatedContent = popupData.contentKey;
+          }
+        } else if (popupData.title && popupData.content) {
+          // Old structure: use direct text (backward compatibility)
+          translatedTitle = popupData.title;
+          translatedContent = popupData.content;
+        } else {
+          console.error('Popup data structure invalid for ID:', id);
+          return;
+        }
+        
         // Update content
-        title.textContent = infoPopupData[id].title;
+        title.textContent = translatedTitle;
         title.classList.remove('sr-only');
-        content.innerHTML = infoPopupData[id].content;
+        content.innerHTML = translatedContent;
         
         // Update ARIA attributes
         popup.setAttribute('aria-hidden', 'false');

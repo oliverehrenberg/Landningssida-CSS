@@ -28,22 +28,22 @@
         <div class="step1-hero-features">
           <div class="step1-hero-feature-item">
             <i class="fa-solid fa-table" aria-hidden="true"></i>
-            <span>Centraliserad avtalslista</span>
+            <span data-translate="step10HeroFeatureListTitle">Centraliserad avtalslista</span>
           </div>
           <div class="step1-hero-feature-item">
             <i class="fa-solid fa-filter" aria-hidden="true"></i>
-            <span>Filtrera efter status</span>
+            <span data-translate="step10HeroFeatureFilterTitle">Filtrera efter status</span>
           </div>
           <div class="step1-hero-feature-item">
             <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
-            <span>Sökfunktion</span>
+            <span data-translate="step10HeroFeatureSearchTitle">Sökfunktion</span>
           </div>
         </div>
       </div>
     </section>
 
     <!-- Feature Details -->
-    <section class="feature-detail-section">
+    <section class="feature-detail-section section-hidden">
       <div class="section-header">
         <h2 data-translate="step10DetailInterfaceTitle">Översikt över avtalshanteringssidan</h2>
         <div class="section-divider-line"></div>
@@ -81,7 +81,7 @@
     </section>
 
     <!-- How It Works -->
-    <section class="how-it-works step1-how-works">
+    <section class="how-it-works section-hidden step1-how-works">
       <div class="section-header">
         <h2 data-translate="howItWorksTitle">Så fungerar det</h2>
         <div class="section-divider-line"></div>
@@ -239,202 +239,35 @@
     <script src="../main.js"></script>
     <script>
       // Info popup data - detailed information for each section
+      // Info popup data - using translation keys instead of hardcoded text
       const infoPopupData = {
         step1: {
-          title: 'Steg 1: Få tillgång till avtalshantering',
-          content: `
-            <h3>Detaljerad information om att komma åt avtalshantering</h3>
-            <p>Avtalshanteringssektionen är din centrala plats för att hantera alla dina avtal från ett ställe.</p>
-            <h4>Tillgång via huvudmenyn</h4>
-            <ul>
-              <li><strong>Huvudnavigationsmeny:</strong> Navigera till avtalshanteringssektionen från huvudmenyn</li>
-              <li><strong>Avtalsöversiktssida:</strong> Öppna avtalsöversiktssidan där alla avtal visas</li>
-              <li><strong>Centraliserad lista:</strong> Se alla avtal i en centraliserad lista eller tabellformat</li>
-              <li><strong>Snabbåtkomst:</strong> Enkel åtkomst till alla avtalsfunktioner</li>
-            </ul>
-            <h4>Avtalsöversiktssidan</h4>
-            <ul>
-              <li><strong>Komplett översikt:</strong> Alla dina avtal på ett ställe</li>
-              <li><strong>Organiserad visning:</strong> Tydlig organisation av avtal</li>
-              <li><strong>Snabbnavigering:</strong> Enkel navigering till specifika avtal</li>
-              <li><strong>Statusöversikt:</strong> Se status på alla avtal snabbt</li>
-            </ul>
-            <h4>Fördelar med centraliserad hantering</h4>
-            <ul>
-              <li><strong>Översikt:</strong> Komplett översikt över alla avtal</li>
-              <li><strong>Effektivitet:</strong> Hantera alla avtal från ett ställe</li>
-              <li><strong>Organisering:</strong> Enkel organisering och sortering</li>
-              <li><strong>Spårning:</strong> Enkel spårning av avtalsstatus</li>
-            </ul>
-            <p>Avtalshanteringssektionen ger dig full kontroll över alla dina avtal.</p>
-          `
+          titleKey: 'step10PopupStep1Title',
+          contentKey: 'step10PopupStep1Content'
         },
         step2: {
-          title: 'Steg 2: Visa avtalslista',
-          content: `
-            <h3>Detaljerad information om avtalslista</h3>
-            <p>Avtalslistan visar alla dina avtal i ett strukturerat format för enkel översikt och hantering.</p>
-            <h4>Tabell- eller listvy</h4>
-            <ul>
-              <li><strong>Tabellformat:</strong> Avtal visas i en organiserad tabell</li>
-              <li><strong>Listformat:</strong> Alternativ listvy för enkel läsning</li>
-              <li><strong>Växling:</strong> Växla mellan olika vyer efter behov</li>
-              <li><strong>Anpassning:</strong> Anpassa visningen efter dina preferenser</li>
-            </ul>
-            <h4>Avtalsinformation</h4>
-            <ul>
-              <li><strong>Avtalsnamn:</strong> Tydlig identifiering av varje avtal</li>
-              <li><strong>Mottagare:</strong> Leverantör eller beställare</li>
-              <li><strong>Skapelsedatum:</strong> När avtalet skapades</li>
-              <li><strong>Förfallodatum:</strong> När avtalet förfaller eller ska slutföras</li>
-              <li><strong>Status:</strong> Nuvarande status (Aktiv, Väntande, Signerad, Avvisad)</li>
-              <li><strong>Belopp:</strong> Totala värdet för avtalet</li>
-            </ul>
-            <h4>Organisering</h4>
-            <ul>
-              <li><strong>Sortering:</strong> Sortera avtal efter olika kolumner</li>
-              <li><strong>Gruppering:</strong> Gruppera avtal efter status eller datum</li>
-              <li><strong>Skannbar:</strong> Tabellen är organiserad för enkel skanning</li>
-              <li><strong>Jämförelse:</strong> Enkel jämförelse mellan avtal</li>
-            </ul>
-            <h4>Scrollning och navigering</h4>
-            <ul>
-              <li><strong>Scrollning:</strong> Scrolla genom listan för att se alla avtal</li>
-              <li><strong>Detaljvy:</strong> Klicka på avtal för att se detaljer</li>
-              <li><strong>Snabbåtkomst:</strong> Snabb åtkomst till avtalsdetaljer</li>
-              <li><strong>Åtgärder:</strong> Utför åtgärder direkt från listan</li>
-            </ul>
-            <p>Avtalslistan ger dig en komplett översikt över alla dina avtal på ett ställe.</p>
-          `
+          titleKey: 'step10PopupStep2Title',
+          contentKey: 'step10PopupStep2Content'
         },
         step3: {
-          title: 'Steg 3: Filtrera avtal',
-          content: `
-            <h3>Detaljerad information om att filtrera avtal</h3>
-            <p>Filterfunktioner gör det möjligt att snabbt hitta avtal med specifik status eller kriterier.</p>
-            <h4>Statusfilter</h4>
-            <ul>
-              <li><strong>Aktiv:</strong> Filtrera avtal som är aktiva</li>
-              <li><strong>Väntande:</strong> Visa avtal som väntar på signering eller åtgärd</li>
-              <li><strong>Signerad:</strong> Visa signerade avtal</li>
-              <li><strong>Avvisad:</strong> Visa avvisade avtal</li>
-            </ul>
-            <h4>Filteralternativ</h4>
-            <ul>
-              <li><strong>Statusfilter:</strong> Filtrera efter avtalsstatus</li>
-              <li><strong>Datumfilter:</strong> Filtrera efter skapelsedatum eller förfallodatum</li>
-              <li><strong>Beloppsfilter:</strong> Filtrera efter beloppsintervall</li>
-              <li><strong>Mottagarefilter:</strong> Filtrera efter specifik mottagare</li>
-            </ul>
-            <h4>Statusindikatorer</h4>
-            <ul>
-              <li><strong>Färgkodning:</strong> Färgkodade indikatorer för snabb identifiering</li>
-              <li><strong>Statusmärken:</strong> Visuella märken för varje status</li>
-              <li><strong>Tydlig visning:</strong> Tydlig visning av avtalsstatus</li>
-              <li><strong>Snabbidentifiering:</strong> Identifiera status på ett ögonkast</li>
-            </ul>
-            <h4>Automatisk uppdatering</h4>
-            <ul>
-              <li><strong>Realtidsfiltrering:</strong> Listan uppdateras automatiskt när filter väljs</li>
-              <li><strong>Matchande avtal:</strong> Endast avtal som matchar filterkriterier visas</li>
-              <li><strong>Filterkombination:</strong> Kombinera flera filter för mer specifika resultat</li>
-              <li><strong>Återställning:</strong> Enkelt återställa filter för att se alla avtal</li>
-            </ul>
-            <p>Filterfunktioner hjälper dig att snabbt hitta de avtal du behöver.</p>
-          `
+          titleKey: 'step10PopupStep3Title',
+          contentKey: 'step10PopupStep3Content'
         },
         step4: {
-          title: 'Steg 4: Sök och navigera',
-          content: `
-            <h3>Detaljerad information om sök och navigering</h3>
-            <p>Sökfunktion och navigering gör det enkelt att hitta och hantera specifika avtal.</p>
-            <h4>Sökfunktion</h4>
-            <ul>
-              <li><strong>Sökfält:</strong> Ange nyckelord i sökfältet</li>
-              <li><strong>Avtalsnamn:</strong> Sök efter specifika avtalsnamn</li>
-              <li><strong>Mottagare:</strong> Sök efter leverantör eller beställare</li>
-              <li><strong>Andra kriterier:</strong> Sök efter andra sökbara kriterier</li>
-            </ul>
-            <h4>Realtidssökning</h4>
-            <ul>
-              <li><strong>Realtidsuppdateringar:</strong> Sökresultat uppdateras i realtid när du skriver</li>
-              <li><strong>Snabbresultat:</strong> Få omedelbara sökresultat</li>
-              <li><strong>Höjdpunkter:</strong> Sökord markeras i resultaten</li>
-              <li><strong>Filtrering:</strong> Sökresultat filtreras automatiskt</li>
-            </ul>
-            <h4>Sidnumrering</h4>
-            <ul>
-              <li><strong>Flera sidor:</strong> När det finns många avtal delas de upp i sidor</li>
-              <li><strong>Sidnummer:</strong> Navigera till specifik sida med sidnummer</li>
-              <li><strong>Föregående/Nästa:</strong> Använd knappar för att gå till föregående eller nästa sida</li>
-              <li><strong>Sidstorlek:</strong> Välj hur många avtal som ska visas per sida</li>
-            </ul>
-            <h4>Avtalsdetaljer</h4>
-            <ul>
-              <li><strong>Klickbar lista:</strong> Klicka på valfritt avtal för att se detaljer</li>
-              <li><strong>Detaljvy:</strong> Öppna detaljerad vy av avtalet</li>
-              <li><strong>Hantering:</strong> Hantera avtalet direkt från detaljvyn</li>
-              <li><strong>Snabbåtgärder:</strong> Utför snabbåtgärder på avtal</li>
-            </ul>
-            <h4>Navigeringseffektivitet</h4>
-            <ul>
-              <li><strong>Snabb navigering:</strong> Effektiv navigering genom stora listor</li>
-              <li><strong>Hittar snabbt:</strong> Hitta specifika avtal snabbt med sök</li>
-              <li><strong>Organiserad:</strong> Organiserad visning för enkel hantering</li>
-              <li><strong>Användarvänlig:</strong> Användarvänligt gränssnitt för navigering</li>
-            </ul>
-            <p>Sökfunktion och navigering gör det enkelt att hantera även stora antal avtal effektivt.</p>
-          `
+          titleKey: 'step10PopupStep4Title',
+          contentKey: 'step10PopupStep4Content'
         },
         'visual-table': {
-          title: 'Avtalstabell',
-          content: `
-            <h3>Detaljerad information om avtalstabell</h3>
-            <p>Avtalstabellen visar alla avtal i ett strukturerat format för enkel översikt och hantering.</p>
-            <ul>
-              <li><strong>Organiserad layout:</strong> Avtal visas i en organiserad tabell med tydliga kolumner</li>
-              <li><strong>Viktig information:</strong> Varje rad visar viktig information om avtalet</li>
-              <li><strong>Avtalsnamn:</strong> Tydlig identifiering av varje avtal</li>
-              <li><strong>Mottagare:</strong> Information om leverantör eller beställare</li>
-              <li><strong>Datum:</strong> Skapelsedatum och förfallodatum</li>
-              <li><strong>Status:</strong> Nuvarande status med visuella indikatorer</li>
-              <li><strong>Belopp:</strong> Totala värdet för avtalet</li>
-              <li><strong>Sortering:</strong> Sortera efter olika kolumner för enkel organisering</li>
-            </ul>
-            <p>Avtalstabellen är designad för enkel skanning och jämförelse av avtal.</p>
-          `
+          titleKey: 'step10PopupVisualTableTitle',
+          contentKey: 'step10PopupVisualTableContent'
         },
         'visual-filter': {
-          title: 'Filter och status',
-          content: `
-            <h3>Detaljerad information om filter och status</h3>
-            <p>Filter och statusindikatorer gör det enkelt att hitta och identifiera avtal med specifik status.</p>
-            <ul>
-              <li><strong>Statusfilter:</strong> Filtrera avtal efter status (Aktiv, Väntande, Signerad, Avvisad)</li>
-              <li><strong>Färgkodning:</strong> Färgkodade indikatorer för snabb identifiering av status</li>
-              <li><strong>Statusmärken:</strong> Visuella märken som visar avtalsstatus tydligt</li>
-              <li><strong>Filterkombination:</strong> Kombinera flera filter för mer specifika resultat</li>
-              <li><strong>Automatisk uppdatering:</strong> Listan uppdateras automatiskt när filter väljs</li>
-              <li><strong>Återställning:</strong> Enkelt återställa filter för att se alla avtal</li>
-            </ul>
-            <p>Filter och statusindikatorer hjälper dig att snabbt hitta de avtal du behöver.</p>
-          `
+          titleKey: 'step10PopupVisualFilterTitle',
+          contentKey: 'step10PopupVisualFilterContent'
         },
         'visual-search': {
-          title: 'Sökfunktion',
-          content: `
-            <h3>Detaljerad information om sökfunktion</h3>
-            <p>Sökfunktionen gör det möjligt att snabbt hitta specifika avtal genom att söka efter nyckelord.</p>
-            <ul>
-              <li><strong>Sökfält:</strong> Ange nyckelord i sökfältet för att hitta avtal</li>
-              <li><strong>Realtidssökning:</strong> Sökresultat uppdateras i realtid när du skriver</li>
-              <li><strong>Flera kriterier:</strong> Sök efter avtalsnamn, mottagare eller andra kriterier</li>
-              <li><strong>Höjdpunkter:</strong> Sökord markeras i resultaten för enkel identifiering</li>
-              <li><strong>Snabbresultat:</strong> Få omedelbara sökresultat</li>
-              <li><strong>Filtrering:</strong> Sökresultat filtreras automatiskt baserat på sökord</li>
-            </ul>
-            <p>Sökfunktionen gör det enkelt att hitta specifika avtal även i stora listor.</p>
-          `
+          titleKey: 'step10PopupVisualSearchTitle',
+          contentKey: 'step10PopupVisualSearchContent'
         }
       };
 
@@ -471,10 +304,43 @@
           previousActiveElement = document.activeElement;
         }
         
+        // Get current language
+        const currentLang = localStorage.getItem('language') || 'sv';
+        
+        // Get translations from global translations object (defined in lang.js)
+        const popupData = infoPopupData[id];
+        if (!popupData) {
+          console.error('Popup data not found for ID:', id);
+          return;
+        }
+        
+        // Get translated title and content - use translations from lang.js
+        let translatedTitle = '';
+        let translatedContent = '';
+        
+        // Check if using new structure with keys or old structure with direct text
+        if (popupData.titleKey && popupData.contentKey) {
+          // New structure: use translation keys
+          if (typeof translations !== 'undefined' && translations[currentLang]) {
+            translatedTitle = translations[currentLang][popupData.titleKey] || popupData.titleKey;
+            translatedContent = translations[currentLang][popupData.contentKey] || popupData.contentKey;
+          } else {
+            translatedTitle = popupData.titleKey;
+            translatedContent = popupData.contentKey;
+          }
+        } else if (popupData.title && popupData.content) {
+          // Old structure: use direct text (backward compatibility)
+          translatedTitle = popupData.title;
+          translatedContent = popupData.content;
+        } else {
+          console.error('Popup data structure invalid for ID:', id);
+          return;
+        }
+        
         // Update content
-        title.textContent = infoPopupData[id].title;
+        title.textContent = translatedTitle;
         title.classList.remove('sr-only');
-        content.innerHTML = infoPopupData[id].content;
+        content.innerHTML = translatedContent;
         
         // Update ARIA attributes
         popup.setAttribute('aria-hidden', 'false');

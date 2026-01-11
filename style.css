@@ -2049,8 +2049,9 @@ footer {
 =============================== */
 .section-hidden {
   opacity: 0;
+  visibility: hidden;
   transform: translateY(40px);
-  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out, visibility 0.6s ease-out;
 }
 
 @media (max-width: 768px) {
@@ -4466,33 +4467,63 @@ button[type="button"]:hover {
 }
 
 /* === STEP1-DETAILS PAGE MODERN DESIGN === */
-/* White background for step1-details page after hero */
-body.step1-details-page {
-  background: #ffffff !important;
+/* Dark background for all step-details pages to match main design */
+body.step1-details-page,
+body.step2-details-page,
+body.step3-details-page,
+body.step4-details-page,
+body.step5-details-page,
+body.step6-details-page,
+body.step7-details-page,
+body.step8-details-page,
+body.step9-details-page,
+body.step10-details-page,
+body.step11-details-page {
+  background: var(--bg-gradient) !important;
 }
 
 /* Styles only for content inside .details-main, not affecting header/footer */
-body.step1-details-page .details-main {
-  background: linear-gradient(180deg, #FFFFFF 0%, #F8F9FA 50%, #FFFFFF 100%);
+body.step1-details-page .details-main,
+body.step2-details-page .details-main,
+body.step3-details-page .details-main,
+body.step4-details-page .details-main,
+body.step5-details-page .details-main,
+body.step6-details-page .details-main,
+body.step7-details-page .details-main,
+body.step8-details-page .details-main,
+body.step9-details-page .details-main,
+body.step10-details-page .details-main,
+body.step11-details-page .details-main {
+  background: linear-gradient(135deg, rgba(28, 26, 46, 0.95) 0%, rgba(15, 14, 23, 0.95) 100%);
   border-radius: 32px;
-  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.12), 
-              0 12px 40px rgba(76, 175, 80, 0.15),
-              inset 0 1px 0 rgba(255, 255, 255, 0.8);
+  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.4), 
+              0 12px 40px rgba(249, 200, 81, 0.15),
+              inset 0 1px 0 rgba(255, 255, 255, 0.1);
   padding: 5.5rem 3.5rem;
   max-width: 1100px;
-  border: 3px solid rgba(76, 175, 80, 0.25);
+  border: 3px solid rgba(249, 200, 81, 0.25);
   position: relative;
   overflow: hidden;
 }
 
-body.step1-details-page .details-main::after {
+body.step1-details-page .details-main::after,
+body.step2-details-page .details-main::after,
+body.step3-details-page .details-main::after,
+body.step4-details-page .details-main::after,
+body.step5-details-page .details-main::after,
+body.step6-details-page .details-main::after,
+body.step7-details-page .details-main::after,
+body.step8-details-page .details-main::after,
+body.step9-details-page .details-main::after,
+body.step10-details-page .details-main::after,
+body.step11-details-page .details-main::after {
   content: '';
   position: absolute;
   top: -50%;
   right: -20%;
   width: 600px;
   height: 600px;
-  background: radial-gradient(circle, rgba(76, 175, 80, 0.08) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(249, 200, 81, 0.08) 0%, transparent 70%);
   border-radius: 50%;
   pointer-events: none;
   animation: float 20s ease-in-out infinite;
@@ -4503,14 +4534,24 @@ body.step1-details-page .details-main::after {
   50% { transform: translate(-30px, 30px) scale(1.1); }
 }
 
-body.step1-details-page .details-main::before {
+body.step1-details-page .details-main::before,
+body.step2-details-page .details-main::before,
+body.step3-details-page .details-main::before,
+body.step4-details-page .details-main::before,
+body.step5-details-page .details-main::before,
+body.step6-details-page .details-main::before,
+body.step7-details-page .details-main::before,
+body.step8-details-page .details-main::before,
+body.step9-details-page .details-main::before,
+body.step10-details-page .details-main::before,
+body.step11-details-page .details-main::before {
   content: '';
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
   height: 4px;
-  background: linear-gradient(90deg, #4CAF50 0%, #388E3C 50%, #4CAF50 100%);
+  background: linear-gradient(90deg, #f9c851 0%, #e5b447 50%, #f9c851 100%);
   background-size: 200% 100%;
   animation: shimmer 3s ease-in-out infinite;
 }
@@ -4520,17 +4561,37 @@ body.step1-details-page .details-main::before {
   50% { background-position: 100% 50%; }
 }
 
-body.step1-details-page .details-hero {
+body.step1-details-page .details-hero,
+body.step2-details-page .details-hero,
+body.step3-details-page .details-hero,
+body.step4-details-page .details-hero,
+body.step5-details-page .details-hero,
+body.step6-details-page .details-hero,
+body.step7-details-page .details-hero,
+body.step8-details-page .details-hero,
+body.step9-details-page .details-hero,
+body.step10-details-page .details-hero,
+body.step11-details-page .details-hero {
   margin-bottom: 5rem;
   padding-bottom: 3rem;
   border-bottom: 3px solid transparent;
-  background: linear-gradient(white, white) padding-box,
-              linear-gradient(180deg, #E8F5E9 0%, transparent 100%) border-box;
+  background: linear-gradient(135deg, rgba(28, 26, 46, 0.95), rgba(28, 26, 46, 0.95)) padding-box,
+              linear-gradient(180deg, rgba(249, 200, 81, 0.2) 0%, transparent 100%) border-box;
   border-bottom-width: 3px;
   position: relative;
 }
 
-body.step1-details-page .details-hero::after {
+body.step1-details-page .details-hero::after,
+body.step2-details-page .details-hero::after,
+body.step3-details-page .details-hero::after,
+body.step4-details-page .details-hero::after,
+body.step5-details-page .details-hero::after,
+body.step6-details-page .details-hero::after,
+body.step7-details-page .details-hero::after,
+body.step8-details-page .details-hero::after,
+body.step9-details-page .details-hero::after,
+body.step10-details-page .details-hero::after,
+body.step11-details-page .details-hero::after {
   content: '';
   position: absolute;
   bottom: -3px;
@@ -4538,30 +4599,40 @@ body.step1-details-page .details-hero::after {
   transform: translateX(-50%);
   width: 100px;
   height: 3px;
-  background: linear-gradient(90deg, transparent, #4CAF50, transparent);
+  background: linear-gradient(90deg, transparent, #f9c851, transparent);
   border-radius: 2px;
 }
 
-body.step1-details-page .details-hero-icon {
+body.step1-details-page .details-hero-icon,
+body.step2-details-page .details-hero-icon,
+body.step3-details-page .details-hero-icon,
+body.step4-details-page .details-hero-icon,
+body.step5-details-page .details-hero-icon,
+body.step6-details-page .details-hero-icon,
+body.step7-details-page .details-hero-icon,
+body.step8-details-page .details-hero-icon,
+body.step9-details-page .details-hero-icon,
+body.step10-details-page .details-hero-icon,
+body.step11-details-page .details-hero-icon {
   font-size: 4.5rem;
-  color: #4CAF50;
+  color: #f9c851;
   margin-bottom: 2.5rem;
-  background: linear-gradient(135deg, #D9FDD3 0%, #C8E6C9 30%, #A5D6A7 60%, rgba(76, 175, 80, 0.2) 100%);
+  background: linear-gradient(135deg, rgba(249, 200, 81, 0.2) 0%, rgba(229, 180, 71, 0.15) 30%, rgba(249, 200, 81, 0.1) 60%, rgba(249, 200, 81, 0.05) 100%);
   width: 140px;
   height: 140px;
   border-radius: 32px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 16px 48px rgba(76, 175, 80, 0.35), 
-              0 8px 24px rgba(76, 175, 80, 0.25),
-              0 4px 12px rgba(76, 175, 80, 0.15),
-              inset 0 2px 4px rgba(255, 255, 255, 0.6),
-              inset 0 -2px 4px rgba(76, 175, 80, 0.1);
+  box-shadow: 0 16px 48px rgba(249, 200, 81, 0.35), 
+              0 8px 24px rgba(249, 200, 81, 0.25),
+              0 4px 12px rgba(249, 200, 81, 0.15),
+              inset 0 2px 4px rgba(255, 255, 255, 0.1),
+              inset 0 -2px 4px rgba(249, 200, 81, 0.1);
   transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
   overflow: hidden;
-  border: 3px solid rgba(76, 175, 80, 0.2);
+  border: 3px solid rgba(249, 200, 81, 0.2);
 }
 
 body.step1-details-page .details-hero-icon::before {
@@ -4580,58 +4651,128 @@ body.step1-details-page .details-hero-icon::before {
   100% { transform: rotate(360deg); }
 }
 
-body.step1-details-page .details-hero-icon:hover {
+body.step1-details-page .details-hero-icon:hover,
+body.step2-details-page .details-hero-icon:hover,
+body.step3-details-page .details-hero-icon:hover,
+body.step4-details-page .details-hero-icon:hover,
+body.step5-details-page .details-hero-icon:hover,
+body.step6-details-page .details-hero-icon:hover,
+body.step7-details-page .details-hero-icon:hover,
+body.step8-details-page .details-hero-icon:hover,
+body.step9-details-page .details-hero-icon:hover,
+body.step10-details-page .details-hero-icon:hover,
+body.step11-details-page .details-hero-icon:hover {
   transform: scale(1.08) rotate(5deg);
-  box-shadow: 0 16px 40px rgba(76, 175, 80, 0.35), 
-              0 6px 16px rgba(76, 175, 80, 0.2);
-  background: linear-gradient(135deg, #4CAF50 0%, #388E3C 100%);
+  box-shadow: 0 16px 40px rgba(249, 200, 81, 0.35), 
+              0 6px 16px rgba(249, 200, 81, 0.2);
+  background: linear-gradient(135deg, #f9c851 0%, #e5b447 100%);
 }
 
-body.step1-details-page .details-hero-icon:hover i {
-  color: #FFFFFF;
+body.step1-details-page .details-hero-icon:hover i,
+body.step2-details-page .details-hero-icon:hover i,
+body.step3-details-page .details-hero-icon:hover i,
+body.step4-details-page .details-hero-icon:hover i,
+body.step5-details-page .details-hero-icon:hover i,
+body.step6-details-page .details-hero-icon:hover i,
+body.step7-details-page .details-hero-icon:hover i,
+body.step8-details-page .details-hero-icon:hover i,
+body.step9-details-page .details-hero-icon:hover i,
+body.step10-details-page .details-hero-icon:hover i,
+body.step11-details-page .details-hero-icon:hover i {
+  color: #0f0e17;
   transform: scale(1.1);
 }
 
-body.step1-details-page .details-hero h1 {
+body.step1-details-page .details-hero h1,
+body.step2-details-page .details-hero h1,
+body.step3-details-page .details-hero h1,
+body.step4-details-page .details-hero h1,
+body.step5-details-page .details-hero h1,
+body.step6-details-page .details-hero h1,
+body.step7-details-page .details-hero h1,
+body.step8-details-page .details-hero h1,
+body.step9-details-page .details-hero h1,
+body.step10-details-page .details-hero h1,
+body.step11-details-page .details-hero h1 {
   font-size: 2.8rem;
-  color: #333333;
+  color: #ffffff;
   font-weight: 800;
   margin-bottom: 1.25rem;
   line-height: 1.15;
-  background: linear-gradient(135deg, #1a1a1a 0%, #333333 40%, #4CAF50 80%, #388E3C 100%);
+  background: linear-gradient(135deg, #ffffff 0%, #f9c851 40%, #e5b447 80%, #f9c851 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  text-shadow: 0 2px 8px rgba(76, 175, 80, 0.1);
+  text-shadow: 0 2px 8px rgba(249, 200, 81, 0.1);
   letter-spacing: -0.03em;
   position: relative;
 }
 
-body.step1-details-page .details-hero p {
+body.step1-details-page .details-hero p,
+body.step2-details-page .details-hero p,
+body.step3-details-page .details-hero p,
+body.step4-details-page .details-hero p,
+body.step5-details-page .details-hero p,
+body.step6-details-page .details-hero p,
+body.step7-details-page .details-hero p,
+body.step8-details-page .details-hero p,
+body.step9-details-page .details-hero p,
+body.step10-details-page .details-hero p,
+body.step11-details-page .details-hero p {
   font-size: 1.25rem;
-  color: #333333;
-  opacity: 0.8;
+  color: #a7a9be;
+  opacity: 0.9;
   line-height: 1.6;
   max-width: 700px;
   margin: 0 auto;
 }
 
-body.step1-details-page .details-section {
+body.step1-details-page .details-section,
+body.step2-details-page .details-section,
+body.step3-details-page .details-section,
+body.step4-details-page .details-section,
+body.step5-details-page .details-section,
+body.step6-details-page .details-section,
+body.step7-details-page .details-section,
+body.step8-details-page .details-section,
+body.step9-details-page .details-section,
+body.step10-details-page .details-section,
+body.step11-details-page .details-section {
   margin-bottom: 3.5rem;
 }
 
-body.step1-details-page .details-section h2 {
+body.step1-details-page .details-section h2,
+body.step2-details-page .details-section h2,
+body.step3-details-page .details-section h2,
+body.step4-details-page .details-section h2,
+body.step5-details-page .details-section h2,
+body.step6-details-page .details-section h2,
+body.step7-details-page .details-section h2,
+body.step8-details-page .details-section h2,
+body.step9-details-page .details-section h2,
+body.step10-details-page .details-section h2,
+body.step11-details-page .details-section h2 {
   font-size: 2.1rem;
-  color: #1a1a1a;
+  color: #f9c851;
   font-weight: 800;
   margin-bottom: 2.5rem;
   position: relative;
   padding-left: 2rem;
   letter-spacing: -0.02em;
-  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  text-shadow: 0 1px 3px rgba(249, 200, 81, 0.2);
 }
 
-body.step1-details-page .details-section h2::before {
+body.step1-details-page .details-section h2::before,
+body.step2-details-page .details-section h2::before,
+body.step3-details-page .details-section h2::before,
+body.step4-details-page .details-section h2::before,
+body.step5-details-page .details-section h2::before,
+body.step6-details-page .details-section h2::before,
+body.step7-details-page .details-section h2::before,
+body.step8-details-page .details-section h2::before,
+body.step9-details-page .details-section h2::before,
+body.step10-details-page .details-section h2::before,
+body.step11-details-page .details-section h2::before {
   content: '';
   position: absolute;
   left: 0;
@@ -4639,28 +4780,38 @@ body.step1-details-page .details-section h2::before {
   transform: translateY(-50%);
   width: 6px;
   height: 40px;
-  background: linear-gradient(180deg, #4CAF50 0%, #66BB6A 50%, #388E3C 100%);
+  background: linear-gradient(180deg, #f9c851 0%, #ffdc7a 50%, #e5b447 100%);
   border-radius: 4px;
-  box-shadow: 0 4px 12px rgba(76, 175, 80, 0.4),
-              0 2px 6px rgba(76, 175, 80, 0.3),
-              inset 0 1px 2px rgba(255, 255, 255, 0.3);
+  box-shadow: 0 4px 12px rgba(249, 200, 81, 0.4),
+              0 2px 6px rgba(249, 200, 81, 0.3),
+              inset 0 1px 2px rgba(255, 255, 255, 0.1);
   animation: pulse-glow 2s ease-in-out infinite;
 }
 
 @keyframes pulse-glow {
   0%, 100% { 
-    box-shadow: 0 4px 12px rgba(76, 175, 80, 0.4),
-                0 2px 6px rgba(76, 175, 80, 0.3),
-                inset 0 1px 2px rgba(255, 255, 255, 0.3);
+    box-shadow: 0 4px 12px rgba(249, 200, 81, 0.4),
+                0 2px 6px rgba(249, 200, 81, 0.3),
+                inset 0 1px 2px rgba(255, 255, 255, 0.1);
   }
   50% { 
-    box-shadow: 0 6px 20px rgba(76, 175, 80, 0.6),
-                0 3px 10px rgba(76, 175, 80, 0.4),
-                inset 0 1px 2px rgba(255, 255, 255, 0.3);
+    box-shadow: 0 6px 20px rgba(249, 200, 81, 0.6),
+                0 3px 10px rgba(249, 200, 81, 0.4),
+                inset 0 1px 2px rgba(255, 255, 255, 0.1);
   }
 }
 
-body.step1-details-page .details-section h2::after {
+body.step1-details-page .details-section h2::after,
+body.step2-details-page .details-section h2::after,
+body.step3-details-page .details-section h2::after,
+body.step4-details-page .details-section h2::after,
+body.step5-details-page .details-section h2::after,
+body.step6-details-page .details-section h2::after,
+body.step7-details-page .details-section h2::after,
+body.step8-details-page .details-section h2::after,
+body.step9-details-page .details-section h2::after,
+body.step10-details-page .details-section h2::after,
+body.step11-details-page .details-section h2::after {
   content: '';
   position: absolute;
   left: 0;
@@ -4668,7 +4819,7 @@ body.step1-details-page .details-section h2::after {
   transform: translateY(-50%);
   width: 5px;
   height: 32px;
-  background: linear-gradient(180deg, rgba(76, 175, 80, 0.3) 0%, transparent 100%);
+  background: linear-gradient(180deg, rgba(249, 200, 81, 0.3) 0%, transparent 100%);
   border-radius: 3px;
   animation: glow 2s ease-in-out infinite;
 }
@@ -4678,52 +4829,102 @@ body.step1-details-page .details-section h2::after {
   50% { opacity: 1; }
 }
 
-body.step1-details-page .details-section p {
-  color: #333333;
-  opacity: 0.75;
+body.step1-details-page .details-section p,
+body.step2-details-page .details-section p,
+body.step3-details-page .details-section p,
+body.step4-details-page .details-section p,
+body.step5-details-page .details-section p,
+body.step6-details-page .details-section p,
+body.step7-details-page .details-section p,
+body.step8-details-page .details-section p,
+body.step9-details-page .details-section p,
+body.step10-details-page .details-section p,
+body.step11-details-page .details-section p {
+  color: #a7a9be;
+  opacity: 0.9;
   line-height: 1.7;
   font-size: 1.05rem;
 }
 
-body.step1-details-page .details-step {
-  background: linear-gradient(135deg, #FFFFFF 0%, #F8F9FA 50%, #FFFFFF 100%);
-  border: 3px solid #E8F5E9;
+body.step1-details-page .details-step,
+body.step2-details-page .details-step,
+body.step3-details-page .details-step,
+body.step4-details-page .details-step,
+body.step5-details-page .details-step,
+body.step6-details-page .details-step,
+body.step7-details-page .details-step,
+body.step8-details-page .details-step,
+body.step9-details-page .details-step,
+body.step10-details-page .details-step,
+body.step11-details-page .details-step {
+  background: linear-gradient(135deg, rgba(28, 26, 46, 0.6) 0%, rgba(15, 14, 23, 0.6) 50%, rgba(28, 26, 46, 0.6) 100%);
+  border: 3px solid rgba(249, 200, 81, 0.2);
   border-radius: 24px;
   padding: 3rem;
   margin-bottom: 2.5rem;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1), 
-              0 4px 16px rgba(76, 175, 80, 0.12),
-              0 2px 8px rgba(76, 175, 80, 0.08),
-              inset 0 1px 0 rgba(255, 255, 255, 0.9);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3), 
+              0 4px 16px rgba(249, 200, 81, 0.12),
+              0 2px 8px rgba(249, 200, 81, 0.08),
+              inset 0 1px 0 rgba(255, 255, 255, 0.1);
   transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
   overflow: hidden;
   backdrop-filter: blur(10px);
 }
 
-body.step1-details-page .details-step:nth-child(even) {
-  background: linear-gradient(135deg, #FAFAFA 0%, #FFFFFF 50%, #FAFAFA 100%);
+body.step1-details-page .details-step:nth-child(even),
+body.step2-details-page .details-step:nth-child(even),
+body.step3-details-page .details-step:nth-child(even),
+body.step4-details-page .details-step:nth-child(even),
+body.step5-details-page .details-step:nth-child(even),
+body.step6-details-page .details-step:nth-child(even),
+body.step7-details-page .details-step:nth-child(even),
+body.step8-details-page .details-step:nth-child(even),
+body.step9-details-page .details-step:nth-child(even),
+body.step10-details-page .details-step:nth-child(even),
+body.step11-details-page .details-step:nth-child(even) {
+  background: linear-gradient(135deg, rgba(15, 14, 23, 0.6) 0%, rgba(28, 26, 46, 0.6) 50%, rgba(15, 14, 23, 0.6) 100%);
 }
 
-body.step1-details-page .details-step::before {
+body.step1-details-page .details-step::before,
+body.step2-details-page .details-step::before,
+body.step3-details-page .details-step::before,
+body.step4-details-page .details-step::before,
+body.step5-details-page .details-step::before,
+body.step6-details-page .details-step::before,
+body.step7-details-page .details-step::before,
+body.step8-details-page .details-step::before,
+body.step9-details-page .details-step::before,
+body.step10-details-page .details-step::before,
+body.step11-details-page .details-step::before {
   content: '';
   position: absolute;
   top: 0;
   left: 0;
   width: 4px;
   height: 100%;
-  background: linear-gradient(180deg, #4CAF50 0%, #388E3C 100%);
+  background: linear-gradient(180deg, #f9c851 0%, #e5b447 100%);
   transform: scaleY(0);
   transition: transform 0.3s ease;
 }
 
-body.step1-details-page .details-step:hover {
+body.step1-details-page .details-step:hover,
+body.step2-details-page .details-step:hover,
+body.step3-details-page .details-step:hover,
+body.step4-details-page .details-step:hover,
+body.step5-details-page .details-step:hover,
+body.step6-details-page .details-step:hover,
+body.step7-details-page .details-step:hover,
+body.step8-details-page .details-step:hover,
+body.step9-details-page .details-step:hover,
+body.step10-details-page .details-step:hover,
+body.step11-details-page .details-step:hover {
   transform: translateX(12px) scale(1.01);
-  box-shadow: 0 12px 40px rgba(76, 175, 80, 0.25),
-              0 6px 20px rgba(76, 175, 80, 0.18),
-              0 3px 10px rgba(76, 175, 80, 0.12);
-  border-color: #4CAF50;
-  background: linear-gradient(135deg, #FFFFFF 0%, #F0F8F0 50%, #FFFFFF 100%);
+  box-shadow: 0 12px 40px rgba(249, 200, 81, 0.25),
+              0 6px 20px rgba(249, 200, 81, 0.18),
+              0 3px 10px rgba(249, 200, 81, 0.12);
+  border-color: #f9c851;
+  background: linear-gradient(135deg, rgba(28, 26, 46, 0.8) 0%, rgba(15, 14, 23, 0.8) 50%, rgba(28, 26, 46, 0.8) 100%);
 }
 
 body.step1-details-page .details-step:hover::before {
@@ -4979,23 +5180,43 @@ body.step1-details-page .details-main a:hover {
   border-bottom-color: #388E3C;
 }
 
-body.step1-details-page .details-main .cta-btn {
-  background: linear-gradient(135deg, #4CAF50 0%, #388E3C 100%);
-  color: #FFFFFF;
+body.step1-details-page .details-main .cta-btn,
+body.step2-details-page .details-main .cta-btn,
+body.step3-details-page .details-main .cta-btn,
+body.step4-details-page .details-main .cta-btn,
+body.step5-details-page .details-main .cta-btn,
+body.step6-details-page .details-main .cta-btn,
+body.step7-details-page .details-main .cta-btn,
+body.step8-details-page .details-main .cta-btn,
+body.step9-details-page .details-main .cta-btn,
+body.step10-details-page .details-main .cta-btn,
+body.step11-details-page .details-main .cta-btn {
+  background: linear-gradient(135deg, #f9c851 0%, #e5b447 100%);
+  color: #0f0e17;
   border: none;
   border-radius: 14px;
   padding: 1rem 2.5rem;
   font-weight: 700;
   font-size: 1.05rem;
-  box-shadow: 0 6px 20px rgba(76, 175, 80, 0.35),
-              0 2px 8px rgba(76, 175, 80, 0.2),
+  box-shadow: 0 6px 20px rgba(249, 200, 81, 0.35),
+              0 2px 8px rgba(249, 200, 81, 0.2),
               inset 0 1px 0 rgba(255, 255, 255, 0.2);
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
   overflow: hidden;
 }
 
-body.step1-details-page .details-main .cta-btn::before {
+body.step1-details-page .details-main .cta-btn::before,
+body.step2-details-page .details-main .cta-btn::before,
+body.step3-details-page .details-main .cta-btn::before,
+body.step4-details-page .details-main .cta-btn::before,
+body.step5-details-page .details-main .cta-btn::before,
+body.step6-details-page .details-main .cta-btn::before,
+body.step7-details-page .details-main .cta-btn::before,
+body.step8-details-page .details-main .cta-btn::before,
+body.step9-details-page .details-main .cta-btn::before,
+body.step10-details-page .details-main .cta-btn::before,
+body.step11-details-page .details-main .cta-btn::before {
   content: '';
   position: absolute;
   top: 0;
@@ -5006,15 +5227,35 @@ body.step1-details-page .details-main .cta-btn::before {
   transition: left 0.5s ease;
 }
 
-body.step1-details-page .details-main .cta-btn:hover::before {
+body.step1-details-page .details-main .cta-btn:hover::before,
+body.step2-details-page .details-main .cta-btn:hover::before,
+body.step3-details-page .details-main .cta-btn:hover::before,
+body.step4-details-page .details-main .cta-btn:hover::before,
+body.step5-details-page .details-main .cta-btn:hover::before,
+body.step6-details-page .details-main .cta-btn:hover::before,
+body.step7-details-page .details-main .cta-btn:hover::before,
+body.step8-details-page .details-main .cta-btn:hover::before,
+body.step9-details-page .details-main .cta-btn:hover::before,
+body.step10-details-page .details-main .cta-btn:hover::before,
+body.step11-details-page .details-main .cta-btn:hover::before {
   left: 100%;
 }
 
-body.step1-details-page .details-main .cta-btn:hover {
+body.step1-details-page .details-main .cta-btn:hover,
+body.step2-details-page .details-main .cta-btn:hover,
+body.step3-details-page .details-main .cta-btn:hover,
+body.step4-details-page .details-main .cta-btn:hover,
+body.step5-details-page .details-main .cta-btn:hover,
+body.step6-details-page .details-main .cta-btn:hover,
+body.step7-details-page .details-main .cta-btn:hover,
+body.step8-details-page .details-main .cta-btn:hover,
+body.step9-details-page .details-main .cta-btn:hover,
+body.step10-details-page .details-main .cta-btn:hover,
+body.step11-details-page .details-main .cta-btn:hover {
   transform: translateY(-3px);
-  box-shadow: 0 12px 32px rgba(76, 175, 80, 0.45),
-              0 4px 12px rgba(76, 175, 80, 0.3);
-  background: linear-gradient(135deg, #388E3C 0%, #4CAF50 100%);
+  box-shadow: 0 12px 32px rgba(249, 200, 81, 0.45),
+              0 4px 12px rgba(249, 200, 81, 0.3);
+  background: linear-gradient(135deg, #e5b447 0%, #f9c851 100%);
 }
 
 @media (max-width: 768px) {
@@ -5233,16 +5474,26 @@ body.step1-details-page .step1-visual-info {
   gap: 1.5rem;
 }
 
-body.step1-details-page .step1-visual-info-item {
-  background: #ffffff;
-  border: none;
+body.step1-details-page .step1-visual-info-item,
+body.step2-details-page .step1-visual-info-item,
+body.step3-details-page .step1-visual-info-item,
+body.step4-details-page .step1-visual-info-item,
+body.step5-details-page .step1-visual-info-item,
+body.step6-details-page .step1-visual-info-item,
+body.step7-details-page .step1-visual-info-item,
+body.step8-details-page .step1-visual-info-item,
+body.step9-details-page .step1-visual-info-item,
+body.step10-details-page .step1-visual-info-item,
+body.step11-details-page .step1-visual-info-item {
+  background: rgba(28, 26, 46, 0.6);
+  border: 2px solid rgba(249, 200, 81, 0.2);
   border-radius: 12px;
   padding: 2rem;
   display: flex !important;
   align-items: center;
   gap: 1.5rem;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3), 0 4px 12px rgba(249, 200, 81, 0.1);
   cursor: pointer;
   position: relative;
   overflow: visible;
@@ -5252,27 +5503,47 @@ body.step1-details-page .step1-visual-info-item::before {
   display: none;
 }
 
-body.step1-details-page .step1-visual-info-item:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15), 0 3px 6px rgba(0, 0, 0, 0.1);
-  border-color: transparent;
-  background: #ffffff;
+body.step1-details-page .step1-visual-info-item:hover,
+body.step2-details-page .step1-visual-info-item:hover,
+body.step3-details-page .step1-visual-info-item:hover,
+body.step4-details-page .step1-visual-info-item:hover,
+body.step5-details-page .step1-visual-info-item:hover,
+body.step6-details-page .step1-visual-info-item:hover,
+body.step7-details-page .step1-visual-info-item:hover,
+body.step8-details-page .step1-visual-info-item:hover,
+body.step9-details-page .step1-visual-info-item:hover,
+body.step10-details-page .step1-visual-info-item:hover,
+body.step11-details-page .step1-visual-info-item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.4), 0 6px 16px rgba(249, 200, 81, 0.2);
+  border-color: rgba(249, 200, 81, 0.4);
+  background: rgba(28, 26, 46, 0.8);
 }
 
-body.step1-details-page .step1-visual-icon {
+body.step1-details-page .step1-visual-icon,
+body.step2-details-page .step1-visual-icon,
+body.step3-details-page .step1-visual-icon,
+body.step4-details-page .step1-visual-icon,
+body.step5-details-page .step1-visual-icon,
+body.step6-details-page .step1-visual-icon,
+body.step7-details-page .step1-visual-icon,
+body.step8-details-page .step1-visual-icon,
+body.step9-details-page .step1-visual-icon,
+body.step10-details-page .step1-visual-icon,
+body.step11-details-page .step1-visual-icon {
   width: 56px;
   height: 56px;
   border-radius: 12px;
-  background: linear-gradient(135deg, #f5f5f5 0%, #fafafa 100%);
+  background: rgba(249, 200, 81, 0.15);
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 1.5rem;
-  color: #388E3C;
+  color: #f9c851;
   flex-shrink: 0;
-  border: none;
+  border: 2px solid rgba(249, 200, 81, 0.3);
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 12px rgba(249, 200, 81, 0.2);
   position: relative;
   overflow: visible;
 }
@@ -5294,48 +5565,109 @@ body.step1-details-page .step1-visual-info-item:hover .step1-visual-icon::before
   animation: rotate 3s linear infinite;
 }
 
-body.step1-details-page .step1-visual-info-item:hover .step1-visual-icon {
-  background: linear-gradient(135deg, #E8F5E9 0%, #C8E6C9 100%);
+body.step1-details-page .step1-visual-info-item:hover .step1-visual-icon,
+body.step2-details-page .step1-visual-info-item:hover .step1-visual-icon,
+body.step3-details-page .step1-visual-info-item:hover .step1-visual-icon,
+body.step4-details-page .step1-visual-info-item:hover .step1-visual-icon,
+body.step5-details-page .step1-visual-info-item:hover .step1-visual-icon,
+body.step6-details-page .step1-visual-info-item:hover .step1-visual-icon,
+body.step7-details-page .step1-visual-info-item:hover .step1-visual-icon,
+body.step8-details-page .step1-visual-info-item:hover .step1-visual-icon,
+body.step9-details-page .step1-visual-info-item:hover .step1-visual-icon,
+body.step10-details-page .step1-visual-info-item:hover .step1-visual-icon,
+body.step11-details-page .step1-visual-info-item:hover .step1-visual-icon {
+  background: linear-gradient(135deg, #f9c851 0%, #e5b447 100%);
   transform: scale(1.05);
-  box-shadow: 0 4px 12px rgba(56, 142, 60, 0.2);
-  border-color: transparent;
+  box-shadow: 0 6px 16px rgba(249, 200, 81, 0.4);
+  border-color: rgba(249, 200, 81, 0.6);
+  color: #0f0e17;
 }
 
-body.step1-details-page .step1-visual-text {
+body.step1-details-page .step1-visual-text,
+body.step2-details-page .step1-visual-text,
+body.step3-details-page .step1-visual-text,
+body.step4-details-page .step1-visual-text,
+body.step5-details-page .step1-visual-text,
+body.step6-details-page .step1-visual-text,
+body.step7-details-page .step1-visual-text,
+body.step8-details-page .step1-visual-text,
+body.step9-details-page .step1-visual-text,
+body.step10-details-page .step1-visual-text,
+body.step11-details-page .step1-visual-text {
   flex: 1;
 }
 
-body.step1-details-page .step1-visual-text h4 {
+body.step1-details-page .step1-visual-text h4,
+body.step2-details-page .step1-visual-text h4,
+body.step3-details-page .step1-visual-text h4,
+body.step4-details-page .step1-visual-text h4,
+body.step5-details-page .step1-visual-text h4,
+body.step6-details-page .step1-visual-text h4,
+body.step7-details-page .step1-visual-text h4,
+body.step8-details-page .step1-visual-text h4,
+body.step9-details-page .step1-visual-text h4,
+body.step10-details-page .step1-visual-text h4,
+body.step11-details-page .step1-visual-text h4 {
   font-size: 1.25rem;
   font-weight: 700;
-  color: #1a1a1a;
+  color: #f9c851;
   margin-bottom: 0.5rem;
   letter-spacing: -0.01em;
 }
 
-body.step1-details-page .step1-visual-text p {
+body.step1-details-page .step1-visual-text p,
+body.step2-details-page .step1-visual-text p,
+body.step3-details-page .step1-visual-text p,
+body.step4-details-page .step1-visual-text p,
+body.step5-details-page .step1-visual-text p,
+body.step6-details-page .step1-visual-text p,
+body.step7-details-page .step1-visual-text p,
+body.step8-details-page .step1-visual-text p,
+body.step9-details-page .step1-visual-text p,
+body.step10-details-page .step1-visual-text p,
+body.step11-details-page .step1-visual-text p {
   font-size: 1rem;
-  color: #666666;
+  color: #a7a9be;
   line-height: 1.7;
   margin: 0;
 }
 
-body.step1-details-page .step1-visual-arrow {
-  color: #388E3C;
+body.step1-details-page .step1-visual-arrow,
+body.step2-details-page .step1-visual-arrow,
+body.step3-details-page .step1-visual-arrow,
+body.step4-details-page .step1-visual-arrow,
+body.step5-details-page .step1-visual-arrow,
+body.step6-details-page .step1-visual-arrow,
+body.step7-details-page .step1-visual-arrow,
+body.step8-details-page .step1-visual-arrow,
+body.step9-details-page .step1-visual-arrow,
+body.step10-details-page .step1-visual-arrow,
+body.step11-details-page .step1-visual-arrow {
+  color: #f9c851;
   font-size: 1.25rem;
   transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   flex-shrink: 0;
   opacity: 0.7;
 }
 
-body.step1-details-page .step1-visual-info-item:hover .step1-visual-arrow {
+body.step1-details-page .step1-visual-info-item:hover .step1-visual-arrow,
+body.step2-details-page .step1-visual-info-item:hover .step1-visual-arrow,
+body.step3-details-page .step1-visual-info-item:hover .step1-visual-arrow,
+body.step4-details-page .step1-visual-info-item:hover .step1-visual-arrow,
+body.step5-details-page .step1-visual-info-item:hover .step1-visual-arrow,
+body.step6-details-page .step1-visual-info-item:hover .step1-visual-arrow,
+body.step7-details-page .step1-visual-info-item:hover .step1-visual-arrow,
+body.step8-details-page .step1-visual-info-item:hover .step1-visual-arrow,
+body.step9-details-page .step1-visual-info-item:hover .step1-visual-arrow,
+body.step10-details-page .step1-visual-info-item:hover .step1-visual-arrow,
+body.step11-details-page .step1-visual-info-item:hover .step1-visual-arrow {
   transform: translateX(6px);
   opacity: 1;
 }
 
 /* Step1 Hero Section */
 .step1-hero {
-  background: linear-gradient(135deg, rgba(56, 142, 60, 0.95) 0%, rgba(27, 94, 32, 0.95) 100%);
+  background: linear-gradient(135deg, rgba(28, 26, 46, 0.95) 0%, rgba(15, 14, 23, 0.95) 100%);
   color: white;
   padding: 0;
   text-align: center;
@@ -5495,7 +5827,7 @@ body.step1-details-page .step1-visual-info-item:hover .step1-visual-arrow {
 }
 
 .section-header h2 {
-  color: #1a1a1a;
+  color: #f9c851;
   font-size: 2.75rem;
   margin-bottom: 1.5rem;
   font-weight: 700;
@@ -5512,34 +5844,64 @@ body.step1-details-page .step1-visual-info-item:hover .step1-visual-arrow {
   transform: translateX(-50%);
   width: 80px;
   height: 4px;
-  background: linear-gradient(90deg, transparent, #388E3C, transparent);
+  background: linear-gradient(90deg, transparent, #f9c851, transparent);
   border-radius: 2px;
 }
 
 .section-divider-line {
   width: 80px;
   height: 4px;
-  background: linear-gradient(90deg, transparent, #388E3C, transparent);
+  background: linear-gradient(90deg, transparent, #f9c851, transparent);
   margin: 0 auto;
   border-radius: 2px;
-  box-shadow: 0 2px 8px rgba(56, 142, 60, 0.3);
+  box-shadow: 0 2px 8px rgba(249, 200, 81, 0.3);
 }
 
-/* Step1 Feature Detail Section */
-body.step1-details-page .feature-detail-section {
-  background: #ffffff;
-  color: #333333;
+/* Step Feature Detail Section - All steps */
+body.step1-details-page .feature-detail-section,
+body.step2-details-page .feature-detail-section,
+body.step3-details-page .feature-detail-section,
+body.step4-details-page .feature-detail-section,
+body.step5-details-page .feature-detail-section,
+body.step6-details-page .feature-detail-section,
+body.step7-details-page .feature-detail-section,
+body.step8-details-page .feature-detail-section,
+body.step9-details-page .feature-detail-section,
+body.step10-details-page .feature-detail-section,
+body.step11-details-page .feature-detail-section {
+  background: transparent;
+  color: #a7a9be;
   padding: 4rem 2rem;
 }
 
-body.step1-details-page .feature-detail-section .section-header h2 {
-  color: #1a1a1a;
+body.step1-details-page .feature-detail-section .section-header h2,
+body.step2-details-page .feature-detail-section .section-header h2,
+body.step3-details-page .feature-detail-section .section-header h2,
+body.step4-details-page .feature-detail-section .section-header h2,
+body.step5-details-page .feature-detail-section .section-header h2,
+body.step6-details-page .feature-detail-section .section-header h2,
+body.step7-details-page .feature-detail-section .section-header h2,
+body.step8-details-page .feature-detail-section .section-header h2,
+body.step9-details-page .feature-detail-section .section-header h2,
+body.step10-details-page .feature-detail-section .section-header h2,
+body.step11-details-page .feature-detail-section .section-header h2 {
+  color: #f9c851;
   font-size: 2.5rem;
   margin-bottom: 1rem;
 }
 
-body.step1-details-page .feature-detail-intro {
-  color: #666666;
+body.step1-details-page .feature-detail-intro,
+body.step2-details-page .feature-detail-intro,
+body.step3-details-page .feature-detail-intro,
+body.step4-details-page .feature-detail-intro,
+body.step5-details-page .feature-detail-intro,
+body.step6-details-page .feature-detail-intro,
+body.step7-details-page .feature-detail-intro,
+body.step8-details-page .feature-detail-intro,
+body.step9-details-page .feature-detail-intro,
+body.step10-details-page .feature-detail-intro,
+body.step11-details-page .feature-detail-intro {
+  color: #a7a9be;
   font-size: 1.1rem;
   margin-bottom: 3rem;
   text-align: center;
@@ -5650,14 +6012,14 @@ body.step1-details-page .feature-detail-card .feature-icon i {
 
 /* Step1 How It Works Section */
 .step1-how-works {
-  background: #ffffff;
+  background: transparent;
   padding: 3rem 2rem;
-  color: #333333;
+  color: #a7a9be;
 }
 
 .step1-how-works .section-header h2 {
   font-size: 2.5rem;
-  color: #1a1a1a;
+  color: #f9c851;
   text-align: center;
   margin-bottom: 1rem;
   font-weight: 700;
@@ -5679,8 +6041,8 @@ body.step1-details-page .feature-detail-card .feature-icon i {
 }
 
 .step1-step {
-  background: #ffffff;
-  border: none;
+  background: rgba(28, 26, 46, 0.6);
+  border: 2px solid rgba(249, 200, 81, 0.2);
   border-radius: 12px;
   padding: 2.5rem;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -5688,7 +6050,7 @@ body.step1-details-page .feature-detail-card .feature-icon i {
   overflow: visible;
   display: flex;
   flex-direction: column;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3), 0 4px 12px rgba(249, 200, 81, 0.1);
   gap: 1.5rem;
 }
 
@@ -5697,8 +6059,10 @@ body.step1-details-page .feature-detail-card .feature-icon i {
 }
 
 .step1-step:hover {
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15), 0 3px 6px rgba(0, 0, 0, 0.1);
-  transform: translateY(-2px);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.4), 0 6px 16px rgba(249, 200, 81, 0.2);
+  transform: translateY(-4px);
+  border-color: rgba(249, 200, 81, 0.4);
+  background: rgba(28, 26, 46, 0.8);
 }
 
 .step1-step-header {
@@ -5708,14 +6072,14 @@ body.step1-details-page .feature-detail-card .feature-icon i {
   margin-bottom: 0;
   position: relative;
   padding-bottom: 1.5rem;
-  border-bottom: 1px solid #f0f0f0;
+  border-bottom: 1px solid rgba(249, 200, 81, 0.2);
 }
 
 .step1-step-number {
   width: 48px;
   height: 48px;
-  background: linear-gradient(135deg, #388E3C 0%, #2E7D32 100%);
-  color: white;
+  background: linear-gradient(135deg, #f9c851 0%, #e5b447 100%);
+  color: #0f0e17;
   border-radius: 12px;
   display: flex;
   align-items: center;
@@ -5723,7 +6087,7 @@ body.step1-details-page .feature-detail-card .feature-icon i {
   font-size: 1.25rem;
   font-weight: 700;
   flex-shrink: 0;
-  box-shadow: 0 4px 12px rgba(56, 142, 60, 0.25), 0 2px 4px rgba(56, 142, 60, 0.15);
+  box-shadow: 0 4px 12px rgba(249, 200, 81, 0.25), 0 2px 4px rgba(249, 200, 81, 0.15);
   position: relative;
   z-index: 1;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -5735,13 +6099,13 @@ body.step1-details-page .feature-detail-card .feature-icon i {
 }
 
 .step1-step:hover .step1-step-number {
-  box-shadow: 0 6px 16px rgba(56, 142, 60, 0.35), 0 3px 8px rgba(56, 142, 60, 0.2);
+  box-shadow: 0 6px 16px rgba(249, 200, 81, 0.35), 0 3px 8px rgba(249, 200, 81, 0.2);
   transform: scale(1.05);
 }
 
 .step1-step h3 {
   font-size: 1.375rem;
-  color: #1a1a1a;
+  color: #f9c851;
   font-weight: 700;
   margin: 0;
   flex: 1;
@@ -5751,7 +6115,7 @@ body.step1-details-page .feature-detail-card .feature-icon i {
 }
 
 .step1-step p {
-  color: #666666;
+  color: #a7a9be;
   line-height: 1.7;
   margin: 0;
   font-size: 1rem;
@@ -5764,15 +6128,15 @@ body.step1-details-page .feature-detail-card .feature-icon i {
 }
 
 .step-block {
-  background: #fafafa;
-  border: 1px solid #f0f0f0;
+  background: rgba(28, 26, 46, 0.4);
+  border: 1px solid rgba(249, 200, 81, 0.2);
   border-radius: 8px;
   padding: 1.5rem;
   transition: all 0.2s ease;
   display: block;
   gap: 0;
   align-items: flex-start;
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
   position: relative;
   overflow: visible;
   margin-bottom: 1rem;
@@ -5783,9 +6147,9 @@ body.step1-details-page .feature-detail-card .feature-icon i {
 }
 
 .step-block:hover {
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  border-color: #e0e0e0;
-  background: #ffffff;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3), 0 2px 8px rgba(249, 200, 81, 0.15);
+  border-color: rgba(249, 200, 81, 0.4);
+  background: rgba(28, 26, 46, 0.6);
 }
 
 .step-block-icon {
@@ -5800,7 +6164,7 @@ body.step1-details-page .feature-detail-card .feature-icon i {
 .step-block-action .step-block-icon i,
 .step-block-tip .step-block-icon i,
 .step-block-info .step-block-icon i {
-  color: #388E3C;
+  color: #f9c851;
 }
 
 .step-block-content {
@@ -5810,7 +6174,7 @@ body.step1-details-page .feature-detail-card .feature-icon i {
 .step-block-content h4 {
   font-size: 1rem;
   font-weight: 600;
-  color: #1a1a1a;
+  color: #f9c851;
   margin-bottom: 1rem;
   margin-top: 0;
   text-transform: none;
@@ -5819,7 +6183,7 @@ body.step1-details-page .feature-detail-card .feature-icon i {
 
 .step-block-content p {
   font-size: 0.9rem;
-  color: #666666;
+  color: #a7a9be;
   line-height: 1.5;
   margin: 0;
 }
@@ -5832,7 +6196,7 @@ body.step1-details-page .feature-detail-card .feature-icon i {
 
 .step-block-content ul li {
   font-size: 0.9375rem;
-  color: #4a4a4a;
+  color: #a7a9be;
   line-height: 1.7;
   margin-bottom: 0.625rem;
   padding-left: 1.5rem;
@@ -5844,7 +6208,7 @@ body.step1-details-page .feature-detail-card .feature-icon i {
   content: '•';
   position: absolute;
   left: 0.5rem;
-  color: #388E3C;
+  color: #f9c851;
   font-weight: bold;
   font-size: 1.2em;
 }
@@ -5858,7 +6222,7 @@ body.step1-details-page .feature-detail-card .feature-icon i {
 .feature-quick-info {
   margin: 1rem 0;
   padding-top: 1rem;
-  border-top: 1px solid rgba(76, 175, 80, 0.2);
+  border-top: 1px solid rgba(249, 200, 81, 0.2);
 }
 
 .quick-info-item {
@@ -5866,11 +6230,11 @@ body.step1-details-page .feature-detail-card .feature-icon i {
   align-items: center;
   gap: 0.75rem;
   font-size: 0.9rem;
-  color: #666666;
+  color: #a7a9be;
 }
 
 .quick-info-item i {
-  color: #4CAF50;
+  color: #f9c851;
   font-size: 0.85rem;
 }
 
@@ -5884,13 +6248,13 @@ body.step1-details-page .feature-detail-card .feature-icon i {
   justify-content: center;
   width: 40px;
   height: 40px;
-  background: #f8f9fa;
-  border: 1px solid #e0e0e0;
+  background: rgba(249, 200, 81, 0.15);
+  border: 2px solid rgba(249, 200, 81, 0.3);
   border-radius: 50%;
   padding: 0;
   margin: 0;
   font-size: 0;
-  color: #4a4a4a;
+  color: #f9c851;
   line-height: 1.7;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
   transition: all 0.2s ease;
@@ -5900,7 +6264,7 @@ body.step1-details-page .feature-detail-card .feature-icon i {
 }
 
 .step-tip-inline i {
-  color: #388E3C;
+  color: #f9c851;
   font-size: 1.25rem;
   flex-shrink: 0;
   margin: 0;
@@ -5942,13 +6306,13 @@ body.step1-details-page .feature-detail-card .feature-icon i {
 
 .step-tip-inline:hover {
   transform: none;
-  background: #ffffff;
-  border-color: #388E3C;
-  box-shadow: 0 4px 12px rgba(56, 142, 60, 0.2);
+  background: rgba(249, 200, 81, 0.25);
+  border-color: #f9c851;
+  box-shadow: 0 4px 12px rgba(249, 200, 81, 0.3);
 }
 
 .step-tip-inline:hover i {
-  color: #388E3C;
+  color: #f9c851;
 }
 
 .step-tip-inline:hover span {
@@ -5961,17 +6325,17 @@ body.step1-details-page .feature-detail-card .feature-icon i {
 .step-button-wrapper {
   margin-top: 1.5rem;
   padding-top: 1.5rem;
-  border-top: 1px solid #f0f0f0;
+  border-top: 1px solid rgba(249, 200, 81, 0.2);
   display: flex;
   justify-content: flex-start;
 }
 
 .step1-info-btn {
-  background: #f8f9fa;
-  border: 1px solid #e0e0e0;
+  background: rgba(249, 200, 81, 0.15);
+  border: 2px solid rgba(249, 200, 81, 0.3);
   border-radius: 8px;
   padding: 0.75rem 1.5rem;
-  color: #4a4a4a;
+  color: #f9c851;
   font-size: 0.9375rem;
   cursor: pointer;
   transition: all 0.2s ease;
@@ -5985,7 +6349,7 @@ body.step1-details-page .feature-detail-card .feature-icon i {
   min-height: auto;
   position: relative;
   overflow: visible;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 12px rgba(249, 200, 81, 0.2);
 }
 
 .step1-info-btn::before {
@@ -5993,24 +6357,34 @@ body.step1-details-page .feature-detail-card .feature-icon i {
 }
 
 .step1-info-btn:hover {
-  background: #ffffff;
-  color: #1a1a1a;
-  transform: translateY(-1px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-  border-color: #d0d0d0;
+  background: linear-gradient(135deg, #f9c851 0%, #e5b447 100%);
+  color: #0f0e17;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(249, 200, 81, 0.4);
+  border-color: #f9c851;
 }
 
 .step1-info-btn:active {
-  transform: none;
+  transform: translateY(0);
 }
 
 .step1-info-btn i {
-  font-size: 0.875rem;
+  font-size: 1rem;
   transition: none;
+  color: #f9c851;
 }
 
 .step1-info-btn:hover i {
   transform: none;
+  color: #0f0e17;
+}
+
+.step1-info-btn span {
+  color: #f9c851;
+}
+
+.step1-info-btn:hover span {
+  color: #0f0e17;
 }
 
 /* Info buttons and popup styles for step1-details */
@@ -6117,23 +6491,23 @@ body.step1-details-page .details-feature-header .info-btn {
 /* Info Popup Box */
 .info-popup-box {
   background: linear-gradient(135deg, 
-    rgba(255, 255, 255, 0.98) 0%, 
-    rgba(248, 249, 250, 0.98) 100%
+    rgba(28, 26, 46, 0.98) 0%, 
+    rgba(15, 14, 23, 0.98) 100%
   );
   padding: 3rem;
   max-width: 700px;
   width: 100%;
   max-height: 85vh;
   overflow-y: auto;
-  color: #333333;
+  color: #a7a9be;
   position: relative;
   box-shadow: 
-    0 25px 60px rgba(0, 0, 0, 0.3),
-    0 0 0 1px rgba(76, 175, 80, 0.2),
-    0 0 0 3px rgba(255, 255, 255, 0.1);
+    0 25px 60px rgba(0, 0, 0, 0.5),
+    0 0 0 1px rgba(249, 200, 81, 0.2),
+    0 0 0 3px rgba(249, 200, 81, 0.1);
   transform: translateY(0) scale(0.95);
   animation: infoPopupSlideIn 0.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
-  border: 3px solid #E8F5E9;
+  border: 3px solid rgba(249, 200, 81, 0.3);
   box-sizing: border-box;
 }
 
@@ -6150,9 +6524,9 @@ body.step1-details-page .details-feature-header .info-btn {
 
 .info-popup-box:hover {
   box-shadow: 
-    0 30px 70px rgba(0, 0, 0, 0.35),
-    0 0 0 1px rgba(76, 175, 80, 0.3),
-    0 0 0 3px rgba(255, 255, 255, 0.15);
+    0 30px 70px rgba(0, 0, 0, 0.6),
+    0 0 0 1px rgba(249, 200, 81, 0.4),
+    0 0 0 3px rgba(249, 200, 81, 0.2);
 }
 
 .info-popup-content {
@@ -6161,7 +6535,7 @@ body.step1-details-page .details-feature-header .info-btn {
 
 .info-popup-content h2 {
   font-size: 2rem;
-  color: #388E3C;
+  color: #f9c851;
   margin-bottom: 1.5rem;
   font-weight: 700;
   line-height: 1.3;
@@ -6169,7 +6543,7 @@ body.step1-details-page .details-feature-header .info-btn {
 
 .info-popup-content h3 {
   font-size: 1.5rem;
-  color: #4CAF50;
+  color: #f9c851;
   margin-top: 2rem;
   margin-bottom: 1rem;
   font-weight: 600;
@@ -6177,7 +6551,7 @@ body.step1-details-page .details-feature-header .info-btn {
 
 .info-popup-content p {
   font-size: 1.1rem;
-  color: #333333;
+  color: #a7a9be;
   margin-bottom: 1.5rem;
   line-height: 1.8;
   opacity: 0.9;
@@ -6195,20 +6569,20 @@ body.step1-details-page .details-feature-header .info-btn {
   position: relative;
   font-size: 1.05rem;
   line-height: 1.7;
-  color: #333333;
+  color: #a7a9be;
 }
 
 .info-popup-content ul li::before {
   content: '✓';
   position: absolute;
   left: 0;
-  color: #4CAF50;
+  color: #f9c851;
   font-weight: 700;
   font-size: 1.2rem;
 }
 
 .info-popup-content ul li strong {
-  color: #388E3C;
+  color: #f9c851;
   font-weight: 600;
 }
 
@@ -6217,9 +6591,9 @@ body.step1-details-page .details-feature-header .info-btn {
   top: 1.5rem;
   right: 1.5rem;
   font-size: 1.5rem;
-  background: linear-gradient(135deg, #4CAF50 0%, #388E3C 100%);
+  background: linear-gradient(135deg, #f9c851 0%, #e5b447 100%);
   border: none;
-  color: #FFFFFF;
+  color: #0f0e17;
   cursor: pointer;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   padding: 0.75rem;
@@ -6229,14 +6603,14 @@ body.step1-details-page .details-feature-header .info-btn {
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 4px 12px rgba(76, 175, 80, 0.3);
+  box-shadow: 0 4px 12px rgba(249, 200, 81, 0.3);
   z-index: 10;
 }
 
 .info-close-btn:hover {
   transform: rotate(90deg) scale(1.1);
-  box-shadow: 0 6px 20px rgba(76, 175, 80, 0.5);
-  background: linear-gradient(135deg, #388E3C 0%, #4CAF50 100%);
+  box-shadow: 0 6px 20px rgba(249, 200, 81, 0.5);
+  background: linear-gradient(135deg, #e5b447 0%, #f9c851 100%);
 }
 
 .info-close-btn:active {
@@ -6249,17 +6623,17 @@ body.step1-details-page .details-feature-header .info-btn {
 }
 
 .info-popup-box::-webkit-scrollbar-track {
-  background: rgba(232, 245, 233, 0.3);
+  background: rgba(249, 200, 81, 0.1);
   border-radius: 10px;
 }
 
 .info-popup-box::-webkit-scrollbar-thumb {
-  background: linear-gradient(135deg, #4CAF50 0%, #388E3C 100%);
+  background: linear-gradient(135deg, #f9c851 0%, #e5b447 100%);
   border-radius: 10px;
 }
 
 .info-popup-box::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(135deg, #388E3C 0%, #4CAF50 100%);
+  background: linear-gradient(135deg, #e5b447 0%, #f9c851 100%);
 }
 
 /* Responsive adjustments for step1-details */

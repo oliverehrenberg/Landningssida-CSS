@@ -28,22 +28,22 @@
         <div class="step1-hero-features">
           <div class="step1-hero-feature-item">
             <i class="fa-solid fa-file-lines" aria-hidden="true"></i>
-            <span>Detaljerade projektkrav</span>
+            <span data-translate="step5HeroFeatureRequirementsTitle">Detaljerade projektkrav</span>
           </div>
           <div class="step1-hero-feature-item">
             <i class="fa-solid fa-users" aria-hidden="true"></i>
-            <span>Välj leverantörer</span>
+            <span data-translate="step5HeroFeatureSuppliersTitle">Välj leverantörer</span>
           </div>
           <div class="step1-hero-feature-item">
             <i class="fa-solid fa-paper-plane" aria-hidden="true"></i>
-            <span>Skicka offertförfrågningar</span>
+            <span data-translate="step5HeroFeatureRequestsTitle">Skicka offertförfrågningar</span>
           </div>
         </div>
       </div>
     </section>
 
     <!-- Feature Details -->
-    <section class="feature-detail-section">
+    <section class="feature-detail-section section-hidden">
       <div class="section-header">
         <h2 data-translate="step5DetailInterfaceTitle">Översikt över offertförfrågningssidan</h2>
         <div class="section-divider-line"></div>
@@ -81,7 +81,7 @@
     </section>
 
     <!-- How It Works -->
-    <section class="how-it-works step1-how-works">
+    <section class="how-it-works section-hidden step1-how-works">
       <div class="section-header">
         <h2 data-translate="howItWorksTitle">Så fungerar det</h2>
         <div class="section-divider-line"></div>
@@ -239,188 +239,35 @@
     <script src="../main.js"></script>
     <script>
       // Info popup data - detailed information for each section
+      // Info popup data - using translation keys instead of hardcoded text
       const infoPopupData = {
         step1: {
-          title: 'Steg 1: Få tillgång till offertförfrågningsskapande',
-          content: `
-            <h3>Detaljerad information om att komma åt offertförfrågningsskapande</h3>
-            <p>Offertförfrågningsskapande är en central funktion som gör det möjligt att skicka detaljerade förfrågningar till leverantörer för att få konkurrenskraftiga erbjudanden.</p>
-            <h4>Tillgång via huvudmenyn</h4>
-            <ul>
-              <li><strong>Offertförfrågningssektion:</strong> Navigera till offertförfrågningssektionen i huvudmenyn</li>
-              <li><strong>Skapa förfrågan:</strong> Klicka på 'Skapa offertförfrågan' eller 'Skicka offertförfrågan'</li>
-              <li><strong>Formulär:</strong> Öppna formuläret för att skapa offertförfrågan</li>
-            </ul>
-            <h4>Tillgång via chattgränssnittet</h4>
-            <ul>
-              <li><strong>Direkt från chatten:</strong> Kom åt offertförfrågningsskapande direkt från chattgränssnittet</li>
-              <li><strong>Kontextuell skapande:</strong> Skapa förfrågan med relevant kontext från konversationen</li>
-              <li><strong>Snabbåtkomst:</strong> Enkel åtkomst utan att lämna chatten</li>
-            </ul>
-            <h4>Fördelar med olika tillgångssätt</h4>
-            <ul>
-              <li><strong>Från huvudmenyn:</strong> Skapa nya förfrågningar oberoende av konversationer</li>
-              <li><strong>Från chatten:</strong> Skapa förfrågningar baserat på pågående diskussioner</li>
-              <li><strong>Flexibilitet:</strong> Välj det sätt som passar bäst för din situation</li>
-            </ul>
-            <p>Båda tillgångssätten ger dig full funktionalitet för att skapa och skicka offertförfrågningar.</p>
-          `
+          titleKey: 'step5PopupStep1Title',
+          contentKey: 'step5PopupStep1Content'
         },
         step2: {
-          title: 'Steg 2: Specificera projektkrav',
-          content: `
-            <h3>Detaljerad information om att specificera projektkrav</h3>
-            <p>Projektkrav är kärnan i offertförfrågan och ger leverantörerna all information de behöver för att ge korrekta och konkurrenskraftiga offerter.</p>
-            <h4>Grundläggande projektinformation</h4>
-            <ul>
-              <li><strong>Projektnamn:</strong> Identifiera projektet tydligt</li>
-              <li><strong>Projektbeskrivning:</strong> Detaljerad beskrivning av projektet och dess mål</li>
-              <li><strong>Projekttyp:</strong> Kategorisering av projektet</li>
-              <li><strong>Projektplats:</strong> Var projektet ska utföras</li>
-            </ul>
-            <h4>Materialkrav</h4>
-            <ul>
-              <li><strong>Materialtyper:</strong> Specificera vilka material som behövs</li>
-              <li><strong>Kvantiteter:</strong> Ange exakta kvantiteter för varje material</li>
-              <li><strong>Specifikationer:</strong> Tekniska specifikationer och krav</li>
-              <li><strong>Kvalitetskrav:</strong> Kvalitetsstandarder och certifieringar</li>
-            </ul>
-            <h4>Leverans och logistik</h4>
-            <ul>
-              <li><strong>Leveransdatum:</strong> När material behöver levereras</li>
-              <li><strong>Leveransplats:</strong> Var material ska levereras</li>
-              <li><strong>Logistikdetaljer:</strong> Specifika logistikkrav</li>
-              <li><strong>Transportinformation:</strong> Transportmetoder och krav</li>
-            </ul>
-            <h4>Ytterligare krav</h4>
-            <ul>
-              <li><strong>Betalningsvillkor:</strong> Önskade betalningsvillkor</li>
-              <li><strong>Garantivillkor:</strong> Krav på garantier och service</li>
-              <li><strong>Leveransvillkor:</strong> Specifika leveransvillkor</li>
-              <li><strong>Övriga detaljer:</strong> Eventuella ytterligare krav eller information</li>
-            </ul>
-            <p>Ju mer detaljerad information du ger, desto mer exakta och användbara offerter kan leverantörerna ge.</p>
-          `
+          titleKey: 'step5PopupStep2Title',
+          contentKey: 'step5PopupStep2Content'
         },
         step3: {
-          title: 'Steg 3: Välj leverantörer och synlighetsinställningar',
-          content: `
-            <h3>Detaljerad information om leverantörsval och synlighetsinställningar</h3>
-            <p>Leverantörsval och synlighetsinställningar ger dig kontroll över vem som kan se och svara på din offertförfrågan.</p>
-            <h4>Leverantörsval</h4>
-            <ul>
-              <li><strong>Från kontaktlista:</strong> Välj specifika leverantörer från din kontaktlista</li>
-              <li><strong>Sökfunktion:</strong> Sök efter specifika leverantörer</li>
-              <li><strong>Bläddring:</strong> Bläddra bland tillgängliga leverantörer</li>
-              <li><strong>Flera val:</strong> Välj flera leverantörer för samma förfrågan</li>
-            </ul>
-            <h4>Synlighetsinställningar</h4>
-            <ul>
-              <li><strong>Offentlig synlighet:</strong> Alla leverantörer kan se och svara på förfrågan</li>
-              <li><strong>Privat synlighet:</strong> Endast valda leverantörer kan se förfrågan</li>
-              <li><strong>Åtkomstkontroll:</strong> Ytterligare åtkomstkontrollinställningar</li>
-              <li><strong>Anpassade inställningar:</strong> Skapa anpassade synlighetsregler</li>
-            </ul>
-            <h4>Ytterligare inställningar</h4>
-            <ul>
-              <li><strong>Deadline-datum:</strong> Sätt deadline för när offerter ska vara inkomna</li>
-              <li><strong>Svarskrav:</strong> Konfigurera krav på hur leverantörer ska svara</li>
-              <li><strong>Notifikationer:</strong> Ställ in notifikationer för svar</li>
-              <li><strong>Automatiska påminnelser:</strong> Automatiska påminnelser till leverantörer</li>
-            </ul>
-            <h4>Fördelar med olika inställningar</h4>
-            <ul>
-              <li><strong>Offentlig:</strong> Få fler erbjudanden och jämföra bredare</li>
-              <li><strong>Privat:</strong> Mer kontrollerad process med specifika leverantörer</li>
-              <li><strong>Flexibilitet:</strong> Välj inställningar som passar ditt projekt</li>
-            </ul>
-            <p>Rätt inställningar hjälper dig att få de bästa erbjudandena från rätt leverantörer.</p>
-          `
+          titleKey: 'step5PopupStep3Title',
+          contentKey: 'step5PopupStep3Content'
         },
         step4: {
-          title: 'Steg 4: Granska och skicka offertförfrågan',
-          content: `
-            <h3>Detaljerad information om att granska och skicka offertförfrågan</h3>
-            <p>Innan du skickar offertförfrågan är det viktigt att granska all information för att säkerställa att allt är korrekt och komplett.</p>
-            <h4>Granskning av information</h4>
-            <ul>
-              <li><strong>Projektkrav:</strong> Kontrollera att alla projektkrav är korrekt angivna</li>
-              <li><strong>Materialkrav:</strong> Verifiera materialtyper, kvantiteter och specifikationer</li>
-              <li><strong>Leveransinformation:</strong> Kontrollera leveransdatum och platser</li>
-              <li><strong>Valda leverantörer:</strong> Verifiera att rätt leverantörer är valda</li>
-              <li><strong>Synlighetsinställningar:</strong> Kontrollera att synlighetsinställningar är korrekta</li>
-            </ul>
-            <h4>Justeringar och förbättringar</h4>
-            <ul>
-              <li><strong>Redigering:</strong> Gör eventuella nödvändiga justeringar</li>
-              <li><strong>Komplettering:</strong> Lägg till eventuell saknad information</li>
-              <li><strong>Förtydligande:</strong> Förtydliga eventuella otydligheter</li>
-              <li><strong>Optimering:</strong> Optimera förfrågan för bästa resultat</li>
-            </ul>
-            <h4>Skicka process</h4>
-            <ul>
-              <li><strong>Skicka-knapp:</strong> Klicka på 'Skicka' eller 'Skicka offertförfrågan'</li>
-              <li><strong>Bekräftelse:</strong> Få bekräftelse när förfrågan har skickats</li>
-              <li><strong>Leverans:</strong> Förfrågan levereras till valda leverantörer</li>
-              <li><strong>Notifikationer:</strong> Leverantörer får notifikationer om förfrågan</li>
-            </ul>
-            <h4>Efter skickande</h4>
-            <ul>
-              <li><strong>Spårning:</strong> Följ status på din offertförfrågan</li>
-              <li><strong>Svar:</strong> Ta emot svar från leverantörer</li>
-              <li><strong>Jämförelse:</strong> Jämför erbjudanden från olika leverantörer</li>
-              <li><strong>Beslut:</strong> Fatta beslut baserat på mottagna offerter</li>
-            </ul>
-            <p>När offertförfrågan är skickad kan leverantörerna svara med sina offerter, vilket ger dig möjlighet att jämföra och välja det bästa erbjudandet.</p>
-          `
+          titleKey: 'step5PopupStep4Title',
+          contentKey: 'step5PopupStep4Content'
         },
         'visual-form': {
-          title: 'Offertförfrågningsformulär',
-          content: `
-            <h3>Detaljerad information om offertförfrågningsformulär</h3>
-            <p>Offertförfrågningsformuläret är strukturerat för att fånga all nödvändig information för att leverantörer ska kunna ge korrekta och användbara offerter.</p>
-            <ul>
-              <li><strong>Strukturerade fält:</strong> Tydligt märkta fält för projektinformation, materialkrav, kvantiteter</li>
-              <li><strong>Specifikationer:</strong> Omfattande fält för tekniska specifikationer och krav</li>
-              <li><strong>Leveransinformation:</strong> Fält för leveransdatum, platser och logistik</li>
-              <li><strong>Organiserad layout:</strong> Fälten är organiserade i logiska sektioner</li>
-              <li><strong>Validering:</strong> Automatisk validering av inmatad information</li>
-              <li><strong>Hjälptext:</strong> Hjälptext och tooltips för att förklara varje fält</li>
-            </ul>
-            <p>Formuläret är designat för att vara både omfattande och användarvänligt, vilket gör det enkelt att skapa detaljerade offertförfrågningar.</p>
-          `
+          titleKey: 'step5PopupVisualFormTitle',
+          contentKey: 'step5PopupVisualFormContent'
         },
         'visual-suppliers': {
-          title: 'Leverantörsval',
-          content: `
-            <h3>Detaljerad information om leverantörsval</h3>
-            <p>Leverantörsvalsektionen gör det möjligt att välja vilka leverantörer som ska få offertförfrågan.</p>
-            <ul>
-              <li><strong>Kontaktlista:</strong> Välj från din lista över kontakter och leverantörer</li>
-              <li><strong>Sökfunktion:</strong> Sök efter specifika leverantörer baserat på namn eller specialisering</li>
-              <li><strong>Bläddring:</strong> Bläddra bland tillgängliga leverantörer</li>
-              <li><strong>Flera val:</strong> Välj flera leverantörer för samma offertförfrågan</li>
-              <li><strong>Leverantörsinformation:</strong> Se relevant information om varje leverantör</li>
-              <li><strong>Filtrering:</strong> Filtrera leverantörer baserat på olika kriterier</li>
-            </ul>
-            <p>Leverantörsvalet är designat för att göra det enkelt att välja rätt leverantörer för din offertförfrågan.</p>
-          `
+          titleKey: 'step5PopupVisualSuppliersTitle',
+          contentKey: 'step5PopupVisualSuppliersContent'
         },
         'visual-visibility': {
-          title: 'Synlighetsinställningar',
-          content: `
-            <h3>Detaljerad information om synlighetsinställningar</h3>
-            <p>Synlighetsinställningar ger dig kontroll över vem som kan se och svara på din offertförfrågan.</p>
-            <ul>
-              <li><strong>Offentlig synlighet:</strong> Alla leverantörer på plattformen kan se och svara</li>
-              <li><strong>Privat synlighet:</strong> Endast valda leverantörer kan se förfrågan</li>
-              <li><strong>Åtkomstkontroll:</strong> Ytterligare åtkomstkontrollinställningar för specifik kontroll</li>
-              <li><strong>Deadline-datum:</strong> Sätt deadline för när offerter ska vara inkomna</li>
-              <li><strong>Svarskrav:</strong> Konfigurera krav på hur leverantörer ska svara</li>
-              <li><strong>Notifikationer:</strong> Ställ in notifikationer för svar och uppdateringar</li>
-            </ul>
-            <p>Synlighetsinställningar hjälper dig att kontrollera processen och säkerställa att rätt leverantörer får din offertförfrågan.</p>
-          `
+          titleKey: 'step5PopupVisualVisibilityTitle',
+          contentKey: 'step5PopupVisualVisibilityContent'
         }
       };
 
@@ -473,8 +320,41 @@
         // Store current focus for restoration (before opening new popup)
         previousActiveElement = document.activeElement;
         
+        // Get current language
+        const currentLang = localStorage.getItem('language') || 'sv';
+        
+        // Get translations from global translations object (defined in lang.js)
+        const popupData = infoPopupData[id];
+        if (!popupData) {
+          console.error('Popup data not found for ID:', id);
+          return;
+        }
+        
+        // Get translated title and content - use translations from lang.js
+        let translatedTitle = '';
+        let translatedContent = '';
+        
+        // Check if using new structure with keys or old structure with direct text
+        if (popupData.titleKey && popupData.contentKey) {
+          // New structure: use translation keys
+          if (typeof translations !== 'undefined' && translations[currentLang]) {
+            translatedTitle = translations[currentLang][popupData.titleKey] || popupData.titleKey;
+            translatedContent = translations[currentLang][popupData.contentKey] || popupData.contentKey;
+          } else {
+            translatedTitle = popupData.titleKey;
+            translatedContent = popupData.contentKey;
+          }
+        } else if (popupData.title && popupData.content) {
+          // Old structure: use direct text (backward compatibility)
+          translatedTitle = popupData.title;
+          translatedContent = popupData.content;
+        } else {
+          console.error('Popup data structure invalid for ID:', id);
+          return;
+        }
+        
         // Update title first
-        title.textContent = infoPopupData[id].title;
+        title.textContent = translatedTitle;
         title.classList.remove('sr-only');
         
         // Update content - preserve title element
@@ -486,15 +366,15 @@
         contentNodes.forEach(node => node.remove());
         // Insert new content after title
         const tempDiv = document.createElement('div');
-        tempDiv.innerHTML = infoPopupData[id].content;
+        tempDiv.innerHTML = translatedContent;
         // Move all nodes from tempDiv to content after title
         while (tempDiv.firstChild) {
           content.appendChild(tempDiv.firstChild);
         }
         
-        // Explicitly set overlay styles to ensure it's visible and clickable
-        popup.style.display = 'flex';
-        popup.style.pointerEvents = 'auto';
+        // Remove inline styles to let CSS handle display (CSS uses .active class)
+        popup.style.display = '';
+        popup.style.pointerEvents = '';
         
         // Update ARIA attributes
         popup.setAttribute('aria-hidden', 'false');
@@ -520,9 +400,9 @@
         
         if (!popup) return;
         
-        // Explicitly reset overlay styles to ensure it doesn't block clicks
-        popup.style.display = 'none';
-        popup.style.pointerEvents = 'none';
+        // Remove inline styles to let CSS handle display
+        popup.style.display = '';
+        popup.style.pointerEvents = '';
         
         // Update ARIA attributes
         popup.setAttribute('aria-hidden', 'true');
