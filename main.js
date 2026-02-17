@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", (() => {
   // Global function to update active state on all language buttons
   const updateLanguageButtons = () => {
     const currentLang = localStorage.getItem('language') || 'sv';
-    const allHeaderButtons = document.querySelectorAll(".language-switcher a");
+    const allHeaderButtons = document.querySelectorAll(".language-switcher a, .mobile-menu-lang a");
     const allFooterButtons = document.querySelectorAll(".language-switcher-footer .lang-btn");
     
     allHeaderButtons.forEach((btn) => {
@@ -145,7 +145,8 @@ document.addEventListener("DOMContentLoaded", (() => {
   function updateCarousel() {
     if (!carouselTrack || !useCaseCards.length) return;
     const cardWidth = useCaseCards[0].offsetWidth;
-    carouselTrack.style.transform = `translateX(-${currentIndex * (cardWidth + 32)}px)`, 
+    const gap = parseFloat(getComputedStyle(carouselTrack).gap) || 32;
+    carouselTrack.style.transform = `translateX(-${currentIndex * (cardWidth + gap)}px)`, 
     carouselPrev.style.opacity = 0 === currentIndex ? "0.5" : "1", carouselNext.style.opacity = currentIndex === useCaseCards.length - 1 ? "0.5" : "1";
   }
   carouselPrev && carouselNext && (
@@ -166,7 +167,33 @@ document.addEventListener("DOMContentLoaded", (() => {
       }
     }),
     updateCarousel()
-  ), ScrollTrigger.matchMedia({
+  );
+  window.addEventListener('resize', () => { if (typeof updateCarousel === 'function') updateCarousel(); });
+
+  // Touch-swipe för karusellen
+  if (carouselTrack) {
+    let touchStartX = 0;
+    let touchEndX = 0;
+    const swipeThreshold = 50;
+    carouselTrack.addEventListener('touchstart', (e) => {
+      touchStartX = e.changedTouches[0].screenX;
+    }, { passive: true });
+    carouselTrack.addEventListener('touchend', (e) => {
+      touchEndX = e.changedTouches[0].screenX;
+      const diff = touchStartX - touchEndX;
+      if (Math.abs(diff) > swipeThreshold) {
+        if (diff > 0 && currentIndex < useCaseCards.length - 1) {
+          currentIndex++;
+          updateCarousel();
+        } else if (diff < 0 && currentIndex > 0) {
+          currentIndex--;
+          updateCarousel();
+        }
+      }
+    }, { passive: true });
+  }
+
+  ScrollTrigger.matchMedia({
     "(min-width: 768px)": function() {
       ScrollTrigger.create({
         trigger: ".hero",
@@ -401,14 +428,18 @@ document.addEventListener("DOMContentLoaded", (() => {
           ease: "expo.out"
         });
       }
-    }), gsap.to(card, {
-      yPercent: 15,
-      ease: "none",
-      scrollTrigger: {
-        trigger: card,
-        start: "top bottom",
-        end: "bottom top",
-        scrub: .8
+    }), ScrollTrigger.matchMedia({
+      "(min-width: 769px)": () => {
+        gsap.to(card, {
+          yPercent: 15,
+          ease: "none",
+          scrollTrigger: {
+            trigger: card,
+            start: "top bottom",
+            end: "bottom top",
+            scrub: .8
+          }
+        });
       }
     });
   })), document.querySelectorAll(".features-grid .feature-card").forEach((card => {
@@ -468,6 +499,65 @@ document.addEventListener("DOMContentLoaded", (() => {
 
   // Add header initialization function
   function initializeHeader() {
+    // Sätt rätt bas-sökväg för länkar och bilder (fungerar från root och features/)
+    const path = window.location.pathname || '';
+    const base = path.includes('/features/') ? '../' : '';
+    document.querySelectorAll('.header a[data-href]').forEach(a => {
+      a.href = base + a.getAttribute('data-href');
+    });
+    document.querySelectorAll('.header img[data-src]').forEach(img => {
+      img.src = base + img.getAttribute('data-src');
+    });
+    document.querySelectorAll('.header img[data-src-assets]').forEach(img => {
+      img.src = base + 'assets/' + img.getAttribute('data-src-assets');
+    });
+    document.querySelectorAll('.mobile-menu a[data-href]').forEach(a => {
+      a.href = base + a.getAttribute('data-href');
+    });
+    document.querySelectorAll('.mobile-menu img[data-src-assets]').forEach(img => {
+      img.src = base + 'assets/' + img.getAttribute('data-src-assets');
+    });
+
+    // Mobilmeny: hamburger-knapp och overlay – enhetlig stängning så hamburger/aria alltid synkad
+    const hamburger = document.querySelector('.hamburger-btn');
+    const overlay = document.querySelector('.mobile-menu-overlay');
+    const mobileLangLinks = document.querySelectorAll('.mobile-menu-lang a');
+    if (hamburger && overlay) {
+      const closeMenu = () => {
+        overlay.classList.remove('open');
+        document.body.style.overflow = '';
+        hamburger.setAttribute('aria-expanded', 'false');
+        hamburger.setAttribute('aria-label', 'Öppna meny');
+        overlay.setAttribute('aria-hidden', 'true');
+        hamburger.focus();
+      };
+      const openMenu = () => {
+        overlay.classList.add('open');
+        document.body.style.overflow = 'hidden';
+        hamburger.setAttribute('aria-expanded', 'true');
+        hamburger.setAttribute('aria-label', 'Stäng meny');
+        overlay.setAttribute('aria-hidden', 'false');
+      };
+      const toggleMenu = () => {
+        if (overlay.classList.contains('open')) closeMenu();
+        else openMenu();
+      };
+      hamburger.addEventListener('click', toggleMenu);
+      overlay.querySelectorAll('a:not([data-lang])').forEach(link => {
+        link.addEventListener('click', () => closeMenu());
+      });
+      mobileLangLinks.forEach(btn => {
+        if (btn.hasAttribute('data-lang-initialized')) return;
+        btn.setAttribute('data-lang-initialized', 'true');
+        btn.addEventListener('click', (e) => {
+          e.preventDefault();
+          const lang = btn.dataset.lang;
+          if (typeof window.switchLanguage === 'function') window.switchLanguage(lang);
+          closeMenu();
+        });
+      });
+      overlay.addEventListener('click', (e) => { if (e.target === overlay) closeMenu(); });
+    }
     // Initialize language switcher - wait for switchLanguage to be available
     const initLanguageSwitcher = () => {
       const langButtons = document.querySelectorAll(".language-switcher a");
