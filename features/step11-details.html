@@ -43,7 +43,7 @@
     </section>
 
     <!-- Feature Details -->
-    <section class="feature-detail-section section-hidden">
+    <section class="feature-detail-section">
       <div class="section-header">
         <h2 data-translate="step11DetailInterfaceTitle">Översikt över dokumentbibliotekssidan</h2>
         <div class="section-divider-line"></div>
@@ -81,7 +81,7 @@
     </section>
 
     <!-- How It Works -->
-    <section class="how-it-works section-hidden step1-how-works">
+    <section class="how-it-works step1-how-works">
       <div class="section-header">
         <h2 data-translate="howItWorksTitle">Så fungerar det</h2>
         <div class="section-divider-line"></div>
@@ -94,16 +94,11 @@
           </div>
           
           <div class="step-blocks">
-            <div class="step-block step-block-action">
-              <div class="step-block-icon"><i class="fa-solid fa-folder-open" aria-hidden="true"></i></div>
-              <div class="step-block-content">
-                <ul>
-                  <li data-translate="step11DetailStep1Action1"></li>
-                  <li data-translate="step11DetailStep1Action2"></li>
-                  <li data-translate="step11DetailStep1Action3"></li>
-                </ul>
-              </div>
-            </div>
+            <ul>
+              <li data-translate="step11DetailStep1Action1"></li>
+              <li data-translate="step11DetailStep1Action2"></li>
+              <li data-translate="step11DetailStep1Action3"></li>
+            </ul>
           </div>
           
           <div class="step-tip-inline">
@@ -125,16 +120,11 @@
           </div>
           
           <div class="step-blocks">
-            <div class="step-block step-block-action">
-              <div class="step-block-icon"><i class="fa-solid fa-cloud-arrow-up" aria-hidden="true"></i></div>
-              <div class="step-block-content">
-                <ul>
-                  <li data-translate="step11DetailStep2Action1"></li>
-                  <li data-translate="step11DetailStep2Action2"></li>
-                  <li data-translate="step11DetailStep2Action3"></li>
-                </ul>
-              </div>
-            </div>
+            <ul>
+              <li data-translate="step11DetailStep2Action1"></li>
+              <li data-translate="step11DetailStep2Action2"></li>
+              <li data-translate="step11DetailStep2Action3"></li>
+            </ul>
           </div>
           
           <div class="step-tip-inline">
@@ -156,16 +146,11 @@
           </div>
           
           <div class="step-blocks">
-            <div class="step-block step-block-action">
-              <div class="step-block-icon"><i class="fa-solid fa-file-lines" aria-hidden="true"></i></div>
-              <div class="step-block-content">
-                <ul>
-                  <li data-translate="step11DetailStep3Action1"></li>
-                  <li data-translate="step11DetailStep3Action2"></li>
-                  <li data-translate="step11DetailStep3Action3"></li>
-                </ul>
-              </div>
-            </div>
+            <ul>
+              <li data-translate="step11DetailStep3Action1"></li>
+              <li data-translate="step11DetailStep3Action2"></li>
+              <li data-translate="step11DetailStep3Action3"></li>
+            </ul>
           </div>
           
           <div class="step-tip-inline">
@@ -187,16 +172,11 @@
           </div>
           
           <div class="step-blocks">
-            <div class="step-block step-block-action">
-              <div class="step-block-icon"><i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i></div>
-              <div class="step-block-content">
-                <ul>
-                  <li data-translate="step11DetailStep4Action1"></li>
-                  <li data-translate="step11DetailStep4Action2"></li>
-                  <li data-translate="step11DetailStep4Action3"></li>
-                </ul>
-              </div>
-            </div>
+            <ul>
+              <li data-translate="step11DetailStep4Action1"></li>
+              <li data-translate="step11DetailStep4Action2"></li>
+              <li data-translate="step11DetailStep4Action3"></li>
+            </ul>
           </div>
           
           <div class="step-tip-inline">
@@ -274,16 +254,23 @@
       // Store reference to previously focused element for accessibility
       let previousActiveElement = null;
 
-      // Function to open info popup
+      // Öppnar info-popup med angivet ID
       function openInfoPopup(id) {
         const popup = document.getElementById('infoPopup');
         const content = document.getElementById('infoPopupContent');
-        const title = document.getElementById('infoPopupTitle');
+        let title = document.getElementById('infoPopupTitle');
         const closeBtn = document.getElementById('infoCloseBtn');
         
-        if (!popup || !content || !title) {
-          console.error('Popup elements not found');
+        if (!popup || !content) {
+          console.error('Popup or content element not found');
           return;
+        }
+        
+        if (!title) {
+          title = document.createElement('h2');
+          title.id = 'infoPopupTitle';
+          title.className = 'sr-only';
+          content.insertBefore(title, content.firstChild);
         }
         
         if (!infoPopupData[id]) {
@@ -291,18 +278,18 @@
           return;
         }
         
-        // Reset aria-expanded for all triggers first
-        document.querySelectorAll('[data-popup-id]').forEach(el => {
-          el.setAttribute('aria-expanded', 'false');
-        });
-        
-        // If popup is already open, just update the content
-        const wasOpen = popup.classList.contains('active');
-        
-        // Store current focus for restoration (only if popup wasn't open)
-        if (!wasOpen) {
-          previousActiveElement = document.activeElement;
+        // Om popup redan är öppen, stäng först och öppna sedan ny
+        if (popup.classList.contains('active')) {
+          const clickedButton = document.activeElement;
+          closeInfoPopup();
+          setTimeout(() => {
+            previousActiveElement = clickedButton;
+            openInfoPopup(id);
+          }, 50);
+          return;
         }
+        
+        previousActiveElement = document.activeElement;
         
         // Get current language
         const currentLang = localStorage.getItem('language') || 'sv';
@@ -337,10 +324,22 @@
           return;
         }
         
-        // Update content
+        // Uppdatera titel och innehåll, bevara title-element
         title.textContent = translatedTitle;
         title.classList.remove('sr-only');
-        content.innerHTML = translatedContent;
+        const contentNodes = Array.from(content.childNodes).filter(node => 
+          node !== title && node.nodeType !== Node.TEXT_NODE
+        );
+        contentNodes.forEach(node => node.remove());
+        const tempDiv = document.createElement('div');
+        tempDiv.innerHTML = translatedContent;
+        while (tempDiv.firstChild) {
+          content.appendChild(tempDiv.firstChild);
+        }
+        
+        // Rensa inline-stilar så CSS styr visning via .active
+        popup.style.display = '';
+        popup.style.pointerEvents = '';
         
         // Update ARIA attributes
         popup.setAttribute('aria-hidden', 'false');
@@ -357,139 +356,84 @@
           if (closeBtn) {
             closeBtn.focus();
           }
-        }, wasOpen ? 50 : 100);
+        }, 100);
       }
 
-      // Function to close info popup
+      // Stänger info-popup
       function closeInfoPopup() {
         const popup = document.getElementById('infoPopup');
-        const title = document.getElementById('infoPopupTitle');
-        
         if (!popup) return;
-        
-        // Update ARIA attributes
+        popup.style.display = '';
+        popup.style.pointerEvents = '';
         popup.setAttribute('aria-hidden', 'true');
         popup.classList.remove('active');
         document.body.style.overflow = '';
-        
-        // Reset aria-expanded on all trigger elements
         document.querySelectorAll('[data-popup-id]').forEach(el => {
           el.setAttribute('aria-expanded', 'false');
         });
-        
-        // Restore focus to previously focused element
         if (previousActiveElement && typeof previousActiveElement.focus === 'function') {
-          try {
-            previousActiveElement.focus();
-          } catch (e) {
-            // Element might not be focusable anymore, ignore
-            console.warn('Could not restore focus:', e);
-          }
-          previousActiveElement = null;
+          try { previousActiveElement.focus(); } catch (e) { console.warn('Could not restore focus:', e); }
         }
+        previousActiveElement = null;
       }
 
-      // Initialize popup functionality
+      // Initierar popup-funktionalitet
       document.addEventListener('DOMContentLoaded', () => {
-        // Wait a bit to ensure all elements are ready
-        setTimeout(() => {
+        function initPopupHandlers() {
           const popup = document.getElementById('infoPopup');
           const closeBtn = document.getElementById('infoCloseBtn');
           const content = document.getElementById('infoPopupContent');
           const title = document.getElementById('infoPopupTitle');
           
+          if (popup?.hasAttribute('data-popup-initialized')) return;
           if (!popup || !content || !title) {
-            console.warn('Popup elements not found, popup functionality disabled');
+            setTimeout(initPopupHandlers, 100);
             return;
           }
           
-          // Close button click handler
-          if (closeBtn) {
-            closeBtn.addEventListener('click', closeInfoPopup);
-          }
-          
-          // Close popup when clicking overlay (but not on popup box)
+          if (closeBtn) closeBtn.addEventListener('click', closeInfoPopup);
           popup.addEventListener('click', (e) => {
-            // Only close if clicking directly on overlay background, not on popup box
-            if (e.target === popup) {
-              closeInfoPopup();
-            }
+            if (e.target === popup) closeInfoPopup();
           });
-
-          // Close on Escape key
           document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape' && popup.classList.contains('active')) {
-              closeInfoPopup();
-            }
+            if (e.key === 'Escape' && popup.classList.contains('active')) closeInfoPopup();
           });
           
-          // Handle click and keyboard events on popup triggers using event delegation
-          // Use capture phase to catch events before overlay intercepts them
-          document.addEventListener('click', (e) => {
-            // Check if popup elements exist before handling
-            const popupEl = document.getElementById('infoPopup');
-            if (!popupEl) {
-              return; // Popup elements not ready yet
-            }
-            
-            // Check if click is on a popup trigger
-            const trigger = e.target.closest('[data-popup-id]');
-            
-            if (trigger) {
-              // Don't handle clicks inside popup box
+          document.querySelectorAll('[data-popup-id]').forEach(trigger => {
+            trigger.addEventListener('click', function(e) {
               const popupBox = e.target.closest('.info-popup-box');
               const closeBtnEl = e.target.closest('.info-close-btn');
-              
-              // If click is on close button, let it handle the close
-              if (closeBtnEl) {
-                return;
-              }
-              
-              // If click is inside popup box (but not on close button), don't handle it
-              if (popupBox) {
-                return;
-              }
-              
-              // Prevent default and stop propagation
-              e.preventDefault();
-              e.stopImmediatePropagation();
-              
-              const popupId = trigger.getAttribute('data-popup-id');
+              if (closeBtnEl || popupBox) return;
+              const popupId = this.getAttribute('data-popup-id');
               if (popupId) {
-                // Open popup immediately (elements are already checked)
+                e.preventDefault();
+                e.stopPropagation();
                 openInfoPopup(popupId);
               }
-            }
-          }, true); // Capture phase - catches events before they bubble
+            });
+          });
           
-          // Keyboard handler for popup triggers
           document.addEventListener('keydown', (e) => {
-            // Check if popup elements exist before handling
+            if (e.key !== 'Enter' && e.key !== ' ') return;
             const popupEl = document.getElementById('infoPopup');
-            if (!popupEl) {
-              return; // Popup elements not ready yet
-            }
-            
-            if (e.key === 'Enter' || e.key === ' ') {
-              const trigger = e.target.closest('[data-popup-id]');
-              if (trigger) {
-                e.preventDefault();
-                const popupId = trigger.getAttribute('data-popup-id');
-                if (popupId) {
-                  // Open popup immediately (elements are already checked)
-                  openInfoPopup(popupId);
-                }
-              }
+            if (!popupEl) return;
+            const trigger = e.target.closest('[data-popup-id]');
+            if (trigger) {
+              e.preventDefault();
+              const popupId = trigger.getAttribute('data-popup-id');
+              if (popupId) openInfoPopup(popupId);
             }
           });
-        }, 100); // Small delay to ensure DOM is fully ready
+          popup.setAttribute('data-popup-initialized', 'true');
+        }
+        initPopupHandlers();
         
         lucide.createIcons();
         
         // Applicera översättning efter DOM är laddad
         const savedLang = localStorage.getItem('language') || 'sv';
-        if (typeof applyLanguage === 'function') {
-          applyLanguage(savedLang);
+        if (typeof window.applyLanguage === 'function') {
+          window.applyLanguage(savedLang);
         }
       });
     </script>

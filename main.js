@@ -143,6 +143,7 @@ document.addEventListener("DOMContentLoaded", (() => {
   const carouselTrack = document.querySelector(".carousel-track"), carouselPrev = document.querySelector(".carousel-prev"), carouselNext = document.querySelector(".carousel-next"), useCaseCards = document.querySelectorAll(".use-case-card");
   let currentIndex = 0;
   function updateCarousel() {
+    if (!carouselTrack || !useCaseCards.length) return;
     const cardWidth = useCaseCards[0].offsetWidth;
     carouselTrack.style.transform = `translateX(-${currentIndex * (cardWidth + 32)}px)`, 
     carouselPrev.style.opacity = 0 === currentIndex ? "0.5" : "1", carouselNext.style.opacity = currentIndex === useCaseCards.length - 1 ? "0.5" : "1";
@@ -573,6 +574,7 @@ document.addEventListener("DOMContentLoaded", (() => {
     let currentIndex = 0;
 
     function updateCarousel() {
+      if (!carouselTrack || !useCaseCards.length) return;
       const cardWidth = useCaseCards[0].offsetWidth;
       carouselTrack.style.transform = `translateX(-${currentIndex * (cardWidth + 32)}px)`;
       carouselPrev.style.opacity = currentIndex === 0 ? "0.5" : "1";
@@ -631,7 +633,7 @@ document.addEventListener("DOMContentLoaded", (() => {
     // FAQ expand/collapse
     initFaqAccessibility();
 
-    // Carousel accessibility & swipe
+    // Carousel accessibility & swipe (för features-summary.html)
     const carousel = document.querySelector('.use-cases-carousel');
     const track = carousel ? carousel.querySelector('.carousel-track') : null;
     const prevBtn = carousel ? carousel.querySelector('.carousel-prev') : null;
@@ -654,7 +656,6 @@ document.addEventListener("DOMContentLoaded", (() => {
       });
       updateCarousel();
     }
-    // Swipe for mobile
     let startX = null;
     if (track) {
       track.addEventListener('touchstart', e => { startX = e.touches[0].clientX; });
@@ -805,8 +806,8 @@ document.addEventListener("DOMContentLoaded", (() => {
 
   // Feature comparison table functionality
   function initializeFeatureComparison() {
-    const searchInput = document.querySelector('.feature-search');
-    const categoryButtons = document.querySelectorAll('.category-button');
+    const searchInput = document.querySelector('#featureSearch, .feature-search');
+    const categoryButtons = document.querySelectorAll('.category-btn, .category-button');
     const tableRows = document.querySelectorAll('.feature-comparison-table tbody tr');
 
     if (searchInput) {
@@ -851,7 +852,7 @@ document.addEventListener("DOMContentLoaded", (() => {
       });
 
       // Initialize with all features visible
-      categoryButtons[0].click();
+      if (categoryButtons[0]) categoryButtons[0].click();
     }
   }
 

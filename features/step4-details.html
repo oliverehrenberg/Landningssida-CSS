@@ -43,7 +43,7 @@
     </section>
 
     <!-- Feature Details -->
-    <section class="feature-detail-section section-hidden">
+    <section class="feature-detail-section">
       <div class="section-header">
         <h2 data-translate="step4DetailInterfaceTitle">Översikt över projektskapandesidan</h2>
         <div class="section-divider-line"></div>
@@ -81,7 +81,7 @@
     </section>
 
     <!-- How It Works -->
-    <section class="how-it-works section-hidden step1-how-works">
+    <section class="how-it-works step1-how-works">
       <div class="section-header">
         <h2 data-translate="howItWorksTitle">Så fungerar det</h2>
         <div class="section-divider-line"></div>
@@ -94,16 +94,11 @@
           </div>
           
           <div class="step-blocks">
-            <div class="step-block step-block-action">
-              <div class="step-block-icon"><i class="fa-solid fa-sign-in-alt" aria-hidden="true"></i></div>
-              <div class="step-block-content">
-                <ul>
-                  <li data-translate="step4DetailStep1Action1"></li>
-                  <li data-translate="step4DetailStep1Action2"></li>
-                  <li data-translate="step4DetailStep1Action3"></li>
-                </ul>
-              </div>
-            </div>
+            <ul>
+              <li data-translate="step4DetailStep1Action1"></li>
+              <li data-translate="step4DetailStep1Action2"></li>
+              <li data-translate="step4DetailStep1Action3"></li>
+            </ul>
           </div>
           
           <div class="step-tip-inline">
@@ -125,16 +120,11 @@
           </div>
           
           <div class="step-blocks">
-            <div class="step-block step-block-action">
-              <div class="step-block-icon"><i class="fa-solid fa-keyboard" aria-hidden="true"></i></div>
-              <div class="step-block-content">
-                <ul>
-                  <li data-translate="step4DetailStep2Action1"></li>
-                  <li data-translate="step4DetailStep2Action2"></li>
-                  <li data-translate="step4DetailStep2Action3"></li>
-                </ul>
-              </div>
-            </div>
+            <ul>
+              <li data-translate="step4DetailStep2Action1"></li>
+              <li data-translate="step4DetailStep2Action2"></li>
+              <li data-translate="step4DetailStep2Action3"></li>
+            </ul>
           </div>
           
           <div class="step-tip-inline">
@@ -156,16 +146,11 @@
           </div>
           
           <div class="step-blocks">
-            <div class="step-block step-block-action">
-              <div class="step-block-icon"><i class="fa-solid fa-cog" aria-hidden="true"></i></div>
-              <div class="step-block-content">
-                <ul>
-                  <li data-translate="step4DetailStep3Action1"></li>
-                  <li data-translate="step4DetailStep3Action2"></li>
-                  <li data-translate="step4DetailStep3Action3"></li>
-                </ul>
-              </div>
-            </div>
+            <ul>
+              <li data-translate="step4DetailStep3Action1"></li>
+              <li data-translate="step4DetailStep3Action2"></li>
+              <li data-translate="step4DetailStep3Action3"></li>
+            </ul>
           </div>
           
           <div class="step-tip-inline">
@@ -187,16 +172,11 @@
           </div>
           
           <div class="step-blocks">
-            <div class="step-block step-block-action">
-              <div class="step-block-icon"><i class="fa-solid fa-save" aria-hidden="true"></i></div>
-              <div class="step-block-content">
-                <ul>
-                  <li data-translate="step4DetailStep4Action1"></li>
-                  <li data-translate="step4DetailStep4Action2"></li>
-                  <li data-translate="step4DetailStep4Action3"></li>
-                </ul>
-              </div>
-            </div>
+            <ul>
+              <li data-translate="step4DetailStep4Action1"></li>
+              <li data-translate="step4DetailStep4Action2"></li>
+              <li data-translate="step4DetailStep4Action3"></li>
+            </ul>
           </div>
           
           <div class="step-tip-inline">
@@ -436,19 +416,11 @@
           const content = document.getElementById('infoPopupContent');
           const title = document.getElementById('infoPopupTitle');
           
+          if (popup?.hasAttribute('data-popup-initialized')) return;
           if (!popup || !content || !title) {
-            console.warn('Popup elements not found, retrying in 100ms...', {
-              popup: !!popup,
-              content: !!content,
-              title: !!title,
-              readyState: document.readyState
-            });
-            // Retry after a short delay
             setTimeout(initPopupHandlers, 100);
             return;
           }
-          
-          console.log('Popup elements found, initializing handlers');
           
           // Close button click handler
           if (closeBtn) {
@@ -472,25 +444,15 @@
           
           // Handle click events on popup triggers - use direct event listeners
           const popupTriggers = document.querySelectorAll('[data-popup-id]');
-          if (popupTriggers.length === 0) {
-            console.warn('No popup triggers found');
-          }
           popupTriggers.forEach(trigger => {
             trigger.addEventListener('click', function(e) {
-              // Don't handle clicks inside popup box
               const popupBox = e.target.closest('.info-popup-box');
               const closeBtnEl = e.target.closest('.info-close-btn');
-              
-              // If click is on close button or inside popup box, don't handle it
-              if (closeBtnEl || popupBox) {
-                return;
-              }
-              
+              if (closeBtnEl || popupBox) return;
               const popupId = this.getAttribute('data-popup-id');
               if (popupId) {
                 e.preventDefault();
                 e.stopPropagation();
-                console.log('Opening popup with ID:', popupId);
                 openInfoPopup(popupId);
               }
             });
@@ -516,17 +478,17 @@
               }
             }
           });
+          popup.setAttribute('data-popup-initialized', 'true');
         }
         
-        // Initialize popup handlers
         initPopupHandlers();
         
         lucide.createIcons();
         
         // Applicera översättning efter DOM är laddad
         const savedLang = localStorage.getItem('language') || 'sv';
-        if (typeof applyLanguage === 'function') {
-          applyLanguage(savedLang);
+        if (typeof window.applyLanguage === 'function') {
+          window.applyLanguage(savedLang);
         }
       });
     </script>

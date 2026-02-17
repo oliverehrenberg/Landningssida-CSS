@@ -43,7 +43,7 @@
     </section>
 
     <!-- Feature Details -->
-    <section class="feature-detail-section section-hidden">
+    <section class="feature-detail-section">
       <div class="section-header">
         <h2 data-translate="step1DetailInterfaceTitle">Gränssnittselement</h2>
         <div class="section-divider-line"></div>
@@ -84,7 +84,7 @@
     </section>
 
     <!-- How It Works -->
-    <section class="how-it-works step1-how-works section-hidden">
+    <section class="how-it-works step1-how-works">
       <div class="section-header">
         <h2 data-translate="howItWorksTitle">Så fungerar det</h2>
         <div class="section-divider-line"></div>
@@ -97,16 +97,11 @@
           </div>
           
           <div class="step-blocks">
-            <div class="step-block step-block-action">
-              <div class="step-block-icon"><i class="fa-solid fa-hand-pointer" aria-hidden="true"></i></div>
-              <div class="step-block-content">
-                <ul>
-                  <li data-translate="step1DetailStep1Action1"></li>
-                  <li data-translate="step1DetailStep1Action2"></li>
-                  <li data-translate="step1DetailStep1Action3"></li>
-                </ul>
-              </div>
-            </div>
+            <ul>
+              <li data-translate="step1DetailStep1Action1"></li>
+              <li data-translate="step1DetailStep1Action2"></li>
+              <li data-translate="step1DetailStep1Action3"></li>
+            </ul>
           </div>
           
           <div class="step-tip-inline">
@@ -128,16 +123,11 @@
           </div>
           
           <div class="step-blocks">
-            <div class="step-block step-block-action">
-              <div class="step-block-icon"><i class="fa-solid fa-filter" aria-hidden="true"></i></div>
-              <div class="step-block-content">
-                <ul>
-                  <li data-translate="step1DetailStep2Action1"></li>
-                  <li data-translate="step1DetailStep2Action2"></li>
-                  <li data-translate="step1DetailStep2Action3"></li>
-                </ul>
-              </div>
-            </div>
+            <ul>
+              <li data-translate="step1DetailStep2Action1"></li>
+              <li data-translate="step1DetailStep2Action2"></li>
+              <li data-translate="step1DetailStep2Action3"></li>
+            </ul>
           </div>
           
           <div class="step-tip-inline">
@@ -159,16 +149,11 @@
           </div>
           
           <div class="step-blocks">
-            <div class="step-block step-block-action">
-              <div class="step-block-icon"><i class="fa-solid fa-list" aria-hidden="true"></i></div>
-              <div class="step-block-content">
-                <ul>
-                  <li data-translate="step1DetailStep3Action1"></li>
-                  <li data-translate="step1DetailStep3Action2"></li>
-                  <li data-translate="step1DetailStep3Action3"></li>
-                </ul>
-              </div>
-            </div>
+            <ul>
+              <li data-translate="step1DetailStep3Action1"></li>
+              <li data-translate="step1DetailStep3Action2"></li>
+              <li data-translate="step1DetailStep3Action3"></li>
+            </ul>
           </div>
           
           <div class="step-tip-inline">
@@ -190,16 +175,11 @@
           </div>
           
           <div class="step-blocks">
-            <div class="step-block step-block-action">
-              <div class="step-block-icon"><i class="fa-solid fa-eye" aria-hidden="true"></i></div>
-              <div class="step-block-content">
-                <ul>
-                  <li data-translate="step1DetailStep4Action1"></li>
-                  <li data-translate="step1DetailStep4Action2"></li>
-                  <li data-translate="step1DetailStep4Action3"></li>
-                </ul>
-              </div>
-            </div>
+            <ul>
+              <li data-translate="step1DetailStep4Action1"></li>
+              <li data-translate="step1DetailStep4Action2"></li>
+              <li data-translate="step1DetailStep4Action3"></li>
+            </ul>
           </div>
           
           <div class="step-tip-inline">
@@ -441,19 +421,11 @@
           const content = document.getElementById('infoPopupContent');
           const title = document.getElementById('infoPopupTitle');
           
+          if (popup?.hasAttribute('data-popup-initialized')) return;
           if (!popup || !content || !title) {
-            console.warn('Popup elements not found, retrying in 100ms...', {
-              popup: !!popup,
-              content: !!content,
-              title: !!title,
-              readyState: document.readyState
-            });
-            // Retry after a short delay
             setTimeout(initPopupHandlers, 100);
             return;
           }
-          
-          console.log('Popup elements found, initializing handlers');
           
           // Close button click handler
           if (closeBtn) {
@@ -477,9 +449,6 @@
           
           // Handle click events on popup triggers - use direct event listeners
           const popupTriggers = document.querySelectorAll('[data-popup-id]');
-          if (popupTriggers.length === 0) {
-            console.warn('No popup triggers found');
-          }
           popupTriggers.forEach(trigger => {
             trigger.addEventListener('click', function(e) {
               // Don't handle clicks inside popup box
@@ -495,7 +464,6 @@
               if (popupId) {
                 e.preventDefault();
                 e.stopPropagation();
-                console.log('Opening popup with ID:', popupId);
                 openInfoPopup(popupId);
               }
             });
@@ -521,17 +489,17 @@
               }
             }
           });
+          popup.setAttribute('data-popup-initialized', 'true');
         }
         
-        // Initialize popup handlers
         initPopupHandlers();
         
         lucide.createIcons();
         
         // Applicera översättning efter DOM är laddad
         const savedLang = localStorage.getItem('language') || 'sv';
-        if (typeof applyLanguage === 'function') {
-          applyLanguage(savedLang);
+        if (typeof window.applyLanguage === 'function') {
+          window.applyLanguage(savedLang);
         }
       });
     </script>

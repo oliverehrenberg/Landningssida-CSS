@@ -956,6 +956,10 @@ html {
   color: #fff;
 }
 
+.pricing-card p {
+  color: #d4d6e8;
+}
+
 .features-list {
   list-style: none;
   text-align: left;
@@ -1918,8 +1922,8 @@ footer {
 
 .features-summary-wrapper {
   background: linear-gradient(to bottom, #0c0c1f, #0c0c1f);
-  padding: 6rem 2rem;
-  padding-top: calc(var(--header-height) + 4rem); /* Add padding to account for header */
+  padding: 1rem 2rem;
+  padding-top: calc(var(--header-height) + 1rem);
   color: white;
   text-align: center;
   min-height: unset;
@@ -1930,7 +1934,7 @@ footer {
 
 .features-summary-wrapper h2 {
   font-size: 2.5rem;
-  margin-bottom: 1rem;
+  margin-bottom: 0.5rem;
   color: white;
 }
 
@@ -2070,9 +2074,9 @@ footer {
   height: 1px;
   background: linear-gradient(90deg, 
     transparent 0%, 
-    rgba(56, 142, 60, 0.2) 20%, 
-    rgba(56, 142, 60, 0.4) 50%, 
-    rgba(56, 142, 60, 0.2) 80%, 
+    rgba(249, 200, 81, 0.2) 20%, 
+    rgba(249, 200, 81, 0.4) 50%, 
+    rgba(249, 200, 81, 0.2) 80%, 
     transparent 100%
   );
   margin: 2rem 0;
@@ -2362,17 +2366,19 @@ button[type="button"]:hover {
 
 .use-cases-carousel {
   position: relative;
+  width: 100%;
   max-width: 1200px;
-  margin: 3rem auto;
+  margin: 0.75rem auto;
   padding: 0 4rem;
+  box-sizing: border-box;
 }
 
 .carousel-track {
   display: flex;
   gap: 2rem;
-  overflow-x: hidden;
-  scroll-behavior: smooth;
   padding: 1rem 0;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .use-case-card {
@@ -2419,6 +2425,30 @@ button[type="button"]:hover {
 .use-case-content p {
   color: #a7a9be;
   line-height: 1.6;
+}
+
+.use-case-content .features-list {
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0;
+  color: #d4d6e8;
+}
+
+.use-case-content .features-list li {
+  margin-bottom: 0.4rem;
+  padding-left: 1.2rem;
+  position: relative;
+}
+
+.use-case-content .features-list li::before {
+  content: '•';
+  color: var(--accent-primary);
+  position: absolute;
+  left: 0;
+}
+
+.use-case-content .expand-btn {
+  margin-top: 1rem;
 }
 
 .carousel-prev,
@@ -3033,7 +3063,7 @@ button[type="button"]:hover {
   padding: var(--section-spacing) var(--content-spacing);
   background: rgba(15, 14, 23, 0.5);
   position: relative;
-  margin-top: var(--section-spacing);
+  margin-top: 0;
 }
 
 .pricing-faq h2 {
@@ -3468,7 +3498,7 @@ button[type="button"]:hover {
 .features-nav a:hover { display: none; }
 
 /* === USE CASES CAROUSEL === */
-.use-cases-carousel { position: relative; max-width: 1200px; margin: 2rem auto 3rem auto; }
+.use-cases-carousel { position: relative; max-width: 1200px; margin: 0.75rem auto; }
 .carousel-track { display: flex; gap: 2rem; transition: transform 0.5s cubic-bezier(.4,0,.2,1); will-change: transform; }
 .carousel-prev, .carousel-next { position: absolute; top: 50%; transform: translateY(-50%); background: #23213a; border: none; width: 44px; height: 44px; border-radius: 50%; color: #e5b447; font-size: 1.5rem; display: flex; align-items: center; justify-content: center; cursor: pointer; z-index: 2; transition: background 0.2s; }
 .carousel-prev { left: -24px; }
@@ -3481,7 +3511,7 @@ button[type="button"]:hover {
 .pricing-card { background: linear-gradient(135deg, #1c1c2f, #1a1a2e); padding: 2rem; border-radius: 1rem; flex: 1 1 300px; max-width: 400px; text-align: left; position: relative; overflow: hidden; min-width: 260px; }
 .feature-card-icon { font-size: 2.2rem; color: #e5b447; margin-bottom: 1rem; }
 .expand-btn { background: none; color: #e5b447; border: 1px solid #e5b447; border-radius: 6px; padding: 0.3rem 1.2rem; margin-bottom: 1rem; cursor: pointer; font-weight: 600; transition: background 0.2s; display: block; }
-.expand-btn:hover, .expand-btn:focus { background: rgba(229,180,71,0.1); outline: none; }
+.expand-btn:hover, .expand-btn:focus { background: rgba(229,180,71,0.1); color: #e5b447; outline: none; }
 .expanded-info { display: none; animation: fadeIn 0.4s; }
 .expanded-info.show { display: block; }
 @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
@@ -3936,7 +3966,7 @@ button[type="button"]:hover {
 
 /* Features Grid */
 .features-grid {
-  padding: 4rem 2rem;
+  padding: 0 2rem 4rem 2rem;
   background: var(--background-light);
   position: relative;
   overflow: hidden;
@@ -5627,7 +5657,7 @@ body.step9-details-page .step1-visual-text p,
 body.step10-details-page .step1-visual-text p,
 body.step11-details-page .step1-visual-text p {
   font-size: 1rem;
-  color: #a7a9be;
+  color: #d4d6e8;
   line-height: 1.7;
   margin: 0;
 }
@@ -6115,7 +6145,7 @@ body.step1-details-page .feature-detail-card .feature-icon i {
 }
 
 .step1-step p {
-  color: #a7a9be;
+  color: #d4d6e8;
   line-height: 1.7;
   margin: 0;
   font-size: 1rem;
@@ -6125,6 +6155,35 @@ body.step1-details-page .feature-detail-card .feature-icon i {
 /* Step Blocks - Visual Cards */
 .step-blocks {
   margin: 1.5rem 0 0 0;
+}
+
+.step-blocks > ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.step-blocks > ul li {
+  font-size: 0.9375rem;
+  color: #d4d6e8;
+  line-height: 1.7;
+  margin-bottom: 0.625rem;
+  padding-left: 1.5rem;
+  position: relative;
+  list-style: none;
+}
+
+.step-blocks > ul li::before {
+  content: '•';
+  position: absolute;
+  left: 0.5rem;
+  color: #f9c851;
+  font-weight: bold;
+  font-size: 1.2em;
+}
+
+.step-blocks > ul li:last-child {
+  margin-bottom: 0;
 }
 
 .step-block {
@@ -6358,7 +6417,7 @@ body.step1-details-page .feature-detail-card .feature-icon i {
 
 .step1-info-btn:hover {
   background: linear-gradient(135deg, #f9c851 0%, #e5b447 100%);
-  color: #0f0e17;
+  color: #fff;
   transform: translateY(-2px);
   box-shadow: 0 6px 16px rgba(249, 200, 81, 0.4);
   border-color: #f9c851;
@@ -6376,7 +6435,7 @@ body.step1-details-page .feature-detail-card .feature-icon i {
 
 .step1-info-btn:hover i {
   transform: none;
-  color: #0f0e17;
+  color: #fff;
 }
 
 .step1-info-btn span {
@@ -6384,7 +6443,7 @@ body.step1-details-page .feature-detail-card .feature-icon i {
 }
 
 .step1-info-btn:hover span {
-  color: #0f0e17;
+  color: #fff;
 }
 
 /* Info buttons and popup styles for step1-details */
@@ -6467,6 +6526,11 @@ body.step1-details-page .details-feature-header .info-btn {
 
 .info-popup-overlay.active {
   pointer-events: auto; /* Enable clicks on overlay itself for closing */
+}
+
+/* Säkerställ att overlay inte blockerar klick när stängd */
+.info-popup-overlay:not(.active) {
+  pointer-events: none;
 }
 
 .info-popup-box {
