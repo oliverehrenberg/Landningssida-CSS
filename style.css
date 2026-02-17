@@ -566,7 +566,7 @@ a.cta-btn {
 }
 
 .feature-card h3 {
-  font-size: 2.4rem;
+  font-size: 1.75rem;
   margin-bottom: 1.5rem;
   line-height: 1.2;
   color: #ffffff;
@@ -644,6 +644,8 @@ a.cta-btn {
   margin-top: auto;
   align-self: flex-start;
   opacity: 0;
+  font-size: 0.95rem;
+  padding: 0.6rem 1.5rem;
   transform: translateY(20px) translateZ(0);
   transition: all 0.8s cubic-bezier(0.19, 1, 0.22, 1) 0.5s;
 }
@@ -703,7 +705,7 @@ a.cta-btn {
   }
   
   .feature-card h3 {
-    font-size: 2rem;
+    font-size: 1.4rem;
     margin-bottom: 1.25rem;
   }
   
@@ -775,7 +777,7 @@ html {
 }
 
 .features-summary-wrapper .feature-card h3 {
-  font-size: 1.2rem;
+  font-size: 1rem;
   margin-bottom: 0.7rem;
 }
 
@@ -1019,7 +1021,7 @@ html {
 
 .cta-container h2 {
   color: #fff;
-  font-size: 1.8rem;
+  font-size: 1.75rem;
   margin-bottom: 1rem;
 }
 
@@ -2417,7 +2419,7 @@ button[type="button"]:hover {
 }
 
 .use-case-content h4 {
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   margin-bottom: 1rem;
   color: #f9c851;
 }
@@ -2449,6 +2451,8 @@ button[type="button"]:hover {
 
 .use-case-content .expand-btn {
   margin-top: 1rem;
+  font-size: 0.9rem;
+  padding: 0.3rem 1rem;
 }
 
 .carousel-prev,
@@ -3510,7 +3514,7 @@ button[type="button"]:hover {
 .pricing-cards { display: flex; gap: 2rem; justify-content: center; flex-wrap: wrap; margin-bottom: 3rem; }
 .pricing-card { background: linear-gradient(135deg, #1c1c2f, #1a1a2e); padding: 2rem; border-radius: 1rem; flex: 1 1 300px; max-width: 400px; text-align: left; position: relative; overflow: hidden; min-width: 260px; }
 .feature-card-icon { font-size: 2.2rem; color: #e5b447; margin-bottom: 1rem; }
-.expand-btn { background: none; color: #e5b447; border: 1px solid #e5b447; border-radius: 6px; padding: 0.3rem 1.2rem; margin-bottom: 1rem; cursor: pointer; font-weight: 600; transition: background 0.2s; display: block; }
+.expand-btn { background: none; color: #e5b447; border: 1px solid #e5b447; border-radius: 6px; padding: 0.3rem 1rem; margin-bottom: 1rem; cursor: pointer; font-weight: 600; font-size: 0.9rem; transition: background 0.2s; display: block; }
 .expand-btn:hover, .expand-btn:focus { background: rgba(229,180,71,0.1); color: #e5b447; outline: none; }
 .expanded-info { display: none; animation: fadeIn 0.4s; }
 .expanded-info.show { display: block; }
@@ -3530,7 +3534,7 @@ button[type="button"]:hover {
 /* === CTA === */
 .features-cta { background: linear-gradient(135deg, #23213a 0%, #18162a 100%); color: #fff; text-align: center; padding: 3rem 1rem; border-radius: 16px; max-width: 700px; margin: 3rem auto; }
 .features-cta-icon { font-size: 2.5rem; color: #e5b447; margin-bottom: 1rem; }
-.features-cta h2 { font-size: 2rem; margin-bottom: 1rem; }
+.features-cta h2 { font-size: 1.75rem; margin-bottom: 1rem; }
 .features-cta p { font-size: 1.1rem; margin-bottom: 2rem; }
 .features-cta-security { color: #e5b447; font-size: 1rem; margin-bottom: 1.5rem; }
 
