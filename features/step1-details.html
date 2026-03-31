@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="sv">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="description" content="Hitta rätt byggföretag för ditt projekt. Bläddra bland leverantörer, sök efter specifika företag eller använd filter för att hitta exakt det du behöver." />
+    <meta name="robots" content="index,follow,max-image-preview:large" />
+    <meta name="theme-color" content="#0f0e17" />
+<title data-translate="step1DetailTitle">Steg 1: Bläddra och sök företag - Construction Sourcing</title>
+    <link rel="stylesheet" href="../style.css" />
+    <link rel="icon" type="image/svg+xml" href="../assets/Favicon.svg" />
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  </head>
+  <body class="step1-details-page">
+    <div class="scroll-progress"><div class="scroll-progress__bar"></div></div>
+    <div id="header-container"></div>
+    <script>
+      fetch('../header.html')
+        .then(response => response.text())
+        .then(data => {
+          document.getElementById('header-container').innerHTML = data;
+        });
+    </script>
+
+    <!-- Hero Section -->
+    <section class="step1-hero">
+      <div class="step1-hero-content">
+        <h1 data-translate="step1DetailTitle">Steg 1: Bläddra och sök företag</h1>
+        <p class="step1-hero-subtitle" data-translate="step1DetailHeroSubtitle">Hitta rätt byggföretag för ditt projekt. Bläddra bland leverantörer, sök efter specifika företag eller använd filter för att hitta exakt det du behöver.</p>
+        <div class="step1-hero-features">
+          <div class="step1-hero-feature-item">
+            <i class="fa-solid fa-search" aria-hidden="true"></i>
+            <span data-translate="step1HeroFeatureSearchTitle">Sökfunktion för snabb sökning</span>
+          </div>
+          <div class="step1-hero-feature-item">
+            <i class="fa-solid fa-filter" aria-hidden="true"></i>
+            <span data-translate="step1HeroFeatureFilterTitle">Avancerade filter för exakt matchning</span>
+          </div>
+          <div class="step1-hero-feature-item">
+            <i class="fa-solid fa-list" aria-hidden="true"></i>
+            <span data-translate="step1HeroFeatureListTitle">Strukturerad lista med visuell information</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Feature Details -->
+    <section class="feature-detail-section">
+      <div class="section-header">
+        <h2 data-translate="step1DetailInterfaceTitle">Gränssnittselement</h2>
+        <div class="section-divider-line"></div>
+      </div>
+      <div class="step1-visual-in-context">
+        <div class="step1-visual-wrapper">
+          <div class="step1-visual-image">
+            <img src="../assets/leverantorer-step01-alla-företag.png" alt="Företagslista och sökfunktion" loading="lazy" />
+          </div>
+          <div class="step1-visual-info">
+            <div class="step1-visual-info-item" role="button" tabindex="0" aria-expanded="false" aria-label="Läs mer om kategoriorganisering" data-popup-id="visual-category">
+              <div class="step1-visual-icon"><i class="fa-solid fa-folder-tree" aria-hidden="true"></i></div>
+              <div class="step1-visual-text">
+                <h4 data-translate="step1VisualCategoryTitle">Kategoriorganisering</h4>
+                <p data-translate="step1VisualCategoryDesc">Logisk hierarkisk struktur för enkel navigering</p>
+              </div>
+              <div class="step1-visual-arrow"><i class="fa-solid fa-chevron-right" aria-hidden="true"></i></div>
+            </div>
+            <div class="step1-visual-info-item" role="button" tabindex="0" aria-expanded="false" aria-label="Läs mer om navigation och layout" data-popup-id="visual-navigation">
+              <div class="step1-visual-icon"><i class="fa-solid fa-bars" aria-hidden="true"></i></div>
+              <div class="step1-visual-text">
+                <h4 data-translate="step1VisualNavigationTitle">Navigation och layout</h4>
+                <p data-translate="step1VisualNavigationDesc">Kategorinavigation och filteralternativ</p>
+              </div>
+              <div class="step1-visual-arrow"><i class="fa-solid fa-chevron-right" aria-hidden="true"></i></div>
+            </div>
+            <div class="step1-visual-info-item" role="button" tabindex="0" aria-expanded="false" aria-label="Läs mer om interaktiva element" data-popup-id="visual-interactive">
+              <div class="step1-visual-icon"><i class="fa-solid fa-mouse-pointer" aria-hidden="true"></i></div>
+              <div class="step1-visual-text">
+                <h4 data-translate="step1VisualInteractiveTitle">Interaktiva element</h4>
+                <p data-translate="step1VisualInteractiveDesc">Klickbara kort och snabbåtgärder</p>
+              </div>
+              <div class="step1-visual-arrow"><i class="fa-solid fa-chevron-right" aria-hidden="true"></i></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- How It Works -->
+    <section class="how-it-works step1-how-works">
+      <div class="section-header">
+        <h2 data-translate="howItWorksTitle">Så fungerar det</h2>
+        <div class="section-divider-line"></div>
+      </div>
+      <div class="step1-steps-container">
+        <div class="step1-step">
+          <div class="step1-step-header">
+            <div class="step1-step-number">1</div>
+            <h3 data-translate="step1DetailStep1Title"></h3>
+          </div>
+          
+          <div class="step-blocks">
+            <ul>
+              <li data-translate="step1DetailStep1Action1"></li>
+              <li data-translate="step1DetailStep1Action2"></li>
+              <li data-translate="step1DetailStep1Action3"></li>
+            </ul>
+          </div>
+          
+          <div class="step-tip-inline">
+            <i class="fa-solid fa-lightbulb"></i>
+            <span data-translate="step1DetailStep1Tip"></span>
+          </div>
+          
+          <div class="step-button-wrapper">
+            <button type="button" class="step1-info-btn" data-popup-id="step1" aria-label="Mer information om steg 1">
+              <i class="fa-solid fa-circle-info" aria-hidden="true"></i> <span data-translate="readMore"></span>
+            </button>
+          </div>
+        </div>
+        
+        <div class="step1-step">
+          <div class="step1-step-header">
+            <div class="step1-step-number">2</div>
+            <h3 data-translate="step1DetailStep2Title"></h3>
+          </div>
+          
+          <div class="step-blocks">
+            <ul>
+              <li data-translate="step1DetailStep2Action1"></li>
+              <li data-translate="step1DetailStep2Action2"></li>
+              <li data-translate="step1DetailStep2Action3"></li>
+            </ul>
+          </div>
+          
+          <div class="step-tip-inline">
+            <i class="fa-solid fa-lightbulb" aria-hidden="true"></i>
+            <span data-translate="step1DetailStep2Tip"></span>
+          </div>
+          
+          <div class="step-button-wrapper">
+            <button type="button" class="step1-info-btn" data-popup-id="step2" aria-label="Mer information om steg 2">
+              <i class="fa-solid fa-circle-info" aria-hidden="true"></i> <span data-translate="readMore"></span>
+            </button>
+          </div>
+        </div>
+        
+        <div class="step1-step">
+          <div class="step1-step-header">
+            <div class="step1-step-number">3</div>
+            <h3 data-translate="step1DetailStep3Title"></h3>
+          </div>
+          
+          <div class="step-blocks">
+            <ul>
+              <li data-translate="step1DetailStep3Action1"></li>
+              <li data-translate="step1DetailStep3Action2"></li>
+              <li data-translate="step1DetailStep3Action3"></li>
+            </ul>
+          </div>
+          
+          <div class="step-tip-inline">
+            <i class="fa-solid fa-lightbulb" aria-hidden="true"></i>
+            <span data-translate="step1DetailStep3Tip"></span>
+          </div>
+          
+          <div class="step-button-wrapper">
+            <button type="button" class="step1-info-btn" data-popup-id="step3" aria-label="Mer information om steg 3">
+              <i class="fa-solid fa-circle-info" aria-hidden="true"></i> <span data-translate="readMore"></span>
+            </button>
+          </div>
+        </div>
+        
+        <div class="step1-step">
+          <div class="step1-step-header">
+            <div class="step1-step-number">4</div>
+            <h3 data-translate="step1DetailStep4Title"></h3>
+          </div>
+          
+          <div class="step-blocks">
+            <ul>
+              <li data-translate="step1DetailStep4Action1"></li>
+              <li data-translate="step1DetailStep4Action2"></li>
+              <li data-translate="step1DetailStep4Action3"></li>
+            </ul>
+          </div>
+          
+          <div class="step-tip-inline">
+            <i class="fa-solid fa-lightbulb" aria-hidden="true"></i>
+            <span data-translate="step1DetailStep4Tip"></span>
+          </div>
+          
+          <div class="step-button-wrapper">
+            <button type="button" class="step1-info-btn" data-popup-id="step4" aria-label="Mer information om steg 4">
+              <i class="fa-solid fa-circle-info" aria-hidden="true"></i> <span data-translate="readMore"></span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="section-divider"></div>
+    <div id="footer-container"></div>
+    
+    <div id="popup-root"></div>
+    
+    <!-- Info Popup for detailed information -->
+    <div class="info-popup-overlay" id="infoPopup" role="dialog" aria-modal="true" aria-labelledby="infoPopupTitle" aria-hidden="true">
+      <div class="info-popup-box">
+        <button class="info-close-btn" id="infoCloseBtn" aria-label="Stäng popup">
+          <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+        </button>
+        <div class="info-popup-content" id="infoPopupContent">
+          <h2 id="infoPopupTitle" class="sr-only">Detaljerad information</h2>
+          <!-- Content will be dynamically inserted here -->
+        </div>
+      </div>
+    </div>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollTrigger.min.js"></script>
+    <script src="../lang.js"></script>
+    <script src="../main.js"></script>
+    <script src="../popup.js"></script>
+    <script>
+      // Info popup data - detailed information for each section
+      // Info popup data - using translation keys instead of hardcoded text
+      const infoPopupData = {
+        step1: {
+          titleKey: 'step1PopupStep1Title',
+          contentKey: 'step1PopupStep1Content'
+        },
+        step2: {
+          titleKey: 'step1PopupStep2Title',
+          contentKey: 'step1PopupStep2Content'
+        },
+        step3: {
+          titleKey: 'step1PopupStep3Title',
+          contentKey: 'step1PopupStep3Content'
+        },
+        step4: {
+          titleKey: 'step1PopupStep4Title',
+          contentKey: 'step1PopupStep4Content'
+        },
+        'visual-category': {
+          titleKey: 'step1PopupVisualCategoryTitle',
+          contentKey: 'step1PopupVisualCategoryContent'
+        },
+        'visual-navigation': {
+          titleKey: 'step1PopupVisualNavigationTitle',
+          contentKey: 'step1PopupVisualNavigationContent'
+        },
+        'visual-interactive': {
+          titleKey: 'step1PopupVisualInteractiveTitle',
+          contentKey: 'step1PopupVisualInteractiveContent'
+        }
+      };
+
+      // Store reference to previously focused element for accessibility
+      let previousActiveElement = null;
+
+      // Function to open info popup
+      function openInfoPopup(id) {
+        // Always get fresh references to elements in case DOM was modified
+        let popup = document.getElementById('infoPopup');
+        let content = document.getElementById('infoPopupContent');
+        let title = document.getElementById('infoPopupTitle');
+        let closeBtn = document.getElementById('infoCloseBtn');
+        
+        // If popup or content not found, return
+        if (!popup || !content) {
+          console.error('Popup or content element not found');
+          return;
+        }
+        
+        // If title not found, create it
+        if (!title) {
+          title = document.createElement('h2');
+          title.id = 'infoPopupTitle';
+          title.className = 'sr-only';
+          // Insert title at the beginning of content
+          content.insertBefore(title, content.firstChild);
+          console.log('Created missing title element');
+        }
+        
+        if (!infoPopupData[id]) {
+          console.error('Popup data not found for ID:', id);
+          return;
+        }
+        
+        // If popup is already open, close it first using unified close function
+        if (popup.classList.contains('active')) {
+          // Store the button that was clicked before closing
+          const clickedButton = document.activeElement;
+          closeInfoPopup();
+          // Small delay to ensure close completes and DOM updates
+          setTimeout(() => {
+            // Set previousActiveElement to the button that triggered this popup
+            previousActiveElement = clickedButton;
+            openInfoPopup(id);
+          }, 50);
+          return;
+        }
+        
+        // Store current focus for restoration (before opening new popup)
+        previousActiveElement = document.activeElement;
+        
+        // Get current language
+        const currentLang = localStorage.getItem('language') || 'sv';
+        
+        // Get translations from global translations object (defined in lang.js)
+        const popupData = infoPopupData[id];
+        if (!popupData) {
+          console.error('Popup data not found for ID:', id);
+          return;
+        }
+        
+        // Get translated title and content - use translations from lang.js
+        // translations is defined globally in lang.js
+        let translatedTitle = '';
+        let translatedContent = '';
+        
+        // Check if using new structure with keys or old structure with direct text
+        if (popupData.titleKey && popupData.contentKey) {
+          // New structure: use translation keys
+          if (typeof translations !== 'undefined' && translations[currentLang]) {
+            translatedTitle = translations[currentLang][popupData.titleKey] || popupData.titleKey;
+            translatedContent = translations[currentLang][popupData.contentKey] || popupData.contentKey;
+          } else {
+            // Fallback if translations not loaded yet
+            console.warn('Translations not available, using keys as fallback');
+            translatedTitle = popupData.titleKey;
+            translatedContent = popupData.contentKey;
+          }
+        } else if (popupData.title && popupData.content) {
+          // Old structure: use direct text (backward compatibility)
+          translatedTitle = popupData.title;
+          translatedContent = popupData.content;
+        } else {
+          console.error('Popup data structure invalid for ID:', id);
+          return;
+        }
+        
+        // Update title first
+        title.textContent = translatedTitle;
+        title.classList.remove('sr-only');
+        
+        // Update content - preserve title element
+        // Get all child nodes except title
+        const contentNodes = Array.from(content.childNodes).filter(node => 
+          node !== title && node.nodeType !== Node.TEXT_NODE
+        );
+        // Remove old content nodes
+        contentNodes.forEach(node => node.remove());
+        // Insert new content after title
+        const tempDiv = document.createElement('div');
+        tempDiv.innerHTML = translatedContent;
+        // Move all nodes from tempDiv to content after title
+        while (tempDiv.firstChild) {
+          content.appendChild(tempDiv.firstChild);
+        }
+        
+        // Remove inline styles to let CSS handle display (CSS uses .active class)
+        popup.style.display = '';
+        popup.style.pointerEvents = '';
+        
+        // Update ARIA attributes
+        popup.setAttribute('aria-hidden', 'false');
+        popup.classList.add('active');
+        document.body.style.overflow = 'hidden';
+        
+        // Update aria-expanded on trigger elements
+        document.querySelectorAll(`[data-popup-id="${id}"]`).forEach(el => {
+          el.setAttribute('aria-expanded', 'true');
+        });
+        
+        // Focus management - focus close button for accessibility
+        setTimeout(() => {
+          if (closeBtn) {
+            closeBtn.focus();
+          }
+        }, 100);
+      }
+
+      // Function to close info popup - unified for all close methods
+      function closeInfoPopup() {
+        const popup = document.getElementById('infoPopup');
+        
+        if (!popup) return;
+        
+        // Remove inline styles to let CSS handle display
+        popup.style.display = '';
+        popup.style.pointerEvents = '';
+        
+        // Update ARIA attributes
+        popup.setAttribute('aria-hidden', 'true');
+        popup.classList.remove('active');
+        document.body.style.overflow = '';
+        
+        // Reset aria-expanded on all trigger elements
+        document.querySelectorAll('[data-popup-id]').forEach(el => {
+          el.setAttribute('aria-expanded', 'false');
+        });
+        
+        // Restore focus to previously focused element
+        if (previousActiveElement && typeof previousActiveElement.focus === 'function') {
+          try {
+            previousActiveElement.focus();
+          } catch (e) {
+            // Element might not be focusable anymore, ignore
+            console.warn('Could not restore focus:', e);
+          }
+        }
+        // Reset previousActiveElement after restoring focus
+        previousActiveElement = null;
+      }
+
+      // Initialize popup functionality
+      document.addEventListener('DOMContentLoaded', () => {
+        // Function to initialize popup handlers
+        function initPopupHandlers() {
+          const popup = document.getElementById('infoPopup');
+          const closeBtn = document.getElementById('infoCloseBtn');
+          const content = document.getElementById('infoPopupContent');
+          const title = document.getElementById('infoPopupTitle');
+          
+          if (popup?.hasAttribute('data-popup-initialized')) return;
+          if (!popup || !content || !title) {
+            setTimeout(initPopupHandlers, 100);
+            return;
+          }
+          
+          // Close button click handler
+          if (closeBtn) {
+            closeBtn.addEventListener('click', closeInfoPopup);
+          }
+          
+          // Close popup when clicking overlay (but not on popup box)
+          popup.addEventListener('click', (e) => {
+            // Only close if clicking directly on overlay background, not on popup box
+            if (e.target === popup) {
+              closeInfoPopup();
+            }
+          });
+
+          // Close on Escape key
+          document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && popup.classList.contains('active')) {
+              closeInfoPopup();
+            }
+          });
+          
+          // Handle click events on popup triggers - use direct event listeners
+          const popupTriggers = document.querySelectorAll('[data-popup-id]');
+          popupTriggers.forEach(trigger => {
+            trigger.addEventListener('click', function(e) {
+              // Don't handle clicks inside popup box
+              const popupBox = e.target.closest('.info-popup-box');
+              const closeBtnEl = e.target.closest('.info-close-btn');
+              
+              // If click is on close button or inside popup box, don't handle it
+              if (closeBtnEl || popupBox) {
+                return;
+              }
+              
+              const popupId = this.getAttribute('data-popup-id');
+              if (popupId) {
+                e.preventDefault();
+                e.stopPropagation();
+                openInfoPopup(popupId);
+              }
+            });
+          });
+          
+          // Keyboard handler for popup triggers
+          document.addEventListener('keydown', (e) => {
+            // Check if popup elements exist before handling
+            const popupEl = document.getElementById('infoPopup');
+            if (!popupEl) {
+              return; // Popup elements not ready yet
+            }
+            
+            if (e.key === 'Enter' || e.key === ' ') {
+              const trigger = e.target.closest('[data-popup-id]');
+              if (trigger) {
+                e.preventDefault();
+                const popupId = trigger.getAttribute('data-popup-id');
+                if (popupId) {
+                  // Open popup immediately (elements are already checked)
+                  openInfoPopup(popupId);
+                }
+              }
+            }
+          });
+          popup.setAttribute('data-popup-initialized', 'true');
+        }
+        
+        initPopupHandlers();
+        
+        lucide.createIcons();
+        
+        // Applicera översättning efter DOM är laddad
+        const savedLang = localStorage.getItem('language') || 'sv';
+        if (typeof window.applyLanguage === 'function') {
+          window.applyLanguage(savedLang);
+        }
+      });
+    </script>
+  </body>
+</html>
+

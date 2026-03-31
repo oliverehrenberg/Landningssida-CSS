@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="sv">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="description" content="Hantera och följ upp uppdragsgenomförande efter att avtalet är signerat. Följ de stegvisa instruktionerna nedan för att övervaka framsteg, spåra leveranser,..." />
+    <meta name="robots" content="index,follow,max-image-preview:large" />
+    <meta name="theme-color" content="#0f0e17" />
+<title data-translate="step9DetailTitle">Steg 9: Uppdragsstyrning & Uppföljning - Construction Sourcing</title>
+    <link rel="stylesheet" href="../style.css" />
+    <link rel="icon" type="image/svg+xml" href="../assets/Favicon.svg" />
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  </head>
+  <body class="step1-details-page">
+    <div class="scroll-progress"><div class="scroll-progress__bar"></div></div>
+    <div id="header-container"></div>
+    <script>
+      fetch('../header.html')
+        .then(response => response.text())
+        .then(data => {
+          document.getElementById('header-container').innerHTML = data;
+        });
+    </script>
+
+    <!-- Hero Section -->
+    <section class="step1-hero">
+      <div class="step1-hero-content">
+        <h1 data-translate="step9DetailTitle">Steg 9: Uppdragsstyrning & Uppföljning</h1>
+        <p class="step1-hero-subtitle" data-translate="step9DetailIntro">Hantera och följ upp uppdragsgenomförande efter att avtalet är signerat. Följ de stegvisa instruktionerna nedan för att övervaka framsteg, spåra leveranser, hantera kvalitetskontroller och få tillgång till uppdragsinformation via uppdragsdetailjsidan.</p>
+        <div class="step1-hero-features">
+          <div class="step1-hero-feature-item">
+            <i class="fa-solid fa-chart-line" aria-hidden="true"></i>
+            <span data-translate="step9HeroFeatureProgressTitle">Övervaka framsteg</span>
+          </div>
+          <div class="step1-hero-feature-item">
+            <i class="fa-solid fa-truck" aria-hidden="true"></i>
+            <span data-translate="step9HeroFeatureDeliveriesTitle">Spåra leveranser</span>
+          </div>
+          <div class="step1-hero-feature-item">
+            <i class="fa-solid fa-check-circle" aria-hidden="true"></i>
+            <span data-translate="step9HeroFeatureQualityTitle">Kvalitetskontroller</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Feature Details -->
+    <section class="feature-detail-section">
+      <div class="section-header">
+        <h2 data-translate="step9DetailInterfaceTitle">Översikt över uppdragsdetailjsidan</h2>
+        <div class="section-divider-line"></div>
+      </div>
+      <div class="step1-visual-in-context">
+        <div class="step1-visual-wrapper">
+          <div class="step1-visual-image">
+            <img src="../assets/mission.png" alt="Uppdragsstyrning & Uppföljning" loading="lazy" />
+          </div>
+          <div class="step1-visual-info">
+            <div class="step1-visual-info-item" role="button" tabindex="0" aria-expanded="false" aria-label="Läs mer om framstegsindikatorer" data-popup-id="visual-progress">
+              <div class="step1-visual-icon"><i class="fa-solid fa-chart-line" aria-hidden="true"></i></div>
+              <div class="step1-visual-text">
+                <h4 data-translate="step9VisualProgressTitle">Framstegsindikatorer</h4>
+                <p data-translate="step9VisualProgressDesc">Översikt över uppdragets totala framsteg och slutförandestatus</p>
+              </div>
+            </div>
+            <div class="step1-visual-info-item" role="button" tabindex="0" aria-expanded="false" aria-label="Läs mer om navigationsflikar" data-popup-id="visual-tabs">
+              <div class="step1-visual-icon"><i class="fa-solid fa-folder-open" aria-hidden="true"></i></div>
+              <div class="step1-visual-text">
+                <h4 data-translate="step9VisualTabsTitle">Navigationsflikar</h4>
+                <p data-translate="step9VisualTabsDesc">Växla mellan olika sektioner för uppdragsstyrning</p>
+              </div>
+            </div>
+            <div class="step1-visual-info-item" role="button" tabindex="0" aria-expanded="false" aria-label="Läs mer om tidslinje och uppföljning" data-popup-id="visual-timeline">
+              <div class="step1-visual-icon"><i class="fa-solid fa-clock" aria-hidden="true"></i></div>
+              <div class="step1-visual-text">
+                <h4 data-translate="step9VisualTimelineTitle">Tidslinje och uppföljning</h4>
+                <p data-translate="step9VisualTimelineDesc">Spåra kronologiska händelser och milstolv</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- How It Works -->
+    <section class="how-it-works step1-how-works">
+      <div class="section-header">
+        <h2 data-translate="howItWorksTitle">Så fungerar det</h2>
+        <div class="section-divider-line"></div>
+      </div>
+      <div class="step1-steps-container">
+        <div class="step1-step">
+          <div class="step1-step-header">
+            <div class="step1-step-number">1</div>
+            <h3 data-translate="step9DetailStep1Title">Steg 1: Få tillgång till uppdragsdetaljer</h3>
+          </div>
+          
+          <div class="step-blocks">
+            <ul>
+              <li data-translate="step9DetailStep1Action1"></li>
+              <li data-translate="step9DetailStep1Action2"></li>
+              <li data-translate="step9DetailStep1Action3"></li>
+            </ul>
+          </div>
+          
+          <div class="step-tip-inline">
+            <i class="fa-solid fa-lightbulb" aria-hidden="true"></i>
+            <span data-translate="step9DetailStep1Tip"></span>
+          </div>
+          
+          <div class="step-button-wrapper">
+            <button type="button" class="step1-info-btn" data-popup-id="step1" aria-label="Mer information om steg 1">
+              <i class="fa-solid fa-circle-info" aria-hidden="true"></i> <span data-translate="readMore"></span>
+            </button>
+          </div>
+        </div>
+        
+        <div class="step1-step">
+          <div class="step1-step-header">
+            <div class="step1-step-number">2</div>
+            <h3 data-translate="step9DetailStep2Title">Steg 2: Övervaka totalt framsteg</h3>
+          </div>
+          
+          <div class="step-blocks">
+            <ul>
+              <li data-translate="step9DetailStep2Action1"></li>
+              <li data-translate="step9DetailStep2Action2"></li>
+              <li data-translate="step9DetailStep2Action3"></li>
+            </ul>
+          </div>
+          
+          <div class="step-tip-inline">
+            <i class="fa-solid fa-lightbulb" aria-hidden="true"></i>
+            <span data-translate="step9DetailStep2Tip"></span>
+          </div>
+          
+          <div class="step-button-wrapper">
+            <button type="button" class="step1-info-btn" data-popup-id="step2" aria-label="Mer information om steg 2">
+              <i class="fa-solid fa-circle-info" aria-hidden="true"></i> <span data-translate="readMore"></span>
+            </button>
+          </div>
+        </div>
+        
+        <div class="step1-step">
+          <div class="step1-step-header">
+            <div class="step1-step-number">3</div>
+            <h3 data-translate="step9DetailStep3Title">Steg 3: Spåra leveranser och logistik</h3>
+          </div>
+          
+          <div class="step-blocks">
+            <ul>
+              <li data-translate="step9DetailStep3Action1"></li>
+              <li data-translate="step9DetailStep3Action2"></li>
+              <li data-translate="step9DetailStep3Action3"></li>
+            </ul>
+          </div>
+          
+          <div class="step-tip-inline">
+            <i class="fa-solid fa-lightbulb" aria-hidden="true"></i>
+            <span data-translate="step9DetailStep3Tip"></span>
+          </div>
+          
+          <div class="step-button-wrapper">
+            <button type="button" class="step1-info-btn" data-popup-id="step3" aria-label="Mer information om steg 3">
+              <i class="fa-solid fa-circle-info" aria-hidden="true"></i> <span data-translate="readMore"></span>
+            </button>
+          </div>
+        </div>
+        
+        <div class="step1-step">
+          <div class="step1-step-header">
+            <div class="step1-step-number">4</div>
+            <h3 data-translate="step9DetailStep4Title">Steg 4: Hantera kvalitet och ekonomi</h3>
+          </div>
+          
+          <div class="step-blocks">
+            <ul>
+              <li data-translate="step9DetailStep4Action1"></li>
+              <li data-translate="step9DetailStep4Action2"></li>
+              <li data-translate="step9DetailStep4Action3"></li>
+            </ul>
+          </div>
+          
+          <div class="step-tip-inline">
+            <i class="fa-solid fa-lightbulb" aria-hidden="true"></i>
+            <span data-translate="step9DetailStep4Tip"></span>
+          </div>
+          
+          <div class="step-button-wrapper">
+            <button type="button" class="step1-info-btn" data-popup-id="step4" aria-label="Mer information om steg 4">
+              <i class="fa-solid fa-circle-info" aria-hidden="true"></i> <span data-translate="readMore"></span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="section-divider"></div>
+    <div id="footer-container"></div>
+    
+    <div id="popup-root"></div>
+    
+    <!-- Info Popup for detailed information -->
+    <div class="info-popup-overlay" id="infoPopup" role="dialog" aria-modal="true" aria-labelledby="infoPopupTitle" aria-hidden="true">
+      <div class="info-popup-box">
+        <button class="info-close-btn" id="infoCloseBtn" aria-label="Stäng popup">
+          <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+        </button>
+        <div class="info-popup-content" id="infoPopupContent">
+          <h2 id="infoPopupTitle" class="sr-only">Detaljerad information</h2>
+          <!-- Content will be dynamically inserted here -->
+        </div>
+      </div>
+    </div>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollTrigger.min.js"></script>
+    
+    <script src="../popup.js"></script>
+    <script src="../lang.js"></script>
+    <script src="../main.js"></script>
+    <script>
+      // Info popup data - detailed information for each section
+      // Info popup data - using translation keys instead of hardcoded text
+      const infoPopupData = {
+        step1: {
+          titleKey: 'step9PopupStep1Title',
+          contentKey: 'step9PopupStep1Content'
+        },
+        step2: {
+          titleKey: 'step9PopupStep2Title',
+          contentKey: 'step9PopupStep2Content'
+        },
+        step3: {
+          titleKey: 'step9PopupStep3Title',
+          contentKey: 'step9PopupStep3Content'
+        },
+        step4: {
+          titleKey: 'step9PopupStep4Title',
+          contentKey: 'step9PopupStep4Content'
+        },
+        'visual-progress': {
+          titleKey: 'step9PopupVisualProgressTitle',
+          contentKey: 'step9PopupVisualProgressContent'
+        },
+        'visual-tabs': {
+          titleKey: 'step9PopupVisualTabsTitle',
+          contentKey: 'step9PopupVisualTabsContent'
+        },
+        'visual-timeline': {
+          titleKey: 'step9PopupVisualTimelineTitle',
+          contentKey: 'step9PopupVisualTimelineContent'
+        }
+      };
+
+      // Store reference to previously focused element for accessibility
+      let previousActiveElement = null;
+
+      // Öppnar info-popup med angivet ID
+      function openInfoPopup(id) {
+        const popup = document.getElementById('infoPopup');
+        const content = document.getElementById('infoPopupContent');
+        let title = document.getElementById('infoPopupTitle');
+        const closeBtn = document.getElementById('infoCloseBtn');
+        
+        if (!popup || !content) {
+          console.error('Popup or content element not found');
+          return;
+        }
+        
+        if (!title) {
+          title = document.createElement('h2');
+          title.id = 'infoPopupTitle';
+          title.className = 'sr-only';
+          content.insertBefore(title, content.firstChild);
+        }
+        
+        if (!infoPopupData[id]) {
+          console.error('Popup data not found for ID:', id);
+          return;
+        }
+        
+        // Om popup redan är öppen, stäng först och öppna sedan ny
+        if (popup.classList.contains('active')) {
+          const clickedButton = document.activeElement;
+          closeInfoPopup();
+          setTimeout(() => {
+            previousActiveElement = clickedButton;
+            openInfoPopup(id);
+          }, 50);
+          return;
+        }
+        
+        previousActiveElement = document.activeElement;
+        
+        // Get current language
+        const currentLang = localStorage.getItem('language') || 'sv';
+        
+        // Get translations from global translations object (defined in lang.js)
+        const popupData = infoPopupData[id];
+        if (!popupData) {
+          console.error('Popup data not found for ID:', id);
+          return;
+        }
+        
+        // Get translated title and content - use translations from lang.js
+        let translatedTitle = '';
+        let translatedContent = '';
+        
+        // Check if using new structure with keys or old structure with direct text
+        if (popupData.titleKey && popupData.contentKey) {
+          // New structure: use translation keys
+          if (typeof translations !== 'undefined' && translations[currentLang]) {
+            translatedTitle = translations[currentLang][popupData.titleKey] || popupData.titleKey;
+            translatedContent = translations[currentLang][popupData.contentKey] || popupData.contentKey;
+          } else {
+            translatedTitle = popupData.titleKey;
+            translatedContent = popupData.contentKey;
+          }
+        } else if (popupData.title && popupData.content) {
+          // Old structure: use direct text (backward compatibility)
+          translatedTitle = popupData.title;
+          translatedContent = popupData.content;
+        } else {
+          console.error('Popup data structure invalid for ID:', id);
+          return;
+        }
+        
+        // Uppdatera titel och innehåll, bevara title-element
+        title.textContent = translatedTitle;
+        title.classList.remove('sr-only');
+        const contentNodes = Array.from(content.childNodes).filter(node => 
+          node !== title && node.nodeType !== Node.TEXT_NODE
+        );
+        contentNodes.forEach(node => node.remove());
+        const tempDiv = document.createElement('div');
+        tempDiv.innerHTML = translatedContent;
+        while (tempDiv.firstChild) {
+          content.appendChild(tempDiv.firstChild);
+        }
+        
+        // Rensa inline-stilar så CSS styr visning via .active
+        popup.style.display = '';
+        popup.style.pointerEvents = '';
+        
+        // Update ARIA attributes
+        popup.setAttribute('aria-hidden', 'false');
+        popup.classList.add('active');
+        document.body.style.overflow = 'hidden';
+        
+        // Update aria-expanded on trigger elements
+        document.querySelectorAll(`[data-popup-id="${id}"]`).forEach(el => {
+          el.setAttribute('aria-expanded', 'true');
+        });
+        
+        // Focus management - focus close button for accessibility
+        setTimeout(() => {
+          if (closeBtn) {
+            closeBtn.focus();
+          }
+        }, 100);
+      }
+
+      // Stänger info-popup
+      function closeInfoPopup() {
+        const popup = document.getElementById('infoPopup');
+        if (!popup) return;
+        popup.style.display = '';
+        popup.style.pointerEvents = '';
+        popup.setAttribute('aria-hidden', 'true');
+        popup.classList.remove('active');
+        document.body.style.overflow = '';
+        document.querySelectorAll('[data-popup-id]').forEach(el => {
+          el.setAttribute('aria-expanded', 'false');
+        });
+        if (previousActiveElement && typeof previousActiveElement.focus === 'function') {
+          try { previousActiveElement.focus(); } catch (e) { console.warn('Could not restore focus:', e); }
+        }
+        previousActiveElement = null;
+      }
+
+      // Initierar popup-funktionalitet
+      document.addEventListener('DOMContentLoaded', () => {
+        function initPopupHandlers() {
+          const popup = document.getElementById('infoPopup');
+          const closeBtn = document.getElementById('infoCloseBtn');
+          const content = document.getElementById('infoPopupContent');
+          const title = document.getElementById('infoPopupTitle');
+          
+          if (popup?.hasAttribute('data-popup-initialized')) return;
+          if (!popup || !content || !title) {
+            setTimeout(initPopupHandlers, 100);
+            return;
+          }
+          
+          if (closeBtn) closeBtn.addEventListener('click', closeInfoPopup);
+          popup.addEventListener('click', (e) => {
+            if (e.target === popup) closeInfoPopup();
+          });
+          document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && popup.classList.contains('active')) closeInfoPopup();
+          });
+          
+          document.querySelectorAll('[data-popup-id]').forEach(trigger => {
+            trigger.addEventListener('click', function(e) {
+              const popupBox = e.target.closest('.info-popup-box');
+              const closeBtnEl = e.target.closest('.info-close-btn');
+              if (closeBtnEl || popupBox) return;
+              const popupId = this.getAttribute('data-popup-id');
+              if (popupId) {
+                e.preventDefault();
+                e.stopPropagation();
+                openInfoPopup(popupId);
+              }
+            });
+          });
+          
+          document.addEventListener('keydown', (e) => {
+            if (e.key !== 'Enter' && e.key !== ' ') return;
+            const popupEl = document.getElementById('infoPopup');
+            if (!popupEl) return;
+            const trigger = e.target.closest('[data-popup-id]');
+            if (trigger) {
+              e.preventDefault();
+              const popupId = trigger.getAttribute('data-popup-id');
+              if (popupId) openInfoPopup(popupId);
+            }
+          });
+          popup.setAttribute('data-popup-initialized', 'true');
+        }
+        initPopupHandlers();
+        
+        lucide.createIcons();
+        
+        // Applicera översättning efter DOM är laddad
+        const savedLang = localStorage.getItem('language') || 'sv';
+        if (typeof window.applyLanguage === 'function') {
+          window.applyLanguage(savedLang);
+        }
+      });
+    </script>
+  </body>
+</html>

@@ -1,22 +1,357 @@
 document.addEventListener("DOMContentLoaded", (() => {
-  // Load header, footer, features summary, about, and CTA sections
-  Promise.all([
-    fetch('header.html').then(response => response.text()),
-    fetch('footer.html').then(response => response.text()),
-    fetch('features-summary.html').then(response => response.text()),
-    fetch('about.html').then(response => response.text()),
-    fetch('cta.html').then(response => response.text())
-  ]).then(([headerData, footerData, featuresSummaryData, aboutData, ctaData]) => {
-    // Insert header
-    const headerContainer = document.getElementById('header-container');
-    if (headerContainer) {
-      headerContainer.innerHTML = headerData;
-      initializeHeader();
+  // Determine base path based on current location
+  const isFeaturesPage = window.location.pathname.includes('/features/');
+  const basePath = isFeaturesPage ? '../' : '';
+  const siteName = 'Construction Sourcing';
+
+  const ensureMetaTag = (selector, attributes, content) => {
+    let tag = document.head.querySelector(selector);
+    if (!tag) {
+      tag = document.createElement('meta');
+      Object.entries(attributes).forEach(([key, value]) => {
+        tag.setAttribute(key, value);
+      });
+      document.head.appendChild(tag);
+    }
+    tag.setAttribute('content', content);
+    return tag;
+  };
+
+  const getCanonicalUrl = () => {
+    const url = new URL(window.location.href);
+    url.hash = '';
+    url.search = '';
+    if (url.pathname.endsWith('/index.html')) {
+      url.pathname = url.pathname.replace(/index\.html$/, '');
+    }
+    return url.toString();
+  };
+
+  const deriveMetaDescription = () => {
+    const descriptionCandidates = [
+      document.querySelector('.hero .subtitle')?.textContent,
+      document.querySelector('.pricing-hero-subtitle')?.textContent,
+      document.querySelector('.feature-detail-intro')?.textContent,
+      document.querySelector('.content-section p')?.textContent,
+      document.querySelector('main p')?.textContent,
+      document.querySelector('section p')?.textContent,
+      document.querySelector('meta[name="description"]')?.getAttribute('content')
+    ];
+
+    const description = descriptionCandidates
+      .map((value) => (value || '').replace(/\s+/g, ' ').trim())
+      .find(Boolean);
+
+    if (!description) {
+      return `${siteName} effektiviserar byggupphandling, leverantörsval och projektsamarbete.`;
     }
 
-    // Insert footer
+    return description.length > 160 ? `${description.slice(0, 157).trim()}...` : description;
+  };
+
+  const buildStructuredData = (title, description, canonicalUrl) => {
+    const siteRootUrl = new URL(`${basePath}index.html`, window.location.href).toString().replace(/index\.html$/, '');
+    const organization = {
+      '@context': 'https://schema.org',
+      '@type': 'Organization',
+      name: siteName,
+      url: siteRootUrl,
+      email: 'oe@constructionsourcing.eu',
+      telephone: '+46 73 435 35 88',
+      address: {
+        '@type': 'PostalAddress',
+        streetAddress: 'Vittangigatan 10',
+        postalCode: '162 61',
+        addressLocality: 'Vällingby',
+        addressCountry: 'SE'
+      },
+      sameAs: [
+        'https://www.linkedin.com/company/construction-sourcing/posts/?feedView=all'
+      ]
+    };
+
+    if (window.location.pathname.endsWith('index.html') || window.location.pathname === '/' || window.location.pathname === '') {
+      return [
+        organization,
+        {
+          '@context': 'https://schema.org',
+          '@type': 'WebSite',
+          name: title,
+          description,
+          url: canonicalUrl
+        }
+      ];
+    }
+
+    return organization;
+  };
+
+  const setupSeo = () => {
+    const title = (document.title || siteName).replace(/\s+/g, ' ').trim();
+    const description = deriveMetaDescription();
+    const canonicalUrl = getCanonicalUrl();
+    const ogImage = new URL(`${basePath}assets/logo.png`, window.location.href).toString();
+
+    ensureMetaTag('meta[name="description"]', { name: 'description' }, description);
+    ensureMetaTag('meta[name="robots"]', { name: 'robots' }, 'index,follow,max-image-preview:large');
+    ensureMetaTag('meta[name="theme-color"]', { name: 'theme-color' }, '#0f0e17');
+    ensureMetaTag('meta[property="og:title"]', { property: 'og:title' }, title);
+    ensureMetaTag('meta[property="og:description"]', { property: 'og:description' }, description);
+    ensureMetaTag('meta[property="og:type"]', { property: 'og:type' }, 'website');
+    ensureMetaTag('meta[property="og:url"]', { property: 'og:url' }, canonicalUrl);
+    ensureMetaTag('meta[property="og:image"]', { property: 'og:image' }, ogImage);
+    ensureMetaTag('meta[name="twitter:card"]', { name: 'twitter:card' }, 'summary_large_image');
+    ensureMetaTag('meta[name="twitter:title"]', { name: 'twitter:title' }, title);
+    ensureMetaTag('meta[name="twitter:description"]', { name: 'twitter:description' }, description);
+    ensureMetaTag('meta[name="twitter:image"]', { name: 'twitter:image' }, ogImage);
+
+    let canonicalLink = document.head.querySelector('link[rel="canonical"]');
+    if (!canonicalLink) {
+      canonicalLink = document.createElement('link');
+      canonicalLink.rel = 'canonical';
+      document.head.appendChild(canonicalLink);
+    }
+    canonicalLink.href = canonicalUrl;
+
+    let structuredData = document.getElementById('structured-data');
+    if (!structuredData) {
+      structuredData = document.createElement('script');
+      structuredData.type = 'application/ld+json';
+      structuredData.id = 'structured-data';
+      document.head.appendChild(structuredData);
+    }
+    structuredData.textContent = JSON.stringify(buildStructuredData(title, description, canonicalUrl));
+  };
+
+  const updateScrollProgress = () => {
+    const scrollPos = window.scrollY || window.pageYOffset;
+    const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+    const percent = docHeight > 0 ? (scrollPos / docHeight) * 100 : 0;
+    const bar = document.querySelector('.scroll-progress__bar');
+    if (bar) {
+      bar.style.width = `${percent}%`;
+      bar.setAttribute('aria-valuenow', String(Math.round(percent)));
+    }
+  };
+
+  const optimizeImages = () => {
+    document.querySelectorAll('img').forEach((img) => {
+      if (!img.hasAttribute('decoding')) {
+        img.decoding = 'async';
+      }
+      if (!img.hasAttribute('loading') && !img.closest('.hero') && !img.closest('.header')) {
+        img.loading = 'lazy';
+      }
+    });
+  };
+
+  const filterExistingTargets = (targets) => targets.filter(Boolean);
+
+  function initializeResponsiveParallaxSections() {
+    if (!window.matchMedia('(min-width: 768px)').matches) {
+      return;
+    }
+
+    const bigCard = document.querySelector('.big-card');
+    const bigCardText = bigCard?.querySelector('.text-content');
+    const bigCardImage = bigCard?.querySelector('.image-side img');
+
+    if (bigCard && bigCardText && !bigCardText.dataset.parallaxInitialized) {
+      bigCardText.dataset.parallaxInitialized = 'true';
+      gsap.to(bigCardText, {
+        yPercent: -20,
+        ease: 'none',
+        scrollTrigger: {
+          trigger: bigCard,
+          start: 'top bottom',
+          end: 'bottom top',
+          scrub: true
+        }
+      });
+    }
+
+    if (bigCard && bigCardImage && !bigCardImage.dataset.parallaxInitialized) {
+      bigCardImage.dataset.parallaxInitialized = 'true';
+      gsap.to(bigCardImage, {
+        yPercent: 20,
+        ease: 'none',
+        scrollTrigger: {
+          trigger: bigCard,
+          start: 'top bottom',
+          end: 'bottom top',
+          scrub: true
+        }
+      });
+      gsap.fromTo(bigCardImage, {
+        scale: 1
+      }, {
+        scale: 1.1,
+        ease: 'none',
+        scrollTrigger: {
+          trigger: bigCardImage,
+          start: 'top 80%',
+          end: 'bottom top',
+          scrub: true
+        }
+      });
+    }
+
+    const aboutWrapper = document.querySelector('.about-wrapper');
+    if (aboutWrapper && !aboutWrapper.dataset.parallaxInitialized) {
+      aboutWrapper.dataset.parallaxInitialized = 'true';
+      gsap.to(aboutWrapper, {
+        yPercent: -10,
+        ease: 'none',
+        scrollTrigger: {
+          trigger: aboutWrapper,
+          start: 'top bottom',
+          end: 'bottom top',
+          scrub: true
+        }
+      });
+    }
+
+    const aboutImage = document.querySelector('.about-image img');
+    if (aboutImage && !aboutImage.dataset.parallaxInitialized) {
+      aboutImage.dataset.parallaxInitialized = 'true';
+      gsap.fromTo(aboutImage, {
+        scale: 1
+      }, {
+        scale: 1.1,
+        ease: 'none',
+        scrollTrigger: {
+          trigger: aboutImage,
+          start: 'top 80%',
+          end: 'bottom top',
+          scrub: true
+        }
+      });
+    }
+  }
+
+  function initializeFooterReveal() {
+    const footer = document.querySelector('footer');
+
+    if (!footer || footer.dataset.revealInitialized) {
+      return;
+    }
+
+    footer.dataset.revealInitialized = 'true';
+    gsap.set(footer, {
+      autoAlpha: 0,
+      y: 40
+    });
+
+    ScrollTrigger.create({
+      trigger: footer,
+      start: 'top 90%',
+      onEnter: () => {
+        footer.classList.remove('section-hidden');
+        gsap.to(footer, {
+          autoAlpha: 1,
+          y: 0,
+          duration: 1,
+          ease: 'power1.out'
+        });
+      }
+    });
+  }
+
+  function initializeHeroIntroAnimation() {
+    if (!document.querySelector('.hero')) {
+      return;
+    }
+
+    const heroTimeline = gsap.timeline({ defaults: { duration: 0.8, ease: 'power1.out' } });
+    const smallTopText = document.querySelector('.small-top-text');
+    const heroTitle = document.querySelector('.hero h1');
+    const heroSubtitle = document.querySelector('.subtitle');
+    const heroCtas = gsap.utils.toArray('.hero .cta-btn');
+
+    if (smallTopText) {
+      heroTimeline.from(smallTopText, { autoAlpha: 0, y: -20 });
+    }
+    if (heroTitle) {
+      heroTimeline.from(heroTitle, { autoAlpha: 0, y: 50 }, '-=0.4');
+    }
+    if (heroSubtitle) {
+      heroTimeline.from(heroSubtitle, { autoAlpha: 0, y: 20 }, '-=0.4');
+    }
+    if (heroCtas.length) {
+      heroTimeline.fromTo(
+        heroCtas,
+        { autoAlpha: 0, scale: 0.9 },
+        { autoAlpha: 1, scale: 1, ease: 'back.out(1.7)', duration: 0.8 },
+        '-=0.4'
+      );
+    }
+  }
+  
+  // Global function to update active state on all language buttons
+  const updateLanguageButtons = () => {
+    const currentLang = localStorage.getItem('language') || 'sv';
+    const allHeaderButtons = document.querySelectorAll(".language-switcher a, .mobile-menu-lang a");
+    const allFooterButtons = document.querySelectorAll(".language-switcher-footer .lang-btn");
+    
+    allHeaderButtons.forEach((btn) => {
+      if (btn.dataset.lang === currentLang) {
+        btn.classList.add('active');
+      } else {
+        btn.classList.remove('active');
+      }
+    });
+    
+    allFooterButtons.forEach((btn) => {
+      if (btn.dataset.lang === currentLang) {
+        btn.classList.add('active');
+      } else {
+        btn.classList.remove('active');
+      }
+    });
+  };
+  
+  // Set up global language change listener (only once)
+  if (!window.languageChangedListenerAdded) {
+    window.addEventListener('languageChanged', () => {
+      updateLanguageButtons();
+      setupSeo();
+    });
+    window.languageChangedListenerAdded = true;
+  }
+  
+  // Initialize language switcher for existing headers (e.g. index.html)
+  // This will be called after header is loaded, so we don't need to run it here
+  // The initializeHeader() function will handle it
+  
+  // Load header, footer, features summary, about, and CTA sections
+  Promise.all([
+    fetch(basePath + 'header.html').then(response => response.text()),
+    fetch(basePath + 'footer.html').then(response => response.text()),
+    fetch(basePath + 'features-summary.html').then(response => response.text()),
+    fetch(basePath + 'about.html').then(response => response.text()),
+    fetch(basePath + 'cta.html').then(response => response.text())
+  ]).then(([headerData, footerData, featuresSummaryData, aboutData, ctaData]) => {
+    // Insert header only if container exists and is empty
+    const headerContainer = document.getElementById('header-container');
+    if (headerContainer) {
+      // Check if header is already loaded (e.g., from inline script in index.html)
+      if (!headerContainer.innerHTML.trim()) {
+        headerContainer.innerHTML = headerData;
+        // Wait a bit for DOM to update
+        setTimeout(() => {
+          initializeHeader();
+        }, 50);
+      } else {
+        // Header already loaded, wait a bit and then initialize the language switcher
+        setTimeout(() => {
+          initializeHeader();
+        }, 100);
+      }
+    }
+
+    // Insert footer only if container exists and is empty
     const footerContainer = document.getElementById('footer-container');
-    if (footerContainer) {
+    if (footerContainer && !footerContainer.innerHTML.trim()) {
       footerContainer.innerHTML = footerData;
       initializeFooter();
       
@@ -82,17 +417,33 @@ document.addEventListener("DOMContentLoaded", (() => {
     // Apply language translations
     const savedLanguage = localStorage.getItem('language') || 'sv';
     applyLanguage(savedLanguage);
+    optimizeImages();
+    setupSeo();
+    updateScrollProgress();
+    window.requestAnimationFrame(() => {
+      initializeResponsiveParallaxSections();
+      initializeFooterReveal();
+      ScrollTrigger.refresh();
+    });
   }).catch(error => {
     console.error('Error loading sections:', error);
   });
 
-  const hero = document.querySelector(".hero"), sections = document.querySelectorAll(".features-wrapper, .features-summary-wrapper, #pricing, #about, .cta-section, footer");
+  optimizeImages();
+  setupSeo();
+  updateScrollProgress();
+
+  const hero = document.querySelector(".hero");
+  // Find all sections with section-hidden class (works for both main page and step-details pages)
+  const sections = document.querySelectorAll(".section-hidden, .features-wrapper, .features-summary-wrapper, #pricing, #about, .cta-section, footer");
   lucide.createIcons(), gsap.registerPlugin(ScrollTrigger);
   const carouselTrack = document.querySelector(".carousel-track"), carouselPrev = document.querySelector(".carousel-prev"), carouselNext = document.querySelector(".carousel-next"), useCaseCards = document.querySelectorAll(".use-case-card");
   let currentIndex = 0;
   function updateCarousel() {
+    if (!carouselTrack || !useCaseCards.length) return;
     const cardWidth = useCaseCards[0].offsetWidth;
-    carouselTrack.style.transform = `translateX(-${currentIndex * (cardWidth + 32)}px)`, 
+    const gap = parseFloat(getComputedStyle(carouselTrack).gap) || 32;
+    carouselTrack.style.transform = `translateX(-${currentIndex * (cardWidth + gap)}px)`, 
     carouselPrev.style.opacity = 0 === currentIndex ? "0.5" : "1", carouselNext.style.opacity = currentIndex === useCaseCards.length - 1 ? "0.5" : "1";
   }
   carouselPrev && carouselNext && (
@@ -113,88 +464,76 @@ document.addEventListener("DOMContentLoaded", (() => {
       }
     }),
     updateCarousel()
-  ), ScrollTrigger.matchMedia({
+  );
+  window.addEventListener('resize', () => { if (typeof updateCarousel === 'function') updateCarousel(); });
+
+  // Touch-swipe för karusellen
+  if (carouselTrack) {
+    let touchStartX = 0;
+    let touchEndX = 0;
+    const swipeThreshold = 50;
+    carouselTrack.addEventListener('touchstart', (e) => {
+      touchStartX = e.changedTouches[0].screenX;
+    }, { passive: true });
+    carouselTrack.addEventListener('touchend', (e) => {
+      touchEndX = e.changedTouches[0].screenX;
+      const diff = touchStartX - touchEndX;
+      if (Math.abs(diff) > swipeThreshold) {
+        if (diff > 0 && currentIndex < useCaseCards.length - 1) {
+          currentIndex++;
+          updateCarousel();
+        } else if (diff < 0 && currentIndex > 0) {
+          currentIndex--;
+          updateCarousel();
+        }
+      }
+    }, { passive: true });
+  }
+
+  ScrollTrigger.matchMedia({
     "(min-width: 768px)": function() {
-      ScrollTrigger.create({
-        trigger: ".hero",
-        start: "top top",
-        end: "bottom top",
-        pin: !0,
-        pinSpacing: !1,
-        scrub: !0
-      }), hero && (gsap.set(hero, {
-        autoAlpha: 1,
-        y: 0
-      }), gsap.to(hero, {
-        yPercent: -10,
-        ease: "none",
-        scrollTrigger: {
-          trigger: ".hero",
+      if (hero) {
+        ScrollTrigger.create({
+          trigger: hero,
           start: "top top",
           end: "bottom top",
+          pin: !0,
+          pinSpacing: !1,
           scrub: !0
+        });
+
+        gsap.set(hero, {
+          autoAlpha: 1,
+          y: 0
+        });
+
+        gsap.to(hero, {
+          yPercent: -10,
+          ease: "none",
+          scrollTrigger: {
+            trigger: hero,
+            start: "top top",
+            end: "bottom top",
+            scrub: !0
+          }
+        });
+
+        const heroTextContainer = document.querySelector('.hero-text-container');
+        if (heroTextContainer) {
+          gsap.to(heroTextContainer, {
+            yPercent: -15,
+            ease: "none",
+            scrollTrigger: {
+              trigger: hero,
+              start: "top top",
+              end: "bottom top",
+              scrub: true
+            }
+          });
         }
-      }),
-      // Parallax för hero-text
-      gsap.to(".hero-text-container", {
-        yPercent: -15,
-        ease: "none",
-        scrollTrigger: {
-          trigger: ".hero",
-          start: "top top",
-          end: "bottom top",
-          scrub: true
-        }
-      })), gsap.to(".big-card .text-content", {
-        yPercent: -20,
-        ease: "none",
-        scrollTrigger: {
-          trigger: ".big-card",
-          start: "top bottom",
-          end: "bottom top",
-          scrub: !0
-        }
-      }), gsap.to(".big-card .image-side img", {
-        yPercent: 20,
-        ease: "none",
-        scrollTrigger: {
-          trigger: ".big-card",
-          start: "top bottom",
-          end: "bottom top",
-          scrub: !0
-        }
-      }), gsap.fromTo(".big-card .image-side img", {
-        scale: 1
-      }, {
-        scale: 1.1,
-        ease: "none",
-        scrollTrigger: {
-          trigger: ".big-card .image-side img",
-          start: "top 80%",
-          end: "bottom top",
-          scrub: !0
-        }
-      }), gsap.to(".about-wrapper", {
-        yPercent: -10,
-        ease: "none",
-        scrollTrigger: {
-          trigger: ".about-wrapper",
-          start: "top bottom",
-          end: "bottom top",
-          scrub: !0
-        }
-      }), gsap.fromTo(".about-image img", {
-        scale: 1
-      }, {
-        scale: 1.1,
-        ease: "none",
-        scrollTrigger: {
-          trigger: ".about-image img",
-          start: "top 80%",
-          end: "bottom top",
-          scrub: !0
-        }
-      });
+      }
+
+      initializeResponsiveParallaxSections();
     }
   }), sections.forEach((section => {
     section.matches("footer") || (gsap.set(section, {
@@ -262,22 +601,7 @@ document.addEventListener("DOMContentLoaded", (() => {
         });
       }
     }));
-  })), gsap.set("footer", {
-    autoAlpha: 0,
-    y: 40
-  }), ScrollTrigger.create({
-    trigger: "footer",
-    start: "top 90%",
-    onEnter: () => {
-      const footer = document.querySelector("footer");
-      footer.classList.remove("section-hidden"), gsap.to(footer, {
-        autoAlpha: 1,
-        y: 0,
-        duration: 1,
-        ease: "power1.out"
-      });
-    }
-  });
+  })), initializeFooterReveal();
   (selector => {
     const el = document.querySelector(selector);
     if (!el) return;
@@ -300,13 +624,12 @@ document.addEventListener("DOMContentLoaded", (() => {
         toggleActions: "play none none none"
       }
     });
-  })(".hero h1"), window.switchLanguage = function(lang) {
-    localStorage.setItem("language", lang), location.reload();
-  };
+  })(".hero h1");
   const featureCards = gsap.utils.toArray(".feature-card"), featuresIntro = document.querySelector(".features-intro");
   if (featuresIntro) {
     const introTitle = featuresIntro.querySelector("h2"), introText = featuresIntro.querySelector(".intro");
-    gsap.fromTo([ introTitle, introText ], {
+    const introTargets = filterExistingTargets([ introTitle, introText ]);
+    gsap.fromTo(introTargets, {
       opacity: 0,
       y: 20
     }, {
@@ -326,7 +649,12 @@ document.addEventListener("DOMContentLoaded", (() => {
     card.classList.remove("section-hidden");
   })), featureCards.forEach(((card, i) => {
     const content = card.querySelector(".feature-content"), visual = card.querySelector(".feature-visual"), icon = card.querySelector(".feature-icon"), title = card.querySelector("h3"), description = card.querySelector("p");
-    gsap.set([ content, visual, icon, title, description ], {
+    const cardTargets = filterExistingTargets([ content, visual, icon, title, description ]);
+    if (!cardTargets.length) {
+      return;
+    }
+
+    gsap.set(cardTargets, {
       opacity: 0,
       y: 20
     }), ScrollTrigger.create({
@@ -334,7 +662,7 @@ document.addEventListener("DOMContentLoaded", (() => {
       start: "top center",
       end: "bottom center",
       onEnter: () => {
-        gsap.to([ content, visual, icon, title, description ], {
+        gsap.to(cardTargets, {
           opacity: 1,
           y: 0,
           duration: .8,
@@ -343,54 +671,34 @@ document.addEventListener("DOMContentLoaded", (() => {
         });
       },
       onLeaveBack: () => {
-        gsap.to([ content, visual, icon, title, description ], {
+        gsap.to(cardTargets, {
           opacity: 0,
           y: 20,
           duration: .8,
           ease: "expo.out"
         });
       }
-    }), gsap.to(card, {
-      yPercent: 15,
-      ease: "none",
-      scrollTrigger: {
-        trigger: card,
-        start: "top bottom",
-        end: "bottom top",
-        scrub: .8
+    }), ScrollTrigger.matchMedia({
+      "(min-width: 769px)": () => {
+        gsap.to(card, {
+          yPercent: 15,
+          ease: "none",
+          scrollTrigger: {
+            trigger: card,
+            start: "top bottom",
+            end: "bottom top",
+            scrub: .8
+          }
+        });
       }
     });
   })), document.querySelectorAll(".features-grid .feature-card").forEach((card => {
     const newClone = card.cloneNode(!0);
     card.parentNode.replaceChild(newClone, card);
   }));
-  const langButtons = document.querySelectorAll(".language-switcher .lang-btn, .language-switcher-footer .lang-btn, .language-switcher a"), currentLang = localStorage.getItem("language") || "sv";
-  langButtons.forEach((btn => {
-    btn.dataset.lang === currentLang ? btn.classList.add("active") : btn.classList.remove("active"), 
-    btn.addEventListener("click", (e => {
-      e.preventDefault();
-      const lang = btn.dataset.lang;
-      window.switchLanguage(lang);
-    }));
-  })), window.addEventListener("languageChanged", (e => {
-    const newLang = e.detail.lang;
-    langButtons.forEach((btn => {
-      btn.dataset.lang === newLang ? btn.classList.add("active") : btn.classList.remove("active");
-    }));
-  }));
 
   // Lägg till hero intro-animation timeline
-  const heroTimeline = gsap.timeline({ defaults: { duration: 0.8, ease: "power1.out" } });
-  heroTimeline
-    .from(".small-top-text", { autoAlpha: 0, y: -20 })
-    .from(".hero h1", { autoAlpha: 0, y: 50 }, "-=0.4")
-    .from(".subtitle", { autoAlpha: 0, y: 20 }, "-=0.4")
-    .fromTo(
-      ".hero .cta-btn",
-      { autoAlpha: 0, scale: 0.9 },
-      { autoAlpha: 1, scale: 1, ease: "back.out(1.7)", duration: 0.8 },
-      "-=0.4"
-    );
+  initializeHeroIntroAnimation();
 
   // Lägg till dragbar inertial scroll för use-case-karusellen
   if (carouselTrack) {
@@ -421,58 +729,151 @@ document.addEventListener("DOMContentLoaded", (() => {
   }
 
   // Lägg till scroll-progress-funktionalitet
-  window.addEventListener('scroll', () => {
-    const scrollPos = window.scrollY || window.pageYOffset;
-    const docHeight = document.documentElement.scrollHeight - window.innerHeight;
-    const percent = (scrollPos / docHeight) * 100;
-    const bar = document.querySelector('.scroll-progress__bar');
-    if (bar) bar.style.width = percent + '%';
-  });
+  window.addEventListener('scroll', updateScrollProgress);
 
   // Add header initialization function
   function initializeHeader() {
-    // Initialize language switcher
-    const langButtons = document.querySelectorAll(".language-switcher a");
-    const currentLang = localStorage.getItem('language') || 'sv';
-    
-    langButtons.forEach(btn => {
-      if (btn.dataset.lang === currentLang) {
-        btn.classList.add('active');
-      }
-      
-      btn.addEventListener('click', (e) => {
-        e.preventDefault();
-        const lang = btn.dataset.lang;
-        window.switchLanguage(lang);
-      });
+    // Sätt rätt bas-sökväg för länkar och bilder (fungerar från root och features/)
+    const path = window.location.pathname || '';
+    const base = path.includes('/features/') ? '../' : '';
+    document.querySelectorAll('.header a[data-href]').forEach(a => {
+      a.href = base + a.getAttribute('data-href');
+    });
+    document.querySelectorAll('.header img[data-src]').forEach(img => {
+      img.src = base + img.getAttribute('data-src');
+    });
+    document.querySelectorAll('.header img[data-src-assets]').forEach(img => {
+      img.src = base + 'assets/' + img.getAttribute('data-src-assets');
+    });
+    document.querySelectorAll('.mobile-menu a[data-href]').forEach(a => {
+      a.href = base + a.getAttribute('data-href');
+    });
+    document.querySelectorAll('.mobile-menu img[data-src-assets]').forEach(img => {
+      img.src = base + 'assets/' + img.getAttribute('data-src-assets');
     });
 
+    // Mobilmeny: hamburger-knapp och overlay – enhetlig stängning så hamburger/aria alltid synkad
+    const hamburger = document.querySelector('.hamburger-btn');
+    const overlay = document.querySelector('.mobile-menu-overlay');
+    const mobileLangLinks = document.querySelectorAll('.mobile-menu-lang a');
+    if (hamburger && overlay) {
+      const closeMenu = () => {
+        overlay.classList.remove('open');
+        document.body.style.overflow = '';
+        hamburger.setAttribute('aria-expanded', 'false');
+        hamburger.setAttribute('aria-label', 'Öppna meny');
+        overlay.setAttribute('aria-hidden', 'true');
+        hamburger.focus();
+      };
+      const openMenu = () => {
+        overlay.classList.add('open');
+        document.body.style.overflow = 'hidden';
+        hamburger.setAttribute('aria-expanded', 'true');
+        hamburger.setAttribute('aria-label', 'Stäng meny');
+        overlay.setAttribute('aria-hidden', 'false');
+      };
+      const toggleMenu = () => {
+        if (overlay.classList.contains('open')) closeMenu();
+        else openMenu();
+      };
+      hamburger.addEventListener('click', toggleMenu);
+      overlay.querySelectorAll('a:not([data-lang])').forEach(link => {
+        link.addEventListener('click', () => closeMenu());
+      });
+      mobileLangLinks.forEach(btn => {
+        if (btn.hasAttribute('data-lang-initialized')) return;
+        btn.setAttribute('data-lang-initialized', 'true');
+        btn.addEventListener('click', (e) => {
+          e.preventDefault();
+          const lang = btn.dataset.lang;
+          if (typeof window.switchLanguage === 'function') window.switchLanguage(lang);
+          closeMenu();
+        });
+      });
+      overlay.addEventListener('click', (e) => { if (e.target === overlay) closeMenu(); });
+    }
+    // Initialize language switcher - wait for switchLanguage to be available
+    const initLanguageSwitcher = () => {
+      const langButtons = document.querySelectorAll(".language-switcher a");
+      
+      if (langButtons.length > 0 && typeof window.switchLanguage === 'function') {
+        langButtons.forEach(btn => {
+          // Check if button already has event listener (avoid re-initializing)
+          if (btn.hasAttribute('data-lang-initialized')) {
+            return;
+          }
+          
+          // Mark as initialized
+          btn.setAttribute('data-lang-initialized', 'true');
+          
+          btn.addEventListener('click', (e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            const lang = btn.dataset.lang;
+            if (typeof window.switchLanguage === 'function') {
+              window.switchLanguage(lang);
+            }
+          });
+        });
+        
+        // Set initial active state
+        updateLanguageButtons();
+      } else if (langButtons.length > 0) {
+        // Retry after a short delay if switchLanguage is not yet available
+        setTimeout(initLanguageSwitcher, 100);
+      }
+    };
+    
+    initLanguageSwitcher();
+
     // Initialize Lucide icons in header
-    lucide.createIcons();
+    if (typeof lucide !== 'undefined' && lucide.createIcons) {
+      lucide.createIcons();
+    }
   }
 
   // Add footer initialization function
   function initializeFooter() {
+    const path = window.location.pathname || '';
+    const base = path.includes('/features/') ? '../' : '';
+
+    document.querySelectorAll('footer a[data-href]').forEach(link => {
+      link.href = base + link.getAttribute('data-href');
+    });
+
+    document.querySelectorAll('footer img[data-src]').forEach(img => {
+      img.src = base + img.getAttribute('data-src');
+    });
+
     // Initialize footer language switcher
     const footerLangButtons = document.querySelectorAll(".language-switcher-footer .lang-btn");
-    const currentLang = localStorage.getItem('language') || 'sv';
     
-    footerLangButtons.forEach(btn => {
-      if (btn.dataset.lang === currentLang) {
-        btn.classList.add('active');
-      }
-      
-      btn.addEventListener('click', (e) => {
-        e.preventDefault();
-        const lang = btn.dataset.lang;
-        window.switchLanguage(lang);
+    if (footerLangButtons.length > 0 && typeof window.switchLanguage === 'function') {
+      footerLangButtons.forEach(btn => {
+        // Remove existing listeners to avoid duplicates
+        const newBtn = btn.cloneNode(true);
+        btn.parentNode.replaceChild(newBtn, btn);
+        
+        newBtn.addEventListener('click', (e) => {
+          e.preventDefault();
+          const lang = newBtn.dataset.lang;
+          if (typeof window.switchLanguage === 'function') {
+            window.switchLanguage(lang);
+          }
+        });
       });
-    });
+      
+      // Set initial active state
+      updateLanguageButtons();
+    }
 
     // Initialize Font Awesome icons in footer
     if (window.FontAwesome) {
       window.FontAwesome.dom.i2svg();
     }
+
+    optimizeImages();
+    setupSeo();
   }
 
   // Header scroll behavior
@@ -511,6 +912,7 @@ document.addEventListener("DOMContentLoaded", (() => {
     let currentIndex = 0;
 
     function updateCarousel() {
+      if (!carouselTrack || !useCaseCards.length) return;
       const cardWidth = useCaseCards[0].offsetWidth;
       carouselTrack.style.transform = `translateX(-${currentIndex * (cardWidth + 32)}px)`;
       carouselPrev.style.opacity = currentIndex === 0 ? "0.5" : "1";
@@ -541,7 +943,7 @@ document.addEventListener("DOMContentLoaded", (() => {
   }
 
   // === FEATURES SUMMARY PAGE SCRIPTS ===
-  document.addEventListener('DOMContentLoaded', function() {
+  {
     // Sticky nav active - disabled
     const navLinks = document.querySelectorAll('.features-nav a');
     const sections = [
@@ -569,7 +971,7 @@ document.addEventListener("DOMContentLoaded", (() => {
     // FAQ expand/collapse
     initFaqAccessibility();
 
-    // Carousel accessibility & swipe
+    // Carousel accessibility & swipe (för features-summary.html)
     const carousel = document.querySelector('.use-cases-carousel');
     const track = carousel ? carousel.querySelector('.carousel-track') : null;
     const prevBtn = carousel ? carousel.querySelector('.carousel-prev') : null;
@@ -592,7 +994,6 @@ document.addEventListener("DOMContentLoaded", (() => {
       });
       updateCarousel();
     }
-    // Swipe for mobile
     let startX = null;
     if (track) {
       track.addEventListener('touchstart', e => { startX = e.touches[0].clientX; });
@@ -607,7 +1008,7 @@ document.addEventListener("DOMContentLoaded", (() => {
       });
       track.addEventListener('touchend', () => { startX = null; });
     }
-  });
+  }
 
   // Hanterar klick på 'Läs mer'-knappar i feature cards
   // Öppnar detaljsidan i en ny flik/fönster
@@ -637,7 +1038,7 @@ document.addEventListener("DOMContentLoaded", (() => {
         if (ans) ans.classList.toggle('show');
         q.parentElement.classList.toggle('active');
       });
-      q.addEventListener('keydown', function(e) {
+      if (q.tagName !== 'BUTTON') q.addEventListener('keydown', function(e) {
         if (e.key === 'Enter' || e.key === ' ') q.click();
       });
     });
@@ -743,8 +1144,8 @@ document.addEventListener("DOMContentLoaded", (() => {
 
   // Feature comparison table functionality
   function initializeFeatureComparison() {
-    const searchInput = document.querySelector('.feature-search');
-    const categoryButtons = document.querySelectorAll('.category-button');
+    const searchInput = document.querySelector('#featureSearch, .feature-search');
+    const categoryButtons = document.querySelectorAll('.category-btn, .category-button');
     const tableRows = document.querySelectorAll('.feature-comparison-table tbody tr');
 
     if (searchInput) {
@@ -789,14 +1190,14 @@ document.addEventListener("DOMContentLoaded", (() => {
       });
 
       // Initialize with all features visible
-      categoryButtons[0].click();
+      if (categoryButtons[0]) categoryButtons[0].click();
     }
   }
 
-  // Initialize all feature-related functionality when DOM is loaded
-  document.addEventListener('DOMContentLoaded', () => {
-    initFeatureComparison();
-    initFeatureCards();
+  // Initialize all feature-related functionality
+  {
+    initializeFeatureComparison();
+    initializeFeatureCards();
     
     // Add smooth scroll for feature cards
     const featureLearnMoreButtons = document.querySelectorAll('.feature-learn-more');
@@ -811,77 +1212,91 @@ document.addEventListener("DOMContentLoaded", (() => {
         }
       });
     });
-  });
+  }
 
   // Initialize feature detail page animations
   function initFeatureDetailPage() {
+    const featureHeroContent = document.querySelector('.feature-hero-content, .pricing-hero-content');
+    const featureDetailCards = gsap.utils.toArray('.feature-detail-card');
+    const featureDetailsSection = document.querySelector('.feature-details, .feature-detail-section, .feature-details-grid');
+    const steps = gsap.utils.toArray('.step');
+    const howItWorks = document.querySelector('.how-it-works');
+    const benefitCards = gsap.utils.toArray('.benefit-card');
+    const benefitsSection = document.querySelector('.benefits');
+    const featureCta = document.querySelector('.feature-cta');
+
     // Animate hero section
-    gsap.from('.feature-hero-content', {
-      duration: 1,
-      y: 50,
-      opacity: 0,
-      ease: 'power3.out'
-    });
+    if (featureHeroContent) {
+      gsap.from(featureHeroContent, {
+        duration: 1,
+        y: 50,
+        opacity: 0,
+        ease: 'power3.out'
+      });
+    }
 
     // Animate feature cards
-    gsap.from('.feature-detail-card', {
-      duration: 0.8,
-      y: 30,
-      opacity: 0,
-      stagger: 0.2,
-      ease: 'power2.out',
-      scrollTrigger: {
-        trigger: '.feature-details',
-        start: 'top 80%'
-      }
-    });
+    if (featureDetailCards.length && featureDetailsSection) {
+      gsap.from(featureDetailCards, {
+        duration: 0.8,
+        y: 30,
+        opacity: 0,
+        stagger: 0.2,
+        ease: 'power2.out',
+        scrollTrigger: {
+          trigger: featureDetailsSection,
+          start: 'top 80%'
+        }
+      });
+    }
 
     // Animate steps
-    gsap.from('.step', {
-      duration: 0.8,
-      y: 30,
-      opacity: 0,
-      stagger: 0.2,
-      ease: 'power2.out',
-      scrollTrigger: {
-        trigger: '.how-it-works',
-        start: 'top 80%'
-      }
-    });
+    if (steps.length && howItWorks) {
+      gsap.from(steps, {
+        duration: 0.8,
+        y: 30,
+        opacity: 0,
+        stagger: 0.2,
+        ease: 'power2.out',
+        scrollTrigger: {
+          trigger: howItWorks,
+          start: 'top 80%'
+        }
+      });
+    }
 
     // Animate benefits
-    gsap.from('.benefit-card', {
-      duration: 0.8,
-      y: 30,
-      opacity: 0,
-      stagger: 0.2,
-      ease: 'power2.out',
-      scrollTrigger: {
-        trigger: '.benefits',
-        start: 'top 80%'
-      }
-    });
+    if (benefitCards.length && benefitsSection) {
+      gsap.from(benefitCards, {
+        duration: 0.8,
+        y: 30,
+        opacity: 0,
+        stagger: 0.2,
+        ease: 'power2.out',
+        scrollTrigger: {
+          trigger: benefitsSection,
+          start: 'top 80%'
+        }
+      });
+    }
 
     // Animate CTA section
-    gsap.from('.feature-cta', {
-      duration: 1,
-      y: 30,
-      opacity: 0,
-      ease: 'power2.out',
-      scrollTrigger: {
-        trigger: '.feature-cta',
-        start: 'top 80%'
-      }
-    });
+    if (featureCta) {
+      gsap.from(featureCta, {
+        duration: 1,
+        y: 30,
+        opacity: 0,
+        ease: 'power2.out',
+        scrollTrigger: {
+          trigger: featureCta,
+          start: 'top 80%'
+        }
+      });
+    }
   }
 
-  // Initialize all functionality when DOM is loaded
-  document.addEventListener('DOMContentLoaded', () => {
-    // ... existing code ...
-    
-    // Initialize feature detail page if we're on a feature detail page
-    if (document.querySelector('.feature-hero')) {
-      initFeatureDetailPage();
-    }
-  });
+  // Initialize feature detail page if we're on a feature detail page
+  if (document.querySelector('.feature-detail-section, .feature-details-grid, .how-it-works, .feature-cta')) {
+    initFeatureDetailPage();
+  }
 }));
