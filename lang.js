@@ -771,7 +771,7 @@ const translations = {
       footerWebinars: "Webinars",
       footerSupport: "Support Center",
       footerContact: "Contact Us",
-      footerEmail: "oe@constructionsourcing.se",
+      footerEmail: "oe@constructionsourcing.eu",
       footerPhone: "+46 73 435 35 88",
       footerStreet: "Vittangigatan 10, 162 61",
       footerCity: "Vällingby Sweden",
@@ -782,7 +782,7 @@ const translations = {
       footerTerms: "Terms of Service",
       footerCookies: "Cookie Policy",
       footerSitemap: "Sitemap",
-      footerCompany: "© 2024 Construction Sourcing Sweden AB",
+      footerCompany: "© {year} Construction Sourcing Sweden AB",
       footerVersion: "Beta",
       footerBetaTag: "Pre-Launch Version coming soon",
       popupTitle: "Join Our Early Access Program",
@@ -791,8 +791,15 @@ const translations = {
       popupSubmit: "Register Interest",
       popupDecline: "No, Thanks",
       popupDisclaimer: "By joining, you'll get early access to test features and provide feedback to help shape the platform.",
+      confirmationEyebrow: "Application received",
       confirmationTitle: "Welcome to Early Access!",
-      confirmationText: "Thank you for joining! We'll contact you soon with access details and ways to provide feedback.",
+      confirmationText: "Thanks for signing up. We will contact you when the next spots open.",
+      confirmationNextTitle: "Next",
+      confirmationStep1: "We confirm your application.",
+      confirmationStep2: "You receive updates and access details by email.",
+      confirmationStep3: "Want a faster start? Book a short intro.",
+      confirmationSecondaryCta: "Book a call",
+      confirmationFooterNote: "Questions? Reply to our email.",
       confirmationClose: "Close",
       heroTopText: "Be the first to experience it!",
       heroHighlightText: " Register Interest",
@@ -1424,6 +1431,55 @@ const translations = {
       joinEarlyAccessBtn: "Register Interest",
       joinEarlyAccessText: "Sign up for early access and be among the first to experience the future of construction sourcing.",
       joinEarlyAccessTitle: "Ready to join our early access program?",
+      breadcrumbHome: "Home",
+      aboutPageTitle: "About Us - Construction Sourcing",
+      aboutMissionTitle: "Our Mission",
+      aboutMissionText: "We build a transparent, practical platform that helps construction companies and suppliers find each other faster, collaborate more clearly, and reduce avoidable risk in every project.",
+      foundersTitle: "Founders",
+      aboutOliverName: "Oliver Ehrenberg",
+      aboutAndersName: "Anders Niclazon",
+      blogPageTitle: "Blog",
+      blogPageText: "Insights, product updates, and industry reflections from Construction Sourcing.",
+      guidesPageTitle: "Guides",
+      guidesPageText: "Practical guides and walkthroughs to help you get more value from Construction Sourcing.",
+      supportPageTitle: "Support",
+      supportPageText: "Find answers to common questions and contact us if you need help before or after launch.",
+      webinarsPageTitle: "Webinars",
+      webinarsPageText: "Join upcoming sessions where we show workflows, product updates, and best practices for modern construction sourcing.",
+      supplierUSP1: "AI-Powered Matching",
+      supplierUSP2: "Verified Suppliers",
+      supplierUSP3: "Performance Analytics",
+      supplierNetworkFeaturesTitle: "Key Features",
+      supplierStep1Title: "Define Your Needs",
+      supplierStep1Desc: "Enter your project requirements, specifications, and timeline to help our AI find the right match.",
+      supplierStep2Title: "Get Matched",
+      supplierStep2Desc: "Our AI analyzes your needs and presents verified suppliers that best match your requirements.",
+      supplierStep3Title: "Connect & Collaborate",
+      supplierStep3Desc: "Connect with suppliers directly through the platform and start collaborating on your project.",
+      supplierBenefit1Title: "Save Time",
+      supplierBenefit1Desc: "Find qualified suppliers in minutes instead of spending days on manual outreach.",
+      supplierBenefit2Title: "Reduce Risk",
+      supplierBenefit2Desc: "Work with verified suppliers to lower the risk of delays, disputes, and poor fit.",
+      supplierBenefit3Title: "Better Results",
+      supplierBenefit3Desc: "Use performance data and structured information to make better sourcing decisions.",
+      supplierCtaTitle: "Ready to Transform Your Supplier Network?",
+      supplierCtaText: "Join our early access program and be among the first to experience smarter construction sourcing.",
+      step5DetailStep1Action1: "Navigate to the quote request section in Dashboard",
+      step5DetailStep1Action2: "Or open quote request creation from an existing supplier chat",
+      step5DetailStep1Action3: "Click 'Create Quote Request' to open the form",
+      step5DetailStep1Tip: "You can start a quote request either from Dashboard or directly from a supplier conversation.",
+      step5DetailStep2Action1: "Describe materials, quantities and specifications",
+      step5DetailStep2Action2: "Add delivery dates, locations and any technical requirements",
+      step5DetailStep2Action3: "Include enough detail for suppliers to respond accurately",
+      step5DetailStep2Tip: "Clear requirements lead to faster and more comparable quotes.",
+      step5DetailStep3Action1: "Select suppliers from your contact list or catalog",
+      step5DetailStep3Action2: "Choose whether the request should be public or limited",
+      step5DetailStep3Action3: "Review any extra settings before continuing",
+      step5DetailStep3Tip: "Visibility settings help you balance reach, control, and relevance.",
+      step5DetailStep4Action1: "Review all requirements and selected suppliers",
+      step5DetailStep4Action2: "Adjust settings, deadlines, or notes if needed",
+      step5DetailStep4Action3: "Send the request and wait for suppliers to respond",
+      step5DetailStep4Tip: "A final review reduces the risk of incomplete or unclear requests.",
     },
     sv: {
       features: "Funktioner",
@@ -2165,7 +2221,7 @@ const translations = {
       footerWebinars: "Webbinarier",
       footerSupport: "Supportcenter",
       footerContact: "Kontakta Oss",
-      footerEmail: "oe@constructionsourcing.se",
+      footerEmail: "oe@constructionsourcing.eu",
       footerPhone: "+46 73 435 35 88",
       footerStreet: "Vittangigatan 10, 162 61",
       footerCity: "Vällingby Sweden",
@@ -2176,7 +2232,7 @@ const translations = {
       footerTerms: "Användarvillkor",
       footerCookies: "Cookie-policy",
       footerSitemap: "Sidkarta",
-      footerCompany: "© 2024 Construction Sourcing Sweden AB",
+      footerCompany: "© {year} Construction Sourcing Sweden AB",
       footerVersion: "Beta",
       footerBetaTag: "Pre-Launch Version kommer snart",
       popupTitle: "Gå Med i Vårt Early Access-program",
@@ -2185,8 +2241,15 @@ const translations = {
       popupSubmit: "Anmäl Intresse",
       popupDecline: "Nej, Tack",
       popupDisclaimer: "Genom att gå med får du tidig tillgång för att testa funktioner och ge feedback för att forma plattformen.",
+      confirmationEyebrow: "Anmälan mottagen",
       confirmationTitle: "Välkommen till Early Access!",
-      confirmationText: "Tack för att du går med! Vi kontaktar dig snart med tillgångsinformation och sätt att ge feedback.",
+      confirmationText: "Tack för din anmälan. Vi hör av oss när nästa platser öppnas.",
+      confirmationNextTitle: "Nästa",
+      confirmationStep1: "Vi bekräftar din anmälan.",
+      confirmationStep2: "Du får uppdateringar och tillgång via mejl.",
+      confirmationStep3: "Vill du gå snabbare fram kan du boka ett kort intro.",
+      confirmationSecondaryCta: "Boka samtal",
+      confirmationFooterNote: "Frågor? Svara på vårt mejl.",
       confirmationClose: "Stäng",
       heroTopText: "Var först med att ta del av den!",
       heroHighlightText: " Anmäl Intresse",
@@ -2820,6 +2883,55 @@ const translations = {
       joinEarlyAccessBtn: "Anmäl Intresse",
       joinEarlyAccessText: "Anmäl dig för early access och var bland de första att uppleva framtidens byggupphandling.",
       joinEarlyAccessTitle: "Redo att gå med i vårt early access-program?",
+      breadcrumbHome: "Hem",
+      aboutPageTitle: "Om oss - Construction Sourcing",
+      aboutMissionTitle: "Vårt uppdrag",
+      aboutMissionText: "Vi bygger en transparent och praktisk plattform som hjälper byggföretag och leverantörer att hitta varandra snabbare, samarbeta tydligare och minska onödiga risker i varje projekt.",
+      foundersTitle: "Grundare",
+      aboutOliverName: "Oliver Ehrenberg",
+      aboutAndersName: "Anders Niclazon",
+      blogPageTitle: "Blogg",
+      blogPageText: "Insikter, produktnyheter och reflektioner om byggbranschens digitalisering från Construction Sourcing.",
+      guidesPageTitle: "Guider",
+      guidesPageText: "Praktiska guider och genomgångar som hjälper dig att få ut mer av Construction Sourcing.",
+      supportPageTitle: "Support",
+      supportPageText: "Hitta svar på vanliga frågor och kontakta oss om du behöver hjälp före eller efter lansering.",
+      webinarsPageTitle: "Webbinarier",
+      webinarsPageText: "Delta i kommande sessioner där vi visar arbetsflöden, produktnyheter och best practice för modern byggupphandling.",
+      supplierUSP1: "AI-driven matchning",
+      supplierUSP2: "Verifierade leverantörer",
+      supplierUSP3: "Prestationsanalys",
+      supplierNetworkFeaturesTitle: "Nyckelfunktioner",
+      supplierStep1Title: "Definiera dina behov",
+      supplierStep1Desc: "Ange projektkrav, specifikationer och tidsplan så att vår AI kan hitta rätt leverantörsmatchning.",
+      supplierStep2Title: "Få matchningar",
+      supplierStep2Desc: "Vår AI analyserar dina behov och presenterar verifierade leverantörer som bäst matchar dina krav.",
+      supplierStep3Title: "Anslut och samarbeta",
+      supplierStep3Desc: "Ta direktkontakt med leverantörer via plattformen och börja samarbeta kring ditt projekt.",
+      supplierBenefit1Title: "Spara tid",
+      supplierBenefit1Desc: "Hitta kvalificerade leverantörer på minuter i stället för att lägga dagar på manuell research.",
+      supplierBenefit2Title: "Minska risk",
+      supplierBenefit2Desc: "Arbeta med verifierade leverantörer för att minska risken för förseningar, tvister och felaktiga val.",
+      supplierBenefit3Title: "Bättre resultat",
+      supplierBenefit3Desc: "Använd prestationsdata och strukturerad information för bättre inköpsbeslut.",
+      supplierCtaTitle: "Redo att transformera ditt leverantörsnätverk?",
+      supplierCtaText: "Gå med i vårt early access-program och var bland de första att uppleva smartare byggupphandling.",
+      step5DetailStep1Action1: "Navigera till offertförfrågningssektionen i Dashboard",
+      step5DetailStep1Action2: "Eller starta en offertförfrågan från en befintlig leverantörschatt",
+      step5DetailStep1Action3: "Klicka på 'Skapa offertförfrågan' för att öppna formuläret",
+      step5DetailStep1Tip: "Du kan starta en offertförfrågan både från Dashboard och direkt från en leverantörskonversation.",
+      step5DetailStep2Action1: "Beskriv material, kvantiteter och specifikationer",
+      step5DetailStep2Action2: "Lägg till leveransdatum, platser och tekniska krav",
+      step5DetailStep2Action3: "Ge tillräckligt med detaljer för att leverantörer ska kunna svara korrekt",
+      step5DetailStep2Tip: "Tydliga krav leder till snabbare och mer jämförbara offerter.",
+      step5DetailStep3Action1: "Välj leverantörer från kontaktlistan eller katalogen",
+      step5DetailStep3Action2: "Bestäm om förfrågan ska vara publik eller begränsad",
+      step5DetailStep3Action3: "Granska extra inställningar innan du går vidare",
+      step5DetailStep3Tip: "Synlighetsinställningar hjälper dig att balansera räckvidd, kontroll och relevans.",
+      step5DetailStep4Action1: "Granska alla krav och valda leverantörer",
+      step5DetailStep4Action2: "Justera inställningar, deadlines eller anteckningar vid behov",
+      step5DetailStep4Action3: "Skicka förfrågan och invänta leverantörernas svar",
+      step5DetailStep4Tip: "En sista genomgång minskar risken för ofullständiga eller otydliga förfrågningar.",
     }
   };
   
@@ -2832,11 +2944,21 @@ const translations = {
       detail: { lang }
     }));
   }
+
+  function resolveDynamicTranslation(value) {
+    if (typeof value !== 'string') {
+      return value;
+    }
+
+    return value.replace('{year}', String(new Date().getFullYear()));
+  }
   
   // Make switchLanguage and applyLanguage available globally
   window.switchLanguage = switchLanguage;
   
   function applyLanguage(lang) {
+    document.documentElement.lang = lang === 'en' ? 'en' : 'sv';
+
     const elements = document.querySelectorAll('[data-translate]');
     elements.forEach((el) => {
       const key = el.getAttribute('data-translate');
@@ -2844,6 +2966,14 @@ const translations = {
         el.innerHTML = translations[lang][key];
       }
     });
+
+    const titleElement = document.querySelector('title[data-translate]');
+    if (titleElement) {
+      const titleKey = titleElement.getAttribute('data-translate');
+      if (translations[lang][titleKey]) {
+        document.title = translations[lang][titleKey];
+      }
+    }
   
     const heroTitle = document.querySelector('.hero h1');
     const heroSubtitle = document.querySelector('.hero .subtitle');
@@ -2871,14 +3001,14 @@ const translations = {
     });
   
     const footer = {
-      contact: document.querySelector('h4[data-translate="footerContact"]'),
-      address: document.querySelector('h4[data-translate="footerAddress"]'),
-      social: document.querySelector('h4[data-translate="footerSocial"]'),
-      email: document.querySelector('p[data-translate="footerEmail"]'),
-      phone: document.querySelector('p[data-translate="footerPhone"]'),
-      company: document.querySelector('p[data-translate="footerCompany"]'),
-      street: document.querySelector('p[data-translate="footerStreet"]'),
-      city: document.querySelector('p[data-translate="footerCity"]'),
+      contact: document.querySelector('[data-translate="footerContact"]'),
+      address: document.querySelector('[data-translate="footerAddress"]'),
+      social: document.querySelector('[data-translate="footerSocial"]'),
+      email: document.querySelector('[data-translate="footerEmail"]'),
+      phone: document.querySelector('[data-translate="footerPhone"]'),
+      company: document.querySelector('[data-translate="footerCompany"]'),
+      street: document.querySelector('[data-translate="footerStreet"]'),
+      city: document.querySelector('[data-translate="footerCity"]'),
       facebook: document.querySelector('a[data-translate="footerFacebook"]'),
       instagram: document.querySelector('a[data-translate="footerInstagram"]'),
       tiktok: document.querySelector('a[data-translate="footerTiktok"]')
@@ -2886,7 +3016,9 @@ const translations = {
   
     Object.entries(footer).forEach(([key, el]) => {
       if (el && translations[lang][`footer${key.charAt(0).toUpperCase() + key.slice(1)}`]) {
-        el.innerHTML = translations[lang][`footer${key.charAt(0).toUpperCase() + key.slice(1)}`];
+        el.innerHTML = resolveDynamicTranslation(
+          translations[lang][`footer${key.charAt(0).toUpperCase() + key.slice(1)}`]
+        );
       }
     });
 
@@ -2898,7 +3030,12 @@ const translations = {
     const popupDecline = document.querySelector('#newsletterModal .decline-btn');
     const popupDisclaimer = document.querySelector('#newsletterModal .disclaimer');
     const confirmationTitle = document.querySelector('#confirmationPopup h3');
-    const confirmationText = document.querySelector('#confirmationPopup p');
+    const confirmationEyebrow = document.querySelector('#confirmationPopup .confirmation-eyebrow');
+    const confirmationText = document.querySelector('#confirmationPopup .confirmation-message');
+    const confirmationNextTitle = document.querySelector('#confirmationPopup .confirmation-next-title');
+    const confirmationSteps = document.querySelectorAll('#confirmationPopup .confirmation-step');
+    const confirmationSecondaryCta = document.querySelector('#confirmationPopup .confirmation-link');
+    const confirmationNote = document.querySelector('#confirmationPopup .confirmation-note');
     const confirmationClose = document.querySelector('#confirmationPopup .submit-btn');
 
     if (popupTitle) popupTitle.innerHTML = translations[lang].popupTitle;
@@ -2907,8 +3044,15 @@ const translations = {
     if (popupSubmit) popupSubmit.innerHTML = translations[lang].popupSubmit;
     if (popupDecline) popupDecline.innerHTML = translations[lang].popupDecline;
     if (popupDisclaimer) popupDisclaimer.innerHTML = translations[lang].popupDisclaimer;
+    if (confirmationEyebrow) confirmationEyebrow.innerHTML = translations[lang].confirmationEyebrow;
     if (confirmationTitle) confirmationTitle.innerHTML = translations[lang].confirmationTitle;
     if (confirmationText) confirmationText.innerHTML = translations[lang].confirmationText;
+    if (confirmationNextTitle) confirmationNextTitle.innerHTML = translations[lang].confirmationNextTitle;
+    if (confirmationSteps[0]) confirmationSteps[0].innerHTML = translations[lang].confirmationStep1;
+    if (confirmationSteps[1]) confirmationSteps[1].innerHTML = translations[lang].confirmationStep2;
+    if (confirmationSteps[2]) confirmationSteps[2].innerHTML = translations[lang].confirmationStep3;
+    if (confirmationSecondaryCta) confirmationSecondaryCta.innerHTML = translations[lang].confirmationSecondaryCta;
+    if (confirmationNote) confirmationNote.innerHTML = translations[lang].confirmationFooterNote;
     if (confirmationClose) confirmationClose.innerHTML = translations[lang].confirmationClose;
 
     // Update hero top text
@@ -2921,10 +3065,22 @@ const translations = {
     }
 
     // Update close button
-    const closeButton = document.querySelector('.close-btn');
-    if (closeButton) {
+    document.querySelectorAll('.close-btn').forEach((closeButton) => {
       closeButton.innerHTML = translations[lang].closeButton;
-    }
+      closeButton.setAttribute('aria-label', translations[lang].closeButton);
+    });
+
+    document.querySelectorAll('#newsletterModal input[type="email"]').forEach((input) => {
+      input.setAttribute('aria-label', translations[lang].popupEmailPlaceholder);
+    });
+
+    document.querySelectorAll('#newsletterModal input[type="tel"]').forEach((input) => {
+      input.setAttribute('aria-label', translations[lang].popupPhonePlaceholder);
+    });
+
+    document.querySelectorAll('#newsletterModal select').forEach((select) => {
+      select.setAttribute('aria-label', lang === 'sv' ? 'Landskod' : 'Country code');
+    });
 
     // Update country options
     const countryOptions = document.querySelectorAll('#countrySelect option');

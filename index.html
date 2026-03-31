@@ -3,6 +3,9 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Construction Sourcing samlar leverantörer, offertflöden, avtal och projektsamarbete i en modern plattform för byggbranschen." />
+    <meta name="robots" content="index,follow,max-image-preview:large" />
+    <meta name="theme-color" content="#0f0e17" />
     <title>Construction Sourcing - Nästa generations upphandlingssystem</title>
     <link rel="stylesheet" href="style.css" />
     <link rel="icon" type="image/svg+xml" href="assets/Favicon.svg" />
@@ -192,7 +195,7 @@
         <div class="popup-box">
           <button class="close-btn" onclick="toggleModal(false)" data-translate="closeButton"></button>
           <h3 data-translate="popupTitle"></h3>
-          <form class="popup-form">
+          <form class="popup-form" novalidate>
             <input type="email" placeholder="" data-translate="popupEmailPlaceholder" required />
             <div class="phone-input">
               <select id="countrySelect" onchange="updateFlagAndCode()">
@@ -207,7 +210,7 @@
                 <option value="nl" data-code="31" data-translate="countryNL"></option>
                 <option value="be" data-code="32" data-translate="countryBE"></option>
               </select>
-              <input type="tel" id="phoneNumber" placeholder="" data-translate="popupPhonePlaceholder" required />
+              <input type="tel" id="phoneNumber" placeholder="" data-translate="popupPhonePlaceholder" />
             </div>
             <button type="submit" class="submit-btn" data-translate="popupSubmit"></button>
             <button type="button" class="decline-btn" onclick="toggleModal(false)" data-translate="popupDecline"></button>

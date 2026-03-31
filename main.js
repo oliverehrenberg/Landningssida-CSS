@@ -2,6 +2,290 @@ document.addEventListener("DOMContentLoaded", (() => {
   // Determine base path based on current location
   const isFeaturesPage = window.location.pathname.includes('/features/');
   const basePath = isFeaturesPage ? '../' : '';
+  const siteName = 'Construction Sourcing';
+
+  const ensureMetaTag = (selector, attributes, content) => {
+    let tag = document.head.querySelector(selector);
+    if (!tag) {
+      tag = document.createElement('meta');
+      Object.entries(attributes).forEach(([key, value]) => {
+        tag.setAttribute(key, value);
+      });
+      document.head.appendChild(tag);
+    }
+    tag.setAttribute('content', content);
+    return tag;
+  };
+
+  const getCanonicalUrl = () => {
+    const url = new URL(window.location.href);
+    url.hash = '';
+    url.search = '';
+    if (url.pathname.endsWith('/index.html')) {
+      url.pathname = url.pathname.replace(/index\.html$/, '');
+    }
+    return url.toString();
+  };
+
+  const deriveMetaDescription = () => {
+    const descriptionCandidates = [
+      document.querySelector('.hero .subtitle')?.textContent,
+      document.querySelector('.pricing-hero-subtitle')?.textContent,
+      document.querySelector('.feature-detail-intro')?.textContent,
+      document.querySelector('.content-section p')?.textContent,
+      document.querySelector('main p')?.textContent,
+      document.querySelector('section p')?.textContent,
+      document.querySelector('meta[name="description"]')?.getAttribute('content')
+    ];
+
+    const description = descriptionCandidates
+      .map((value) => (value || '').replace(/\s+/g, ' ').trim())
+      .find(Boolean);
+
+    if (!description) {
+      return `${siteName} effektiviserar byggupphandling, leverantörsval och projektsamarbete.`;
+    }
+
+    return description.length > 160 ? `${description.slice(0, 157).trim()}...` : description;
+  };
+
+  const buildStructuredData = (title, description, canonicalUrl) => {
+    const siteRootUrl = new URL(`${basePath}index.html`, window.location.href).toString().replace(/index\.html$/, '');
+    const organization = {
+      '@context': 'https://schema.org',
+      '@type': 'Organization',
+      name: siteName,
+      url: siteRootUrl,
+      email: 'oe@constructionsourcing.eu',
+      telephone: '+46 73 435 35 88',
+      address: {
+        '@type': 'PostalAddress',
+        streetAddress: 'Vittangigatan 10',
+        postalCode: '162 61',
+        addressLocality: 'Vällingby',
+        addressCountry: 'SE'
+      },
+      sameAs: [
+        'https://www.linkedin.com/company/construction-sourcing/posts/?feedView=all'
+      ]
+    };
+
+    if (window.location.pathname.endsWith('index.html') || window.location.pathname === '/' || window.location.pathname === '') {
+      return [
+        organization,
+        {
+          '@context': 'https://schema.org',
+          '@type': 'WebSite',
+          name: title,
+          description,
+          url: canonicalUrl
+        }
+      ];
+    }
+
+    return organization;
+  };
+
+  const setupSeo = () => {
+    const title = (document.title || siteName).replace(/\s+/g, ' ').trim();
+    const description = deriveMetaDescription();
+    const canonicalUrl = getCanonicalUrl();
+    const ogImage = new URL(`${basePath}assets/logo.png`, window.location.href).toString();
+
+    ensureMetaTag('meta[name="description"]', { name: 'description' }, description);
+    ensureMetaTag('meta[name="robots"]', { name: 'robots' }, 'index,follow,max-image-preview:large');
+    ensureMetaTag('meta[name="theme-color"]', { name: 'theme-color' }, '#0f0e17');
+    ensureMetaTag('meta[property="og:title"]', { property: 'og:title' }, title);
+    ensureMetaTag('meta[property="og:description"]', { property: 'og:description' }, description);
+    ensureMetaTag('meta[property="og:type"]', { property: 'og:type' }, 'website');
+    ensureMetaTag('meta[property="og:url"]', { property: 'og:url' }, canonicalUrl);
+    ensureMetaTag('meta[property="og:image"]', { property: 'og:image' }, ogImage);
+    ensureMetaTag('meta[name="twitter:card"]', { name: 'twitter:card' }, 'summary_large_image');
+    ensureMetaTag('meta[name="twitter:title"]', { name: 'twitter:title' }, title);
+    ensureMetaTag('meta[name="twitter:description"]', { name: 'twitter:description' }, description);
+    ensureMetaTag('meta[name="twitter:image"]', { name: 'twitter:image' }, ogImage);
+
+    let canonicalLink = document.head.querySelector('link[rel="canonical"]');
+    if (!canonicalLink) {
+      canonicalLink = document.createElement('link');
+      canonicalLink.rel = 'canonical';
+      document.head.appendChild(canonicalLink);
+    }
+    canonicalLink.href = canonicalUrl;
+
+    let structuredData = document.getElementById('structured-data');
+    if (!structuredData) {
+      structuredData = document.createElement('script');
+      structuredData.type = 'application/ld+json';
+      structuredData.id = 'structured-data';
+      document.head.appendChild(structuredData);
+    }
+    structuredData.textContent = JSON.stringify(buildStructuredData(title, description, canonicalUrl));
+  };
+
+  const updateScrollProgress = () => {
+    const scrollPos = window.scrollY || window.pageYOffset;
+    const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+    const percent = docHeight > 0 ? (scrollPos / docHeight) * 100 : 0;
+    const bar = document.querySelector('.scroll-progress__bar');
+    if (bar) {
+      bar.style.width = `${percent}%`;
+      bar.setAttribute('aria-valuenow', String(Math.round(percent)));
+    }
+  };
+
+  const optimizeImages = () => {
+    document.querySelectorAll('img').forEach((img) => {
+      if (!img.hasAttribute('decoding')) {
+        img.decoding = 'async';
+      }
+      if (!img.hasAttribute('loading') && !img.closest('.hero') && !img.closest('.header')) {
+        img.loading = 'lazy';
+      }
+    });
+  };
+
+  const filterExistingTargets = (targets) => targets.filter(Boolean);
+
+  function initializeResponsiveParallaxSections() {
+    if (!window.matchMedia('(min-width: 768px)').matches) {
+      return;
+    }
+
+    const bigCard = document.querySelector('.big-card');
+    const bigCardText = bigCard?.querySelector('.text-content');
+    const bigCardImage = bigCard?.querySelector('.image-side img');
+
+    if (bigCard && bigCardText && !bigCardText.dataset.parallaxInitialized) {
+      bigCardText.dataset.parallaxInitialized = 'true';
+      gsap.to(bigCardText, {
+        yPercent: -20,
+        ease: 'none',
+        scrollTrigger: {
+          trigger: bigCard,
+          start: 'top bottom',
+          end: 'bottom top',
+          scrub: true
+        }
+      });
+    }
+
+    if (bigCard && bigCardImage && !bigCardImage.dataset.parallaxInitialized) {
+      bigCardImage.dataset.parallaxInitialized = 'true';
+      gsap.to(bigCardImage, {
+        yPercent: 20,
+        ease: 'none',
+        scrollTrigger: {
+          trigger: bigCard,
+          start: 'top bottom',
+          end: 'bottom top',
+          scrub: true
+        }
+      });
+      gsap.fromTo(bigCardImage, {
+        scale: 1
+      }, {
+        scale: 1.1,
+        ease: 'none',
+        scrollTrigger: {
+          trigger: bigCardImage,
+          start: 'top 80%',
+          end: 'bottom top',
+          scrub: true
+        }
+      });
+    }
+
+    const aboutWrapper = document.querySelector('.about-wrapper');
+    if (aboutWrapper && !aboutWrapper.dataset.parallaxInitialized) {
+      aboutWrapper.dataset.parallaxInitialized = 'true';
+      gsap.to(aboutWrapper, {
+        yPercent: -10,
+        ease: 'none',
+        scrollTrigger: {
+          trigger: aboutWrapper,
+          start: 'top bottom',
+          end: 'bottom top',
+          scrub: true
+        }
+      });
+    }
+
+    const aboutImage = document.querySelector('.about-image img');
+    if (aboutImage && !aboutImage.dataset.parallaxInitialized) {
+      aboutImage.dataset.parallaxInitialized = 'true';
+      gsap.fromTo(aboutImage, {
+        scale: 1
+      }, {
+        scale: 1.1,
+        ease: 'none',
+        scrollTrigger: {
+          trigger: aboutImage,
+          start: 'top 80%',
+          end: 'bottom top',
+          scrub: true
+        }
+      });
+    }
+  }
+
+  function initializeFooterReveal() {
+    const footer = document.querySelector('footer');
+
+    if (!footer || footer.dataset.revealInitialized) {
+      return;
+    }
+
+    footer.dataset.revealInitialized = 'true';
+    gsap.set(footer, {
+      autoAlpha: 0,
+      y: 40
+    });
+
+    ScrollTrigger.create({
+      trigger: footer,
+      start: 'top 90%',
+      onEnter: () => {
+        footer.classList.remove('section-hidden');
+        gsap.to(footer, {
+          autoAlpha: 1,
+          y: 0,
+          duration: 1,
+          ease: 'power1.out'
+        });
+      }
+    });
+  }
+
+  function initializeHeroIntroAnimation() {
+    if (!document.querySelector('.hero')) {
+      return;
+    }
+
+    const heroTimeline = gsap.timeline({ defaults: { duration: 0.8, ease: 'power1.out' } });
+    const smallTopText = document.querySelector('.small-top-text');
+    const heroTitle = document.querySelector('.hero h1');
+    const heroSubtitle = document.querySelector('.subtitle');
+    const heroCtas = gsap.utils.toArray('.hero .cta-btn');
+
+    if (smallTopText) {
+      heroTimeline.from(smallTopText, { autoAlpha: 0, y: -20 });
+    }
+    if (heroTitle) {
+      heroTimeline.from(heroTitle, { autoAlpha: 0, y: 50 }, '-=0.4');
+    }
+    if (heroSubtitle) {
+      heroTimeline.from(heroSubtitle, { autoAlpha: 0, y: 20 }, '-=0.4');
+    }
+    if (heroCtas.length) {
+      heroTimeline.fromTo(
+        heroCtas,
+        { autoAlpha: 0, scale: 0.9 },
+        { autoAlpha: 1, scale: 1, ease: 'back.out(1.7)', duration: 0.8 },
+        '-=0.4'
+      );
+    }
+  }
   
   // Global function to update active state on all language buttons
   const updateLanguageButtons = () => {
@@ -28,8 +312,9 @@ document.addEventListener("DOMContentLoaded", (() => {
   
   // Set up global language change listener (only once)
   if (!window.languageChangedListenerAdded) {
-    window.addEventListener('languageChanged', (e) => {
+    window.addEventListener('languageChanged', () => {
       updateLanguageButtons();
+      setupSeo();
     });
     window.languageChangedListenerAdded = true;
   }
@@ -132,9 +417,21 @@ document.addEventListener("DOMContentLoaded", (() => {
     // Apply language translations
     const savedLanguage = localStorage.getItem('language') || 'sv';
     applyLanguage(savedLanguage);
+    optimizeImages();
+    setupSeo();
+    updateScrollProgress();
+    window.requestAnimationFrame(() => {
+      initializeResponsiveParallaxSections();
+      initializeFooterReveal();
+      ScrollTrigger.refresh();
+    });
   }).catch(error => {
     console.error('Error loading sections:', error);
   });
+
+  optimizeImages();
+  setupSeo();
+  updateScrollProgress();
 
   const hero = document.querySelector(".hero");
   // Find all sections with section-hidden class (works for both main page and step-details pages)
@@ -195,86 +492,48 @@ document.addEventListener("DOMContentLoaded", (() => {
 
   ScrollTrigger.matchMedia({
     "(min-width: 768px)": function() {
-      ScrollTrigger.create({
-        trigger: ".hero",
-        start: "top top",
-        end: "bottom top",
-        pin: !0,
-        pinSpacing: !1,
-        scrub: !0
-      }), hero && (gsap.set(hero, {
-        autoAlpha: 1,
-        y: 0
-      }), gsap.to(hero, {
-        yPercent: -10,
-        ease: "none",
-        scrollTrigger: {
-          trigger: ".hero",
+      if (hero) {
+        ScrollTrigger.create({
+          trigger: hero,
           start: "top top",
           end: "bottom top",
+          pin: !0,
+          pinSpacing: !1,
           scrub: !0
+        });
+
+        gsap.set(hero, {
+          autoAlpha: 1,
+          y: 0
+        });
+
+        gsap.to(hero, {
+          yPercent: -10,
+          ease: "none",
+          scrollTrigger: {
+            trigger: hero,
+            start: "top top",
+            end: "bottom top",
+            scrub: !0
+          }
+        });
+
+        const heroTextContainer = document.querySelector('.hero-text-container');
+        if (heroTextContainer) {
+          gsap.to(heroTextContainer, {
+            yPercent: -15,
+            ease: "none",
+            scrollTrigger: {
+              trigger: hero,
+              start: "top top",
+              end: "bottom top",
+              scrub: true
+            }
+          });
         }
-      }),
-      // Parallax för hero-text
-      gsap.to(".hero-text-container", {
-        yPercent: -15,
-        ease: "none",
-        scrollTrigger: {
-          trigger: ".hero",
-          start: "top top",
-          end: "bottom top",
-          scrub: true
-        }
-      })), gsap.to(".big-card .text-content", {
-        yPercent: -20,
-        ease: "none",
-        scrollTrigger: {
-          trigger: ".big-card",
-          start: "top bottom",
-          end: "bottom top",
-          scrub: !0
-        }
-      }), gsap.to(".big-card .image-side img", {
-        yPercent: 20,
-        ease: "none",
-        scrollTrigger: {
-          trigger: ".big-card",
-          start: "top bottom",
-          end: "bottom top",
-          scrub: !0
-        }
-      }), gsap.fromTo(".big-card .image-side img", {
-        scale: 1
-      }, {
-        scale: 1.1,
-        ease: "none",
-        scrollTrigger: {
-          trigger: ".big-card .image-side img",
-          start: "top 80%",
-          end: "bottom top",
-          scrub: !0
-        }
-      }), gsap.to(".about-wrapper", {
-        yPercent: -10,
-        ease: "none",
-        scrollTrigger: {
-          trigger: ".about-wrapper",
-          start: "top bottom",
-          end: "bottom top",
-          scrub: !0
-        }
-      }), gsap.fromTo(".about-image img", {
-        scale: 1
-      }, {
-        scale: 1.1,
-        ease: "none",
-        scrollTrigger: {
-          trigger: ".about-image img",
-          start: "top 80%",
-          end: "bottom top",
-          scrub: !0
-        }
-      });
+      }
+
+      initializeResponsiveParallaxSections();
     }
   }), sections.forEach((section => {
     section.matches("footer") || (gsap.set(section, {
@@ -342,22 +601,7 @@ document.addEventListener("DOMContentLoaded", (() => {
         });
       }
     }));
-  })), gsap.set("footer", {
-    autoAlpha: 0,
-    y: 40
-  }), ScrollTrigger.create({
-    trigger: "footer",
-    start: "top 90%",
-    onEnter: () => {
-      const footer = document.querySelector("footer");
-      footer.classList.remove("section-hidden"), gsap.to(footer, {
-        autoAlpha: 1,
-        y: 0,
-        duration: 1,
-        ease: "power1.out"
-      });
-    }
-  });
+  })), initializeFooterReveal();
   (selector => {
     const el = document.querySelector(selector);
     if (!el) return;
@@ -384,7 +628,8 @@ document.addEventListener("DOMContentLoaded", (() => {
   const featureCards = gsap.utils.toArray(".feature-card"), featuresIntro = document.querySelector(".features-intro");
   if (featuresIntro) {
     const introTitle = featuresIntro.querySelector("h2"), introText = featuresIntro.querySelector(".intro");
-    gsap.fromTo([ introTitle, introText ], {
+    const introTargets = filterExistingTargets([ introTitle, introText ]);
+    gsap.fromTo(introTargets, {
       opacity: 0,
       y: 20
     }, {
@@ -404,7 +649,12 @@ document.addEventListener("DOMContentLoaded", (() => {
     card.classList.remove("section-hidden");
   })), featureCards.forEach(((card, i) => {
     const content = card.querySelector(".feature-content"), visual = card.querySelector(".feature-visual"), icon = card.querySelector(".feature-icon"), title = card.querySelector("h3"), description = card.querySelector("p");
-    gsap.set([ content, visual, icon, title, description ], {
+    const cardTargets = filterExistingTargets([ content, visual, icon, title, description ]);
+    if (!cardTargets.length) {
+      return;
+    }
+
+    gsap.set(cardTargets, {
       opacity: 0,
       y: 20
     }), ScrollTrigger.create({
@@ -412,7 +662,7 @@ document.addEventListener("DOMContentLoaded", (() => {
       start: "top center",
       end: "bottom center",
       onEnter: () => {
-        gsap.to([ content, visual, icon, title, description ], {
+        gsap.to(cardTargets, {
           opacity: 1,
           y: 0,
           duration: .8,
@@ -421,7 +671,7 @@ document.addEventListener("DOMContentLoaded", (() => {
         });
       },
       onLeaveBack: () => {
-        gsap.to([ content, visual, icon, title, description ], {
+        gsap.to(cardTargets, {
           opacity: 0,
           y: 20,
           duration: .8,
@@ -448,17 +698,7 @@ document.addEventListener("DOMContentLoaded", (() => {
   }));
 
   // Lägg till hero intro-animation timeline
-  const heroTimeline = gsap.timeline({ defaults: { duration: 0.8, ease: "power1.out" } });
-  heroTimeline
-    .from(".small-top-text", { autoAlpha: 0, y: -20 })
-    .from(".hero h1", { autoAlpha: 0, y: 50 }, "-=0.4")
-    .from(".subtitle", { autoAlpha: 0, y: 20 }, "-=0.4")
-    .fromTo(
-      ".hero .cta-btn",
-      { autoAlpha: 0, scale: 0.9 },
-      { autoAlpha: 1, scale: 1, ease: "back.out(1.7)", duration: 0.8 },
-      "-=0.4"
-    );
+  initializeHeroIntroAnimation();
 
   // Lägg till dragbar inertial scroll för use-case-karusellen
   if (carouselTrack) {
@@ -489,13 +729,7 @@ document.addEventListener("DOMContentLoaded", (() => {
   }
 
   // Lägg till scroll-progress-funktionalitet
-  window.addEventListener('scroll', () => {
-    const scrollPos = window.scrollY || window.pageYOffset;
-    const docHeight = document.documentElement.scrollHeight - window.innerHeight;
-    const percent = (scrollPos / docHeight) * 100;
-    const bar = document.querySelector('.scroll-progress__bar');
-    if (bar) bar.style.width = percent + '%';
-  });
+  window.addEventListener('scroll', updateScrollProgress);
 
   // Add header initialization function
   function initializeHeader() {
@@ -600,6 +834,17 @@ document.addEventListener("DOMContentLoaded", (() => {
 
   // Add footer initialization function
   function initializeFooter() {
+    const path = window.location.pathname || '';
+    const base = path.includes('/features/') ? '../' : '';
+
+    document.querySelectorAll('footer a[data-href]').forEach(link => {
+      link.href = base + link.getAttribute('data-href');
+    });
+
+    document.querySelectorAll('footer img[data-src]').forEach(img => {
+      img.src = base + img.getAttribute('data-src');
+    });
+
     // Initialize footer language switcher
     const footerLangButtons = document.querySelectorAll(".language-switcher-footer .lang-btn");
     
@@ -626,6 +871,9 @@ document.addEventListener("DOMContentLoaded", (() => {
     if (window.FontAwesome) {
       window.FontAwesome.dom.i2svg();
     }
+
+    optimizeImages();
+    setupSeo();
   }
 
   // Header scroll behavior
@@ -695,7 +943,7 @@ document.addEventListener("DOMContentLoaded", (() => {
   }
 
   // === FEATURES SUMMARY PAGE SCRIPTS ===
-  document.addEventListener('DOMContentLoaded', function() {
+  {
     // Sticky nav active - disabled
     const navLinks = document.querySelectorAll('.features-nav a');
     const sections = [
@@ -760,7 +1008,7 @@ document.addEventListener("DOMContentLoaded", (() => {
       });
       track.addEventListener('touchend', () => { startX = null; });
     }
-  });
+  }
 
   // Hanterar klick på 'Läs mer'-knappar i feature cards
   // Öppnar detaljsidan i en ny flik/fönster
@@ -790,7 +1038,7 @@ document.addEventListener("DOMContentLoaded", (() => {
         if (ans) ans.classList.toggle('show');
         q.parentElement.classList.toggle('active');
       });
-      q.addEventListener('keydown', function(e) {
+      if (q.tagName !== 'BUTTON') q.addEventListener('keydown', function(e) {
         if (e.key === 'Enter' || e.key === ' ') q.click();
       });
     });
@@ -946,10 +1194,10 @@ document.addEventListener("DOMContentLoaded", (() => {
     }
   }
 
-  // Initialize all feature-related functionality when DOM is loaded
-  document.addEventListener('DOMContentLoaded', () => {
-    initFeatureComparison();
-    initFeatureCards();
+  // Initialize all feature-related functionality
+  {
+    initializeFeatureComparison();
+    initializeFeatureCards();
     
     // Add smooth scroll for feature cards
     const featureLearnMoreButtons = document.querySelectorAll('.feature-learn-more');
@@ -964,77 +1212,91 @@ document.addEventListener("DOMContentLoaded", (() => {
         }
       });
     });
-  });
+  }
 
   // Initialize feature detail page animations
   function initFeatureDetailPage() {
+    const featureHeroContent = document.querySelector('.feature-hero-content, .pricing-hero-content');
+    const featureDetailCards = gsap.utils.toArray('.feature-detail-card');
+    const featureDetailsSection = document.querySelector('.feature-details, .feature-detail-section, .feature-details-grid');
+    const steps = gsap.utils.toArray('.step');
+    const howItWorks = document.querySelector('.how-it-works');
+    const benefitCards = gsap.utils.toArray('.benefit-card');
+    const benefitsSection = document.querySelector('.benefits');
+    const featureCta = document.querySelector('.feature-cta');
+
     // Animate hero section
-    gsap.from('.feature-hero-content', {
-      duration: 1,
-      y: 50,
-      opacity: 0,
-      ease: 'power3.out'
-    });
+    if (featureHeroContent) {
+      gsap.from(featureHeroContent, {
+        duration: 1,
+        y: 50,
+        opacity: 0,
+        ease: 'power3.out'
+      });
+    }
 
     // Animate feature cards
-    gsap.from('.feature-detail-card', {
-      duration: 0.8,
-      y: 30,
-      opacity: 0,
-      stagger: 0.2,
-      ease: 'power2.out',
-      scrollTrigger: {
-        trigger: '.feature-details',
-        start: 'top 80%'
-      }
-    });
+    if (featureDetailCards.length && featureDetailsSection) {
+      gsap.from(featureDetailCards, {
+        duration: 0.8,
+        y: 30,
+        opacity: 0,
+        stagger: 0.2,
+        ease: 'power2.out',
+        scrollTrigger: {
+          trigger: featureDetailsSection,
+          start: 'top 80%'
+        }
+      });
+    }
 
     // Animate steps
-    gsap.from('.step', {
-      duration: 0.8,
-      y: 30,
-      opacity: 0,
-      stagger: 0.2,
-      ease: 'power2.out',
-      scrollTrigger: {
-        trigger: '.how-it-works',
-        start: 'top 80%'
-      }
-    });
+    if (steps.length && howItWorks) {
+      gsap.from(steps, {
+        duration: 0.8,
+        y: 30,
+        opacity: 0,
+        stagger: 0.2,
+        ease: 'power2.out',
+        scrollTrigger: {
+          trigger: howItWorks,
+          start: 'top 80%'
+        }
+      });
+    }
 
     // Animate benefits
-    gsap.from('.benefit-card', {
-      duration: 0.8,
-      y: 30,
-      opacity: 0,
-      stagger: 0.2,
-      ease: 'power2.out',
-      scrollTrigger: {
-        trigger: '.benefits',
-        start: 'top 80%'
-      }
-    });
+    if (benefitCards.length && benefitsSection) {
+      gsap.from(benefitCards, {
+        duration: 0.8,
+        y: 30,
+        opacity: 0,
+        stagger: 0.2,
+        ease: 'power2.out',
+        scrollTrigger: {
+          trigger: benefitsSection,
+          start: 'top 80%'
+        }
+      });
+    }
 
     // Animate CTA section
-    gsap.from('.feature-cta', {
-      duration: 1,
-      y: 30,
-      opacity: 0,
-      ease: 'power2.out',
-      scrollTrigger: {
-        trigger: '.feature-cta',
-        start: 'top 80%'
-      }
-    });
+    if (featureCta) {
+      gsap.from(featureCta, {
+        duration: 1,
+        y: 30,
+        opacity: 0,
+        ease: 'power2.out',
+        scrollTrigger: {
+          trigger: featureCta,
+          start: 'top 80%'
+        }
+      });
+    }
   }
 
-  // Initialize all functionality when DOM is loaded
-  document.addEventListener('DOMContentLoaded', () => {
-    // ... existing code ...
-    
-    // Initialize feature detail page if we're on a feature detail page
-    if (document.querySelector('.feature-hero')) {
-      initFeatureDetailPage();
-    }
-  });
+  // Initialize feature detail page if we're on a feature detail page
+  if (document.querySelector('.feature-detail-section, .feature-details-grid, .how-it-works, .feature-cta')) {
+    initFeatureDetailPage();
+  }
 }));
