@@ -1,5 +1,5 @@
 const CONTACT_EMAIL = 'oe@constructionsourcing.eu';
-const BOOKING_URL = 'https://app.constructionsourcing.eu/meetings/oliver/1?uuid=2780a69b-c613-4548-b234-db59044a3ad4';
+const BOOKING_URL = 'https://app.constructionsourcing.se/meetings/oliver28';
 const FORM_ENDPOINT = 'https://gleaming-kelpie-b11bf2.netlify.app/.netlify/functions/api/forms/submit/641b06d5-4693-4cb8-a30e-bb2166a64869';
 const LOCAL_DEV_HOSTS = new Set(['127.0.0.1', 'localhost']);
 
