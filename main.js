@@ -3,6 +3,7 @@ document.addEventListener("DOMContentLoaded", (() => {
   const isFeaturesPage = window.location.pathname.includes('/features/');
   const basePath = isFeaturesPage ? '../' : '';
   const siteName = 'Construction Sourcing';
+  const siteOrigin = 'https://constructionsourcing.eu';
 
   const ensureMetaTag = (selector, attributes, content) => {
     let tag = document.head.querySelector(selector);
@@ -17,14 +18,36 @@ document.addEventListener("DOMContentLoaded", (() => {
     return tag;
   };
 
+  const normalizeCanonicalPath = (pathname = '/') => {
+    let normalized = pathname.replace(/\/{2,}/g, '/');
+
+    if (!normalized.startsWith('/')) {
+      normalized = `/${normalized}`;
+    }
+
+    if (normalized.endsWith('/index.html')) {
+      normalized = normalized.replace(/index\.html$/, '');
+    }
+
+    return normalized || '/';
+  };
+
+  const buildAbsoluteSiteUrl = (pathname = '/') => {
+    const normalizedPath = normalizeCanonicalPath(pathname);
+    return new URL(normalizedPath, `${siteOrigin}/`).toString();
+  };
+
   const getCanonicalUrl = () => {
     const url = new URL(window.location.href);
     url.hash = '';
     url.search = '';
-    if (url.pathname.endsWith('/index.html')) {
-      url.pathname = url.pathname.replace(/index\.html$/, '');
+
+    if (!/^https?:$/.test(url.protocol)) {
+      url.pathname = normalizeCanonicalPath(url.pathname);
+      return url.toString();
     }
-    return url.toString();
+
+    return buildAbsoluteSiteUrl(url.pathname);
   };
 
   const deriveMetaDescription = () => {
@@ -49,61 +72,188 @@ document.addEventListener("DOMContentLoaded", (() => {
     return description.length > 160 ? `${description.slice(0, 157).trim()}...` : description;
   };
 
-  const buildStructuredData = (title, description, canonicalUrl) => {
-    const siteRootUrl = new URL(`${basePath}index.html`, window.location.href).toString().replace(/index\.html$/, '');
-    const organization = {
-      '@context': 'https://schema.org',
-      '@type': 'Organization',
-      name: siteName,
-      url: siteRootUrl,
-      email: 'oe@constructionsourcing.eu',
-      telephone: '+46 73 435 35 88',
-      address: {
-        '@type': 'PostalAddress',
-        streetAddress: 'Vittangigatan 10',
-        postalCode: '162 61',
-        addressLocality: 'Vällingby',
-        addressCountry: 'SE'
-      },
-      sameAs: [
-        'https://www.linkedin.com/company/construction-sourcing/posts/?feedView=all'
-      ]
-    };
+  const getPageLanguage = () => document.documentElement.lang === 'en' ? 'en' : 'sv';
 
-    if (window.location.pathname.endsWith('index.html') || window.location.pathname === '/' || window.location.pathname === '') {
-      return [
-        organization,
-        {
-          '@context': 'https://schema.org',
-          '@type': 'WebSite',
-          name: title,
-          description,
-          url: canonicalUrl
-        }
-      ];
+  const buildBreadcrumbData = (canonicalUrl) => {
+    const breadcrumbList = document.querySelector('.breadcrumb ol, .breadcrumb ul');
+
+    if (!breadcrumbList) {
+      return null;
     }
 
-    return organization;
+    const items = Array.from(breadcrumbList.children)
+      .map((item, index, allItems) => {
+        const link = item.querySelector('a[href]');
+        const name = (link?.textContent || item.textContent || '').replace(/\s+/g, ' ').trim();
+
+        if (!name) {
+          return null;
+        }
+
+        const itemUrl = index === allItems.length - 1 || !link
+          ? canonicalUrl
+          : buildAbsoluteSiteUrl(new URL(link.getAttribute('href'), canonicalUrl).pathname);
+
+        return {
+          '@type': 'ListItem',
+          position: index + 1,
+          name,
+          item: itemUrl
+        };
+      })
+      .filter(Boolean);
+
+    if (items.length < 2) {
+      return null;
+    }
+
+    return {
+      '@type': 'BreadcrumbList',
+      itemListElement: items
+    };
+  };
+
+  const buildFaqData = () => {
+    const questions = Array.from(document.querySelectorAll('.faq-item'))
+      .map((item) => {
+        const question = item.querySelector('.faq-question h3, .faq-question');
+        const answer = item.querySelector('.faq-answer');
+        const questionText = (question?.textContent || '').replace(/\s+/g, ' ').trim();
+        const answerText = (answer?.textContent || '').replace(/\s+/g, ' ').trim();
+
+        if (!questionText || !answerText) {
+          return null;
+        }
+
+        return {
+          '@type': 'Question',
+          name: questionText,
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: answerText
+          }
+        };
+      })
+      .filter(Boolean);
+
+    if (!questions.length) {
+      return null;
+    }
+
+    return {
+      '@type': 'FAQPage',
+      mainEntity: questions
+    };
+  };
+
+  const buildStructuredData = (title, description, canonicalUrl) => {
+    const siteRootUrl = buildAbsoluteSiteUrl('/');
+    const language = getPageLanguage();
+    const organizationId = `${siteRootUrl}#organization`;
+    const websiteId = `${siteRootUrl}#website`;
+    const pageId = `${canonicalUrl}#webpage`;
+    const isHomePage = normalizeCanonicalPath(window.location.pathname) === '/';
+    const graph = [
+      {
+        '@type': 'Organization',
+        '@id': organizationId,
+        name: siteName,
+        url: siteRootUrl,
+        email: 'oe@constructionsourcing.eu',
+        telephone: '+46 73 435 35 88',
+        address: {
+          '@type': 'PostalAddress',
+          streetAddress: 'Vittangigatan 10',
+          postalCode: '162 61',
+          addressLocality: 'Vällingby',
+          addressCountry: 'SE'
+        },
+        sameAs: [
+          'https://www.linkedin.com/company/construction-sourcing/posts/?feedView=all'
+        ]
+      },
+      {
+        '@type': 'WebSite',
+        '@id': websiteId,
+        url: siteRootUrl,
+        name: siteName,
+        description: `${siteName} effektiviserar byggupphandling, leverantörsval och projektsamarbete.`,
+        inLanguage: ['sv', 'en'],
+        publisher: {
+          '@id': organizationId
+        }
+      },
+      {
+        '@type': 'WebPage',
+        '@id': pageId,
+        url: canonicalUrl,
+        name: title,
+        description,
+        inLanguage: language,
+        isPartOf: {
+          '@id': websiteId
+        },
+        about: {
+          '@id': organizationId
+        },
+        publisher: {
+          '@id': organizationId
+        }
+      }
+    ];
+
+    if (isHomePage) {
+      graph.push({
+        '@type': 'CollectionPage',
+        '@id': `${canonicalUrl}#collection`,
+        url: canonicalUrl,
+        name: title,
+        description,
+        isPartOf: {
+          '@id': websiteId
+        }
+      });
+    }
+
+    const breadcrumbData = buildBreadcrumbData(canonicalUrl);
+    if (breadcrumbData) {
+      graph.push(breadcrumbData);
+    }
+
+    const faqData = buildFaqData();
+    if (faqData) {
+      graph.push(faqData);
+    }
+
+    return {
+      '@context': 'https://schema.org',
+      '@graph': graph
+    };
   };
 
   const setupSeo = () => {
     const title = (document.title || siteName).replace(/\s+/g, ' ').trim();
     const description = deriveMetaDescription();
     const canonicalUrl = getCanonicalUrl();
-    const ogImage = new URL(`${basePath}assets/logo.png`, window.location.href).toString();
+    const ogImage = new URL(`${basePath}assets/logo.png`, canonicalUrl).toString();
+    const ogLocale = getPageLanguage() === 'en' ? 'en_US' : 'sv_SE';
 
     ensureMetaTag('meta[name="description"]', { name: 'description' }, description);
     ensureMetaTag('meta[name="robots"]', { name: 'robots' }, 'index,follow,max-image-preview:large');
     ensureMetaTag('meta[name="theme-color"]', { name: 'theme-color' }, '#0f0e17');
+    ensureMetaTag('meta[property="og:site_name"]', { property: 'og:site_name' }, siteName);
+    ensureMetaTag('meta[property="og:locale"]', { property: 'og:locale' }, ogLocale);
     ensureMetaTag('meta[property="og:title"]', { property: 'og:title' }, title);
     ensureMetaTag('meta[property="og:description"]', { property: 'og:description' }, description);
     ensureMetaTag('meta[property="og:type"]', { property: 'og:type' }, 'website');
     ensureMetaTag('meta[property="og:url"]', { property: 'og:url' }, canonicalUrl);
     ensureMetaTag('meta[property="og:image"]', { property: 'og:image' }, ogImage);
+    ensureMetaTag('meta[property="og:image:alt"]', { property: 'og:image:alt' }, `${siteName} logotyp`);
     ensureMetaTag('meta[name="twitter:card"]', { name: 'twitter:card' }, 'summary_large_image');
     ensureMetaTag('meta[name="twitter:title"]', { name: 'twitter:title' }, title);
     ensureMetaTag('meta[name="twitter:description"]', { name: 'twitter:description' }, description);
     ensureMetaTag('meta[name="twitter:image"]', { name: 'twitter:image' }, ogImage);
+    ensureMetaTag('meta[name="twitter:image:alt"]', { name: 'twitter:image:alt' }, `${siteName} logotyp`);
 
     let canonicalLink = document.head.querySelector('link[rel="canonical"]');
     if (!canonicalLink) {

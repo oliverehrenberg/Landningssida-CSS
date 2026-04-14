@@ -318,8 +318,8 @@ function updateConfirmationMessage(result, payload) {
 function getSubmissionErrorMessage(error) {
   if (error instanceof TypeError && LOCAL_DEV_HOSTS.has(window.location.hostname)) {
     return getCurrentLanguage() === 'sv'
-      ? 'Formuläret blockeras lokalt av CORS. Lägg till http://127.0.0.1:5500 och https://www.constructionsourcing.eu i API:ts CORS-inställningar.'
-      : 'Form submission is blocked locally by CORS. Add http://127.0.0.1:5500 and https://www.constructionsourcing.eu to the API CORS allowlist.';
+      ? 'Formuläret blockeras lokalt av CORS. Lägg till http://127.0.0.1:5500 och https://constructionsourcing.eu i API:ts CORS-inställningar.'
+      : 'Form submission is blocked locally by CORS. Add http://127.0.0.1:5500 and https://constructionsourcing.eu to the API CORS allowlist.';
   }
 
   return error?.message || translate('submitError', 'Something went wrong. Please try again.');
